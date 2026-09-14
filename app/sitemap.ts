@@ -6,8 +6,8 @@ import { isLocationIndexable } from '@/data/locationManifest';
 import { siteConfig } from '@/data/siteConfig';
 
 const BASE_URL = siteConfig.url;
-const SITE_RELEASE_DATE = new Date('2026-09-01T00:00:00.000Z');
-const ENRICHMENT_UPDATE_DATE = new Date('2026-09-13T07:30:00.000Z');
+const SITE_RELEASE_DATE = new Date('2026-09-15T00:00:00.000Z');
+const ENRICHMENT_UPDATE_DATE = new Date('2026-09-15T00:00:00.000Z');
 
 const ENRICHED_SLUGS = new Set([
   'sector-32',
@@ -69,6 +69,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: SITE_RELEASE_DATE,
       changeFrequency: 'daily',
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/privacy-policy`,
+      lastModified: SITE_RELEASE_DATE,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: SITE_RELEASE_DATE,
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/disclaimer`,
+      lastModified: SITE_RELEASE_DATE,
+      changeFrequency: 'monthly',
+      priority: 0.3,
     },
   ];
 
