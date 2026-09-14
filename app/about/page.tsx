@@ -20,14 +20,16 @@ import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
-  description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
+  title: 'About ALINA VIP India | Premier Gurgaon Escort Agency & VIP Call Girls',
+  description:
+    'Discover the legacy of ALINA VIP India. Over a decade of excellence in luxury companionship, 100% verified call girls, strict confidentiality & 5-star hotel outcalls in Gurgaon.',
   alternates: {
     canonical: `${siteConfig.url}/about`,
   },
   openGraph: {
-    title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
-    description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
+    title: 'About ALINA VIP India | Premier Gurgaon Escort Agency & VIP Call Girls',
+    description:
+      'Discover the legacy of ALINA VIP India. Over a decade of excellence in luxury companionship, 100% verified call girls, strict confidentiality & 5-star hotel outcalls in Gurgaon.',
     url: `${siteConfig.url}/about`,
     type: 'website',
   },
@@ -46,13 +48,13 @@ export default function AboutPage() {
         <div className="container-luxury relative z-10">
           <div className="text-center">
             <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-              ★ About ALINA VIP
+              ★ About ALINA VIP India
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-              The Story of <span className="text-gradient-gold">ALINA VIP</span>
+              The Story of <span className="text-gradient-gold">ALINA VIP India</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Gurgaon&apos;s most trusted luxury escort agency offering verified escorts,{' '}
+              Gurgaon&apos;s leading high-end escort agency, connecting discerning executives and travellers with authenticated companions,{' '}
               <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
                 Russian call girls
               </Link>
@@ -60,7 +62,7 @@ export default function AboutPage() {
               <Link href="/category/model-escorts" className="text-gold-400 hover:underline font-medium">
                 elite models
               </Link>{' '}
-              with 100% discretion and professionalism.
+              under unconditional privacy standards.
             </p>
             <div className="gold-divider mx-auto mt-8" />
           </div>

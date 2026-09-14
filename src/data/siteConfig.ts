@@ -7,8 +7,8 @@ export const siteConfig = {
   address: 'DLF Phase 3, Golf Course Road, Gurgaon, Haryana 122002, India',
   url: 'https://alinavip.in',
   domain: 'alinavip.in',
-  tagline: 'Premium Luxury Escort Service',
-  description: 'ALINA VIP offers premium luxury escort services in Gurgaon with verified profiles, discreet service, and elite call girls for discerning gentlemen.',
+  tagline: 'Elite Gurgaon Escorts & Luxury Call Girls',
+  description: 'ALINA VIP is Gurgaon\'s premier agency for authentic, high-profile call girls and VIP escorts. Providing discreet, rapid 5-star hotel & residence outcalls across DLF, Cyber City, and Golf Course Road.',
   socialLinks: [
     { name: 'Instagram', url: 'https://instagram.com/alinavip', icon: 'Instagram' },
     { name: 'Twitter', url: 'https://twitter.com/gurgaonescort', icon: 'Twitter' },
@@ -18,67 +18,67 @@ export const siteConfig = {
 
 export const generalFaqs = [
   {
-    question: 'What is ALINA VIP?',
-    answer: 'ALINA VIP is a premium luxury escort service based in Gurgaon, India. We provide verified, elite call girls for social events, dinner dates, travel, and private engagements. Our service is designed for discerning gentlemen who value discretion, quality, and sophistication.',
+    question: 'What makes ALINA VIP Gurgaon’s premier escort agency?',
+    answer: 'ALINA VIP sets the benchmark for luxury companionship in Gurgaon and Delhi NCR. We connect high-achieving executives, business travellers, and distinguished gentlemen with authenticated, refined female companions for upscale social occasions, corporate galas, private dining, and confidential suite visits.',
   },
   {
-    question: 'How to book an escort service in Gurgaon?',
-    answer: 'Booking an escort service in Gurgaon with ALINA VIP is simple and 100% confidential. Call our booking desk directly at +91-9996265679 or WhatsApp us with your preferred location, timing, and companion preferences. Our concierge confirms availability within minutes and coordinates discreet outcall dispatch to your luxury hotel or residence.',
+    question: 'How can I reserve a luxury companion in Gurgaon?',
+    answer: 'Reserving a companion with ALINA VIP is seamless, discreet, and fast. Reach out directly via voice call at +91-9996265679 or initiate an encrypted WhatsApp chat. Specify your preferred district, desired appointment duration, and companion style. Our private concierge confirms model availability within moments and coordinates swift 20-30 minute outcall arrival.',
   },
   {
-    question: 'Are all profiles verified?',
-    answer: 'Yes, every profile on ALINA VIP undergoes a thorough verification process. We verify identity, photos, and background to ensure authenticity and quality. This process is fundamental to our commitment to providing a safe and premium experience for our clients.',
+    question: 'How does ALINA VIP verify its companions and photographs?',
+    answer: 'Every escort featured on our platform undergoes rigorous in-person validation. We cross-verify government identity documents, recent unretouched photographs, and personal grooming to ensure absolute profile fidelity. The companion who arrives at your suite is guaranteed to match the verified portfolio you selected.',
   },
   {
-    question: 'Is private escort booking in Gurgaon discreet and confidential?',
-    answer: 'Yes, absolute discretion and confidentiality are guaranteed. All client details are strictly protected with zero digital footprint. Our verified companions arrive in unmarked executive vehicles and observe the strictest privacy standards for five-star hotel suites and private residences across Gurgaon.',
+    question: 'What confidentiality safeguards protect client identity?',
+    answer: 'Discretion is our foremost operating principle. We implement a rigorous zero-retention privacy protocol: client phone numbers, messages, and itinerary specifics are permanently purged post-booking. Our companions arrive discreetly in private executive transportation and maintain total confidentiality.',
   },
   {
-    question: 'What areas of Gurgaon does your escort service cover?',
-    answer: 'Our Gurgaon escort service covers all prime areas including DLF Phases 1–5, Cyber City, Cyber Hub, Golf Course Road, Sohna Road, MG Road, Sushant Lok, and Sectors 14, 29, 43, 44, 49, 56, and 57, as well as Aerocity and South Delhi.',
+    question: 'Which sectors and districts in Gurgaon are serviced?',
+    answer: 'We dispatch across every prime hub in Gurgaon including DLF Phase 1, Phase 2, Phase 3, Phase 4, and Phase 5, Cyber City, Cyber Hub, Golf Course Road, Golf Course Extension Road, Sohna Road, MG Road, Sushant Lok, Nirvana Country, as well as Sectors 29, 43, 44, 49, 56, 57, and Aerocity Delhi.',
   },
   {
-    question: 'What are your operating hours?',
-    answer: 'ALINA VIP operates 24 hours a day, 7 days a week. We understand that our clients have busy and varied schedules, so we are always available to accommodate your needs. You can reach us at any time for bookings and inquiries.',
+    question: 'What are your operational booking hours?',
+    answer: 'Our booking concierge is operational 24 hours a day, 7 days a week, 365 days a year. Whether you require evening dinner company, an overnight engagement, or an impromptu late-night companion, our coordination team is on standby to assist.',
   },
   {
-    question: 'What types of call girls are available?',
-    answer: 'We offer a diverse selection of call girls including VIP, high-profile, model, independent, college, air hostess, celebrity, and travel call girls. Each category page provides detailed information about the type of call girl and their specialities.',
+    question: 'What companion categories can I select from?',
+    answer: 'Our portfolio features a distinguished selection of companions: Russian call girls, high-profile models, independent escorts, college companions, air hostess models, and elite celebrity escorts. Browse our categories page for comprehensive details and portfolio galleries.',
   },
   {
-    question: 'Can I book a call girl for travel?',
-    answer: 'Yes, several of our call girls are available for domestic and international travel. Whether you need a call girl for a business trip, a weekend getaway, or an extended holiday, we can arrange the right call girl for your journey. Please contact us with your travel plans.',
+    question: 'Are companions available for travel and weekend getaways?',
+    answer: 'Yes. Selected companions are available for domestic trips, outstation corporate retreats, and international holidays. Inquire with our desk regarding travel itineraries, advance scheduling, and comprehensive multi-day packages.',
   },
   {
-    question: 'What are the rates for your services?',
-    answer: 'Our rates vary based on the call girl, the duration of the booking, and the type of engagement. We offer competitive rates that reflect the premium quality of our service. Please call us at +91-9996265679 for current rates and packages.',
+    question: 'What are the pricing rates for companionship services?',
+    answer: 'Our rates are competitive and commensurate with the elite tier of verified companions we represent. Rates depend on the category, meeting duration, and event type. Contact our private concierge at +91-9996265679 for transparent, all-inclusive rate guidance.',
   },
   {
-    question: 'How do I pay for the service?',
-    answer: 'We accept multiple payment methods for your convenience, including cash and digital payments. Specific payment options can be discussed with our booking team when you call. All transactions are handled discreetly.',
+    question: 'What payment options do you support?',
+    answer: 'To ensure client comfort and confidence, we facilitate Cash on Delivery (COD) directly with your companion upon arrival, along with convenient digital alternatives discussed upon booking.',
   },
   {
-    question: 'Can I request a specific call girl?',
-    answer: 'Yes, you can request a specific call girl based on availability. We recommend calling in advance to ensure your preferred call girl is available. If your first choice is not available, our team can recommend suitable alternatives based on your preferences.',
+    question: 'Can I choose a specific companion from the gallery?',
+    answer: 'Absolutely. You are welcome to request your preferred companion directly from our verified gallery. We recommend booking in advance for peak weekend evenings to guarantee individual companion availability.',
   },
   {
-    question: 'What if I need to cancel or reschedule?',
-    answer: 'We understand that plans can change. Please inform us as early as possible if you need to cancel or reschedule. Our cancellation policy is fair and designed to accommodate genuine situations. Contact our booking team for specific terms.',
+    question: 'What is the policy for rescheduling or cancellation?',
+    answer: 'We recognize executive schedules can shift unexpectedly. Please alert our booking team at least two hours prior to the scheduled meeting to reschedule or cancel without friction.',
   },
   {
-    question: 'What is the outcall procedure for five-star luxury hotels in Gurgaon?',
-    answer: 'Our outcall escort service regularly dispatches to premier 5-star hotels including The Oberoi, The Trident, The Leela Ambience, Grand Hyatt Gurgaon, and ITC Grand Bharat. When booking, provide your hotel name and room or suite number. Our companions arrive dressed in elegant, understated attire that blends seamlessly with upscale hotel environments, maintaining absolute discretion upon entry.',
+    question: 'How does hotel outcall dispatch operate for 5-star properties?',
+    answer: 'We regularly dispatch companions to luxury hotel properties including The Oberoi, The Leela Ambience, Trident Gurgaon, Grand Hyatt, and Taj City Centre. Simply share your room or suite details; your companion arrives elegantly dressed in smart luxury attire that blends seamlessly into 5-star hotel lounges.',
   },
   {
-    question: 'Do you offer cash on delivery (COD) payment for escort service in Gurgaon?',
-    answer: 'Yes, we support cash on delivery directly upon your companion’s arrival. We believe in transparent, honest service without deceptive advance fee demands. You may inspect and confirm your companion before settling the agreed companionship fee in person.',
+    question: 'Is cash payment on delivery accepted in Gurgaon?',
+    answer: 'Yes, cash on delivery is fully supported upon your companion’s arrival. You have the opportunity to verify your companion in person before finalizing payments, ensuring absolute peace of mind.',
   },
   {
-    question: 'How does ALINA VIP protect client confidentiality and personal data?',
-    answer: 'Client privacy is our foundational commitment. We operate on a strict zero-trace data policy: phone numbers, messages, and inquiry details are never stored, logged, or shared with third parties. All booking correspondence is handled through secure, ephemeral communications that are cleared immediately following the engagement.',
+    question: 'How does ALINA VIP prevent online escort fraud in Gurgaon?',
+    answer: 'We eliminate common escort scams by never charging deceptive advance registration or card swipe fees before meeting. All bookings are verified in real time, and our models are authentic, resident companions.',
   },
   {
-    question: 'How do I ensure I am booking verified call girls and avoid common scams in Gurgaon?',
-    answer: 'Always book through an established agency like ALINA VIP that provides authentic, untouched profile photographs and explicit outcall terms. Avoid operators demanding untraceable upfront digital transfers before meeting. With ALINA VIP, our companions are verified in person, guaranteeing that the companion who arrives matches the profile you selected.',
+    question: 'Can companions attend high-profile corporate or business dinners?',
+    answer: 'Yes. Many of our models and high-profile companions possess university degrees, excellent conversational acumen, and refined etiquette, making them ideal partners for business dinners, cocktail receptions, and executive functions.',
   },
 ];

@@ -16,14 +16,16 @@ import CTASection from '@/components/CTASection';
 import { siteConfig, generalFaqs } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
-  description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
+  title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
+  description:
+    'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
   alternates: {
     canonical: `${siteConfig.url}/faq`,
   },
   openGraph: {
-    title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
-    description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
+    title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
+    description:
+      'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
     url: `${siteConfig.url}/faq`,
     type: 'website',
   },
@@ -61,26 +63,22 @@ export default function FAQPage() {
         </div>
         <div className="container-luxury relative z-10 text-center">
           <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-            ★ FAQ
+            ★ Knowledge &amp; Inquiries
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Escort Service <span className="text-gradient-gold">FAQ</span>
+            Gurgaon Escort Service <span className="text-gradient-gold">Client FAQs</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Find answers to common questions about{' '}
-            <strong className="text-gold-400 font-semibold">escort service in Gurgaon</strong>,{' '}
+            Find transparent answers regarding{' '}
+            <strong className="text-gold-400 font-semibold">private escort bookings in Gurgaon</strong>,{' '}
             <Link href="/services" className="text-gold-400 hover:underline font-medium">
               VIP call girls
             </Link>
             ,{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian escorts
+              Russian companions
             </Link>
-            , and{' '}
-            <Link href="/services" className="text-gold-400 hover:underline font-medium">
-              premium escort services
-            </Link>
-            .
+            , and verified outcall protocols with ALINA VIP India.
           </p>
           <div className="gold-divider mx-auto mt-8" />
         </div>

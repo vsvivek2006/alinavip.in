@@ -76,8 +76,8 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     notFound();
   }
 
-  const title = `${category.name} | Escort Service in Gurgaon | VIP Call Girls | ALINA VIP`;
-  const description = `${category.shortDescription} ALINA VIP offers verified ${category.name.toLowerCase()} in Gurgaon. Premium escort service, 100% discreet. Call now for booking.`;
+  const title = `${category.h1Title || `${category.name} in Gurgaon`} | VIP Escorts & Call Girls | ALINA VIP`;
+  const description = `${category.shortDescription} ALINA VIP India offers verified ${category.name.toLowerCase()} in Gurgaon & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
   const canonicalUrl = `${siteConfig.url}/category/${category.slug}`;
   const imageSrc = categoryImageMap[category.slug] || '/images/categories/default.webp';
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
@@ -114,43 +114,36 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const IconComponent = categoryIconMap[category.slug] || Crown;
   const imageSrc = categoryImageMap[category.slug] || '/images/categories/default.webp';
 
+  const faqs = category.faqs && category.faqs.length > 0 ? category.faqs : [
+    {
+      question: `How do I book a ${category.name.toLowerCase()} in Gurgaon?`,
+      answer: `Booking is simple and 100% confidential. Call our private booking concierge at ${siteConfig.phone} or message us via WhatsApp with your preferred timing, location, and companion choice. We confirm availability and dispatch within minutes.`,
+    },
+    {
+      question: `Are ${category.name.toLowerCase()} photos 100% genuine?`,
+      answer: 'Yes. Every companion is photographed and verified in person by our management team. We guarantee that the companion who arrives at your suite matches the profile you selected.',
+    },
+    {
+      question: 'What is the typical outcall arrival time in Gurgaon?',
+      answer: 'Companions typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
+    },
+    {
+      question: 'Is my personal information kept confidential?',
+      answer: 'Absolutely. We maintain a zero-trace privacy policy. Client phone numbers, names, and booking details are never saved in permanent databases and are discarded immediately following the booking.',
+    },
+  ];
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `How do I book a ${category.name.toLowerCase()} in Gurgaon?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Booking is simple and 100% confidential. Call our private booking concierge at ${siteConfig.phone} or message us via WhatsApp with your preferred timing, location, and companion choice. We confirm availability and dispatch within minutes.`,
-        },
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
       },
-      {
-        '@type': 'Question',
-        name: `Are ${category.name.toLowerCase()} photos 100% genuine?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes. Every companion is photographed and verified in person by our management team. We guarantee that the companion who arrives at your suite matches the profile you selected.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the typical outcall arrival time in Gurgaon?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Companions typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is my personal information kept confidential?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Absolutely. We maintain a zero-trace privacy policy. Client phone numbers, names, and booking details are never saved in permanent databases and are discarded immediately following the booking.',
-        },
-      },
-    ],
+    })),
   };
 
   return (
@@ -181,11 +174,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 ★ Premium Escort Service
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif leading-tight">
-                {category.name} <br />
-                <span className="text-gradient-gold">in Gurgaon</span>
+                {category.h1Title ? (
+                  category.h1Title
+                ) : (
+                  <>
+                    {category.name} <br />
+                    <span className="text-gradient-gold">in Gurgaon</span>
+                  </>
+                )}
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                {category.shortDescription}
+                {category.subheading || category.shortDescription}
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -234,79 +233,101 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   About Our {category.name}
                 </h2>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
-                  <p>{category.description}</p>
-                  <p>
-                    At <strong>ALINA VIP</strong>, we take pride in offering the finest{' '}
-                    <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                      escort service in Gurgaon
-                    </Link>
-                    . Each {category.name.toLowerCase()} has been carefully selected through our rigorous verification process, which includes identity verification, photo authentication, and background screening. This ensures that every{' '}
-                    <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                      call girl
-                    </Link>{' '}
-                    profile is genuine and that our clients can book with complete confidence.
-                  </p>
-                  <p>
-                    Our{' '}
-                    <Link href={`/category/${category.slug}`} className="text-gold-600 hover:underline font-medium">
-                      {category.name.toLowerCase()}
-                    </Link>{' '}
-                    are available for a variety of engagements, including dinner dates, social events, corporate functions, travel, and private engagements. They are discreet, professional, and committed to providing an exceptional{' '}
-                    <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                      escort service
-                    </Link>{' '}
-                    experience.
-                  </p>
+                  {category.longDescription && category.longDescription.length > 0 ? (
+                    category.longDescription.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <>
+                      <p>{category.description}</p>
+                      <p>
+                        At <strong>ALINA VIP</strong>, we take pride in offering the finest{' '}
+                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                          escort service in Gurgaon
+                        </Link>
+                        . Each {category.name.toLowerCase()} has been carefully selected through our rigorous verification process, which includes identity verification, photo authentication, and background screening. This ensures that every{' '}
+                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                          call girl
+                        </Link>{' '}
+                        profile is genuine and that our clients can book with complete confidence.
+                      </p>
+                      <p>
+                        Our{' '}
+                        <Link href={`/category/${category.slug}`} className="text-gold-600 hover:underline font-medium">
+                          {category.name.toLowerCase()}
+                        </Link>{' '}
+                        are available for a variety of engagements, including dinner dates, social events, corporate functions, travel, and private engagements. They are discreet, professional, and committed to providing an exceptional{' '}
+                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                          escort service
+                        </Link>{' '}
+                        experience.
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
 
-              {/* 4 Feature Badges */}
+              {/* Feature Badges / Key Highlights */}
               <div>
                 <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4 font-serif">
                   Why Choose Our {category.name}?
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                    <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-sm">Verified Call Girls</h4>
-                      <p className="text-gray-600 text-xs mt-1">
-                        100% genuine <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> with photo authentication
-                      </p>
-                    </div>
-                  </div>
+                  {category.keyHighlights && category.keyHighlights.length > 0 ? (
+                    category.keyHighlights.map((hl, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-[#1a1a2e] text-sm">{hl.title}</h4>
+                          <p className="text-gray-600 text-xs mt-1">{hl.desc}</p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <>
+                      <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-[#1a1a2e] text-sm">Verified Call Girls</h4>
+                          <p className="text-gray-600 text-xs mt-1">
+                            100% genuine <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> with photo authentication
+                          </p>
+                        </div>
+                      </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                    <Lock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-sm">100% Discreet</h4>
-                      <p className="text-gray-600 text-xs mt-1">
-                        Complete privacy guaranteed for all <Link href="/services" className="text-gold-600 hover:underline font-medium">escorts</Link> bookings
-                      </p>
-                    </div>
-                  </div>
+                      <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <Lock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-[#1a1a2e] text-sm">100% Discreet</h4>
+                          <p className="text-gray-600 text-xs mt-1">
+                            Complete privacy guaranteed for all <Link href="/services" className="text-gold-600 hover:underline font-medium">escorts</Link> bookings
+                          </p>
+                        </div>
+                      </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                    <Clock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-sm">24/7 Availability</h4>
-                      <p className="text-gray-600 text-xs mt-1">
-                        Book <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> anytime, day or night
-                      </p>
-                    </div>
-                  </div>
+                      <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <Clock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-[#1a1a2e] text-sm">24/7 Availability</h4>
+                          <p className="text-gray-600 text-xs mt-1">
+                            Book <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> anytime, day or night
+                          </p>
+                        </div>
+                      </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                    <MapPin className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-sm">All Gurgaon Areas</h4>
-                      <p className="text-gray-600 text-xs mt-1">
-                        <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>,{' '}
-                        <Link href="/locations/mg-road" className="text-gold-600 hover:underline font-medium">MG Road</Link>,{' '}
-                        <Link href="/locations/golf-course-road" className="text-gold-600 hover:underline font-medium">Golf Course Road</Link> &amp; more
-                      </p>
-                    </div>
-                  </div>
+                      <div className="flex items-start gap-3 p-4 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <MapPin className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-[#1a1a2e] text-sm">All Gurgaon Areas</h4>
+                          <p className="text-gray-600 text-xs mt-1">
+                            <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>,{' '}
+                            <Link href="/locations/mg-road" className="text-gold-600 hover:underline font-medium">MG Road</Link>,{' '}
+                            <Link href="/locations/golf-course-road" className="text-gold-600 hover:underline font-medium">Golf Course Road</Link> &amp; more
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -347,18 +368,29 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   Whether you are attending an exclusive business dinner at Cyber Hub, hosting an intimate corporate gala on Golf Course Road, or unwinding in the private sanctuary of a luxury hotel suite, our {category.name.toLowerCase()} seamlessly adapt to your schedule and setting.
                 </p>
                 <ul className="space-y-2.5 text-sm text-gray-700">
-                  <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
-                    <span><strong>Fine Dining &amp; Gala Evenings:</strong> Impeccable formal dressing, graceful social etiquette, and engaging conversation at Gurgaon&apos;s finest Michelin-star and luxury restaurants.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
-                    <span><strong>Executive Travel &amp; Retreats:</strong> Dependable, well-travelled accompaniment for business conferences, luxury resorts, and weekend getaways across NCR and beyond.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
-                    <span><strong>Private Hotel Outcalls:</strong> Effortless, confidential escort service tailored for relaxing stays at premier five-star hospitality suites.</span>
-                  </li>
+                  {category.occasions && category.occasions.length > 0 ? (
+                    category.occasions.map((occ, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span>{occ}</span>
+                      </li>
+                    ))
+                  ) : (
+                    <>
+                      <li className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span><strong>Fine Dining &amp; Gala Evenings:</strong> Impeccable formal dressing, graceful social etiquette, and engaging conversation at Gurgaon&apos;s finest Michelin-star and luxury restaurants.</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span><strong>Executive Travel &amp; Retreats:</strong> Dependable, well-travelled accompaniment for business conferences, luxury resorts, and weekend getaways across NCR and beyond.</span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span><strong>Private Hotel Outcalls:</strong> Effortless, confidential escort service tailored for relaxing stays at premier five-star hospitality suites.</span>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
 
@@ -381,45 +413,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   Frequently Asked Questions – {category.name}
                 </h3>
                 <div className="space-y-3">
-                  <details className="bg-white rounded-xl border border-gray-200 p-4 group">
-                    <summary className="font-semibold text-[#1a1a2e] text-sm cursor-pointer list-none flex items-center justify-between">
-                      <span>How do I book a {category.name.toLowerCase()} in Gurgaon?</span>
-                      <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
-                      Booking is simple and 100% confidential. Call our private booking concierge at +91-9996265679 or message us via WhatsApp with your preferred timing, location, and companion choice. We confirm availability and dispatch within minutes.
-                    </p>
-                  </details>
-
-                  <details className="bg-white rounded-xl border border-gray-200 p-4 group">
-                    <summary className="font-semibold text-[#1a1a2e] text-sm cursor-pointer list-none flex items-center justify-between">
-                      <span>Are {category.name.toLowerCase()} photos 100% genuine?</span>
-                      <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
-                      Yes. Every companion is photographed and verified in person by our management team. We guarantee that the companion who arrives at your suite matches the profile you selected.
-                    </p>
-                  </details>
-
-                  <details className="bg-white rounded-xl border border-gray-200 p-4 group">
-                    <summary className="font-semibold text-[#1a1a2e] text-sm cursor-pointer list-none flex items-center justify-between">
-                      <span>What is the typical outcall arrival time in Gurgaon?</span>
-                      <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
-                      Companions typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.
-                    </p>
-                  </details>
-
-                  <details className="bg-white rounded-xl border border-gray-200 p-4 group">
-                    <summary className="font-semibold text-[#1a1a2e] text-sm cursor-pointer list-none flex items-center justify-between">
-                      <span>Is my personal information kept confidential?</span>
-                      <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
-                    </summary>
-                    <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
-                      Absolutely. We maintain a zero-trace privacy policy. Client phone numbers, names, and booking details are never saved in permanent databases and are discarded immediately following the booking.
-                    </p>
-                  </details>
+                  {faqs.map((faq, idx) => (
+                    <details key={idx} className="bg-white rounded-xl border border-gray-200 p-4 group">
+                      <summary className="font-semibold text-[#1a1a2e] text-sm cursor-pointer list-none flex items-center justify-between">
+                        <span>{faq.question}</span>
+                        <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
+                      </summary>
+                      <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
                 </div>
               </div>
 

@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Phone,
   ShieldCheck,
+  Award,
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
@@ -20,14 +21,16 @@ import { siteConfig } from '@/data/siteConfig';
 import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
-  title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
-  description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
+  title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
+  description:
+    'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model companions, and high-profile girls.',
   alternates: {
     canonical: `${siteConfig.url}/gallery`,
   },
   openGraph: {
-    title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
-    description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
+    title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
+    description:
+      'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model companions, and high-profile girls.',
     url: `${siteConfig.url}/gallery`,
     type: 'website',
   },
@@ -63,15 +66,13 @@ const categoryIcons: Record<string, React.ElementType> = {
   'independent-escorts': User,
   'air-hostess': Plane,
   'air-hostess-escorts': Plane,
-  'celebrity-escorts': Sparkles,
-  'travel-escorts': Plane,
+  'celebrity-escorts': Award,
+  'travel-escorts': Sparkles,
 };
 
 export default function GalleryPage() {
   return (
     <>
-      {/* SEO metadata handled server-side */}
-
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Gallery' }]} />
 
       {/* Hero Section */}
@@ -81,26 +82,26 @@ export default function GalleryPage() {
         </div>
         <div className="container-luxury relative z-10 text-center">
           <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-            ★ Gallery
+            ★ Verified Portfolio
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Escort Service <span className="text-gradient-gold">Gallery</span>
+            VIP Companion <span className="text-gradient-gold">Photo Gallery</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Browse our premium collection of{' '}
-            <strong className="text-gold-400 font-semibold">VIP call girls</strong>,{' '}
+            Browse our certified portfolio of{' '}
+            <strong className="text-gold-400 font-semibold">verified call girls</strong>,{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian escorts
+              Russian companions
             </Link>
             ,{' '}
             <Link href="/category/model-escorts" className="text-gold-400 hover:underline font-medium">
-              model escorts
+              fashion models
             </Link>
             , and{' '}
             <Link href="/services" className="text-gold-400 hover:underline font-medium">
-              more escort services in Gurgaon
+              elite escorts in Gurgaon
             </Link>
-            .
+            . Every photograph is authenticated in person to guarantee 100% profile accuracy.
           </p>
           <div className="gold-divider mx-auto mt-8" />
         </div>

@@ -61,13 +61,13 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   const title =
     location.slug === 'gurgaon'
-      ? 'Gurgaon Escort Service Directory & Local Areas | ALINA VIP'
+      ? 'Gurgaon Escort Service Directory & Local Areas | ALINA VIP India'
       : location.region === 'Gurgaon'
-      ? `Escort Service in ${location.name}, Gurgaon | VIP Call Girls | ALINA VIP`
+      ? `Escort Service in ${location.name}, Gurgaon | VIP Call Girls | ALINA VIP India`
       : location.metaTitle;
   const description =
     location.slug === 'gurgaon'
-      ? 'Gurgaon central outcall directory and VIP escort service. Verified call girls, luxury hotel outcalls, 20-30 min arrival across Cyber City, DLF & Golf Course Rd.'
+      ? 'Gurgaon central outcall directory and VIP escort service by ALINA VIP India. Verified call girls, luxury hotel outcalls, 20-30 min arrival across Cyber City, DLF & Golf Course Rd.'
       : location.metaDescription;
   const canonicalUrl = `${siteConfig.url}/locations/${location.slug}`;
 

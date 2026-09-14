@@ -14,16 +14,16 @@ import { locations } from '@/data/locations';
 import { isLocationRedirect } from '@/data/locationManifest';
 
 export const metadata: Metadata = {
-  title: 'Escort Service Locations in Gurgaon & Delhi NCR | ALINA VIP',
+  title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | ALINA VIP India',
   description:
-    'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
+    'Find verified VIP escorts and luxury call girls across Gurgaon, Aerocity, and Delhi NCR. Cyber City, DLF Phases 1-5, Golf Course Road & Sohna Road. 20-30 min hotel outcall.',
   alternates: {
     canonical: `${siteConfig.url}/locations`,
   },
   openGraph: {
-    title: 'Escort Service Locations in Gurgaon & Delhi NCR | ALINA VIP',
+    title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | ALINA VIP India',
     description:
-      'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
+      'Find verified VIP escorts and luxury call girls across Gurgaon, Aerocity, and Delhi NCR. Cyber City, DLF Phases 1-5, Golf Course Road & Sohna Road. 20-30 min hotel outcall.',
     url: `${siteConfig.url}/locations`,
     type: 'website',
   },
@@ -40,16 +40,16 @@ export default function LocationsPage() {
 
         <div className="container-luxury relative z-10 text-center">
           <p className="section-subtitle text-gold-500 font-sans text-xs tracking-ultra uppercase mb-3 font-semibold">
-            Our Service Areas
+            Service Coverage Directory
           </p>
           <h1 className="section-title mb-6 font-serif text-4xl md:text-6xl text-white font-light">
-            Serving <span className="text-gradient-gold font-normal">Gurgaon &amp; Beyond</span>
+            Serving <span className="text-gradient-gold font-normal">Gurgaon &amp; Delhi NCR</span>
           </h1>
           <div className="gold-divider mb-6" />
 
           {/* Clean Informative Lead */}
           <p className="text-charcoal-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
-            ALINA VIP coordinates discreet, verified escort services across all key sectors of Gurgaon, Aerocity, and regional Delhi NCR corridors. Select your district below to find verified profiles with prompt 20 to 30 minute hotel suite and residential dispatch.
+            ALINA VIP India coordinates discreet, verified escort services across all premier residential sectors, corporate hubs, and five-star hospitality districts in Gurgaon, Aerocity, and Delhi NCR. Select your district below for verified companions with 20 to 30-minute outcall dispatch.
           </p>
 
           {(() => {

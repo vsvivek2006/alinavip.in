@@ -25,16 +25,16 @@ import { services } from '@/data/content';
 import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
-  title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
+  title: 'Gurgaon Escort Services & Companion Packages | ALINA VIP India',
   description:
-    'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
+    'Browse luxury escort services and verified companion packages in Gurgaon. Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
   alternates: {
     canonical: `${siteConfig.url}/services`,
   },
   openGraph: {
-    title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
+    title: 'Gurgaon Escort Services & Companion Packages | ALINA VIP India',
     description:
-      'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
+      'Browse luxury escort services and verified companion packages in Gurgaon. Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
     url: `${siteConfig.url}/services`,
     type: 'website',
   },
@@ -77,15 +77,15 @@ export default function ServicesPage() {
         </div>
         <div className="container-luxury relative z-10 text-center">
           <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-            ★ Our Services
+            ★ Services &amp; Packages
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Explore Profiles &amp; <span className="text-gradient-gold">Escort Services</span>
+            Elite Companionship &amp; <span className="text-gradient-gold">Escort Services</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-gold-400 font-semibold">ALINA VIP</strong> offers tailored escort arrangements across Gurgaon and Delhi NCR. Browse verified profiles across specialized categories including{' '}
+            <strong className="text-gold-400 font-semibold">ALINA VIP India</strong> delivers distinguished companion experiences tailored for elite gentlemen across Gurgaon and Delhi NCR. Browse verified profiles across specialized categories including{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian escorts
+              Russian call girls
             </Link>
             ,{' '}
             <Link href="/category/model-escorts" className="text-gold-400 hover:underline font-medium">
@@ -93,7 +93,7 @@ export default function ServicesPage() {
             </Link>
             , and{' '}
             <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">
-              VIP escorts
+              VIP companions
             </Link>
             . Each rendezvous is delivered with uncompromising discretion and professional hospitality.
           </p>

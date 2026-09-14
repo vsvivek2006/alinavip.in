@@ -16,16 +16,16 @@ import ContactForm from '@/components/ContactForm';
 import { siteConfig } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Book Luxury Escort Service in Gurgaon | ALINA VIP',
+  title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
   description:
-    'Contact ALINA VIP for premium luxury escort service in Gurgaon. Call +91-9996265679 or book online. Available 24/7 with 100% discretion and rapid hotel outcall.',
+    'Connect with ALINA VIP India for verified companion reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
   alternates: {
     canonical: `${siteConfig.url}/contact`,
   },
   openGraph: {
-    title: 'Contact Us | Book Luxury Escort Service in Gurgaon | ALINA VIP',
+    title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
     description:
-      'Contact ALINA VIP for premium luxury escort service in Gurgaon. Call +91-9996265679 or book online. Available 24/7 with 100% discretion and rapid hotel outcall.',
+      'Connect with ALINA VIP India for verified companion reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
     url: `${siteConfig.url}/contact`,
     type: 'website',
   },
@@ -46,7 +46,7 @@ export default function ContactPage() {
             ★ 24/7 Concierge Support
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Contact <span className="text-gradient-gold">ALINA VIP</span>
+            Contact <span className="text-gradient-gold">ALINA VIP India</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Reserve verified escorts,{' '}
@@ -57,7 +57,7 @@ export default function ContactPage() {
             <Link href="/category/celebrity-escorts" className="text-gold-400 hover:underline font-medium">
               elite social escorts
             </Link>{' '}
-            with 100% discretion and prompt outcall across all Gurgaon locations.
+            with 100% confidentiality and prompt outcall delivery across all Gurgaon luxury hotel suites.
           </p>
           <div className="gold-divider mx-auto mt-8" />
         </div>
