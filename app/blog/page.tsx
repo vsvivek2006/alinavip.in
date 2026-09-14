@@ -8,19 +8,20 @@ import CTASection from '@/components/CTASection';
 import BlogFilter from '@/components/BlogFilter';
 import NewsletterForm from '@/components/NewsletterForm';
 import { blogPosts, blogCategories } from '@/data/blogs';
+import { siteConfig } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Escort Service Blog | Call Girls Tips & Lifestyle | ALINA VIP',
   description:
     'Read our blog for insights on escort service in Gurgaon, VIP call girls, Russian escorts, nightlife, dating tips, and luxury lifestyle. Expert guides and articles for discerning gentlemen.',
   alternates: {
-    canonical: 'https://escort.alinavip.com/blog',
+    canonical: `${siteConfig.url}/blog`,
   },
   openGraph: {
     title: 'Escort Service Blog | Call Girls Tips & Lifestyle | ALINA VIP',
     description:
       'Read our blog for insights on escort service in Gurgaon, VIP call girls, Russian escorts, nightlife, dating tips, and luxury lifestyle. Expert guides and articles for discerning gentlemen.',
-    url: 'https://escort.alinavip.com/blog',
+    url: `${siteConfig.url}/blog`,
     type: 'website',
   },
 };

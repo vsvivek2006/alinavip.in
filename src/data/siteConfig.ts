@@ -3,10 +3,10 @@ export const siteConfig = {
   phone: '+91-9996265679',
   phoneDisplay: '+91 99962 65679',
   whatsapp: '919996265679',
-  email: 'contact@alinavip.com',
+  email: 'contact@alinavip.in',
   address: 'DLF Phase 3, Golf Course Road, Gurgaon, Haryana 122002, India',
-  url: 'https://escort.alinavip.com',
-  domain: 'escort.alinavip.com',
+  url: 'https://alinavip.in',
+  domain: 'alinavip.in',
   tagline: 'Premium Luxury Escort Service',
   description: 'ALINA VIP offers premium luxury escort services in Gurgaon with verified profiles, discreet service, and elite call girls for discerning gentlemen.',
   socialLinks: [

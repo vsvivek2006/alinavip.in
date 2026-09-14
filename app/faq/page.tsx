@@ -1,17 +1,3 @@
-export const metadata: Metadata = {
-  title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
-  description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
-  alternates: {
-    canonical: 'https://escort.alinavip.com/faq',
-  },
-  openGraph: {
-    title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
-    description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
-    url: 'https://escort.alinavip.com/faq',
-    type: 'website',
-  },
-};
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -28,6 +14,20 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig, generalFaqs } from '@/data/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
+  description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
+  alternates: {
+    canonical: `${siteConfig.url}/faq`,
+  },
+  openGraph: {
+    title: 'FAQ | Escort Service in Gurgaon | VIP Call Girls Questions | ALINA VIP',
+    description: 'Find answers to frequently asked questions about escort service in Gurgaon. Learn about VIP call girls, Russian escorts, booking, verification, discretion, and more.',
+    url: `${siteConfig.url}/faq`,
+    type: 'website',
+  },
+};
 
 export default function FAQPage() {
   const faqSchema = {

@@ -1,17 +1,3 @@
-export const metadata: Metadata = {
-  title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
-  description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
-  alternates: {
-    canonical: 'https://escort.alinavip.com/gallery',
-  },
-  openGraph: {
-    title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
-    description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
-    url: 'https://escort.alinavip.com/gallery',
-    type: 'website',
-  },
-};
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,6 +18,20 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { categories } from '@/data/categories';
+
+export const metadata: Metadata = {
+  title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
+  description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
+  alternates: {
+    canonical: `${siteConfig.url}/gallery`,
+  },
+  openGraph: {
+    title: 'VIP Escort Gallery | Verified Call Girls in Gurgaon | ALINA VIP',
+    description: 'View verified photos of our luxury escorts in Gurgaon. Russian call girls, VIP models, independent escorts. 100% genuine, photo-authenticated profiles.',
+    url: `${siteConfig.url}/gallery`,
+    type: 'website',
+  },
+};
 
 const categoryImages: Record<string, string> = {
   'russian-call-girls': '/images/gallery/russian-escorts.webp',

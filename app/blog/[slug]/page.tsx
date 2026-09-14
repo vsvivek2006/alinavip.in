@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const title = `${post.title} | Escort Service Blog | ALINA VIP`;
   const description = post.excerpt;
-  const canonicalUrl = `https://escort.alinavip.com/blog/${post.slug}`;
+  const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const ogImageUrl = post.image
     ? post.image.startsWith('http')
       ? post.image

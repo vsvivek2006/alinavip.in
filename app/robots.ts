@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/api/'],
       crawlDelay: 1,
     },
-    sitemap: 'https://escort.alinavip.com/sitemap.xml',
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }

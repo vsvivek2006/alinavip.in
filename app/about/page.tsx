@@ -1,17 +1,3 @@
-export const metadata: Metadata = {
-  title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
-  description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
-  alternates: {
-    canonical: 'https://escort.alinavip.com/about',
-  },
-  openGraph: {
-    title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
-    description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
-    url: 'https://escort.alinavip.com/about',
-    type: 'website',
-  },
-};
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,6 +18,20 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
+  description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+  openGraph: {
+    title: 'About Us | Premium Luxury Escort Agency in Gurgaon | ALINA VIP',
+    description: 'Learn about ALINA VIP, Gurgaon\'s premier luxury escort agency. 10+ years of excellence, 100% verified call girls, strict confidentiality & elite escort services.',
+    url: `${siteConfig.url}/about`,
+    type: 'website',
+  },
+};
 
 export default function AboutPage() {
   return (

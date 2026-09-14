@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
     location.slug === 'gurgaon'
       ? 'Gurgaon central outcall directory and VIP escort service. Verified call girls, luxury hotel outcalls, 20-30 min arrival across Cyber City, DLF & Golf Course Rd.'
       : location.metaDescription;
-  const canonicalUrl = `https://escort.alinavip.com/locations/${location.slug}`;
+  const canonicalUrl = `${siteConfig.url}/locations/${location.slug}`;
 
   return {
     title,

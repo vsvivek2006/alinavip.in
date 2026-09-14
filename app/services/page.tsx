@@ -1,19 +1,3 @@
-export const metadata: Metadata = {
-  title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
-  description:
-    'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
-  alternates: {
-    canonical: 'https://escort.alinavip.com/services',
-  },
-  openGraph: {
-    title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
-    description:
-      'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
-    url: 'https://escort.alinavip.com/services',
-    type: 'website',
-  },
-};
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -39,6 +23,22 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import { siteConfig } from '@/data/siteConfig';
 import { services } from '@/data/content';
 import { categories } from '@/data/categories';
+
+export const metadata: Metadata = {
+  title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
+  description:
+    'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
+  alternates: {
+    canonical: `${siteConfig.url}/services`,
+  },
+  openGraph: {
+    title: 'Our Escort Services in Gurgaon | Service Categories | ALINA VIP',
+    description:
+      'Explore our full range of luxury escort services in Gurgaon. Russian call girls, VIP escorts, models, college girls & celebrity escorts. Available 24/7.',
+    url: `${siteConfig.url}/services`,
+    type: 'website',
+  },
+};
 
 const serviceIcons: Record<string, React.ElementType> = {
   'dinner-escort-service': UtensilsCrossed,

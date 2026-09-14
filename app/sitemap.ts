@@ -3,8 +3,9 @@ import { locations } from '@/data/locations';
 import { categories } from '@/data/categories';
 import { blogPosts } from '@/data/blogs';
 import { isLocationIndexable } from '@/data/locationManifest';
+import { siteConfig } from '@/data/siteConfig';
 
-const BASE_URL = 'https://escort.alinavip.com';
+const BASE_URL = siteConfig.url;
 const SITE_RELEASE_DATE = new Date('2026-09-01T00:00:00.000Z');
 const ENRICHMENT_UPDATE_DATE = new Date('2026-09-13T07:30:00.000Z');
 

@@ -1,22 +1,24 @@
+import type { Metadata } from 'next';
+import { siteConfig, generalFaqs } from '@/data/siteConfig';
+
 export const metadata: Metadata = {
   title: 'Escort Service in Gurgaon | VIP Call Girls | ALINA VIP',
   description:
     'ALINA VIP provides elite, verified escort services and VIP call girls across Gurgaon and Delhi NCR. 100% discreet, professional hotel and residential outcalls.',
   alternates: {
-    canonical: 'https://escort.alinavip.com',
+    canonical: siteConfig.url,
   },
   openGraph: {
     title: 'Escort Service in Gurgaon | VIP Call Girls | ALINA VIP',
     description:
       'ALINA VIP provides elite, verified escort services and VIP call girls across Gurgaon and Delhi NCR. 100% discreet, professional hotel and residential outcalls.',
-    url: 'https://escort.alinavip.com',
+    url: siteConfig.url,
     type: 'website',
   },
 };
 
 import Link from 'next/link';
 import Image from 'next/image';
-import type { Metadata } from 'next';
 import HomeBookingForm from '@/components/HomeBookingForm';
 import {
   Phone,
@@ -44,7 +46,6 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import { siteConfig, generalFaqs } from '@/data/siteConfig';
 import { categories } from '@/data/categories';
 import { services } from '@/data/content';
 import { blogPosts } from '@/data/blogs';
@@ -420,7 +421,7 @@ export default function HomePage() {
                   href={siteConfig.url}
                   className="text-gold-600 hover:text-gold-700 font-semibold flex items-center gap-2 text-sm"
                 >
-                  Visit escort.alinavip.com <ArrowRight size={16} />
+                  Visit {siteConfig.domain} <ArrowRight size={16} />
                 </a>
               </div>
             </div>
@@ -958,7 +959,7 @@ export default function HomePage() {
                   href={siteConfig.url}
                   className="text-gold-600 hover:text-gold-700 font-semibold flex items-center gap-2"
                 >
-                  Visit escort.alinavip.com <ArrowRight size={16} />
+                  Visit {siteConfig.domain} <ArrowRight size={16} />
                 </a>
               </div>
             </div>
