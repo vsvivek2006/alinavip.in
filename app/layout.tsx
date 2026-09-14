@@ -1,10 +1,17 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Jost } from 'next/font/google';
+import { Cormorant_Garamond, Jost, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { siteConfig } from '@/data/siteConfig';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -22,11 +29,12 @@ const jost = Jost({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'ALINA VIP | Premium Luxury Escort Service in Gurgaon',
+    default: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
     template: '%s',
   },
   description:
-    'ALINA VIP offers premium luxury escort service in Gurgaon. Verified profiles, VIP escorts, Russian call girls, 100% discreet hotel & residence outcalls. Available 24/7.',
+    'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
+  keywords: siteConfig.keywords,
   applicationName: 'ALINA VIP',
   authors: [{ name: 'ALINA VIP' }],
   generator: 'Next.js',
@@ -51,23 +59,23 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: siteConfig.url,
     siteName: 'ALINA VIP',
-    title: 'ALINA VIP | Premium Luxury Escort Service in Gurgaon',
+    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
     description:
-      'ALINA VIP offers premium luxury escort service in Gurgaon. Verified profiles, VIP escorts, Russian call girls, 100% discreet hotel & residence outcalls.',
+      'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
     images: [
       {
         url: `${siteConfig.url}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'ALINA VIP Luxury Escort Service in Gurgaon',
+        alt: 'ALINA VIP Escort Service in Gurgaon Gurugram',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ALINA VIP | Premium Luxury Escort Service in Gurgaon',
+    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
     description:
-      'ALINA VIP offers premium luxury escort service in Gurgaon. Verified profiles, VIP escorts, Russian call girls, 100% discreet hotel & residence outcalls.',
+      'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
     images: [`${siteConfig.url}/og-image.jpg`],
   },
   verification: {
@@ -90,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${cormorant.variable} ${jost.variable}`}>
       <body className="bg-charcoal-900 text-charcoal-100 font-sans antialiased">
         <div className="min-h-screen flex flex-col bg-luxury-gradient overflow-x-hidden">
           <Header />

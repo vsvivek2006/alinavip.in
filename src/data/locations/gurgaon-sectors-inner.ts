@@ -329,7 +329,7 @@ export const gurgaonSectorsInner: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 22 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Serene, Low-Density Setting', desc: 'Ideal environment for relaxed, unhurried companionship experiences.' },
+      { title: 'Serene, Low-Density Setting', desc: 'Ideal environment for relaxed, unhurried call girls experiences.' },
       { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
       { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your home or guesthouse.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
@@ -601,7 +601,7 @@ export const gurgaonSectorsInner: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 40 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Quiet, Low-Density Setting', desc: 'Ideal environment for relaxed, private companionship.' },
+      { title: 'Quiet, Low-Density Setting', desc: 'Ideal environment for relaxed, private call girls & escorts.' },
       { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
       { title: 'Fast 25-30 Minute Arrival', desc: 'Companions arrive promptly at your home or guesthouse.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },

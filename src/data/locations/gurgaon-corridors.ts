@@ -285,7 +285,7 @@ export const gurgaonCorridors: LocationData[] = [
       ],
     },
     faqs: [
-      { question: 'Do you provide companionship services to Ambience Caitriona in Phase 3?', answer: 'Yes, we frequently arrange outcall services to the ultra-luxury condominiums at Ambience Caitriona with strict adherence to concierge protocols.' },
+      { question: 'Do you provide escort services to Ambience Caitriona in Phase 3?', answer: 'Yes, we frequently arrange outcall services to the ultra-luxury condominiums at Ambience Caitriona with strict adherence to concierge protocols.' },
       { question: 'Can companions reach DLF Phase 3 during late-night hours?', answer: 'Yes, ALINA VIP operates 24/7 and we can dispatch companions to DLF Phase 3 at any hour of the night within 30 to 45 minutes.' },
       { question: 'Are air hostess companions available in this area?', answer: 'Yes, due to our proximity to the IGI Airport and Aerocity, we feature polished air hostess companions who are frequently available in DLF Phase 3.' },
       { question: 'Is advance booking necessary?', answer: 'While short-notice bookings are welcome, booking 1 to 2 hours in advance ensures the broadest selection of companion profiles.' },
@@ -1327,7 +1327,7 @@ export const gurgaonCorridors: LocationData[] = [
         },
         {
           title: 'Multi-Day & Weekend Availability',
-          desc: 'We specialize in extended weekend bookings, offering continuous companionship for 24 to 72 hour staycations.',
+          desc: 'We specialize in extended weekend bookings, offering continuous escort services for 24 to 72 hour staycations.',
         },
         {
           title: 'Complete Privacy in Secluded Resorts',
@@ -1365,7 +1365,7 @@ export const gurgaonCorridors: LocationData[] = [
     faqs: [
       { question: 'Do you provide companion outcalls to ITC Grand Bharat in Manesar?', answer: 'Yes, we frequently arrange luxury companion outcalls to guests staying at the palatial suites and pool villas of ITC Grand Bharat with complete discretion.' },
       { question: 'What is the travel time for a companion to reach Manesar?', answer: 'Companions travel via the NH-48 expressway from Gurgaon and typically arrive at Manesar resorts within 45 to 60 minutes of confirmation.' },
-      { question: 'Can I book a companion for an entire weekend at Heritage Village Resort?', answer: 'Yes, we specialize in multi-day and weekend companionship packages for staycations at Heritage Village Resort and Karma Lakelands.' },
+      { question: 'Can I book a companion for an entire weekend at Heritage Village Resort?', answer: 'Yes, we specialize in multi-day and weekend escort packages for staycations at Heritage Village Resort and Karma Lakelands.' },
       { question: 'Are Russian companions available for Manesar resort bookings?', answer: 'Yes, our verified Russian and European companions are available for resort getaways and golf weekends in Manesar.' },
     ],
     relatedGuides: [

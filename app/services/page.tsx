@@ -25,16 +25,17 @@ import { services } from '@/data/content';
 import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escort Services & Companion Packages | ALINA VIP India',
+  title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service ALINA VIP',
   description:
-    'Browse luxury escort services and verified companion packages in Gurgaon. Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
+    'Browse luxury escort service packages in Gurgaon (Gurugram). Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
+  keywords: siteConfig.keywords,
   alternates: {
     canonical: `${siteConfig.url}/services`,
   },
   openGraph: {
-    title: 'Gurgaon Escort Services & Companion Packages | ALINA VIP India',
+    title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service ALINA VIP',
     description:
-      'Browse luxury escort services and verified companion packages in Gurgaon. Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
+      'Browse luxury escort service packages in Gurgaon (Gurugram). Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
     url: `${siteConfig.url}/services`,
     type: 'website',
   },
@@ -80,10 +81,10 @@ export default function ServicesPage() {
             ★ Services &amp; Packages
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Elite Companionship &amp; <span className="text-gradient-gold">Escort Services</span>
+            VIP Escorts Service in <span className="text-gradient-gold">Gurgaon (Gurugram)</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-gold-400 font-semibold">ALINA VIP India</strong> delivers distinguished companion experiences tailored for elite gentlemen across Gurgaon and Delhi NCR. Browse verified profiles across specialized categories including{' '}
+            <strong className="text-gold-400 font-semibold">ALINA VIP India</strong> delivers the premier <Link href="/services" className="text-gold-400 hover:underline font-medium">escort service in Gurgaon</Link> (Gurugram) tailored for elite gentlemen and corporate executives. Browse verified profiles across specialized categories including{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
               Russian call girls
             </Link>
@@ -93,9 +94,9 @@ export default function ServicesPage() {
             </Link>
             , and{' '}
             <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">
-              VIP companions
+              VIP call girls
             </Link>
-            . Each rendezvous is delivered with uncompromising discretion and professional hospitality.
+            . Each rendezvous is delivered with uncompromising discretion, zero advance charges, and 20-30 min hotel dispatch.
           </p>
           <div className="gold-divider mx-auto mt-8" />
 

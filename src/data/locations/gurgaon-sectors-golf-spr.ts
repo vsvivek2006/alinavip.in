@@ -513,7 +513,7 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 59 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Secluded Luxury Setting', desc: 'Ideal environment for relaxed, private companionship.' },
+      { title: 'Secluded Luxury Setting', desc: 'Ideal environment for relaxed, private call girls & escorts.' },
       { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
       { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your private residence.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
@@ -1101,7 +1101,7 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 77 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Secluded Nature-Surrounded Luxury', desc: 'Ideal environment for relaxed, private companionship.' },
+      { title: 'Secluded Nature-Surrounded Luxury', desc: 'Ideal environment for relaxed, private call girls & escorts.' },
       { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
       { title: 'Fast 30-40 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },

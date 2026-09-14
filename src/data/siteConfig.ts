@@ -7,8 +7,26 @@ export const siteConfig = {
   address: 'DLF Phase 3, Golf Course Road, Gurgaon, Haryana 122002, India',
   url: 'https://alinavip.in',
   domain: 'alinavip.in',
-  tagline: 'Elite Gurgaon Escorts & Luxury Call Girls',
-  description: 'ALINA VIP is Gurgaon\'s premier agency for authentic, high-profile call girls and VIP escorts. Providing discreet, rapid 5-star hotel & residence outcalls across DLF, Cyber City, and Golf Course Road.',
+  tagline: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service',
+  description: 'ALINA VIP is the leading escort service in Gurgaon (Gurugram). Providing 100% verified VIP escorts service, high-profile call girls, and discreet 20-30 min 5-star hotel and residence outcalls across DLF, Cyber City, and Golf Course Road.',
+  keywords: [
+    'escort service in gurgaon',
+    'escorts service in gurgaon',
+    'escort service in gurugram',
+    'escorts service in gurugram',
+    'escort service in gurugaon',
+    'escorts service in gurugaon',
+    'gurgaon escort service',
+    'gurugram escort service',
+    'vip escorts service in gurgaon',
+    'luxury escort service gurgaon',
+    'call girls in gurgaon',
+    'call girls in gurugram',
+    'call girls gurgaon',
+    'escorts in gurgaon',
+    'escort agency gurgaon',
+    'hotel outcall escort service gurgaon',
+  ],
   socialLinks: [
     { name: 'Instagram', url: 'https://instagram.com/alinavip', icon: 'Instagram' },
     { name: 'Twitter', url: 'https://twitter.com/gurgaonescort', icon: 'Twitter' },
@@ -18,8 +36,12 @@ export const siteConfig = {
 
 export const generalFaqs = [
   {
-    question: 'What makes ALINA VIP Gurgaon’s premier escort agency?',
-    answer: 'ALINA VIP sets the benchmark for luxury companionship in Gurgaon and Delhi NCR. We connect high-achieving executives, business travellers, and distinguished gentlemen with authenticated, refined female companions for upscale social occasions, corporate galas, private dining, and confidential suite visits.',
+    question: 'What makes ALINA VIP the leading escort service in Gurgaon (Gurugram)?',
+    answer: 'ALINA VIP is recognized as the top escort service in Gurgaon (Gurugram) because of our 100% genuine photo verification, zero upfront charges (Cash on Delivery), elite models (Russian call girls, high-profile models, independent escorts), and ironclad discretion. Whether in Gurgaon or Gurugram, our models arrive in discreet executive transport directly to your 5-star hotel suite or private residence within 20-30 minutes.',
+  },
+  {
+    question: 'Is your escort service available across both Gurgaon and Gurugram?',
+    answer: 'Yes, absolutely. Gurgaon and Gurugram are the exact same city (officially renamed Gurugram in 2016, though clients and executives commonly search for Gurgaon, Gurugram, and Gurugaon). ALINA VIP covers all sectors and corridors of Gurgaon/Gurugram including DLF Phases 1 to 5, Cyber City, Cyber Hub, Golf Course Road, Golf Course Extension Road, Sohna Road, and Sector 29.',
   },
   {
     question: 'How can I reserve a luxury companion in Gurgaon?',
@@ -50,8 +72,8 @@ export const generalFaqs = [
     answer: 'Yes. Selected companions are available for domestic trips, outstation corporate retreats, and international holidays. Inquire with our desk regarding travel itineraries, advance scheduling, and comprehensive multi-day packages.',
   },
   {
-    question: 'What are the pricing rates for companionship services?',
-    answer: 'Our rates are competitive and commensurate with the elite tier of verified companions we represent. Rates depend on the category, meeting duration, and event type. Contact our private concierge at +91-9996265679 for transparent, all-inclusive rate guidance.',
+    question: 'What are the pricing rates for call girls and escort girls?',
+    answer: 'Our rates are competitive and commensurate with the elite tier of verified call girls and escort girls we represent. Rates depend on the category, meeting duration, and event type. Contact our private concierge at +91-9996265679 for transparent, all-inclusive rate guidance.',
   },
   {
     question: 'What payment options do you support?',

@@ -20,16 +20,17 @@ import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About ALINA VIP India | Premier Gurgaon Escort Agency & VIP Call Girls',
+  title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',
   description:
-    'Discover the legacy of ALINA VIP India. Over a decade of excellence in luxury companionship, 100% verified call girls, strict confidentiality & 5-star hotel outcalls in Gurgaon.',
+    'Discover the legacy of ALINA VIP India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
+  keywords: siteConfig.keywords,
   alternates: {
     canonical: `${siteConfig.url}/about`,
   },
   openGraph: {
-    title: 'About ALINA VIP India | Premier Gurgaon Escort Agency & VIP Call Girls',
+    title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',
     description:
-      'Discover the legacy of ALINA VIP India. Over a decade of excellence in luxury companionship, 100% verified call girls, strict confidentiality & 5-star hotel outcalls in Gurgaon.',
+      'Discover the legacy of ALINA VIP India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
     url: `${siteConfig.url}/about`,
     type: 'website',
   },
@@ -54,7 +55,7 @@ export default function AboutPage() {
               The Story of <span className="text-gradient-gold">ALINA VIP India</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Gurgaon&apos;s leading high-end escort agency, connecting discerning executives and travellers with authenticated companions,{' '}
+              Gurgaon (Gurugram)&apos;s leading high-end <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service</Link>, connecting discerning executives and travellers with authenticated call girls,{' '}
               <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
                 Russian call girls
               </Link>

@@ -15,13 +15,13 @@ export default function CTASection() {
         </span>
 
         <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
-          Reserve Your Private <span className="text-gradient-gold font-normal">Rendezvous in Gurgaon</span>
+          Reserve Premier <span className="text-gradient-gold font-normal">Escort Service in Gurgaon</span>
         </h2>
 
         <div className="gold-divider mx-auto mb-6" />
 
         <p className="text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed text-base md:text-lg font-light">
-          Experience the pinnacle of luxury companionship with ALINA VIP India. Our private concierge desk coordinates in-person verified call girls, Russian models, and elite companions for confidential 5-star hotel suite and residential outcalls across Gurgaon and Delhi NCR.
+          Experience the pinnacle of luxury with ALINA VIP India—the #1 rated <Link href="/services" className="text-gold-400 hover:underline font-medium">escort service in Gurgaon</Link> (Gurugram). Our private concierge coordinates in-person verified <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">VIP call girls</Link>, Russian models, and elite escorts for confidential 5-star hotel suite and residential outcalls across Gurgaon, Gurugram, and Delhi NCR.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">

@@ -708,7 +708,7 @@ export const regionalNcrHubs: LocationData[] = [
     faqs: [
       { question: 'Do you deliver outcalls to Radisson Blu Faridabad and Vivanta Surajkund?', answer: 'Yes, Radisson Blu Faridabad in Sector 20 and Vivanta Surajkund are our most frequently served luxury properties in Faridabad.' },
       { question: 'How quickly can a companion arrive in Faridabad?', answer: 'Companions travel via the Gurgaon-Faridabad Road or Mathura Road and generally arrive within 35 to 45 minutes of confirmation.' },
-      { question: 'Are companions available for weekend staycations in Surajkund?', answer: 'Yes, we specialize in weekend companionship packages for resort retreats in Surajkund.' },
+      { question: 'Are companions available for weekend staycations in Surajkund?', answer: 'Yes, we specialize in weekend escort packages for resort retreats in Surajkund.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Vivanta Surajkund: Foothill Luxury Review', excerpt: 'Review of five-star resort hospitality in Surajkund, Faridabad.' },

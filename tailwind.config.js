@@ -30,7 +30,8 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['var(--font-cormorant)', '"Cormorant Garamond"', 'Georgia', 'serif'],
+        serif: ['var(--font-playfair)', '"Playfair Display"', 'Georgia', 'serif'],
+        cormorant: ['var(--font-cormorant)', '"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['var(--font-jost)', '"Jost"', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {

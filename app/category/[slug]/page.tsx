@@ -400,10 +400,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   Discreet Outcall Coordination Across Gurgaon
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  We specialize in prompt, confidential outcall dispatch to all luxury destinations across Gurgaon, including DLF Phase 1–5, Cyber City, Golf Course Road, Sohna Road, MG Road, and Aerocity. Our escorts arrive punctually via private executive transport, blending seamlessly into high-end hotel lobbies and private residential complexes.
+                  We specialize in prompt, confidential outcall dispatch to all luxury destinations across Gurgaon, including DLF Phase 1–5, <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>, <Link href="/locations/golf-course-road" className="text-gold-600 hover:underline font-medium">Golf Course Road</Link>, Sohna Road, MG Road, and <Link href="/locations/aerocity" className="text-gold-600 hover:underline font-medium">Aerocity</Link>. Our verified escort girls arrive punctually via private executive transport, blending seamlessly into high-end hotel lobbies and private residential complexes.
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  To ensure complete trust, ALINA VIP adheres to a strict zero-advance policy: you settle the agreed companionship fee directly in person upon arrival. Your personal details, contact number, and booking records are never shared, logged, or retained, guaranteeing complete peace of mind.
+                  To ensure complete trust, ALINA VIP adheres to a strict zero-advance policy: you settle the agreed call girl or escort fee directly in person upon arrival. Your personal details, contact number, and booking records are never shared, logged, or retained, guaranteeing complete peace of mind.
                 </p>
               </div>
 

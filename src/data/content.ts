@@ -55,9 +55,9 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: 'dinner-escort-service',
-    title: 'Fine Dining Companionship',
-    shortDescription: 'Elegant, statuesque companions for romantic dinners and Michelin-grade dining.',
-    description: 'Elevate your culinary evenings with a glamorous, articulate companion well-versed in high-end restaurant etiquette. Whether dining at DLF CyberHub, Horizon Plaza, or an intimate private table at The Oberoi, our companions bring effortless grace, magnetic charm, and captivating conversation.',
+    title: 'Fine Dining Escort Girls',
+    shortDescription: 'Elegant, statuesque escort girls for romantic dinners and Michelin-grade dining.',
+    description: 'Elevate your culinary evenings with a glamorous, articulate escort girl well-versed in high-end restaurant etiquette. Whether dining at DLF CyberHub, Horizon Plaza, or an intimate private table at The Oberoi, our models bring effortless grace, magnetic charm, and captivating conversation.',
     icon: 'UtensilsCrossed',
   },
   {
@@ -77,21 +77,21 @@ export const services: Service[] = [
   {
     slug: 'party-escort-service',
     title: 'VIP Nightlife & Lounge Accompaniment',
-    shortDescription: 'Vivacious, high-energy companions for premier cocktail lounges and private parties.',
+    shortDescription: 'Vivacious, high-energy escort girls for premier cocktail lounges and private parties.',
     description: 'Experience Gurgaon’s vibrant nightlife with a gorgeous, fun-loving partner. From exclusive rooftop lounges in Sector 29 to private farmhouse pool parties, our companions bring joyful energy, dazzling smiles, and sophisticated revelry.',
     icon: 'PartyPopper',
   },
   {
     slug: 'business-escort-service',
-    title: 'Corporate Executive Companionship',
-    shortDescription: 'Educated, professional companions for business conventions and corporate entertainment.',
+    title: 'Corporate Executive Call Girls',
+    shortDescription: 'Educated, professional call girls for business conventions and corporate entertainment.',
     description: 'Tailored for senior executives, business tycoons, and visiting multinational directors. Our corporate companions possess university backgrounds, sharp intellect, and flawless English fluency, making them ideal partners for business dinners and corporate retreats.',
     icon: 'Briefcase',
   },
   {
     slug: 'private-escort-service',
     title: 'Private Hotel Suite Outcalls',
-    shortDescription: 'Discreet, unhurried companionship in the sanctuary of your 5-star hotel suite or home.',
+    shortDescription: 'Discreet, unhurried call girls and escort girls in the sanctuary of your 5-star hotel suite or home.',
     description: 'Unwind in total serenity with our confidential private escort service. Delivered directly to your five-star hotel room or private penthouse in Gurgaon, this service focuses on intimate relaxation, emotional warmth, and total sensory rejuvenation without time pressures.',
     icon: 'Lock',
   },

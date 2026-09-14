@@ -61,19 +61,22 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   const title =
     location.slug === 'gurgaon'
-      ? 'Gurgaon Escort Service Directory & Local Areas | ALINA VIP India'
+      ? 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP'
       : location.region === 'Gurgaon'
-      ? `Escort Service in ${location.name}, Gurgaon | VIP Call Girls | ALINA VIP India`
+      ? `Escort Service in ${location.name}, Gurgaon (Gurugram) | ALINA VIP`
       : location.metaTitle;
   const description =
     location.slug === 'gurgaon'
-      ? 'Gurgaon central outcall directory and VIP escort service by ALINA VIP India. Verified call girls, luxury hotel outcalls, 20-30 min arrival across Cyber City, DLF & Golf Course Rd.'
+      ? 'Book premier escort service in Gurgaon (Gurugram). ALINA VIP provides verified call girls and VIP escorts service with discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.'
+      : location.region === 'Gurgaon'
+      ? `Discreet 24/7 escort service in ${location.name}, Gurgaon (Gurugram). Verified VIP call girls, Russian models, and 20-30 min 5-star hotel outcalls with ALINA VIP.`
       : location.metaDescription;
   const canonicalUrl = `${siteConfig.url}/locations/${location.slug}`;
 
   return {
     title,
     description,
+    keywords: siteConfig.keywords,
     robots: {
       index: isIndexable,
       follow: true,
@@ -237,7 +240,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                         <strong>ALINA VIP</strong> provides premier luxury escort services in {location.name}, one of the most distinguished areas in {location.city}. Known for its upscale lifestyle and vibrant commercial landscape, {location.name} attracts discerning gentlemen who demand discretion, elegance, and authentic hospitality.
                       </p>
                       <p>
-                        Whether staying at premier five-star luxury suites or hosting private dinners, our verified escorts provide charismatic social accompaniment tailored to your highest expectations.
+                        Whether staying at premier five-star luxury suites or hosting private dinners, our verified <Link href="/category/vip-call-girls" className="text-gold-600 hover:underline font-medium">VIP call girls</Link> and <Link href="/services" className="text-gold-600 hover:underline font-medium">escort girls</Link> provide charismatic social presence tailored to your highest expectations.
                       </p>
                     </>
                   )}
