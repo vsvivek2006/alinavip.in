@@ -47,7 +47,7 @@ function createSectorPage(data: {
       landmarks: data.landmarks,
       commercialProfile: data.commercialProfile,
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: data.optionsOverview,
       options: data.options,
     },
@@ -74,7 +74,7 @@ function createSectorPage(data: {
         { step: '01', title: `Explore ${data.name} Profiles`, desc: 'Browse our authenticated gallery of verified models, VIP call girls, and independent call girls.' },
         { step: '02', title: 'Private Concierge Line', desc: 'Call +91-9996265679 or message on WhatsApp with your location and preferred schedule.' },
         { step: '03', title: 'Fast Dispatch Confirmation', desc: 'Our concierge confirms scheduling, coordinates chauffeur transit, and provides arrival timing.' },
-        { step: '04', title: 'Elegant Luxury Encounter', desc: `Welcome your companion at your ${data.name} residence or hotel suite for a memorable private experience.` },
+        { step: '04', title: 'Elegant Luxury Encounter', desc: `Welcome your call girl at your ${data.name} residence or hotel suite for a memorable private experience.` },
       ],
     },
     faqs: data.faqs,
@@ -104,9 +104,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 50 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Nirvana Country Protocol Familiarity', desc: 'Companions understand gated visitor verification for smooth, quiet entry.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your home or hotel suite.' },
+      { title: 'Nirvana Country Protocol Familiarity', desc: 'Call Girls understand gated visitor verification for smooth, quiet entry.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your home or hotel suite.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Golf Course Extension Road, Sohna Road, and Vikas Marg. Rapid Metro Sector 55-56 is 7 minutes away.',
@@ -121,8 +121,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-49', 'sector-51', 'sector-56', 'golf-course-extension-road', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Nirvana Country in Sector 50?', answer: 'Yes, Nirvana Country is one of our primary served luxury gated communities in Sector 50 with complete discretion.' },
-      { question: 'Can a companion join me for dinner at Baani Square?', answer: 'Yes, our companions are stylish and socially poised, perfect for dining at Baani Square restaurants.' },
-      { question: 'How quickly can a companion arrive in Sector 50?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Baani Square?', answer: 'Yes, our call girls are stylish and socially poised, perfect for dining at Baani Square restaurants.' },
+      { question: 'How quickly can a call girl arrive in Sector 50?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Dining at Baani Square & Sector 50', excerpt: 'Guide to the best restaurants and cafes in Sector 50.' },
@@ -150,8 +150,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 51 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct Access to Artemis Corridor', desc: 'Companions arrive within 25 to 30 minutes from our central team.' },
-      { title: 'Empathetic, Educated Companions', desc: 'Our ladies are cultured, warm, and skilled in meaningful conversation.' },
+      { title: 'Direct Access to Artemis Corridor', desc: 'Call Girls arrive within 25 to 30 minutes from our central team.' },
+      { title: 'Empathetic, Educated Call Girls', desc: 'Our ladies are cultured, warm, and skilled in meaningful conversation.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
@@ -168,7 +168,7 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     faqs: [
       { question: 'Do you deliver outcalls to serviced guest residences near Artemis Hospital in Sector 51?', answer: 'Yes, we regularly arrange discreet outcalls to serviced apartments and private suites catering to healthcare consultants and visitors around Artemis Hospital.' },
       { question: 'What are the visitor procedures for private condominiums within Mayfield Garden?', answer: 'Our chauffeurs arrive directly at the requested block gatehouse in Mayfield Garden. We coordinate entrance verification via the resident visitor management system.' },
-      { question: 'Which dining and lounge venues near Sector 51 are recommended for social dates?', answer: 'Companions can join you for relaxed evening drinks and dinner at nearby Baani Square or the open-air courtyards along Golf Course Extension Road.' },
+      { question: 'Which dining and lounge venues near Sector 51 are recommended for social dates?', answer: 'Call Girls can join you for relaxed evening drinks and dinner at nearby Baani Square or the open-air courtyards along Golf Course Extension Road.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Relaxed First Dates in Central Gurgaon', excerpt: 'Tips for casual dining and coffee dates near Sector 51.' },
@@ -195,9 +195,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 52 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Minutes from Golf Course Road', desc: 'Companions arrive within 20 to 25 minutes from our central team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Minutes from Golf Course Road', desc: 'Call Girls arrive within 20 to 25 minutes from our central team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Seamless access to Golf Course Road via St. Thomas Marg and Vikas Marg. Sector 53-54 Rapid Metro Station is within 5 minutes.',
@@ -212,8 +212,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-43', 'sector-53', 'sector-51', 'golf-course-road', 'sushant-lok'],
     faqs: [
       { question: 'Do you deliver outcalls to Ardee City in Sector 52?', answer: 'Yes, we regularly provide discrete outcalls to homes and apartments in Ardee City.' },
-      { question: 'How quickly can a companion arrive in Sector 52?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 52?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 52?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 52?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Golf Course Road', excerpt: 'Tips for relaxed coffee dates and dining in Sector 52.' },
@@ -240,9 +240,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 53 demand the highest standards of beauty, intellect, and reliability—standards ALINA VIP delivers consistently.',
     reasons: [
-      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian companions, and articulate hostesses.' },
+      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian call girls, and articulate hostesses.' },
       { title: 'Rapid 20-25 Minute Arrival', desc: 'Stationed right on Golf Course Road for the fastest dispatch.' },
-      { title: 'Complete Gated Security Discretion', desc: 'Companions arrive in discreet private vehicles and navigate security smoothly.' },
+      { title: 'Complete Gated Security Discretion', desc: 'Call Girls arrive in discreet private vehicles and navigate security smoothly.' },
       { title: 'Zero Digital Trail', desc: 'Strict non-disclosure standards with all data purged post-session.' },
     ],
     connectivity: 'Direct frontage on the 16-lane Golf Course Road expressway. Sector 53-54 Rapid Metro Station is located directly in the sector.',
@@ -252,13 +252,13 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     residentialEstates: ['Sector 53 Luxury Towers', 'Saraswati Kunj (adjacent)', 'The Camellias (opposite in Phase 5)'],
     corporateParks: ['One Horizon Center (opposite)', 'South Point Corporate Suites', 'Central Plaza Offices'],
     privacyOverview: 'We maintain the highest privacy standards for our high-profile Sector 53 clientele.',
-    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Companions dressed in designer cocktail or evening attire'],
+    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Call Girls dressed in designer cocktail or evening attire'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'high-profile-girls', 'celebrity-escorts'],
     nearbyAreas: ['dlf-phase-5', 'golf-course-road', 'sector-54', 'sector-43', 'sector-52'],
     faqs: [
       { question: 'Do you deliver outcalls to luxury residences in Sector 53?', answer: 'Yes, we regularly provide outcalls to high-rise towers and luxury apartments in Sector 53.' },
-      { question: 'How quickly can an escort reach Sector 53?', answer: 'Companions can arrive at any Sector 53 property within 20 to 25 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 53?', answer: 'Yes, our verified Russian and European companions are available for outcalls along Golf Course Road in Sector 53.' },
+      { question: 'How quickly can an escort reach Sector 53?', answer: 'Call Girls can arrive at any Sector 53 property within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 53?', answer: 'Yes, our verified Russian and European call girls are available for outcalls along Golf Course Road in Sector 53.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Fine Dining opposite Sector 53 at Horizon Center', excerpt: 'Explore the best restaurants and lounges near Sector 53.' },
@@ -286,8 +286,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 54 trust ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Suncity Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
+      { title: 'Suncity Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
       { title: 'Fast 20-30 Minute Arrival', desc: 'Located right off Sector 54 Chowk for swift dispatch.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
@@ -298,13 +298,13 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     residentialEstates: ['Suncity Luxury Township', 'Suncity Heights Condominiums', 'Sector 54 Plotted Villas'],
     corporateParks: ['Suncity Business Tower', 'One Horizon Center (nearby)', 'Platina Tower (nearby)'],
     privacyOverview: 'We maintain strict privacy protocols in Sector 54 to protect client discretion in gated communities.',
-    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct villa-door rendezvous to eliminate visibility', 'Companions dressed in refined cocktail or evening wear'],
+    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct villa-door rendezvous to eliminate visibility', 'Call Girls dressed in refined cocktail or evening wear'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'high-profile-girls', 'independent-girls'],
     nearbyAreas: ['dlf-phase-5', 'golf-course-road', 'sector-53', 'sector-55', 'sector-56'],
     faqs: [
       { question: 'Do you deliver outcalls to Suncity in Sector 54?', answer: 'Yes, Suncity is one of our most frequently served luxury gated communities in Sector 54.' },
-      { question: 'How quickly can a companion arrive in Sector 54?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 54?', answer: 'Yes, we offer verified Russian and European companions who are popular for bookings in Sector 54.' },
+      { question: 'How quickly can a call girl arrive in Sector 54?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 54?', answer: 'Yes, we offer verified Russian and European call girls who are popular for bookings in Sector 54.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Dining along Golf Course Road', excerpt: 'Guide to premier restaurants near Sector 54.' },
@@ -332,9 +332,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 55 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Rapid Metro Terminal Access', desc: 'Companions arrive within 20 to 25 minutes from our central team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Rapid Metro Terminal Access', desc: 'Call Girls arrive within 20 to 25 minutes from our central team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly at the Sector 55-56 Rapid Metro station. Connects Golf Course Road to Golf Course Extension Road and Gurgaon-Faridabad Highway.',
@@ -349,8 +349,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-54', 'sector-56', 'sector-57', 'golf-course-road', 'golf-course-extension-road'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in Sector 55?', answer: 'Yes, we provide discreet outcalls to homes and apartments throughout Sector 55.' },
-      { question: 'How quickly can a companion arrive in Sector 55?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 55?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 55?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 55?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near the Aravallis', excerpt: 'Tips for relaxed coffee dates and dining in Sector 55.' },
@@ -377,9 +377,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 56 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Rapid Metro Proximity', desc: 'Companions arrive within 20 to 25 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Approachable, Lively Companions', desc: 'Our ladies are fun, warm, and skilled in social conversation.' },
+      { title: 'Rapid Metro Proximity', desc: 'Call Girls arrive within 20 to 25 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Approachable, Lively Call Girls', desc: 'Our ladies are fun, warm, and skilled in social conversation.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Exceptional transit via the Sector 55-56 Rapid Metro terminal. Direct road links to Golf Course Road, Golf Course Extension, and Gurgaon-Faridabad Road.',
@@ -394,8 +394,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-55', 'sector-57', 'sector-54', 'golf-course-extension-road', 'sector-59'],
     faqs: [
       { question: 'Do you deliver outcalls to Kendriya Vihar in Sector 56?', answer: 'Yes, we provide discreet outcalls to apartments throughout Kendriya Vihar and surrounding societies in Sector 56.' },
-      { question: 'Can a companion join me for food in Sector 56 Market?', answer: 'Yes! Our companions are lively and casual, perfect for enjoying the famous food street at Sector 56 HUDA Market.' },
-      { question: 'How quickly can a companion arrive in Sector 56?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for food in Sector 56 Market?', answer: 'Yes! Our call girls are lively and casual, perfect for enjoying the famous food street at Sector 56 HUDA Market.' },
+      { question: 'How quickly can a call girl arrive in Sector 56?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual Food Dates in Sector 56', excerpt: 'Guide to exploring the food street and dining in Sector 56.' },
@@ -422,9 +422,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 57 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct Access to Golf Course Extension', desc: 'Companions arrive within 25 to 30 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct Access to Golf Course Extension', desc: 'Call Girls arrive within 25 to 30 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Golf Course Extension Road and Vikas Marg. Rapid Metro Sector 55-56 is within 5 minutes.',
@@ -439,8 +439,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-56', 'sector-50', 'sector-65', 'golf-course-extension-road', 'sector-51'],
     faqs: [
       { question: 'Do you deliver outcalls to Sushant Lok 3 in Sector 57?', answer: 'Yes, we provide discreet outcalls to homes, builder floors, and apartments throughout Sushant Lok 3 in Sector 57.' },
-      { question: 'How quickly can a companion arrive in Sector 57?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 57?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 57?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 57?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Golf Course Extension', excerpt: 'Tips for relaxed coffee dates and dining in Sector 57.' },
@@ -467,9 +467,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 58 demand perfection, intellect, and physical allure—qualities ALINA VIP delivers consistently.',
     reasons: [
-      { title: 'Direct Access to Grand Hyatt', desc: 'Companions arrive at Grand Hyatt suites within 15 to 25 minutes.' },
-      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian companions, and articulate hostesses.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Companions arrive dressed in designer cocktail or evening attire.' },
+      { title: 'Direct Access to Grand Hyatt', desc: 'Call Girls arrive at Grand Hyatt suites within 15 to 25 minutes.' },
+      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian call girls, and articulate hostesses.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Call Girls arrive dressed in designer cocktail or evening attire.' },
       { title: 'Zero Digital Trail', desc: 'Strict non-disclosure standards with all data purged post-session.' },
     ],
     connectivity: 'Directly on Golf Course Extension Road with rapid connection to Golf Course Road and Southern Peripheral Road (SPR). Sector 55-56 Rapid Metro is 4 minutes away.',
@@ -479,13 +479,13 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     residentialEstates: ['Ireo Grand Arch', 'Ireo Victory Valley', 'Grand Hyatt Branded Residences'],
     corporateParks: ['Grand Hyatt Corporate Wing', 'WorldMark Gurgaon (nearby)', 'Pioneer Urban Square (nearby)'],
     privacyOverview: 'We maintain the highest privacy standards for our VIP Sector 58 clientele.',
-    protocols: ['Unmarked luxury sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Strict background and health vetting on all companions'],
+    protocols: ['Unmarked luxury sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Strict background and health vetting on all call girls'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'high-profile-girls', 'travel-escorts'],
     nearbyAreas: ['sector-56', 'sector-59', 'sector-65', 'golf-course-extension-road', 'sector-57'],
     faqs: [
       { question: 'Do you deliver outcalls to Grand Hyatt Gurgaon in Sector 58?', answer: 'Yes, Grand Hyatt Gurgaon is one of our primary served five-star luxury properties with complete discretion.' },
-      { question: 'Can companions enter Ireo Grand Arch and Victory Valley?', answer: 'Yes, our companions are experienced with the digital visitor verification systems at Ireo towers.' },
-      { question: 'Are Russian companions available in Sector 58?', answer: 'Yes, we offer verified Russian and European companions who are popular among guests in Sector 58.' },
+      { question: 'Can escort girls enter Ireo Grand Arch and Victory Valley?', answer: 'Yes, our call girls are experienced with the digital visitor verification systems at Ireo towers.' },
+      { question: 'Are Russian call girls available in Sector 58?', answer: 'Yes, we offer verified Russian and European call girls who are popular among guests in Sector 58.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Grand Hyatt Gurgaon: 5-Star Luxury Review', excerpt: 'Review of luxury amenities, suites, and dining at Grand Hyatt in Sector 58.' },
@@ -514,8 +514,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     whyChooseOverview: 'Clients in Sector 59 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
       { title: 'Secluded Luxury Setting', desc: 'Ideal environment for relaxed, private call girls & escorts.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your private residence.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your private residence.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected directly to Golf Course Extension Road and Southern Peripheral Road (SPR). Rapid Metro Sector 55-56 is 6 minutes away.',
@@ -530,8 +530,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-57', 'sector-60', 'sector-61', 'golf-course-extension-road', 'sector-56'],
     faqs: [
       { question: 'Do you deliver outcalls to Mahindra Luminare in Sector 59?', answer: 'Yes, Mahindra Luminare is one of our primary served luxury developments in Sector 59.' },
-      { question: 'How quickly can a companion arrive in Sector 59?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 59?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 59.' },
+      { question: 'How quickly can a call girl arrive in Sector 59?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 59?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 59.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Mountain-View Luxury in Sector 59', excerpt: 'Explore luxury living at Mahindra Luminare and Tata Raisina.' },
@@ -558,9 +558,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 60 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Ireo City Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Ireo City Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on Golf Course Extension Road with quick link to Southern Peripheral Road (SPR). Rapid Metro Sector 55-56 is 5 minutes away.',
@@ -575,8 +575,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-59', 'sector-61', 'sector-62', 'golf-course-extension-road', 'sector-56'],
     faqs: [
       { question: 'Do you deliver outcalls to Pioneer Araya in Sector 60?', answer: 'Yes, Pioneer Araya is one of our primary served luxury developments in Sector 60.' },
-      { question: 'How quickly can a companion arrive in Sector 60?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 60?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 60.' },
+      { question: 'How quickly can a call girl arrive in Sector 60?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 60?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 60.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Smart Luxury at Ireo Skyon & Sector 60', excerpt: 'Explore luxury living in Sector 60.' },
@@ -603,9 +603,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 61 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Corporate & Residential Hub', desc: 'Companions arrive within 25 to 30 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Corporate & Residential Hub', desc: 'Call Girls arrive within 25 to 30 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Golf Course Extension Road and Southern Peripheral Road (SPR). Rapid Metro Sector 55-56 is 6 minutes away.',
@@ -620,8 +620,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-60', 'sector-62', 'sector-65', 'golf-course-extension-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Pioneer Presidia in Sector 61?', answer: 'Yes, Pioneer Presidia is one of our primary served luxury developments in Sector 61.' },
-      { question: 'How quickly can a companion arrive in Sector 61?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
-      { question: 'Are high-profile companions available in Sector 61?', answer: 'Yes, we offer verified high-profile companions who are popular for corporate and private engagements in Sector 61.' },
+      { question: 'How quickly can a call girl arrive in Sector 61?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'Are high-profile call girls available in Sector 61?', answer: 'Yes, we offer verified high-profile call girls who are popular for corporate and private engagements in Sector 61.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Dining near Pioneer Urban Square', excerpt: 'Guide to premier restaurants near Sector 61.' },
@@ -648,9 +648,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 62 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct Extension Access', desc: 'Companions arrive within 25 to 30 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct Extension Access', desc: 'Call Girls arrive within 25 to 30 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Golf Course Extension Road, Maidawas Road, and Southern Peripheral Road (SPR). Rapid Metro Sector 55-56 is 7 minutes away.',
@@ -665,8 +665,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-61', 'sector-63', 'sector-65', 'golf-course-extension-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Heritage One and Pioneer Park in Sector 62?', answer: 'Yes, we regularly provide outcalls to residential societies in Sector 62 with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Sector 62?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 62?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 62?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 62?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Golf Course Extension', excerpt: 'Tips for relaxed coffee dates and dining in Sector 62.' },
@@ -693,9 +693,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 63 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Modern Luxury Setting', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Modern Luxury Setting', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Golf Course Extension Road and Southern Peripheral Road (SPR). Rapid Metro Sector 55-56 is 8 minutes away.',
@@ -710,8 +710,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-62', 'sector-65', 'sector-66', 'golf-course-extension-road'],
     faqs: [
       { question: 'Do you deliver outcalls to residences in Sector 63?', answer: 'Yes, we regularly provide outcalls to residential societies in Sector 63 with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Sector 63?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 63?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 63?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 63?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Golf Course Extension', excerpt: 'Tips for relaxed coffee dates and dining in Sector 63.' },
@@ -738,8 +738,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 65 demand perfection, intellect, and physical allure—qualities ALINA VIP delivers consistently.',
     reasons: [
-      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian companions, and articulate hostesses.' },
-      { title: 'Familiarity with M3M Golfestate & Trump Tower', desc: 'Companions and chauffeurs understand security access for seamless entry.' },
+      { title: 'Elite Supermodel & VIP Roster', desc: 'Verified high-fashion models, Russian call girls, and articulate hostesses.' },
+      { title: 'Familiarity with M3M Golfestate & Trump Tower', desc: 'Call Girls and chauffeurs understand security access for seamless entry.' },
       { title: 'Rapid 20-30 Minute Arrival', desc: 'Stationed right along the Extension for the fastest dispatch.' },
       { title: 'Zero Digital Trail', desc: 'Strict non-disclosure standards with all data purged post-session.' },
     ],
@@ -750,14 +750,14 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     residentialEstates: ['M3M Golfestate', 'Trump Tower Delhi NCR', 'Emaar Emerald Hills', 'Emaar Marbella Villas'],
     corporateParks: ['WorldMark Gurgaon Corporate Towers', 'M3M Urbana (adjacent)', 'Pioneer Urban Square (nearby)'],
     privacyOverview: 'We maintain the highest privacy standards for our VIP Sector 65 clientele.',
-    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Companions dressed in designer cocktail or evening attire'],
+    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Call Girls dressed in designer cocktail or evening attire'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'high-profile-girls', 'celebrity-escorts'],
     nearbyAreas: ['sector-66', 'sector-50', 'sector-62', 'golf-course-extension-road', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to M3M Golfestate in Sector 65?', answer: 'Yes, M3M Golfestate is one of our primary served ultra-luxury communities with complete discretion.' },
-      { question: 'Can companions enter Trump Tower Delhi NCR in Sector 65?', answer: 'Yes, our companions observe the highest standards of discretion and concierge protocols for Trump Tower visits.' },
-      { question: 'Can a companion join me for dinner at WorldMark Gurgaon?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for WorldMark’s waterfront restaurants.' },
-      { question: 'Are Russian companions available in Sector 65?', answer: 'Yes, we offer verified Russian and European companions available for bookings in Sector 65.' },
+      { question: 'Can escort girls enter Trump Tower Delhi NCR in Sector 65?', answer: 'Yes, our call girls observe the highest standards of discretion and concierge protocols for Trump Tower visits.' },
+      { question: 'Can a call girl join me for dinner at WorldMark Gurgaon?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for WorldMark’s waterfront restaurants.' },
+      { question: 'Are Russian call girls available in Sector 65?', answer: 'Yes, we offer verified Russian and European call girls available for bookings in Sector 65.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'WorldMark Gurgaon Dining Guide', excerpt: 'Explore waterfront restaurants and cocktail lounges in Sector 65.' },
@@ -785,9 +785,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 66 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct Access to M3M Urbana', desc: 'Companions arrive within 20 to 30 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct Access to M3M Urbana', desc: 'Call Girls arrive within 20 to 30 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct frontage on Golf Course Extension Road with seamless link to Southern Peripheral Road (SPR) and Sohna Road. Rapid Metro Sector 55-56 is 7 minutes away.',
@@ -802,8 +802,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-65', 'sector-67', 'sector-50', 'golf-course-extension-road', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Emaar Palm Drive in Sector 66?', answer: 'Yes, Emaar Palm Drive is one of our primary served luxury developments in Sector 66.' },
-      { question: 'Can a companion join me for drinks at M3M Urbana?', answer: 'Yes! Our companions are stylish and socially poised, perfect for dining at M3M Urbana bistros.' },
-      { question: 'How quickly can a companion arrive in Sector 66?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for drinks at M3M Urbana?', answer: 'Yes! Our call girls are stylish and socially poised, perfect for dining at M3M Urbana bistros.' },
+      { question: 'How quickly can a call girl arrive in Sector 66?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Dining at M3M Urbana in Sector 66', excerpt: 'Guide to premier restaurants and lounges in Sector 66.' },
@@ -831,9 +831,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 67 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'M3M Merlin Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'M3M Merlin Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Southern Peripheral Road (SPR) and Golf Course Extension Road. Rapid connection to Sohna Road and NH-48.',
@@ -848,8 +848,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-66', 'sector-65', 'sohna-road', 'sector-70', 'golf-course-extension-road'],
     faqs: [
       { question: 'Do you deliver outcalls to M3M Merlin in Sector 67?', answer: 'Yes, M3M Merlin is one of our primary served luxury developments in Sector 67.' },
-      { question: 'How quickly can a companion arrive in Sector 67?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 67?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 67.' },
+      { question: 'How quickly can a call girl arrive in Sector 67?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 67?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 67.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Singapore-Style Luxury at M3M Merlin', excerpt: 'Explore luxury living in Sector 67.' },
@@ -876,9 +876,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 70 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct SPR Expressway Access', desc: 'Companions arrive within 30 to 40 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct SPR Expressway Access', desc: 'Call Girls arrive within 30 to 40 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on the Southern Peripheral Road (SPR), connecting Sohna Road to NH-48. Rajiv Chowk and Golf Course Extension are within 10 minutes.',
@@ -893,8 +893,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-74', 'sector-71', 'sector-72', 'sohna-road', 'sector-67'],
     faqs: [
       { question: 'Do you deliver outcalls to GPL Eden Heights in Sector 70?', answer: 'Yes, GPL Eden Heights and Tulip societies are frequently served luxury developments in Sector 70.' },
-      { question: 'How quickly can a companion arrive in Sector 70?', answer: 'Companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 70?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 70?', answer: 'Call Girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 70?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates on Southern Peripheral Road', excerpt: 'Tips for relaxed coffee dates and dining near Sector 70.' },
@@ -921,9 +921,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 71 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'SPR Corridor Access', desc: 'Companions arrive within 30 to 40 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'SPR Corridor Access', desc: 'Call Girls arrive within 30 to 40 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on Southern Peripheral Road (SPR) with fast links to Sohna Road and NH-48. Rajiv Chowk is 10 minutes away.',
@@ -938,8 +938,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-70', 'sector-72', 'sohna-road', 'sector-67'],
     faqs: [
       { question: 'Do you deliver outcalls to CHD Avenue 71 in Sector 71?', answer: 'Yes, CHD Avenue 71 is one of our frequently served residential developments in Sector 71.' },
-      { question: 'How quickly can a companion arrive in Sector 71?', answer: 'Companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 71?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 71?', answer: 'Call Girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 71?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates on Southern Peripheral Road', excerpt: 'Tips for relaxed coffee dates and dining near Sector 71.' },
@@ -966,9 +966,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 72 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Tata Primanti Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Tata Primanti Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on Southern Peripheral Road (SPR) with immediate connection to Sohna Road and NH-48. Rajiv Chowk is 8 minutes away.',
@@ -983,8 +983,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-70', 'sector-71', 'sohna-road', 'sector-49'],
     faqs: [
       { question: 'Do you deliver outcalls to Tata Primanti in Sector 72?', answer: 'Yes, Tata Primanti is one of our primary served ultra-luxury communities in Sector 72.' },
-      { question: 'How quickly can a companion arrive in Sector 72?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 72?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 72.' },
+      { question: 'How quickly can a call girl arrive in Sector 72?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 72?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 72.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Ultra-Luxury Living at Tata Primanti', excerpt: 'Explore luxury amenities and living in Sector 72.' },
@@ -1009,10 +1009,10 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
       { title: 'After-Hours Downtime & Stress Relief', desc: 'relaxing outcalls designed to melt away workday fatigue in the privacy of your suite.' },
       { title: 'Overnight Business Travel Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening.' },
     ],
-    whyChooseOverview: 'Corporate clients in Sector 74 rely on ALINA VIP for our high-caliber companions, fast dispatch, and complete discretion.',
+    whyChooseOverview: 'Corporate clients in Sector 74 rely on ALINA VIP for our high-caliber call girls, fast dispatch, and complete discretion.',
     reasons: [
-      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our companions are university-educated and understand executive social dynamics.' },
-      { title: 'Fast 25-Minute Arrival', desc: 'Directly off NH-48 and SPR, companions arrive promptly.' },
+      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our call girls are university-educated and understand executive social dynamics.' },
+      { title: 'Fast 25-Minute Arrival', desc: 'Directly off NH-48 and SPR, call girls arrive promptly.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Strict Non-Disclosure Standards', desc: 'All bookings remain completely confidential with no records stored.' },
     ],
@@ -1023,13 +1023,13 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     residentialEstates: ['DLF Alameda (Sector 73 adjacent)', 'Tata Primanti (Sector 72 nearby)', 'Vipul Lavanya (nearby)'],
     corporateParks: ['DLF Corporate Greens', 'Candor TechSpace Sector 48 (nearby)', 'Spaze i-Tech Park (nearby)'],
     privacyOverview: 'We enforce strict corporate privacy standards across all Sector 74 engagements.',
-    protocols: ['Unmarked executive sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked executive sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['high-profile-girls', 'vip-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['sector-72', 'sector-76', 'sector-83', 'manesar', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to business hotels near DLF Corporate Greens in Sector 74?', answer: 'Yes, we regularly provide discreet outcalls to executive hotel suites and corporate accommodations serving DLF Corporate Greens and the SPR corridor.' },
       { question: 'How does the SPR and NH-48 cloverleaf connectivity facilitate outcalls in Sector 74?', answer: 'Located right at the Southern Peripheral Road and NH-48 interchange, private chauffeurs access business hotel suites with fast, seamless transit.' },
-      { question: 'Can corporate companions accompany clients for evening dinners around Sector 74?', answer: 'Yes, our companions are articulate, polished, and well-versed in executive etiquette for private dining at nearby business resorts and hotel lounges.' },
+      { question: 'Can corporate call girls accompany clients for evening dinners around Sector 74?', answer: 'Yes, our call girls are articulate, polished, and well-versed in executive etiquette for private dining at nearby business resorts and hotel lounges.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Top Business Hotels on NH-48 & SPR', excerpt: 'Guide to luxury corporate accommodation near Sector 74.' },
@@ -1056,9 +1056,9 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 76 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Scenic Foothills Setting', desc: 'Companions arrive within 30 to 40 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Scenic Foothills Setting', desc: 'Call Girls arrive within 30 to 40 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Southern Peripheral Road (SPR) and NH-48. Central Gurgaon is 15 minutes away.',
@@ -1073,8 +1073,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-74', 'sector-77', 'sector-83', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Corona Optus in Sector 76?', answer: 'Yes, Corona Optus is one of our primary served residential developments in Sector 76.' },
-      { question: 'How quickly can a companion arrive in Sector 76?', answer: 'Companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 76?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 76?', answer: 'Call Girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 76?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near the Aravallis', excerpt: 'Tips for relaxed coffee dates and dining near Sector 76.' },
@@ -1102,8 +1102,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     whyChooseOverview: 'Clients in Sector 77 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
       { title: 'Secluded Nature-Surrounded Luxury', desc: 'Ideal environment for relaxed, private call girls & escorts.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Fast 30-40 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Fast 30-40 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected to NH-48 and SPR via wide multi-lane arterial roads. Manesar and central Gurgaon are both within 15 minutes.',
@@ -1118,8 +1118,8 @@ export const gurgaonSectorsGolfSpr: LocationData[] = [
     nearbyAreas: ['sector-76', 'sector-83', 'sector-84', 'manesar', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to Emaar Palm Hills in Sector 77?', answer: 'Yes, Emaar Palm Hills is one of our primary served luxury developments in Sector 77.' },
-      { question: 'How quickly can a companion arrive in Sector 77?', answer: 'Companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 77?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 77.' },
+      { question: 'How quickly can a call girl arrive in Sector 77?', answer: 'Call Girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 77?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 77.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Mountain Living at Emaar Palm Hills', excerpt: 'Explore luxury living in Sector 77.' },

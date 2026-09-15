@@ -47,7 +47,7 @@ function createNoidaSectorPage(data: {
       landmarks: data.landmarks,
       commercialProfile: data.commercialProfile,
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: data.optionsOverview,
       options: data.options,
     },
@@ -71,10 +71,10 @@ function createNoidaSectorPage(data: {
     nearbyAreas: data.nearbyAreas,
     howItWorks: {
       steps: [
-        { step: '01', title: `Explore ${data.name} Profiles`, desc: 'Review our authenticated gallery of verified models, VIP call girls, and college companions in Noida.' },
+        { step: '01', title: `Explore ${data.name} Profiles`, desc: 'Review our authenticated gallery of verified models, VIP call girls, and college call girls in Noida.' },
         { step: '02', title: 'Private Coordination', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel or apartment location in Noida.' },
         { step: '03', title: 'Fast Dispatch Confirmation', desc: 'Our concierge confirms scheduling and provides accurate arrival timing.' },
-        { step: '04', title: 'Elegant Luxury Encounter', desc: `Welcome your companion at your ${data.name} hotel suite or apartment for an unforgettable private rendezvous.` },
+        { step: '04', title: 'Elegant Luxury Encounter', desc: `Welcome your call girl at your ${data.name} hotel suite or apartment for an unforgettable private rendezvous.` },
       ],
     },
     faqs: data.faqs,
@@ -101,10 +101,10 @@ export const noidaSectors: LocationData[] = [
       { title: 'DLF Mall of India Shopping Dates', desc: 'stylish escorts to accompany you through designer shopping excursions followed by coffee.' },
       { title: 'Overnight Relaxation Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Sector 18 choose ALINA VIP for our five-star familiarity, verified companions, and absolute discretion.',
+    whyChooseOverview: 'Clients in Sector 18 choose ALINA VIP for our five-star familiarity, verified call girls, and absolute discretion.',
     reasons: [
-      { title: 'Walking Distance to Radisson Blu', desc: 'Companions arrive at Radisson Blu suites within 15 to 20 minutes.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Our companions understand luxury hotel protocols and arrive dressed impeccably.' },
+      { title: 'Walking Distance to Radisson Blu', desc: 'Call Girls arrive at Radisson Blu suites within 15 to 20 minutes.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Our call girls understand luxury hotel protocols and arrive dressed impeccably.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -120,8 +120,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-27', 'noida-sector-29', 'noida-sector-32', 'noida', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to Radisson Blu Hotel Noida in Sector 18?', answer: 'Yes, Radisson Blu Hotel Noida is our primary served five-star luxury property in Noida with complete discretion.' },
-      { question: 'Can a companion join me for drinks at Gardens Galleria in Sector 18?', answer: 'Yes! Our companions are stylish, socially poised, and make wonderful dates for Gardens Galleria lounges.' },
-      { question: 'How quickly can a companion arrive in Sector 18?', answer: 'Companions generally arrive within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for drinks at Gardens Galleria in Sector 18?', answer: 'Yes! Our call girls are stylish, socially poised, and make wonderful dates for Gardens Galleria lounges.' },
+      { question: 'How quickly can a call girl arrive in Sector 18?', answer: 'Call Girls generally arrive within 15 to 25 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Radisson Blu Noida Luxury Review', excerpt: 'Review of five-star hospitality and dining in Sector 18.' },
@@ -148,9 +148,9 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 27 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Walking Distance to Sector 18', desc: 'Companions arrive within 20 to 25 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Walking Distance to Sector 18', desc: 'Call Girls arrive within 20 to 25 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via Maharaja Agrasen Marg and Captain Vijyant Thapar Marg. Noida Sector 18 and Botanical Garden metro stations are within 4 minutes.',
@@ -165,8 +165,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-18', 'noida-sector-29', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to private residences in Sector 27 Noida?', answer: 'Yes, we provide discreet outcalls to independent bungalows and homes throughout Sector 27.' },
-      { question: 'How quickly can a companion arrive in Sector 27?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 27?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 27?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 27?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Sector 18', excerpt: 'Tips for relaxed coffee dates and dining near Sector 27.' },
@@ -192,9 +192,9 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 29 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Botanical Garden Metro Proximity', desc: 'Companions arrive within 20 to 25 minutes from our central team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Friendly Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Botanical Garden Metro Proximity', desc: 'Call Girls arrive within 20 to 25 minutes from our central team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Friendly Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to the Botanical Garden Metro Interchange (Blue Line and Magenta Line connecting straight to South Delhi). Quick road access to DND Flyway.',
@@ -209,8 +209,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-18', 'noida-sector-27', 'noida-sector-32', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to homes in Sector 29 Noida?', answer: 'Yes, we provide discreet outcalls to homes and bungalows throughout Sector 29.' },
-      { question: 'How quickly can a companion arrive in Sector 29?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 29?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 29?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 29?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual Food Dates at Brahmaputra Market', excerpt: 'Guide to exploring the food street and dining in Sector 29.' },
@@ -236,9 +236,9 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 32 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Logix City Centre Proximity', desc: 'Companions arrive at Sector 32 locations within 20 to 25 minutes.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Logix City Centre Proximity', desc: 'Call Girls arrive at Sector 32 locations within 20 to 25 minutes.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly at the Wave City Center / Noida City Centre Metro Station on the Blue Line. Master Plan Road 2 provides fast arterial transit.',
@@ -253,8 +253,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-18', 'noida-sector-29', 'noida-sector-62', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to hotels near Logix City Centre in Sector 32?', answer: 'Yes, we regularly provide outcall services to hotels and serviced apartments around Logix City Centre.' },
-      { question: 'Can a companion join me for dinner at Logix City Centre?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for Logix City Centre restaurants.' },
-      { question: 'How quickly can a companion arrive in Sector 32?', answer: 'Companions generally arrive within 20 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Logix City Centre?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for Logix City Centre restaurants.' },
+      { question: 'How quickly can a call girl arrive in Sector 32?', answer: 'Call Girls generally arrive within 20 to 25 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates at Logix City Centre', excerpt: 'Tips for dining and movie dates in Sector 32 Noida.' },
@@ -279,10 +279,10 @@ export const noidaSectors: LocationData[] = [
       { title: 'IT Corporate Downtime & Stress Relief', desc: 'relaxing outcalls designed to melt away workday fatigue in the privacy of your suite.' },
       { title: 'Overnight Business Travel Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Sector 62 choose ALINA VIP for our corporate familiarity, verified companions, and absolute discretion.',
+    whyChooseOverview: 'Clients in Sector 62 choose ALINA VIP for our corporate familiarity, verified call girls, and absolute discretion.',
     reasons: [
-      { title: 'Candor TechSpace Proximity', desc: 'Companions arrive at Sector 62 hotels within 20 to 25 minutes.' },
-      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our companions are university-educated and understand executive social dynamics.' },
+      { title: 'Candor TechSpace Proximity', desc: 'Call Girls arrive at Sector 62 hotels within 20 to 25 minutes.' },
+      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our call girls are university-educated and understand executive social dynamics.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -293,13 +293,13 @@ export const noidaSectors: LocationData[] = [
     residentialEstates: ['Sector 62 Executive Housing Pockets', 'Indirapuram (adjacent across NH-24)', 'Sector 61 (nearby)'],
     corporateParks: ['Candor TechSpace Sector 62', 'Logix Cyber Park', 'Stellar IT Park', 'IThum Tower'],
     privacyOverview: 'We maintain strict privacy protocols in Sector 62 to protect corporate client discretion.',
-    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'college-girls', 'independent-girls', 'model-escorts'],
     nearbyAreas: ['noida-sector-63', 'noida-sector-32', 'ghaziabad', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to Park Ascent Hotel in Sector 62 Noida?', answer: 'Yes, Park Ascent Hotel and business hotels around Sector 62 are frequently served with complete discretion.' },
-      { question: 'How quickly can an escort reach Sector 62?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are corporate companions available in Sector 62?', answer: 'Yes, we offer verified corporate companions who possess excellent social skills and business awareness.' },
+      { question: 'How quickly can an escort reach Sector 62?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are corporate call girls available in Sector 62?', answer: 'Yes, we offer verified corporate call girls who possess excellent social skills and business awareness.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Top Business Hotels in Noida Sector 62', excerpt: 'Guide to luxury corporate accommodation near Sector 62.' },
@@ -326,9 +326,9 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 63 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct NH-24 Expressway Access', desc: 'Companions arrive within 20 to 30 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct NH-24 Expressway Access', desc: 'Call Girls arrive within 20 to 30 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct frontage on the Delhi-Meerut Expressway (NH-24). Noida Electronic City Metro Station is 3 minutes away.',
@@ -343,8 +343,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-62', 'ghaziabad', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to hotels in Sector 63 Noida?', answer: 'Yes, we regularly provide outcalls to hotels and serviced suites in Sector 63 with complete discretion.' },
-      { question: 'What is the booking protocol for business travelers staying at Ginger Hotel Noida 63?', answer: 'Our chauffeur drops your companion directly at the hotel entrance. Companions proceed directly to your private room with zero lobby waiting or conspicuous presence.' },
-      { question: 'Can companions join clients for dinner meetings near the Electronic City IT corridor?', answer: 'Yes, our companions are well-spoken, polished, and comfortable in executive dining settings across Sector 62 and Sector 63 tech parks.' },
+      { question: 'What is the booking protocol for business travelers staying at Ginger Hotel Noida 63?', answer: 'Our chauffeur drops your call girl directly at the hotel entrance. Call Girls proceed directly to your private room with zero lobby waiting or conspicuous presence.' },
+      { question: 'Can escort girls join clients for dinner meetings near the Electronic City IT corridor?', answer: 'Yes, our call girls are well-spoken, polished, and comfortable in executive dining settings across Sector 62 and Sector 63 tech parks.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Electronic City', excerpt: 'Tips for relaxed coffee dates and dining in Sector 63.' },
@@ -371,9 +371,9 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 137 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Expressway Society Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Expressway Society Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to the 6-lane Noida-Greater Noida Expressway. Sector 137 Metro Station on the Aqua Line provides rapid transit.',
@@ -388,8 +388,8 @@ export const noidaSectors: LocationData[] = [
     nearbyAreas: ['noida-sector-142', 'noida-sector-18', 'greater-noida', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to Paras Tierea and Purvanchal Royal Park in Sector 137?', answer: 'Yes, Paras Tierea and Purvanchal Royal Park are our primary served luxury developments in Sector 137.' },
-      { question: 'What is the security procedure for condominium tower visits in Sector 137?', answer: 'Our chauffeurs drop companions directly at the designated tower gatehouse. We coordinate entry pre-approval via your resident visitor management system (MyGate/NoBroker) for seamless access.' },
-      { question: 'Are Russian companions available for outcalls in Sector 137?', answer: 'Yes, we offer verified Russian and European companions available for outcalls to luxury residences throughout Sector 137.' },
+      { question: 'What is the security procedure for condominium tower visits in Sector 137?', answer: 'Our chauffeurs drop call girls directly at the designated tower gatehouse. We coordinate entry pre-approval via your resident visitor management system (MyGate/NoBroker) for seamless access.' },
+      { question: 'Are Russian call girls available for outcalls in Sector 137?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls to luxury residences throughout Sector 137.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'High-Rise Living along Noida Expressway', excerpt: 'Explore luxury condominium living in Sector 137.' },
@@ -416,8 +416,8 @@ export const noidaSectors: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 142 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Advant Navis Proximity', desc: 'Companions arrive at Advant Navis venues and suites within 20 to 25 minutes.' },
-      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our companions are university-educated and understand executive social dynamics.' },
+      { title: 'Advant Navis Proximity', desc: 'Call Girls arrive at Advant Navis venues and suites within 20 to 25 minutes.' },
+      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our call girls are university-educated and understand executive social dynamics.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -428,13 +428,13 @@ export const noidaSectors: LocationData[] = [
     residentialEstates: ['Sector 137 Condos (adjacent)', 'Jaypee Greens Wishtown (nearby)', 'Sector 143 Residences (adjacent)'],
     corporateParks: ['Advant Navis Business Park', 'Candor TechSpace Sector 135 (nearby)', 'Oxygen Business Park'],
     privacyOverview: 'We maintain strict privacy protocols in Sector 142 to protect corporate client discretion.',
-    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['noida-sector-137', 'noida-sector-18', 'greater-noida', 'noida'],
     faqs: [
-      { question: 'Can a companion join me for drinks at Advant Navis in Sector 142?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for Advant Navis restaurants and lounges.' },
+      { question: 'Can a call girl join me for drinks at Advant Navis in Sector 142?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for Advant Navis restaurants and lounges.' },
       { question: 'Do you deliver outcalls to hotels along the Noida Expressway near Sector 142?', answer: 'Yes, we regularly provide outcall services to hotels and serviced suites along the Expressway with complete discretion.' },
-      { question: 'What makes ALINA VIP suitable for corporate guests visiting Advant Navis?', answer: 'Our companions possess polished social etiquette, articulate conversational skills, and absolute corporate discretion, ideal for executives visiting multinational tech headquarters in Sector 142.' },
+      { question: 'What makes ALINA VIP suitable for corporate guests visiting Advant Navis?', answer: 'Our call girls possess polished social etiquette, articulate conversational skills, and absolute corporate discretion, ideal for executives visiting multinational tech headquarters in Sector 142.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Dining at Advant Navis Business Park', excerpt: 'Guide to the best restaurants and craft breweries in Sector 142.' },

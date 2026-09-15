@@ -117,15 +117,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const faqs = category.faqs && category.faqs.length > 0 ? category.faqs : [
     {
       question: `How do I book a ${category.name.toLowerCase()} in Gurgaon?`,
-      answer: `Booking is simple and 100% confidential. Call our private booking concierge at ${siteConfig.phone} or message us via WhatsApp with your preferred timing, location, and companion choice. We confirm availability and dispatch within minutes.`,
+      answer: `Booking is simple and 100% confidential. Call our private booking concierge at ${siteConfig.phone} or message us via WhatsApp with your preferred timing, location, and call girl choice. We confirm availability and dispatch within minutes.`,
     },
     {
       question: `Are ${category.name.toLowerCase()} photos 100% genuine?`,
-      answer: 'Yes. Every companion is photographed and verified in person by our management team. We guarantee that the companion who arrives at your suite matches the profile you selected.',
+      answer: 'Yes. Every call girl is photographed and verified in person by our management team. We guarantee that the call girl who arrives at your suite matches the profile you selected.',
     },
     {
       question: 'What is the typical outcall arrival time in Gurgaon?',
-      answer: 'Companions typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
+      answer: 'Call Girls typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
     },
     {
       question: 'Is my personal information kept confidential?',

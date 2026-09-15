@@ -18,14 +18,14 @@ import { siteConfig } from '@/data/siteConfig';
 export const metadata: Metadata = {
   title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
   description:
-    'Connect with ALINA VIP India for verified companion reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+    'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
   alternates: {
     canonical: `${siteConfig.url}/contact`,
   },
   openGraph: {
     title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
     description:
-      'Connect with ALINA VIP India for verified companion reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+      'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
     url: `${siteConfig.url}/contact`,
     type: 'website',
   },
@@ -375,7 +375,7 @@ export default function ContactPage() {
                   Transparent Pricing &amp; Cash on Delivery Protection
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At ALINA VIP, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your companion upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
+                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At ALINA VIP, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your call girl upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
                 </p>
               </div>
 
@@ -405,7 +405,7 @@ export default function ContactPage() {
 
                   <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-xs">
                     <h4 className="font-bold text-[#1a1a2e] text-sm mb-1">
-                      Can I book companion accompaniment for multi-day travel or conferences?
+                      Can I book call girl accompaniment for multi-day travel or conferences?
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
                       Yes, many of our escorts are experienced travel partners available for weekend getaways, outstation business conferences, and resort stays. Please contact our desk directly with your travel itinerary to arrange travel logistics and bespoke packages with absolute confidentiality.

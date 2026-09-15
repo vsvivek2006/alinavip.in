@@ -25,10 +25,10 @@ export const categories: Category[] = [
     description: 'Our verified Russian call girls in Gurgaon showcase captivating European allure, statuesque elegance, and warm conversational grace. Ideal for private 5-star hotel visits, VIP nightclub hosting, or romantic candlelit dining along Golf Course Road.',
     icon: 'Crown',
     h1Title: 'Russian Call Girls in Gurgaon',
-    subheading: 'Elite Slavic & European Luxury Companions Available 24/7 for 5-Star Hotel Outcalls',
+    subheading: 'Elite Slavic & European Luxury Call Girls Available 24/7 for 5-Star Hotel Outcalls',
     longDescription: [
-      'Experience the pinnacle of continental luxury with our handpicked roster of verified Russian call girls in Gurgaon. Renowned worldwide for their statuesque silhouettes, striking blue and green eyes, and refined manners, our European companions deliver an unforgettable blend of exotic glamour and genuine warmth.',
-      'Whether you are residing at premier 5-star hotels like The Oberoi Gurgaon, The Leela Ambience, or Trident Cyber City, our Russian escorts arrive punctually via private executive transport. Each companion is multilingual, conversant in modern lifestyle topics, and at ease in both high-profile business dinners and intimate suite relaxation.',
+      'Experience the pinnacle of continental luxury with our handpicked roster of verified Russian call girls in Gurgaon. Renowned worldwide for their statuesque silhouettes, striking blue and green eyes, and refined manners, our European call girls deliver an unforgettable blend of exotic glamour and genuine warmth.',
+      'Whether you are residing at premier 5-star hotels like The Oberoi Gurgaon, The Leela Ambience, or Trident Cyber City, our Russian escorts arrive punctually via private executive transport. Each call girl is multilingual, conversant in modern lifestyle topics, and at ease in both high-profile business dinners and intimate suite relaxation.',
       'At ALINA VIP India, every European model profile is vetted with in-person passport and document verification. We maintain a zero-advance policy and guaranteed photo accuracy, ensuring complete discretion and peace of mind for our distinguished clientele.',
     ],
     keyHighlights: [
@@ -46,7 +46,7 @@ export const categories: Category[] = [
     faqs: [
       {
         question: 'Are your Russian call girls in Gurgaon 100% verified?',
-        answer: 'Yes. Every Russian companion at ALINA VIP undergoes rigorous in-person screening, including passport verification and photo authentication. The model you select is guaranteed to be the companion who arrives.',
+        answer: 'Yes. Every Russian call girl at ALINA VIP undergoes rigorous in-person screening, including passport verification and photo authentication. The model you select is guaranteed to be the call girl who arrives.',
       },
       {
         question: 'How quickly can a Russian escort arrive at my Gurgaon hotel?',
@@ -58,21 +58,21 @@ export const categories: Category[] = [
       },
       {
         question: 'Can Russian escorts accompany me to corporate dinners or events?',
-        answer: 'Absolutely. Our Russian models possess excellent social etiquette and cosmopolitan charm, making them flawless companions for executive galas, business dinners, and social gatherings.',
+        answer: 'Absolutely. Our Russian models possess excellent social etiquette and cosmopolitan charm, making them flawless call girls for executive galas, business dinners, and social gatherings.',
       },
     ],
   },
   {
     slug: 'vip-call-girls',
     name: 'VIP Call Girls',
-    shortDescription: 'Top-tier luxury companions curated for discerning corporate executives and elite patrons.',
+    shortDescription: 'Top-tier luxury call girls curated for discerning corporate executives and elite patrons.',
     description: 'Our elite VIP call girls in Gurgaon provide an uncompromised standard of VIP call girls and escort girls. Characterized by striking poise, intellect, and worldly etiquette, they accompany distinguished gentlemen to private suite retreats and prestigious social gatherings.',
     icon: 'Star',
     h1Title: 'VIP Call Girls in Gurgaon',
     subheading: 'Top-Tier Celebrity & Executive Escorts Curated for High-Net-Worth Individuals',
     longDescription: [
-      'ALINA VIP India represents the gold standard in premium VIP call girls and escort girls with our VIP call girls in Gurgaon. Handpicked from top fashion, aviation, and corporate spheres, these distinguished companions cater exclusively to high-net-worth individuals, business tycoons, and international travelers.',
-      'Our VIP companions are not only visually captivating but intellectually stimulating. They transition effortlessly from high-stakes corporate galas and black-tie dinners on Golf Course Road to relaxing evenings in private presidential suites.',
+      'ALINA VIP India represents the gold standard in premium VIP call girls and escort girls with our VIP call girls in Gurgaon. Handpicked from top fashion, aviation, and corporate spheres, these distinguished call girls cater exclusively to high-net-worth individuals, business tycoons, and international travelers.',
+      'Our VIP call girls are not only visually captivating but intellectually stimulating. They transition effortlessly from high-stakes corporate galas and black-tie dinners on Golf Course Road to relaxing evenings in private presidential suites.',
       'We understand that elite clients demand absolute confidentiality. Every VIP booking is handled with discreet concierge protocols, encrypted communications, and zero public record-keeping.',
     ],
     keyHighlights: [
@@ -102,25 +102,25 @@ export const categories: Category[] = [
       },
       {
         question: 'What are the payment terms for VIP call girls in Gurgaon?',
-        answer: 'We do not ask for advance transfers. Clients settle the agreed fee directly with the companion in cash or private transfer upon arrival at their suite.',
+        answer: 'We do not ask for advance transfers. Clients settle the agreed fee directly with the call girl in cash or private transfer upon arrival at their suite.',
       },
     ],
   },
   {
     slug: 'high-profile-girls',
     name: 'High Profile Girls',
-    shortDescription: 'Cultured, educated companions commanding effortless social poise and executive refinement.',
-    description: 'Our high-profile companions in Gurgaon possess university pedigrees, sharp intellect, and polished conversational flair. Perfectly suited for executive business dinners in Cyber City, high-profile galas, and bespoke outstation excursions.',
+    shortDescription: 'Cultured, educated call girls commanding effortless social poise and executive refinement.',
+    description: 'Our high-profile call girls in Gurgaon possess university pedigrees, sharp intellect, and polished conversational flair. Perfectly suited for executive business dinners in Cyber City, high-profile galas, and bespoke outstation excursions.',
     icon: 'Gem',
     h1Title: 'High Profile Escorts in Gurgaon',
-    subheading: 'Cultured, University-Educated Companions for Discerning Corporate Leaders',
+    subheading: 'Cultured, University-Educated Call Girls for Discerning Corporate Leaders',
     longDescription: [
       'For corporate leaders and diplomats visiting Gurgaon, intellectual compatibility is as vital as beauty. Our high-profile call girls in Gurgaon feature educated professionals, corporate executives, and university graduates who possess worldly perspective and refined charm.',
       'These sophisticated women are articulate, witty, and effortlessly poised. Whether discussing global financial trends over cocktails at CyberHub or enjoying an intimate candlelit dinner in DLF Phase 5, they provide stimulating conversation alongside magnetic beauty.',
-      'Each high-profile companion is verified for authentic credentials and professional demeanor, ensuring that your social standing is always complemented by a partner of equal stature.',
+      'Each high-profile call girl is verified for authentic credentials and professional demeanor, ensuring that your social standing is always complemented by a partner of equal stature.',
     ],
     keyHighlights: [
-      { title: 'Academic & Professional Pedigree', desc: 'Educated companions with sharp minds and worldly understanding.' },
+      { title: 'Academic & Professional Pedigree', desc: 'Educated call girls with sharp minds and worldly understanding.' },
       { title: 'Flawless English Fluency', desc: 'Confident, articulate speakers capable of engaging with corporate leaders.' },
       { title: 'Social Chameleon', desc: 'Effortlessly blend into black-tie galas, tech conferences, or private retreats.' },
       { title: 'Zero Trace Discretion', desc: 'Trained to preserve client anonymity with maximum professionalism.' },
@@ -134,14 +134,14 @@ export const categories: Category[] = [
     faqs: [
       {
         question: 'What backgrounds do high-profile call girls come from?',
-        answer: 'Our high-profile companions include corporate professionals, former media anchors, hospitality executives, and university graduates who provide refined escort services part-time.',
+        answer: 'Our high-profile call girls include corporate professionals, former media anchors, hospitality executives, and university graduates who provide refined escort services part-time.',
       },
       {
         question: 'Is it safe to take a high-profile escort to a public business dinner?',
         answer: 'Absolutely. Their elegance, grooming, and poise ensure they blend flawlessly into high-society settings as a genuine personal or business guest.',
       },
       {
-        question: 'How do I book a high-profile companion in Gurgaon?',
+        question: 'How do I book a high-profile call girl in Gurgaon?',
         answer: 'Contact our concierge desk via WhatsApp or phone. Tell us about your event and requirements, and we will recommend matching high-profile profiles immediately.',
       },
       {
@@ -153,14 +153,14 @@ export const categories: Category[] = [
   {
     slug: 'college-girls',
     name: 'College Girls',
-    shortDescription: 'Spirited, charismatic young companions bringing genuine enthusiasm and vivacious warmth.',
+    shortDescription: 'Spirited, charismatic young call girls bringing genuine enthusiasm and vivacious warmth.',
     description: 'Our verified college call girls in Gurgaon offer refreshing exuberance, bubbly charm, and spontaneous warmth. Whether accompanying you on relaxing weekend cafe dates or confidential residential appointments, their playful nature creates an authentic spark.',
     icon: 'GraduationCap',
     h1Title: 'College Call Girls in Gurgaon',
-    subheading: 'Youthful, Energetic & Charismatic Companions (Strictly 21+) for Fun-Loving Gentlemen',
+    subheading: 'Youthful, Energetic & Charismatic Call Girls (Strictly 21+) for Fun-Loving Gentlemen',
     longDescription: [
-      'Bring spontaneous vitality and cheerful warmth to your day with our verified college call girls in Gurgaon. These young, charismatic companions are full of life, curious energy, and radiant smiles that effortlessly wash away corporate stress.',
-      'Our college companions are strictly 21 years of age or older, verified via government identification. They offer unhurried, heartfelt company for casual coffee dates at Horizon Plaza, shopping sprees at Ambience Mall, or relaxed private evenings at luxury serviced apartments.',
+      'Bring spontaneous vitality and cheerful warmth to your day with our verified college call girls in Gurgaon. These young, charismatic call girls are full of life, curious energy, and radiant smiles that effortlessly wash away corporate stress.',
+      'Our college call girls are strictly 21 years of age or older, verified via government identification. They offer unhurried, heartfelt company for casual coffee dates at Horizon Plaza, shopping sprees at Ambience Mall, or relaxed private evenings at luxury serviced apartments.',
       'Enjoy genuine affection and easy-going banter free from pretension. With ALINA VIP India, booking is safe, straightforward, and 100% confidential.',
     ],
     keyHighlights: [
@@ -178,15 +178,15 @@ export const categories: Category[] = [
     faqs: [
       {
         question: 'What is the age verification process for college call girls?',
-        answer: 'ALINA VIP strictly adheres to legal compliance. Every college companion must present government photo ID verifying they are at least 21 years of age before joining our roster.',
+        answer: 'ALINA VIP strictly adheres to legal compliance. Every college call girl must present government photo ID verifying they are at least 21 years of age before joining our roster.',
       },
       {
         question: 'Can I book a college girl for a day date in Gurgaon?',
-        answer: 'Yes. College companions are very popular for day outings, casual lunches, coffee dates, and relaxed afternoon call girl dates across Gurgaon.',
+        answer: 'Yes. College call girls are very popular for day outings, casual lunches, coffee dates, and relaxed afternoon call girl dates across Gurgaon.',
       },
       {
         question: 'How fast can a college escort reach my location?',
-        answer: 'We maintain companions across major Gurgaon sectors, allowing swift arrival within 20 to 30 minutes in DLF, MG Road, Sector 29, and Sohna Road.',
+        answer: 'We maintain call girls across major Gurgaon sectors, allowing swift arrival within 20 to 30 minutes in DLF, MG Road, Sector 29, and Sohna Road.',
       },
       {
         question: 'Are college call girl bookings discreet?',
@@ -203,8 +203,8 @@ export const categories: Category[] = [
     h1Title: 'Independent Call Girls in Gurgaon',
     subheading: 'Direct, Autonomous & Highly Personalized Escort Girls',
     longDescription: [
-      'For clients who appreciate an authentic, unscripted connection, our independent call girls in Gurgaon offer a distinct advantage. Operating with personal dedication, these self-directed companions take pride in building genuine chemistry with their patrons.',
-      'Without agency bureaucracy, independent escorts offer greater flexibility in scheduling, tailored boundaries, and individualized attention. Each companion determines her own availability and approaches every meeting with personal passion and warmth.',
+      'For clients who appreciate an authentic, unscripted connection, our independent call girls in Gurgaon offer a distinct advantage. Operating with personal dedication, these self-directed call girls take pride in building genuine chemistry with their patrons.',
+      'Without agency bureaucracy, independent escorts offer greater flexibility in scheduling, tailored boundaries, and individualized attention. Each call girl determines her own availability and approaches every meeting with personal passion and warmth.',
       'ALINA VIP India provides a verified platform for independent escorts, ensuring client safety, accurate photography, and prompt outcall coordination without compromising their autonomous charm.',
     ],
     keyHighlights: [
@@ -234,7 +234,7 @@ export const categories: Category[] = [
       },
       {
         question: 'Can I book an independent girl for overnight stays?',
-        answer: 'Yes, independent companions frequently accept overnight and multi-day bookings. Please inform our concierge in advance to confirm availability.',
+        answer: 'Yes, independent call girls frequently accept overnight and multi-day bookings. Please inform our concierge in advance to confirm availability.',
       },
     ],
   },
@@ -245,10 +245,10 @@ export const categories: Category[] = [
     description: 'Our air hostess escorts in Gurgaon bring world-class hospitality, immaculate presentation, and cosmopolitan finesse. Accustomed to frequent international travel, they are fluent conversationalists who excel in luxury hotel suite appointments and Aerocity stays.',
     icon: 'Plane',
     h1Title: 'Air Hostess Escorts in Gurgaon & Aerocity',
-    subheading: 'Immaculately Groomed Aviation Companions with World-Class Hospitality Standards',
+    subheading: 'Immaculately Groomed Aviation Call Girls with World-Class Hospitality Standards',
     longDescription: [
-      'Step into a world of flawless elegance with our verified air hostess escorts in Gurgaon and Aerocity. Trained by leading domestic and international airlines in hospitality, grooming, and etiquette, these companions personify poise and refinement.',
-      'Accustomed to moving through international airports and world capitals, our cabin crew companions are cultured conversationalists. Their radiant posture, crisp styling, and attentive hospitality make them the ultimate companions for five-star hotel stays.',
+      'Step into a world of flawless elegance with our verified air hostess escorts in Gurgaon and Aerocity. Trained by leading domestic and international airlines in hospitality, grooming, and etiquette, these call girls personify poise and refinement.',
+      'Accustomed to moving through international airports and world capitals, our air hostess escorts are cultured conversationalists. Their radiant posture, crisp styling, and attentive hospitality make them the ultimate call girls for five-star hotel stays.',
       'Located conveniently near IGI Airport, Aerocity, and DLF Cyber City, our air hostess escorts are ideally positioned for swift outcalls to airport transit hotels, corporate suites, and upscale Gurgaon residences.',
     ],
     keyHighlights: [
@@ -270,15 +270,15 @@ export const categories: Category[] = [
       },
       {
         question: 'How fast can an air hostess escort reach Aerocity or DLF?',
-        answer: 'Because many companions reside near Delhi Airport and DLF Phase 3, outcall arrival to Aerocity or Cyber City typically takes only 20 to 25 minutes.',
+        answer: 'Because many call girls reside near Delhi Airport and DLF Phase 3, outcall arrival to Aerocity or Cyber City typically takes only 20 to 25 minutes.',
       },
       {
         question: 'Are air hostess bookings confidential?',
-        answer: 'Yes, 100%. Due to their professional careers, strict confidentiality is maintained for both the client and the companion with zero digital records kept.',
+        answer: 'Yes, 100%. Due to their professional careers, strict confidentiality is maintained for both the client and the call girl with zero digital records kept.',
       },
       {
         question: 'Can an air hostess accompany me on a private flight or trip?',
-        answer: 'Yes. Many clients book our cabin crew companions for private jet journeys and luxury weekend retreats. Advance scheduling is recommended.',
+        answer: 'Yes. Many clients book our air hostess escorts for private jet journeys and luxury weekend retreats. Advance scheduling is recommended.',
       },
     ],
   },
@@ -286,7 +286,7 @@ export const categories: Category[] = [
     slug: 'model-escorts',
     name: 'Model Escorts',
     shortDescription: 'Runway-calibre fashion models and commercial beauties with commanding visual allure.',
-    description: 'Our model escorts in Gurgaon represent active fashion and ramp models featuring striking figures, radiant aesthetics, and photogenic elegance. Elevate your presence at premier cocktail lounges or unwind in private luxury with a companion of breathtaking beauty.',
+    description: 'Our model escorts in Gurgaon represent active fashion and ramp models featuring striking figures, radiant aesthetics, and photogenic elegance. Elevate your presence at premier cocktail lounges or unwind in private luxury with a call girl of breathtaking beauty.',
     icon: 'Camera',
     h1Title: 'Model Escorts in Gurgaon',
     subheading: 'Runway Calibre Fashion Models & Editorial Beauties for High-Society Engagements',
@@ -305,12 +305,12 @@ export const categories: Category[] = [
       'Exclusive celebrity parties, fashion galas, and product launches',
       'VIP cocktail nights at Gurgaon’s finest rooftop lounges',
       'Private photoshoots, luxury car cruises, and pool villa parties',
-      'Opulent 5-star hotel suite unwinding with a jaw-dropping companion',
+      'Opulent 5-star hotel suite unwinding with a jaw-dropping call girl',
     ],
     faqs: [
       {
         question: 'Are the photos of model escorts 100% genuine?',
-        answer: 'Yes. We personally meet and verify every fashion model in our portfolio. We guarantee that the companion who arrives at your suite is the exact model from the pictures.',
+        answer: 'Yes. We personally meet and verify every fashion model in our portfolio. We guarantee that the call girl who arrives at your suite is the exact model from the pictures.',
       },
       {
         question: 'Can I book a model escort for a public event in Gurgaon?',
@@ -337,7 +337,7 @@ export const categories: Category[] = [
     longDescription: [
       'For patrons who accept only the extraordinary, ALINA VIP India orchestrates private rendezvous with celebrity escorts in Gurgaon. Featuring recognized media personalities, music video stars, and television starlets, this is India’s most exclusive VIP call girls and escort girls tier.',
       'These rare engagements are managed with diplomatic-grade security and discretion. Every meeting takes place in discreet luxury environments—presidential suites, private penthouses, or gated farmhouses—where your privacy is guarded with utmost care.',
-      'Due to the high-profile nature of these companions, reservations require advance coordination through our senior booking director. Experience the pinnacle of prestige with ALINA VIP India.',
+      'Due to the high-profile nature of these call girls, reservations require advance coordination through our senior booking director. Experience the pinnacle of prestige with ALINA VIP India.',
     ],
     keyHighlights: [
       { title: 'Recognized Media Faces', desc: 'Exclusive access to glamour industry stars and television personalities.' },
@@ -373,21 +373,21 @@ export const categories: Category[] = [
   {
     slug: 'travel-escorts',
     name: 'Travel Escorts',
-    shortDescription: 'Cultured holiday companions and multilingual travel partners for worldwide getaways.',
+    shortDescription: 'Cultured holiday call girls and multilingual travel partners for worldwide getaways.',
     description: 'Our travel escorts in Gurgaon are seasoned jet-setters ready to accompany you across domestic luxury resorts, mountain retreats, or overseas business trips. Adaptable, attentive, and globally astute, they ensure every leg of your journey is effortless and memorable.',
     icon: 'Luggage',
     h1Title: 'Travel Escorts in Gurgaon & Delhi NCR',
-    subheading: 'Cultured, Jet-Setting Companions for Domestic & International Luxury Vacations',
+    subheading: 'Cultured, Jet-Setting Call Girls for Domestic & International Luxury Vacations',
     longDescription: [
-      'Transform business trips and holiday getaways into extraordinary memories with our travel escorts in Gurgaon. Well-traveled, multilingual, and socially polished, these companions are passionate about exploring the world in first-class style.',
-      'Whether you are planning a beachside villa holiday in Goa, a luxury desert stay in Udaipur, or an international escapade to Dubai, London, or Bali, our travel companions handle every social and private situation with effortless grace.',
+      'Transform business trips and holiday getaways into extraordinary memories with our travel escorts in Gurgaon. Well-traveled, multilingual, and socially polished, these call girls are passionate about exploring the world in first-class style.',
+      'Whether you are planning a beachside villa holiday in Goa, a luxury desert stay in Udaipur, or an international escapade to Dubai, London, or Bali, our travel escorts handle every social and private situation with effortless grace.',
       'From managing travel attire to sharing delightful conversations over champagne at 30,000 feet, they make every moment of your vacation pleasurable, restful, and romantic.',
     ],
     keyHighlights: [
       { title: 'Valid Passports & Visas', desc: 'Ready for spontaneous domestic flights or planned international journeys.' },
       { title: 'Multilingual & Adaptable', desc: 'Comfortable interacting with international hotel staff and diverse cultures.' },
       { title: 'Attentive Travel Partners', desc: 'Dedicated to making your holiday stress-free, engaging, and deeply romantic.' },
-      { title: 'Complete Travel Discretion', desc: 'Seamlessly travel as your personal partner or social companion.' },
+      { title: 'Complete Travel Discretion', desc: 'Seamlessly travel as your personal partner or social call girl.' },
     ],
     occasions: [
       'Weekend escapes to luxury heritage palaces in Rajasthan',
@@ -398,14 +398,14 @@ export const categories: Category[] = [
     faqs: [
       {
         question: 'How do I book a travel escort for an outstation trip?',
-        answer: 'Contact our concierge desk with your destination, travel dates, and companion preferences. We coordinate flights, itinerary details, and companion availability.',
+        answer: 'Contact our concierge desk with your destination, travel dates, and call girl preferences. We coordinate flights, itinerary details, and call girl availability.',
       },
       {
         question: 'Do travel escorts hold valid passports for international travel?',
         answer: 'Yes. All models listed in our travel category hold valid passports and frequently hold existing travel visas for Dubai, Thailand, and Europe.',
       },
       {
-        question: 'Who covers travel expenses for the companion?',
+        question: 'Who covers travel expenses for the call girl?',
         answer: 'The client provides first-class or business travel, hotel accommodations, meals, and the agreed daily escort fee.',
       },
       {
@@ -417,14 +417,14 @@ export const categories: Category[] = [
   {
     slug: 'housewife-escorts',
     name: 'Housewife Escorts',
-    shortDescription: 'Sensual, mature companions offering heartfelt intimacy, comfort, and emotional connection.',
+    shortDescription: 'Sensual, mature call girls offering heartfelt intimacy, comfort, and emotional connection.',
     description: 'Our mature housewife call girls in Gurgaon specialize in genuine warmth, empathetic listening, and unhurried romance. Ideal for discerning clients seeking unpretentious, deeply relaxing call girl sessions in a calm, discreet environment.',
     icon: 'User',
     h1Title: 'Housewife Call Girls & Bhabhi Escorts in Gurgaon',
-    subheading: 'Sensual, Mature & Empathetic Companions for Warm, Unhurried Romance',
+    subheading: 'Sensual, Mature & Empathetic Call Girls for Warm, Unhurried Romance',
     longDescription: [
-      'Seekers of authentic warmth, sensual depth, and emotional understanding find their sanctuary in our housewife call girls in Gurgaon. These mature, curvy companions offer a comforting presence that commercial models often cannot replicate.',
-      'Free from hurry or emotional detachment, our mature companions listen attentively, cook comforting meals upon request in serviced apartments, and provide deep, restorative affection. They bring the warmth of a loving partner without demanding long-term commitments.',
+      'Seekers of authentic warmth, sensual depth, and emotional understanding find their sanctuary in our housewife call girls in Gurgaon. These mature, curvy call girls offer a comforting presence that commercial models often cannot replicate.',
+      'Free from hurry or emotional detachment, our mature call girls listen attentively, cook comforting meals upon request in serviced apartments, and provide deep, restorative affection. They bring the warmth of a loving partner without demanding long-term commitments.',
       'Our mature call girls operate with immense discretion, valuing the peaceful privacy of your rendezvous just as dearly as you do. Experience genuine passion in a tranquil environment.',
     ],
     keyHighlights: [
@@ -446,29 +446,29 @@ export const categories: Category[] = [
       },
       {
         question: 'Are mature call girls in Gurgaon verified?',
-        answer: 'Yes. All housewife companions are verified for identity, health, and photo accuracy by the ALINA VIP team.',
+        answer: 'Yes. All housewife call girls are verified for identity, health, and photo accuracy by the ALINA VIP team.',
       },
       {
-        question: 'Can I book a mature companion for private home outcalls?',
+        question: 'Can I book a mature call girl for private home outcalls?',
         answer: 'Yes. Our housewife escorts provide outcalls to private residences, penthouses, and luxury hotel suites across all Gurgaon sectors.',
       },
       {
         question: 'Is my privacy protected with housewife escorts?',
-        answer: 'Yes, absolutely. Both clients and companions deeply value privacy, ensuring total discretion and confidentiality for every meeting.',
+        answer: 'Yes, absolutely. Both clients and call girls deeply value privacy, ensuring total discretion and confidentiality for every meeting.',
       },
     ],
   },
   {
     slug: 'premium-escorts',
     name: 'Premium Escorts',
-    shortDescription: 'Versatile, five-star companions mastering every facet of upscale VIP call girls and escort girls.',
-    description: 'Our premium escorts in Gurgaon combine elegance, sensual charm, and impeccable social skills. Whatever your itinerary calls for—from formal corporate functions to intimate hotel suite unwinding—these all-round companions guarantee a flawless 5-star experience.',
+    shortDescription: 'Versatile, five-star call girls mastering every facet of upscale VIP call girls and escort girls.',
+    description: 'Our premium escorts in Gurgaon combine elegance, sensual charm, and impeccable social skills. Whatever your itinerary calls for—from formal corporate functions to intimate hotel suite unwinding—these all-round call girls guarantee a flawless 5-star experience.',
     icon: 'Sparkles',
     h1Title: 'Premium Escorts in Gurgaon',
-    subheading: 'Versatile Five-Star Companions for Corporate Galas, Dining & Private Luxury',
+    subheading: 'Versatile Five-Star Call Girls for Corporate Galas, Dining & Private Luxury',
     longDescription: [
-      'ALINA VIP India presents our signature collection of premium escorts in Gurgaon—versatile, radiant companions trained to excel in every setting. From high-energy nightlife along Sector 29 to quiet, candlelit suites in DLF Phase 5, they adapt seamlessly to your lifestyle.',
-      'Each premium companion brings a harmonious balance of beauty, charm, and social polish. They are passionate hostesses, attentive listeners, and intoxicating lovers who ensure your rendezvous is flawless from beginning to end.',
+      'ALINA VIP India presents our signature collection of premium escorts in Gurgaon—versatile, radiant call girls trained to excel in every setting. From high-energy nightlife along Sector 29 to quiet, candlelit suites in DLF Phase 5, they adapt seamlessly to your lifestyle.',
+      'Each premium escort girl brings a harmonious balance of beauty, charm, and social polish. They are passionate hostesses, attentive listeners, and intoxicating lovers who ensure your rendezvous is flawless from beginning to end.',
       'Available 24 hours a day with rapid 20-30 minute outcall dispatch across Gurgaon and Delhi NCR, our premium escorts offer the quintessential luxury experience.',
     ],
     keyHighlights: [
@@ -494,7 +494,7 @@ export const categories: Category[] = [
       },
       {
         question: 'Do you charge advance payment for premium escorts?',
-        answer: 'No. ALINA VIP operates a strict zero-advance policy to protect our clients. Payment is handed directly to the companion upon arrival.',
+        answer: 'No. ALINA VIP operates a strict zero-advance policy to protect our clients. Payment is handed directly to the call girl upon arrival.',
       },
       {
         question: 'Can premium escorts visit luxury five-star hotels?',

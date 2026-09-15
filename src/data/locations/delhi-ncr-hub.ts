@@ -31,7 +31,7 @@ export const delhiNcrHub: LocationData = {
     ],
     commercialProfile: 'Delhi NCR generates the largest GDP of any metropolitan cluster in India, hosting national government ministries, international embassies, corporate headquarters of over 300 Fortune 500 corporations, and major manufacturing corridors in Manesar, Greater Noida, and Faridabad. High-ranking government dignitaries, corporate executives, venture capitalists, and global business travelers create a steady demand for top-tier escort service characterized by strict discretion and intellectual depth.',
   },
-  companionshipOptions: {
+  serviceOptions: {
     overview: 'ALINA VIP provides an extensive spectrum of bespoke escort services arrangements across all jurisdictions of Delhi NCR, structured around the specific needs of our distinguished clientele.',
     options: [
       {
@@ -53,15 +53,15 @@ export const delhiNcrHub: LocationData = {
     ],
   },
   whyChoose: {
-    overview: 'Discerning clients choose ALINA VIP across Delhi NCR for our verified companion roster, cross-regional logistical speed, and ironclad discretion.',
+    overview: 'Discerning clients choose ALINA VIP across Delhi NCR for our verified call girl roster, cross-regional logistical speed, and ironclad discretion.',
     reasons: [
       {
         title: '100% Verified Profile Authentication',
-        desc: 'Every companion profile is physically vetted and authenticated, guaranteeing that our portfolio accurately represents your companion.',
+        desc: 'Every call girl profile is physically vetted and authenticated, guaranteeing that our portfolio accurately represents your call girl.',
       },
       {
         title: 'Cross-NCR Rapid Dispatch Network',
-        desc: 'With localized companion teams stationed in South Delhi, Central Delhi, Gurgaon, and Noida, dispatch is prompt and reliable across all corridors.',
+        desc: 'With localized call girl teams stationed in South Delhi, Central Delhi, Gurgaon, and Noida, dispatch is prompt and reliable across all corridors.',
       },
       {
         title: 'Absolute Privacy & Zero Digital Trail',
@@ -69,7 +69,7 @@ export const delhiNcrHub: LocationData = {
       },
       {
         title: 'Multilingual & Culturally Sophisticated Roster',
-        desc: 'Our companions include university graduates, models, and air hostesses fluent in English, Hindi, and foreign languages.',
+        desc: 'Our call girls include university graduates, models, and air hostesses fluent in English, Hindi, and foreign languages.',
       },
     ],
   },
@@ -119,10 +119,10 @@ export const delhiNcrHub: LocationData = {
   privacySafety: {
     overview: 'In a metropolitan region with high diplomatic visibility and public scrutiny, privacy and safety are handled with rigorous operational security.',
     protocols: [
-      'Private Chauffeur Drop-offs: Companions arrive via unmarked executive vehicles directly to hotel porches or private driveways.',
+      'Private Chauffeur Drop-offs: Call Girls arrive via unmarked executive vehicles directly to hotel porches or private driveways.',
       'No Public Lobby Waiting: Meetings are coordinated directly to room doors or private suites to avoid corridor or lobby exposure.',
       'Data Cleansing Protocol: Phone logs, messages, and temporary booking tokens are systematically erased post-rendezvous.',
-      'Strict Non-Disclosure: All companions sign comprehensive non-disclosure agreements regarding clients and locations.',
+      'Strict Non-Disclosure: All call girls sign comprehensive non-disclosure agreements regarding clients and locations.',
     ],
   },
   serviceCategories: [
@@ -152,7 +152,7 @@ export const delhiNcrHub: LocationData = {
       {
         step: '01',
         title: 'Select Category or City Area',
-        desc: 'Browse our authenticated portfolio of VIP companions, Russian models, and high-profile call girls across Delhi NCR.',
+        desc: 'Browse our authenticated portfolio of VIP call girls, Russian models, and high-profile call girls across Delhi NCR.',
       },
       {
         step: '02',
@@ -167,7 +167,7 @@ export const delhiNcrHub: LocationData = {
       {
         step: '04',
         title: 'Discrete Rendezvous at Your Location',
-        desc: 'Your chosen companion arrives punctually and elegantly dressed at your five-star hotel or private residence.',
+        desc: 'Your chosen call girl arrives punctually and elegantly dressed at your five-star hotel or private residence.',
       },
     ],
   },
@@ -182,19 +182,19 @@ export const delhiNcrHub: LocationData = {
     },
     {
       question: 'How fast can an escort arrive in Delhi or Gurgaon?',
-      answer: 'Thanks to localized dispatch hubs, companions typically arrive within 30 to 45 minutes in South Delhi and Gurgaon, and within 40 to 60 minutes across Noida, Central Delhi, and airport transit zones.',
+      answer: 'Thanks to localized dispatch hubs, call girls typically arrive within 30 to 45 minutes in South Delhi and Gurgaon, and within 40 to 60 minutes across Noida, Central Delhi, and airport transit zones.',
     },
     {
-      question: 'Are Russian companions available across all NCR regions?',
-      answer: 'Yes, our verified Russian and European companions are available for outcall bookings in Delhi, Aerocity, Gurgaon, and Noida.',
+      question: 'Are Russian call girls available across all NCR regions?',
+      answer: 'Yes, our verified Russian and European call girls are available for outcall bookings in Delhi, Aerocity, Gurgaon, and Noida.',
     },
     {
       question: 'Is client privacy protected when booking across state borders in NCR?',
       answer: 'Absolutely. We operate under strict digital data erasure protocols, unbranded payment options, and total confidentiality regardless of whether your booking is in Delhi, Haryana, or Uttar Pradesh.',
     },
     {
-      question: 'Can I book a companion for weekend travel outside Delhi NCR?',
-      answer: 'Yes, we provide cultured travel companions available for weekend retreats to Agra, Jaipur, Neemrana Fort Palace, Rishikesh luxury resorts, or international journeys.',
+      question: 'Can I book a call girl for weekend travel outside Delhi NCR?',
+      answer: 'Yes, we provide cultured travel escorts available for weekend retreats to Agra, Jaipur, Neemrana Fort Palace, Rishikesh luxury resorts, or international journeys.',
     },
   ],
   relatedGuides: [
@@ -322,7 +322,7 @@ export const regionalNcrHubs: LocationData[] = [
       landmarks: ['DLF Mall of India (Sector 18)', 'The Great India Place & Gardens Galleria', 'Radisson Blu Hotel Noida (Sector 18)', 'Advant Navis Business Park (Sector 142)', 'Noida Golf Course (Sector 38)', 'Okhla Bird Sanctuary'],
       commercialProfile: 'Home to the national headquarters and research campuses of HCL Technologies, Samsung, Adobe, Paytm, and major media broadcasting conglomerates in Film City, Noida generates substantial corporate travel demand from senior executives and international delegations.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an extensive suite of tailored escort service experiences across all sectors of Noida, designed for corporate travelers and luxury residents.',
       options: [
         {
@@ -348,15 +348,15 @@ export const regionalNcrHubs: LocationData[] = [
       reasons: [
         {
           title: '100% Genuine Profile Verification',
-          desc: 'Every companion profile is physically vetted and authenticated, guaranteeing that what you see is who arrives.',
+          desc: 'Every call girl profile is physically vetted and authenticated, guaranteeing that what you see is who arrives.',
         },
         {
           title: 'Expressway Fast Dispatch',
-          desc: 'With companions stationed along Sector 18, Sector 62, and the Expressway, arrival takes just 30 to 45 minutes.',
+          desc: 'With call girls stationed along Sector 18, Sector 62, and the Expressway, arrival takes just 30 to 45 minutes.',
         },
         {
           title: 'Strict Gated Security Discretion',
-          desc: 'Companions arrive in discreet private vehicles and navigate security barriers smoothly without drawing attention.',
+          desc: 'Call Girls arrive in discreet private vehicles and navigate security barriers smoothly without drawing attention.',
         },
         {
           title: 'Complete Data Confidentiality',
@@ -378,23 +378,23 @@ export const regionalNcrHubs: LocationData[] = [
         'Unmarked luxury vehicles for all drop-offs',
         'Direct room-door or apartment-door rendezvous to eliminate lobby visibility',
         'Encrypted messaging channels with zero data logging',
-        'Companions dressed in refined cocktail or smart-casual attire',
+        'Call Girls dressed in refined cocktail or smart-casual attire',
       ],
     },
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'college-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['greater-noida', 'delhi', 'south-delhi', 'ghaziabad', 'faridabad'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Noida Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian companions, and college models available in Noida.' },
+        { step: '01', title: 'Browse Noida Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian call girls, and college models available in Noida.' },
         { step: '02', title: 'Private Coordination', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel or apartment location in Noida.' },
         { step: '03', title: 'Fast Dispatch Confirmation', desc: 'Our concierge confirms scheduling and provides accurate arrival timing.' },
-        { step: '04', title: 'Elegant Luxury Encounter', desc: 'Welcome your companion for an unforgettable private rendezvous.' },
+        { step: '04', title: 'Elegant Luxury Encounter', desc: 'Welcome your call girl for an unforgettable private rendezvous.' },
       ],
     },
     faqs: [
       { question: 'Do you provide outcalls to hotels in Sector 18 Noida?', answer: 'Yes, we regularly provide outcalls to Radisson Blu Hotel Noida, Mosaic Hotel, and boutique suites in Sector 18 with complete discretion.' },
-      { question: 'Can companions reach high-rises on the Noida-Greater Noida Expressway?', answer: 'Yes, we serve all luxury gated high-rises along the Expressway including Sectors 93, 128, 137, and 142 within 30 to 45 minutes.' },
-      { question: 'Are Russian companions available in Noida?', answer: 'Yes, we offer verified Russian and European companions available for bookings in Noida.' },
+      { question: 'Can escort girls reach high-rises on the Noida-Greater Noida Expressway?', answer: 'Yes, we serve all luxury gated high-rises along the Expressway including Sectors 93, 128, 137, and 142 within 30 to 45 minutes.' },
+      { question: 'Are Russian call girls available in Noida?', answer: 'Yes, we offer verified Russian and European call girls available for bookings in Noida.' },
       { question: 'How discreet is the booking process in Noida?', answer: 'We ensure 100% confidentiality. We never store personal contact details, and all records are purged post-session.' },
     ],
     relatedGuides: [
@@ -441,7 +441,7 @@ export const regionalNcrHubs: LocationData[] = [
       landmarks: ['Jaypee Greens Golf and Spa Resort', 'India Exposition Mart (Expo Centre)', 'Crowne Plaza Greater Noida', 'Buddh International Circuit (Yamuna Expressway)', 'Pari Chowk Landmark Junction', 'The Grand Venice Mall'],
       commercialProfile: 'Anchored by the India Expo Mart—which hosts international trade summits, auto expos, and trade fairs—and major automotive and electronics manufacturing zones, Greater Noida attracts senior corporate delegates and international business travelers year-round.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in Greater Noida are designed specifically for golf resort guests, trade expo attendees, and residents seeking top-tier company.',
       options: [
         {
@@ -463,19 +463,19 @@ export const regionalNcrHubs: LocationData[] = [
       ],
     },
     whyChoose: {
-      overview: 'Clients in Greater Noida choose ALINA VIP for our verified companions, resort familiarity, and absolute discretion.',
+      overview: 'Clients in Greater Noida choose ALINA VIP for our verified call girls, resort familiarity, and absolute discretion.',
       reasons: [
         {
           title: 'Familiarity with Jaypee Greens & Crowne Plaza',
-          desc: 'Companions and chauffeurs understand luxury resort and hotel protocols for seamless, quiet entry.',
+          desc: 'Call Girls and chauffeurs understand luxury resort and hotel protocols for seamless, quiet entry.',
         },
         {
           title: '100% Genuine Profile Matching',
-          desc: 'Real photographs and verified companion profiles ensure complete satisfaction.',
+          desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.',
         },
         {
           title: 'Dedicated Chauffeur Service',
-          desc: 'Companions travel in comfortable private executive vehicles via the Expressway.',
+          desc: 'Call Girls travel in comfortable private executive vehicles via the Expressway.',
         },
         {
           title: 'Absolute Privacy Guarantee',
@@ -497,23 +497,23 @@ export const regionalNcrHubs: LocationData[] = [
         'Unmarked luxury vehicles for all drop-offs',
         'Direct room-door or villa rendezvous to eliminate public visibility',
         'Encrypted messaging channels with zero data logging',
-        'Companions dressed in refined resort-chic or cocktail attire',
+        'Call Girls dressed in refined resort-chic or cocktail attire',
       ],
     },
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'travel-escorts', 'high-profile-girls'],
     nearbyAreas: ['noida', 'ghaziabad', 'faridabad', 'delhi'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Greater Noida Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian models, and travel companions.' },
+        { step: '01', title: 'Browse Greater Noida Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian models, and travel escorts.' },
         { step: '02', title: 'Private Coordination', desc: 'Call +91-9996265679 or message on WhatsApp with your resort or hotel details.' },
         { step: '03', title: 'Dispatch Confirmation', desc: 'Our concierge confirms scheduling, coordinates chauffeur transit, and provides arrival timing.' },
-        { step: '04', title: 'Indulge in Luxury', desc: 'Welcome your companion at your resort suite or villa for an unforgettable experience.' },
+        { step: '04', title: 'Indulge in Luxury', desc: 'Welcome your call girl at your resort suite or villa for an unforgettable experience.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Jaypee Greens Golf Resort in Greater Noida?', answer: 'Yes, Jaypee Greens Golf & Spa Resort is one of our primary served luxury properties in Greater Noida.' },
-      { question: 'How quickly can a companion arrive in Greater Noida?', answer: 'Companions travel via the Expressway and generally arrive within 40 to 50 minutes of booking confirmation.' },
-      { question: 'Can companions accompany clients attending events at India Expo Mart?', answer: 'Yes, our companions are articulate and socially poised, making them ideal dates for evening dinners following exhibitions at India Expo Mart.' },
+      { question: 'How quickly can a call girl arrive in Greater Noida?', answer: 'Call Girls travel via the Expressway and generally arrive within 40 to 50 minutes of booking confirmation.' },
+      { question: 'Can escort girls accompany clients attending events at India Expo Mart?', answer: 'Yes, our call girls are articulate and socially poised, making them ideal dates for evening dinners following exhibitions at India Expo Mart.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Resort Luxury at Jaypee Greens Greater Noida', excerpt: 'Review of luxury golf resort living in Greater Noida.' },
@@ -539,7 +539,7 @@ export const regionalNcrHubs: LocationData[] = [
       landmarks: ['Radisson Blu Hotel Kaushambi Delhi NCR', 'Shipra Mall & Habitat Centre (Indirapuram)', 'Pacific Mall (Kaushambi)', 'Delhi-Meerut Expressway (NH-9 / NH-24)', 'Country Inn & Suites by Radisson Sahibabad', 'Hindon River Promenade'],
       commercialProfile: 'Driven by massive industrial estates in Sahibabad and modern IT hubs along the Delhi-Meerut Expressway, Ghaziabad hosts visiting corporate executives, manufacturing heads, and business travelers.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible escort services tailored to hotel guests and residents in Kaushambi, Indirapuram, and Vaishali.',
       options: [
         {
@@ -565,11 +565,11 @@ export const regionalNcrHubs: LocationData[] = [
       reasons: [
         {
           title: 'Five-Star Hotel Familiarity',
-          desc: 'Companions arrive smoothly at Radisson Blu Kaushambi with zero lobby loitering.',
+          desc: 'Call Girls arrive smoothly at Radisson Blu Kaushambi with zero lobby loitering.',
         },
         {
           title: '100% Genuine Profile Matching',
-          desc: 'Real photographs and verified companion profiles ensure complete satisfaction.',
+          desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.',
         },
         {
           title: 'Fast 30-40 Minute Arrival',
@@ -602,16 +602,16 @@ export const regionalNcrHubs: LocationData[] = [
     nearbyAreas: ['noida', 'delhi', 'greater-noida'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, college models, and independent companions.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, college models, and independent call girls.' },
         { step: '02', title: 'Private Coordination', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel or apartment location in Ghaziabad.' },
-        { step: '03', title: 'Fast Dispatch', desc: 'Our team verifies availability and confirms your companion’s ETA within 30 to 40 minutes.' },
-        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your companion for a private, memorable luxury rendezvous.' },
+        { step: '03', title: 'Fast Dispatch', desc: 'Our team verifies availability and confirms your call girl’s ETA within 30 to 40 minutes.' },
+        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your call girl for a private, memorable luxury rendezvous.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Radisson Blu Kaushambi in Ghaziabad?', answer: 'Yes, Radisson Blu Hotel Kaushambi is one of our most frequently served luxury properties in Ghaziabad.' },
-      { question: 'Can companions visit gated societies in Indirapuram and Vaishali?', answer: 'Yes, we provide outcalls to residential societies in Indirapuram, Vaishali, and Vasundhara with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Ghaziabad?', answer: 'Companions generally arrive within 30 to 45 minutes of booking confirmation.' },
+      { question: 'Can escort girls visit gated societies in Indirapuram and Vaishali?', answer: 'Yes, we provide outcalls to residential societies in Indirapuram, Vaishali, and Vasundhara with complete discretion.' },
+      { question: 'How quickly can a call girl arrive in Ghaziabad?', answer: 'Call Girls generally arrive within 30 to 45 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Radisson Blu Kaushambi Luxury Review', excerpt: 'Review of five-star hospitality in western Ghaziabad.' },
@@ -636,7 +636,7 @@ export const regionalNcrHubs: LocationData[] = [
       landmarks: ['Radisson Blu Faridabad (Sector 20)', 'Vivanta New Delhi Surajkund (Taj Group)', 'Surajkund Heritage Reservoir & Crafts Mela', 'Mathura Road (NH-19 / Delhi-Agra Expressway)', 'Faridabad-Gurgaon Expressway Link', 'Badkhal Lake Enclave'],
       commercialProfile: 'Faridabad hosts manufacturing giants like Escorts Group, JCB India, Yamaha, and Havells, attracting senior corporate executives, international technical directors, and business visitors.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible escort services tailored to hotel guests and residents across Faridabad and Surajkund.',
       options: [
         {
@@ -662,15 +662,15 @@ export const regionalNcrHubs: LocationData[] = [
       reasons: [
         {
           title: 'Five-Star Hotel Familiarity',
-          desc: 'Companions arrive smoothly at Radisson Blu Faridabad and Vivanta Surajkund with zero lobby exposure.',
+          desc: 'Call Girls arrive smoothly at Radisson Blu Faridabad and Vivanta Surajkund with zero lobby exposure.',
         },
         {
           title: '100% Genuine Profile Matching',
-          desc: 'Real photographs and verified companion profiles ensure complete satisfaction.',
+          desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.',
         },
         {
           title: 'Fast Transit from Gurgaon & Delhi',
-          desc: 'Via the Gurgaon-Faridabad Road and Violet Line metro, companions arrive within 35 to 45 minutes.',
+          desc: 'Via the Gurgaon-Faridabad Road and Violet Line metro, call girls arrive within 35 to 45 minutes.',
         },
         {
           title: 'Absolute Data Privacy',
@@ -699,16 +699,16 @@ export const regionalNcrHubs: LocationData[] = [
     nearbyAreas: ['gurgaon', 'delhi', 'south-delhi', 'noida'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, college models, and independent companions.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, college models, and independent call girls.' },
         { step: '02', title: 'Private Coordination', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel or apartment location in Faridabad.' },
-        { step: '03', title: 'Fast Dispatch', desc: 'Our team verifies availability and confirms your companion’s ETA within 35 to 45 minutes.' },
-        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your companion for a private, memorable luxury rendezvous.' },
+        { step: '03', title: 'Fast Dispatch', desc: 'Our team verifies availability and confirms your call girl’s ETA within 35 to 45 minutes.' },
+        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your call girl for a private, memorable luxury rendezvous.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Radisson Blu Faridabad and Vivanta Surajkund?', answer: 'Yes, Radisson Blu Faridabad in Sector 20 and Vivanta Surajkund are our most frequently served luxury properties in Faridabad.' },
-      { question: 'How quickly can a companion arrive in Faridabad?', answer: 'Companions travel via the Gurgaon-Faridabad Road or Mathura Road and generally arrive within 35 to 45 minutes of confirmation.' },
-      { question: 'Are companions available for weekend staycations in Surajkund?', answer: 'Yes, we specialize in weekend escort packages for resort retreats in Surajkund.' },
+      { question: 'How quickly can a call girl arrive in Faridabad?', answer: 'Call Girls travel via the Gurgaon-Faridabad Road or Mathura Road and generally arrive within 35 to 45 minutes of confirmation.' },
+      { question: 'Are call girls available for weekend staycations in Surajkund?', answer: 'Yes, we specialize in weekend escort packages for resort retreats in Surajkund.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Vivanta Surajkund: Foothill Luxury Review', excerpt: 'Review of five-star resort hospitality in Surajkund, Faridabad.' },

@@ -361,7 +361,7 @@ export default function HomePage() {
               {
                 icon: Star,
                 title: 'Cash On Delivery',
-                desc: 'Verify companion first',
+                desc: 'Verify call girl first',
               },
             ].map((item, i) => {
               const Icon = item.icon;
@@ -397,7 +397,7 @@ export default function HomePage() {
                 Prompt 20-30 Minute Outcall Across Gurgaon &amp; NCR
               </p>
               <h2 className="font-serif text-2xl md:text-3xl text-white font-light">
-                Bespoke Companion Reservations For Distinguished Hotel Suites &amp; Residences
+                Bespoke call girl reservations For Distinguished Hotel Suites &amp; Residences
               </h2>
             </div>
             <div className="flex gap-3">

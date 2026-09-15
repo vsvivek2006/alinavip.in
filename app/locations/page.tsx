@@ -49,7 +49,7 @@ export default function LocationsPage() {
 
           {/* Clean Informative Lead */}
           <p className="text-charcoal-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
-            ALINA VIP India coordinates discreet, verified escort services across all premier residential sectors, corporate hubs, and five-star hospitality districts in Gurgaon, Aerocity, and Delhi NCR. Select your district below for verified companions with 20 to 30-minute outcall dispatch.
+            ALINA VIP India coordinates discreet, verified escort services across all premier residential sectors, corporate hubs, and five-star hospitality districts in Gurgaon, Aerocity, and Delhi NCR. Select your district below for verified call girls with 20 to 30-minute outcall dispatch.
           </p>
 
           {(() => {

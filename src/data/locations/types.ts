@@ -100,7 +100,7 @@ export interface LocationData {
     landmarks: string[];
     commercialProfile: string;
   };
-  companionshipOptions: {
+  serviceOptions: {
     overview: string;
     options: LocationOption[];
   };

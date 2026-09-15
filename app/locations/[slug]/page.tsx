@@ -315,14 +315,14 @@ export default async function LocationPage({ params }: LocationPageProps) {
               </div>
 
               {/* Service Options */}
-              {location.companionshipOptions?.overview && (
+              {location.serviceOptions?.overview && (
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
                     Service Options in {location.name}
                   </h3>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">{location.companionshipOptions.overview}</p>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">{location.serviceOptions.overview}</p>
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {location.companionshipOptions.options.map((opt, idx) => (
+                    {location.serviceOptions.options.map((opt, idx) => (
                       <div key={idx} className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-gold-300 transition-all shadow-sm">
                         <h4 className="text-lg font-bold text-[#1a1a2e] mb-2 font-serif">{opt.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{opt.desc}</p>
@@ -400,7 +400,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                       Zero Advance Fees
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
-                      To protect you from fraud and deceptive advance-fee schemes, ALINA VIP supports Cash on Delivery. You meet and verify your companion in person before settling the booking fee.
+                      To protect you from fraud and deceptive advance-fee schemes, ALINA VIP supports Cash on Delivery. You meet and verify your call girl in person before settling the booking fee.
                     </p>
                   </div>
                 </div>

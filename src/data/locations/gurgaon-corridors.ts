@@ -19,7 +19,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Qutab Plaza Commercial Centre', 'Aravalli Biodiversity Park Gate 1', 'Silver Oaks Residential Enclave', 'DLF City Club Phase 1', 'Sikanderpur Metro Interchange'],
       commercialProfile: 'While primarily a residential haven, DLF Phase 1 is flanked by commercial plazas, boutique wellness clinics, and private family offices. Its proximity to both MG Road and Cyber City makes it a favored address for top corporate brass, multinational expatriates, and high-net-worth individuals.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in DLF Phase 1 cater to those accustomed to the finest standards of living, providing bespoke escorts for intimate private gatherings, executive dinners, and restful evenings.',
       options: [
         {
@@ -41,15 +41,15 @@ export const gurgaonCorridors: LocationData[] = [
       ],
     },
     whyChoose: {
-      overview: 'Clients in DLF Phase 1 select ALINA VIP for our uncompromising standards of discretion, verified authenticity, and refined companion presentation.',
+      overview: 'Clients in DLF Phase 1 select ALINA VIP for our uncompromising standards of discretion, verified authenticity, and refined call girl presentation.',
       reasons: [
         {
           title: 'Uncompromised Gated Security Discretion',
-          desc: 'Our companions arrive in unmarked luxury sedans and are experienced in navigating DLF Phase 1 security barriers without attracting neighborhood attention.',
+          desc: 'Our call girls arrive in unmarked luxury sedans and are experienced in navigating DLF Phase 1 security barriers without attracting neighborhood attention.',
         },
         {
           title: 'Authentic 100% Verified Profiles',
-          desc: 'Every companion profile is rigorously verified with real, unedited photos, ensuring you receive the exact elegance and beauty you anticipate.',
+          desc: 'Every call girl profile is rigorously verified with real, unedited photos, ensuring you receive the exact elegance and beauty you anticipate.',
         },
         {
           title: 'Intellectual & Conversational Sophistication',
@@ -82,16 +82,16 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['dlf-phase-2', 'dlf-phase-3', 'dlf-phase-4', 'mg-road', 'cyber-city', 'sushant-lok'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse DLF Phase 1 Profiles', desc: 'Explore verified companion profiles featuring high-profile models, VIP escorts, and independent companions.' },
+        { step: '01', title: 'Browse DLF Phase 1 Profiles', desc: 'Explore verified call girl profiles featuring high-profile models, VIP escorts, and independent call girls.' },
         { step: '02', title: 'Connect with Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your preferred schedule and private villa or suite location.' },
-        { step: '03', title: 'Discreet Booking Lock', desc: 'Our concierge confirms availability, agrees upon arrival specifics, and dispatches your chosen companion.' },
-        { step: '04', title: 'Punctual Elegant Arrival', desc: 'Your companion arrives within 30 to 45 minutes, appropriately attired and ready to deliver an exceptional experience.' },
+        { step: '03', title: 'Discreet Booking Lock', desc: 'Our concierge confirms availability, agrees upon arrival specifics, and dispatches your chosen call girl.' },
+        { step: '04', title: 'Punctual Elegant Arrival', desc: 'Your call girl arrives within 30 to 45 minutes, appropriately attired and ready to deliver an exceptional experience.' },
       ],
     },
     faqs: [
       { question: 'Do you provide outcall services to private homes in DLF Phase 1?', answer: 'Yes, we specialize in private outcall arrangements to independent villas, duplexes, and luxury residences throughout all blocks of DLF Phase 1 with complete discretion.' },
-      { question: 'How do companions manage gated security at DLF Phase 1 entry gates?', answer: 'Companions arrive in discreet private vehicles and coordinate entry smoothly using host visitor permissions, ensuring no disruption or suspicion.' },
-      { question: 'Can I book an elite companion for an evening dinner in DLF Phase 1?', answer: 'Absolutely. Our ladies are socially adept and make delightful dining partners for dinner dates at nearby luxury venues on MG Road or private club dining.' },
+      { question: 'How do call girls manage gated security at DLF Phase 1 entry gates?', answer: 'Call Girls arrive in discreet private vehicles and coordinate entry smoothly using host visitor permissions, ensuring no disruption or suspicion.' },
+      { question: 'Can I book an elite call girl for an evening dinner in DLF Phase 1?', answer: 'Absolutely. Our ladies are socially adept and make delightful dining partners for dinner dates at nearby luxury venues on MG Road or private club dining.' },
       { question: 'What is the typical arrival time in DLF Phase 1?', answer: 'Thanks to our localized presence near Sikanderpur and Golf Course Road, arrival typically takes between 30 to 40 minutes from confirmation.' },
     ],
     relatedGuides: [
@@ -117,7 +117,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Belvedere Towers & Belvedere Park', 'DLF Cyber Hub pedestrian link', 'Jacaranda Marg & Oakwood Way', 'DLF City Club Phase 2', 'Vodafone Belvedere Towers Rapid Metro Station'],
       commercialProfile: 'Flanked by DLF Cyber City Building 9 and Building 10, DLF Phase 2 sits at the exact confluence of global enterprise and high luxury. Thousands of international business travelers stay in serviced apartments and luxury residences here weekly, driving a steady demand for top-tier escort service.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible, premium escort service engagements tailored to the fast-moving lifestyles of DLF Phase 2 residents and corporate visitors.',
       options: [
         {
@@ -143,7 +143,7 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Immediate Cyber City Proximity',
-          desc: 'Our companions can reach any tower or residence in DLF Phase 2 within 25 to 35 minutes, perfectly aligning with busy executive itineraries.',
+          desc: 'Our call girls can reach any tower or residence in DLF Phase 2 within 25 to 35 minutes, perfectly aligning with busy executive itineraries.',
         },
         {
           title: 'Corporate Savvy & High Cultural IQ',
@@ -155,7 +155,7 @@ export const gurgaonCorridors: LocationData[] = [
         },
         {
           title: 'Diverse Global & Indian Profiles',
-          desc: 'From glamorous Russian and European models to sophisticated Indian VIP call girls and college companions, we offer unmatched variety.',
+          desc: 'From glamorous Russian and European models to sophisticated Indian VIP call girls and college call girls, we offer unmatched variety.',
         },
       ],
     },
@@ -171,9 +171,9 @@ export const gurgaonCorridors: LocationData[] = [
       overview: 'With the bustling energy of Cyber City next door, our privacy guidelines in DLF Phase 2 prioritize discrete vehicular arrivals and seamless condominium access.',
       protocols: [
         'Vehicular arrivals via dedicated private basement parking or residential drop-off zones.',
-        'Strict non-disclosure commitments signed by all agency companions.',
+        'Strict non-disclosure commitments signed by all agency call girls.',
         'Zero usage of client contact numbers for marketing or promotional campaigns.',
-        'Companions arrive appropriately attired in high-fashion smart-casual or evening cocktail wear.',
+        'Call Girls arrive appropriately attired in high-fashion smart-casual or evening cocktail wear.',
       ],
     },
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'model-escorts', 'college-girls'],
@@ -182,14 +182,14 @@ export const gurgaonCorridors: LocationData[] = [
       steps: [
         { step: '01', title: 'Select Profile', desc: 'Browse our authenticated portfolio of VIP call girls and models available in DLF Phase 2.' },
         { step: '02', title: 'Share Itinerary', desc: 'Contact our 24/7 helpline via WhatsApp or phone (+91-9996265679) with your apartment or hotel address.' },
-        { step: '03', title: 'Fast Confirmation', desc: 'Receive instant confirmation with anticipated arrival timing and companion confirmation.' },
-        { step: '04', title: 'Discrete Meeting', desc: 'Your companion arrives punctually at your door ready to deliver an unforgettable luxury experience.' },
+        { step: '03', title: 'Fast Confirmation', desc: 'Receive instant confirmation with anticipated arrival timing and call girl confirmation.' },
+        { step: '04', title: 'Discrete Meeting', desc: 'Your call girl arrives punctually at your door ready to deliver an unforgettable luxury experience.' },
       ],
     },
     faqs: [
-      { question: 'Can I book a companion for an evening at DLF Cyber Hub from DLF Phase 2?', answer: 'Yes, our companions are ideal dinner dates and social companions for Cyber Hub restaurants, lounges, and fine-dining venues.' },
+      { question: 'Can I book a call girl for an evening at DLF Cyber Hub from DLF Phase 2?', answer: 'Yes, our call girls are ideal dinner dates and social call girls for Cyber Hub restaurants, lounges, and fine-dining venues.' },
       { question: 'Do you serve high-rise condominiums like Belvedere Towers in Phase 2?', answer: 'Yes, we regularly cater to residents and visitors staying at Belvedere Towers, Belvedere Park, and surrounding private villas.' },
-      { question: 'Are Russian companions available for outcalls in DLF Phase 2?', answer: 'Yes, we feature verified Russian and European companions who are available for outcall appointments in DLF Phase 2.' },
+      { question: 'Are Russian call girls available for outcalls in DLF Phase 2?', answer: 'Yes, we feature verified Russian and European call girls who are available for outcall appointments in DLF Phase 2.' },
       { question: 'How discreet is the booking process?', answer: 'We ensure 100% confidentiality. We never save phone numbers permanently, and all transactions are handled discreetly.' },
     ],
     relatedGuides: [
@@ -215,7 +215,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Ambience Mall Gurugram', 'Ambience Caitriona Luxury Residences', 'Moulsari Avenue Rapid Metro Station', 'Micromax Moulsari Arcade', 'DLF Phase 3 Community Centre'],
       commercialProfile: 'Flanked by DLF Cyber City Building 14 and the Ambience Corporate Tower, DLF Phase 3 is a nexus of international commerce. Corporate guest houses, executive serviced residences, and boutique hotels flourish throughout the sector.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We provide specialized escort services in DLF Phase 3 tailored to residents, corporate travelers, and transit visitors seeking memorable relaxation.',
       options: [
         {
@@ -241,19 +241,19 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Unrivaled 25-35 Minute Dispatch',
-          desc: 'With companions stationed right along Moulsari Avenue and Cyber City, response times in DLF Phase 3 are among the fastest in Gurugram.',
+          desc: 'With call girls stationed right along Moulsari Avenue and Cyber City, response times in DLF Phase 3 are among the fastest in Gurugram.',
         },
         {
           title: 'Zero Bait-and-Switch Guarantee',
-          desc: 'The profile you select is guaranteed to be the companion who arrives at your door, verified and impeccably presented.',
+          desc: 'The profile you select is guaranteed to be the call girl who arrives at your door, verified and impeccably presented.',
         },
         {
           title: 'Complete Respect for Privacy',
-          desc: 'No personal identification is retained, transactions remain discreet, and our companions respect your personal sanctuary.',
+          desc: 'No personal identification is retained, transactions remain discreet, and our call girls respect your personal sanctuary.',
         },
         {
           title: 'Broad Profile Selection',
-          desc: 'Choose from college companions, independent models, air hostess escorts, and VIP models suited for any private engagement.',
+          desc: 'Choose from college call girls, independent models, air hostess escorts, and VIP models suited for any private engagement.',
         },
       ],
     },
@@ -269,9 +269,9 @@ export const gurgaonCorridors: LocationData[] = [
       overview: 'Because DLF Phase 3 features both bustling commercial pockets and private residential estates, our safety protocols ensure smooth, low-profile arrivals.',
       protocols: [
         'Private chauffeur drops directly at apartment lobbies or villa driveways.',
-        'Companions adhere to high standards of discreet conduct, ensuring zero attention from neighbors.',
+        'Call Girls adhere to high standards of discreet conduct, ensuring zero attention from neighbors.',
         'Encrypted coordination channels for booking confirmations.',
-        'Rigorous health, hygiene, and verification checks on all companion profiles.',
+        'Rigorous health, hygiene, and verification checks on all call girl profiles.',
       ],
     },
     serviceCategories: ['vip-call-girls', 'college-girls', 'air-hostess', 'model-escorts', 'independent-girls'],
@@ -281,14 +281,14 @@ export const gurgaonCorridors: LocationData[] = [
         { step: '01', title: 'Browse DLF Phase 3 Call Girls', desc: 'Review curated profiles of verified models, college girls, and VIP escorts.' },
         { step: '02', title: 'Book via Phone or WhatsApp', desc: 'Call +91-9996265679 or send a private WhatsApp message detailing your time and location.' },
         { step: '03', title: 'Confirmation Details', desc: 'Our concierge coordinates ETA and arrival protocol to ensure total discretion.' },
-        { step: '04', title: 'Relax & Enjoy', desc: 'Greet your companion at your door for a memorable, sophisticated experience.' },
+        { step: '04', title: 'Relax & Enjoy', desc: 'Greet your call girl at your door for a memorable, sophisticated experience.' },
       ],
     },
     faqs: [
       { question: 'Do you provide escort services to Ambience Caitriona in Phase 3?', answer: 'Yes, we frequently arrange outcall services to the ultra-luxury condominiums at Ambience Caitriona with strict adherence to concierge protocols.' },
-      { question: 'Can companions reach DLF Phase 3 during late-night hours?', answer: 'Yes, ALINA VIP operates 24/7 and we can dispatch companions to DLF Phase 3 at any hour of the night within 30 to 45 minutes.' },
-      { question: 'Are air hostess companions available in this area?', answer: 'Yes, due to our proximity to the IGI Airport and Aerocity, we feature polished air hostess companions who are frequently available in DLF Phase 3.' },
-      { question: 'Is advance booking necessary?', answer: 'While short-notice bookings are welcome, booking 1 to 2 hours in advance ensures the broadest selection of companion profiles.' },
+      { question: 'Can escort girls reach DLF Phase 3 during late-night hours?', answer: 'Yes, ALINA VIP operates 24/7 and we can dispatch call girls to DLF Phase 3 at any hour of the night within 30 to 45 minutes.' },
+      { question: 'Are air hostess call girls available in this area?', answer: 'Yes, due to our proximity to the IGI Airport and Aerocity, we feature polished air hostess call girls who are frequently available in DLF Phase 3.' },
+      { question: 'Is advance booking necessary?', answer: 'While short-notice bookings are welcome, booking 1 to 2 hours in advance ensures the broadest selection of call girl profiles.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'First Date Tips: Making a Lasting Impression', excerpt: 'How to plan an elegant evening with a escort at Ambience Mall or Cyber Hub.' },
@@ -313,7 +313,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['DLF Galleria Market & Fountain Promenade', 'Hamilton Court Luxury Condominiums', 'Ridgewood Estate', 'Regency Park 1 & 2', 'Cross Point Mall (adjacent)'],
       commercialProfile: 'While predominantly high-end residential, Phase 4 is anchored commercially by Galleria Market and Cross Point Mall, housing private equity boutiques, high-end wellness spas, and luxury retail storefronts.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in DLF Phase 4 are designed for gentlemen who appreciate cultured conversation, relaxed elegance, and discreet private moments.',
       options: [
         {
@@ -335,11 +335,11 @@ export const gurgaonCorridors: LocationData[] = [
       ],
     },
     whyChoose: {
-      overview: 'Clients in DLF Phase 4 turn to ALINA VIP because we match the neighborhood’s refined, understated aesthetic with authentic, high-caliber companions.',
+      overview: 'Clients in DLF Phase 4 turn to ALINA VIP because we match the neighborhood’s refined, understated aesthetic with authentic, high-caliber call girls.',
       reasons: [
         {
           title: 'Polished Social Grace',
-          desc: 'Our companions excel in casual yet sophisticated settings, whether strolling through Galleria Market or relaxing privately at home.',
+          desc: 'Our call girls excel in casual yet sophisticated settings, whether strolling through Galleria Market or relaxing privately at home.',
         },
         {
           title: '100% Genuine Photographic Verification',
@@ -347,11 +347,11 @@ export const gurgaonCorridors: LocationData[] = [
         },
         {
           title: 'Prompt 30-Minute Neighborhood Arrival',
-          desc: 'Positioned minutes from Galleria and Golf Course Road, our companions arrive promptly at your designated time.',
+          desc: 'Positioned minutes from Galleria and Golf Course Road, our call girls arrive promptly at your designated time.',
         },
         {
           title: 'Complete Discretion in Gated Societies',
-          desc: 'Our companions understand residential security protocols and respect client privacy impeccably.',
+          desc: 'Our call girls understand residential security protocols and respect client privacy impeccably.',
         },
       ],
     },
@@ -367,7 +367,7 @@ export const gurgaonCorridors: LocationData[] = [
       overview: 'Preserving our clients’ peace of mind in a tight-knit residential community is our primary operational focus in DLF Phase 4.',
       protocols: [
         'Vehicles park discreetly in visitor parking bays with no waiting with engines running.',
-        'Companions enter through designated visitor reception points smoothly with zero fuss.',
+        'Call Girls enter through designated visitor reception points smoothly with zero fuss.',
         'Encrypted booking records deleted automatically following the session.',
         'Strict hygiene, health, and mutual respect standards observed at all times.',
       ],
@@ -378,15 +378,15 @@ export const gurgaonCorridors: LocationData[] = [
       steps: [
         { step: '01', title: 'Browse Profiles', desc: 'Select from our verified roster of elegant call girls and models available in DLF Phase 4.' },
         { step: '02', title: 'Private Coordination', desc: 'Connect with our team via WhatsApp or call +91-9996265679 to share your preferred venue.' },
-        { step: '03', title: 'Concierge Verification', desc: 'We verify your details confidentially and confirm companion dispatch.' },
-        { step: '04', title: 'Enjoy Your Encounter', desc: 'Your companion arrives punctually at your apartment or hotel suite.' },
+        { step: '03', title: 'Concierge Verification', desc: 'We verify your details confidentially and confirm call girl dispatch.' },
+        { step: '04', title: 'Enjoy Your Encounter', desc: 'Your call girl arrives punctually at your apartment or hotel suite.' },
       ],
     },
     faqs: [
-      { question: 'Can I book a companion for a casual stroll or coffee at Galleria Market?', answer: 'Yes! Our companions are well-dressed, charming, and comfortable accompanying you for coffee or shopping at Galleria Market before heading to a private venue.' },
+      { question: 'Can I book a call girl for a casual stroll or coffee at Galleria Market?', answer: 'Yes! Our call girls are well-dressed, charming, and comfortable accompanying you for coffee or shopping at Galleria Market before heading to a private venue.' },
       { question: 'Do you deliver outcall services to Hamilton Court and Regency Park?', answer: 'Yes, we regularly provide discrete outcall services to residents of Hamilton Court, Windsor Court, and Regency Park.' },
       { question: 'What payment options do you support in DLF Phase 4?', answer: 'We accept discreet cash on arrival and secure digital payment methods as arranged with our booking coordinator.' },
-      { question: 'Can I book a companion for a full weekend in DLF Phase 4?', answer: 'Yes, multi-hour, overnight, and full weekend arrangements are available upon request.' },
+      { question: 'Can I book a call girl for a full weekend in DLF Phase 4?', answer: 'Yes, multi-hour, overnight, and full weekend arrangements are available upon request.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Boutique Dining Near Galleria Market', excerpt: 'Discover intimate fine dining experiences in DLF Phase 4.' },
@@ -411,7 +411,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['The Camellias Super Luxury Condominiums', 'The Magnolias & The Aralias', 'DLF Golf and Country Club', 'The Crest Luxury Towers', 'One Horizon Center & Two Horizon Center', 'Horizon Plaza Dining Esplanade'],
       commercialProfile: 'Anchored by One Horizon Center and Two Horizon Center, DLF Phase 5 houses the regional headquarters of multinational technology giants, sovereign wealth funds, and private equity conglomerates. The local clientele possesses the highest expectations of sophistication, intellect, and physical allure.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our DLF Phase 5 portfolio represents the highest tier of bespoke escort services, tailored specifically for ultra-high-net-worth clients who require perfection.',
       options: [
         {
@@ -437,11 +437,11 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Elite Supermodel & Celebrity-Tier Roster',
-          desc: 'Our Phase 5 roster includes verified fashion models, Russian companions, and high-profile corporate hostesses of extraordinary beauty and refinement.',
+          desc: 'Our Phase 5 roster includes verified fashion models, Russian call girls, and high-profile corporate hostesses of extraordinary beauty and refinement.',
         },
         {
           title: 'Familiarity with High-Security Enclaves',
-          desc: 'Our companions and drivers are thoroughly trained in the gate and elevator access protocols of The Camellias and The Magnolias.',
+          desc: 'Our call girls and drivers are thoroughly trained in the gate and elevator access protocols of The Camellias and The Magnolias.',
         },
         {
           title: 'Absolute Confidentiality & Non-Disclosure',
@@ -474,17 +474,17 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['golf-course-road', 'dlf-phase-4', 'sector-53', 'sector-54', 'sector-55', 'sector-56', 'golf-course-extension-road'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Consult VIP Portfolio', desc: 'Examine our premier selection of VIP models, Russian beauties, and high-profile companions.' },
+        { step: '01', title: 'Consult VIP Portfolio', desc: 'Examine our premier selection of VIP models, Russian beauties, and high-profile call girls.' },
         { step: '02', title: 'Direct VIP Concierge Line', desc: 'Contact our private booking desk directly at +91-9996265679 or via encrypted WhatsApp.' },
         { step: '03', title: 'Private Residence Protocol', desc: 'Provide your condominium access instructions for a completely seamless arrival.' },
         { step: '04', title: 'Exquisite Luxury Rendezvous', desc: 'Experience an unforgettable encounter marked by beauty, intelligence, and grace.' },
       ],
     },
     faqs: [
-      { question: 'Can you arrange companion visits to The Camellias or The Magnolias?', answer: 'Yes, we regularly provide discreet, seamless outcalls to The Camellias, The Magnolias, The Aralias, and The Crest, strictly observing private access requirements.' },
+      { question: 'Can you arrange call girl visits to The Camellias or The Magnolias?', answer: 'Yes, we regularly provide discreet, seamless outcalls to The Camellias, The Magnolias, The Aralias, and The Crest, strictly observing private access requirements.' },
       { question: 'What categories are most recommended for DLF Phase 5?', answer: 'Our VIP Call Girls, Russian Call Girls, and Model Escorts are the most requested in Phase 5 due to their exceptional glamour, international sophistication, and social grace.' },
-      { question: 'Can companions accompany clients to dinners at Horizon Plaza?', answer: 'Yes, our companions are ideal dining dates for high-end restaurants at One Horizon Center, such as Town Hall, Hahn’s Kitchen, or Whisky Samba.' },
-      { question: 'Are international travel companions available from DLF Phase 5?', answer: 'Yes, we offer cultured travel companions with valid travel documentation ready to accompany clients on domestic retreats or overseas journeys.' },
+      { question: 'Can escort girls accompany clients to dinners at Horizon Plaza?', answer: 'Yes, our call girls are ideal dining dates for high-end restaurants at One Horizon Center, such as Town Hall, Hahn’s Kitchen, or Whisky Samba.' },
+      { question: 'Are international travel escorts available from DLF Phase 5?', answer: 'Yes, we offer cultured travel escorts with valid travel documentation ready to accompany clients on domestic retreats or overseas journeys.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Fine Dining at Horizon Center & Golf Course Road', excerpt: 'A guide to premier culinary experiences in DLF Phase 5.' },
@@ -509,7 +509,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['One Horizon Center & Horizon Plaza', 'DLF Golf and Country Club', 'Central Plaza Mall', 'South Point Mall & Gourmet Hub', 'Sector 54 Chowk Rapid Metro Station', 'Global Foyer Executive Mall'],
       commercialProfile: 'Home to the Indian headquarters of Fortune 100 leaders including Samsung, American Express, Apple, Dell, and McKinsey, Golf Course Road hosts thousands of high-earning executives and international business travelers year-round.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an exhaustive suite of luxury escort services designed specifically for the discerning executives and residents along Golf Course Road.',
       options: [
         {
@@ -535,15 +535,15 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Superb 25-35 Minute Local Dispatch',
-          desc: 'With companions stationed along the Golf Course corridor, we guarantee rapid, punctual arrival at any hotel or residence.',
+          desc: 'With call girls stationed along the Golf Course corridor, we guarantee rapid, punctual arrival at any hotel or residence.',
         },
         {
-          title: 'Elite Model & VIP Companion Selection',
-          desc: 'Choose from high-fashion models, Russian beauties, educated college companions, and independent hostesses.',
+          title: 'Elite Model & VIP Call Girl Selection',
+          desc: 'Choose from high-fashion models, Russian beauties, educated college call girls, and independent hostesses.',
         },
         {
           title: 'Discreet Chauffeur Service',
-          desc: 'Our companions arrive in unmarked private cars, ensuring complete privacy during arrival and departure.',
+          desc: 'Our call girls arrive in unmarked private cars, ensuring complete privacy during arrival and departure.',
         },
         {
           title: 'Ironclad Privacy Protection',
@@ -564,7 +564,7 @@ export const gurgaonCorridors: LocationData[] = [
       protocols: [
         'Direct arrival to private condominium elevators or hotel suite corridors with zero lobby waiting.',
         'Encrypted booking channels ensuring client anonymity from initial inquiry through checkout.',
-        'Rigorous identity and health vetting on all agency companions.',
+        'Rigorous identity and health vetting on all agency call girls.',
         'Zero promotional follow-ups or spam communication post-engagement.',
       ],
     },
@@ -572,17 +572,17 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['dlf-phase-5', 'dlf-phase-4', 'golf-course-extension-road', 'sector-53', 'sector-43', 'sector-54', 'cyber-city'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Golf Course Road Models', desc: 'Review authenticated companion profiles featuring detailed attributes and photos.' },
+        { step: '01', title: 'Browse Golf Course Road Models', desc: 'Review authenticated call girl profiles featuring detailed attributes and photos.' },
         { step: '02', title: 'Reach Our Booking Desk', desc: 'Call +91-9996265679 or send a private message on WhatsApp with your hotel or residence address.' },
         { step: '03', title: 'Immediate Confirmation', desc: 'Our concierge confirms scheduling and provides ETA information.' },
-        { step: '04', title: 'Relax & Indulge', desc: 'Welcome your verified companion for an intimate, luxurious encounter.' },
+        { step: '04', title: 'Relax & Indulge', desc: 'Welcome your verified call girl for an intimate, luxurious encounter.' },
       ],
     },
     faqs: [
       { question: 'Which hotels along Golf Course Road do you serve?', answer: 'We regularly serve DoubleTree by Hilton, The Anya Hotel, Ibis Gurgaon, and executive serviced apartments along the entire Golf Course Road corridor.' },
-      { question: 'How fast can an escort arrive on Golf Course Road?', answer: 'Our companions typically arrive within 25 to 35 minutes of confirmation, facilitated by the signal-free underpass corridor.' },
-      { question: 'Are Russian companions available on Golf Course Road?', answer: 'Yes, we have verified European and Russian companions available for outcalls along Golf Course Road.' },
-      { question: 'Can companions attend corporate events or dinners at Horizon Center?', answer: 'Yes, our companions are socially refined, articulate, and dressed to impress for dinners at Town Hall, Whisky Samba, or private boardroom receptions.' },
+      { question: 'How fast can an escort arrive on Golf Course Road?', answer: 'Our call girls typically arrive within 25 to 35 minutes of confirmation, facilitated by the signal-free underpass corridor.' },
+      { question: 'Are Russian call girls available on Golf Course Road?', answer: 'Yes, we have verified European and Russian call girls available for outcalls along Golf Course Road.' },
+      { question: 'Can escort girls attend corporate events or dinners at Horizon Center?', answer: 'Yes, our call girls are socially refined, articulate, and dressed to impress for dinners at Town Hall, Whisky Samba, or private boardroom receptions.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Luxury Hotels on Golf Course Road', excerpt: 'Comprehensive guide to 5-star properties along Gurgaon’s prime corridor.' },
@@ -607,7 +607,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Grand Hyatt Gurgaon & Residences', 'M3M Golfestate Ultra-Luxury Condos', 'Trump Tower Delhi NCR', 'WorldMark Gurgaon (Sector 65)', 'Ireo Grand Arch', 'AIPL Joy Street'],
       commercialProfile: 'Lined with Grade-A commercial developments such as WorldMark Gurgaon, M3M Urbana, and Pioneer Urban Square, Golf Course Extension is a vibrant business hub hosting major consulting, financial technology, and international enterprises.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an extensive selection of tailored escort services to suit the lifestyle of modern luxury residents and executive guests along Golf Course Extension Road.',
       options: [
         {
@@ -629,19 +629,19 @@ export const gurgaonCorridors: LocationData[] = [
       ],
     },
     whyChoose: {
-      overview: 'Clients along Golf Course Extension Road choose ALINA VIP for our high-caliber companion portfolio, professional dispatch, and unwavering discretion.',
+      overview: 'Clients along Golf Course Extension Road choose ALINA VIP for our high-caliber call girl portfolio, professional dispatch, and unwavering discretion.',
       reasons: [
         {
-          title: 'Modern High-Fashion Companion Roster',
-          desc: 'Our companions include contemporary models, college companions, and independent ladies who fit naturally into the modern luxury lifestyle.',
+          title: 'Modern High-Fashion Call Girl Roster',
+          desc: 'Our call girls include contemporary models, college call girls, and independent ladies who fit naturally into the modern luxury lifestyle.',
         },
         {
           title: 'Rapid Access to Sectors 58 through 67',
-          desc: 'With companions stationed right off Sector 56 and SPR, arrival takes only 30 to 40 minutes to any Extension society.',
+          desc: 'With call girls stationed right off Sector 56 and SPR, arrival takes only 30 to 40 minutes to any Extension society.',
         },
         {
           title: 'Total Gated Community Discretion',
-          desc: 'Companions arrive in discreet private vehicles and observe strict privacy protocols at condominium visitor desks.',
+          desc: 'Call Girls arrive in discreet private vehicles and observe strict privacy protocols at condominium visitor desks.',
         },
         {
           title: 'Zero Digital Breadcrumbs',
@@ -670,17 +670,17 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['golf-course-road', 'sector-56', 'sector-57', 'sector-62', 'sector-65', 'sector-66', 'sohna-road'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Explore verified models, VIP escorts, and college companions available on Golf Course Extension.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Explore verified models, VIP escorts, and college call girls available on Golf Course Extension.' },
         { step: '02', title: 'Direct WhatsApp or Call', desc: 'Reach our 24/7 coordinator at +91-9996265679 with your preferred timing and location.' },
-        { step: '03', title: 'Quick Dispatch', desc: 'Receive instant confirmation and ETA for your chosen companion.' },
-        { step: '04', title: 'Punctual Arrival', desc: 'Greet your companion at your door for a memorable, sophisticated experience.' },
+        { step: '03', title: 'Quick Dispatch', desc: 'Receive instant confirmation and ETA for your chosen call girl.' },
+        { step: '04', title: 'Punctual Arrival', desc: 'Greet your call girl at your door for a memorable, sophisticated experience.' },
       ],
     },
     faqs: [
-      { question: 'Do you provide outcalls to the Grand Hyatt Gurgaon on Golf Course Extension?', answer: 'Yes, we regularly arrange discreet companion outcalls to guests staying at the Grand Hyatt Gurgaon in Sector 58.' },
-      { question: 'Can companions enter high-security societies like M3M Golfestate?', answer: 'Yes, our companions are experienced with the digital visitor verification systems at M3M Golfestate, Ireo Grand Arch, and Tata Primanti.' },
-      { question: 'How quickly can a companion arrive on Golf Course Extension Road?', answer: 'Arrival times typically range between 30 and 40 minutes from confirmation across Sectors 58 through 67.' },
-      { question: 'Are Russian companions available for outcalls here?', answer: 'Yes, our verified Russian and European companions are available for bookings along Golf Course Extension Road.' },
+      { question: 'Do you provide outcalls to the Grand Hyatt Gurgaon on Golf Course Extension?', answer: 'Yes, we regularly arrange discreet call girl outcalls to guests staying at the Grand Hyatt Gurgaon in Sector 58.' },
+      { question: 'Can escort girls enter high-security societies like M3M Golfestate?', answer: 'Yes, our call girls are experienced with the digital visitor verification systems at M3M Golfestate, Ireo Grand Arch, and Tata Primanti.' },
+      { question: 'How quickly can a call girl arrive on Golf Course Extension Road?', answer: 'Arrival times typically range between 30 and 40 minutes from confirmation across Sectors 58 through 67.' },
+      { question: 'Are Russian call girls available for outcalls here?', answer: 'Yes, our verified Russian and European call girls are available for bookings along Golf Course Extension Road.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Grand Hyatt Gurgaon: A 5-Star Haven', excerpt: 'Explore luxury amenities and dining at the Grand Hyatt on Golf Course Extension.' },
@@ -705,7 +705,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['MGF Metropolitan Mall', 'Beverly Park 1 & 2 Luxury Condominiums', 'Essel Towers Residential Complex', 'The Bristol Hotel', 'MG Road Metro Station (Yellow Line)', 'DT City Centre Mall'],
       commercialProfile: 'MG Road hosts corporate banks, automotive showrooms, private medical centers, and consulting agencies. With an abundance of business hotels and serviced suites, it attracts international transit travelers and corporate executives seeking refined escort services.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible, elegant escort services along the MG Road corridor, from shopping and dining dates to private hotel suite outcalls.',
       options: [
         {
@@ -731,14 +731,14 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Ultra-Fast 25-30 Minute Arrival',
-          desc: 'Located at the heart of Gurgaon’s transit corridor, our companions can reach any MG Road hotel or apartment within 25 to 30 minutes.',
+          desc: 'Located at the heart of Gurgaon’s transit corridor, our call girls can reach any MG Road hotel or apartment within 25 to 30 minutes.',
         },
         {
           title: 'Vetted, Authentic Profiles',
-          desc: 'Real photos, verified identities, and guaranteed companion matching with zero deception.',
+          desc: 'Real photos, verified identities, and guaranteed call girl matching with zero deception.',
         },
         {
-          title: 'Lively, Sociable Companions',
+          title: 'Lively, Sociable Call Girls',
           desc: 'Our ladies are personable, conversational, and energetic, making them ideal partners for exploring MG Road’s vibrant scene.',
         },
         {
@@ -758,7 +758,7 @@ export const gurgaonCorridors: LocationData[] = [
     privacySafety: {
       overview: 'Operating in a busy commercial and residential corridor requires heightened focus on discreet arrivals and private interactions.',
       protocols: [
-        'Companions arrive in private unmarked vehicles with no public loitering.',
+        'Call Girls arrive in private unmarked vehicles with no public loitering.',
         'Direct suite or apartment entry coordinated via private WhatsApp communication.',
         'Encrypted booking records deleted automatically following the session.',
         'High standards of grooming and professional attire suitable for upscale hotel and condominium lobbies.',
@@ -770,13 +770,13 @@ export const gurgaonCorridors: LocationData[] = [
       steps: [
         { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of college girls, models, and VIP call girls available on MG Road.' },
         { step: '02', title: 'Contact Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel name or apartment address.' },
-        { step: '03', title: 'Rapid Dispatch', desc: 'Our team verifies availability and confirms your companion’s ETA within 25 to 30 minutes.' },
-        { step: '04', title: 'Enjoy Quality Time', desc: 'Greet your companion for an engaging, memorable luxury rendezvous.' },
+        { step: '03', title: 'Rapid Dispatch', desc: 'Our team verifies availability and confirms your call girl’s ETA within 25 to 30 minutes.' },
+        { step: '04', title: 'Enjoy Quality Time', desc: 'Greet your call girl for an engaging, memorable luxury rendezvous.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to hotels near MG Road Metro Station?', answer: 'Yes, we regularly serve The Bristol Hotel, Lemon Tree Premier, and luxury boutique hotels within walking distance of MG Road Metro.' },
-      { question: 'Can I book a companion for an evening at MGF Metropolitan Mall?', answer: 'Yes, our companions are fashionable and personable, perfect for an evening shopping date or dinner at MGF Mall.' },
+      { question: 'Can I book a call girl for an evening at MGF Metropolitan Mall?', answer: 'Yes, our call girls are fashionable and personable, perfect for an evening shopping date or dinner at MGF Mall.' },
       { question: 'Are outcalls available to Essel Towers and Beverly Park?', answer: 'Yes, we provide discrete outcall services to residents and guests at Essel Towers, Beverly Park 1, and Beverly Park 2.' },
       { question: 'What is the minimum booking duration on MG Road?', answer: 'Our standard booking starts at 2 hours, with extended evening and overnight options available upon request.' },
     ],
@@ -803,7 +803,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['DLF Cyber Hub Dining & Social Arcade', 'Cyber City Towers (Buildings 5, 8, 9, 10, 14)', 'The Oberoi Gurgaon (Udyog Vihar border)', 'Trident Gurgaon', 'Infinity Towers & Cyber Greens', 'Cyber City Rapid Metro Interchange'],
       commercialProfile: 'Home to Google, Microsoft, IBM, KPMG, American Express, Deloitte, and Schneider Electric, Cyber City is the densest corporate talent cluster in India. Business travelers and corporate leaders demand escorts who match their intellect, presentation, and international mindset.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in Cyber City cater specifically to corporate executives, visiting delegations, and business travelers requiring impeccable presentation and social intelligence.',
       options: [
         {
@@ -829,7 +829,7 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'High Cultural IQ & Corporate Savvy',
-          desc: 'Our companions are university-educated, multilingual, and comfortable discussing global affairs, technology, and business topics.',
+          desc: 'Our call girls are university-educated, multilingual, and comfortable discussing global affairs, technology, and business topics.',
         },
         {
           title: 'Flawless Five-Star Etiquette',
@@ -837,7 +837,7 @@ export const gurgaonCorridors: LocationData[] = [
         },
         {
           title: 'Rapid 20-30 Minute Arrival',
-          desc: 'With companions stationed right next to Cyber City, we deliver the quickest response times in the corporate district.',
+          desc: 'With call girls stationed right next to Cyber City, we deliver the quickest response times in the corporate district.',
         },
         {
           title: 'Total Confidentiality Guaranteed',
@@ -856,27 +856,27 @@ export const gurgaonCorridors: LocationData[] = [
     privacySafety: {
       overview: 'Client confidentiality in the corporate capital of Gurgaon is managed under ironclad operational protocols.',
       protocols: [
-        'Companions arrive via private chauffeur service with direct drop-off at hotel valet or private entrances.',
+        'Call Girls arrive via private chauffeur service with direct drop-off at hotel valet or private entrances.',
         'No lingering in public hotel lobbies; direct room-door rendezvous.',
         'All client communication via encrypted messaging with automated data deletion.',
-        'Strict background vetting and health verification for all companions.',
+        'Strict background vetting and health verification for all call girls.',
       ],
     },
     serviceCategories: ['high-profile-girls', 'vip-call-girls', 'russian-call-girls', 'model-escorts', 'independent-girls', 'air-hostess'],
     nearbyAreas: ['dlf-phase-2', 'dlf-phase-3', 'mg-road', 'sector-18', 'dlf-phase-1', 'aerocity'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Select Profile', desc: 'Browse our authenticated collection of high-profile corporate companions and VIP models.' },
+        { step: '01', title: 'Select Profile', desc: 'Browse our authenticated collection of high-profile corporate call girls and VIP models.' },
         { step: '02', title: 'Discreet Contact', desc: 'Call +91-9996265679 or message via WhatsApp with your hotel name and room or suite number.' },
-        { step: '03', title: 'Immediate Dispatch', desc: 'Our concierge verifies availability and dispatches your companion with a 20 to 30 minute ETA.' },
-        { step: '04', title: 'Enjoy Elite Company', desc: 'Welcome your companion for an exceptional evening of relaxation, elegance, and conversation.' },
+        { step: '03', title: 'Immediate Dispatch', desc: 'Our concierge verifies availability and dispatches your call girl with a 20 to 30 minute ETA.' },
+        { step: '04', title: 'Enjoy Elite Company', desc: 'Welcome your call girl for an exceptional evening of relaxation, elegance, and conversation.' },
       ],
     },
     faqs: [
       { question: 'Do you provide outcalls to The Oberoi and Trident Gurgaon in Cyber City?', answer: 'Yes, we frequently arrange discreet outcalls to The Oberoi and Trident Gurgaon, ensuring complete compliance with five-star guest privacy.' },
-      { question: 'Can a companion accompany me to a business dinner at Cyber Hub?', answer: 'Absolutely. Our high-profile companions possess impeccable social poise, dining etiquette, and conversational fluency, making them ideal dinner dates at Cyber Hub.' },
-      { question: 'How fast can an escort reach my hotel in Cyber City?', answer: 'Because of our proximity to Cyber City, companions can typically arrive at your hotel room within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Cyber City?', answer: 'Yes, we offer verified European and Russian companions who are popular among international business travelers in Cyber City.' },
+      { question: 'Can a call girl accompany me to a business dinner at Cyber Hub?', answer: 'Absolutely. Our high-profile call girls possess impeccable social poise, dining etiquette, and conversational fluency, making them ideal dinner dates at Cyber Hub.' },
+      { question: 'How fast can an escort reach my hotel in Cyber City?', answer: 'Because of our proximity to Cyber City, call girls can typically arrive at your hotel room within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Cyber City?', answer: 'Yes, we offer verified European and Russian call girls who are popular among international business travelers in Cyber City.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'The Oberoi & Trident: Cyber City Luxury', excerpt: 'A comprehensive review of five-star hospitality in Gurgaon’s corporate heart.' },
@@ -901,7 +901,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Courtyard by Marriott Gurugram (Block B, Sushant Lok 1)', 'Cross Point Mall (adjacent)', 'Vyapar Kendra Market', 'Gold Souk Mall', 'Millennium City Centre Metro Station (nearby)'],
       commercialProfile: 'Anchored by the Vyapar Kendra commercial arcade and neighboring Cross Point Mall, Sushant Lok is home to boutique consulting firms, medical centers, and executive serviced apartments catering to business travelers.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in Sushant Lok cater to gentlemen who value warmth, intellectual connection, and discreet relaxation in peaceful surroundings.',
       options: [
         {
@@ -927,19 +927,19 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: '100% Genuine Profile Verification',
-          desc: 'Every companion profile is rigorously authenticated with real photographs, ensuring total honesty and satisfaction.',
+          desc: 'Every call girl profile is rigorously authenticated with real photographs, ensuring total honesty and satisfaction.',
         },
         {
           title: 'Central Gurgaon Location Advantage',
-          desc: 'Positioned at the crossroads of MG Road and Golf Course Road, our companions can reach Sushant Lok within 25 to 35 minutes.',
+          desc: 'Positioned at the crossroads of MG Road and Golf Course Road, our call girls can reach Sushant Lok within 25 to 35 minutes.',
         },
         {
-          title: 'Cultured, Educated Companions',
-          desc: 'Our companions are well-spoken, respectful, and skilled at engaging in meaningful conversation across diverse topics.',
+          title: 'Cultured, Educated Call Girls',
+          desc: 'Our call girls are well-spoken, respectful, and skilled at engaging in meaningful conversation across diverse topics.',
         },
         {
           title: 'Strict Residential Discretion',
-          desc: 'Companions arrive in discreet private vehicles and enter residential premises without creating unwanted attention.',
+          desc: 'Call Girls arrive in discreet private vehicles and enter residential premises without creating unwanted attention.',
         },
       ],
     },
@@ -957,24 +957,24 @@ export const gurgaonCorridors: LocationData[] = [
         'Discreet arrival via private unmarked vehicles with no waiting outside gates.',
         'Strict confidentiality of all client booking details and contact information.',
         'Encrypted booking communication with automatic data purging post-session.',
-        'Companions adhere to refined, conservative grooming and attire suitable for residential entry.',
+        'Call Girls adhere to refined, conservative grooming and attire suitable for residential entry.',
       ],
     },
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'independent-girls', 'college-girls', 'model-escorts'],
     nearbyAreas: ['dlf-phase-4', 'mg-road', 'huda-city-centre', 'south-city', 'sector-29', 'sector-43'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of high-profile companions, VIP call girls, and models.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of high-profile call girls, VIP call girls, and models.' },
         { step: '02', title: 'Contact Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your Sushant Lok location.' },
-        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies scheduling and confirms your companion’s ETA within 25 to 35 minutes.' },
-        { step: '04', title: 'Delightful Rendezvous', desc: 'Welcome your companion for a private, unforgettable luxury experience.' },
+        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies scheduling and confirms your call girl’s ETA within 25 to 35 minutes.' },
+        { step: '04', title: 'Delightful Rendezvous', desc: 'Welcome your call girl for a private, unforgettable luxury experience.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Courtyard by Marriott in Sushant Lok?', answer: 'Yes, Courtyard by Marriott Gurugram is one of our most frequently served hotel properties in Sushant Lok with complete discretion.' },
-      { question: 'Can I book a companion for an independent house in Sushant Lok 1?', answer: 'Yes, we provide private outcalls to independent bungalows, duplexes, and builder floors throughout Sushant Lok 1, 2, and 3.' },
-      { question: 'How quickly can a companion arrive in Sushant Lok?', answer: 'Due to our central positioning near Millennium City Centre, companions generally arrive within 25 to 35 minutes.' },
-      { question: 'Are independent companions available in Sushant Lok?', answer: 'Yes, we feature verified independent companions who manage their own engagements with personalized warmth and professionalism.' },
+      { question: 'Can I book a call girl for an independent house in Sushant Lok 1?', answer: 'Yes, we provide private outcalls to independent bungalows, duplexes, and builder floors throughout Sushant Lok 1, 2, and 3.' },
+      { question: 'How quickly can a call girl arrive in Sushant Lok?', answer: 'Due to our central positioning near Millennium City Centre, call girls generally arrive within 25 to 35 minutes.' },
+      { question: 'Are independent call girls available in Sushant Lok?', answer: 'Yes, we feature verified independent call girls who manage their own engagements with personalized warmth and professionalism.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'First Date Tips: Making a Lasting Impression', excerpt: 'How to plan an elegant evening with a escort in Sushant Lok.' },
@@ -999,7 +999,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Unitech Cyber Park (adjacent to South City 1)', 'Millennium City Centre Metro (HUDA City Centre)', 'Arcadia Market (South City 2)', 'South City Club 1 & 2', 'Nirvana Country (adjacent to South City 2)'],
       commercialProfile: 'Anchored by Unitech Cyber Park—a sprawling IT and consulting complex hosting multinational firms—South City attracts thousands of senior corporate executives, medical consultants, and international business visitors.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of bespoke escort services tailored to the discerning residents and corporate guests in South City 1 and 2.',
       options: [
         {
@@ -1025,11 +1025,11 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Strict Residential Discretion',
-          desc: 'Companions arrive in discreet unmarked private vehicles and observe quiet, low-profile entry protocols.',
+          desc: 'Call Girls arrive in discreet unmarked private vehicles and observe quiet, low-profile entry protocols.',
         },
         {
           title: '100% Genuine Verified Profiles',
-          desc: 'Every companion in our roster is physically verified with real photographs and accurate descriptions.',
+          desc: 'Every call girl in our roster is physically verified with real photographs and accurate descriptions.',
         },
         {
           title: 'Fast 25-35 Minute Arrival',
@@ -1053,7 +1053,7 @@ export const gurgaonCorridors: LocationData[] = [
       overview: 'Our operations in South City prioritize quiet arrivals, respectful conduct, and total confidentiality.',
       protocols: [
         'Unmarked private vehicles with discreet drop-offs at residential gates.',
-        'Companions arrive dressed in elegant, modest smart-casual attire appropriate for residential neighborhoods.',
+        'Call Girls arrive dressed in elegant, modest smart-casual attire appropriate for residential neighborhoods.',
         'Encrypted messaging for all booking coordination with automated data deletion.',
         'Rigorous health, hygiene, and background verification for all agency talent.',
       ],
@@ -1062,16 +1062,16 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['huda-city-centre', 'sushant-lok', 'sector-29', 'sector-31', 'sohna-road', 'sector-49'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of high-profile companions, VIP call girls, and college models.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of high-profile call girls, VIP call girls, and college models.' },
         { step: '02', title: 'Contact Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your South City 1 or 2 location.' },
-        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies availability and confirms your companion’s ETA within 25 to 35 minutes.' },
-        { step: '04', title: 'Relax & Enjoy', desc: 'Welcome your companion for a private, memorable luxury experience.' },
+        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies availability and confirms your call girl’s ETA within 25 to 35 minutes.' },
+        { step: '04', title: 'Relax & Enjoy', desc: 'Welcome your call girl for a private, memorable luxury experience.' },
       ],
     },
     faqs: [
-      { question: 'Do you cover both South City 1 and South City 2?', answer: 'Yes, we provide outcall companion services to both South City 1 (near Millennium City Centre) and South City 2 (along Sohna Road).' },
-      { question: 'Can I book a companion for an independent villa in South City?', answer: 'Yes, we regularly cater to private bungalows, villas, and luxury floors throughout all blocks of South City with complete discretion.' },
-      { question: 'How quickly can a companion arrive in South City 1?', answer: 'Because of our proximity to Millennium City Centre, companions generally arrive in South City 1 within 25 to 30 minutes.' },
+      { question: 'Do you cover both South City 1 and South City 2?', answer: 'Yes, we provide outcall call girl services to both South City 1 (near Millennium City Centre) and South City 2 (along Sohna Road).' },
+      { question: 'Can I book a call girl for an independent villa in South City?', answer: 'Yes, we regularly cater to private bungalows, villas, and luxury floors throughout all blocks of South City with complete discretion.' },
+      { question: 'How quickly can a call girl arrive in South City 1?', answer: 'Because of our proximity to Millennium City Centre, call girls generally arrive in South City 1 within 25 to 30 minutes.' },
       { question: 'What categories are most popular in South City?', answer: 'Our Independent Girls, VIP Call Girls, and College Girls are highly popular in South City for their warmth, intelligence, and approachable charm.' },
     ],
     relatedGuides: [
@@ -1097,7 +1097,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Central Park Resorts (Sector 48)', 'Tatvam Villas & Tatvam Woods', 'Candor TechSpace (Sector 48)', 'Malibu Towne Gated Community', 'Spaze i-Tech Park', 'Omaxe Celebration Mall & Gurgaon Central'],
       commercialProfile: 'Anchored by Candor TechSpace, Vatika Business Park, and Spaze i-Tech Park, Sohna Road houses major IT services, consulting conglomerates, and banking operations, attracting executive travelers and corporate leaders.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible escort services tailored to the executive lifestyle and luxury gated communities along Sohna Road.',
       options: [
         {
@@ -1123,15 +1123,15 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Fast 30-40 Minute Corridor Arrival',
-          desc: 'Thanks to the Sohna Elevated Expressway, our companions can reach any society or hotel along Sohna Road within 30 to 40 minutes.',
+          desc: 'Thanks to the Sohna Elevated Expressway, our call girls can reach any society or hotel along Sohna Road within 30 to 40 minutes.',
         },
         {
           title: '100% Genuine Profile Verification',
-          desc: 'Every companion profile is physically verified with real photographs and honest descriptions.',
+          desc: 'Every call girl profile is physically verified with real photographs and honest descriptions.',
         },
         {
           title: 'Familiarity with Gated Townships',
-          desc: 'Our companions and chauffeurs understand the visitor protocols of Central Park Resorts, Tatvam Villas, and Malibu Towne.',
+          desc: 'Our call girls and chauffeurs understand the visitor protocols of Central Park Resorts, Tatvam Villas, and Malibu Towne.',
         },
         {
           title: 'Ironclad Privacy & Discretion',
@@ -1151,26 +1151,26 @@ export const gurgaonCorridors: LocationData[] = [
       overview: 'We maintain strict privacy protocols to ensure complete discretion in Sohna Road’s luxury gated communities and business hotels.',
       protocols: [
         'Discreet arrival via unmarked private executive vehicles with no waiting outside gates.',
-        'Companions enter through designated visitor reception points smoothly with zero fuss.',
+        'Call Girls enter through designated visitor reception points smoothly with zero fuss.',
         'Encrypted booking records deleted automatically following the session.',
-        'Companions adhere to refined, professional attire suitable for upscale hotel and residential lobbies.',
+        'Call Girls adhere to refined, professional attire suitable for upscale hotel and residential lobbies.',
       ],
     },
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'college-girls', 'independent-girls', 'model-escorts'],
     nearbyAreas: ['sector-47', 'sector-45', 'sector-49', 'sector-50', 'golf-course-extension-road', 'south-city', 'manesar'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian companions, and college models.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian call girls, and college models.' },
         { step: '02', title: 'Contact Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your Sohna Road location.' },
-        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies availability and confirms your companion’s ETA within 30 to 40 minutes.' },
-        { step: '04', title: 'Delightful Rendezvous', desc: 'Welcome your companion for a private, unforgettable luxury experience.' },
+        { step: '03', title: 'Fast Confirmation', desc: 'Our team verifies availability and confirms your call girl’s ETA within 30 to 40 minutes.' },
+        { step: '04', title: 'Delightful Rendezvous', desc: 'Welcome your call girl for a private, unforgettable luxury experience.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Central Park Resorts on Sohna Road?', answer: 'Yes, Central Park Resorts is one of our most frequently served luxury townships along Sohna Road, strictly observing resident visitor protocols.' },
-      { question: 'Can companions reach Tatvam Villas and Malibu Towne?', answer: 'Yes, our companions regularly provide discreet outcalls to private villas in Tatvam Villas and Malibu Towne.' },
-      { question: 'How quickly can a companion arrive on Sohna Road?', answer: 'Thanks to the Sohna Elevated Expressway, companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available on Sohna Road?', answer: 'Yes, we offer verified Russian and European companions available for outcalls to luxury hotels and residences along Sohna Road.' },
+      { question: 'Can escort girls reach Tatvam Villas and Malibu Towne?', answer: 'Yes, our call girls regularly provide discreet outcalls to private villas in Tatvam Villas and Malibu Towne.' },
+      { question: 'How quickly can a call girl arrive on Sohna Road?', answer: 'Thanks to the Sohna Elevated Expressway, call girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available on Sohna Road?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls to luxury hotels and residences along Sohna Road.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Resort Living at Central Park Resorts', excerpt: 'Explore luxury amenities and lifestyle offerings on Sohna Road.' },
@@ -1195,7 +1195,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['Millennium City Centre Metro Terminal (Yellow Line)', 'Taj City Centre Gurugram (Sector 44)', 'The Westin Gurgaon (Sector 29)', 'Fortis Memorial Research Institute', 'Leisure Valley Park & Musical Fountain', 'Appu Ghar / Oysters Water Park'],
       commercialProfile: 'Surrounded by the Sector 44 and Sector 32 institutional and IT parks, HUDA City Centre hosts multinational tech firms, consulting bureaus, and medical tourism visitors, generating strong demand for refined escort service.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'We offer an array of flexible, elegant escort services tailored to the hotel guests, transit travelers, and executives around HUDA City Centre.',
       options: [
         {
@@ -1221,15 +1221,15 @@ export const gurgaonCorridors: LocationData[] = [
       reasons: [
         {
           title: 'Lightning-Fast 20-30 Minute Arrival',
-          desc: 'With companions stationed right around HUDA City Centre, arrival at Taj City Centre or The Westin takes just 20 to 30 minutes.',
+          desc: 'With call girls stationed right around HUDA City Centre, arrival at Taj City Centre or The Westin takes just 20 to 30 minutes.',
         },
         {
           title: 'Flawless Five-Star Hotel Etiquette',
-          desc: 'Our companions understand luxury hotel protocols and arrive impeccably attired in cocktail or smart-casual fashion.',
+          desc: 'Our call girls understand luxury hotel protocols and arrive impeccably attired in cocktail or smart-casual fashion.',
         },
         {
           title: '100% Verified Profiles with Real Photos',
-          desc: 'Every companion in our roster is physically vetted, guaranteeing that the lady who arrives matches your chosen profile.',
+          desc: 'Every call girl in our roster is physically vetted, guaranteeing that the lady who arrives matches your chosen profile.',
         },
         {
           title: 'Complete Privacy Guarantee',
@@ -1248,7 +1248,7 @@ export const gurgaonCorridors: LocationData[] = [
     privacySafety: {
       overview: 'Our operations around HUDA City Centre prioritize discreet hotel arrivals, zero lobby exposure, and absolute client confidentiality.',
       protocols: [
-        'Companions arrive via private chauffeur service directly to hotel valet or porch.',
+        'Call Girls arrive via private chauffeur service directly to hotel valet or porch.',
         'Direct room-door rendezvous coordinated via private WhatsApp to avoid public lobby waiting.',
         'Encrypted booking records deleted automatically following the session.',
         'Rigorous health, hygiene, and background checks on all agency talent.',
@@ -1258,17 +1258,17 @@ export const gurgaonCorridors: LocationData[] = [
     nearbyAreas: ['sector-29', 'sushant-lok', 'south-city', 'sector-44', 'sector-43', 'mg-road', 'cyber-city'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian companions, and college models.' },
+        { step: '01', title: 'Browse Profiles', desc: 'Select from our verified gallery of VIP call girls, Russian call girls, and college models.' },
         { step: '02', title: 'Contact Concierge', desc: 'Call +91-9996265679 or message on WhatsApp with your hotel name and room number.' },
-        { step: '03', title: 'Rapid Dispatch', desc: 'Our team verifies availability and confirms your companion’s ETA within 20 to 30 minutes.' },
-        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your companion for a private, memorable luxury rendezvous.' },
+        { step: '03', title: 'Rapid Dispatch', desc: 'Our team verifies availability and confirms your call girl’s ETA within 20 to 30 minutes.' },
+        { step: '04', title: 'Enjoy Quality Time', desc: 'Welcome your call girl for a private, memorable luxury rendezvous.' },
       ],
     },
     faqs: [
       { question: 'Do you deliver outcalls to Taj City Centre Gurugram near HUDA City Centre?', answer: 'Yes, Taj City Centre Gurugram in Sector 44 is one of our most frequently served five-star luxury properties with complete discretion.' },
-      { question: 'Can a companion join me for drinks in the Sector 29 brewery district?', answer: 'Yes! Our companions are vibrant, social, and stylish, making them ideal dates for an evening of craft beer and dining in Sector 29.' },
-      { question: 'How quickly can an escort reach hotels near HUDA City Centre?', answer: 'Companions can arrive at Taj City Centre, The Westin, or Crowne Plaza within 20 to 30 minutes of confirmation.' },
-      { question: 'Are Russian companions available near HUDA City Centre?', answer: 'Yes, we offer verified Russian and European companions who are popular among business travelers staying near the metro terminal.' },
+      { question: 'Can a call girl join me for drinks in the Sector 29 brewery district?', answer: 'Yes! Our call girls are vibrant, social, and stylish, making them ideal dates for an evening of craft beer and dining in Sector 29.' },
+      { question: 'How quickly can an escort reach hotels near HUDA City Centre?', answer: 'Call Girls can arrive at Taj City Centre, The Westin, or Crowne Plaza within 20 to 30 minutes of confirmation.' },
+      { question: 'Are Russian call girls available near HUDA City Centre?', answer: 'Yes, we offer verified Russian and European call girls who are popular among business travelers staying near the metro terminal.' },
     ],
     relatedGuides: [
       { slug: 'gurgaon-nightlife-guide', title: 'Sector 29 Microbreweries & Nightlife', excerpt: 'Complete guide to the best craft breweries and pubs near HUDA City Centre.' },
@@ -1293,7 +1293,7 @@ export const gurgaonCorridors: LocationData[] = [
       landmarks: ['ITC Grand Bharat Luxury Golf Resort & Spa', 'Heritage Village Resort & Spa Manesar', 'IMT Manesar Corporate Sector', 'Karma Lakelands Luxury Eco-Golf Community', 'Tarudhan Valley Golf Resort (nearby)', 'Camp Mustang Adventure Retreat'],
       commercialProfile: 'Home to the manufacturing plants and research centers of Maruti Suzuki, Honda Motorcycles, Hero MotoCorp, and Samsung, IMT Manesar attracts thousands of senior Japanese, Korean, and Indian corporate executives and technical delegations.',
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: 'Our escort services in Manesar are designed specifically for luxury resort guests, golf enthusiasts, and visiting corporate delegations seeking top-tier relaxation.',
       options: [
         {
@@ -1315,15 +1315,15 @@ export const gurgaonCorridors: LocationData[] = [
       ],
     },
     whyChoose: {
-      overview: 'Clients in Manesar choose ALINA VIP for our ability to provide elite, cultured companions for luxury resort staycations and corporate retreats.',
+      overview: 'Clients in Manesar choose ALINA VIP for our ability to provide elite, cultured call girls for luxury resort staycations and corporate retreats.',
       reasons: [
         {
-          title: 'Specialized Resort & Golf Companions',
+          title: 'Specialized Resort & Golf Call Girls',
           desc: 'Our roster includes elegant, well-traveled ladies who are comfortable in five-star resort settings and appreciate the leisure lifestyle.',
         },
         {
           title: 'Dedicated Chauffeur Transit to Manesar',
-          desc: 'Our companions travel in comfortable private executive vehicles via NH-48, ensuring fresh, punctual arrivals at any resort.',
+          desc: 'Our call girls travel in comfortable private executive vehicles via NH-48, ensuring fresh, punctual arrivals at any resort.',
         },
         {
           title: 'Multi-Day & Weekend Availability',
@@ -1349,24 +1349,24 @@ export const gurgaonCorridors: LocationData[] = [
         'Private chauffeur transit directly to resort reception or private villa driveways.',
         'Zero social media check-ins or photography during the engagement.',
         'All booking coordination handled through encrypted messaging with automated data purging.',
-        'Companions adhere to refined, resort-chic or evening attire appropriate for luxury five-star settings.',
+        'Call Girls adhere to refined, resort-chic or evening attire appropriate for luxury five-star settings.',
       ],
     },
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'travel-escorts', 'high-profile-girls', 'independent-girls'],
     nearbyAreas: ['sector-83', 'sector-84', 'sector-85', 'sector-90', 'sohna-road', 'gurgaon'],
     howItWorks: {
       steps: [
-        { step: '01', title: 'Select Resort Companion', desc: 'Browse our authenticated gallery of travel models, Russian escorts, and VIP call girls suited for resort stays.' },
+        { step: '01', title: 'Select Resort Call Girl', desc: 'Browse our authenticated gallery of travel models, Russian escorts, and VIP call girls suited for resort stays.' },
         { step: '02', title: 'Coordinate Itinerary', desc: 'Call +91-9996265679 or message on WhatsApp with your resort name, check-in details, and stay duration.' },
         { step: '03', title: 'Confirm Dispatch', desc: 'Our concierge confirms scheduling, coordinates chauffeur transit, and provides accurate arrival timing.' },
-        { step: '04', title: 'Indulge in Luxury', desc: 'Greet your companion at your resort suite or villa for an unforgettable weekend retreat.' },
+        { step: '04', title: 'Indulge in Luxury', desc: 'Greet your call girl at your resort suite or villa for an unforgettable weekend retreat.' },
       ],
     },
     faqs: [
-      { question: 'Do you provide companion outcalls to ITC Grand Bharat in Manesar?', answer: 'Yes, we frequently arrange luxury companion outcalls to guests staying at the palatial suites and pool villas of ITC Grand Bharat with complete discretion.' },
-      { question: 'What is the travel time for a companion to reach Manesar?', answer: 'Companions travel via the NH-48 expressway from Gurgaon and typically arrive at Manesar resorts within 45 to 60 minutes of confirmation.' },
-      { question: 'Can I book a companion for an entire weekend at Heritage Village Resort?', answer: 'Yes, we specialize in multi-day and weekend escort packages for staycations at Heritage Village Resort and Karma Lakelands.' },
-      { question: 'Are Russian companions available for Manesar resort bookings?', answer: 'Yes, our verified Russian and European companions are available for resort getaways and golf weekends in Manesar.' },
+      { question: 'Do you provide call girl outcalls to ITC Grand Bharat in Manesar?', answer: 'Yes, we frequently arrange luxury call girl outcalls to guests staying at the palatial suites and pool villas of ITC Grand Bharat with complete discretion.' },
+      { question: 'What is the travel time for a call girl to reach Manesar?', answer: 'Call Girls travel via the NH-48 expressway from Gurgaon and typically arrive at Manesar resorts within 45 to 60 minutes of confirmation.' },
+      { question: 'Can I book a call girl for an entire weekend at Heritage Village Resort?', answer: 'Yes, we specialize in multi-day and weekend escort packages for staycations at Heritage Village Resort and Karma Lakelands.' },
+      { question: 'Are Russian call girls available for Manesar resort bookings?', answer: 'Yes, our verified Russian and European call girls are available for resort getaways and golf weekends in Manesar.' },
     ],
     relatedGuides: [
       { slug: 'weekend-getaways-from-gurgaon', title: '5 Luxury Weekend Getaways from Gurgaon', excerpt: 'Spotlight on ITC Grand Bharat and Heritage Village Resort in Manesar.' },

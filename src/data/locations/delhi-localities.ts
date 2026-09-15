@@ -45,7 +45,7 @@ function createDelhiPage(data: {
       landmarks: data.landmarks,
       commercialProfile: data.commercialProfile,
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: data.optionsOverview,
       options: data.options,
     },
@@ -101,9 +101,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Delhi choose ALINA VIP for our verified authenticity, diplomatic discretion, and intellectual elegance.',
     reasons: [
-      { title: 'Strict Discretion Protocols', desc: 'Companions understand diplomatic security and observe complete confidentiality.' },
+      { title: 'Strict Discretion Protocols', desc: 'Call Girls understand diplomatic security and observe complete confidentiality.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee complete satisfaction.' },
-      { title: 'Multilingual & Cultured Companions', desc: 'Our ladies speak fluent English and possess high social intelligence.' },
+      { title: 'Multilingual & Cultured Call Girls', desc: 'Our ladies speak fluent English and possess high social intelligence.' },
       { title: 'Zero Digital Trace', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Comprehensive multimodal network including Delhi Metro Yellow, Blue, Violet, and Airport Express lines, plus Ring Road and Outer Ring Road.',
@@ -118,8 +118,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['south-delhi', 'new-delhi', 'aerocity', 'chanakyapuri', 'connaught-place', 'gurgaon', 'noida'],
     faqs: [
       { question: 'Do you deliver outcalls to five-star hotels in Delhi?', answer: 'Yes, we regularly provide outcalls to The Lodhi, The Imperial, Taj Mansingh, and other premier properties with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Delhi?', answer: 'Companions generally arrive within 30 to 45 minutes of booking confirmation across South and Central Delhi.' },
-      { question: 'Are Russian companions available in Delhi?', answer: 'Yes, we offer verified Russian and European companions who are popular for private and social bookings in Delhi.' },
+      { question: 'How quickly can a call girl arrive in Delhi?', answer: 'Call Girls generally arrive within 30 to 45 minutes of booking confirmation across South and Central Delhi.' },
+      { question: 'Are Russian call girls available in Delhi?', answer: 'Yes, we offer verified Russian and European call girls who are popular for private and social bookings in Delhi.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Top 5-Star Hotels in Delhi', excerpt: 'Comprehensive guide to luxury heritage hotels in the capital.' },
@@ -146,9 +146,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in South Delhi choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'South Delhi Society Familiarity', desc: 'Our companions understand the social nuances and etiquette of South Delhi high society.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence or hotel.' },
+      { title: 'South Delhi Society Familiarity', desc: 'Our call girls understand the social nuances and etiquette of South Delhi high society.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence or hotel.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Served by the Delhi Metro Yellow, Magenta, Pink, and Violet lines. Ring Road and Outer Ring Road provide swift vehicular transit.',
@@ -163,8 +163,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['greater-kailash', 'defence-colony', 'saket', 'hauz-khas', 'vasant-vihar', 'new-delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in Greater Kailash and Defence Colony?', answer: 'Yes, we frequently provide discreet outcalls to independent bungalows, villas, and apartments throughout South Delhi.' },
-      { question: 'How quickly can a companion arrive in South Delhi?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in South Delhi?', answer: 'Yes, our verified Russian and European companions are available for outcalls across South Delhi.' },
+      { question: 'How quickly can a call girl arrive in South Delhi?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in South Delhi?', answer: 'Yes, our verified Russian and European call girls are available for outcalls across South Delhi.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Top Date Spots in South Delhi', excerpt: 'Tips for dining and socializing in Greater Kailash and Defence Colony.' },
@@ -188,11 +188,11 @@ export const delhiLocalities: LocationData[] = [
       { title: 'Khan Market Fine Dining Dates', desc: 'glamorous escorts to join you for an evening dinner or drinks at Khan Market’s celebrated bistros.' },
       { title: 'Overnight Relaxation Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your luxury suite.' },
     ],
-    whyChooseOverview: 'Clients in New Delhi choose ALINA VIP for our diplomatic discretion, intellectual elegance, and verified companions.',
+    whyChooseOverview: 'Clients in New Delhi choose ALINA VIP for our diplomatic discretion, intellectual elegance, and verified call girls.',
     reasons: [
-      { title: 'Diplomatic Protocol Familiarity', desc: 'Companions arrive dressed in refined, conservative chic appropriate for high-security enclaves.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your hotel or residence.' },
+      { title: 'Diplomatic Protocol Familiarity', desc: 'Call Girls arrive dressed in refined, conservative chic appropriate for high-security enclaves.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your hotel or residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via the Central Secretariat, Janpath, and Rajiv Chowk metro stations. Wide signal-free avenues ensure smooth private transit.',
@@ -207,8 +207,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['connaught-place', 'chanakyapuri', 'south-delhi', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to Taj Mahal Mansingh and The Imperial in New Delhi?', answer: 'Yes, Taj Mahal Hotel Mansingh and The Imperial are our primary served five-star luxury properties with complete discretion.' },
-      { question: 'How quickly can a companion arrive in New Delhi?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are companions suitable for formal dinner dates at Khan Market?', answer: 'Yes, our companions possess sophisticated dining etiquette and social poise, making them ideal dates for Khan Market restaurants.' },
+      { question: 'How quickly can a call girl arrive in New Delhi?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are call girls suitable for formal dinner dates at Khan Market?', answer: 'Yes, our call girls possess sophisticated dining etiquette and social poise, making them ideal dates for Khan Market restaurants.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'The Imperial & Taj Mansingh: Colonial Luxury', excerpt: 'Review of historic five-star hospitality in New Delhi.' },
@@ -234,8 +234,8 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Aerocity choose ALINA VIP for our rapid 15-minute dispatch, international presentation, and ironclad discretion.',
     reasons: [
-      { title: 'Fast 15-20 Minute Dispatch', desc: 'Companions arrive at any Aerocity hotel room within 15 to 20 minutes.' },
-      { title: 'Five-Star Hotel Etiquette', desc: 'Companions arrive dressed in elegant cocktail or business-chic attire with zero lobby loitering.' },
+      { title: 'Fast 15-20 Minute Dispatch', desc: 'Call Girls arrive at any Aerocity hotel room within 15 to 20 minutes.' },
+      { title: 'Five-Star Hotel Etiquette', desc: 'Call Girls arrive dressed in elegant cocktail or business-chic attire with zero lobby loitering.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
@@ -246,13 +246,13 @@ export const delhiLocalities: LocationData[] = [
     residentialEstates: ['Vasant Vihar (nearby)', 'Mahipalpur Executive Suites', 'Dwarka Sector 21 (nearby)'],
     corporateParks: ['Worldmark Aerocity 1, 2 & 3', 'Asset Area Corporate Chambers', 'GMR Aerocity Corporate Center'],
     privacyOverview: 'We maintain the highest privacy standards for our international Aerocity clientele.',
-    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Strict background and health vetting on all companions'],
+    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Strict background and health vetting on all call girls'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'air-hostess', 'travel-escorts'],
     nearbyAreas: ['dwarka', 'vasant-vihar', 'south-delhi', 'cyber-city', 'gurgaon'],
     faqs: [
       { question: 'Do you deliver outcalls to JW Marriott and Andaz Delhi in Aerocity?', answer: 'Yes, JW Marriott, Andaz Delhi, Roseate House, and Pullman are our most frequently served five-star hotels with complete discretion.' },
-      { question: 'How quickly can a companion arrive at my hotel in Aerocity?', answer: 'Companions generally arrive at your room door within 15 to 25 minutes of booking confirmation.' },
-      { question: 'Are Russian and air hostess companions available in Aerocity?', answer: 'Yes, our verified Russian and air hostess companions are highly requested and available for outcalls in Aerocity.' },
+      { question: 'How quickly can a call girl arrive at my hotel in Aerocity?', answer: 'Call Girls generally arrive at your room door within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Are Russian and air hostess call girls available in Aerocity?', answer: 'Yes, our verified Russian and air hostess call girls are highly requested and available for outcalls in Aerocity.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Top 5-Star Hotels in Aerocity', excerpt: 'Comprehensive review of JW Marriott, Andaz, and Roseate House in Aerocity.' },
@@ -279,9 +279,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Chanakyapuri demand perfection, intellect, and physical allure—qualities ALINA VIP delivers consistently.',
     reasons: [
-      { title: 'Diplomatic Discretion & Security Awareness', desc: 'Companions understand diplomatic security protocols and maintain total confidentiality.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Multilingual & Cultured Companions', desc: 'Our ladies speak fluent English and possess high social intelligence.' },
+      { title: 'Diplomatic Discretion & Security Awareness', desc: 'Call Girls understand diplomatic security protocols and maintain total confidentiality.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Multilingual & Cultured Call Girls', desc: 'Our ladies speak fluent English and possess high social intelligence.' },
       { title: 'Zero Digital Trail', desc: 'Strict non-disclosure standards with all data purged post-session.' },
     ],
     connectivity: 'Connected via Sardar Patel Marg, Shanti Path, and Vinay Marg. Dhaula Kuan and Lok Kalyan Marg metro stations are within 5 minutes.',
@@ -296,8 +296,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['new-delhi', 'vasant-vihar', 'south-delhi', 'connaught-place'],
     faqs: [
       { question: 'Do you deliver outcalls to The Leela Palace in Chanakyapuri?', answer: 'Yes, The Leela Palace New Delhi is one of our primary served ultra-luxury hotels with complete discretion.' },
-      { question: 'Can companions accompany clients to dinner at ITC Maurya Bukhara?', answer: 'Yes, our companions possess sophisticated dining etiquette and social poise, making them ideal dining dates.' },
-      { question: 'Are Russian companions available in Chanakyapuri?', answer: 'Yes, we offer verified Russian and European companions who are popular for diplomatic and private bookings in Chanakyapuri.' },
+      { question: 'Can escort girls accompany clients to dinner at ITC Maurya Bukhara?', answer: 'Yes, our call girls possess sophisticated dining etiquette and social poise, making them ideal dining dates.' },
+      { question: 'Are Russian call girls available in Chanakyapuri?', answer: 'Yes, we offer verified Russian and European call girls who are popular for diplomatic and private bookings in Chanakyapuri.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'The Leela Palace New Delhi Luxury Review', excerpt: 'Review of palatial five-star hospitality in Chanakyapuri.' },
@@ -323,9 +323,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Vasant Vihar choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Exclusive Residential Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Exclusive Residential Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Nelson Mandela Marg, Outer Ring Road, and Shanti Path. Vasant Vihar Metro Station on the Magenta Line is located within the sector.',
@@ -340,8 +340,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['chanakyapuri', 'aerocity', 'south-delhi', 'greater-kailash'],
     faqs: [
       { question: 'Do you deliver outcalls to private bungalows in Vasant Vihar?', answer: 'Yes, we frequently provide discreet outcalls to independent homes and luxury villas throughout Vasant Vihar.' },
-      { question: 'How quickly can a companion arrive in Vasant Vihar?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Vasant Vihar?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Vasant Vihar?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Vasant Vihar?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates at Basant Lok', excerpt: 'Tips for relaxed coffee dates and dining in Vasant Vihar.' },
@@ -367,9 +367,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Greater Kailash choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Fashion-Forward & Sociable Companions', desc: 'Our ladies are impeccably groomed, articulate, and skilled in social conversation.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Fast 25-30 Minute Arrival', desc: 'Companions arrive promptly at your home or hotel suite.' },
+      { title: 'Fashion-Forward & Sociable Call Girls', desc: 'Our ladies are impeccably groomed, articulate, and skilled in social conversation.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Fast 25-30 Minute Arrival', desc: 'Call Girls arrive promptly at your home or hotel suite.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Served by the Delhi Metro Magenta Line (Greater Kailash station) and Violet Line (Kailash Colony). Direct road links to Outer Ring Road and Lala Lajpat Rai Marg.',
@@ -384,8 +384,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['defence-colony', 'saket', 'nehru-place', 'south-delhi', 'hauz-khas'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in GK 1 and GK 2?', answer: 'Yes, we regularly provide discreet outcalls to independent homes, duplexes, and builder floors throughout GK 1 and GK 2.' },
-      { question: 'Can a companion join me for dinner at M-Block Market GK 1?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for M-Block restaurants.' },
-      { question: 'How quickly can a companion arrive in Greater Kailash?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at M-Block Market GK 1?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for M-Block restaurants.' },
+      { question: 'How quickly can a call girl arrive in Greater Kailash?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Top Date Spots in Greater Kailash', excerpt: 'Guide to dining and cocktail lounges in GK 1 and GK 2.' },
@@ -410,10 +410,10 @@ export const delhiLocalities: LocationData[] = [
       { title: 'Corporate Executive Downtime', desc: 'relaxing outcalls for business travelers working in or visiting Saket District Centre.' },
       { title: 'Overnight Relaxation Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Saket choose ALINA VIP for our five-star familiarity, verified companions, and absolute discretion.',
+    whyChooseOverview: 'Clients in Saket choose ALINA VIP for our five-star familiarity, verified call girls, and absolute discretion.',
     reasons: [
-      { title: 'Walking Distance to Sheraton & Select CITYWALK', desc: 'Companions arrive at Sheraton suites within 15 to 25 minutes.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Companions arrive dressed in elegant cocktail or business-chic attire.' },
+      { title: 'Walking Distance to Sheraton & Select CITYWALK', desc: 'Call Girls arrive at Sheraton suites within 15 to 25 minutes.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Call Girls arrive dressed in elegant cocktail or business-chic attire.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
@@ -429,8 +429,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['greater-kailash', 'hauz-khas', 'south-delhi', 'vasant-vihar'],
     faqs: [
       { question: 'Do you deliver outcalls to Sheraton New Delhi in Saket?', answer: 'Yes, Sheraton New Delhi is one of our primary served five-star luxury hotels with complete discretion.' },
-      { question: 'Can a companion join me for dinner at Select CITYWALK?', answer: 'Yes! Our companions are stylish and socially poised, perfect for dining at Select CITYWALK restaurants.' },
-      { question: 'How quickly can a companion arrive in Saket?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Select CITYWALK?', answer: 'Yes! Our call girls are stylish and socially poised, perfect for dining at Select CITYWALK restaurants.' },
+      { question: 'How quickly can a call girl arrive in Saket?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Sheraton New Delhi Luxury Review', excerpt: 'Review of five-star hospitality and dining in Saket.' },
@@ -455,11 +455,11 @@ export const delhiLocalities: LocationData[] = [
       { title: 'Deer Park Strolls & Casual Dates', desc: 'Articulate, nature-loving escorts to stroll through Deer Park before heading to dinner.' },
       { title: 'Overnight Relaxation Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your residence.' },
     ],
-    whyChooseOverview: 'Clients in Hauz Khas choose ALINA VIP for our cultured companions, authentic profiles, and ironclad discretion.',
+    whyChooseOverview: 'Clients in Hauz Khas choose ALINA VIP for our cultured call girls, authentic profiles, and ironclad discretion.',
     reasons: [
-      { title: 'Romantic & Cultural Savvy', desc: 'Our companions appreciate art, history, and fine dining, making them ideal dates in Hauz Khas.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-30 Minute Arrival', desc: 'Companions arrive promptly at your residence or venue.' },
+      { title: 'Romantic & Cultural Savvy', desc: 'Our call girls appreciate art, history, and fine dining, making them ideal dates in Hauz Khas.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-30 Minute Arrival', desc: 'Call Girls arrive promptly at your residence or venue.' },
       { title: 'Complete Privacy Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Major interchange on the Delhi Metro Yellow and Magenta lines. Fast road links via Sri Aurobindo Marg and Outer Ring Road.',
@@ -473,9 +473,9 @@ export const delhiLocalities: LocationData[] = [
     serviceCategories: ['vip-call-girls', 'college-girls', 'independent-girls', 'high-profile-girls', 'model-escorts'],
     nearbyAreas: ['green-park', 'saket', 'greater-kailash', 'south-delhi'],
     faqs: [
-      { question: 'Can a companion join me for sunset drinks at Hauz Khas Village?', answer: 'Yes! Our companions are stylish, charming, and make wonderful dates for the rooftop lounges overlooking Hauz Khas lake.' },
+      { question: 'Can a call girl join me for sunset drinks at Hauz Khas Village?', answer: 'Yes! Our call girls are stylish, charming, and make wonderful dates for the rooftop lounges overlooking Hauz Khas lake.' },
       { question: 'Do you deliver outcalls to Hauz Khas Enclave?', answer: 'Yes, we regularly provide outcalls to private residences in Hauz Khas Enclave with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Hauz Khas?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'How quickly can a call girl arrive in Hauz Khas?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Romantic Sunset Dates in Hauz Khas', excerpt: 'Guide to exploring the lake-view lounges and bistros of HKV.' },
@@ -501,9 +501,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Defence Colony choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Def Col Market Familiarity', desc: 'Companions are stylish, well-spoken, and comfortable in upscale dining venues.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-30 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Def Col Market Familiarity', desc: 'Call Girls are stylish, well-spoken, and comfortable in upscale dining venues.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-30 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Exceptional connectivity via Ring Road, Lala Lajpat Rai Marg, and Defence Colony Flyover. Moolchand and Lajpat Nagar metro stations are within 3 minutes.',
@@ -518,8 +518,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['lajpat-nagar', 'greater-kailash', 'south-delhi', 'new-delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in Defence Colony?', answer: 'Yes, we frequently provide discreet outcalls to independent homes and luxury apartments throughout Defence Colony.' },
-      { question: 'Can a companion join me for dinner at Defence Colony Market?', answer: 'Yes! Our companions are stylish, socially refined, and make wonderful dining partners for Def Col restaurants.' },
-      { question: 'How quickly can a companion arrive in Defence Colony?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Defence Colony Market?', answer: 'Yes! Our call girls are stylish, socially refined, and make wonderful dining partners for Def Col restaurants.' },
+      { question: 'How quickly can a call girl arrive in Defence Colony?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Fine Dining in Defence Colony', excerpt: 'Guide to premier restaurants and speakeasies in Defence Colony.' },
@@ -545,9 +545,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Lajpat Nagar choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Central South Delhi Location', desc: 'Companions arrive within 25 to 30 minutes from our central team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Friendly Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Central South Delhi Location', desc: 'Call Girls arrive within 25 to 30 minutes from our central team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Friendly Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Major interchange on the Delhi Metro Pink and Violet lines. Direct road access via Ring Road and Lala Lajpat Rai Marg.',
@@ -562,8 +562,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['defence-colony', 'greater-kailash', 'nehru-place', 'south-delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to homes in Lajpat Nagar?', answer: 'Yes, we provide discreet outcalls to homes and apartments throughout Lajpat Nagar Parts 1, 2, 3, and 4.' },
-      { question: 'How quickly can a companion arrive in Lajpat Nagar?', answer: 'Companions generally arrive within 25 to 30 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Lajpat Nagar?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Lajpat Nagar?', answer: 'Call Girls generally arrive within 25 to 30 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Lajpat Nagar?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in South Delhi', excerpt: 'Tips for relaxed shopping dates and dining near Lajpat Nagar.' },
@@ -587,10 +587,10 @@ export const delhiLocalities: LocationData[] = [
       { title: 'Corporate Downtime & Stress Relief', desc: 'relaxing outcalls for business travelers working in or visiting Nehru Place IT towers.' },
       { title: 'Overnight Hotel Stays', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Nehru Place choose ALINA VIP for our five-star familiarity, verified companions, and absolute discretion.',
+    whyChooseOverview: 'Clients in Nehru Place choose ALINA VIP for our five-star familiarity, verified call girls, and absolute discretion.',
     reasons: [
-      { title: 'Walking Distance to Eros Hotel', desc: 'Companions arrive at Eros Hotel suites within 15 to 20 minutes.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Our companions understand luxury hotel protocols and arrive dressed impeccably.' },
+      { title: 'Walking Distance to Eros Hotel', desc: 'Call Girls arrive at Eros Hotel suites within 15 to 20 minutes.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Our call girls understand luxury hotel protocols and arrive dressed impeccably.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -601,13 +601,13 @@ export const delhiLocalities: LocationData[] = [
     residentialEstates: ['Greater Kailash 1 & 2 (adjacent)', 'Kalkaji', 'East of Kailash', 'Alaknanda'],
     corporateParks: ['Nehru Place IT Commercial Complex', 'Chiranjiv Tower', 'International Trade Tower', 'Eros Corporate Tower'],
     privacyOverview: 'We maintain strict privacy protocols in Nehru Place to protect corporate client discretion.',
-    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['greater-kailash', 'lajpat-nagar', 'saket', 'south-delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to Eros Hotel in Nehru Place?', answer: 'Yes, Eros Hotel New Delhi Nehru Place is one of our primary served five-star luxury hotels with complete discretion.' },
-      { question: 'Can a companion join me for dinner at Epicuria in Nehru Place?', answer: 'Yes! Our companions are stylish, social, and make wonderful dates for Epicuria’s gourmet restaurants and lounges.' },
-      { question: 'How quickly can an escort reach Nehru Place?', answer: 'Companions generally arrive within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Epicuria in Nehru Place?', answer: 'Yes! Our call girls are stylish, social, and make wonderful dates for Epicuria’s gourmet restaurants and lounges.' },
+      { question: 'How quickly can an escort reach Nehru Place?', answer: 'Call Girls generally arrive within 15 to 25 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Eros Hotel Nehru Place Luxury Review', excerpt: 'Review of five-star hospitality and dining in Nehru Place.' },
@@ -634,9 +634,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Green Park choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Central South Delhi Setting', desc: 'Companions arrive within 20 to 30 minutes from our central team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Central South Delhi Setting', desc: 'Call Girls arrive within 20 to 30 minutes from our central team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Sri Aurobindo Marg and Ring Road. Green Park Metro Station on the Yellow Line provides instant transit.',
@@ -651,8 +651,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['hauz-khas', 'south-delhi', 'new-delhi', 'greater-kailash'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in Green Park?', answer: 'Yes, we provide discreet outcalls to homes and apartments throughout Green Park Main and Extension.' },
-      { question: 'How quickly can a companion arrive in Green Park?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Green Park?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Green Park?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Green Park?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in Green Park', excerpt: 'Tips for relaxed coffee dates and dining in Green Park.' },
@@ -678,9 +678,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Karol Bagh choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Pusa Road Hotel Proximity', desc: 'Companions arrive at Pusa Road hotels within 20 to 25 minutes.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Friendly Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Pusa Road Hotel Proximity', desc: 'Call Girls arrive at Pusa Road hotels within 20 to 25 minutes.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Friendly Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on the Delhi Metro Blue Line at Karol Bagh Metro Station. Quick road links via Pusa Road and DB Gupta Road to Connaught Place (10 mins).',
@@ -695,8 +695,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['connaught-place', 'new-delhi', 'rajouri-garden', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to hotels along Pusa Road in Karol Bagh?', answer: 'Yes, we regularly provide outcall services to hotels and suites along Pusa Road and Karol Bagh with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Karol Bagh?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Karol Bagh?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Karol Bagh?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Karol Bagh?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in Central Delhi', excerpt: 'Tips for shopping dates and dining near Karol Bagh.' },
@@ -722,8 +722,8 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Connaught Place choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Walking Distance to CP Venues & Hotels', desc: 'Companions arrive at CP hotels and venues within 15 to 20 minutes.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Our companions understand luxury hotel protocols and arrive dressed impeccably.' },
+      { title: 'Walking Distance to CP Venues & Hotels', desc: 'Call Girls arrive at CP hotels and venues within 15 to 20 minutes.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Our call girls understand luxury hotel protocols and arrive dressed impeccably.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -734,13 +734,13 @@ export const delhiLocalities: LocationData[] = [
     residentialEstates: ['Barakhamba Road Luxury Suites', 'Bababar Road Residences', 'Hailey Road Luxury Apartments'],
     corporateParks: ['Barakhamba Road Corporate Towers', 'Statesman House', 'World Trade Centre Delhi', 'Gopal Das Bhawan'],
     privacyOverview: 'We maintain strict privacy protocols in Connaught Place to protect client discretion in busy commercial and hotel corridors.',
-    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Companions dressed in elegant cocktail or business-chic attire'],
+    protocols: ['Unmarked luxury vehicles for all drop-offs', 'Direct room-door rendezvous to eliminate lobby visibility', 'Encrypted messaging channels with zero data logging', 'Call Girls dressed in elegant cocktail or business-chic attire'],
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['new-delhi', 'karol-bagh', 'chanakyapuri', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to The Lalit and Radisson Blu Marina in Connaught Place?', answer: 'Yes, The Lalit New Delhi and Radisson Blu Marina are our most frequently served hotels in CP with complete discretion.' },
-      { question: 'Can a companion join me for dinner in Connaught Place Inner Circle?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for CP’s premier restaurants and lounges.' },
-      { question: 'How quickly can an escort reach Connaught Place?', answer: 'Companions generally arrive within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner in Connaught Place Inner Circle?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for CP’s premier restaurants and lounges.' },
+      { question: 'How quickly can an escort reach Connaught Place?', answer: 'Call Girls generally arrive within 15 to 25 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-dining-experiences-gurgaon', title: 'Top 10 Dining Spots in Connaught Place', excerpt: 'Guide to premier restaurants and heritage bars in CP.' },
@@ -765,10 +765,10 @@ export const delhiLocalities: LocationData[] = [
       { title: 'Vegas Mall Dining & Movie Dates', desc: 'charming escorts to join you for an evening dinner or movie date at Vegas Mall.' },
       { title: 'Overnight Relaxation Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Dwarka choose ALINA VIP for our five-star familiarity, verified companions, and rapid airport dispatch.',
+    whyChooseOverview: 'Clients in Dwarka choose ALINA VIP for our five-star familiarity, verified call girls, and rapid airport dispatch.',
     reasons: [
-      { title: 'Direct Access to Radisson & Vivanta', desc: 'Companions arrive at Dwarka five-star hotels within 15 to 25 minutes.' },
-      { title: 'Aviation & Transit Familiarity', desc: 'Our companions understand airline layover schedules and arrive punctually.' },
+      { title: 'Direct Access to Radisson & Vivanta', desc: 'Call Girls arrive at Dwarka five-star hotels within 15 to 25 minutes.' },
+      { title: 'Aviation & Transit Familiarity', desc: 'Our call girls understand airline layover schedules and arrive punctually.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -784,8 +784,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['aerocity', 'sector-102', 'sector-105', 'janakpuri', 'gurgaon'],
     faqs: [
       { question: 'Do you deliver outcalls to Radisson Blu Dwarka and Vivanta Dwarka?', answer: 'Yes, Radisson Blu Dwarka and Vivanta Dwarka are our most frequently served five-star luxury hotels with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Dwarka?', answer: 'Companions generally arrive within 15 to 25 minutes of booking confirmation.' },
-      { question: 'Are air hostess companions available in Dwarka?', answer: 'Yes, due to its direct proximity to IGI Airport, Dwarka is one of our most active areas for verified air hostess companions.' },
+      { question: 'How quickly can a call girl arrive in Dwarka?', answer: 'Call Girls generally arrive within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Are air hostess call girls available in Dwarka?', answer: 'Yes, due to its direct proximity to IGI Airport, Dwarka is one of our most active areas for verified air hostess call girls.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Radisson Blu & Vivanta Dwarka Luxury Review', excerpt: 'Review of five-star hospitality in Dwarka, New Delhi.' },
@@ -811,9 +811,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Rohini choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Crowne Plaza Hotel Proximity', desc: 'Companions arrive at Crowne Plaza suites within 15 to 25 minutes.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Crowne Plaza Hotel Proximity', desc: 'Call Girls arrive at Crowne Plaza suites within 15 to 25 minutes.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Served by the Delhi Metro Red Line (Rithala terminal) and Yellow Line (Rohini West/East). Direct road access via Outer Ring Road and Bhagwan Mahavir Marg.',
@@ -828,8 +828,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['pitampura', 'delhi', 'rajouri-garden'],
     faqs: [
       { question: 'Do you deliver outcalls to Crowne Plaza Rohini?', answer: 'Yes, Crowne Plaza New Delhi Rohini is our primary served five-star luxury hotel in Rohini with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Rohini?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Rohini?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Rohini?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Rohini?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Crowne Plaza Rohini Luxury Review', excerpt: 'Review of five-star hospitality and dining in Rohini.' },
@@ -855,9 +855,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Pitampura choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Seven Seas Hotel Proximity', desc: 'Companions arrive at Seven Seas suites within 15 to 20 minutes.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Seven Seas Hotel Proximity', desc: 'Call Girls arrive at Seven Seas suites within 15 to 20 minutes.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Served by the Delhi Metro Red Line (Netaji Subhash Place & Kohat Enclave) and Pink Line interchange. Direct road access via Outer Ring Road and Ring Road.',
@@ -872,8 +872,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['rohini', 'rajouri-garden', 'karol-bagh', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to Seven Seas Hotel in Pitampura?', answer: 'Yes, Seven Seas Hotel is our primary served luxury hotel in Pitampura with complete discretion.' },
-      { question: 'Can a companion join me for dinner at Netaji Subhash Place (NSP)?', answer: 'Yes! Our companions are stylish, well-spoken, and make wonderful dates for NSP restaurants and lounges.' },
-      { question: 'How quickly can a companion arrive in Pitampura?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Netaji Subhash Place (NSP)?', answer: 'Yes! Our call girls are stylish, well-spoken, and make wonderful dates for NSP restaurants and lounges.' },
+      { question: 'How quickly can a call girl arrive in Pitampura?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Seven Seas Hotel Pitampura Luxury Review', excerpt: 'Review of palatial five-star hospitality in Pitampura.' },
@@ -900,9 +900,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Janakpuri choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Hyatt Centric Hotel Proximity', desc: 'Companions arrive at Hyatt Centric suites within 15 to 20 minutes.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Hyatt Centric Hotel Proximity', desc: 'Call Girls arrive at Hyatt Centric suites within 15 to 20 minutes.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Major interchange on the Delhi Metro Blue and Magenta lines (Janakpuri West). Direct connection to IGI Airport (15 mins via Magenta Line).',
@@ -917,8 +917,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['rajouri-garden', 'dwarka', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to Hyatt Centric in Janakpuri?', answer: 'Yes, Hyatt Centric Janakpuri is our primary served luxury hotel in Janakpuri with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Janakpuri?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Janakpuri?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Janakpuri?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Janakpuri?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Hyatt Centric Janakpuri Luxury Review', excerpt: 'Review of five-star hospitality and dining in Janakpuri.' },
@@ -944,9 +944,9 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Rajouri Garden choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Glamorous & Sociable Companions', desc: 'Our ladies are fashionable, warm, and skilled in social conversation.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-30 Minute Arrival', desc: 'Companions arrive promptly at your home or hotel suite.' },
+      { title: 'Glamorous & Sociable Call Girls', desc: 'Our ladies are fashionable, warm, and skilled in social conversation.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-30 Minute Arrival', desc: 'Call Girls arrive promptly at your home or hotel suite.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Major interchange on the Delhi Metro Blue and Pink lines (Rajouri Garden station). Direct road links via Ring Road and Najafgarh Road.',
@@ -961,8 +961,8 @@ export const delhiLocalities: LocationData[] = [
     nearbyAreas: ['janakpuri', 'karol-bagh', 'pitampura', 'delhi'],
     faqs: [
       { question: 'Do you deliver outcalls to private homes in Rajouri Garden?', answer: 'Yes, we frequently provide discreet outcalls to independent bungalows and luxury apartments throughout Rajouri Garden.' },
-      { question: 'Can a companion join me for drinks at City Square Mall in Rajouri Garden?', answer: 'Yes! Our companions are stylish, social, and make wonderful dates for Rajouri Garden lounges.' },
-      { question: 'How quickly can a companion arrive in Rajouri Garden?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for drinks at City Square Mall in Rajouri Garden?', answer: 'Yes! Our call girls are stylish, social, and make wonderful dates for Rajouri Garden lounges.' },
+      { question: 'How quickly can a call girl arrive in Rajouri Garden?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Top Date Spots in West Delhi', excerpt: 'Guide to dining and cocktail lounges in Rajouri Garden.' },
@@ -988,10 +988,10 @@ export const delhiLocalities: LocationData[] = [
     ],
     whyChooseOverview: 'Clients choose ALINA VIP in Mahipalpur for lightning-fast arrival, airport proximity, and 100% verified identities.',
     reasons: [
-      { title: '20-Minute Rapid Airport Dispatch', desc: 'Strategically located companions arrive swiftly at any Mahipalpur or Aerocity hotel.' },
-      { title: 'Discreet In-Room Hotel Deliveries', desc: 'Companions arrive privately dressed in tasteful attire for complete privacy.' },
-      { title: 'Multilingual & Cultured Companions', desc: 'Educated companions fluent in English and Hindi, adept with international travelers.' },
-      { title: 'Seamless In-Room Rendezvous', desc: 'Flexible direct coordination and secure settlement upon companion arrival.' },
+      { title: '20-Minute Rapid Airport Dispatch', desc: 'Strategically located call girls arrive swiftly at any Mahipalpur or Aerocity hotel.' },
+      { title: 'Discreet In-Room Hotel Deliveries', desc: 'Call Girls arrive privately dressed in tasteful attire for complete privacy.' },
+      { title: 'Multilingual & Cultured Call Girls', desc: 'Educated call girls fluent in English and Hindi, adept with international travelers.' },
+      { title: 'Seamless In-Room Rendezvous', desc: 'Flexible direct coordination and secure settlement upon call girl arrival.' },
     ],
     connectivity: 'Exceptional connectivity via Delhi Aero City Metro (Airport Express Line), NH-48 Expressway, and direct access to IGI Airport Terminals.',
     metroStations: ['Delhi Aero City Metro Station (Airport Express Line)', 'I.G.I Airport Metro Station (Terminal 3)'],
@@ -1000,13 +1000,13 @@ export const delhiLocalities: LocationData[] = [
     residentialEstates: ['Mahipalpur Extension', 'Vasant Kunj Enclave (nearby)', 'Rangpuri (adjacent)'],
     corporateParks: ['Worldmark Aerocity Towers 1, 2, 3', 'GMR Airport City', 'Delhi Cargo Complex'],
     privacyOverview: 'Utmost privacy is observed for all airport transit outcalls and hotel bookings.',
-    protocols: ['Companions arrive independently as personal guests', 'No company branded transport', 'Encrypted communication with auto-delete', 'Absolute client confidentiality'],
+    protocols: ['Call Girls arrive independently as personal guests', 'No company branded transport', 'Encrypted communication with auto-delete', 'Absolute client confidentiality'],
     serviceCategories: ['russian-call-girls', 'vip-call-girls', 'air-hostess', 'model-escorts', 'travel-escorts'],
     nearbyAreas: ['aerocity', 'vasant-vihar', 'dwarka', 'cyber-city', 'delhi'],
     faqs: [
       { question: 'Do you provide outcalls to hotels in Mahipalpur near Delhi Airport?', answer: 'Yes, we provide 24/7 discreet outcalls to all hotels, guest houses, and resorts in Mahipalpur and Aerocity.' },
-      { question: 'How quickly can a companion arrive at my Mahipalpur hotel?', answer: 'Because our escorts are stationed nearby, typical arrival time is just 20 to 25 minutes from booking confirmation.' },
-      { question: 'Are companions available for late-night flight layovers?', answer: 'Yes, ALINA VIP operates 24 hours a day, 7 days a week, making late-night and early-morning layover bookings effortless.' },
+      { question: 'How quickly can a call girl arrive at my Mahipalpur hotel?', answer: 'Because our escorts are stationed nearby, typical arrival time is just 20 to 25 minutes from booking confirmation.' },
+      { question: 'Are call girls available for late-night flight layovers?', answer: 'Yes, ALINA VIP operates 24 hours a day, 7 days a week, making late-night and early-morning layover bookings effortless.' },
     ],
     relatedGuides: [
       { slug: 'hotel-etiquette-delhi', title: 'Top 5 Luxury Hotel Escort Etiquette in Aerocity', excerpt: 'Best practices for booking discreet hotel escorts near IGI Airport.' },

@@ -47,7 +47,7 @@ function createSectorPage(data: {
       landmarks: data.landmarks,
       commercialProfile: data.commercialProfile,
     },
-    companionshipOptions: {
+    serviceOptions: {
       overview: data.optionsOverview,
       options: data.options,
     },
@@ -71,7 +71,7 @@ function createSectorPage(data: {
     nearbyAreas: data.nearbyAreas,
     howItWorks: {
       steps: [
-        { step: '01', title: `Explore ${data.name} Profiles`, desc: 'Review our authenticated gallery of verified models, VIP escorts, and college companions.' },
+        { step: '01', title: `Explore ${data.name} Profiles`, desc: 'Review our authenticated gallery of verified models, VIP escorts, and college call girls.' },
         { step: '02', title: 'Confidential Inquiry', desc: 'Call +91-9996265679 or message on WhatsApp with your location and preferred timing.' },
         { step: '03', title: 'Swift Confirmation', desc: 'Our concierge confirms scheduling, coordinates private chauffeur transit, and provides exact arrival timing.' },
         { step: '04', title: 'Private Luxury Rendezvous', desc: `Welcome your escort at your ${data.name} residence or hotel suite for an unforgettable experience.` },
@@ -104,9 +104,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 81 choose ALINA VIP for our verified standard of beauty, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'DLF The Ultima Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'DLF The Ultima Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to NH-48 via the 60-meter sector road and link to Dwarka Expressway (NPR). Central Gurgaon is 15 minutes away.',
@@ -121,8 +121,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-82', 'sector-83', 'sector-84', 'manesar', 'sohna-road'],
     faqs: [
       { question: 'Do you deliver outcalls to DLF The Ultima in Sector 81?', answer: 'Yes, DLF The Ultima is one of our primary served ultra-luxury developments in Sector 81.' },
-      { question: 'How quickly can a companion arrive in Sector 81?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 81?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 81.' },
+      { question: 'How quickly can a call girl arrive in Sector 81?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 81?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 81.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Ultra-Luxury Living at DLF The Ultima', excerpt: 'Explore luxury living in Sector 81, New Gurgaon.' },
@@ -149,9 +149,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 82 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Town Square Proximity', desc: 'Companions arrive within 25 to 30 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Town Square Proximity', desc: 'Call Girls arrive within 25 to 30 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to NH-48 and the Central Peripheral Road (CPR). Rapid link to Dwarka Expressway.',
@@ -166,8 +166,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-81', 'sector-83', 'sector-85', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to Mapsko Royale Ville in Sector 82?', answer: 'Yes, Mapsko Royale Ville and Vatika societies are frequently served residential developments in Sector 82.' },
-      { question: 'How quickly can a companion arrive in Sector 82?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 82?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 82?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 82?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates at Vatika Town Square', excerpt: 'Tips for relaxed coffee dates and dining in Sector 82.' },
@@ -192,10 +192,10 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
       { title: 'Vatika City Homes Condominium Outcalls', desc: 'Private escort visits to residential apartments in Vatika City Homes.' },
       { title: 'Overnight Business Travel Stays', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening in your suite.' },
     ],
-    whyChooseOverview: 'Clients in Sector 83 choose ALINA VIP for our five-star familiarity, verified companions, and absolute discretion.',
+    whyChooseOverview: 'Clients in Sector 83 choose ALINA VIP for our five-star familiarity, verified call girls, and absolute discretion.',
     reasons: [
-      { title: 'Walking Distance to Hyatt Regency', desc: 'Companions arrive at Hyatt Regency suites within 15 to 20 minutes.' },
-      { title: 'Flawless Five-Star Etiquette', desc: 'Our companions understand luxury hotel protocols and arrive dressed impeccably.' },
+      { title: 'Walking Distance to Hyatt Regency', desc: 'Call Girls arrive at Hyatt Regency suites within 15 to 20 minutes.' },
+      { title: 'Flawless Five-Star Etiquette', desc: 'Our call girls understand luxury hotel protocols and arrive dressed impeccably.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Complete Privacy Guarantee', desc: 'Zero data retention and unbranded, confidential arrangements.' },
     ],
@@ -206,13 +206,13 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     residentialEstates: ['Vatika City Homes', 'Emaar Palm Gardens (nearby)', 'Sector 83 Plotted Residences'],
     corporateParks: ['Hyatt Regency Business Center', 'Vatika India Next Offices', 'DLF Corporate Greens (nearby)'],
     privacyOverview: 'We maintain strict privacy protocols for all Sector 83 engagements.',
-    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby exposure', 'Encrypted messaging channels with zero data logging', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked executive sedans for all drop-offs', 'Direct room-door rendezvous to eliminate lobby exposure', 'Encrypted messaging channels with zero data logging', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['vip-call-girls', 'high-profile-girls', 'russian-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['sector-81', 'sector-82', 'sector-84', 'manesar', 'sector-74'],
     faqs: [
       { question: 'Do you deliver outcalls to Hyatt Regency Gurgaon in Sector 83?', answer: 'Yes, Hyatt Regency Gurgaon is one of our most frequently served five-star luxury properties with complete discretion.' },
-      { question: 'How quickly can an escort reach Sector 83?', answer: 'Companions generally arrive within 15 to 25 minutes of booking confirmation.' },
-      { question: 'Can a companion join me for dinner at Hyatt Regency?', answer: 'Yes, our companions possess sophisticated dining etiquette and make wonderful dinner dates.' },
+      { question: 'How quickly can an escort reach Sector 83?', answer: 'Call Girls generally arrive within 15 to 25 minutes of booking confirmation.' },
+      { question: 'Can a call girl join me for dinner at Hyatt Regency?', answer: 'Yes, our call girls possess sophisticated dining etiquette and make wonderful dinner dates.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Hyatt Regency Gurgaon Luxury Review', excerpt: 'Review of five-star hospitality, dining, and suites in Sector 83.' },
@@ -239,9 +239,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 84 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'CPR Expressway Link', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'CPR Expressway Link', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on the Central Peripheral Road (CPR) connecting NH-48 to Dwarka Expressway. Central Gurgaon is 15 minutes away.',
@@ -256,8 +256,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-83', 'sector-85', 'sector-88', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to Spaze Privy AT4 in Sector 84?', answer: 'Yes, Spaze Privy AT4 is one of our frequently served residential developments in Sector 84.' },
-      { question: 'How quickly can a companion arrive in Sector 84?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 84?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 84?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 84?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in New Gurgaon', excerpt: 'Tips for relaxed coffee dates and dining near Sector 84.' },
@@ -284,9 +284,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 85 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Modern Luxury Setting', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Modern Luxury Setting', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Convenient access to NH-48 and Central Peripheral Road (CPR). Rapid link to Dwarka Expressway.',
@@ -301,8 +301,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-84', 'sector-86', 'sector-82', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to SS The Leaf in Sector 85?', answer: 'Yes, SS The Leaf is one of our frequently served luxury developments in Sector 85.' },
-      { question: 'How quickly can a companion arrive in Sector 85?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 85?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 85?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 85?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Luxury Living at SS The Leaf', excerpt: 'Explore luxury amenities and living in Sector 85.' },
@@ -329,9 +329,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 86 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'New Gurgaon Central Location', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'New Gurgaon Central Location', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via Sector 86 Main Road and link to NH-48 and Dwarka Expressway. Manesar is 7 minutes away.',
@@ -346,7 +346,7 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-85', 'sector-90', 'sector-81', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to DLF New Town Heights in Sector 86?', answer: 'Yes, DLF New Town Heights is one of our primary served residential developments in Sector 86.' },
-      { question: 'What is the visitor parking and security clearance procedure for Microtek Greenburg?', answer: 'Our chauffeurs drop companions directly at the main residential gatehouse. We coordinate visitor entry pre-authorization through the resident management app for seamless entry.' },
+      { question: 'What is the visitor parking and security clearance procedure for Microtek Greenburg?', answer: 'Our chauffeurs drop call girls directly at the main residential gatehouse. We coordinate visitor entry pre-authorization through the resident management app for seamless entry.' },
       { question: 'Which nearby luxury hotel venues do you recommend for outcalls near Sector 86?', answer: 'We frequently arrange outcalls to the 5-star Hyatt Regency Gurgaon in adjacent Sector 83 and nearby luxury heritage resorts along the NH-48 corridor.' },
     ],
     relatedGuides: [
@@ -372,10 +372,10 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
       { title: 'After-Hours Downtime & Stress Relief', desc: 'relaxing outcalls designed to melt away workday fatigue in the privacy of your suite.' },
       { title: 'Overnight Business Travel Sessions', desc: 'Unwind with an attentive escort for an unhurried, comfortable evening.' },
     ],
-    whyChooseOverview: 'Corporate clients in Sector 88 rely on ALINA VIP for our high-caliber companions, fast dispatch, and complete discretion.',
+    whyChooseOverview: 'Corporate clients in Sector 88 rely on ALINA VIP for our high-caliber call girls, fast dispatch, and complete discretion.',
     reasons: [
-      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our companions are university-educated and understand executive social dynamics.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your hotel or residence.' },
+      { title: 'Corporate Etiquette & Cultural Fluency', desc: 'Our call girls are university-educated and understand executive social dynamics.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your hotel or residence.' },
       { title: '100% Verified Profiles', desc: 'Real photographs and authenticated details guarantee zero surprises.' },
       { title: 'Strict Non-Disclosure Standards', desc: 'All bookings remain completely confidential with no records stored.' },
     ],
@@ -386,13 +386,13 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     residentialEstates: ['Vatika Express City (adjacent)', 'Sector 89 High-Rises (nearby)', 'Sector 84 Towers (nearby)'],
     corporateParks: ['Sector 88 Commercial SEZ', 'DLF Corporate Greens (nearby)', 'IMT Manesar (nearby)'],
     privacyOverview: 'We enforce strict corporate privacy standards across all Sector 88 engagements.',
-    protocols: ['Unmarked executive sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Companions dressed in elegant, polished attire'],
+    protocols: ['Unmarked executive sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Call Girls dressed in elegant, polished attire'],
     serviceCategories: ['high-profile-girls', 'vip-call-girls', 'model-escorts', 'independent-girls'],
     nearbyAreas: ['sector-84', 'sector-89', 'sector-83', 'sector-82'],
     faqs: [
       { question: 'Do you deliver outcalls to hotels near Sector 88?', answer: 'Yes, we regularly provide outcalls to business hotels and executive suites around Sector 88.' },
-      { question: 'How quickly can an escort reach Sector 88?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are corporate companions available in Sector 88?', answer: 'Yes, we offer verified corporate companions who possess excellent social skills and business awareness.' },
+      { question: 'How quickly can an escort reach Sector 88?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are corporate call girls available in Sector 88?', answer: 'Yes, we offer verified corporate call girls who possess excellent social skills and business awareness.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Top Business Hotels in New Gurgaon', excerpt: 'Guide to luxury corporate accommodation near Sector 88.' },
@@ -419,9 +419,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 89 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Modern Luxury Setting', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Modern Luxury Setting', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Pataudi Road, Dwarka Expressway, and CPR link to NH-48. Central Gurgaon is 18 minutes away.',
@@ -436,8 +436,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-88', 'sector-90', 'sector-85', 'sector-91'],
     faqs: [
       { question: 'Do you deliver outcalls to Smart World Gems in Sector 89?', answer: 'Yes, Smart World Gems is one of our frequently served residential developments in Sector 89.' },
-      { question: 'How quickly can a companion arrive in Sector 89?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 89?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 89?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 89?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in New Gurgaon', excerpt: 'Tips for relaxed coffee dates and dining near Sector 89.' },
@@ -464,9 +464,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 90 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'DLF Regal Gardens Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 25-35 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'DLF Regal Gardens Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 25-35 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via multi-lane sector roads to NH-48, Dwarka Expressway, and IMT Manesar. Manesar is 5 minutes away.',
@@ -481,8 +481,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-86', 'sector-89', 'sector-91', 'sector-92', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to DLF Regal Gardens in Sector 90?', answer: 'Yes, DLF Regal Gardens is one of our primary served luxury developments in Sector 90.' },
-      { question: 'How quickly can a companion arrive in Sector 90?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 90?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 90.' },
+      { question: 'How quickly can a call girl arrive in Sector 90?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 90?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 90.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Resort Living at DLF Regal Gardens', excerpt: 'Explore luxury amenities and living in Sector 90.' },
@@ -509,9 +509,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 91 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Manesar & Pace City Proximity', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Manesar & Pace City Proximity', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via multi-lane sector roads to NH-48, IMT Manesar, and Pataudi Road. Manesar is 5 minutes away.',
@@ -526,8 +526,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-90', 'sector-92', 'sector-86', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to DLF New Town Heights in Sector 91?', answer: 'Yes, DLF New Town Heights 91 is one of our primary served residential developments in Sector 91.' },
-      { question: 'How quickly can a companion arrive in Sector 91?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 91?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 91?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 91?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates near Manesar', excerpt: 'Tips for relaxed coffee dates and dining near Sector 91.' },
@@ -554,9 +554,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 92 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Modern Luxury Setting', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Modern Luxury Setting', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via multi-lane sector roads to Pataudi Road, Dwarka Expressway, and NH-48. IMT Manesar is 6 minutes away.',
@@ -571,8 +571,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-90', 'sector-91', 'sector-93', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to Bestech Sanskruti in Sector 92?', answer: 'Yes, Bestech Park View Sanskruti is one of our frequently served residential developments in Sector 92.' },
-      { question: 'How quickly can a companion arrive in Sector 92?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 92?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 92?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 92?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in New Gurgaon', excerpt: 'Tips for relaxed coffee dates and dining near Sector 92.' },
@@ -599,9 +599,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 93 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Modern Living Setting', desc: 'Companions arrive within 25 to 35 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Modern Living Setting', desc: 'Call Girls arrive within 25 to 35 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Connected via multi-lane sector roads to Pataudi Road and Dwarka Expressway. Central Gurgaon is 20 minutes away.',
@@ -616,8 +616,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-92', 'sector-95', 'sector-89', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to residences in Sector 93?', answer: 'Yes, we regularly provide outcalls to residential societies in Sector 93 with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Sector 93?', answer: 'Companions generally arrive within 25 to 35 minutes of booking confirmation.' },
-      { question: 'Are college companions available in Sector 93?', answer: 'Yes, we offer verified, intelligent college companions who bring youthful charm and energy.' },
+      { question: 'How quickly can a call girl arrive in Sector 93?', answer: 'Call Girls generally arrive within 25 to 35 minutes of booking confirmation.' },
+      { question: 'Are college call girls available in Sector 93?', answer: 'Yes, we offer verified, intelligent college call girls who bring youthful charm and energy.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in New Gurgaon', excerpt: 'Tips for relaxed coffee dates and dining near Sector 93.' },
@@ -644,9 +644,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 95 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Peaceful Suburban Setting', desc: 'Companions arrive within 30 to 40 minutes from our local team.' },
-      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified companion profiles ensure complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Peaceful Suburban Setting', desc: 'Call Girls arrive within 30 to 40 minutes from our local team.' },
+      { title: '100% Genuine Profile Matching', desc: 'Real photographs and verified call girl profiles ensure complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Strict Discretion Guarantee', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct access to Pataudi Road and the Dwarka Expressway. Easy connection to Kundli-Manesar-Palwal (KMP) Expressway.',
@@ -661,8 +661,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-93', 'sector-92', 'sector-89', 'manesar'],
     faqs: [
       { question: 'Do you deliver outcalls to residences in Sector 95?', answer: 'Yes, we regularly provide outcalls to residential societies in Sector 95 with complete discretion.' },
-      { question: 'How quickly can a companion arrive in Sector 95?', answer: 'Companions generally arrive within 30 to 40 minutes of booking confirmation.' },
-      { question: 'Are independent companions available in Sector 95?', answer: 'Yes, we offer verified independent companions who provide personalized, unhurried service.' },
+      { question: 'How quickly can a call girl arrive in Sector 95?', answer: 'Call Girls generally arrive within 30 to 40 minutes of booking confirmation.' },
+      { question: 'Are independent call girls available in Sector 95?', answer: 'Yes, we offer verified independent call girls who provide personalized, unhurried service.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates in New Gurgaon', excerpt: 'Tips for relaxed coffee dates and dining near Sector 95.' },
@@ -689,9 +689,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 102 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Direct Dwarka Expressway Frontage', desc: 'Companions arrive within 20 to 30 minutes from our expressway team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Direct Dwarka Expressway Frontage', desc: 'Call Girls arrive within 20 to 30 minutes from our expressway team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct frontage on the 16-lane elevated Dwarka Expressway. IGI Airport T3 is 15 minutes away via the expressway tunnel.',
@@ -706,8 +706,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-103', 'sector-104', 'dwarka', 'aerocity', 'sector-105'],
     faqs: [
       { question: 'Do you deliver outcalls to Joyville in Sector 102?', answer: 'Yes, Shapoorji Pallonji Joyville and BPTP Amstoria are primary served luxury developments in Sector 102.' },
-      { question: 'How quickly can a companion arrive in Sector 102?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are air hostess companions available in Sector 102?', answer: 'Yes, due to its direct proximity to IGI Airport via Dwarka Expressway, Sector 102 is popular for air hostess companions.' },
+      { question: 'How quickly can a call girl arrive in Sector 102?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are air hostess call girls available in Sector 102?', answer: 'Yes, due to its direct proximity to IGI Airport via Dwarka Expressway, Sector 102 is popular for air hostess call girls.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Expressway Luxury at Joyville Sector 102', excerpt: 'Explore luxury living along the Dwarka Expressway.' },
@@ -735,9 +735,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 103 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Dwarka Expressway Access', desc: 'Companions arrive within 20 to 30 minutes from our expressway team.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Cultured, Educated Companions', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
+      { title: 'Dwarka Expressway Access', desc: 'Call Girls arrive within 20 to 30 minutes from our expressway team.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Cultured, Educated Call Girls', desc: 'Our ladies are well-spoken, warm, and comfortable in any setting.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Directly on the 16-lane Dwarka Expressway. IGI Airport Terminal 3 is 15 minutes away.',
@@ -752,8 +752,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-102', 'sector-104', 'dwarka', 'aerocity'],
     faqs: [
       { question: 'Do you deliver outcalls to Indiabulls Centrum Park in Sector 103?', answer: 'Yes, Indiabulls Centrum Park is one of our frequently served residential developments in Sector 103.' },
-      { question: 'How quickly can a companion arrive in Sector 103?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are air hostess companions available in Sector 103?', answer: 'Yes, due to its direct proximity to IGI Airport, Sector 103 is popular for our verified air hostess companions.' },
+      { question: 'How quickly can a call girl arrive in Sector 103?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are air hostess call girls available in Sector 103?', answer: 'Yes, due to its direct proximity to IGI Airport, Sector 103 is popular for our verified air hostess call girls.' },
     ],
     relatedGuides: [
       { slug: 'first-date-tips-luxury', title: 'Casual First Dates on Dwarka Expressway', excerpt: 'Tips for relaxed coffee dates and dining near Sector 103.' },
@@ -780,9 +780,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 104 choose ALINA VIP for our verified authenticity, punctuality, and ironclad discretion.',
     reasons: [
-      { title: 'Hero Homes Security Familiarity', desc: 'Companions understand gated visitor verification for smooth entry.' },
-      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic companion details guarantee complete satisfaction.' },
-      { title: 'Fast 20-30 Minute Arrival', desc: 'Companions arrive promptly at your residence.' },
+      { title: 'Hero Homes Security Familiarity', desc: 'Call Girls understand gated visitor verification for smooth entry.' },
+      { title: '100% Genuine Verified Profiles', desc: 'Real photographs and authentic escort details guarantee complete satisfaction.' },
+      { title: 'Fast 20-30 Minute Arrival', desc: 'Call Girls arrive promptly at your residence.' },
       { title: 'Absolute Data Privacy', desc: 'All client information purged post-session for total confidentiality.' },
     ],
     connectivity: 'Direct frontage on Dwarka Expressway. IGI Airport Terminal 3 is 15 minutes away; Cyber City is 20 minutes via NH-48.',
@@ -797,8 +797,8 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     nearbyAreas: ['sector-102', 'sector-103', 'sector-105', 'dwarka', 'aerocity'],
     faqs: [
       { question: 'Do you deliver outcalls to Hero Homes and Godrej Summit in Sector 104?', answer: 'Yes, Hero Homes and Godrej Summit are primary served luxury developments in Sector 104.' },
-      { question: 'How quickly can a companion arrive in Sector 104?', answer: 'Companions generally arrive within 20 to 30 minutes of booking confirmation.' },
-      { question: 'Are Russian companions available in Sector 104?', answer: 'Yes, we offer verified Russian and European companions available for outcalls in Sector 104.' },
+      { question: 'How quickly can a call girl arrive in Sector 104?', answer: 'Call Girls generally arrive within 20 to 30 minutes of booking confirmation.' },
+      { question: 'Are Russian call girls available in Sector 104?', answer: 'Yes, we offer verified Russian and European call girls available for outcalls in Sector 104.' },
     ],
     relatedGuides: [
       { slug: 'premium-living-gurgaon', title: 'Wellness Living at Hero Homes Sector 104', excerpt: 'Explore smart luxury living on Dwarka Expressway.' },
@@ -825,9 +825,9 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     ],
     whyChooseOverview: 'Clients in Sector 105 demand perfection, intellect, and physical allure—qualities ALINA VIP delivers consistently.',
     reasons: [
-      { title: 'Puri Diplomatic Greens Familiarity', desc: 'Companions and chauffeurs understand security access for seamless entry.' },
+      { title: 'Puri Diplomatic Greens Familiarity', desc: 'Call Girls and chauffeurs understand security access for seamless entry.' },
       { title: '10 Minutes to IGI Airport & Aerocity', desc: 'Unbeatable transit access for international travelers.' },
-      { title: 'Elite Supermodel & Air Hostess Roster', desc: 'Verified international models, Russian companions, and air hostess escorts.' },
+      { title: 'Elite Supermodel & Air Hostess Roster', desc: 'Verified international models, Russian call girls, and air hostess escorts.' },
       { title: 'Zero Digital Trail', desc: 'Strict non-disclosure standards with all data purged post-session.' },
     ],
     connectivity: 'Located directly at the Delhi border on the 16-lane Dwarka Expressway. Dwarka Sector 21 Metro Station (Blue Line & Airport Express) is 5 minutes away.',
@@ -837,13 +837,13 @@ export const gurgaonSectorsNewExpressway: LocationData[] = [
     residentialEstates: ['Puri Diplomatic Greens', 'Sector 105 Luxury Villas', 'Diplomatic Enclave Border Housing'],
     corporateParks: ['Aerocity Worldmark Corporate Towers (10 mins)', 'Dwarka Corporate Center', 'Cyber City (15 mins)'],
     privacyOverview: 'We maintain the highest privacy standards for our diplomatic and VIP Sector 105 clientele.',
-    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Companions dressed in designer cocktail or evening attire'],
+    protocols: ['Unmarked luxury sedans for all drop-offs', 'Encrypted messaging channels with zero data logging', 'Direct room-door rendezvous to eliminate lobby visibility', 'Call Girls dressed in designer cocktail or evening attire'],
     serviceCategories: ['vip-call-girls', 'russian-call-girls', 'model-escorts', 'air-hostess', 'travel-escorts'],
     nearbyAreas: ['sector-102', 'sector-103', 'sector-104', 'dwarka', 'aerocity'],
     faqs: [
       { question: 'Do you deliver outcalls to Puri Diplomatic Greens in Sector 105?', answer: 'Yes, Puri Diplomatic Greens is one of our primary served ultra-luxury developments with complete discretion.' },
       { question: 'How close is Sector 105 to IGI Airport and Aerocity?', answer: 'Sector 105 is just 10 to 12 minutes from Indira Gandhi International Airport Terminal 3 and the Aerocity hospitality district via Dwarka Expressway.' },
-      { question: 'Are Russian and air hostess companions available in Sector 105?', answer: 'Yes, our verified Russian and air hostess companions are highly requested and available for outcalls in Sector 105.' },
+      { question: 'Are Russian and air hostess call girls available in Sector 105?', answer: 'Yes, our verified Russian and air hostess call girls are highly requested and available for outcalls in Sector 105.' },
     ],
     relatedGuides: [
       { slug: 'luxury-hotels-gurgaon-guide', title: 'Aerocity & Diplomatic Luxury Guide', excerpt: 'Review of five-star hotels and fine dining near Sector 105.' },

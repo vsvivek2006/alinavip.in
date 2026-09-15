@@ -32,7 +32,7 @@ export const gurgaonHub: LocationData = {
     ],
     commercialProfile: 'Gurgaon generates over 60 percent of Haryana’s economic revenue, with leading technology conglomerates (Google, Microsoft, IBM), management consulting giants (McKinsey, BCG, Deloitte), and top investment institutions headquartered along NH-48 and Golf Course Extension. This robust business climate fosters a constant influx of senior executives, overseas delegations, and entrepreneurs who seek sophisticated escort service for corporate networking, celebratory dinners, or restorative downtime.',
   },
-  companionshipOptions: {
+  serviceOptions: {
     overview: 'ALINA VIP provides an extensive spectrum of bespoke escort services arrangements designed to match the exacting requirements of our distinguished clientele throughout Gurgaon.',
     options: [
       {
@@ -58,7 +58,7 @@ export const gurgaonHub: LocationData = {
     reasons: [
       {
         title: 'Strict 100% Profile Verification',
-        desc: 'Every companion profile is physically vetted and authenticated, guaranteeing that the elegance, intellect, and beauty represented in our portfolio correspond truthfully to your encounter.',
+        desc: 'Every call girl profile is physically vetted and authenticated, guaranteeing that the elegance, intellect, and beauty represented in our portfolio correspond truthfully to your encounter.',
       },
       {
         title: 'Absolute Discretion & Data Protection',
@@ -66,11 +66,11 @@ export const gurgaonHub: LocationData = {
       },
       {
         title: 'Unrivaled Social & Linguistic Etiquette',
-        desc: 'Our companions are multilingual, culturally knowledgeable, and educated professionals capable of engaging in sophisticated discourse on global affairs, arts, and finance.',
+        desc: 'Our call girls are multilingual, culturally knowledgeable, and educated professionals capable of engaging in sophisticated discourse on global affairs, arts, and finance.',
       },
       {
         title: 'Rapid 30 to 45 Minute Arrival Across Gurgaon',
-        desc: 'Thanks to our strategic presence across key Gurgaon corridors, verified companions can arrive punctually at your chosen hotel or residence within 30 to 45 minutes.',
+        desc: 'Thanks to our strategic presence across key Gurgaon corridors, verified call girls can arrive punctually at your chosen hotel or residence within 30 to 45 minutes.',
       },
     ],
   },
@@ -122,10 +122,10 @@ export const gurgaonHub: LocationData = {
   privacySafety: {
     overview: 'Client safety, legal prudence, and non-intrusive confidentiality form the cornerstone of all operations in Gurgaon.',
     protocols: [
-      'Private Chauffeur Drop-offs: Companions arrive via unmarked executive transport to minimize visibility in hotel porches and gated driveways.',
+      'Private Chauffeur Drop-offs: Call Girls arrive via unmarked executive transport to minimize visibility in hotel porches and gated driveways.',
       'No Public Lobby Waiting: Meetings are coordinated directly to room doors or private suite lounges to eliminate corridor or lobby exposure.',
       'Data Cleansing Protocol: Phone logs, messaging chains, and temporary booking tokens are systematically erased post-rendezvous.',
-      'Comprehensive Screening: Both clients and companions undergo verified safety protocols to foster mutual security and respect.',
+      'Comprehensive Screening: Both clients and call girls undergo verified safety protocols to foster mutual security and respect.',
     ],
   },
   serviceCategories: [
@@ -159,12 +159,12 @@ export const gurgaonHub: LocationData = {
       {
         step: '01',
         title: 'Select Preferred Category or Profile',
-        desc: 'Review our verified categories including VIP call girls, Russian companions, and high-profile models.',
+        desc: 'Review our verified categories including VIP call girls, Russian call girls, and high-profile models.',
       },
       {
         step: '02',
         title: 'Confidential Inquiry via Phone or WhatsApp',
-        desc: 'Reach our concierge at +91-9996265679 or WhatsApp to share your preferred timing, location, and companion expectations.',
+        desc: 'Reach our concierge at +91-9996265679 or WhatsApp to share your preferred timing, location, and call girl expectations.',
       },
       {
         step: '03',
@@ -174,33 +174,33 @@ export const gurgaonHub: LocationData = {
       {
         step: '04',
         title: 'Punctual, Discreet Rendezvous',
-        desc: 'Your chosen companion arrives impeccably attired and punctual at your luxury hotel or private residence in Gurgaon.',
+        desc: 'Your chosen call girl arrives impeccably attired and punctual at your luxury hotel or private residence in Gurgaon.',
       },
     ],
   },
   faqs: [
     {
       question: 'What distinguishes ALINA VIP as the leading escort service in Gurgaon?',
-      answer: 'ALINA VIP is renowned for our rigorous 100% profile verification, absolute client discretion, multilingual companions, and rapid dispatch across all Gurgaon luxury hotels and sectors within 30 to 45 minutes.',
+      answer: 'ALINA VIP is renowned for our rigorous 100% profile verification, absolute client discretion, multilingual call girls, and rapid dispatch across all Gurgaon luxury hotels and sectors within 30 to 45 minutes.',
     },
     {
-      question: 'Which five-star hotels in Gurgaon permit discreet companion outcalls?',
-      answer: 'We regularly coordinate outcall appointments to top hospitality properties in Gurugram, including The Oberoi, Trident, The Leela Ambience, Grand Hyatt, The Westin, Taj City Centre, and DoubleTree by Hilton. Our companions arrive with polished hotel etiquette.',
+      question: 'Which five-star hotels in Gurgaon permit discreet call girl outcalls?',
+      answer: 'We regularly coordinate outcall appointments to top hospitality properties in Gurugram, including The Oberoi, Trident, The Leela Ambience, Grand Hyatt, The Westin, Taj City Centre, and DoubleTree by Hilton. Our call girls arrive with polished hotel etiquette.',
     },
     {
-      question: 'How quickly can a companion arrive in Gurgaon after confirmation?',
-      answer: 'Depending on your location—whether in Cyber City, Golf Course Road, or New Gurgaon sectors—companions generally arrive within 30 to 45 minutes of booking confirmation.',
+      question: 'How quickly can a call girl arrive in Gurgaon after confirmation?',
+      answer: 'Depending on your location—whether in Cyber City, Golf Course Road, or New Gurgaon sectors—call girls generally arrive within 30 to 45 minutes of booking confirmation.',
     },
     {
       question: 'Is client privacy protected during booking and payment?',
       answer: 'Discretion is our foremost commitment. We do not store personal contact information permanently, invoices are unbranded, and payment methods are structured to protect your personal identity.',
     },
     {
-      question: 'Can I book a companion for corporate events or business dinners in Cyber Hub?',
-      answer: 'Yes. Our high-profile and executive companions possess impeccable conversational skills, sophisticated dining etiquette, and business awareness, making them ideal partners for formal dinners and networking events.',
+      question: 'Can I book a call girl for corporate events or business dinners in Cyber Hub?',
+      answer: 'Yes. Our high-profile and executive call girls possess impeccable conversational skills, sophisticated dining etiquette, and business awareness, making them ideal partners for formal dinners and networking events.',
     },
     {
-      question: 'Are companion services available in New Gurgaon and Dwarka Expressway sectors?',
+      question: 'Are call girl services available in New Gurgaon and Dwarka Expressway sectors?',
       answer: 'Yes, our dispatch network fully encompasses New Gurgaon (Sectors 81–95) and Dwarka Expressway corridors (Sectors 102–105), ensuring swift arrival at residential townships and business hubs.',
     },
   ],

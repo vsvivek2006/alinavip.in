@@ -67,16 +67,16 @@ export const generalFaqs = [
     answer: 'Yes, absolutely. Gurgaon and Gurugram are the exact same city (officially renamed Gurugram in 2016, though clients and executives commonly search for Gurgaon, Gurugram, and Gurugaon). ALINA VIP covers all sectors and corridors of Gurgaon/Gurugram including DLF Phases 1 to 5, Cyber City, Cyber Hub, Golf Course Road, Golf Course Extension Road, Sohna Road, and Sector 29.',
   },
   {
-    question: 'How can I reserve a luxury companion in Gurgaon?',
-    answer: 'Reserving a companion with ALINA VIP is seamless, discreet, and fast. Reach out directly via voice call at +91-9996265679 or initiate an encrypted WhatsApp chat. Specify your preferred district, desired appointment duration, and companion style. Our private concierge confirms model availability within moments and coordinates swift 20-30 minute outcall arrival.',
+    question: 'How can I reserve a luxury call girl in Gurgaon?',
+    answer: 'Reserving a call girl with ALINA VIP is seamless, discreet, and fast. Reach out directly via voice call at +91-9996265679 or initiate an encrypted WhatsApp chat. Specify your preferred district, desired appointment duration, and call girl style. Our private concierge confirms model availability within moments and coordinates swift 20-30 minute outcall arrival.',
   },
   {
-    question: 'How does ALINA VIP verify its companions and photographs?',
-    answer: 'Every escort featured on our platform undergoes rigorous in-person validation. We cross-verify government identity documents, recent unretouched photographs, and personal grooming to ensure absolute profile fidelity. The companion who arrives at your suite is guaranteed to match the verified portfolio you selected.',
+    question: 'How does ALINA VIP verify its call girls and photographs?',
+    answer: 'Every escort featured on our platform undergoes rigorous in-person validation. We cross-verify government identity documents, recent unretouched photographs, and personal grooming to ensure absolute profile fidelity. The call girl who arrives at your suite is guaranteed to match the verified portfolio you selected.',
   },
   {
     question: 'What confidentiality safeguards protect client identity?',
-    answer: 'Discretion is our foremost operating principle. We implement a rigorous zero-retention privacy protocol: client phone numbers, messages, and itinerary specifics are permanently purged post-booking. Our companions arrive discreetly in private executive transportation and maintain total confidentiality.',
+    answer: 'Discretion is our foremost operating principle. We implement a rigorous zero-retention privacy protocol: client phone numbers, messages, and itinerary specifics are permanently purged post-booking. Our call girls arrive discreetly in private executive transportation and maintain total confidentiality.',
   },
   {
     question: 'Which sectors and districts in Gurgaon are serviced?',
@@ -84,15 +84,15 @@ export const generalFaqs = [
   },
   {
     question: 'What are your operational booking hours?',
-    answer: 'Our booking concierge is operational 24 hours a day, 7 days a week, 365 days a year. Whether you require evening dinner company, an overnight engagement, or an impromptu late-night companion, our coordination team is on standby to assist.',
+    answer: 'Our booking concierge is operational 24 hours a day, 7 days a week, 365 days a year. Whether you require evening dinner company, an overnight engagement, or an impromptu late-night call girl, our coordination team is on standby to assist.',
   },
   {
-    question: 'What companion categories can I select from?',
-    answer: 'Our portfolio features a distinguished selection of companions: Russian call girls, high-profile models, independent escorts, college companions, air hostess models, and elite celebrity escorts. Browse our categories page for comprehensive details and portfolio galleries.',
+    question: 'What call girl categories can I select from?',
+    answer: 'Our portfolio features a distinguished selection of call girls: Russian call girls, high-profile models, independent escorts, college call girls, air hostess models, and elite celebrity escorts. Browse our categories page for comprehensive details and portfolio galleries.',
   },
   {
-    question: 'Are companions available for travel and weekend getaways?',
-    answer: 'Yes. Selected companions are available for domestic trips, outstation corporate retreats, and international holidays. Inquire with our desk regarding travel itineraries, advance scheduling, and comprehensive multi-day packages.',
+    question: 'Are call girls available for travel and weekend getaways?',
+    answer: 'Yes. Selected call girls are available for domestic trips, outstation corporate retreats, and international holidays. Inquire with our desk regarding travel itineraries, advance scheduling, and comprehensive multi-day packages.',
   },
   {
     question: 'What are the pricing rates for call girls and escort girls?',
@@ -100,11 +100,11 @@ export const generalFaqs = [
   },
   {
     question: 'What payment options do you support?',
-    answer: 'To ensure client comfort and confidence, we facilitate Cash on Delivery (COD) directly with your companion upon arrival, along with convenient digital alternatives discussed upon booking.',
+    answer: 'To ensure client comfort and confidence, we facilitate Cash on Delivery (COD) directly with your call girl upon arrival, along with convenient digital alternatives discussed upon booking.',
   },
   {
-    question: 'Can I choose a specific companion from the gallery?',
-    answer: 'Absolutely. You are welcome to request your preferred companion directly from our verified gallery. We recommend booking in advance for peak weekend evenings to guarantee individual companion availability.',
+    question: 'Can I choose a specific call girl from the gallery?',
+    answer: 'Absolutely. You are welcome to request your preferred call girl directly from our verified gallery. We recommend booking in advance for peak weekend evenings to guarantee individual call girl availability.',
   },
   {
     question: 'What is the policy for rescheduling or cancellation?',
@@ -112,18 +112,18 @@ export const generalFaqs = [
   },
   {
     question: 'How does hotel outcall dispatch operate for 5-star properties?',
-    answer: 'We regularly dispatch companions to luxury hotel properties including The Oberoi, The Leela Ambience, Trident Gurgaon, Grand Hyatt, and Taj City Centre. Simply share your room or suite details; your companion arrives elegantly dressed in smart luxury attire that blends seamlessly into 5-star hotel lounges.',
+    answer: 'We regularly dispatch call girls to luxury hotel properties including The Oberoi, The Leela Ambience, Trident Gurgaon, Grand Hyatt, and Taj City Centre. Simply share your room or suite details; your call girl arrives elegantly dressed in smart luxury attire that blends seamlessly into 5-star hotel lounges.',
   },
   {
     question: 'Is cash payment on delivery accepted in Gurgaon?',
-    answer: 'Yes, cash on delivery is fully supported upon your companion’s arrival. You have the opportunity to verify your companion in person before finalizing payments, ensuring absolute peace of mind.',
+    answer: 'Yes, cash on delivery is fully supported upon your call girl’s arrival. You have the opportunity to verify your call girl in person before finalizing payments, ensuring absolute peace of mind.',
   },
   {
     question: 'How does ALINA VIP prevent online escort fraud in Gurgaon?',
-    answer: 'We eliminate common escort scams by never charging deceptive advance registration or card swipe fees before meeting. All bookings are verified in real time, and our models are authentic, resident companions.',
+    answer: 'We eliminate common escort scams by never charging deceptive advance registration or card swipe fees before meeting. All bookings are verified in real time, and our models are authentic, resident call girls.',
   },
   {
-    question: 'Can companions attend high-profile corporate or business dinners?',
-    answer: 'Yes. Many of our models and high-profile companions possess university degrees, excellent conversational acumen, and refined etiquette, making them ideal partners for business dinners, cocktail receptions, and executive functions.',
+    question: 'Can escort girls attend high-profile corporate or business dinners?',
+    answer: 'Yes. Many of our models and high-profile call girls possess university degrees, excellent conversational acumen, and refined etiquette, making them ideal partners for business dinners, cocktail receptions, and executive functions.',
   },
 ];

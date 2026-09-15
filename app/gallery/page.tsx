@@ -23,14 +23,14 @@ import { categories } from '@/data/categories';
 export const metadata: Metadata = {
   title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
   description:
-    'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model companions, and high-profile girls.',
+    'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
   alternates: {
     canonical: `${siteConfig.url}/gallery`,
   },
   openGraph: {
     title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
     description:
-      'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model companions, and high-profile girls.',
+      'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
     url: `${siteConfig.url}/gallery`,
     type: 'website',
   },
@@ -85,13 +85,13 @@ export default function GalleryPage() {
             ★ Verified Portfolio
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            VIP Companion <span className="text-gradient-gold">Photo Gallery</span>
+            VIP Call Girl <span className="text-gradient-gold">Photo Gallery</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Browse our certified portfolio of{' '}
             <strong className="text-gold-400 font-semibold">verified call girls</strong>,{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian companions
+              Russian call girls
             </Link>
             ,{' '}
             <Link href="/category/model-escorts" className="text-gold-400 hover:underline font-medium">

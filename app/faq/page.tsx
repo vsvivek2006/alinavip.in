@@ -76,7 +76,7 @@ export default function FAQPage() {
             </Link>
             ,{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian companions
+              Russian call girls
             </Link>
             , and verified outcall protocols with ALINA VIP India.
           </p>
