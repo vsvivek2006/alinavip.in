@@ -42,7 +42,7 @@ export default function AboutPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'About Us' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <div className="lg:col-span-7 space-y-10">
               {/* Welcome Section */}
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-5 font-serif">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-5 font-serif">
                   Welcome to ALINA VIP –{' '}
                   <span className="text-gold-600">Gurgaon&apos;s Premier Escort Agency</span>
                 </h2>
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
               {/* Our Story */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Our Story – Redefining High-End Escort Services
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -122,40 +122,40 @@ export default function AboutPage() {
 
               {/* Why Choose ALINA VIP */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
                   Why Choose ALINA VIP for Escort Service in Gurgaon?
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <ShieldCheck className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">Verified Call Girls &amp; Escorts</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">Verified Call Girls &amp; Escorts</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Every profile is verified through ID checks, photo authentication, and personal screening for your safety and peace of mind.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Lock className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">100% Discreet Escort Service</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">100% Discreet Escort Service</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Your privacy is our priority. All client inquiries and bookings remain strictly confidential with zero digital footprint.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Crown className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">VIP &amp; Premium Call Girls</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">VIP &amp; Premium Call Girls</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Our curated selection includes{' '}
                         <Link href="/category/russian-call-girls" className="text-gold-600 hover:underline font-medium">Russian escorts</Link>,{' '}
@@ -166,36 +166,36 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Sparkles className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">Premium Escort Experience</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">Premium Escort Experience</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         From luxury hotel room visits to outcall appointments at private residences, we ensure a seamless, high-end experience every time.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Clock className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">24/7 Concierge Service</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">24/7 Concierge Service</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         Our booking desk operates around the clock. Coordinate verified escorts anytime – day or night.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 p-5 bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <MapPin className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-lg mb-1">All Gurgaon Locations</h4>
+                      <h4 className="font-bold text-[#0F172A] text-lg mb-1">All Gurgaon Locations</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">
                         We provide discreet outcall across{' '}
                         <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>,{' '}
@@ -210,7 +210,7 @@ export default function AboutPage() {
 
               {/* Our Mission */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Our Mission – Excellence in Escort Service
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -223,13 +223,13 @@ export default function AboutPage() {
 
               {/* Core Values */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
                   Our Core Values in Escort Service
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div className="p-6 bg-gold-50/70 rounded-2xl border border-gold-200/80 hover:shadow-md transition-shadow">
                     <Lock className="w-8 h-8 text-gold-600 mb-3" />
-                    <h4 className="font-bold text-[#1a1a2e] text-lg mb-2">Discretion</h4>
+                    <h4 className="font-bold text-[#0F172A] text-lg mb-2">Discretion</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Complete confidentiality and protected data for all client reservations and interactions.
                     </p>
@@ -237,7 +237,7 @@ export default function AboutPage() {
 
                   <div className="p-6 bg-gold-50/70 rounded-2xl border border-gold-200/80 hover:shadow-md transition-shadow">
                     <Star className="w-8 h-8 text-gold-600 mb-3" />
-                    <h4 className="font-bold text-[#1a1a2e] text-lg mb-2">Quality</h4>
+                    <h4 className="font-bold text-[#0F172A] text-lg mb-2">Quality</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Exacting standards in profile curation, background verification, and personalized service delivery.
                     </p>
@@ -245,7 +245,7 @@ export default function AboutPage() {
 
                   <div className="p-6 bg-gold-50/70 rounded-2xl border border-gold-200/80 hover:shadow-md transition-shadow">
                     <CheckCircle2 className="w-8 h-8 text-gold-600 mb-3" />
-                    <h4 className="font-bold text-[#1a1a2e] text-lg mb-2">Authenticity</h4>
+                    <h4 className="font-bold text-[#0F172A] text-lg mb-2">Authenticity</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Verified profiles with authentic photos. No bait-and-switch tactics or unverified imagery.
                     </p>
@@ -253,7 +253,7 @@ export default function AboutPage() {
 
                   <div className="p-6 bg-gold-50/70 rounded-2xl border border-gold-200/80 hover:shadow-md transition-shadow">
                     <Award className="w-8 h-8 text-gold-600 mb-3" />
-                    <h4 className="font-bold text-[#1a1a2e] text-lg mb-2">Professionalism</h4>
+                    <h4 className="font-bold text-[#0F172A] text-lg mb-2">Professionalism</h4>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Luxury hospitality standards, punctual dispatch, and respectful communication in every engagement.
                     </p>
@@ -263,7 +263,7 @@ export default function AboutPage() {
 
               {/* Areas We Serve */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Areas We Serve – Escort Service in Gurgaon
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -273,7 +273,7 @@ export default function AboutPage() {
                   </Link>{' '}
                   or view key areas:
                 </p>
-                <div className="bg-[#faf6f2] p-6 rounded-2xl border border-gold-200/50">
+                <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/50">
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2.5">
                       <span className="text-gold-600 font-bold mt-0.5">•</span>
@@ -358,14 +358,14 @@ export default function AboutPage() {
 
               {/* Our Call Girls & Escort Categories */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
                   Our Call Girls &amp; Escort Categories
                 </h3>
                 <div className="grid sm:grid-cols-3 gap-4">
                   <Link href="/category/russian-call-girls"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Russian Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -376,7 +376,7 @@ export default function AboutPage() {
                   <Link href="/category/model-escorts"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Model Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -387,7 +387,7 @@ export default function AboutPage() {
                   <Link href="/category/housewife-escorts"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Housewife Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -398,7 +398,7 @@ export default function AboutPage() {
                   <Link href="/category/college-girls"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       College Girls
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -409,7 +409,7 @@ export default function AboutPage() {
                   <Link href="/category/independent-girls"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Independent Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -420,7 +420,7 @@ export default function AboutPage() {
                   <Link href="/category/vip-call-girls"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       VIP Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -431,7 +431,7 @@ export default function AboutPage() {
                   <Link href="/category/air-hostess"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Air Hostess Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -442,7 +442,7 @@ export default function AboutPage() {
                   <Link href="/category/celebrity-escorts"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Celebrity Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -453,7 +453,7 @@ export default function AboutPage() {
                   <Link href="/category/travel-escorts"
                     className="p-4 bg-gradient-to-br from-gold-50/60 to-white rounded-2xl border border-gold-200/80 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all group"
                   >
-                    <span className="block font-bold text-[#1a1a2e] text-base group-hover:text-gold-600 transition-colors">
+                    <span className="block font-bold text-[#0F172A] text-base group-hover:text-gold-600 transition-colors">
                       Travel Escorts
                     </span>
                     <span className="text-xs text-gray-600 mt-1 block">
@@ -465,7 +465,7 @@ export default function AboutPage() {
 
               {/* What Makes ALINA VIP Different */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   What Makes ALINA VIP Different
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -480,7 +480,7 @@ export default function AboutPage() {
 
               {/* Safety & Discretion */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Our Commitment to Safety &amp; Discretion
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -495,7 +495,7 @@ export default function AboutPage() {
 
               {/* Why Gurgaon is the Perfect City */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Why Gurgaon Demands High Standards
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -510,7 +510,7 @@ export default function AboutPage() {
 
               {/* Book Your Escort Service Today */}
               <div className="pt-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                   Reserve VIP Escort Service Today
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
@@ -543,7 +543,7 @@ export default function AboutPage() {
 
                 {/* 24/7 Banner Card */}
                 <div className="mt-8 p-6 bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-2xl border-2 border-gold-200/80 shadow-sm text-center">
-                  <p className="text-xl font-bold text-[#1a1a2e]">
+                  <p className="text-xl font-bold text-[#0F172A]">
                     📞 Call us 24/7:{' '}
                     <a href={`tel:${siteConfig.phone}`} className="text-gold-600 hover:underline font-extrabold ml-1">
                       {siteConfig.phoneDisplay}
@@ -632,7 +632,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-gold-500/10 flex items-center justify-center mx-auto mb-3">
                   <Star className="w-7 h-7 text-gold-600 fill-gold-500" />
                 </div>
-                <p className="font-bold text-[#1a1a2e] text-2xl font-serif">4.9 / 5 Star Rating</p>
+                <p className="font-bold text-[#0F172A] text-2xl font-serif">4.9 / 5 Star Rating</p>
                 <p className="text-gray-600 text-sm mt-1">
                   Based on 500+ verified client reviews across Gurgaon
                 </p>
@@ -653,8 +653,8 @@ export default function AboutPage() {
               </div>
 
               {/* High-Trust Guarantee Pillars */}
-              <div className="bg-[#faf6f2] p-6 rounded-2xl border border-gold-200/50 space-y-3">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-[#1a1a2e] flex items-center gap-2">
+              <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/50 space-y-3">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] flex items-center gap-2">
                   <HeartHandshake className="w-4 h-4 text-gold-600" /> ALINA VIP Commitment
                 </h4>
                 <ul className="text-xs text-gray-600 space-y-2">

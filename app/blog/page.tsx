@@ -43,7 +43,7 @@ export default function BlogPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -66,7 +66,7 @@ export default function BlogPage() {
         <div className="container-luxury">
           <div className="text-center mb-12">
             <p className="section-subtitle text-gold-600">Our Blog</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Insights on <span className="text-gradient-gold">VIP Escorts &amp; Luxury Lifestyle</span>
             </h2>
             <div className="gold-divider mx-auto" />
@@ -97,7 +97,7 @@ export default function BlogPage() {
                 <span className="inline-block bg-gold-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
                   ★ Featured Article
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-3 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3 font-serif">
                   Best Escort Service in Gurgaon: A Complete Guide
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -173,10 +173,10 @@ export default function BlogPage() {
       </section>
 
       {/* Editorial Summary */}
-      <section className="py-16 bg-[#faf6f2] text-gray-800">
+      <section className="py-16 bg-[#FDFBF7] text-gray-800">
         <div className="container-luxury max-w-4xl">
           <div className="prose-luxury bg-white p-8 md:p-12 rounded-2xl border border-gold-200/60 shadow-sm">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+            <h2 className="text-3xl font-bold text-[#0F172A] mb-6 font-serif">
               About the ALINA VIP Editorial Desk
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">

@@ -57,7 +57,7 @@ export default function FAQPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'FAQ' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -92,7 +92,7 @@ export default function FAQPage() {
             <div className="lg:col-span-2">
               <div className="mb-10">
                 <p className="section-subtitle text-gold-600">FAQ</p>
-                <h2 className="section-title mb-4 text-[#1a1a2e]">
+                <h2 className="section-title mb-4 text-[#0F172A]">
                   Frequently Asked <span className="text-gradient-gold">Questions</span>
                 </h2>
                 <div className="gold-divider" />
@@ -116,7 +116,7 @@ export default function FAQPage() {
                     className="group bg-white rounded-2xl border border-gray-200 hover:border-gold-300 transition-all shadow-sm hover:shadow-md overflow-hidden"
                   >
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-gold-50/30 transition-colors">
-                      <span className="font-semibold text-[#1a1a2e] text-lg pr-4 flex items-center gap-3">
+                      <span className="font-semibold text-[#0F172A] text-lg pr-4 flex items-center gap-3">
                         <span className="w-8 h-8 bg-gold-100 rounded-full flex items-center justify-center text-gold-700 text-sm font-bold flex-shrink-0">
                           {i + 1}
                         </span>
@@ -135,9 +135,9 @@ export default function FAQPage() {
               </div>
 
               {/* Client Guidelines & Booking Etiquette Guide */}
-              <div className="mt-12 p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/60 shadow-sm space-y-6">
+              <div className="mt-12 p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1a1a2e] font-serif mb-2">
+                  <h3 className="text-2xl font-bold text-[#0F172A] font-serif mb-2">
                     Client Guidelines &amp; Etiquette for Escort Service in Gurgaon
                   </h3>
                   <div className="gold-divider mb-4" />
@@ -148,7 +148,7 @@ export default function FAQPage() {
 
                 <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
                   <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#1a1a2e] mb-1.5 flex items-center gap-2">
+                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-gold-600" /> Transparent Communication
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -157,7 +157,7 @@ export default function FAQPage() {
                   </div>
 
                   <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#1a1a2e] mb-1.5 flex items-center gap-2">
+                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
                       <Clock className="w-4 h-4 text-gold-600" /> Punctuality &amp; Coordination
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -166,7 +166,7 @@ export default function FAQPage() {
                   </div>
 
                   <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#1a1a2e] mb-1.5 flex items-center gap-2">
+                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
                       <Star className="w-4 h-4 text-gold-600" /> Mutual Dignity &amp; Respect
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -175,7 +175,7 @@ export default function FAQPage() {
                   </div>
 
                   <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#1a1a2e] mb-1.5 flex items-center gap-2">
+                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-gold-600" /> Zero Advance Payment Trap
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -186,7 +186,7 @@ export default function FAQPage() {
               </div>
 
               {/* Direct Call & Contact Card */}
-              <div className="text-center mt-12 p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/60 shadow-sm">
+              <div className="text-center mt-12 p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm">
                 <p className="text-gray-700 font-semibold mb-4 text-base">
                   Still have questions? We&apos;re here to help 24/7.
                 </p>
@@ -209,7 +209,7 @@ export default function FAQPage() {
             {/* Right Column (1 Col): Sticky Information Sidebar */}
             <div className="space-y-6 lg:sticky lg:top-24">
               {/* Category Quick Links */}
-              <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2d1b0e] p-6 rounded-2xl border border-gold-500/20 text-white shadow-md">
+              <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-6 rounded-2xl border border-gold-500/20 text-white shadow-md">
                 <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2 font-serif">
                   <Crown className="w-5 h-5 text-gold-500" /> Our Escort Services
                 </h3>
@@ -254,8 +254,8 @@ export default function FAQPage() {
               </div>
 
               {/* Areas We Serve */}
-              <div className="bg-[#faf6f2] p-6 rounded-2xl border border-gold-200/60 shadow-sm">
-                <h3 className="font-bold text-[#1a1a2e] text-lg mb-4 flex items-center gap-2 font-serif">
+              <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/60 shadow-sm">
+                <h3 className="font-bold text-[#0F172A] text-lg mb-4 flex items-center gap-2 font-serif">
                   <MapPin className="w-5 h-5 text-gold-600" /> Areas We Serve
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -294,7 +294,7 @@ export default function FAQPage() {
 
               {/* Trust Features Card */}
               <div className="bg-gold-50/80 p-6 rounded-2xl border border-gold-200/80 shadow-sm">
-                <h3 className="font-bold text-[#1a1a2e] text-center mb-4 font-serif text-lg">
+                <h3 className="font-bold text-[#0F172A] text-center mb-4 font-serif text-lg">
                   Why Choose ALINA VIP
                 </h3>
                 <div className="space-y-3 text-sm text-gray-700">
@@ -345,7 +345,7 @@ export default function FAQPage() {
       <section className="py-16 bg-gradient-to-br from-[#faf6f2] to-white">
         <div className="container-luxury">
           <div className="bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-3xl p-8 md:p-12 border-2 border-gold-200 text-center max-w-4xl mx-auto shadow-sm">
-            <h3 className="text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+            <h3 className="text-3xl font-bold text-[#0F172A] mb-4 font-serif">
               Still Have Questions About <span className="text-gold-600">Escort Service?</span>
             </h3>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">

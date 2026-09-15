@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
             </div>
 
-            <h1 className="font-serif text-3xl md:text-5xl text-[#1a1a2e] font-bold mb-6 leading-tight">
+            <h1 className="font-serif text-3xl md:text-5xl text-[#0F172A] font-bold mb-6 leading-tight">
               {post.title}
             </h1>
 
@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="my-12 p-8 bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-2xl border-2 border-gold-200 shadow-sm">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h4 className="text-xl font-bold text-[#1a1a2e] flex items-center gap-2 font-serif mb-2">
+                <h4 className="text-xl font-bold text-[#0F172A] flex items-center gap-2 font-serif mb-2">
                   <Star className="w-5 h-5 text-gold-600 fill-gold-600" />
                   Book Your Escort Service Today
                 </h4>
@@ -240,10 +240,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related Articles Section */}
       {displayRelated.length > 0 && (
-        <section className="py-16 bg-[#faf6f2] text-gray-800">
+        <section className="py-16 bg-[#FDFBF7] text-gray-800">
           <div className="container-luxury">
             <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl text-[#1a1a2e] font-bold mb-3">
+              <h2 className="font-serif text-3xl text-[#0F172A] font-bold mb-3">
                 Related <span className="text-gold-600">Articles</span>
               </h2>
               <p className="text-gray-600">
@@ -274,7 +274,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <span className="text-xs text-gold-600 font-bold tracking-wider uppercase">
                         {rp.category}
                       </span>
-                      <h3 className="font-serif text-lg text-[#1a1a2e] mt-2 mb-2 font-bold leading-tight group-hover:text-gold-600 transition-colors line-clamp-2">
+                      <h3 className="font-serif text-lg text-[#0F172A] mt-2 mb-2 font-bold leading-tight group-hover:text-gold-600 transition-colors line-clamp-2">
                         {rp.title}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-2 mb-4">

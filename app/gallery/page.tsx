@@ -76,7 +76,7 @@ export default function GalleryPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Gallery' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -112,7 +112,7 @@ export default function GalleryPage() {
         <div className="container-luxury">
           <div className="text-center mb-14">
             <p className="section-subtitle text-gold-600">Our Gallery</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Premium <span className="text-gradient-gold">Call Girls</span> Collection
             </h2>
             <div className="gold-divider mx-auto" />
@@ -187,7 +187,7 @@ export default function GalleryPage() {
                   <div className="p-6 flex flex-col justify-between flex-1">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-serif text-xl text-[#1a1a2e] font-bold group-hover:text-gold-600 transition-colors">
+                        <h3 className="font-serif text-xl text-[#0F172A] font-bold group-hover:text-gold-600 transition-colors">
                           {cat.name}
                         </h3>
                         <span className="text-xs bg-gold-100 text-gold-700 px-2.5 py-0.5 rounded-full font-semibold">
@@ -202,7 +202,7 @@ export default function GalleryPage() {
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <div className="flex items-center gap-1">
                         <Star className="w-4 h-4 fill-gold-500 text-gold-500" />
-                        <span className="text-sm font-bold text-[#1a1a2e]">4.9</span>
+                        <span className="text-sm font-bold text-[#0F172A]">4.9</span>
                         <span className="text-xs text-gray-400 ml-1">(128+ reviews)</span>
                       </div>
                       <span className="text-gold-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
@@ -250,10 +250,10 @@ export default function GalleryPage() {
       </section>
 
       {/* Popular Escort Services */}
-      <section className="py-16 bg-[#faf6f2] text-gray-800">
+      <section className="py-16 bg-[#FDFBF7] text-gray-800">
         <div className="container-luxury">
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-[#1a1a2e] mb-3 font-serif">
+            <h3 className="text-3xl font-bold text-[#0F172A] mb-3 font-serif">
               Popular <span className="text-gold-600">Escort Services</span>
             </h3>
             <p className="text-gray-600">
@@ -270,7 +270,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <Crown className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 Russian Escorts
               </span>
             </Link>
@@ -279,7 +279,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <Camera className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 Model Escorts
               </span>
             </Link>
@@ -288,7 +288,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <Heart className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 Housewife Escorts
               </span>
             </Link>
@@ -297,7 +297,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <GraduationCap className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 College Girls
               </span>
             </Link>
@@ -306,7 +306,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <User className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 Independent Escorts
               </span>
             </Link>
@@ -315,7 +315,7 @@ export default function GalleryPage() {
               className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
             >
               <Crown className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#1a1a2e] group-hover:text-gold-600 block">
+              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
                 VIP Escorts
               </span>
             </Link>
@@ -336,7 +336,7 @@ export default function GalleryPage() {
       <section className="py-16 bg-white">
         <div className="container-luxury">
           <div className="bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-3xl p-8 md:p-12 border-2 border-gold-200 text-center max-w-4xl mx-auto shadow-sm">
-            <h3 className="text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+            <h3 className="text-3xl font-bold text-[#0F172A] mb-4 font-serif">
               Ready to Book Your <span className="text-gold-600">Escort Service?</span>
             </h3>
             <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">

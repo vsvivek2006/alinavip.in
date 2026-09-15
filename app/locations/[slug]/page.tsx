@@ -161,7 +161,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -222,7 +222,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             {/* Left Column: Comprehensive Local Guide */}
             <div className="lg:col-span-8 space-y-10">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-5 font-serif">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-5 font-serif">
                   Premium Luxury Escort Service in {location.name}
                 </h2>
                 <div className="gold-divider mb-6" />
@@ -249,8 +249,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
               {/* Key Landmarks */}
               {location.about?.landmarks && location.about.landmarks.length > 0 && (
-                <div className="p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/60 shadow-sm">
-                  <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4 font-serif flex items-center gap-2">
+                <div className="p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm">
+                  <h3 className="text-2xl font-bold text-[#0F172A] mb-4 font-serif flex items-center gap-2">
                     <MapPin className="text-gold-600 w-6 h-6" />
                     Key Landmarks &amp; Hotspots in {location.name}
                   </h3>
@@ -267,7 +267,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
               {/* Why Choose Us in this location */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
                   Why Choose ALINA VIP in {location.name}?
                 </h3>
                 {location.whyChoose?.overview ? (
@@ -275,8 +275,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     <p className="text-gray-700 text-lg leading-relaxed">{location.whyChoose.overview}</p>
                     <div className="grid sm:grid-cols-2 gap-4 mt-6">
                       {location.whyChoose.reasons.map((r, idx) => (
-                        <div key={idx} className="p-6 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                          <h4 className="text-base font-bold text-[#1a1a2e] mb-2">{r.title}</h4>
+                        <div key={idx} className="p-6 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
+                          <h4 className="text-base font-bold text-[#0F172A] mb-2">{r.title}</h4>
                           <p className="text-sm text-gray-600 leading-relaxed">{r.desc}</p>
                         </div>
                       ))}
@@ -303,9 +303,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     ].map((item, idx) => {
                       const Icon = item.icon;
                       return (
-                        <div key={idx} className="p-6 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
+                        <div key={idx} className="p-6 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
                           <Icon className="w-8 h-8 text-gold-600 mb-3" />
-                          <h4 className="text-base font-bold text-[#1a1a2e] mb-2">{item.title}</h4>
+                          <h4 className="text-base font-bold text-[#0F172A] mb-2">{item.title}</h4>
                           <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                         </div>
                       );
@@ -317,14 +317,14 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Service Options */}
               {location.serviceOptions?.overview && (
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
                     Service Options in {location.name}
                   </h3>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">{location.serviceOptions.overview}</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {location.serviceOptions.options.map((opt, idx) => (
                       <div key={idx} className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-gold-300 transition-all shadow-sm">
-                        <h4 className="text-lg font-bold text-[#1a1a2e] mb-2 font-serif">{opt.title}</h4>
+                        <h4 className="text-lg font-bold text-[#0F172A] mb-2 font-serif">{opt.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{opt.desc}</p>
                       </div>
                     ))}
@@ -334,8 +334,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
               {/* Local Area Connectivity & Hospitality */}
               {location.localCharacteristics?.connectivity && (
-                <div className="p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/60 shadow-sm">
-                  <h3 className="text-2xl font-bold text-[#1a1a2e] mb-3 font-serif flex items-center gap-2">
+                <div className="p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm">
+                  <h3 className="text-2xl font-bold text-[#0F172A] mb-3 font-serif flex items-center gap-2">
                     <Navigation className="text-gold-600 w-6 h-6" />
                     Connectivity &amp; Five-Star Hotels Served
                   </h3>
@@ -378,8 +378,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
               )}
 
               {/* Hotel Outcall Protocol & Booking Safety */}
-              <div className="p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/60 shadow-sm space-y-4">
-                <h3 className="text-2xl font-bold text-[#1a1a2e] font-serif flex items-center gap-2">
+              <div className="p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm space-y-4">
+                <h3 className="text-2xl font-bold text-[#0F172A] font-serif flex items-center gap-2">
                   <ShieldCheck className="text-gold-600 w-6 h-6" />
                   Private Outcall Protocol &amp; Hotel Etiquette in {location.name}
                 </h3>
@@ -388,7 +388,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                   <div className="bg-white p-4 rounded-xl border border-gray-100">
-                    <h4 className="font-bold text-[#1a1a2e] text-xs uppercase tracking-wider mb-1 text-gold-700">
+                    <h4 className="font-bold text-[#0F172A] text-xs uppercase tracking-wider mb-1 text-gold-700">
                       Discreet Arrival
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -396,7 +396,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-100">
-                    <h4 className="font-bold text-[#1a1a2e] text-xs uppercase tracking-wider mb-1 text-gold-700">
+                    <h4 className="font-bold text-[#0F172A] text-xs uppercase tracking-wider mb-1 text-gold-700">
                       Zero Advance Fees
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -416,13 +416,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Master Hub Links if Applicable */}
               {location.isHub && location.hubDetails && (
                 <div className="space-y-6 pt-4 border-t border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] font-serif">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] font-serif">
                     {location.name} Regional Master Directory
                   </h3>
                   <p className="text-gray-700 leading-relaxed">{location.hubDetails.overview}</p>
                   {location.hubDetails.corridors.map((corridor, idx) => (
-                    <div key={idx} className="mb-6 p-6 bg-[#faf6f2] rounded-2xl border border-gold-200/50">
-                      <h4 className="text-lg font-bold text-[#1a1a2e] mb-2">{corridor.title}</h4>
+                    <div key={idx} className="mb-6 p-6 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
+                      <h4 className="text-lg font-bold text-[#0F172A] mb-2">{corridor.title}</h4>
                       <p className="text-sm text-gray-600 mb-4">{corridor.desc}</p>
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
                         {corridor.slugs.map((subSlug) => {
@@ -448,7 +448,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             {/* Right Column: Sticky Concierge Showcase */}
             <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
               {/* Hotel Outcall Dispatch Card */}
-              <div className="p-6 bg-gradient-to-br from-[#1a1a2e] to-[#2d1b0e] text-white rounded-3xl shadow-2xl border border-gold-500/20 text-center">
+              <div className="p-6 bg-gradient-to-br from-[#0F172A] to-[#1E293B] text-white rounded-3xl shadow-2xl border border-gold-500/20 text-center">
                 <div className="w-12 h-12 rounded-full bg-gold-500/20 flex items-center justify-center mx-auto mb-4 border border-gold-500/40">
                   <Hotel className="w-6 h-6 text-gold-400" />
                 </div>
@@ -481,13 +481,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
               </div>
 
               {/* Rating Card */}
-              <div className="bg-[#faf6f2] p-6 rounded-2xl border border-gold-200/80 text-center shadow-sm">
+              <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/80 text-center shadow-sm">
                 <div className="flex justify-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-gold-500 text-gold-500" />
                   ))}
                 </div>
-                <p className="font-bold text-[#1a1a2e] text-lg font-serif">Top Rated in {location.name}</p>
+                <p className="font-bold text-[#0F172A] text-lg font-serif">Top Rated in {location.name}</p>
                 <p className="text-gray-600 text-xs mt-1">
                   100% verified call girls and escorts with complete privacy.
                 </p>
@@ -496,7 +496,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Quick Categories Navigation */}
               <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-serif text-lg font-bold text-[#1a1a2e]">
+                  <h4 className="font-serif text-lg font-bold text-[#0F172A]">
                     Service Categories
                   </h4>
                   <Link href="/services" className="text-xs text-gold-600 hover:underline font-semibold">
@@ -522,7 +522,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   <p className="text-[11px] uppercase font-bold tracking-wider text-gold-600 mb-1">Local Area Guide</p>
                   <Link
                     href="/blog/luxury-hotels-gurgaon-guide"
-                    className="font-serif text-sm font-bold text-[#1a1a2e] hover:text-gold-600 transition-colors block"
+                    className="font-serif text-sm font-bold text-[#0F172A] hover:text-gold-600 transition-colors block"
                   >
                     Top Luxury Hotels in Gurgaon for Discreet Stays &rarr;
                   </Link>
@@ -534,11 +534,11 @@ export default async function LocationPage({ params }: LocationPageProps) {
       </section>
 
       {/* Nearby Areas Section */}
-      <section className="py-16 md:py-20 bg-[#faf6f2] text-gray-800 border-t border-gray-200">
+      <section className="py-16 md:py-20 bg-[#FDFBF7] text-gray-800 border-t border-gray-200">
         <div className="container-luxury">
           <div className="text-center mb-10">
             <p className="section-subtitle text-gold-600">Nearby Corridors</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Locations Near <span className="text-gradient-gold">{location.name}</span>
             </h2>
             <div className="gold-divider mx-auto" />
@@ -568,7 +568,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <div className="container-luxury">
           <div className="text-center mb-14">
             <p className="section-subtitle text-gold-600">Local Area FAQ</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Frequently Asked Questions – <span className="text-gradient-gold">{location.name}</span>
             </h2>
             <div className="gold-divider mx-auto" />
@@ -577,10 +577,10 @@ export default async function LocationPage({ params }: LocationPageProps) {
             {location.faqs.map((faq, i) => (
               <details
                 key={i}
-                className="bg-[#faf6f2] rounded-2xl border border-gold-200/50 hover:border-gold-400 transition-all group overflow-hidden"
+                className="bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:border-gold-400 transition-all group overflow-hidden"
               >
                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                  <span className="font-semibold text-[#1a1a2e] text-base pr-4">
+                  <span className="font-semibold text-[#0F172A] text-base pr-4">
                     {faq.question}
                   </span>
                   <span className="text-gold-600 text-2xl font-light group-open:rotate-45 transition-transform">
@@ -597,16 +597,16 @@ export default async function LocationPage({ params }: LocationPageProps) {
       </section>
 
       {/* Booking Form Section */}
-      <section className="py-16 md:py-24 bg-[#faf6f2]">
+      <section className="py-16 md:py-24 bg-[#FDFBF7]">
         <div className="container-luxury max-w-2xl">
           <div className="text-center mb-10">
             <p className="section-subtitle text-gold-600">Direct Reservation</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Book Escort Service in <span className="text-gradient-gold">{location.name}</span>
             </h2>
             <div className="gold-divider mx-auto" />
           </div>
-          <div className="bg-gradient-to-br from-[#1a1a2e] to-[#2d1b0e] p-8 md:p-10 rounded-3xl shadow-2xl border border-gold-500/20">
+          <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-8 md:p-10 rounded-3xl shadow-2xl border border-gold-500/20">
             <LocationBookingForm locationName={location.name} locationCity={location.city} />
           </div>
         </div>

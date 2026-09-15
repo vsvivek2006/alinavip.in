@@ -4,7 +4,7 @@ import { siteConfig } from '@/data/siteConfig';
 
 export default function NotFound() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] py-24 md:py-32">
+    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] py-24 md:py-32">
       <div className="absolute inset-0 opacity-15 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>

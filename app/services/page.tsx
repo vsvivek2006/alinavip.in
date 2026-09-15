@@ -72,7 +72,7 @@ export default function ServicesPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Our Services' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#2d1b0e] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
@@ -128,12 +128,12 @@ export default function ServicesPage() {
         <div className="container-luxury">
           <div className="text-center mb-14">
             <p className="section-subtitle text-gold-600">Our Escort Services</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Premium <span className="text-gradient-gold">Call Girls</span> Services
             </h2>
             <div className="gold-divider mx-auto" />
             <p className="text-gray-600 max-w-2xl mx-auto mt-6 leading-relaxed text-base">
-              <strong className="text-[#1a1a2e]">ALINA VIP</strong> offers a comprehensive range of premium{' '}
+              <strong className="text-[#0F172A]">ALINA VIP</strong> offers a comprehensive range of premium{' '}
               <Link href="/services" className="text-gold-600 hover:underline font-medium">
                 escort service in Gurgaon
               </Link>{' '}
@@ -147,13 +147,13 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.slug}
-                  className="bg-[#faf6f2] p-8 rounded-2xl border border-gold-200/50 hover:border-gold-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                  className="bg-[#FDFBF7] p-8 rounded-2xl border border-gold-200/50 hover:border-gold-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center mb-5 text-gold-600 group-hover:scale-110 transition-transform">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <h3 className="font-serif text-2xl font-bold text-[#1a1a2e] mb-3 group-hover:text-gold-600 transition-colors">
+                    <h3 className="font-serif text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-gold-600 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-6">
@@ -173,7 +173,7 @@ export default function ServicesPage() {
           {/* Section 2: Call Girls Categories */}
           <div className="text-center mb-14">
             <p className="section-subtitle text-gold-600">Call Girls Categories</p>
-            <h2 className="section-title mb-4 text-[#1a1a2e]">
+            <h2 className="section-title mb-4 text-[#0F172A]">
               Explore Our <span className="text-gradient-gold">Escort Categories</span>
             </h2>
             <div className="gold-divider mx-auto" />
@@ -223,7 +223,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <div className="p-6 flex-1 flex flex-col justify-between bg-[#faf6f2]">
+                  <div className="p-6 flex-1 flex flex-col justify-between bg-[#FDFBF7]">
                     <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">
                       {cat.description}
                     </p>
@@ -239,10 +239,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Section 3: Supporting Guides */}
-      <section className="py-16 bg-[#faf6f2]">
+      <section className="py-16 bg-[#FDFBF7]">
         <div className="container-luxury">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] font-serif">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] font-serif">
               Featured <span className="text-gold-600">Client Guides</span>
             </h3>
             <p className="text-gray-600 text-sm mt-2 max-w-xl mx-auto">
@@ -301,7 +301,7 @@ export default function ServicesPage() {
                     <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4 group-hover:bg-gold-500/20 transition-colors">
                       <GuideIcon className="w-6 h-6 text-gold-600" />
                     </div>
-                    <h4 className="font-serif text-lg font-bold text-[#1a1a2e] mb-2 group-hover:text-gold-600 transition-colors">
+                    <h4 className="font-serif text-lg font-bold text-[#0F172A] mb-2 group-hover:text-gold-600 transition-colors">
                       {guide.title}
                     </h4>
                     <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -322,31 +322,31 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 bg-white text-gray-800">
         <div className="container-luxury">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-center p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShieldCheck className="w-7 h-7 text-gold-600" />
               </div>
-              <h4 className="font-bold text-[#1a1a2e] text-xl mb-2 font-serif">100% Verified Profiles</h4>
+              <h4 className="font-bold text-[#0F172A] text-xl mb-2 font-serif">100% Verified Profiles</h4>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Every profile is verified through an in-person authentication process with recent, genuine portfolio photos.
               </p>
             </div>
 
-            <div className="text-center p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-center p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-7 h-7 text-gold-600" />
               </div>
-              <h4 className="font-bold text-[#1a1a2e] text-xl mb-2 font-serif">24/7 Concierge Desk</h4>
+              <h4 className="font-bold text-[#0F172A] text-xl mb-2 font-serif">24/7 Concierge Desk</h4>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Our reservation desk operates round the clock to accommodate your schedule, travel timing, and private requests.
               </p>
             </div>
 
-            <div className="text-center p-8 bg-[#faf6f2] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
+            <div className="text-center p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 shadow-sm hover:shadow-md transition-shadow">
               <div className="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-7 h-7 text-gold-600" />
               </div>
-              <h4 className="font-bold text-[#1a1a2e] text-xl mb-2 font-serif">Comprehensive Coverage</h4>
+              <h4 className="font-bold text-[#0F172A] text-xl mb-2 font-serif">Comprehensive Coverage</h4>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Rapid 20 to 30 minute outcall dispatch across major Gurgaon business hubs and regional Delhi NCR corridors.
               </p>
@@ -356,10 +356,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Section 5: Editorial Overview */}
-      <section className="py-16 md:py-20 bg-[#faf6f2] text-gray-800">
+      <section className="py-16 md:py-20 bg-[#FDFBF7] text-gray-800">
         <div className="container-luxury max-w-4xl">
           <div className="prose-luxury bg-white p-8 md:p-12 rounded-2xl border border-gold-200/60 shadow-sm">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6 font-serif">
+            <h2 className="text-3xl font-bold text-[#0F172A] mb-6 font-serif">
               Bespoke Services Tailored to Your Occasion
             </h2>
             <div className="space-y-4 text-gray-700 text-base leading-relaxed">
