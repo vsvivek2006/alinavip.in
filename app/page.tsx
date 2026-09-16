@@ -311,7 +311,7 @@ export default function HomePage() {
 
         <div className="container-luxury relative z-10 text-center pt-24 pb-16">
           <p className="section-subtitle text-gold-400 font-sans text-xs md:text-sm tracking-ultra uppercase mb-4 animate-fade-down">
-            #1 Premier Escort Agency • Gurgaon &amp; Gurugram
+            #1 Premier Escort Agency • Gurgaon
           </p>
 
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 animate-fade-up leading-tight">
@@ -322,7 +322,7 @@ export default function HomePage() {
             className="text-charcoal-300 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-fade-up"
             style={{ animationDelay: '0.2s' }}
           >
-            Gurgaon&apos;s leading verified <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service in Gurgaon</Link> (Gurugram). Elite <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">VIP call girls</Link> with genuine profiles and 20–30 min discreet outcalls across all sectors.
+            Gurgaon&apos;s leading verified <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service in Gurgaon</Link>. Elite <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">VIP call girls</Link> with genuine profiles and 20–30 min discreet outcalls across all sectors.
           </p>
 
           <div
