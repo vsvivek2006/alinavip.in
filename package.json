@@ -15,7 +15,6 @@
     "prebuild": "node scripts/generate-sitemaps.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.57.4",
     "lucide-react": "^0.446.0",
     "next": "15.5.25",
     "react": "^18.3.1",

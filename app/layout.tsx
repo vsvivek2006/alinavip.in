@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Jost, Playfair_Display } from 'next/font/google';
+import { Jost, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,15 +8,8 @@ import { siteConfig } from '@/data/siteConfig';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
+  weight: ['400', '700'],
   variable: '--font-playfair',
-  display: 'swap',
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -98,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${cormorant.variable} ${jost.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${jost.variable}`}>
       <body className="bg-charcoal-900 text-charcoal-100 font-sans antialiased">
         <div className="min-h-screen flex flex-col bg-luxury-gradient overflow-x-hidden">
           <Header />

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
-import { locations } from '@/data/locations';
+import { locationSummary } from '@/data/locationSummary';
 import {
   submitContactInquiry,
   type ContactFormData,
@@ -175,7 +175,7 @@ export default function ContactForm() {
                 <option value="dwarka">Dwarka</option>
               </optgroup>
               <optgroup label="All Other 108 Locations">
-                {locations.slice(0, 30).map((loc) => (
+                {locationSummary.slice(0, 30).map((loc) => (
                   <option key={loc.slug} value={loc.slug}>
                     {loc.name}
                   </option>
