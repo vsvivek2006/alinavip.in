@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Sparkles, AlertCircle } from 'lucide-react';
+import { Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/siteConfig';
 import {
@@ -18,9 +18,17 @@ export default function NewsletterForm() {
     e.preventDefault();
     if (!email.trim()) return;
     setSubmissionStatus('submitting');
-    const result = await submitNewsletterSubscription({ email });
-    setSubmissionStatus(result.status);
-    setStatusMessage(result.message);
+    try {
+      const result = await submitNewsletterSubscription({ email }, siteConfig.whatsapp);
+      setSubmissionStatus(result.status);
+      setStatusMessage(result.message);
+      if (result.whatsappUrl) {
+        window.open(result.whatsappUrl, '_blank', 'noopener,noreferrer');
+      }
+    } catch {
+      setSubmissionStatus('error');
+      setStatusMessage('Unable to complete subscription.');
+    }
   };
 
   return (
@@ -43,15 +51,26 @@ export default function NewsletterForm() {
         , and exclusive VIP offers.
       </p>
 
-      {submissionStatus === 'not_configured' && (
-        <div className="mb-4 p-3.5 bg-amber-500/10 border border-amber-600/40 text-amber-950 rounded-2xl text-xs max-w-lg mx-auto flex items-center justify-center gap-2">
-          <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-          <span>{statusMessage || 'Newsletter subscription is currently unavailable.'}</span>
+      {submissionStatus === 'success' && (
+        <div className="mb-4 p-3.5 bg-emerald-50 border border-emerald-500/60 text-emerald-950 rounded-2xl text-xs max-w-lg mx-auto flex items-center justify-center gap-2 animate-fade-in">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <span>{statusMessage || 'Subscription initiated via WhatsApp concierge!'}</span>
+        </div>
+      )}
+
+      {submissionStatus === 'error' && (
+        <div className="mb-4 p-3.5 bg-red-50 border border-red-500/60 text-red-950 rounded-2xl text-xs max-w-lg mx-auto flex items-center justify-center gap-2">
+          <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
+          <span>{statusMessage}</span>
         </div>
       )}
 
       <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <label htmlFor="newsletter-email-input" className="sr-only">
+          Email address
+        </label>
         <input
+          id="newsletter-email-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

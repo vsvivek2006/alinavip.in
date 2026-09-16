@@ -1,9 +1,10 @@
-export type SubmissionStatus = 'idle' | 'submitting' | 'not_configured' | 'success' | 'error';
+export type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export interface SubmissionResult {
   success: boolean;
-  status: 'not_configured' | 'success' | 'error';
+  status: 'success' | 'error';
   message: string;
+  whatsappUrl?: string;
 }
 
 export interface ContactFormData {
@@ -27,50 +28,80 @@ export interface NewsletterFormData {
   email: string;
 }
 
+export function buildWhatsAppUrl(text: string, phone: string = '919996265679'): string {
+  const cleanPhone = phone.replace(/[^0-9]/g, '');
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`;
+}
+
 /**
- * Submits contact inquiry to backend.
- * Currently returns explicit 'not_configured' status until backend submission endpoint is provisioned.
+ * Submits contact inquiry to WhatsApp concierge.
  */
 export async function submitContactInquiry(
-  _data: ContactFormData
+  data: ContactFormData,
+  whatsappPhone?: string
 ): Promise<SubmissionResult> {
-  // Future architecture: call server action or real API endpoint here
+  const lines = [
+    `*ALINA VIP — Booking Inquiry*`,
+    `--------------------------------`,
+    `👤 *Name:* ${data.name.trim()}`,
+    `📱 *Phone:* ${data.phone.trim()}`,
+    data.category ? `💎 *Category:* ${data.category}` : null,
+    `📍 *Location:* ${data.location || 'Gurgaon'}`,
+    `🛎️ *Service:* ${data.serviceType || '5-Star Hotel Outcall'}`,
+    data.message?.trim() ? `💬 *Preferences:* ${data.message.trim()}` : null,
+    `--------------------------------`,
+    `Please confirm escort model availability and dispatch schedule.`,
+  ].filter(Boolean);
+
+  const url = buildWhatsAppUrl(lines.join('\n'), whatsappPhone);
   return {
-    success: false,
-    status: 'not_configured',
-    message:
-      'Online submission is currently unavailable. Please use the available contact method shown on this page.',
+    success: true,
+    status: 'success',
+    message: 'Reservation details prepared! Directing to private WhatsApp concierge...',
+    whatsappUrl: url,
   };
 }
 
 /**
- * Submits booking request from homepage or location pages.
- * Currently returns explicit 'not_configured' status until backend submission endpoint is provisioned.
+ * Submits booking request from homepage or location pages to WhatsApp concierge.
  */
 export async function submitBookingRequest(
-  _data: BookingFormData
+  data: BookingFormData,
+  whatsappPhone?: string
 ): Promise<SubmissionResult> {
-  // Future architecture: call server action or real API endpoint here
+  const lines = [
+    `*ALINA VIP — Rapid Booking*`,
+    `--------------------------------`,
+    `👤 *Name:* ${data.name.trim()}`,
+    `📱 *Phone:* ${data.phone.trim()}`,
+    `📍 *Location:* ${data.location || 'Gurgaon'}`,
+    data.message?.trim() ? `💬 *Preferences:* ${data.message.trim()}` : null,
+    `--------------------------------`,
+    `Please verify call girl arrival time (20-30 min outcall).`,
+  ].filter(Boolean);
+
+  const url = buildWhatsAppUrl(lines.join('\n'), whatsappPhone);
   return {
-    success: false,
-    status: 'not_configured',
-    message:
-      'Online booking is currently unavailable. Please call or message directly via WhatsApp for reservations.',
+    success: true,
+    status: 'success',
+    message: 'Booking request generated! Connecting to private WhatsApp concierge...',
+    whatsappUrl: url,
   };
 }
 
 /**
- * Submits newsletter subscription.
- * Currently returns explicit 'not_configured' status until backend submission endpoint is provisioned.
+ * Submits newsletter subscription via WhatsApp concierge.
  */
 export async function submitNewsletterSubscription(
-  _data: NewsletterFormData
+  data: NewsletterFormData,
+  whatsappPhone?: string
 ): Promise<SubmissionResult> {
-  // Future architecture: call server action or real API endpoint here
+  const text = `Hi ALINA VIP Concierge, please add my email (${data.email.trim()}) to your private VIP membership list for verified profile drops.`;
+  const url = buildWhatsAppUrl(text, whatsappPhone);
   return {
-    success: false,
-    status: 'not_configured',
-    message:
-      'Newsletter subscription is currently unavailable. Please contact us directly for updates.',
+    success: true,
+    status: 'success',
+    message: 'Subscription confirmed! Opening WhatsApp concierge...',
+    whatsappUrl: url,
   };
 }
