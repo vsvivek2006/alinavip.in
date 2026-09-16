@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prebuild": "node scripts/generate-sitemaps.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
