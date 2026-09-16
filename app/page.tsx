@@ -319,10 +319,10 @@ export default function HomePage() {
           </h1>
 
           <p
-            className="text-charcoal-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up"
+            className="text-charcoal-300 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed animate-fade-up"
             style={{ animationDelay: '0.2s' }}
           >
-            Welcome to ALINA VIP, the premier verified <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service in Gurgaon</Link> (Gurugram). Discover elite <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">VIP call girls</Link> and celebrity escort models with 100% genuine photos and prompt 20–30 min outcall dispatch to 5-star hotel suites and private luxury residences.
+            Gurgaon&apos;s leading verified <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service in Gurgaon</Link> (Gurugram). Elite <Link href="/category/vip-call-girls" className="text-gold-400 hover:underline font-medium">VIP call girls</Link> with genuine profiles and 20–30 min discreet outcalls across all sectors.
           </p>
 
           <div
