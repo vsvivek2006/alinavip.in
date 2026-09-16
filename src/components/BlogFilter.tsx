@@ -171,6 +171,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
                 <Image
                   src={post.image || `/images/blog/${post.slug}.webp`}
                   alt={`${post.title} - Escort Service in Gurgaon | Call Girls`}
+                  title={`${post.title} - Escort Service in Gurgaon | Call Girls`}
                   fill
                   sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 50vw, 390px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

@@ -159,6 +159,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <Image
               src={post.image || `/images/blog/${post.slug}.webp`}
               alt={`${post.title} - Escort Service in Gurgaon | Call Girls Guide`}
+              title={`${post.title} - Escort Service in Gurgaon | Call Girls Guide`}
               fill
               priority
               sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 848px, 832px"
@@ -264,6 +265,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <Image
                         src={rp.image || `/images/blog/${rp.slug}.webp`}
                         alt={rp.title}
+                        title={rp.title}
                         fill
                         sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 768px) calc(100vw - 48px), 280px"
                         className="object-cover group-hover:scale-105 transition-transform duration-700"

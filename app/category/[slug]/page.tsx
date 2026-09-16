@@ -212,6 +212,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <Image
                 src={imageSrc}
                 alt={`${category.name} - Escort Service in Gurgaon | Call Girls`}
+                title={`${category.name} - Escort Service in Gurgaon | Call Girls`}
                 fill
                 priority
                 sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 584px"

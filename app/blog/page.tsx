@@ -123,6 +123,7 @@ export default function BlogPage() {
                 <Image
                   src="/images/featured-blog.webp"
                   alt="Best Escort Service in Gurgaon - Featured Guide"
+                  title="Best Escort Service in Gurgaon - Featured Guide"
                   fill
                   sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 584px"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

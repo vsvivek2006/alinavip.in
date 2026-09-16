@@ -145,6 +145,7 @@ export default function GalleryPage() {
                     <Image
                       src={imageSrc}
                       alt={`${cat.name} - Escort Service in Gurgaon | VIP Call Girls`}
+                      title={`${cat.name} - Escort Service in Gurgaon | VIP Call Girls`}
                       fill
                       sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 50vw, 390px"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"

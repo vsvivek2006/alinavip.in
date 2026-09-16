@@ -642,7 +642,8 @@ export default function HomePage() {
                   <div className="relative aspect-[4/5] overflow-hidden bg-gray-900">
                     <Image
                       src={imageSrc}
-                      alt={`${cat.name} profile preview`}
+                      alt={`${cat.name} - VIP Call Girls in Gurgaon`}
+                      title={`${cat.name} - VIP Call Girls in Gurgaon`}
                       fill
                       sizes="(max-width: 640px) 45vw, (max-width: 1024px) 33vw, 286px"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -787,6 +788,7 @@ export default function HomePage() {
                   <Image
                     src={post.image || `/images/blog/${post.slug}.webp`}
                     alt={post.title}
+                    title={post.title}
                     fill
                     sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 50vw, 390px"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

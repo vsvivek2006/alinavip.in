@@ -573,6 +573,7 @@ export default function AboutPage() {
                   <Image
                     src="/images/about-hero.webp"
                     alt="ALINA VIP - Luxury Escort Agency Gurgaon"
+                    title="ALINA VIP - Luxury Escort Agency Gurgaon"
                     fill
                     sizes="(max-width: 1024px) 100vw, 450px"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -599,6 +600,7 @@ export default function AboutPage() {
                     <Image
                       src="/images/about-1.webp"
                       alt="Verified VIP Escorts in Gurgaon"
+                      title="Verified VIP Escorts in Gurgaon"
                       fill
                       sizes="(max-width: 1024px) 50vw, 220px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -615,6 +617,7 @@ export default function AboutPage() {
                     <Image
                       src="/images/about-2.webp"
                       alt="Luxury Outcall Service Gurgaon"
+                      title="Luxury Outcall Service Gurgaon"
                       fill
                       sizes="(max-width: 1024px) 50vw, 220px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"

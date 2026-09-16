@@ -206,6 +206,7 @@ export default function ServicesPage() {
                     <Image
                       src={imageSrc}
                       alt={`${cat.name} - Escort Service Gurgaon`}
+                      title={`${cat.name} - Escort Service Gurgaon`}
                       fill
                       sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 50vw, 390px"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
