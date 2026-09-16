@@ -74,7 +74,7 @@
         "primaryKeywords": ["Escort Services in Gurgaon", "Service Categories"],
         "title": "Our Escort Services in Gurgaon | Service Categories | ALINA VIP",
         "h1": "Explore Profiles & Escort Services",
-        "ownershipRole": "Exploratory category portal, routing traffic to specific companion categories."
+        "ownershipRole": "Exploratory category portal, routing traffic to specific escort categories."
       },
       "locationsHub": {
         "url": "/locations",
@@ -100,7 +100,7 @@
       },
       "categoryPages": {
         "urlPattern": "/category/[slug]",
-        "targetIntent": "Specific Companion Attribute / Persona Queries",
+        "targetIntent": "Specific escort Attribute / Persona Queries",
         "primaryKeywords": ["[Category Name] in Gurgaon", "[Category Name] Escorts"],
         "ownershipRole": "High-intent persona matching (Russian, VIP, High Profile, College Girls, etc.)."
       },
