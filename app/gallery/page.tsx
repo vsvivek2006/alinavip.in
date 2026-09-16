@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
   alternates: {
     canonical: `${siteConfig.url}/gallery`,
+    languages: getAlternateLanguages('/gallery'),
   },
   openGraph: {
     title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',

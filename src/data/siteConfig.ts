@@ -127,3 +127,12 @@ export const generalFaqs = [
     answer: 'Yes. Many of our models and high-profile call girls possess university degrees, excellent conversational acumen, and refined etiquette, making them ideal partners for business dinners, cocktail receptions, and executive functions.',
   },
 ];
+
+export function getAlternateLanguages(path: string = '') {
+  const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
+  return {
+    'en-IN': `https://alinavip.in${cleanPath}`,
+    'en': `https://alinavip.com${cleanPath}`,
+    'x-default': `https://alinavip.com${cleanPath}`,
+  };
+}

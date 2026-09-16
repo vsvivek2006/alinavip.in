@@ -18,7 +18,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import LocationBookingForm from '@/components/LocationBookingForm';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getLocation, locations } from '@/data/locations';
 import { categories } from '@/data/categories';
 import {
@@ -61,13 +61,13 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   const title =
     location.slug === 'gurgaon'
-      ? 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP'
+      ? 'Gurgaon Escorts Directory & Sector Guide | 108 Verified Locations | ALINA VIP'
       : location.region === 'Gurgaon'
       ? `Escort Service in ${location.name}, Gurgaon (Gurugram) | ALINA VIP`
       : location.metaTitle;
   const description =
     location.slug === 'gurgaon'
-      ? 'Book premier escort service in Gurgaon (Gurugram). ALINA VIP provides verified call girls and VIP escorts service with discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.'
+      ? 'Comprehensive directory of verified call girls and escort service in Gurgaon across all 108 sectors, DLF, and Golf Course Road with 20-30 min 5-star hotel dispatch.'
       : location.region === 'Gurgaon'
       ? `Discreet 24/7 escort service in ${location.name}, Gurgaon (Gurugram). Verified VIP call girls, Russian models, and 20-30 min 5-star hotel outcalls with ALINA VIP.`
       : location.metaDescription;
@@ -83,6 +83,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
     },
     alternates: {
       canonical: canonicalUrl,
+      languages: getAlternateLanguages(`/locations/${location.slug}`),
     },
     openGraph: {
       title,
@@ -121,7 +122,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
       return match || null;
     })
     .filter(Boolean);
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -150,12 +150,22 @@ export default async function LocationPage({ params }: LocationPageProps) {
   }
   breadcrumbItems.push({ name: location.name });
 
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.path ? `${siteConfig.url}${item.path}` : `${siteConfig.url}/locations/${location.slug}`,
+    })),
+  };
+
   return (
     <>
       {/* Server-Rendered JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': [breadcrumbSchema, faqSchema] }) }}
       />
 
       <Breadcrumb items={breadcrumbItems} />

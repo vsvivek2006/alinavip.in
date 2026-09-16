@@ -22,7 +22,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getCategory, categories } from '@/data/categories';
 
 interface CategoryPageProps {
@@ -87,6 +87,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     description,
     alternates: {
       canonical: canonicalUrl,
+      languages: getAlternateLanguages(`/category/${category.slug}`),
     },
     openGraph: {
       title,

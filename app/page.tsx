@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { siteConfig, generalFaqs } from '@/data/siteConfig';
+import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   alternates: {
     canonical: siteConfig.url,
-  },
+    languages: getAlternateLanguages(''),
+},
   openGraph: {
     title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
     description:

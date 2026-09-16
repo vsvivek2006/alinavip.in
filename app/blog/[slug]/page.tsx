@@ -7,17 +7,13 @@ import {
   Clock,
   User,
   Eye,
-  Star,
-  Phone,
   Tag,
-  ArrowLeft,
   ArrowRight,
-  Crown,
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import ShareButton from '@/components/ShareButton';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getBlogPost, blogPosts } from '@/data/blogs';
 
 interface BlogPostPageProps {
@@ -35,6 +31,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
+
   if (!post) {
     notFound();
   }
@@ -53,6 +50,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     description,
     alternates: {
       canonical: canonicalUrl,
+      languages: getAlternateLanguages(`/blog/${post.slug}`),
     },
     openGraph: {
       title,
@@ -77,10 +75,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const ogImageUrl = post.image
+    ? post.image.startsWith('http')
+      ? post.image
+      : `${siteConfig.url}${post.image}`
+    : `${siteConfig.url}/og-image.jpg`;
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
+    image: ogImageUrl,
+    dateModified: post.date,
+    mainEntityOfPage: canonicalUrl,
     description: post.excerpt,
     datePublished: post.date,
     author: { '@type': 'Organization', name: siteConfig.name },
@@ -149,144 +157,104 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
               <span className="flex items-center gap-2">
                 <User className="w-4 h-4 text-gold-600" />
-                {post.author || 'ALINA VIP'}
+                {post.author}
               </span>
             </div>
           </div>
 
-          {/* Featured Hero Image */}
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl mb-10 bg-gradient-to-br from-gray-800 to-gray-900 border border-gold-200/50">
-            <Image
-              src={post.image || `/images/blog/${post.slug}.webp`}
-              alt={`${post.title} - Escort Service in Gurgaon | Call Girls Guide`}
-              title={`${post.title} - Escort Service in Gurgaon | Call Girls Guide`}
-              fill
-              priority
-              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 848px, 832px"
-              className="object-cover"
+          {/* Featured Image */}
+          {post.image && (
+            <div className="relative aspect-[16/9] mb-12 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+              <Image
+                src={post.image}
+                alt={post.title}
+                title={post.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="object-cover"
+              />
+            </div>
+          )}
+
+          {/* Article Content / Paragraphs */}
+          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+            <p className="text-xl font-serif text-gray-900 leading-relaxed italic border-l-4 border-gold-500 pl-6 my-8">
+              {post.excerpt}
+            </p>
+
+            <div
+              className="space-y-6 font-sans text-gray-700 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </div>
 
-          {/* Article Prose */}
-          <div className="prose-luxury max-w-none text-gray-700 text-lg leading-relaxed space-y-6">
-            {post.content.map((para, i) => (
-              <p key={i} className="text-gray-700 text-lg leading-relaxed">
-                {para}
-              </p>
-            ))}
-          </div>
-
-          {/* Mid-Article VIP Callout Card */}
-          <div className="my-12 p-8 bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-2xl border-2 border-gold-200 shadow-sm">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <h4 className="text-xl font-bold text-[#0F172A] flex items-center gap-2 font-serif mb-2">
-                  <Star className="w-5 h-5 text-gold-600 fill-gold-600" />
-                  Book Your Escort Service Today
-                </h4>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Browse our verified{' '}
-                  <Link href="/services" className="text-gold-600 hover:underline font-semibold">
-                    service profiles
-                  </Link>{' '}
-                  or coordinate directly with our 24/7 concierge.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="flex items-center gap-2 bg-gold-600 hover:bg-gold-700 text-white px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl whitespace-nowrap"
+          {/* Article Footer & Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 flex-wrap">
+              <Tag className="w-4 h-4 text-gold-600" />
+              <span className="text-sm font-semibold text-gray-700">Tags:</span>
+              {['Escort Service', 'Gurgaon Call Girls', post.category, 'VIP Lifestyle'].map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-medium"
                 >
-                  <Phone className="w-4 h-4" /> Book Now
-                </Link>
-                <a
-                  href={siteConfig.url}
-                  className="flex items-center gap-2 border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-8 py-3.5 rounded-full font-bold transition-all whitespace-nowrap"
-                >
-                  Visit {siteConfig.domain}
-                </a>
-              </div>
+                  #{tag}
+                </span>
+              ))}
             </div>
-          </div>
 
-          {/* Article Tags */}
-          <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-gray-100">
-            <Tag className="w-4 h-4 text-gold-600 mr-1" />
-            {post.tags?.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium cursor-default"
-              >
-                #{tag.replace(/\s+/g, '')}
-              </span>
-            ))}
-          </div>
-
-          {/* Article Footer: Navigation & Share */}
-          <div className="mt-10 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-gold-600 hover:gap-3 transition-all text-sm font-bold"
-            >
-              <ArrowLeft className="w-4 h-4" /> Back to All Articles
-            </Link>
-
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-gray-500 font-medium">Share:</span>
-              <ShareButton />
-            </div>
+            <ShareButton />
           </div>
         </div>
       </article>
 
-      {/* Related Articles Section */}
+      {/* Related Articles Strip */}
       {displayRelated.length > 0 && (
-        <section className="py-16 bg-[#FDFBF7] text-gray-800">
-          <div className="container-luxury">
+        <section className="py-16 bg-[#faf6f2] border-t border-gold-200/60">
+          <div className="container-luxury max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl text-[#0F172A] font-bold mb-3">
-                Related <span className="text-gold-600">Articles</span>
+              <span className="text-xs font-bold text-gold-600 uppercase tracking-wider block mb-2">
+                Continue Reading
+              </span>
+              <h2 className="text-3xl font-serif text-[#0F172A] font-bold">
+                Related Articles &amp; Guides
               </h2>
-              <p className="text-gray-600">
-                Explore executive etiquette, luxury lifestyle insights, and hotel dining recommendations.
-              </p>
-              <div className="gold-divider mx-auto mt-4" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {displayRelated.map((rp) => (
+            <div className="grid md:grid-cols-3 gap-8">
+              {displayRelated.map((relatedPost) => (
                 <Link
-                  key={rp.slug}
-                  href={`/blog/${rp.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-gold-300 flex flex-col justify-between"
+                  key={relatedPost.slug}
+                  href={`/blog/${relatedPost.slug}`}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/40 flex flex-col"
                 >
-                  <div>
-                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-800">
+                  {relatedPost.image && (
+                    <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
-                        src={rp.image || `/images/blog/${rp.slug}.webp`}
-                        alt={rp.title}
-                        title={rp.title}
+                        src={relatedPost.image}
+                        alt={relatedPost.title}
+                        title={relatedPost.title}
                         fill
-                        sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 768px) calc(100vw - 48px), 280px"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 384px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-6">
-                      <span className="text-xs text-gold-600 font-bold tracking-wider uppercase">
-                        {rp.category}
+                  )}
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-gold-600 uppercase tracking-wider block mb-2">
+                        {relatedPost.category}
                       </span>
-                      <h3 className="font-serif text-lg text-[#0F172A] mt-2 mb-2 font-bold leading-tight group-hover:text-gold-600 transition-colors line-clamp-2">
-                        {rp.title}
+                      <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-gold-600 transition-colors line-clamp-2 mb-2">
+                        {relatedPost.title}
                       </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2 mb-4">
-                        {rp.excerpt}
+                      <p className="text-sm text-gray-600 line-clamp-2">
+                        {relatedPost.excerpt}
                       </p>
                     </div>
-                  </div>
-                  <div className="px-6 pb-6">
-                    <span className="text-gold-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read More <ArrowRight className="w-4 h-4" />
+                    <span className="text-xs text-gold-600 font-bold flex items-center gap-1 mt-4">
+                      Read Article <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </Link>
@@ -295,41 +263,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </section>
       )}
-
-      {/* Bottom VIP Escort Banner */}
-      <section className="py-16 bg-[#1a1a2e] text-white">
-        <div className="container-luxury text-center">
-          <div className="max-w-3xl mx-auto">
-            <Crown className="w-12 h-12 text-gold-500 mx-auto mb-4" />
-            <h3 className="text-3xl font-bold text-white mb-4 font-serif">
-              Reserve Elite <span className="text-gold-400">VIP Escort Service</span> in Gurgaon
-            </h3>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              Explore our curated selection of verified models, Russian escorts, and VIP call girls. Contact our 24/7 private concierge for prompt hotel suite coordination.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl"
-              >
-                Book Now
-              </Link>
-              <a
-                href={siteConfig.url}
-                className="border-2 border-gold-500 hover:bg-gold-500/10 text-gold-400 px-10 py-4 rounded-full font-bold text-base transition-all"
-              >
-                Visit {siteConfig.domain}
-              </a>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="border-2 border-gold-500 hover:bg-gold-500/10 text-gold-400 px-10 py-4 rounded-full font-bold text-base transition-all flex items-center gap-2"
-              >
-                <Phone className="w-4 h-4" /> Call Now
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <CTASection />
     </>

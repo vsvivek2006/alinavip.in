@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig, generalFaqs } from '@/data/siteConfig';
+import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
   alternates: {
     canonical: `${siteConfig.url}/faq`,
+    languages: getAlternateLanguages('/faq'),
   },
   openGraph: {
     title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',

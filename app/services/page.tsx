@@ -20,7 +20,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { services } from '@/data/content';
 import { categories } from '@/data/categories';
 
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   alternates: {
     canonical: `${siteConfig.url}/services`,
+    languages: getAlternateLanguages('/services'),
   },
   openGraph: {
     title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service ALINA VIP',

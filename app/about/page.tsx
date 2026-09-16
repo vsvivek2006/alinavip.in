@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   alternates: {
     canonical: `${siteConfig.url}/about`,
+    languages: getAlternateLanguages('/about'),
   },
   openGraph: {
     title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',

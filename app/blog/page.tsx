@@ -8,7 +8,7 @@ import CTASection from '@/components/CTASection';
 import BlogFilter from '@/components/BlogFilter';
 import NewsletterForm from '@/components/NewsletterForm';
 import { blogPosts, blogCategories } from '@/data/blogs';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
   alternates: {
     canonical: `${siteConfig.url}/blog`,
+    languages: getAlternateLanguages('/blog'),
   },
   openGraph: {
     title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',

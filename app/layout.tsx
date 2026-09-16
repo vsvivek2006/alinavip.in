@@ -4,7 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -47,6 +47,10 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
+  alternates: {
+    canonical: siteConfig.url,
+    languages: getAlternateLanguages(''),
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
