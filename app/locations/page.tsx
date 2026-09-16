@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | ALINA VIP India',
   description:
     'Find verified VIP escorts and luxury call girls across Gurgaon, Aerocity, and Delhi NCR. Cyber City, DLF Phases 1-5, Golf Course Road & Sohna Road. 20-30 min hotel outcall.',
+  keywords: [
+    `escort service locations Gurgaon`,
+    `call girl service areas Gurgaon`,
+    `outcall escort locations`,
+    ...(siteConfig.keywords || []).slice(0, 15),
+  ],
   alternates: {
     canonical: `${siteConfig.url}/locations`,
     languages: getAlternateLanguages('/locations'),

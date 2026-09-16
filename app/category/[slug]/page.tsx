@@ -82,8 +82,18 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const imageSrc = categoryImageMap[category.slug] || '/images/categories/default.webp';
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
 
+  const categoryKeywords = [
+    `${category.name.toLowerCase()} escort service`,
+    `${category.name.toLowerCase()} in Gurgaon`,
+    `${category.name.toLowerCase()} call girls`,
+    `hire ${category.name.toLowerCase()} Gurgaon`,
+    `top ${category.name.toLowerCase()}`,
+    ...(siteConfig.keywords || []).slice(0, 10),
+  ];
+
   return {
     title,
+    keywords: categoryKeywords,
     description,
     alternates: {
       canonical: canonicalUrl,

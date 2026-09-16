@@ -76,7 +76,17 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   return {
     title,
     description,
-    keywords: siteConfig.keywords,
+    keywords: [
+      `${location.name.toLowerCase()} escort service`,
+      `${location.name.toLowerCase()} escorts`,
+      `escort service in ${location.name.toLowerCase()}`,
+      `call girls in ${location.name.toLowerCase()}`,
+      `call girls ${location.name.toLowerCase()}`,
+      `${location.name.toLowerCase()} call girl service`,
+      `vip escorts ${location.name.toLowerCase()}`,
+      `russian escorts ${location.name.toLowerCase()}`,
+      ...(siteConfig.keywords || []).slice(0, 10),
+    ],
     robots: {
       index: isIndexable,
       follow: true,

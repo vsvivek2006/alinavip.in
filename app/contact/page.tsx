@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
   description:
     'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'contact concierge, 24/7 escort booking, whatsapp call girls',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/contact`,
     languages: getAlternateLanguages('/contact'),

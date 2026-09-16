@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
   description:
     'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'blog guides, nightlife tips, 5 star hotel dining',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/blog`,
     languages: getAlternateLanguages('/blog'),

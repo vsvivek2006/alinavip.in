@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
   description:
     'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'verified escort gallery, real call girl photos, genuine escort profiles',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/gallery`,
     languages: getAlternateLanguages('/gallery'),

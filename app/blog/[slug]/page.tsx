@@ -47,6 +47,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   return {
     title,
+    keywords: [
+      post.title.toLowerCase(),
+      post.category.toLowerCase(),
+      `${post.category.toLowerCase()} guide`,
+      ...(siteConfig.keywords || []).slice(0, 10),
+    ],
     description,
     alternates: {
       canonical: canonicalUrl,

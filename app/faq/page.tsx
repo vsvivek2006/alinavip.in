@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
   description:
     'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'escort booking faq, rates, cod questions, hotel outcall faq',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/faq`,
     languages: getAlternateLanguages('/faq'),
