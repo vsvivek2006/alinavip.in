@@ -33,7 +33,7 @@ export default function PhoneNumberPage() {
         {/* Main Hotline Highlight Box */}
         <div className="bg-white rounded-2xl border border-gray-100 p-8 sm:p-12 shadow-sm max-w-4xl mx-auto text-center">
           <span className="text-xs font-bold text-[#671725] uppercase tracking-widest block">Direct Concierge Access</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B2154] mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
             Speak Directly With Our Booking Coordinator
           </h2>
           <p className="text-gray-600 text-sm mt-3 max-w-2xl mx-auto">
@@ -92,7 +92,7 @@ export default function PhoneNumberPage() {
         <div className="mt-16 max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Effortless Etiquette</span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B2154] mt-1">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
               How to Book Your Companion in 4 Easy Steps
             </h3>
           </div>
@@ -100,25 +100,25 @@ export default function PhoneNumberPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-700">
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">1</span>
-              <h4 className="font-bold text-[#0B2154] text-base">Step 1: Contact via Call or WhatsApp</h4>
+              <h4 className="font-bold text-[#111827] text-base">Step 1: Contact via Call or WhatsApp</h4>
               <p className="text-gray-600 leading-relaxed">Reach out directly to our 24/7 hotline at {siteConfig.phoneDisplay} or send a message on WhatsApp stating your preferred time and location.</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">2</span>
-              <h4 className="font-bold text-[#0B2154] text-base">Step 2: Choose Your Companion</h4>
+              <h4 className="font-bold text-[#111827] text-base">Step 2: Choose Your Companion</h4>
               <p className="text-gray-600 leading-relaxed">We provide fresh, real-time unedited photos and verified portfolio details of companions available immediately in your area.</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">3</span>
-              <h4 className="font-bold text-[#0B2154] text-base">Step 3: Rapid 20-30 Min Outcall Arrival</h4>
+              <h4 className="font-bold text-[#111827] text-base">Step 3: Rapid 20-30 Min Outcall Arrival</h4>
               <p className="text-gray-600 leading-relaxed">Your companion arrives in an executive private cab directly at your hotel lobby or condominium gate in complete anonymity.</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">4</span>
-              <h4 className="font-bold text-[#0B2154] text-base">Step 4: Verify &amp; Pay Cash</h4>
+              <h4 className="font-bold text-[#111827] text-base">Step 4: Verify &amp; Pay Cash</h4>
               <p className="text-gray-600 leading-relaxed">Greet your companion in private, verify her identity with the photo provided, and hand over cash. Enjoy an unforgettable experience!</p>
             </div>
           </div>

@@ -221,7 +221,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-flex items-center gap-2 bg-[#0B2154] hover:bg-[#07173b] text-white px-8 py-4 rounded-xl font-bold text-sm transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-[#671725] hover:bg-[#52121d] text-white px-8 py-4 rounded-xl font-bold text-sm transition-all shadow-md"
             >
               <Phone className="w-5 h-5" /> Call Concierge: {siteConfig.phoneDisplay}
             </a>
@@ -242,7 +242,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             {/* Left Column: Comprehensive Local Guide */}
             <div className="lg:col-span-8 space-y-10">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0B2154] mb-5 font-sans font-bold">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-5 font-sans font-bold">
                   Premium Luxury Escort Service in {location.name}
                 </h2>
                 <div className="w-16 h-1 bg-primary-wine mt-2 mb-4 rounded-full" />
@@ -270,7 +270,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Key Landmarks */}
               {location.about?.landmarks && location.about.landmarks.length > 0 && (
                 <div className="p-8 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm">
-                  <h3 className="text-2xl font-bold text-[#0B2154] mb-4 font-sans font-bold flex items-center gap-2">
+                  <h3 className="text-2xl font-bold text-[#111827] mb-4 font-sans font-bold flex items-center gap-2">
                     <MapPin className="text-primary-wine w-6 h-6" />
                     Key Landmarks &amp; Hotspots in {location.name}
                   </h3>
@@ -287,7 +287,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
               {/* Why Choose Us in this location */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-6 font-sans font-bold">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-6 font-sans font-bold">
                   Why Choose ALINA VIP in {location.name}?
                 </h3>
                 {location.whyChoose?.overview ? (
@@ -296,7 +296,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     <div className="grid sm:grid-cols-2 gap-4 mt-6">
                       {location.whyChoose.reasons.map((r, idx) => (
                         <div key={idx} className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
-                          <h4 className="text-base font-bold text-[#0B2154] mb-2">{r.title}</h4>
+                          <h4 className="text-base font-bold text-[#111827] mb-2">{r.title}</h4>
                           <p className="text-sm text-gray-600 leading-relaxed">{r.desc}</p>
                         </div>
                       ))}
@@ -325,7 +325,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                       return (
                         <div key={idx} className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                           <Icon className="w-8 h-8 text-primary-wine mb-3" />
-                          <h4 className="text-base font-bold text-[#0B2154] mb-2">{item.title}</h4>
+                          <h4 className="text-base font-bold text-[#111827] mb-2">{item.title}</h4>
                           <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                         </div>
                       );
@@ -337,14 +337,14 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Service Options */}
               {location.serviceOptions?.overview && (
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-4 font-sans font-bold">
                     Service Options in {location.name}
                   </h3>
                   <p className="text-gray-700 text-lg leading-relaxed mb-6">{location.serviceOptions.overview}</p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {location.serviceOptions.options.map((opt, idx) => (
                       <div key={idx} className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-primary-wine/40 transition-all shadow-sm">
-                        <h4 className="text-lg font-bold text-[#0B2154] mb-2 font-sans font-bold">{opt.title}</h4>
+                        <h4 className="text-lg font-bold text-[#111827] mb-2 font-sans font-bold">{opt.title}</h4>
                         <p className="text-sm text-gray-600 leading-relaxed">{opt.desc}</p>
                       </div>
                     ))}
@@ -355,7 +355,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Local Area Connectivity & Hospitality */}
               {location.localCharacteristics?.connectivity && (
                 <div className="p-8 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm">
-                  <h3 className="text-2xl font-bold text-[#0B2154] mb-3 font-sans font-bold flex items-center gap-2">
+                  <h3 className="text-2xl font-bold text-[#111827] mb-3 font-sans font-bold flex items-center gap-2">
                     <Navigation className="text-primary-wine w-6 h-6" />
                     Connectivity &amp; Five-Star Hotels Served
                   </h3>
@@ -399,7 +399,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
               {/* Hotel Outcall Protocol & Booking Safety */}
               <div className="p-8 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm space-y-4">
-                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold flex items-center gap-2">
+                <h3 className="text-2xl font-bold text-[#111827] font-sans font-bold flex items-center gap-2">
                   <ShieldCheck className="text-primary-wine w-6 h-6" />
                   Private Outcall Protocol &amp; Hotel Etiquette in {location.name}
                 </h3>
@@ -408,7 +408,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                   <div className="bg-white p-4 rounded-xl border border-gray-100">
-                    <h4 className="font-bold text-[#0B2154] text-xs uppercase tracking-wider mb-1 text-primary-wine">
+                    <h4 className="font-bold text-[#111827] text-xs uppercase tracking-wider mb-1 text-primary-wine">
                       Discreet Arrival
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -416,7 +416,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     </p>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-100">
-                    <h4 className="font-bold text-[#0B2154] text-xs uppercase tracking-wider mb-1 text-primary-wine">
+                    <h4 className="font-bold text-[#111827] text-xs uppercase tracking-wider mb-1 text-primary-wine">
                       Zero Advance Fees
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -436,13 +436,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Master Hub Links if Applicable */}
               {location.isHub && location.hubDetails && (
                 <div className="space-y-6 pt-4 border-t border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] font-sans font-bold">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#111827] font-sans font-bold">
                     {location.name} Regional Master Directory
                   </h3>
                   <p className="text-gray-700 leading-relaxed">{location.hubDetails.overview}</p>
                   {location.hubDetails.corridors.map((corridor, idx) => (
                     <div key={idx} className="mb-6 p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
-                      <h4 className="text-lg font-bold text-[#0B2154] mb-2">{corridor.title}</h4>
+                      <h4 className="text-lg font-bold text-[#111827] mb-2">{corridor.title}</h4>
                       <p className="text-sm text-gray-600 mb-4">{corridor.desc}</p>
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
                         {corridor.slugs.map((subSlug) => {
@@ -507,7 +507,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     <Star key={i} className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
                   ))}
                 </div>
-                <p className="font-bold text-[#0B2154] text-lg font-sans font-bold">Top Rated in {location.name}</p>
+                <p className="font-bold text-[#111827] text-lg font-sans font-bold">Top Rated in {location.name}</p>
                 <p className="text-gray-600 text-xs mt-1">
                   100% verified call girls and escorts with complete privacy.
                 </p>
@@ -516,7 +516,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Quick Categories Navigation */}
               <div className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-sans font-bold text-lg font-bold text-[#0B2154]">
+                  <h4 className="font-sans font-bold text-lg font-bold text-[#111827]">
                     Service Categories
                   </h4>
                   <Link href="/services" className="text-xs text-primary-wine hover:underline font-semibold">
@@ -542,7 +542,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   <p className="text-[11px] uppercase font-bold tracking-wider text-primary-wine mb-1">Local Area Guide</p>
                   <Link
                     href="/blog/luxury-hotels-gurgaon-guide"
-                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#111827] hover:text-primary-wine transition-colors block"
                   >
                     Top Luxury Hotels in Gurgaon for Discreet Stays &rarr;
                   </Link>
@@ -558,7 +558,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="section-subtitle text-primary-wine">Nearby Corridors</p>
-            <h2 className="section-title mb-4 text-[#0B2154]">
+            <h2 className="section-title mb-4 text-[#111827]">
               Locations Near <span className="text-luxury-gold">{location.name}</span>
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-2 mb-4 rounded-full" />
@@ -588,7 +588,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="section-subtitle text-primary-wine">Local Area FAQ</p>
-            <h2 className="section-title mb-4 text-[#0B2154]">
+            <h2 className="section-title mb-4 text-[#111827]">
               Frequently Asked Questions – <span className="text-luxury-gold">{location.name}</span>
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-2 mb-4 rounded-full" />
@@ -600,7 +600,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 className="bg-[#FFFDF6] rounded-2xl border border-gray-200/50 hover:border-primary-wine transition-all group overflow-hidden"
               >
                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                  <span className="font-semibold text-[#0B2154] text-base pr-4">
+                  <span className="font-semibold text-[#111827] text-base pr-4">
                     {faq.question}
                   </span>
                   <span className="text-primary-wine text-2xl font-light group-open:rotate-45 transition-transform">
@@ -621,7 +621,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="section-subtitle text-primary-wine">Direct Reservation</p>
-            <h2 className="section-title mb-4 text-[#0B2154]">
+            <h2 className="section-title mb-4 text-[#111827]">
               Book Escort Service in <span className="text-luxury-gold">{location.name}</span>
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-2 mb-4 rounded-full" />

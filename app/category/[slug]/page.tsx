@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const title = `${category.h1Title || `${category.name} in Gurgaon`} | VIP Escorts & Call Girls | ALINA VIP`;
   const description = `${category.shortDescription} ALINA VIP India offers verified ${category.name.toLowerCase()} in Gurgaon & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
   const canonicalUrl = `${siteConfig.url}/category/${category.slug}`;
-  const imageSrc = categoryImageMap[category.slug] || '/images/categories/default.webp';
+  const imageSrc = categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg';
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
 
   const categoryKeywords = [
@@ -123,7 +123,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   const IconComponent = categoryIconMap[category.slug] || Crown;
-  const imageSrc = categoryImageMap[category.slug] || '/images/categories/default.webp';
+  const imageSrc = categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg';
 
   const faqs = category.faqs && category.faqs.length > 0 ? category.faqs : [
     {
@@ -241,7 +241,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {/* Left Column (2 Cols): Editorial & Value Props */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
+                <h2 className="text-3xl font-bold text-[#111827] mb-4 font-sans font-bold">
                   About Our {category.name}
                 </h2>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -281,7 +281,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Feature Badges / Key Highlights */}
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
+                <h3 className="text-2xl font-bold text-[#111827] mb-4 font-sans font-bold">
                   Why Choose Our {category.name}?
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -290,7 +290,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div key={idx} className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <ShieldCheck className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0B2154] text-sm">{hl.title}</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">{hl.title}</h4>
                           <p className="text-gray-600 text-xs mt-1">{hl.desc}</p>
                         </div>
                       </div>
@@ -300,7 +300,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <ShieldCheck className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0B2154] text-sm">Verified Call Girls</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">Verified Call Girls</h4>
                           <p className="text-gray-600 text-xs mt-1">
                             100% genuine <Link href="/services" className="text-primary-wine hover:underline font-medium">call girls</Link> with photo authentication
                           </p>
@@ -310,7 +310,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <Lock className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0B2154] text-sm">100% Discreet</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">100% Discreet</h4>
                           <p className="text-gray-600 text-xs mt-1">
                             Complete privacy guaranteed for all <Link href="/services" className="text-primary-wine hover:underline font-medium">escorts</Link> bookings
                           </p>
@@ -320,7 +320,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <Clock className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0B2154] text-sm">24/7 Availability</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">24/7 Availability</h4>
                           <p className="text-gray-600 text-xs mt-1">
                             Book <Link href="/services" className="text-primary-wine hover:underline font-medium">call girls</Link> anytime, day or night
                           </p>
@@ -330,7 +330,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <MapPin className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0B2154] text-sm">All Gurgaon Areas</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">All Gurgaon Areas</h4>
                           <p className="text-gray-600 text-xs mt-1">
                             <Link href="/locations/cyber-city" className="text-primary-wine hover:underline font-medium">Cyber City</Link>,{' '}
                             <Link href="/locations/mg-road" className="text-primary-wine hover:underline font-medium">MG Road</Link>,{' '}
@@ -345,7 +345,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Selection Standards & Verification */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-2xl font-bold text-[#111827] font-sans font-bold">
                   Selection Standards &amp; Quality Assurance for {category.name}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
@@ -353,7 +353,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                   <div className="p-4 bg-[#FFFDF6] rounded-xl border border-gray-200/40">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1 flex items-center gap-2">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary-wine" /> Untouched Real Photography
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -361,7 +361,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     </p>
                   </div>
                   <div className="p-4 bg-[#FFFDF6] rounded-xl border border-gray-200/40">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1 flex items-center gap-2">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1 flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary-wine" /> Conversational Fluency
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -373,7 +373,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Occasion & Etiquette Guide */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-2xl font-bold text-[#111827] font-sans font-bold">
                   Ideal Occasions &amp; Etiquette Guidelines
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
@@ -408,7 +408,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Discreet Outcall & Safety Protocols */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
                   Discreet Outcall Coordination Across Gurgaon
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -421,13 +421,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Category FAQs */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-2xl font-bold text-[#111827] font-sans font-bold">
                   Frequently Asked Questions – {category.name}
                 </h3>
                 <div className="space-y-3">
                   {faqs.map((faq, idx) => (
                     <details key={idx} className="bg-white rounded-xl border border-gray-200 p-4 group">
-                      <summary className="font-semibold text-[#0B2154] text-sm cursor-pointer list-none flex items-center justify-between">
+                      <summary className="font-semibold text-[#111827] text-sm cursor-pointer list-none flex items-center justify-between">
                         <span>{faq.question}</span>
                         <span className="text-primary-wine text-lg group-open:rotate-45 transition-transform">+</span>
                       </summary>
@@ -441,7 +441,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Areas We Serve in Gurgaon */}
               <div>
-                <h3 className="text-2xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
+                <h3 className="text-2xl font-bold text-[#111827] mb-4 font-sans font-bold">
                   Areas We Serve in Gurgaon
                 </h3>
                 <div className="flex flex-wrap gap-2.5">
@@ -486,7 +486,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Call Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border-2 border-gray-200 text-center shadow-sm">
-                <p className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <p className="text-xl font-bold text-[#111827] font-sans font-bold">
                   📞 Book Your {category.name} Today
                 </p>
                 <p className="text-gray-600 mt-2 text-sm">
@@ -511,14 +511,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <div className="w-16 h-16 rounded-full bg-[#671725]/10 flex items-center justify-center mx-auto mb-4 text-primary-wine">
                   <IconComponent className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">{category.name}</h3>
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">{category.name}</h3>
                 <p className="text-gray-600 text-xs mt-2">
                   Verified premium escorts in Gurgaon
                 </p>
               </div>
 
               {/* Book Now Dark Card */}
-              <div className="bg-[#0B2154] p-6 rounded-2xl text-center text-white shadow-md">
+              <div className="bg-[#671725] p-6 rounded-2xl text-center text-white shadow-md">
                 <h4 className="text-white font-bold text-lg mb-3 font-sans font-bold">Reserve Now</h4>
                 <a
                   href={`tel:${siteConfig.phone}`}
@@ -544,7 +544,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Related Service Categories */}
               <div className="bg-[#FFFDF6] p-6 rounded-2xl border border-gray-200/60 shadow-sm">
-                <h4 className="font-bold text-[#0B2154] mb-4 font-sans font-bold text-base">
+                <h4 className="font-bold text-[#111827] mb-4 font-sans font-bold text-base">
                   Explore Related Categories
                 </h4>
                 <div className="space-y-2.5">
@@ -575,7 +575,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/russian-escorts-gurgaon-guide"
-                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#111827] hover:text-primary-wine transition-colors block"
                   >
                     Russian Escorts Gurgaon Guide &amp; Booking Etiquette &rarr;
                   </Link>
@@ -586,7 +586,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/vip-call-girls-gurgaon"
-                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#111827] hover:text-primary-wine transition-colors block"
                   >
                     VIP Call Girls Gurgaon: Complete Discretion Guide &rarr;
                   </Link>
@@ -597,7 +597,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/best-escort-service-gurgaon-guide"
-                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#111827] hover:text-primary-wine transition-colors block"
                   >
                     How to Choose the Best Escort Service in Gurgaon &rarr;
                   </Link>
@@ -611,7 +611,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <Star key={i} className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
                   ))}
                 </div>
-                <p className="font-bold text-[#0B2154] text-base font-sans font-bold">4.9/5 Rating</p>
+                <p className="font-bold text-[#111827] text-base font-sans font-bold">4.9/5 Rating</p>
                 <p className="text-gray-600 text-xs mt-1">
                   500+ verified client reviews for our{' '}
                   <Link href="/services" className="text-primary-wine hover:underline">

@@ -153,7 +153,7 @@ export default async function ProductModelPage({
                   <CheckCircle size={14} className="text-[#FFD700]" />
                   <span>100% Real &amp; Verified</span>
                 </div>
-                <div className="absolute bottom-4 right-4 bg-[#0B2154]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
+                <div className="absolute bottom-4 right-4 bg-[#671725]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
                   <MapPin size={13} className="text-rose-300" />
                   <span>{baseCity}</span>
                 </div>

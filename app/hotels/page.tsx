@@ -133,7 +133,7 @@ export default function HotelsDirectoryPage() {
         {/* Intro */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Discreet Five-Star Hospitality</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B2154] mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
             Relax With Your Partner in World-Class Hotels
           </h2>
           <p className="text-gray-600 text-sm mt-3">
@@ -160,14 +160,14 @@ export default function HotelsDirectoryPage() {
                   <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
                     {hotel.stars}
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-[#0B2154]/90 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded shadow flex items-center gap-1">
+                  <div className="absolute bottom-3 left-3 bg-[#671725]/90 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded shadow flex items-center gap-1">
                     <MapPin size={12} className="text-rose-300" />
                     <span>{hotel.area}</span>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-extrabold text-[#0B2154] group-hover:text-[#671725] transition-colors">
+                  <h3 className="text-xl font-extrabold text-[#111827] group-hover:text-[#671725] transition-colors">
                     {hotel.name}
                   </h3>
                   <p className="text-gray-600 text-xs mt-3 leading-relaxed">
@@ -203,7 +203,7 @@ export default function HotelsDirectoryPage() {
         <div className="mt-20 bg-white rounded-2xl border border-gray-100 p-8 sm:p-12 shadow-sm">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Protocol &amp; Discretion</span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B2154] mt-1">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
               How Hotel Outcalls Work with ALINA VIP
             </h3>
           </div>
@@ -211,17 +211,17 @@ export default function HotelsDirectoryPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-gray-600">
             <div className="space-y-2 p-4 rounded-lg bg-[#FFFDF6] border border-gray-100">
               <span className="w-7 h-7 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-xs">1</span>
-              <h4 className="font-bold text-[#0B2154] text-sm">Select Your Preferred Hotel</h4>
+              <h4 className="font-bold text-[#111827] text-sm">Select Your Preferred Hotel</h4>
               <p>Share your room number and hotel details via WhatsApp or direct phone call. If you haven&apos;t booked yet, we can suggest companion-friendly hotels.</p>
             </div>
             <div className="space-y-2 p-4 rounded-lg bg-[#FFFDF6] border border-gray-100">
               <span className="w-7 h-7 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-xs">2</span>
-              <h4 className="font-bold text-[#0B2154] text-sm">Select Your Companion</h4>
+              <h4 className="font-bold text-[#111827] text-sm">Select Your Companion</h4>
               <p>Choose from real, verified Russian, Indian, or celebrity escort profiles with exact pictures and confirmed rates.</p>
             </div>
             <div className="space-y-2 p-4 rounded-lg bg-[#FFFDF6] border border-gray-100">
               <span className="w-7 h-7 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-xs">3</span>
-              <h4 className="font-bold text-[#0B2154] text-sm">Doorstep Delivery &amp; Pay Cash</h4>
+              <h4 className="font-bold text-[#111827] text-sm">Doorstep Delivery &amp; Pay Cash</h4>
               <p>She arrives within 20-30 minutes, dressed impeccably. Greet her, verify, and pay in cash directly to her. Zero prepayment.</p>
             </div>
           </div>

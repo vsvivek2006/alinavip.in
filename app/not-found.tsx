@@ -14,7 +14,7 @@ export default function NotFound() {
           404
         </h1>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] mb-4">
           Page or Profile Not Found
         </h2>
 
@@ -41,7 +41,7 @@ export default function NotFound() {
           <span>Need immediate assistance?</span>
           <a
             href={`tel:${siteConfig.phone}`}
-            className="inline-flex items-center gap-1.5 text-[#0B2154] hover:text-primary-wine font-bold"
+            className="inline-flex items-center gap-1.5 text-[#111827] hover:text-primary-wine font-bold"
           >
             <Phone size={14} className="text-luxury-gold" /> {siteConfig.phoneDisplay}
           </a>

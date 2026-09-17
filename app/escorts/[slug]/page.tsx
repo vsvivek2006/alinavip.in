@@ -72,7 +72,7 @@ export default async function EscortProfilePage({
                   <CheckCircle size={14} className="text-[#FFD700]" />
                   <span>100% Real &amp; Verified</span>
                 </div>
-                <div className="absolute bottom-4 right-4 bg-[#0B2154]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
+                <div className="absolute bottom-4 right-4 bg-[#671725]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
                   <MapPin size={13} className="text-rose-300" />
                   <span>{model.location}</span>
                 </div>
@@ -104,7 +104,7 @@ export default async function EscortProfilePage({
                   <span className="inline-block text-xs font-semibold text-[#671725] uppercase tracking-wider bg-rose-50 px-2.5 py-1 rounded">
                     {model.category}
                   </span>
-                  <h2 className="text-3xl font-extrabold text-[#0B2154] mt-1">
+                  <h2 className="text-3xl font-extrabold text-[#111827] mt-1">
                     {model.name}
                   </h2>
                 </div>
@@ -151,7 +151,7 @@ export default async function EscortProfilePage({
 
               {/* Bio */}
               <div className="mt-6">
-                <h3 className="text-sm font-bold text-[#0B2154] uppercase tracking-wider mb-2">
+                <h3 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-2">
                   About {model.name}
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
@@ -161,7 +161,7 @@ export default async function EscortProfilePage({
 
               {/* Physical Attributes Table */}
               <div className="mt-8">
-                <h3 className="text-sm font-bold text-[#0B2154] uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-3">
                   Physical Statistics &amp; Details
                 </h3>
                 <div className="overflow-hidden border border-gray-200 rounded-lg">
@@ -202,7 +202,7 @@ export default async function EscortProfilePage({
 
               {/* Working Hours Table */}
               <div className="mt-8">
-                <h3 className="text-sm font-bold text-[#0B2154] uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-3">
                   Working Hours
                 </h3>
                 <div className="overflow-hidden border border-gray-200 rounded-lg">
@@ -221,7 +221,7 @@ export default async function EscortProfilePage({
 
               {/* Rate Matrix Table */}
               <div className="mt-8">
-                <h3 className="text-sm font-bold text-[#0B2154] uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-3">
                   Booking Rates &amp; Duration Packages
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -235,9 +235,9 @@ export default async function EscortProfilePage({
                     <span className="block text-xl font-extrabold text-[#671725] mt-1">{model.rates.twoShots}</span>
                     <span className="block text-[11px] text-gray-500 mt-1">Extended Companionship</span>
                   </div>
-                  <div className="border border-[#0B2154]/20 p-4 rounded-lg bg-[#0B2154]/5 text-center">
-                    <span className="block text-xs text-[#0B2154] font-bold uppercase">Full Night (Overnight)</span>
-                    <span className="block text-xl font-extrabold text-[#0B2154] mt-1">{model.rates.fullNight}</span>
+                  <div className="border border-[#671725]/20 p-4 rounded-lg bg-[#671725]/5 text-center">
+                    <span className="block text-xs text-[#111827] font-bold uppercase">Full Night (Overnight)</span>
+                    <span className="block text-xl font-extrabold text-[#111827] mt-1">{model.rates.fullNight}</span>
                     <span className="block text-[11px] text-gray-500 mt-1">10 PM to 8 AM Companion</span>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export default async function EscortProfilePage({
 
               {/* Included Services Tags */}
               <div className="mt-8">
-                <h3 className="text-sm font-bold text-[#0B2154] uppercase tracking-wider mb-3">
+                <h3 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-3">
                   Services Offered by {model.name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -280,13 +280,13 @@ export default async function EscortProfilePage({
           <div className="flex items-center justify-between mb-8">
             <div>
               <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">More Escort Companions</span>
-              <h2 className="text-2xl font-black text-[#0B2154] mt-1">
+              <h2 className="text-2xl font-black text-[#111827] mt-1">
                 Explore Other Verified Profiles in Gurgaon
               </h2>
             </div>
             <Link
               href="/gallery"
-              className="text-xs font-bold text-[#671725] hover:text-[#0B2154] flex items-center gap-1 transition-colors"
+              className="text-xs font-bold text-[#671725] hover:text-[#111827] flex items-center gap-1 transition-colors"
             >
               <span>View All Profiles</span>
               <ArrowRight size={14} />
@@ -310,7 +310,7 @@ export default async function EscortProfilePage({
                 </div>
                 <div className="p-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="font-bold text-[#0B2154] text-base">{rel.name}</h3>
+                    <h3 className="font-bold text-[#111827] text-base">{rel.name}</h3>
                     <span className="text-xs font-extrabold text-[#671725]">{rel.rates.oneShot}</span>
                   </div>
                   <p className="text-gray-500 text-xs mt-1">{rel.location}</p>

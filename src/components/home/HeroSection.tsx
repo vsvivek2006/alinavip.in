@@ -22,10 +22,10 @@ export default function HeroSection() {
             </div>
 
             <div className="space-y-1">
-              <p className="text-[#0B2154] text-lg sm:text-xl md:text-2xl font-semibold">
+              <p className="text-[#111827] text-lg sm:text-xl md:text-2xl font-semibold">
                 24/7 | In-Call and Outcall Escort Service in Gurgaon
               </p>
-              <p className="text-[#0B2154] text-sm md:text-base font-medium tracking-wide">
+              <p className="text-[#111827] text-sm md:text-base font-medium tracking-wide">
                 Russian | Indian | Independent | VIP Model Escorts
               </p>
             </div>
@@ -75,7 +75,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#0B2154] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
                   Russian VIP
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#0B2154] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
                   Air Hostess
                 </span>
               </div>

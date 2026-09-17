@@ -62,7 +62,7 @@ export default function FAQPage() {
       </section>
 
       {/* 2. Trust Bar */}
-      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+      <section className="bg-[#671725] text-white py-4 px-4 shadow-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
             <ShieldCheck size={18} className="text-luxury-gold" />
@@ -89,7 +89,7 @@ export default function FAQPage() {
               <span className="text-xs font-bold uppercase tracking-wider text-primary-wine flex items-center gap-1.5">
                 <HelpCircle size={15} /> Transparent Answers
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
                 Client Questions &amp; Verification Protocol
               </h2>
               <div className="w-16 h-1 bg-primary-wine mt-3 rounded-full" />
@@ -111,7 +111,7 @@ export default function FAQPage() {
                     className="w-full text-left p-5 flex items-center justify-between gap-4 font-semibold text-base md:text-lg text-[#111827] focus:outline-none"
                     aria-expanded={isOpen}
                   >
-                    <span className={isOpen ? 'text-[#671725]' : 'text-[#0B2154]'}>
+                    <span className={isOpen ? 'text-[#671725]' : 'text-[#111827]'}>
                       {faq.question}
                     </span>
                     <span
@@ -161,7 +161,7 @@ export default function FAQPage() {
 
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="w-full py-3.5 bg-[#0B2154] hover:bg-[#08173d] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+                  className="w-full py-3.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
                 >
                   <Phone size={17} className="text-luxury-gold" />
                   <span>Call: {siteConfig.phoneDisplay}</span>
@@ -171,7 +171,7 @@ export default function FAQPage() {
 
             {/* Quick Links */}
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-              <h4 className="font-bold text-[#0B2154] text-sm mb-3">Popular Directories</h4>
+              <h4 className="font-bold text-[#111827] text-sm mb-3">Popular Directories</h4>
               <ul className="space-y-2 text-xs text-gray-600">
                 <li>
                   <Link href="/gallery" className="hover:text-primary-wine flex items-center justify-between">

@@ -31,7 +31,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
           Notice
         </span>
 
-        <h1 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-3">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#111827] mb-3">
           Something Went Wrong
         </h1>
 
@@ -50,7 +50,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
 
           <Link
             href="/"
-            className="w-full sm:w-auto border border-[#0B2154] text-[#0B2154] hover:bg-[#0B2154] hover:text-white text-xs font-bold rounded-xl py-3 px-6 flex items-center justify-center gap-2 transition-colors"
+            className="w-full sm:w-auto border border-[#671725] text-[#111827] hover:bg-[#671725] hover:text-white text-xs font-bold rounded-xl py-3 px-6 flex items-center justify-center gap-2 transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Return Home</span>

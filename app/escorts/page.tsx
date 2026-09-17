@@ -50,7 +50,7 @@ export default function EscortsDirectoryPage() {
                   <div className="absolute top-3 left-3 bg-[#671725] text-white text-xs font-bold px-2.5 py-1 rounded shadow">
                     {model.category}
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-[#0B2154]/90 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded shadow flex items-center gap-1">
+                  <div className="absolute bottom-3 left-3 bg-[#671725]/90 backdrop-blur-sm text-white text-[11px] font-medium px-2.5 py-1 rounded shadow flex items-center gap-1">
                     <MapPin size={12} className="text-rose-300" />
                     <span>{model.location}</span>
                   </div>
@@ -58,7 +58,7 @@ export default function EscortsDirectoryPage() {
 
                 <div className="p-5">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-extrabold text-[#0B2154]">{model.name}</h2>
+                    <h2 className="text-xl font-extrabold text-[#111827]">{model.name}</h2>
                     <div className="flex items-center gap-1 text-amber-500">
                       <Star size={14} fill="currentColor" />
                       <span className="text-xs font-bold text-gray-700">5.0</span>

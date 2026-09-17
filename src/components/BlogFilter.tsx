@@ -203,7 +203,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
                   </span>
                 </div>
 
-                <h3 className="font-sans font-bold text-xl text-[#0B2154] mb-2 font-bold leading-tight group-hover:text-primary-wine transition-colors line-clamp-2">
+                <h3 className="font-sans font-bold text-xl text-[#111827] mb-2 font-bold leading-tight group-hover:text-primary-wine transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 

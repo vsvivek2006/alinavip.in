@@ -38,7 +38,7 @@ export default function CTASection() {
 
           <a
             href={"tel:" + siteConfig.phone}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-[#0B2154] hover:bg-[#07173b] text-white text-xs md:text-sm font-semibold rounded shadow-md transition-all duration-300"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-[#671725] hover:bg-[#52121d] text-white text-xs md:text-sm font-semibold rounded shadow-md transition-all duration-300"
           >
             <Phone size={14} />
             <span>{siteConfig.phoneDisplay}</span>

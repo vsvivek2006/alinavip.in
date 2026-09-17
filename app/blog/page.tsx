@@ -71,7 +71,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-subtitle text-primary-wine">Our Blog</p>
-            <h2 className="section-title mb-4 text-[#0B2154]">
+            <h2 className="section-title mb-4 text-[#111827]">
               Insights on <span className="text-gradient-gold">VIP Escorts &amp; Luxury Lifestyle</span>
             </h2>
             <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto" />
@@ -102,7 +102,7 @@ export default function BlogPage() {
                 <span className="inline-block bg-primary-wine text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
                   ★ Featured Article
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-3 font-sans font-bold">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-3 font-sans font-bold">
                   Best Escort Service in Gurgaon: A Complete Guide
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -126,7 +126,7 @@ export default function BlogPage() {
 
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/60 bg-neutral-900 group">
                 <Image
-                  src="/images/featured-blog.webp"
+                  src="/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg"
                   alt="Best Escort Service in Gurgaon - Featured Guide"
                   title="Best Escort Service in Gurgaon - Featured Guide"
                   fill
@@ -141,7 +141,7 @@ export default function BlogPage() {
       </section>
 
       {/* Explore Escort Service Categories */}
-      <section className="py-16 bg-[#0B2154] text-white">
+      <section className="py-16 bg-[#671725] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-white mb-4 font-sans font-bold">
@@ -182,7 +182,7 @@ export default function BlogPage() {
       <section className="py-16 bg-[#FFFDF6] text-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="space-y-6 bg-white p-8 md:p-12 rounded-2xl border border-gray-200/60 shadow-sm">
-            <h2 className="text-3xl font-bold text-[#0B2154] mb-6 font-sans font-bold">
+            <h2 className="text-3xl font-bold text-[#111827] mb-6 font-sans font-bold">
               About the ALINA VIP Editorial Desk
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">

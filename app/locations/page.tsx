@@ -110,7 +110,7 @@ export default function LocationsPage() {
       </section>
 
       {/* 2. Trust Bar */}
-      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+      <section className="bg-[#671725] text-white py-4 px-4 shadow-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
             <Clock size={18} className="text-luxury-gold" />
@@ -133,7 +133,7 @@ export default function LocationsPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
             Prime Destination Hubs
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
             Top Escort Outcall Locations in Gurgaon
           </h2>
           <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
@@ -159,7 +159,7 @@ export default function LocationsPage() {
                   loading="lazy"
                 />
               </div>
-              <h3 className="text-lg font-bold text-[#0B2154] group-hover:text-primary-wine transition-colors mb-1">
+              <h3 className="text-lg font-bold text-[#111827] group-hover:text-primary-wine transition-colors mb-1">
                 {loc.title}
               </h3>
               <p className="text-xs text-gray-700 leading-relaxed mb-3">
@@ -177,7 +177,7 @@ export default function LocationsPage() {
       <section className="bg-white py-16 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#111827]">
               Complete Gurgaon Sectors &amp; Corridor Directory
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
@@ -198,7 +198,7 @@ export default function LocationsPage() {
               <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
                 Luxury Hospitality Protocols
               </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] mt-1 mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mt-1 mb-4">
                 Five-Star Hotel Outcalls in Gurgaon &amp; Aerocity
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
@@ -230,7 +230,7 @@ export default function LocationsPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="px-6 py-3 bg-[#0B2154] hover:bg-[#07173b] text-white font-bold text-xs rounded transition-colors"
+                  className="px-6 py-3 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
                 >
                   Call: {siteConfig.phoneDisplay}
                 </a>

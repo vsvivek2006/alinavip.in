@@ -39,7 +39,7 @@
   }
 
   .btn-navy {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#0B2154] text-white font-medium text-sm rounded shadow-md hover:bg-[#07173b] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#671725] text-white font-medium text-sm rounded shadow-md hover:bg-[#52121d] transition-all duration-300;
   }
 
   .btn-whatsapp {
@@ -87,7 +87,7 @@
 
 /* 2. Banner Bottom Text (4 Pillars) */
 .banner-bottom-text {
-  background-color: #0b2154;
+  background-color: #671725;
   color: #e1e1e1;
 }
 
@@ -346,7 +346,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #0b2154;
+  background: #671725;
   text-align: center;
   line-height: 36px;
   color: #ffffff;
@@ -368,7 +368,7 @@
   justify-content: center;
   margin: 0 auto 16px;
   border: 5px solid #e4e3e3;
-  color: #0b2154;
+  color: #671725;
 }
 
 /* 9. Locations Section */

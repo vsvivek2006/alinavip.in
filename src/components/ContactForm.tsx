@@ -47,7 +47,7 @@ export default function ContactForm() {
         <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-1">
           Online Reservation
         </span>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#0B2154] font-sans font-bold">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] font-sans font-bold">
           Book Your Reservation
         </h2>
         <p className="text-gray-600 text-sm mt-2">

@@ -150,7 +150,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. Trust Bar */}
-      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+      <section className="bg-[#671725] text-white py-4 px-4 shadow-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
             <ShieldCheck size={18} className="text-luxury-gold" />
@@ -173,7 +173,7 @@ export default function ServicesPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
             Comprehensive Offerings
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
             Exclusive Companionship Packages
           </h2>
           <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
@@ -204,7 +204,7 @@ export default function ServicesPage() {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-[#0B2154] mb-2 group-hover:text-primary-wine transition-colors">
+                  <h3 className="text-xl font-bold text-[#111827] mb-2 group-hover:text-primary-wine transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
@@ -235,7 +235,7 @@ export default function ServicesPage() {
                   </a>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#0B2154] hover:bg-[#08173d] text-white font-bold text-xs rounded transition-colors"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
                   >
                     <Phone size={14} className="text-luxury-gold" />
                     <span>Call Now</span>
@@ -253,7 +253,7 @@ export default function ServicesPage() {
               <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
                 <ShieldCheck size={28} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">100% Verified Profiles</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">100% Verified Profiles</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
                 All companion escorts undergo strict physical identity and background verification for your safety.
               </p>
@@ -263,7 +263,7 @@ export default function ServicesPage() {
               <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock size={28} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">24/7 Concierge Booking</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">24/7 Concierge Booking</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
                 Round-the-clock telephone and WhatsApp response with rapid dispatch to all Gurgaon hotels.
               </p>
@@ -273,7 +273,7 @@ export default function ServicesPage() {
               <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin size={28} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">NCR-Wide Outcalls</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">NCR-Wide Outcalls</h4>
               <p className="text-xs text-gray-600 leading-relaxed">
                 Rapid arrival to Cyber City, Golf Course Road, Sohna Road, MG Road, Aerocity, and Delhi luxury suites.
               </p>

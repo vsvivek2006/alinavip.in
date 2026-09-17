@@ -75,7 +75,7 @@ export default function ContactPage() {
             {/* Left Column: Direct Concierge & Channels */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-2 font-sans font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#111827] mb-2 font-sans font-bold">
                   Direct VIP Hotline
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
@@ -95,7 +95,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href={`tel:${siteConfig.phone}`}
-                      className="text-2xl font-bold text-[#0B2154] hover:text-primary-wine transition-colors font-sans font-bold"
+                      className="text-2xl font-bold text-[#111827] hover:text-primary-wine transition-colors font-sans font-bold"
                     >
                       {siteConfig.phoneDisplay}
                     </a>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                       href={`https://wa.me/${siteConfig.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xl font-bold text-[#0B2154] hover:text-primary-wine transition-colors inline-flex items-center gap-1.5"
+                      className="text-xl font-bold text-[#111827] hover:text-primary-wine transition-colors inline-flex items-center gap-1.5"
                     >
                       Chat on WhatsApp <ArrowRight className="w-4 h-4 text-primary-wine" />
                     </a>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                     <span className="text-xs uppercase font-bold tracking-wider text-primary-wine block mb-1">
                       Service Areas
                     </span>
-                    <p className="text-base font-semibold text-[#0B2154]">
+                    <p className="text-base font-semibold text-[#111827]">
                       {siteConfig.address}
                     </p>
                     <p className="text-gray-500 text-xs mt-1">
@@ -161,7 +161,7 @@ export default function ContactPage() {
                     <span className="text-xs uppercase font-bold tracking-wider text-primary-wine block mb-1">
                       Operating Schedule
                     </span>
-                    <p className="text-base font-semibold text-[#0B2154]">
+                    <p className="text-base font-semibold text-[#111827]">
                       24 Hours a Day • 7 Days a Week
                     </p>
                     <p className="text-gray-500 text-xs mt-1">
@@ -173,7 +173,7 @@ export default function ContactPage() {
 
               {/* Privacy & Discretion Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border-2 border-gray-200">
-                <h4 className="font-bold text-[#0B2154] text-base mb-3 flex items-center gap-2">
+                <h4 className="font-bold text-[#111827] text-base mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-primary-wine" /> ALINA VIP Discretion Guarantee
                 </h4>
                 <ul className="space-y-2 text-xs text-gray-700">
@@ -203,7 +203,7 @@ export default function ContactPage() {
       <section className="py-12 bg-[#FFFDF6] border-t border-b border-gray-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0B2154] font-sans font-bold">
+            <h3 className="text-xl md:text-2xl font-bold text-[#111827] font-sans font-bold">
               Rapid Five-Star Hotel Outcall Coverage
             </h3>
             <p className="text-gray-600 text-xs mt-1">
@@ -213,7 +213,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">The Oberoi</h4>
+              <h4 className="font-bold text-[#111827] text-sm">The Oberoi</h4>
               <p className="text-xs text-gray-500 mt-1">Udyog Vihar</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 20-25 min arrival
@@ -222,7 +222,7 @@ export default function ContactPage() {
 
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">Trident Hotel</h4>
+              <h4 className="font-bold text-[#111827] text-sm">Trident Hotel</h4>
               <p className="text-xs text-gray-500 mt-1">DLF Cyber City</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 20-25 min arrival
@@ -231,7 +231,7 @@ export default function ContactPage() {
 
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">The Leela</h4>
+              <h4 className="font-bold text-[#111827] text-sm">The Leela</h4>
               <p className="text-xs text-gray-500 mt-1">Ambience Island</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 15-20 min arrival
@@ -240,7 +240,7 @@ export default function ContactPage() {
 
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">Grand Hyatt</h4>
+              <h4 className="font-bold text-[#111827] text-sm">Grand Hyatt</h4>
               <p className="text-xs text-gray-500 mt-1">Golf Course Road</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 25-30 min arrival
@@ -249,7 +249,7 @@ export default function ContactPage() {
 
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">ITC Grand</h4>
+              <h4 className="font-bold text-[#111827] text-sm">ITC Grand</h4>
               <p className="text-xs text-gray-500 mt-1">Hassanpur</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 35-45 min arrival
@@ -258,7 +258,7 @@ export default function ContactPage() {
 
             <div className="bg-white p-5 rounded-2xl text-center shadow-sm border border-gray-200/50">
               <Building2 className="w-8 h-8 text-primary-wine mx-auto mb-2" />
-              <h4 className="font-bold text-[#0B2154] text-sm">JW Marriott</h4>
+              <h4 className="font-bold text-[#111827] text-sm">JW Marriott</h4>
               <p className="text-xs text-gray-500 mt-1">Aerocity (IGI)</p>
               <span className="text-[11px] text-green-700 font-semibold mt-2 inline-block bg-green-50 px-2 py-0.5 rounded-full">
                 20-25 min arrival
@@ -272,7 +272,7 @@ export default function ContactPage() {
       <section className="py-16 md:py-20 bg-white text-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="space-y-6 bg-[#FFFDF6] p-8 md:p-12 rounded-2xl border border-gray-200/60 shadow-sm">
-            <h2 className="text-3xl font-bold text-[#0B2154] mb-6 font-sans font-bold">
+            <h2 className="text-3xl font-bold text-[#111827] mb-6 font-sans font-bold">
               How to Book Escort Service in Gurgaon with ALINA VIP
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -285,7 +285,7 @@ export default function ContactPage() {
                     1
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0B2154] text-base mb-1">
+                    <h4 className="font-bold text-[#111827] text-base mb-1">
                       Choose Your Preferred Profile
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -311,7 +311,7 @@ export default function ContactPage() {
                     2
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0B2154] text-base mb-1">
+                    <h4 className="font-bold text-[#111827] text-base mb-1">
                       Share Your Time &amp; Location
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -337,7 +337,7 @@ export default function ContactPage() {
                     3
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0B2154] text-base mb-1">
+                    <h4 className="font-bold text-[#111827] text-base mb-1">
                       Private &amp; Confidential Confirmation
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -353,7 +353,7 @@ export default function ContactPage() {
 
               {/* Privacy & Zero-Trace Policy */}
               <div className="mt-8 pt-6 border-t border-gray-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
                   Zero-Trace Privacy &amp; Data Safeguards
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -366,7 +366,7 @@ export default function ContactPage() {
 
               {/* Five-Star Hotel Arrival Procedures */}
               <div className="mt-8 pt-6 border-t border-gray-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
                   Five-Star Hotel Outcall Protocols
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -376,7 +376,7 @@ export default function ContactPage() {
 
               {/* Cash on Delivery & Fraud Protection */}
               <div className="mt-8 pt-6 border-t border-gray-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
                   Transparent Pricing &amp; Cash on Delivery Protection
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -386,12 +386,12 @@ export default function ContactPage() {
 
               {/* Concierge Reservation FAQ */}
               <div className="mt-8 pt-6 border-t border-gray-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
+                <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
                   Concierge Booking Assistance &amp; FAQs
                 </h3>
                 <div className="space-y-3">
                   <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-xs">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1">
                       How far in advance should I confirm my booking?
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -400,7 +400,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-xs">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1">
                       Are late-night and 24/7 outcalls supported across all Gurgaon sectors?
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -409,7 +409,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-xs">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1">
                       Can I book call girl accompaniment for multi-day travel or conferences?
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
@@ -418,7 +418,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="p-4 bg-white rounded-xl border border-gray-200 shadow-xs">
-                    <h4 className="font-bold text-[#0B2154] text-sm mb-1">
+                    <h4 className="font-bold text-[#111827] text-sm mb-1">
                       What is the policy for rescheduling or modifying a reservation?
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">

@@ -55,7 +55,7 @@ export default function BookingProcessSection() {
 
                 {/* Icon Circle */}
                 <div className="icon-wrap shadow-sm">
-                  <Icon size={34} className="text-[#0B2154]" />
+                  <Icon size={34} className="text-[#111827]" />
                 </div>
 
                 <h3 className="text-xl font-bold text-[#111827] mb-2">

@@ -25,7 +25,7 @@ const pillars = [
 
 export default function TrustBannerSection() {
   return (
-    <section className="banner-bottom-text py-10 md:py-12 bg-[#0B2154]">
+    <section className="banner-bottom-text py-10 md:py-12 bg-[#671725]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">

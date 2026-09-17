@@ -225,12 +225,12 @@ export default async function ServiceDetailPage({
                 <div className="absolute top-4 left-4 bg-[#671725] text-white text-xs font-bold px-3 py-1.5 rounded shadow">
                   {service.price}
                 </div>
-                <div className="absolute bottom-4 right-4 bg-[#0B2154]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded shadow">
+                <div className="absolute bottom-4 right-4 bg-[#671725]/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded shadow">
                   Duration: {service.duration}
                 </div>
               </div>
 
-              <h2 className="text-2xl font-extrabold text-[#0B2154] mb-4">
+              <h2 className="text-2xl font-extrabold text-[#111827] mb-4">
                 Service Overview &amp; Experience
               </h2>
               <div className="space-y-4 text-gray-700 text-sm leading-relaxed">
@@ -241,7 +241,7 @@ export default async function ServiceDetailPage({
 
               {/* Package Inclusions */}
               <div className="mt-8 pt-6 border-t border-gray-100">
-                <h3 className="text-lg font-bold text-[#0B2154] mb-4">
+                <h3 className="text-lg font-bold text-[#111827] mb-4">
                   What is Included in This Package
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -257,7 +257,7 @@ export default async function ServiceDetailPage({
 
             {/* FAQs */}
             <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl font-extrabold text-[#0B2154] mb-6">
+              <h3 className="text-xl font-extrabold text-[#111827] mb-6">
                 Frequently Asked Questions
               </h3>
               <div className="space-y-4">
@@ -276,7 +276,7 @@ export default async function ServiceDetailPage({
             <div className="sticky top-28 bg-white p-6 rounded-xl border border-gray-100 shadow-md space-y-6">
               <div>
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Book Package</span>
-                <h3 className="text-xl font-black text-[#0B2154] mt-1">{service.title.split(' in ')[0]}</h3>
+                <h3 className="text-xl font-black text-[#111827] mt-1">{service.title.split(' in ')[0]}</h3>
                 <div className="mt-3 bg-[#F9E1E5]/50 p-3 rounded-lg border border-rose-200">
                   <span className="text-xs text-gray-500 block">Package Starting Price</span>
                   <span className="text-2xl font-black text-[#671725]">{service.price}</span>

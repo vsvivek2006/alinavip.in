@@ -41,7 +41,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-1.5">
               <span className="font-sans font-black text-2xl tracking-wide text-[#671725]">
-                ALINA <span className="text-[#0B2154] font-light">VIP</span>
+                ALINA <span className="text-[#111827] font-light">VIP</span>
               </span>
             </Link>
           </div>

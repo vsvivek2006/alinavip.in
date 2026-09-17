@@ -103,7 +103,7 @@ export default function RatesPage() {
         {/* Main 4 Rate Cards */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Transparent Duration Pricing</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B2154] mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
             Affordable Rates for Every VIP Occasion
           </h2>
           <p className="text-gray-600 text-sm mt-3">
@@ -130,7 +130,7 @@ export default function RatesPage() {
                 <div className="text-center pb-5 border-b border-gray-100">
                   <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide block">{card.hours}</span>
                   <div className="text-3xl sm:text-4xl font-black text-[#671725] mt-2">{card.price}</div>
-                  <span className="inline-block mt-2 text-xs font-bold text-[#0B2154] bg-[#F9E1E5] px-2.5 py-0.5 rounded-full">
+                  <span className="inline-block mt-2 text-xs font-bold text-[#111827] bg-[#F9E1E5] px-2.5 py-0.5 rounded-full">
                     {card.shots}
                   </span>
                 </div>
@@ -167,7 +167,7 @@ export default function RatesPage() {
         <div className="mt-20 bg-white rounded-2xl border border-gray-100 p-6 sm:p-10 shadow-sm">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Comprehensive Breakdown</span>
-            <h3 className="text-2xl font-extrabold text-[#0B2154] mt-1">
+            <h3 className="text-2xl font-extrabold text-[#111827] mt-1">
               Category-Wise Escort Price Matrix
             </h3>
             <p className="text-gray-600 text-xs sm:text-sm mt-2">
@@ -189,7 +189,7 @@ export default function RatesPage() {
               <tbody className="divide-y divide-gray-100">
                 {categoryRates.map((cr, idx) => (
                   <tr key={cr.category} className={idx % 2 === 0 ? 'bg-[#FFFDF6]' : 'bg-white'}>
-                    <td className="px-5 py-4 font-bold text-[#0B2154]">
+                    <td className="px-5 py-4 font-bold text-[#111827]">
                       <Link href={`/category/${cr.slug}`} className="hover:text-[#671725] underline decoration-rose-200">
                         {cr.category}
                       </Link>
@@ -200,7 +200,7 @@ export default function RatesPage() {
                     <td className="px-5 py-4 text-center">
                       <Link
                         href={`/category/${cr.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-[#671725] hover:text-[#0B2154]"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-[#671725] hover:text-[#111827]"
                       >
                         <span>View Profiles</span>
                         <ArrowRight size={12} />
@@ -217,7 +217,7 @@ export default function RatesPage() {
         <div className="mt-20">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Unrivaled Service Quality</span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B2154] mt-1">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
               What You Get at ALINA VIP
             </h3>
           </div>
@@ -227,7 +227,7 @@ export default function RatesPage() {
               <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
                 <Star size={24} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">Gurgaon&apos;s Top Independent Escorts</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">Gurgaon&apos;s Top Independent Escorts</h4>
               <p className="text-gray-600 text-xs leading-relaxed">
                 We work directly with genuine college girls, models, and international companions. No fake stock images, no surprises.
               </p>
@@ -237,7 +237,7 @@ export default function RatesPage() {
               <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
                 <Clock size={24} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">24X7 Availability</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">24X7 Availability</h4>
               <p className="text-gray-600 text-xs leading-relaxed">
                 Day or late night, our VIP dispatch team coordinates fast outcall arrivals in 20-30 minutes across Cyber City, Golf Course, and Aerocity.
               </p>
@@ -247,7 +247,7 @@ export default function RatesPage() {
               <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
                 <Shield size={24} />
               </div>
-              <h4 className="font-bold text-[#0B2154] text-lg mb-2">Zero Advance Payment</h4>
+              <h4 className="font-bold text-[#111827] text-lg mb-2">Zero Advance Payment</h4>
               <p className="text-gray-600 text-xs leading-relaxed">
                 Pay only when your verified companion arrives in person at your hotel room or residence. Safe, honest, and completely secure.
               </p>

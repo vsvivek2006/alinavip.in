@@ -235,7 +235,7 @@ export default function GalleryPage() {
       </section>
 
       {/* 2. Trust Bar */}
-      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+      <section className="bg-[#671725] text-white py-4 px-4 shadow-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
             <ShieldCheck size={18} className="text-luxury-gold" />
@@ -258,7 +258,7 @@ export default function GalleryPage() {
           <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
             Authentic Photographs
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
             Featured Model Profiles
           </h2>
           <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
@@ -285,7 +285,7 @@ export default function GalleryPage() {
                 <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
                   VERIFIED
                 </div>
-                <div className="absolute top-3 right-3 bg-[#0B2154]/90 text-luxury-gold text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                <div className="absolute top-3 right-3 bg-[#671725]/90 text-luxury-gold text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
                   {model.rates}
                 </div>
               </div>
@@ -293,7 +293,7 @@ export default function GalleryPage() {
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-xl font-bold text-[#0B2154]">{model.name}</h3>
+                    <h3 className="text-xl font-bold text-[#111827]">{model.name}</h3>
                     <span className="text-xs font-bold text-gray-500">{model.age} Yrs</span>
                   </div>
                   <p className="text-xs font-semibold text-primary-wine mb-2">{model.category}</p>
@@ -315,7 +315,7 @@ export default function GalleryPage() {
                   </a>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#0B2154] hover:bg-[#08173d] text-white font-bold text-xs rounded transition-colors"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
                   >
                     <Phone size={14} className="text-luxury-gold" />
                     <span>Call Now</span>
@@ -332,7 +332,7 @@ export default function GalleryPage() {
             <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
               Roster Diversity
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
               Browse Categories &amp; Model Portfolios
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />

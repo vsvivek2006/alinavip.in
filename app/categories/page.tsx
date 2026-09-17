@@ -149,7 +149,7 @@ export default function CategoriesHubPage() {
         {/* Intro */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Tailored Companionship</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0B2154] mt-2">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
             Different Escorts in Gurgaon for Your Pleasure
           </h2>
           <p className="text-gray-600 text-sm mt-3">
@@ -176,13 +176,13 @@ export default function CategoriesHubPage() {
                   <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
                     Verified
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-[#0B2154]/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
+                  <div className="absolute bottom-3 left-3 bg-[#671725]/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
                     {cat.price}
                   </div>
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-base font-extrabold text-[#0B2154] group-hover:text-[#671725] transition-colors">
+                  <h3 className="text-base font-extrabold text-[#111827] group-hover:text-[#671725] transition-colors">
                     {cat.name}
                   </h3>
                   <p className="text-gray-600 text-xs mt-2 leading-relaxed line-clamp-2">

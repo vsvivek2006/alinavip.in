@@ -131,7 +131,7 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
         {filteredLocations.length === 0 ? (
           <div className="text-center py-16 bg-white rounded-2xl border border-gray-200 p-10 max-w-lg mx-auto shadow-sm">
             <Compass size={40} className="text-[#671725] mx-auto mb-3 opacity-60" />
-            <h3 className="text-xl font-bold text-[#0B2154] mb-1">No Locations Found</h3>
+            <h3 className="text-xl font-bold text-[#111827] mb-1">No Locations Found</h3>
             <p className="text-xs text-gray-500 mb-5">
               We couldn&apos;t find any locations matching &ldquo;{searchTerm}&rdquo;.
             </p>
@@ -167,7 +167,7 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
                     )}
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#0B2154] group-hover:text-[#671725] transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-[#111827] group-hover:text-[#671725] transition-colors mb-2">
                     {loc.name}
                   </h3>
 

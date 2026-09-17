@@ -31,7 +31,7 @@ export function LegalPage({ title, description: _description, slug: _slug, conte
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sm:p-10 space-y-8">
           {content.map((section, i) => (
             <div key={i} className="space-y-3">
-              <h2 className="text-xl md:text-2xl font-bold text-[#0B2154] border-b border-gray-100 pb-2">
+              <h2 className="text-xl md:text-2xl font-bold text-[#111827] border-b border-gray-100 pb-2">
                 {section.heading}
               </h2>
               {section.paragraphs.map((para, j) => (

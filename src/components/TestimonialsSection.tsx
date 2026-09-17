@@ -13,7 +13,7 @@ export default function TestimonialsSection({ theme = 'dark' }: TestimonialsSect
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <p className={`section-subtitle ${isLight ? 'text-primary-wine' : ''}`}>Client Testimonials</p>
-          <h2 className={`section-title mb-4 ${isLight ? 'text-[#0B2154]' : ''}`}>
+          <h2 className={`section-title mb-4 ${isLight ? 'text-[#111827]' : ''}`}>
             What Our <span className="text-primary-wine">Clients Say</span>
           </h2>
           <div className="w-16 h-1 bg-primary-wine mx-auto my-3 rounded-full" />
@@ -38,7 +38,7 @@ export default function TestimonialsSection({ theme = 'dark' }: TestimonialsSect
                 &ldquo;{t.text}&rdquo;
               </p>
               <div>
-                <p className={`font-sans text-sm ${isLight ? 'text-[#0B2154] font-bold' : 'text-white font-medium'}`}>{t.name}</p>
+                <p className={`font-sans text-sm ${isLight ? 'text-[#111827] font-bold' : 'text-white font-medium'}`}>{t.name}</p>
                 <p className={`text-xs mt-1 ${isLight ? 'text-gray-500' : 'text-gray-500'}`}>{t.location}</p>
               </div>
             </div>

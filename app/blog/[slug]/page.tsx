@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
             </div>
 
-            <h1 className="font-sans font-bold text-3xl md:text-5xl text-[#0F172A] font-bold mb-6 leading-tight">
+            <h1 className="font-sans font-bold text-3xl md:text-5xl text-[#111827] font-bold mb-6 leading-tight">
               {post.title}
             </h1>
 
@@ -223,7 +223,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
                 Continue Reading
               </span>
-              <h2 className="text-3xl font-sans font-bold text-[#0F172A] font-bold">
+              <h2 className="text-3xl font-sans font-bold text-[#111827] font-bold">
                 Related Articles &amp; Guides
               </h2>
             </div>
@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
                         {relatedPost.category}
                       </span>
-                      <h3 className="font-sans font-bold text-lg font-bold text-[#0F172A] group-hover:text-primary-wine transition-colors line-clamp-2 mb-2">
+                      <h3 className="font-sans font-bold text-lg font-bold text-[#111827] group-hover:text-primary-wine transition-colors line-clamp-2 mb-2">
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-600 line-clamp-2">
