@@ -30,6 +30,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.roshnikhanna.in',
       },
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.supabase.co',
+      },
     ],
   },
   async headers() {
