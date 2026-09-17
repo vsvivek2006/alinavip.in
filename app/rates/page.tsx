@@ -1,71 +1,95 @@
-'use client';
-
-import Link from 'next/link';
-import { CheckCircle, Shield, Clock, Star, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import {
+  CheckCircle,
+  Shield,
+  Clock,
+  ArrowRight,
+  Phone,
+  MessageCircle,
+  Sparkles,
+  Heart,
+} from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import exactManifest from '@/data/exact_manifest.json';
 
-const rateCards = [
+const ratesManifest = exactManifest.rates;
+
+export const metadata: Metadata = {
+  title: 'Gurgaon Escorts Rates & Pricing Packages | ALINA VIP',
+  description:
+    'Book and meet the hottest female escorts in Gurgaon at transparent hourly rates. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7.',
+  alternates: {
+    canonical: `${siteConfig.url}/rates`,
+  },
+};
+
+const pricingPackages = [
   {
-    hours: '1-2 Hours',
-    shots: '1 Shot',
+    hours: 'Upto 2 Hours of Fun',
+    shots: '1-2 Intimate Rounds',
     price: '₹15,000',
-    tag: 'Standard Service',
+    tag: 'Standard Hourly',
     popular: false,
     features: [
-      'Genuine companion at your hotel/home',
-      'Sensual body massage & intimacy',
-      'Oral sex & passionate kissing',
-      'Discreet doorstep arrival in 20-30 mins',
-      'Zero advance payment required',
+      'In-Call & Outcall Service',
+      'Choose from up to 3 Categories of escorts',
+      'Confirm profile before booking',
+      'Private and discreet service',
+      'Erotic Girlfriend Experience',
+      'Zero advance payment – cash on arrival',
     ],
   },
   {
-    hours: '2-4 Hours',
-    shots: '2 Shots',
+    hours: 'Upto 4 Hours of Fun',
+    shots: '2-3 Intimate Rounds',
     price: '₹20,000',
     tag: 'Most Popular',
     popular: true,
     features: [
-      'Two passionate rounds of intimacy',
-      'Relaxed, unhurried companionship',
-      'Deep French kissing & full GFE',
-      'Shower intimacy & body rub',
-      'Cash on arrival guarantee',
+      'In-Call & Outcall Service',
+      'Choose from up to 6 Categories of escorts',
+      'Confirm profile before booking',
+      'Private and discreet service',
+      'Erotic Girlfriend Experience',
+      'Sensual body rub & shower companionship',
     ],
   },
   {
-    hours: '5-6 Hours',
-    shots: '3 Shots',
+    hours: 'Upto 6 Hours of Fun',
+    shots: 'Extended Evening / Dinner',
     price: '₹25,000',
-    tag: 'Dinner & Date',
+    tag: 'Dinner & Social',
     popular: false,
     features: [
-      'Evening dinner companion & dates',
-      'Three passionate intimate sessions',
-      'Hotel lounge or club partner',
-      'Full erotic experience',
-      'Complete privacy guaranteed',
+      'In-Call & Outcall Service',
+      'Choose from upto 8 Categories of escorts',
+      'Confirm profile before booking',
+      'Private and discreet service',
+      'Erotic Girlfriend Experience',
+      'Accompany to luxury restaurants or suites',
     ],
   },
   {
-    hours: 'Full Night (Overnight)',
-    shots: 'Unlimited Shots',
+    hours: '8+ Hours of Fun (Full Night)',
+    shots: 'Unlimited Overnight Sessions',
     price: '₹30,000+',
-    tag: 'VIP Luxury',
+    tag: 'VIP Luxury Overnight',
     popular: false,
     features: [
-      '10:00 PM to 08:00 AM companionship',
-      'Unlimited intimate sessions',
-      'Cuddle, sleep together & breakfast',
-      'Five-star hotel suite companion',
-      'Dedicated concierge support',
+      'Full overnight 10 PM to 8 AM companionship',
+      'In-Call & Outcall Service',
+      'Choose from full portfolio - including Celebrity Escorts and High-Profile Models',
+      'Confirm profile before booking',
+      'Private and discreet service',
+      'Erotic Girlfriend Experience',
+      'Option to book for outstation trips',
     ],
   },
 ];
 
-const categoryRates = [
+const categoryPricing = [
   { category: 'College Call Girls', short: '₹15,000', extended: '₹20,000', overnight: '₹30,000', slug: 'college-girls' },
   { category: 'Russian Escorts', short: '₹25,000', extended: '₹35,000', overnight: '₹45,000', slug: 'russian-call-girls' },
   { category: 'Model Escorts', short: '₹25,000', extended: '₹35,000', overnight: '₹50,000', slug: 'models' },
@@ -77,11 +101,13 @@ const categoryRates = [
 ];
 
 export default function RatesPage() {
+  const editorialSections = ratesManifest.sections.slice(1);
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
-      {/* Page Title Bar */}
-      <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
-        <div className="max-w-7xl mx-auto">
+      {/* 1. Page Title Bar */}
+      <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-3">
             <Breadcrumb
               items={[
@@ -90,169 +116,202 @@ export default function RatesPage() {
               ]}
             />
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-2">
+            ★ All-Inclusive Packages &bull; Zero Advance
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Gurgaon Escorts Rates &amp; Pricing Packages
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-2xl">
-            Transparent, all-inclusive pricing with zero advance payment. Real companions delivered to your hotel or residence across Gurgaon.
+          <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-3xl leading-relaxed">
+            Book and meet some of the hottest and sexiest female escorts in Gurgaon at the best hourly rates. Choose your favorite hourly or full-time package and confirm your booking on the phone or WhatsApp.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20rates%20and%20packages`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <MessageCircle size={16} /> WhatsApp Inquiry
+            </a>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="px-5 py-2.5 bg-white text-[#671725] hover:bg-rose-50 text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <Phone size={16} /> Direct Call: {siteConfig.phoneDisplay}
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        {/* Main 4 Rate Cards */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Transparent Duration Pricing</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
-            Affordable Rates for Every VIP Occasion
-          </h2>
-          <p className="text-gray-600 text-sm mt-3">
-            No hidden costs, no booking commissions, and no prepayment scams. All rates include transportation and verified service.
-          </p>
+      {/* 2. Trust Bar */}
+      <div className="bg-[#52121d] text-white py-3.5 px-4 shadow-sm border-b border-white/10">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
+          <span className="flex items-center gap-2">
+            <Shield size={16} className="text-[#FFD700]" />
+            <strong>100% Cash on Delivery</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle size={16} className="text-[#FFD700]" />
+            <strong>No Hidden Charges or Hotel Surcharges</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <Clock size={16} className="text-[#FFD700]" />
+            <strong>24/7 Rapid Arrival in 20-30 Mins</strong>
+          </span>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {rateCards.map((card) => (
-            <div
-              key={card.hours}
-              className={`rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 ${
-                card.popular
-                  ? 'bg-white border-2 border-[#671725] shadow-xl relative scale-105 lg:scale-105 z-10'
-                  : 'bg-white border border-gray-100 shadow-sm hover:shadow-md'
-              }`}
-            >
-              <div>
-                {card.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
-                    Most Popular
+      {/* 3. Main Content Container */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        {/* 4 Pricing Package Cards */}
+        <section className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+              Hourly &amp; Full Night Packages
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              Choose Your Intimate Rendezvous Package
+            </h2>
+            <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pricingPackages.map((pkg, idx) => (
+              <div
+                key={idx}
+                className={`bg-white rounded-2xl border ${
+                  pkg.popular
+                    ? 'border-[#671725] shadow-xl ring-2 ring-[#671725]/10'
+                    : 'border-gray-200 shadow-sm'
+                } p-6 flex flex-col justify-between hover:shadow-lg transition-all relative group`}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#671725] text-[#FFD700] text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full shadow-md tracking-wider">
+                    {pkg.tag}
                   </div>
                 )}
-                <div className="text-center pb-5 border-b border-gray-100">
-                  <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide block">{card.hours}</span>
-                  <div className="text-3xl sm:text-4xl font-black text-[#671725] mt-2">{card.price}</div>
-                  <span className="inline-block mt-2 text-xs font-bold text-[#111827] bg-[#F9E1E5] px-2.5 py-0.5 rounded-full">
-                    {card.shots}
-                  </span>
+
+                <div>
+                  <div className="text-center pb-4 border-b border-gray-100">
+                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                      {pkg.hours}
+                    </span>
+                    <div className="text-3xl font-extrabold text-[#671725] my-2">
+                      {pkg.price}
+                    </div>
+                    <p className="text-xs font-medium text-emerald-700 bg-emerald-50 py-1 px-2 rounded-md inline-block">
+                      {pkg.shots}
+                    </p>
+                  </div>
+
+                  <ul className="space-y-2.5 py-6">
+                    {pkg.features.map((feat, fIdx) => (
+                      <li key={fIdx} className="flex items-start gap-2 text-xs text-gray-700">
+                        <CheckCircle size={14} className="text-emerald-600 shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <ul className="space-y-3 my-6 text-xs text-gray-600">
-                  {card.features.map((feat) => (
-                    <li key={feat} className="flex items-start gap-2">
-                      <CheckCircle size={14} className="text-[#671725] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="pt-4 border-t border-gray-100">
+                  <a
+                    href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20the%20${encodeURIComponent(pkg.hours)}%20package`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full py-2.5 text-center text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-sm ${
+                      pkg.popular
+                        ? 'bg-[#671725] hover:bg-[#52121d] text-white'
+                        : 'bg-rose-50 hover:bg-[#671725] text-[#671725] hover:text-white'
+                    }`}
+                  >
+                    <MessageCircle size={14} /> Book via WhatsApp
+                  </a>
+                </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              <div className="pt-4 border-t border-gray-100">
-                <a
-                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20the%20${encodeURIComponent(card.hours)}%20package`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full text-center py-2.5 rounded-lg text-xs font-bold transition-colors shadow ${
-                    card.popular
-                      ? 'bg-[#671725] hover:bg-[#52121d] text-white'
-                      : 'bg-gray-900 hover:bg-black text-white'
-                  }`}
-                >
-                  Book This Package
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Category Pricing Matrix Table */}
-        <div className="mt-20 bg-white rounded-2xl border border-gray-100 p-6 sm:p-10 shadow-sm">
-          <div className="max-w-3xl mb-8">
-            <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Comprehensive Breakdown</span>
-            <h3 className="text-2xl font-extrabold text-[#111827] mt-1">
-              Category-Wise Escort Price Matrix
-            </h3>
-            <p className="text-gray-600 text-xs sm:text-sm mt-2">
-              Compare rates across escort profiles in Gurgaon. Rates vary based on nationality, background, and booking duration.
+        {/* Category Pricing Matrix */}
+        <section className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#111827]">
+              Pricing by Escort Category
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">
+              Estimated rates for in-call and out-call sessions in Gurgaon. Custom requests or multi-day tours can be arranged via concierge.
             </p>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200 text-left text-xs sm:text-sm">
-              <thead className="bg-[#671725] text-white">
-                <tr>
-                  <th className="px-5 py-3.5 font-bold">Escort Category</th>
-                  <th className="px-5 py-3.5 font-bold">1-2 Hours (1 Shot)</th>
-                  <th className="px-5 py-3.5 font-bold">2-4 Hours (2 Shots)</th>
-                  <th className="px-5 py-3.5 font-bold">Full Night (Overnight)</th>
-                  <th className="px-5 py-3.5 font-bold text-center">Action</th>
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-[#671725] text-white">
+                  <th className="py-3 px-4 rounded-tl-lg font-bold">Companion Category</th>
+                  <th className="py-3 px-4 font-bold">1-2 Hours</th>
+                  <th className="py-3 px-4 font-bold">3-4 Hours</th>
+                  <th className="py-3 px-4 font-bold">Full Night (Overnight)</th>
+                  <th className="py-3 px-4 rounded-tr-lg font-bold text-center">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
-                {categoryRates.map((cr, idx) => (
-                  <tr key={cr.category} className={idx % 2 === 0 ? 'bg-[#FFFDF6]' : 'bg-white'}>
-                    <td className="px-5 py-4 font-bold text-[#111827]">
-                      <Link href={`/category/${cr.slug}`} className="hover:text-[#671725] underline decoration-rose-200">
-                        {cr.category}
-                      </Link>
-                    </td>
-                    <td className="px-5 py-4 font-semibold text-[#671725]">{cr.short}</td>
-                    <td className="px-5 py-4 text-gray-700 font-medium">{cr.extended}</td>
-                    <td className="px-5 py-4 text-gray-900 font-extrabold">{cr.overnight}</td>
-                    <td className="px-5 py-4 text-center">
-                      <Link
-                        href={`/category/${cr.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-[#671725] hover:text-[#111827]"
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                {categoryPricing.map((row, idx) => (
+                  <tr key={idx} className="hover:bg-rose-50/40 transition-colors">
+                    <td className="py-3 px-4 font-semibold text-[#111827]">{row.category}</td>
+                    <td className="py-3 px-4 font-medium text-emerald-700">{row.short}</td>
+                    <td className="py-3 px-4 font-medium text-emerald-700">{row.extended}</td>
+                    <td className="py-3 px-4 font-medium text-emerald-700">{row.overnight}</td>
+                    <td className="py-3 px-4 text-center">
+                      <a
+                        href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(row.category)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-[#671725] hover:underline"
                       >
-                        <span>View Profiles</span>
-                        <ArrowRight size={12} />
-                      </Link>
+                        Book <ArrowRight size={12} />
+                      </a>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
+        </section>
 
-        {/* What You Get at ALINA VIP */}
-        <div className="mt-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Unrivaled Service Quality</span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
-              What You Get at ALINA VIP
-            </h3>
-          </div>
+        {/* All Authentic Scraped Sections from Roshni Khanna */}
+        <div className="space-y-8">
+          {editorialSections.map((sec, idx) => (
+            <article
+              key={idx}
+              className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200/80 shadow-sm space-y-4"
+            >
+              {sec.title && (
+                <h2 className="text-xl sm:text-2xl font-bold text-[#111827] border-b border-gray-100 pb-3 flex items-center gap-2">
+                  <Heart size={18} className="text-[#671725] shrink-0" />
+                  <span>{sec.title}</span>
+                </h2>
+              )}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
-                <Star size={24} />
-              </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">Gurgaon&apos;s Top Independent Escorts</h4>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                We work directly with genuine college girls, models, and international companions. No fake stock images, no surprises.
-              </p>
-            </div>
+              {sec.paragraphs.map((p, pIdx) => (
+                <p key={pIdx} className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  {p}
+                </p>
+              ))}
 
-            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
-                <Clock size={24} />
-              </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">24X7 Availability</h4>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Day or late night, our VIP dispatch team coordinates fast outcall arrivals in 20-30 minutes across Cyber City, Golf Course, and Aerocity.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 bg-rose-50 text-[#671725] rounded-lg flex items-center justify-center mb-4">
-                <Shield size={24} />
-              </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">Zero Advance Payment</h4>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Pay only when your verified companion arrives in person at your hotel room or residence. Safe, honest, and completely secure.
-              </p>
-            </div>
-          </div>
+              {sec.listItems && sec.listItems.length > 0 && (
+                <ul className="space-y-2 pt-2">
+                  {sec.listItems.map((li, lIdx) => (
+                    <li key={lIdx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
+                      <Sparkles size={13} className="text-[#FFD700] shrink-0" />
+                      <span>{li}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          ))}
         </div>
       </div>
 

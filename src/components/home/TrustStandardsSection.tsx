@@ -57,11 +57,11 @@ export default function TrustStandardsSection() {
           <div className="why-main-box">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
-                ALINA VIP - Offering Services You Can Trust
+                ALINA VIP- Offering Services You Can Trust
               </h2>
               <div className="w-16 h-1 bg-[#FFD700] mx-auto mb-4 rounded-full" />
               <p className="text-gray-200 text-sm md:text-base leading-relaxed">
-                We are committed to providing discreet, high-class female companionship in Gurgaon with verified authenticity, transparent standards, and complete peace of mind.
+                Partner with an agency that combines professionalism, diversity, and unmatched industry expertise
               </p>
             </div>
 
@@ -94,7 +94,7 @@ export default function TrustStandardsSection() {
             </h2>
             <div className="w-16 h-1 bg-[#671725] mx-auto mt-3 mb-4 rounded-full" />
             <p className="text-gray-600 text-sm md:text-base">
-              The foundational guarantees that distinguish our agency in Gurgaon
+              Committed to maintaining privacy, trust, and service quality at every step of the booking process.
             </p>
           </div>
 

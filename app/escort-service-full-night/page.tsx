@@ -1,5 +1,10 @@
-import ServiceDetailPage from '../services/[slug]/page';
+import ServiceDetailPage, { generateMetadata as getMeta } from '../services/[slug]/page';
+import type { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return getMeta({ params: Promise.resolve({ slug: 'escort-service-full-night' }) });
+}
 
 export default function Page() {
-  return <ServiceDetailPage params={Promise.resolve({ slug: 'full-night' })} />;
+  return <ServiceDetailPage params={Promise.resolve({ slug: 'escort-service-full-night' })} />;
 }

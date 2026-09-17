@@ -4,22 +4,22 @@ import { MessageSquare, BadgePercent, CheckCircle2 } from 'lucide-react';
 
 const steps = [
   {
-    num: '01',
+    num: '1',
     icon: MessageSquare,
     title: 'Send Inquiry',
-    desc: 'Browse our website and pick your preferred model or category. Contact our concierge via WhatsApp or telephone.',
+    desc: 'Contact our 24/7 concierge via WhatsApp or phone call. Share your location, timing, and preferred companion profile.',
   },
   {
-    num: '02',
+    num: '2',
     icon: BadgePercent,
     title: 'Receive Price and Availability',
-    desc: 'Our team confirms real-time hotel dispatch availability, transparent package rates, and estimated 20-30 min arrival.',
+    desc: 'Receive immediate confirmation with real-time model photos, transparent all-inclusive pricing, and 20-30 min hotel ETA.',
   },
   {
-    num: '03',
+    num: '3',
     icon: CheckCircle2,
     title: 'Confirm Booking',
-    desc: 'Meet your verified escort in the privacy of your 5-star hotel room or suite. Pay directly in cash upon arrival.',
+    desc: 'Confirm your booking with zero advance payment. Welcome your verified companion to your room and pay cash on delivery.',
   },
 ];
 
@@ -28,14 +28,14 @@ export default function BookingProcessSection() {
     <section className="py-16 md:py-24 bg-white" id="booking-process">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading */}
+        {/* Section Heading with 100% Exact Copy from Roshni Khanna */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Simple Booking Process
           </h2>
           <div className="w-16 h-1 bg-[#671725] mx-auto mt-3 mb-4 rounded-full" />
           <p className="text-gray-600 text-sm md:text-base">
-            Easy, confidential, and instant 3-step escort booking in Gurgaon
+            From inquiry to confirmation in just four easy steps
           </p>
         </div>
 

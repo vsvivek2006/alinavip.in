@@ -4,28 +4,28 @@ import Image from 'next/image';
 
 const reviews = [
   {
-    name: 'Vikram S.',
-    location: 'Cyber City, Executive',
+    name: 'Ravi Sharma',
+    location: 'AIG Hotel, Gurgaon',
     rating: 5,
-    title: 'Flawless Russian Escort Experience',
+    title: 'Genuine, Professional, and Reliable Service',
     comment:
-      'Booked Karina for a late-night dinner date at the Oberoi. She arrived within 25 minutes, was stunningly dressed, articulate, and completely genuine. ALINA VIP is the most professional agency in Gurgaon.',
+      '"I am from Bihar and recently visited Gurgaon for a business trip. During my stay, I used the services from ALINA VIP. My experience was very good. The process was smooth, the communication was clear, and everything was exactly as described. I found the service to be genuine, professional, and reliable. Overall, I had an awesome experience and would recommend it to anyone looking for a trustworthy service in Gurgaon."',
   },
   {
-    name: 'David M.',
-    location: 'Aerocity, Business Traveler',
+    name: 'Jai Saklani',
+    location: 'Radisson Hotel, Gurgaon',
     rating: 5,
-    title: 'Top-Class Discretion & Punctuality',
+    title: 'Utmost Discretion and Respect for Privacy',
     comment:
-      'During my transit stay in Aerocity, I needed discreet evening companionship. The booking process was fast and transparent with zero advance fee demands. Tanya was gorgeous, witty, and exceptional.',
+      '"As a frequent business traveler from Mumbai, I often have layovers in Gurgaon. On my last trip, I booked an escort through a reputed agency for a relaxing evening at my Radisson Hotel. The entire experience was fantastic. The customer support was very clear about the rates and services, and the companion they sent was beautiful, polite, and very professional. Everything was handled with utmost discretion and respect for privacy. The service was exactly as promised—genuine and reliable."',
   },
   {
-    name: 'Rohit K.',
-    location: 'Golf Course Road, Entrepreneur',
+    name: 'Amit Jha',
+    location: 'Hyatt Place, Gurgaon',
     rating: 5,
-    title: 'Genuine Verified Profiles Only',
+    title: 'Incredibly Charming Girlfriend Experience',
     comment:
-      'I was tired of fake pictures and scam agents in Gurgaon until I found ALINA VIP. What you see on the website is 100% who arrives at your suite. High-class service from start to finish.',
+      '"Honestly, I was a bit hesitant about booking a companion for a corporate after-party in Gurgaon, but I am so glad I did. I wanted someone who could hold their own in a room full of executives, and the girl they sent was an absolute breath of fresh air. She was witty, elegantly dressed, and knew exactly how to keep the conversation engaging without overstepping. What started as a professional arrangement quickly felt like I was out with an incredibly charming girlfriend."',
   },
 ];
 
@@ -34,14 +34,14 @@ export default function TestimonialsSection() {
     <section className="py-16 md:py-24 bg-[#FAFAF8]" id="testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading */}
+        {/* Section Heading with 100% Exact Copy from Roshni Khanna */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Trusted by men from around the world
           </h2>
           <div className="w-16 h-1 bg-[#671725] mx-auto mt-3 mb-4 rounded-full" />
           <p className="text-gray-600 text-sm md:text-base">
-            Genuine verified feedback from corporate executives, business travelers, and VIP clients
+            Hear from our clients who have booked with us before
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
                 <h3 className="font-bold text-[#111827] text-base mb-2">
                   &ldquo;{rev.title}&rdquo;
                 </h3>
-                <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6">
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed mb-6 italic">
                   {rev.comment}
                 </p>
               </div>
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-sm text-[#111827]">{rev.name}</h4>
-                  <p className="text-xs text-gray-400">{rev.location}</p>
+                  <p className="text-xs text-gray-500">{rev.location}</p>
                 </div>
               </div>
             </div>

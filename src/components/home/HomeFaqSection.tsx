@@ -2,32 +2,48 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Plus, Minus, ArrowRight } from 'lucide-react';
+import { Plus, Minus, ArrowRight, HelpCircle } from 'lucide-react';
 
-const faqs = [
+const exactFaqs = [
   {
-    q: 'Are your escort services in Gurgaon safe and discreet?',
-    a: 'Yes, absolutely. We prioritize the safety, privacy, and confidentiality of our clients above everything. All personal details and rendezvous records are kept 100% confidential and deleted immediately following completion of service.',
+    q: 'What is the process to book an escort in Gurgaon?',
+    a: 'You can book an escort in Gurgaon by browsing available profiles on our website and contacting us directly through call or WhatsApp. Our team will guide you through the process and help you choose the right companion based on your preferences.',
   },
   {
-    q: 'How do I book an escort in Gurgaon?',
-    a: 'Booking is simple: browse our verified profiles on the website, choose your preferred companion, and reach out to our desk via WhatsApp or direct phone call with your hotel room/location and timing details. We confirm within 5 minutes.',
+    q: 'Are your Gurgaon escorts verified and genuine?',
+    a: 'Yes, all profiles listed on our platform are manually verified to ensure authenticity and quality. We prioritize providing genuine and reliable escort services in Gurgaon.',
   },
   {
-    q: 'Do you charge any advance payment?',
-    a: 'No. We maintain a strict zero-advance policy. You never pay before meeting your escort. Payment is made directly in cash upon her arrival at your hotel room or private residence.',
+    q: 'Is my privacy safe while booking an escort service in Gurgaon?',
+    a: 'We maintain 100% discretion and confidentiality. Your personal details are never shared with anyone, ensuring a completely private and secure experience.',
   },
   {
-    q: 'Can escorts visit my hotel in Gurgaon?',
-    a: 'Yes, our primary service is 5-star and 4-star hotel outcalls across Gurgaon, Aerocity, and South Delhi. We deliver prompt 20 to 30 minute suite outcalls to all major hotel chains including Oberoi, Leela, Crowne Plaza, Taj, and JW Marriott.',
+    q: 'What types of escorts are available in Gurgaon?',
+    a: 'We offer a wide range of escorts in Gurgaon, including independent escorts, VIP escorts, high-profile companions, and college escorts. You can choose according to your preferences and requirements.',
+  },
+  {
+    q: 'Do you provide outcall and incall services in Gurgaon?',
+    a: 'Yes, we provide both outcall and incall services. Our escorts can visit your hotel or residence, or you can arrange a meeting at a preferred location.',
+  },
+  {
+    q: 'What areas do you cover in Gurgaon?',
+    a: 'Our escort services are available across major areas of Gurgaon, including DLF Phase 1, DLF Phase 2, MG Road, Sector 14, and nearby locations.',
+  },
+  {
+    q: 'How much does an escort service in Gurgaon cost?',
+    a: 'Pricing depends on the type of escort, duration, and specific requirements. For detailed information, you can contact us directly to get the best available packages.',
+  },
+  {
+    q: 'Is advance booking required for Gurgaon escort services?',
+    a: 'While same-day bookings are available, we recommend advance booking to ensure availability of your preferred escort and time slot.',
   },
   {
     q: 'Are your services available 24/7 in Gurgaon?',
-    a: 'Yes, our escort services in Gurgaon are available 24/7, including weekends and public holidays, for both immediate on-demand dispatch and advance reservations.',
+    a: 'Yes, our escort services in Gurgaon are available 24/7, including weekends and holidays, for your convenience.',
   },
   {
     q: 'How can I contact you for escort services in Gurgaon?',
-    a: 'You can contact us directly via phone call or WhatsApp through the buttons on our website. Our dedicated concierge team responds within minutes to help you pick your perfect match.',
+    a: 'You can contact us via phone call or WhatsApp mentioned on our website. Our support team is always ready to assist you with quick responses.',
   },
 ];
 
@@ -41,42 +57,47 @@ export default function HomeFaqSection() {
   return (
     <section className="py-16 md:py-24 bg-white" id="faqs">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] tracking-tight">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+            Got Questions?
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#111827] tracking-tight mt-1">
             Frequently Asked Questions About Gurgaon Escorts
           </h2>
           <div className="w-16 h-1 bg-[#671725] mx-auto mt-3 mb-4 rounded-full" />
           <p className="text-gray-600 text-sm md:text-base">
-            Find answers to commonly asked questions about our verified escort services in Gurgaon
+            Find answers to commonly asked questions about our verified escort services in Gurgaon.
           </p>
         </div>
 
         {/* Accordion List */}
         <div className="space-y-3">
-          {faqs.map((faq, idx) => {
+          {exactFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="border border-gray-200 rounded-xl overflow-hidden transition-colors"
+                className="border border-gray-200 rounded-xl overflow-hidden transition-colors bg-[#FFFDF6]"
               >
                 <button
+                  type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between gap-4 bg-gray-50/70 hover:bg-gray-100/70 transition-colors"
+                  className="w-full py-4 px-5 text-left font-bold text-sm sm:text-base text-[#111827] flex items-center justify-between gap-4 hover:text-[#671725] transition-colors"
+                  aria-expanded={isOpen}
                 >
-                  <span className="font-semibold text-sm md:text-base text-[#111827]">
-                    {faq.q}
+                  <span className="flex items-center gap-2.5">
+                    <HelpCircle size={16} className="text-[#671725] shrink-0" />
+                    <span>{faq.q}</span>
                   </span>
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#671725]">
-                    {isOpen ? <Minus size={15} /> : <Plus size={15} />}
+                  <span className="p-1 rounded-full bg-rose-50 text-[#671725] shrink-0">
+                    {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 py-4 bg-white border-t border-gray-100 text-xs md:text-sm text-gray-600 leading-relaxed">
-                    {faq.a}
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 bg-white">
+                    <p>{faq.a}</p>
                   </div>
                 )}
               </div>
@@ -84,17 +105,16 @@ export default function HomeFaqSection() {
           })}
         </div>
 
-        {/* See More Button */}
-        <div className="text-center mt-10">
+        {/* Link to Full FAQs */}
+        <div className="text-center mt-8">
           <Link
             href="/faq"
-            className="inline-flex items-center gap-2 px-7 py-3 border border-[#671725] text-[#671725] hover:bg-[#671725] hover:text-white text-xs font-semibold rounded-full transition-all duration-300"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#671725] hover:underline"
           >
-            <span>See More FAQs</span>
+            <span>Have more questions? Read our full FAQ guide</span>
             <ArrowRight size={14} />
           </Link>
         </div>
-
       </div>
     </section>
   );

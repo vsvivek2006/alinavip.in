@@ -1,205 +1,286 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import {
+  Phone,
+  MessageCircle,
+  ShieldCheck,
+  CheckCircle,
+  Clock,
+  Sparkles,
+  ArrowRight,
+  Heart,
+} from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
+import { siteConfig } from '@/data/siteConfig';
+import exactManifest from '@/data/exact_manifest.json';
 
+const catManifest = exactManifest.categories;
 
-const allCategories = [
+export const metadata: Metadata = {
+  title: 'Now You Can Meet Different Categories of Escorts | ALINA VIP',
+  description:
+    'Explore diverse categories of escorts in Gurgaon: Russian, College, Model, High Profile, Housewife, Air Hostess, and Independent call girls. 100% verified with cash on delivery.',
+  alternates: {
+    canonical: `${siteConfig.url}/categories`,
+  },
+};
+
+const categoryVisualGrid = [
   {
     name: 'Russian Escorts in Gurgaon',
-    slug: 'russian-call-girls',
+    slug: '/gurgaon-russian-escorts',
     image: '/images/assets/Russian_Escorts_Girl_In_Delhi.jpg',
-    desc: 'Breathtaking blonde and brunette European companions with high glamour, elegance, and seductive charm.',
+    tag: 'European Charm',
     price: 'From ₹25,000',
   },
   {
     name: 'Independent Escorts in Gurgaon',
-    slug: 'independent-escorts',
+    slug: '/independent-escorts-in-gurgaon',
     image: '/images/assets/Independent_Escorts_Delhi.jpg',
-    desc: 'Self-managed companions offering private, non-commercial rendezvous with genuine girlfriend intimacy.',
+    tag: 'Direct & Discreet',
     price: 'From ₹15,000',
   },
   {
     name: 'Model Escorts in Gurgaon',
-    slug: 'models',
+    slug: '/models-escorts-in-gurgaon',
     image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
-    desc: 'Runway, fashion, and commercial models possessing statuesque height, flawless poise, and VIP etiquette.',
+    tag: 'Runway Glamour',
     price: 'From ₹25,000',
   },
   {
     name: 'VIP Call Girls in Gurgaon',
-    slug: 'vip-call-girls',
+    slug: '/vip-escorts-in-gurgaon',
     image: '/images/assets/VIP_Call_Girls_Delhi.jpg',
-    desc: 'Top-tier luxury companions chosen specifically for corporate executives, high-net-worth elites, and politicians.',
+    tag: 'Elite Class',
     price: 'From ₹20,000',
   },
   {
     name: 'College Call Girls in Gurgaon',
-    slug: 'college-girls',
+    slug: '/college-call-girls-gurgaon',
     image: '/images/assets/College_Girl_Escorts_Delhi.jpg',
-    desc: 'Young, lively, and enthusiastic university students providing friendly, playful, and cheerful companionship.',
+    tag: 'Young & Lively',
     price: 'From ₹15,000',
   },
   {
     name: 'Air Hostess Escorts in Gurgaon',
-    slug: 'air-hostess',
+    slug: '/air-hostess-escorts-gurgaon',
     image: '/images/assets/Air_Hostess_Escorts_Delhi.jpg',
-    desc: 'Graceful airline cabin crew members with polished English manners, worldly charm, and impeccable grooming.',
+    tag: 'Polished Poise',
     price: 'From ₹20,000',
   },
   {
     name: 'High Profile Escorts in Gurgaon',
-    slug: 'high-profile-girls',
+    slug: '/high-profile-escorts-gurgaon',
     image: '/images/assets/Diverse_Portfolio.jpg',
-    desc: 'Exclusive socialite companions who excel as formal dinner dates, luxury party escorts, and confidential partners.',
+    tag: 'Executive Society',
     price: 'From ₹30,000',
   },
   {
+    name: 'Housewife Escorts in Gurgaon',
+    slug: '/housewife-escorts-gurgaon',
+    image: '/images/assets/Housewife_Escorts_Delhi.jpg',
+    tag: 'Mature Sensuality',
+    price: 'From ₹15,000',
+  },
+  {
     name: 'Celebrity Escorts in Gurgaon',
-    slug: 'celebrity-escorts',
-    image: '/images/assets/image_270x450_13.jpg',
-    desc: 'Screen actresses, social media influencers, and pageant stars for those demanding the absolute zenith of luxury.',
+    slug: '/celebrity-escorts-gurgaon',
+    image: '/images/assets/Celebrity_Escorts_Delhi.jpg',
+    tag: 'A-List Stature',
     price: 'From ₹50,000',
   },
   {
-    name: 'Housewife Escorts in Gurgaon',
-    slug: 'housewife',
-    image: '/images/assets/Housewife_Escorts_Delhi.jpg',
-    desc: 'Passionate, mature, and deeply nurturing married women seeking private sensual exploration and uninhibited pleasure.',
-    price: 'From ₹15,000',
-  },
-  {
-    name: 'Foreigner Call Girls Gurgaon',
-    slug: 'foreigner-escorts',
-    image: '/images/assets/image_270x450_14.jpg',
-    desc: 'International models from Europe, Central Asia, and Latin America visiting Gurgaon on luxury tour circuits.',
-    price: 'From ₹25,000',
-  },
-  {
-    name: 'Punjabi Call Girls in Gurgaon',
-    slug: 'punjabi-call-girls',
-    image: '/images/assets/image_270x450_15.jpg',
-    desc: 'Fair, bubbly, and voluptuous Punjabi kudi companions known for their spirited warmth and energetic intimacy.',
-    price: 'From ₹15,000',
-  },
-  {
     name: 'Busty Escorts in Gurgaon',
-    slug: 'busty-escorts',
-    image: '/images/assets/Busty_Escorts_Delhi.jpg',
-    desc: 'Curvaceous bombshells with generous figures and full cleavage, delivering supreme tactile satisfaction.',
-    price: 'From ₹15,000',
-  },
-  {
-    name: 'Slim Escorts in Gurgaon',
-    slug: 'slim-escorts',
-    image: '/images/assets/Slim_Escorts_Delhi.jpg',
-    desc: 'Petite, slender companions with dancer bodies and tight waists, offering agile and delicate erotic moments.',
-    price: 'From ₹15,000',
+    slug: '/busty-escorts-in-gurgaon',
+    image: '/images/assets/image_290x280_3.jpg',
+    tag: 'Curvaceous Assets',
+    price: 'From ₹18,000',
   },
   {
     name: 'Affordable Escorts in Gurgaon',
-    slug: 'affordable-escorts',
-    image: '/images/assets/image_270x450_16.jpg',
-    desc: 'High value without compromising hygiene or genuineness. Real girls at budget-friendly standard rates.',
-    price: 'From ₹15,000',
+    slug: '/affordable-escorts-in-gurgaon',
+    image: '/images/assets/image_290x280_4.jpg',
+    tag: 'Budget Friendly',
+    price: 'From ₹12,000',
   },
   {
-    name: 'Russian Escorts in Aerocity',
-    slug: 'aerocity-russian',
-    image: '/images/assets/image_270x450_17.jpg',
-    desc: 'Express 15-minute room delivery to all 5-star hotels in Aerocity Hospitality District, Worldmark, and IGI T3.',
-    price: 'From ₹25,000',
-  },
-  {
-    name: 'Female Escorts Gurgaon',
-    slug: 'female-escorts',
-    image: '/images/assets/Female_Escorts_Delhi.jpg',
-    desc: 'Versatile female companionship spanning all age groups, backgrounds, and intimate service preferences.',
-    price: 'From ₹15,000',
+    name: 'Asian Escorts in Gurgaon',
+    slug: '/asian-escorts-in-gurgaon',
+    image: '/images/assets/image_290x280_5.jpg',
+    tag: 'Exotic Allure',
+    price: 'From ₹20,000',
   },
 ];
 
-export default function CategoriesHubPage() {
+export default function CategoriesPage() {
+  // Filter out any menu/footer sections
+  const validSections = catManifest.sections.filter((s) => {
+    if (!s.title && s.paragraphs.length === 0) return false;
+    const t = s.title.toLowerCase();
+    if (
+      t.includes('main menu') ||
+      t.includes('gurgaon locations') ||
+      t.includes('contact details') ||
+      t.includes('age verification') ||
+      t.includes('feeling naughty?') ||
+      t.includes('top escort profiles')
+    ) {
+      return false;
+    }
+    return true;
+  });
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
-      {/* Page Title Bar */}
-      <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
-        <div className="max-w-7xl mx-auto">
+      {/* 1. Header Banner */}
+      <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-3">
-            <Breadcrumb
-              items={[
-                { label: 'Home', href: '/' },
-                { label: 'Categories' },
-              ]}
-            />
+            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Categories' }]} />
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            Escort Categories in Gurgaon &amp; Delhi NCR
+          <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-2">
+            ★ All Companion Categories &bull; 100% Verified
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            Meet Different Categories of Escorts in Gurgaon
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-2xl">
-            Now you can meet different categories of escorts from all over the world. Explore verified profiles matched to your exact desire.
+          <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-3xl leading-relaxed">
+            Choose from a rich portfolio of Russian, Indian, college, and independent female escorts for an unforgettable experience. Easy booking with zero advance payment.
           </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20escort%20categories`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <MessageCircle size={16} /> WhatsApp Us
+            </a>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="px-5 py-2.5 bg-white text-[#671725] hover:bg-rose-50 text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <Phone size={16} /> Call: {siteConfig.phoneDisplay}
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        {/* Intro */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Tailored Companionship</span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] mt-2">
-            Different Escorts in Gurgaon for Your Pleasure
-          </h2>
-          <p className="text-gray-600 text-sm mt-3">
-            From statuesque Russian supermodels and playful college students to sophisticated air hostesses, ALINA VIP curates Gurgaon&apos;s most comprehensive directory.
-          </p>
+      {/* 2. Trust Bar */}
+      <div className="bg-[#52121d] text-white py-3.5 px-4 shadow-sm border-b border-white/10">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
+          <span className="flex items-center gap-2">
+            <ShieldCheck size={16} className="text-[#FFD700]" />
+            <strong>100% Genuine Verified Photos</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle size={16} className="text-[#FFD700]" />
+            <strong>Zero Advance – Cash on Delivery</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <Clock size={16} className="text-[#FFD700]" />
+            <strong>24/7 Outcalls to All Gurgaon 5-Star Hotels</strong>
+          </span>
         </div>
+      </div>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {allCategories.map((cat) => (
-            <div
-              key={cat.slug}
-              className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
-            >
-              <div>
+      {/* 3. Main Body */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        {/* Visual Category Cards Grid */}
+        <section className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+              Curated Portfolio
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              Explore Our Top Escort Categories
+            </h2>
+            <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {categoryVisualGrid.map((cat, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group"
+              >
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
                     src={cat.image}
                     alt={cat.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
-                    Verified
+                  <div className="absolute top-3 left-3 bg-[#671725] text-[#FFD700] text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    {cat.tag}
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-[#671725]/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
+                  <div className="absolute bottom-3 right-3 bg-black/75 text-white text-[11px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">
                     {cat.price}
                   </div>
                 </div>
 
-                <div className="p-5">
-                  <h3 className="text-base font-extrabold text-[#111827] group-hover:text-[#671725] transition-colors">
-                    {cat.name}
+                <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                  <h3 className="font-bold text-sm text-[#111827] group-hover:text-[#671725] transition-colors">
+                    <Link href={cat.slug}>{cat.name}</Link>
                   </h3>
-                  <p className="text-gray-600 text-xs mt-2 leading-relaxed line-clamp-2">
-                    {cat.desc}
-                  </p>
+                  <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+                    <Link
+                      href={cat.slug}
+                      className="text-xs font-bold text-[#671725] hover:underline flex items-center gap-1"
+                    >
+                      <span>Explore</span>
+                      <ArrowRight size={12} />
+                    </Link>
+                    <a
+                      href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(cat.name)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded shadow-xs"
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              <div className="p-5 pt-0">
-                <Link
-                  href={`/category/${cat.slug}`}
-                  className="block w-full text-center py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded-lg shadow transition-colors"
-                >
-                  View Profiles &rarr;
-                </Link>
-              </div>
-            </div>
+        {/* All Authentic Scraped Editorial Sections from Roshni Khanna */}
+        <div className="space-y-8">
+          {validSections.map((sec, idx) => (
+            <article
+              key={idx}
+              className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200/80 shadow-sm space-y-4"
+            >
+              {sec.title && (
+                <h2 className="text-xl sm:text-2xl font-bold text-[#111827] border-b border-gray-100 pb-3 flex items-center gap-2">
+                  <Heart size={18} className="text-[#671725] shrink-0" />
+                  <span>{sec.title}</span>
+                </h2>
+              )}
+
+              {sec.paragraphs.map((p, pIdx) => (
+                <p key={pIdx} className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  {p}
+                </p>
+              ))}
+
+              {sec.listItems && sec.listItems.length > 0 && (
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+                  {sec.listItems.map((li, lIdx) => (
+                    <li key={lIdx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
+                      <Sparkles size={13} className="text-[#FFD700] shrink-0" />
+                      <span>{li}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
           ))}
         </div>
       </div>

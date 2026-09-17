@@ -6,278 +6,372 @@ import {
   MessageCircle,
   ShieldCheck,
   Clock,
-  MapPin,
   CheckCircle,
   Sparkles,
+  ArrowRight,
+  Heart,
 } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+import { escortModels } from '@/data/models';
+import exactManifest from '@/data/exact_manifest.json';
+
+const hub = exactManifest.serviceHub;
 
 export const metadata: Metadata = {
-  title: 'Luxury Escort Services in Gurgaon (Gurugram) | 24/7 Outcalls | ALINA VIP',
+  title: 'Escort Service in Gurgaon 24*7 | VIP Gurgaon Escorts Services | ALINA VIP',
   description:
-    'Explore premier luxury escort services in Gurgaon. Erotic massage, girlfriend experience, 5-star hotel outcalls, travel companions, dinner dates, and 24/7 VIP call girls.',
+    'Are you searching for escort service in Gurgaon? Get instant booking 24/7 for VIP escorts in Gurgaon with COD available. 100% verified call girls at 5-star hotels & residences.',
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
-    'gurgaon escort services, hotel outcall escorts, erotic massage gurgaon, gfe escorts gurgaon',
+    'escort service in gurgaon',
+    'vip gurgaon escorts services',
+    'girlfriend experience gurgaon',
+    'erotic massage in gurgaon',
+    'in out call girls gurgaon',
+    'escort service for 1 2 3 hours',
+    'escort service full night',
   ],
   alternates: {
     canonical: `${siteConfig.url}/services`,
     languages: getAlternateLanguages('/services'),
   },
   openGraph: {
-    title: 'Luxury Escort Services in Gurgaon (Gurugram) | 24/7 Outcalls | ALINA VIP',
+    title: 'Escort Service in Gurgaon 24*7 | VIP Gurgaon Escorts Services | ALINA VIP',
     description:
-      'Explore premier luxury escort services in Gurgaon. Erotic massage, girlfriend experience, 5-star hotel outcalls, travel companions, dinner dates, and 24/7 VIP call girls.',
+      'Are you searching for escort service in Gurgaon? Get instant booking 24/7 for VIP escorts in Gurgaon with COD available.',
     url: `${siteConfig.url}/services`,
     type: 'website',
   },
 };
 
-interface ServiceItem {
-  id: string;
-  title: string;
-  desc: string;
-  image: string;
-  features: string[];
-}
-
-const servicesList: ServiceItem[] = [
+const serviceSubpages = [
   {
-    id: 'dinner-dates',
-    title: 'Dinner Dates & Social Engagements',
-    desc: 'Sophisticated, articulate models who effortlessly accompany you to high-end restaurants, corporate banquets, and networking galas.',
-    image: '/images/assets/image_290x280_1.jpg',
-    features: ['High-society etiquette', 'Michelin-grade dining companion', 'Discreet social presence'],
-  },
-  {
-    id: 'girlfriend-experience',
     title: 'Girlfriend Experience (GFE)',
-    desc: 'Deep emotional and physical connection, passionate kissing, tender cuddling, and warm conversational companionship.',
+    slug: '/girlfriend-experience-in-gurgaon',
+    image: '/images/assets/Girlfriend_Experience.jpg',
+    snippet:
+      'Escorts can provide you with an experience similar to a girlfriend. But the only difference is that she will be much better with you than your girlfriend.',
+    features: ['Intimate emotional bond', 'Passionate French kissing', 'Sweet romantic cuddling'],
+  },
+  {
+    title: 'Erotic Massage in Gurgaon',
+    slug: '/erotic-massage-in-gurgaon',
+    image: '/images/assets/Full_Body_Sensual_Massage.jpg',
+    snippet:
+      'A sensual full body massage provides relaxation and rejuvenation to the body. It is also a great sex booster as it opens all the blocked blood vessels and relieves all stress.',
+    features: ['Body-to-body sensual rub', 'Warm aromatherapy oils', 'Erotic happy ending'],
+  },
+  {
+    title: 'In-Call & Out-Call Services',
+    slug: '/in-out-call-girls-gurgaon',
+    image: '/images/assets/In-Call_and_out-call_escorts.jpg',
+    snippet:
+      'Escort services are available anytime, anywhere in Gurgaon as per your need. Escorts operate either with agencies or independently for total comfort and discretion.',
+    features: ['20-30 min hotel arrival', 'Private luxury suites', 'Strict anonymity guaranteed'],
+  },
+  {
+    title: 'Escort Service for 1/2/3 Hours',
+    slug: '/escort-service-for-1-2-3-hours',
+    image: '/images/assets/image_290x280_1.jpg',
+    snippet:
+      'Beauty of our escort agency is nothing but there is a chance for each and everyone to choose the escort girls on their own taste for short, intense, revitalizing encounters.',
+    features: ['Rapid lunchtime dispatch', '1-2 rounds of passion', 'No advance cash on delivery'],
+  },
+  {
+    title: 'Escort Service Full Night',
+    slug: '/escort-service-full-night',
     image: '/images/assets/image_290x280_2.jpg',
-    features: ['Intimate romantic bonding', 'Passionate affection', 'Unrushed rendezvous'],
-  },
-  {
-    id: 'erotic-massage',
-    title: 'Erotic & Sensual Body Massage',
-    desc: 'Indulge in head-to-toe stress relief with therapeutic, warm oil body-to-body sensual massage delivered in complete privacy.',
-    image: '/images/assets/image_290x280_3.jpg',
-    features: ['Body-to-body sliding', 'Aromatherapy warm oils', 'Total mental relaxation'],
-  },
-  {
-    id: 'hotel-outcalls',
-    title: '5-Star Luxury Hotel Outcalls',
-    desc: 'Prompt 20 to 30 minute arrival at top five-star hotels including The Oberoi, The Leela, Crowne Plaza, and ITC Grand Bharat.',
-    image: '/images/assets/image_290x280_4.jpg',
-    features: ['20-30 min hotel arrival', 'DLF & Golf Course Road coverage', 'Direct suite dispatch'],
-  },
-  {
-    id: '24-7-escorts',
-    title: '24/7 Round-the-Clock Service',
-    desc: 'Our VIP concierge coordinates instant on-demand dispatches or planned appointments day and night without delay.',
-    image: '/images/assets/image_290x280_5.jpg',
-    features: ['Always available 24/7', 'Instant WhatsApp coordination', 'Zero advance cash on delivery'],
-  },
-  {
-    id: 'travel-companions',
-    title: 'Luxury Travel & Vacation Escorts',
-    desc: 'Well-travelled, cultured companions ready to join you on business trips, weekend retreats, or international vacations.',
-    image: '/images/assets/image_290x280_6.jpg',
-    features: ['Valid travel documents', 'Multilingual & cultured', 'Domestic & overseas travel'],
-  },
-  {
-    id: 'corporate-hosting',
-    title: 'Corporate Galas & Red Carpet Events',
-    desc: 'Impeccably dressed, photogenic models who enhance your executive stature at industry conferences and VIP gatherings.',
-    image: '/images/assets/image_290x280_7.jpg',
-    features: ['Flawless cocktail styling', 'Polished conversational skill', 'Confidential guest presence'],
-  },
-  {
-    id: 'overnight-stays',
-    title: 'Overnight Stays & Weekend Getaways',
-    desc: 'Uninterrupted nighttime romance, sweet intimacy, and luxury breakfast companionship in your hotel suite.',
-    image: '/images/assets/image_290x280_8.jpg',
-    features: ['Full night 8-12 hours', 'Morning breakfast company', 'Maximum relaxation'],
-  },
-  {
-    id: 'couple-duo',
-    title: 'Couple & Duo Escort Rendezvous',
-    desc: 'Explore your ultimate fantasy with two breathtaking models simultaneously or add a third companion for couples.',
-    image: '/images/assets/image_290x280_9.jpg',
-    features: ['Two gorgeous escorts', 'Couples friendly', 'Harmonious shared chemistry'],
-  },
-  {
-    id: 'bdsm-roleplay',
-    title: 'BDSM & Sensual Roleplay',
-    desc: 'Safe, consensual, and judgment-free exploration of dominant-submissive dynamics, fantasies, and cosplay roleplays.',
-    image: '/images/assets/image_290x280_10.jpg',
-    features: ['Consensual boundary respect', 'Costume & fantasy play', 'Discreet exploration'],
-  },
-  {
-    id: 'vip-party',
-    title: 'VIP Nightclub & Party Hosting',
-    desc: 'High-energy, glamorous companions for private villa parties, farmhouses, and VIP table bottle service.',
-    image: '/images/assets/image_290x280_11.jpg',
-    features: ['Vibrant party personality', 'Nightclub table partner', 'Farmhouse rendezvous'],
-  },
-  {
-    id: 'tailored-experiences',
-    title: 'Customized Bespoke Experiences',
-    desc: 'Tell us your unique preferences, aesthetic criteria, and schedule; our concierge coordinates a flawless bespoke date.',
-    image: '/images/assets/image_290x280_12.jpg',
-    features: ['100% personalized', 'Private concierge coordination', 'Exclusive model roster'],
+    snippet:
+      'It is our pleasure to have you here, where you will find the most exotic and high-end Gurgaon escort service for full night unhurried romantic pleasures until dawn.',
+    features: ['Full 10 PM - 8 AM intimacy', 'Morning breakfast companion', 'Unlimited intimate rounds'],
   },
 ];
 
+const serviceRates = [
+  { duration: '1-2 Hours', shots: '1 Shot', price: '₹15,000', note: 'Short & revitalizing' },
+  { duration: '2-4 Hours', shots: '2 Shots', price: '₹20,000', note: 'Most requested package' },
+  { duration: '5-6 Hours', shots: '3 Shots', price: '₹25,000', note: 'Dinner date & evening' },
+  { duration: 'Full Night (8-10 Hrs)', shots: 'Unlimited', price: '₹30,000+', note: 'VIP overnight romance' },
+];
+
 export default function ServicesPage() {
+  const introSection = hub.sections[0];
+  const servicesOfferedSection = hub.sections[1];
+  const remainingEditorialSections = hub.sections.slice(2);
+  const featuredModels = escortModels.slice(0, 6);
+
   return (
     <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
-      {/* 1. Page Title Bar */}
-      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
-            Luxury Escort Services in Gurgaon
+      {/* 1. Hero Header Banner */}
+      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex justify-center mb-4">
+            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
+          </div>
+          <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
+            ★ 24/7 VIP Companionship &amp; Outcalls
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
+            {hub.h1 || 'Get Premium Escort Service in Gurgaon 24*7'}
           </h1>
-          <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
-            Bespoke Companionship, Erotic Massage, and 5-Star Hotel Outcalls Available 24/7 Across Gurugram
+          <p className="text-sm md:text-base text-rose-100 max-w-3xl mx-auto leading-relaxed font-light">
+            Are you searching for escort service in Gurgaon? Get instant booking 24/7 for VIP escorts in Gurgaon with cash on delivery available.
           </p>
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-luxury-gold font-semibold">Our Services</span>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20Escort%20Services%20in%20Gurgaon`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white font-bold text-xs sm:text-sm rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <MessageCircle size={16} /> WhatsApp Inquiry
+            </a>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="px-6 py-2.5 bg-white text-[#671725] hover:bg-rose-50 font-bold text-xs sm:text-sm rounded-lg shadow transition-all flex items-center gap-2"
+            >
+              <Phone size={16} /> Direct Call: {siteConfig.phoneDisplay}
+            </a>
           </div>
         </div>
       </section>
 
       {/* 2. Trust Bar */}
-      <section className="bg-[#671725] text-white py-4 px-4 shadow-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
+      <section className="bg-[#52121d] text-white py-3.5 px-4 shadow-sm border-b border-white/10">
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
-            <ShieldCheck size={18} className="text-luxury-gold" />
-            <strong>100% Verified Profiles</strong>
+            <ShieldCheck size={18} className="text-[#FFD700]" />
+            <strong>100% Real &amp; Verified Call Girls</strong>
           </span>
           <span className="flex items-center gap-2">
-            <CheckCircle size={18} className="text-luxury-gold" />
+            <CheckCircle size={18} className="text-[#FFD700]" />
             <strong>Zero Advance Payment Required</strong>
           </span>
           <span className="flex items-center gap-2">
-            <Clock size={18} className="text-luxury-gold" />
-            <strong>24/7 Instant Hotel Outcalls</strong>
+            <Clock size={18} className="text-[#FFD700]" />
+            <strong>20-30 Min 5-Star Hotel Outcalls</strong>
           </span>
         </div>
       </section>
 
-      {/* 3. 12 Services Grid (Using real image_290x280_1 to 12) */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
-            Comprehensive Offerings
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#111827] mt-1">
-            Exclusive Companionship Packages
-          </h2>
-          <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
-          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-            Select from our bespoke escort offerings tailored for executive gentlemen, luxury travelers, and hotel guests in Gurgaon.
-          </p>
-        </div>
+      {/* 3. Main Container */}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        {/* Intro Editorial Article (100% Exact from Roshni Khanna) */}
+        {introSection && (
+          <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#671725]">
+              <Sparkles size={14} className="text-[#FFD700]" />
+              <span>Elite Companionship in Gurugram</span>
+            </div>
+            <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed">
+              {introSection.paragraphs.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
+            </div>
+          </article>
+        )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service, idx) => (
-            <article
-              key={idx}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col justify-between group"
-            >
-              <div className="relative h-64 w-full overflow-hidden bg-gray-100">
-                <Image
-                  src={service.image}
-                  alt={`${service.title} in Gurgaon`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded shadow">
-                  SERVICE #{idx + 1}
-                </div>
+        {/* Services Offered Section (100% Exact Copy from Roshni Khanna Section 1 + Subpage Navigation Cards) */}
+        <section className="space-y-8">
+          <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-5">
+            <div className="border-b border-gray-100 pb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+                What We Offer
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+                {servicesOfferedSection ? servicesOfferedSection.title : 'Services Offered'}
+              </h2>
+              <div className="w-16 h-1 bg-[#671725] mt-2 rounded-full" />
+            </div>
+
+            {/* All 6 Authentic Paragraphs from Roshni Khanna Services Offered Section */}
+            {servicesOfferedSection && servicesOfferedSection.paragraphs && (
+              <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed">
+                {servicesOfferedSection.paragraphs.map((p, pIdx) => (
+                  <p key={pIdx}>{p}</p>
+                ))}
               </div>
+            )}
+          </article>
 
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-[#111827] mb-2 group-hover:text-primary-wine transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                    {service.desc}
-                  </p>
-                  
-                  <div className="space-y-1.5 mb-6">
-                    {service.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-2 text-xs text-gray-700">
-                        <Sparkles size={13} className="text-luxury-gold shrink-0" />
-                        <span>{feat}</span>
-                      </div>
-                    ))}
+          {/* 5 Core Specialized Sub-Services Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceSubpages.map((service, sIdx) => (
+              <div
+                key={sIdx}
+                className="bg-white rounded-xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group"
+              >
+                <div className="relative h-56 w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} in Gurgaon`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3 left-3 bg-[#671725] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+                    VIP SERVICE #{sIdx + 1}
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 pt-4 border-t border-gray-100">
-                  <a
-                    href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-                      `Hello ALINA VIP, I would like to inquire about ${service.title}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded transition-colors"
-                  >
-                    <MessageCircle size={15} />
-                    <span>WhatsApp</span>
-                  </a>
-                  <a
-                    href={`tel:${siteConfig.phone}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
-                  >
-                    <Phone size={14} className="text-luxury-gold" />
-                    <span>Call Now</span>
-                  </a>
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-[#111827] group-hover:text-[#671725] transition-colors">
+                      <Link href={service.slug}>{service.title}</Link>
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mt-2">
+                      {service.snippet}
+                    </p>
+                    <div className="space-y-1.5 mt-3">
+                      {service.features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-center gap-1.5 text-xs text-gray-700">
+                          <Sparkles size={12} className="text-[#FFD700] shrink-0" />
+                          <span>{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-2">
+                    <Link
+                      href={service.slug}
+                      className="text-xs font-bold text-[#671725] hover:underline flex items-center gap-1"
+                    >
+                      <span>Read More</span>
+                      <ArrowRight size={13} />
+                    </Link>
+                    <a
+                      href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(service.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded flex items-center gap-1 shadow-sm"
+                    >
+                      <MessageCircle size={13} /> Book Now
+                    </a>
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Rates & Pricing Table */}
+        <section className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+              Transparent Pricing
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              Escort Service Rates &amp; Packages in Gurgaon
+            </h2>
+            <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
+            <p className="text-xs sm:text-sm text-gray-600 mt-2">
+              All prices are transparent, all-inclusive, with zero advance payment. Pay strictly cash on delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {serviceRates.map((rate, rIdx) => (
+              <div
+                key={rIdx}
+                className="bg-[#FFFDF6] border border-rose-200/60 rounded-xl p-5 text-center flex flex-col justify-between hover:border-[#671725] transition-colors shadow-xs"
+              >
+                <div>
+                  <span className="text-[11px] font-bold text-[#671725] uppercase tracking-wider">
+                    {rate.note}
+                  </span>
+                  <h3 className="text-base font-bold text-[#111827] mt-1">{rate.duration}</h3>
+                  <div className="text-2xl font-extrabold text-[#671725] my-2">{rate.price}</div>
+                  <p className="text-xs text-gray-600 mb-4">{rate.shots}</p>
+                </div>
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20the%20${encodeURIComponent(rate.duration)}%20package`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded transition-colors"
+                >
+                  Book This Package
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* All Remaining Exact Long-Form Editorial Sections from Roshni Khanna */}
+        <div className="space-y-8">
+          {remainingEditorialSections.map((sec, idx) => (
+            <article
+              key={idx}
+              className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-4"
+            >
+              <h2 className="text-xl sm:text-2xl font-bold text-[#111827] border-b border-gray-100 pb-3 flex items-center gap-2">
+                <Heart size={18} className="text-[#671725] shrink-0" />
+                <span>{sec.title}</span>
+              </h2>
+              <div className="space-y-3 text-gray-700 text-sm sm:text-base leading-relaxed">
+                {sec.paragraphs.map((p, pIdx) => (
+                  <p key={pIdx}>{p}</p>
+                ))}
               </div>
             </article>
           ))}
         </div>
 
-        {/* 4. Standards Section */}
-        <section className="mt-20 bg-white p-8 md:p-12 rounded-2xl border border-gray-200 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-4">
-              <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
-                <ShieldCheck size={28} />
-              </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">100% Verified Profiles</h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                All companion escorts undergo strict physical identity and background verification for your safety.
-              </p>
-            </div>
+        {/* Available Companion Escorts Gallery */}
+        <section className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+              100% Genuine Girls
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              Top Escort Profiles Available for Appointment
+            </h2>
+            <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
+            <p className="text-xs sm:text-sm text-gray-600 mt-2">
+              Select your dream partner from our roster of Russian, independent, and high-profile models.
+            </p>
+          </div>
 
-            <div className="p-4">
-              <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock size={28} />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {featuredModels.map((model) => (
+              <div
+                key={model.slug}
+                className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-md transition-all text-center group"
+              >
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={model.image}
+                    alt={`${model.name} - ${model.category} in Gurgaon`}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">
+                    VERIFIED
+                  </div>
+                </div>
+                <div className="p-3">
+                  <h3 className="font-bold text-xs sm:text-sm text-[#111827] truncate">
+                    {model.name}
+                  </h3>
+                  <p className="text-[11px] text-[#671725] font-semibold truncate">{model.category}</p>
+                  <p className="text-[10px] text-gray-500 mt-0.5">{model.rates.oneShot}</p>
+                </div>
               </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">24/7 Concierge Booking</h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Round-the-clock telephone and WhatsApp response with rapid dispatch to all Gurgaon hotels.
-              </p>
-            </div>
-
-            <div className="p-4">
-              <div className="w-14 h-14 bg-primary-wine/10 text-primary-wine rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin size={28} />
-              </div>
-              <h4 className="font-bold text-[#111827] text-lg mb-2">NCR-Wide Outcalls</h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                Rapid arrival to Cyber City, Golf Course Road, Sohna Road, MG Road, Aerocity, and Delhi luxury suites.
-              </p>
-            </div>
+            ))}
+          </div>
+          <div className="text-center pt-2">
+            <Link
+              href="/escorts"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-colors"
+            >
+              <span>View All 200+ Escort Profiles</span>
+              <ArrowRight size={15} />
+            </Link>
           </div>
         </section>
       </main>

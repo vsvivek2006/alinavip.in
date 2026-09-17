@@ -1,2 +1,4 @@
-import CategoriesHubPage from '../categories/page';
-export default CategoriesHubPage;
+import CategoriesPage, { metadata as catMeta } from '../categories/page';
+
+export const metadata = catMeta;
+export default CategoriesPage;

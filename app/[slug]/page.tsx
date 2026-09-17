@@ -29,11 +29,12 @@ interface ContentItem {
 }
 
 const reserved = new Set([
-  'about', 'blog', 'categories', 'category', 'contact', 'disclaimer',
+  'about', 'about-us', 'blog', 'categories', 'category', 'contact', 'contact-us', 'disclaimer',
   'erotic-massage-in-gurgaon', 'escort-service-for-1-2-3-hours', 'escort-service-full-night',
-  'escorts', 'escorts-categories', 'faq', 'full-body-sensual-massage', 'gallery',
-  'girlfriend-experience-in-gurgaon', 'gurgaon-escorts-phone-number', 'gurgaon-escorts-rates',
-  'hotels', 'in-out-call-girls-gurgaon', 'locations', 'phone-number', 'privacy-policy',
+  'escort-service-in-gurgaon', 'escorts', 'escorts-categories', 'faq', 'faqs',
+  'full-body-sensual-massage', 'gallery', 'girlfriend-experience-in-gurgaon',
+  'gurgaon-escorts-phone-number', 'gurgaon-escorts-rates', 'hotels',
+  'in-out-call-girls-gurgaon', 'locations', 'phone-number', 'privacy-policy',
   'rates', 'services', 'terms', 'shop'
 ]);
 

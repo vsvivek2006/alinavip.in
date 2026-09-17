@@ -8,38 +8,44 @@ const servicesData = [
   {
     icon: Heart,
     title: 'Girlfriend Experience (GFE)',
-    desc: 'Dive into an intimate companionship with our high profile model escorts offering exclusive Girlfriend Experience in Gurgaon.',
+    desc: 'Dive into an intimate companionship with our high profile model escorts offering exclusive Girlfriend Experience (GFE) in Gurgaon.',
     image: '/images/assets/Girlfriend_Experience.png',
+    href: '/girlfriend-experience-in-gurgaon',
   },
   {
     icon: Sparkles,
     title: 'Erotic Massage',
-    desc: 'Relieve stress and unwind with therapeutic body-to-body sensual massage sessions performed by skilled, beautiful escorts in Gurgaon.',
+    desc: 'Indulge in a truly immersive experience with our specialized erotic massage service in Gurgaon, where our trained escorts provide sensual therapy.',
     image: '/images/assets/Erotic_Massage.jpg',
+    href: '/erotic-massage-in-gurgaon',
   },
   {
     icon: Building2,
     title: 'In-Call & Out Call Services',
-    desc: 'Rapid 20 to 30 minute outcall service to all major hotels, serviced apartments, and private residences across Gurgaon and NCR.',
+    desc: 'Meet a sexy female at your convenience with our in-call and out-call escort service in Gurgaon for ultimate convenience and discretion.',
     image: '/images/assets/In_Call_And_Out_Call_Services.png',
+    href: '/in-out-call-girls-gurgaon',
   },
   {
     icon: Hotel,
     title: 'Hotel Escort Service',
     desc: 'Seamless, discreet outcall service directly to luxury 4-star and 5-star hotels including Oberoi, Leela, Crowne Plaza, and JW Marriott.',
     image: '/images/assets/Escorts_24x7_Availability.jpg',
+    href: '/hotels',
   },
   {
     icon: Clock,
     title: '24/ 7 Escort Service',
-    desc: 'Our VIP booking desk operates 24 hours a day, 7 days a week, for instant on-demand dispatch or planned future reservations.',
+    desc: 'We understand that desires and cravings can arise at any time. That\'s why our Gurgaon escorts are available 24/7 across the city.',
     image: '/images/assets/24x7_Available_Escorts.jpg',
+    href: '/services',
   },
   {
     icon: Moon,
     title: 'Hourly & Full Night Escort Service',
-    desc: 'Select customized booking packages ranging from single-hour romantic encounters to complete overnight full-night engagements.',
+    desc: 'Our escort service gives you the option to choose from a selection of top rated independent female escorts on an hourly basis or full night.',
     image: '/images/assets/Independent_Escorts_To_Meet_On_Hourly_Basis.jpg',
+    href: '/escort-service-full-night',
   },
 ];
 
@@ -48,9 +54,9 @@ export default function ServicesOfferedSection() {
     <section className="py-16 md:py-24 bg-white" id="services-offered">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading & Subtitle */}
+        {/* Section Heading & Subtitle (100% Exact from Roshni Khanna) */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Services Offered
           </h2>
           <div className="w-16 h-1 bg-[#671725] mx-auto mt-3 mb-4 rounded-full" />
@@ -59,7 +65,7 @@ export default function ServicesOfferedSection() {
           </p>
         </div>
 
-        {/* 6 Service Cards Grid matching Roshni Khanna service-inner-col */}
+        {/* 6 Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {servicesData.map((serv, idx) => {
             const Icon = serv.icon;
@@ -71,7 +77,7 @@ export default function ServicesOfferedSection() {
                 {/* Background Image */}
                 <Image
                   src={serv.image}
-                  alt={serv.title + " in Gurgaon"}
+                  alt={`${serv.title} in Gurgaon`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -90,7 +96,7 @@ export default function ServicesOfferedSection() {
                     {serv.desc}
                   </p>
                   <Link
-                    href="/services"
+                    href={serv.href}
                     className="tm-button text-xs font-semibold text-[#FFD700] hover:underline"
                   >
                     <span>Read More</span>
