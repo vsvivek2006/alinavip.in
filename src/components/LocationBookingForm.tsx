@@ -82,7 +82,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
             <p className="font-semibold">{statusMessage || 'An unexpected error occurred.'}</p>
             <p className="text-gray-300 mt-1">
               Please call us directly at{' '}
-              <a href={`tel:${siteConfig.phone}`} className="text-gold-400 underline font-bold">
+              <a href={`tel:${siteConfig.phone}`} className="text-luxury-gold underline font-bold">
                 {siteConfig.phoneDisplay}
               </a>
             </p>
@@ -92,7 +92,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
 
       <div>
         <label htmlFor={`loc-booking-name-${locationId}`} className="block text-xs tracking-wider uppercase text-gray-400 mb-2 font-semibold">
-          Your Name <span className="text-gold-500">*</span>
+          Your Name <span className="text-primary-wine">*</span>
         </label>
         <input
           id={`loc-booking-name-${locationId}`}
@@ -100,14 +100,14 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-gold-500 focus:outline-none transition-colors"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-primary-wine focus:outline-none transition-colors"
           placeholder="Enter your name"
         />
       </div>
 
       <div>
         <label htmlFor={`loc-booking-phone-${locationId}`} className="block text-xs tracking-wider uppercase text-gray-400 mb-2 font-semibold">
-          Phone Number <span className="text-gold-500">*</span>
+          Phone Number <span className="text-primary-wine">*</span>
         </label>
         <input
           id={`loc-booking-phone-${locationId}`}
@@ -115,7 +115,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
           required
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-gold-500 focus:outline-none transition-colors"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-primary-wine focus:outline-none transition-colors"
           placeholder="+91 Your Phone Number"
         />
       </div>
@@ -129,7 +129,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
           type="text"
           readOnly
           value={`${locationName}, ${locationCity}`}
-          className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-3.5 text-gold-400 font-semibold focus:outline-none cursor-default"
+          className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-3.5 text-luxury-gold font-semibold focus:outline-none cursor-default"
         />
       </div>
 
@@ -142,7 +142,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
           rows={3}
           value={formData.requirements}
           onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-gold-500 focus:outline-none transition-colors resize-none"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:border-primary-wine focus:outline-none transition-colors resize-none"
           placeholder={`Preferences for ${locationName} (hotel, category, timing)...`}
         />
       </div>
@@ -150,7 +150,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
       <button
         type="submit"
         disabled={submissionStatus === 'submitting'}
-        className="w-full bg-gold-600 hover:bg-gold-700 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-gold-600/30 hover:shadow-gold-600/50 flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
+        className="w-full bg-primary-wine hover:bg-[#50121d] text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-gold-600/30 hover:shadow-gold-600/50 flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
       >
         <Phone className="w-5 h-5" />
         {submissionStatus === 'submitting' ? 'Preparing WhatsApp Booking...' : `Book via WhatsApp in ${locationName}`}

@@ -4,56 +4,52 @@ import { siteConfig } from '@/data/siteConfig';
 
 export default function NotFound() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] py-24 md:py-32">
-      <div className="absolute inset-0 opacity-15 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
-      </div>
-
-      <div className="container-luxury relative z-10 text-center max-w-2xl px-4">
-        <span className="inline-block px-4 py-1.5 border border-gold-500/30 rounded-full text-gold-400 text-xs font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
+    <section className="min-h-[75vh] flex items-center justify-center bg-[#FFFDF6] py-20 px-4 text-[#2d2d2d]">
+      <div className="max-w-2xl w-full text-center">
+        <span className="inline-block px-4 py-1 bg-primary-wine/10 text-primary-wine rounded-full text-xs font-bold uppercase tracking-wider mb-4">
           404 Error
         </span>
 
-        <h1 className="font-serif text-6xl md:text-8xl text-white font-light mb-4">
-          4<span className="text-gold-500 font-normal">0</span>4
+        <h1 className="text-7xl md:text-9xl font-extrabold text-[#671725] mb-2 tracking-tight">
+          404
         </h1>
 
-        <h2 className="font-serif text-2xl md:text-3xl text-white font-medium mb-4">
-          Page Not Found
+        <h2 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-4">
+          Page or Profile Not Found
         </h2>
 
-        <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed font-light">
-          The page or profile you are looking for may have moved, been updated, or is no longer available. Explore our premier VIP escorts or contact our 24/7 concierge desk.
+        <p className="text-gray-600 text-sm md:text-base mb-8 max-w-lg mx-auto leading-relaxed">
+          The requested escort profile or directory page may have moved, been renamed, or is currently unavailable. Please explore our verified roster or reach out to our concierge desk.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-neutral-950 font-bold px-7 py-3.5 rounded-full text-sm transition-all shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-[#671725] hover:bg-[#50121d] text-white font-bold px-7 py-3.5 rounded-xl text-xs transition-colors shadow-md"
           >
             <Home size={16} /> Return to Homepage
           </Link>
           <Link
-            href="/services"
-            className="inline-flex items-center gap-2 border border-gold-500/50 text-gold-400 hover:bg-gold-500/10 px-7 py-3.5 rounded-full font-semibold text-sm transition-all"
+            href="/gallery"
+            className="inline-flex items-center gap-2 border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-7 py-3.5 rounded-xl font-bold text-xs transition-colors"
           >
-            <Compass size={16} /> View All Escort Services
+            <Compass size={16} /> View Photo Gallery
           </Link>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-400">
+        <div className="pt-8 border-t border-gray-200 flex flex-wrap justify-center items-center gap-6 text-xs text-gray-500">
           <span>Need immediate assistance?</span>
           <a
             href={`tel:${siteConfig.phone}`}
-            className="inline-flex items-center gap-1.5 text-gold-400 hover:text-gold-300 font-medium"
+            className="inline-flex items-center gap-1.5 text-[#0B2154] hover:text-primary-wine font-bold"
           >
-            <Phone size={14} /> {siteConfig.phoneDisplay}
+            <Phone size={14} className="text-luxury-gold" /> {siteConfig.phoneDisplay}
           </a>
           <a
             href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium"
+            className="inline-flex items-center gap-1.5 text-[#13bc18] hover:text-[#0fa814] font-bold"
           >
             <MessageCircle size={14} /> WhatsApp Concierge
           </a>

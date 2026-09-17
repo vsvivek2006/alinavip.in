@@ -11,7 +11,6 @@ interface ErrorProps {
 
 export default function GlobalError({ error, reset }: ErrorProps) {
   useEffect(() => {
-    // Log client error safely in console for diagnostics
     if (process.env.NODE_ENV !== 'production') {
       console.error('Unhandled route error caught by error.tsx boundary:', error);
     }
@@ -19,32 +18,31 @@ export default function GlobalError({ error, reset }: ErrorProps) {
 
   return (
     <div
-      className="min-h-[70vh] flex items-center justify-center px-4 py-20"
+      className="min-h-[70vh] flex items-center justify-center px-4 py-20 bg-[#FFFDF6] text-[#2d2d2d]"
       role="alert"
       aria-live="assertive"
     >
-      <div className="max-w-md w-full text-center">
-        {/* Subtle Icon Container */}
-        <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center">
-          <AlertTriangle className="w-8 h-8 text-gold-400" />
+      <div className="max-w-md w-full text-center bg-white p-8 rounded-2xl border border-gray-200 shadow-lg">
+        <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary-wine/10 text-primary-wine flex items-center justify-center">
+          <AlertTriangle className="w-8 h-8" />
         </div>
 
-        <p className="text-gold-400 font-sans text-xs tracking-widest uppercase mb-2">
+        <span className="text-primary-wine text-xs font-bold uppercase tracking-wider mb-2 block">
           Notice
-        </p>
+        </span>
 
-        <h1 className="font-serif text-3xl md:text-4xl text-white font-light mb-4">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-3">
           Something Went Wrong
         </h1>
 
-        <p className="text-charcoal-300 text-sm leading-relaxed mb-8">
-          An unexpected error occurred while loading this page. Our team has been notified. Please try reloading or return to the homepage.
+        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+          An unexpected error occurred while loading this page. Please try reloading or return to the main portal.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={() => reset()}
-            className="w-full sm:w-auto btn-gold text-xs rounded-full py-3 px-6 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto bg-[#671725] hover:bg-[#50121d] text-white text-xs font-bold rounded-xl py-3 px-6 flex items-center justify-center gap-2 cursor-pointer transition-colors shadow"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Try Again</span>
@@ -52,7 +50,7 @@ export default function GlobalError({ error, reset }: ErrorProps) {
 
           <Link
             href="/"
-            className="w-full sm:w-auto btn-outline-gold text-xs rounded-full py-3 px-6 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto border border-[#0B2154] text-[#0B2154] hover:bg-[#0B2154] hover:text-white text-xs font-bold rounded-xl py-3 px-6 flex items-center justify-center gap-2 transition-colors"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Return Home</span>

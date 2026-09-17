@@ -10,16 +10,17 @@
   }
 
   body {
-    @apply bg-charcoal-900 text-charcoal-100 font-sans antialiased;
+    @apply bg-white text-[#2B2B2B] font-sans antialiased;
     font-feature-settings: "kern";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
   }
 
   ::selection {
-    @apply bg-gold-500 text-charcoal-900;
+    background-color: #671725;
+    color: #ffffff;
   }
 }
 
@@ -28,118 +29,389 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  .btn-gold {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gold-500 text-charcoal-900 font-sans font-medium tracking-wider uppercase text-xs transition-all duration-300 hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/30 hover:-translate-y-0.5;
+  /* Roshni Khanna Wine Buttons */
+  .btn-wine {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#671725] text-white font-medium text-sm rounded shadow-md hover:bg-[#52121d] hover:shadow-lg transition-all duration-300;
   }
 
-  .btn-outline,
-  .btn-outline-gold {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-gold-500 text-gold-500 font-sans font-medium tracking-wider uppercase text-xs transition-all duration-300 hover:bg-gold-500 hover:text-charcoal-900 hover:-translate-y-0.5;
+  .btn-outline-wine {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 border border-[#671725] text-[#671725] font-medium text-xs rounded-full hover:bg-[#671725] hover:text-white transition-all duration-300;
   }
 
-  .section-title {
-    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight;
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#0B2154] text-white font-medium text-sm rounded shadow-md hover:bg-[#07173b] transition-all duration-300;
   }
 
-  .section-subtitle {
-    @apply font-sans text-xs md:text-sm tracking-ultra uppercase text-gold-500 mb-4;
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2 bg-[#25D366] text-white font-medium text-xs rounded-full shadow hover:bg-[#20bd5a] transition-all duration-300;
   }
 
-  .gold-divider {
-    @apply w-16 h-px bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto;
+  /* Section Title Standards */
+  .roshni-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] text-center;
+    font-family: var(--font-poppins), 'Poppins', sans-serif;
   }
 
-  .luxury-card {
-    @apply bg-charcoal-800 border border-charcoal-600 transition-all duration-500 hover:border-gold-500/50;
-  }
-
-  .nav-link {
-    @apply relative font-sans text-sm tracking-wider uppercase text-charcoal-200 transition-colors duration-300 hover:text-gold-500;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute -bottom-1 left-0 w-0 h-px bg-gold-500 transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-
-  .input-luxury {
-    @apply w-full bg-charcoal-800 border border-charcoal-600 px-4 py-3 text-charcoal-100 font-sans text-sm placeholder-charcoal-400 focus:border-gold-500 focus:outline-none transition-colors duration-300;
+  .roshni-subtitle {
+    @apply text-sm md:text-base text-gray-600 text-center max-w-2xl mx-auto mt-2 leading-relaxed;
   }
 }
 
-@layer utilities {
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #FFF6B7 0%, #F5C518 35%, #D4AF37 70%, #AA7C11 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+/* Roshni Khanna Signature Component Classes */
 
-  .bg-luxury-gradient {
-    background: linear-gradient(135deg, #0A0A0B 0%, #161618 50%, #0A0A0B 100%);
-  }
-
-  .bg-gold-gradient {
-    background: linear-gradient(135deg, #FFF6B7 0%, #F5C518 35%, #D4AF37 70%, #AA7C11 100%);
-  }
-
-  .glass {
-    background: rgba(10, 10, 11, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .shimmer-text {
-    background: linear-gradient(90deg, #D4AF37 0%, #FBF6E9 50%, #D4AF37 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+/* 1. Hero Banner */
+.new-banner h1 {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 0.95;
+  color: #671725;
 }
 
-/* Reveal animation */
-.reveal {
+.new-banner h1 span {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  text-transform: capitalize;
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.4;
+  color: #671725;
+  font-weight: 700;
+}
+
+.banner-circle-img img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  border: 4px solid #ffffff;
+}
+
+/* 2. Banner Bottom Text (4 Pillars) */
+.banner-bottom-text {
+  background-color: #0b2154;
+  color: #e1e1e1;
+}
+
+.banner-bottom-text .callout-head {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.banner-bottom-text .sub-text {
+  font-size: clamp(14px, 1.2vw, 18px) !important;
+  color: #cbd5e1;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.banner-bottom-text .sub-point h3 {
+  font-weight: 600;
+  font-size: 17px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.banner-bottom-text .sub-point p {
+  font-weight: 300;
+  font-size: 13px;
+  color: #cbd5e1;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 3. Featured Profile Cards */
+.profile-inner-col {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.profile-inner-col:hover {
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.14);
+}
+
+.profile-inner-col .profile-img {
+  height: 425px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+
+.profile-inner-col .profile-img img {
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.profile-inner-col:hover .profile-img img {
+  transform: scale(1.08) !important;
+}
+
+.profile-inner-col .name h3 {
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  color: #111827;
+}
+
+.profile-inner-col .height-h {
+  font-size: 13px !important;
+  color: rgba(113, 113, 130, 1) !important;
+}
+
+.profile-inner-col .view-profile-btn .tm-button {
+  background: transparent !important;
+  border: 1px solid #671725 !important;
+  color: #671725 !important;
+  padding: 8px 16px !important;
+  line-height: 1 !important;
+  height: auto !important;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.profile-inner-col .view-profile-btn .tm-button:hover {
+  background: #671725 !important;
+  color: #ffffff !important;
+}
+
+.profile-inner-col .profile-cat .tm-button {
+  background: rgba(236, 238, 242, 1);
+  border: none;
+  color: #4b5563;
+  border-radius: 25px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* 4. Category Cards */
+.category-inner-col {
+  border-radius: 12px;
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.category-inner-col::before {
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.category-inner-col .cat-content {
+  position: relative;
+  z-index: 2;
+}
+
+.category-inner-col h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.category-inner-col .category-text {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(10px);
+  transition: all 0.35s ease-in-out;
 }
 
-.reveal.visible {
+.category-inner-col:hover .category-text {
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+/* 5. Service Cards */
+.service-inner-col {
+  border-radius: 12px;
+  position: relative;
+  min-height: 290px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.service-inner-col::before {
+  content: "";
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.service-inner-col .serv-content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-inner-col .icon {
+  color: #ffffff;
+  font-size: 28px;
+  transition: transform 0.4s ease;
+}
+
+.service-inner-col:hover .icon {
+  transform: translateY(-8px);
+}
+
+.service-inner-col .tm-button {
+  margin-top: 12px;
+  color: #ffffff !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.35s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.service-inner-col:hover .tm-button {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Prose styling for blog/content */
-.prose-luxury p {
-  @apply text-charcoal-300 leading-relaxed mb-6;
+/* 6. Why Main Box (Offering Services You Can Trust) */
+.why-main-box {
+  background-color: #671725;
+  border-radius: 16px;
+  padding: 50px 30px;
+  color: #ffffff;
 }
 
-.prose-luxury h2 {
-  @apply text-2xl md:text-3xl font-serif font-light text-white mt-10 mb-4;
+.why-main-box .style-8 {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s ease;
 }
 
-.prose-luxury h3 {
-  @apply text-xl md:text-2xl font-serif font-light text-gold-500 mt-8 mb-3;
+.why-main-box .style-8:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
-.prose-luxury ul {
-  @apply list-disc list-inside text-charcoal-300 space-y-2 mb-6 ml-4;
+/* 7. Professional Standards Box */
+.profissional-main-box .style-8 {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 24px;
+  background: #ffffff;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.prose-luxury a {
-  @apply text-gold-500 hover:text-gold-400 transition-colors;
+.profissional-main-box .style-8:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #671725;
+}
+
+/* 8. Booking Process */
+.booking-process-main {
+  position: relative;
+}
+
+.booking-process-col .process-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0b2154;
+  text-align: center;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  position: absolute;
+  top: -8px;
+  right: calc(50% - 48px);
+  z-index: 10;
+}
+
+.booking-process-col .icon-wrap {
+  background: #eeeeee;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 5px solid #e4e3e3;
+  color: #0b2154;
+}
+
+/* 9. Locations Section */
+.location-section-card {
+  border: 3px solid #671725;
+  border-radius: 15px;
+  padding: 20px;
+  background: #f9e1e5;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.location-section-card:hover {
+  background: #f3cbd2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(103, 23, 37, 0.2);
+}
+
+/* 10. Glint Button Effect */
+.glint-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glint-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 25%,
+    transparent 30%
+  );
+  transform: rotate(30deg);
+  animation: glint 4s infinite;
+}
+
+@keyframes glint {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  25% { transform: translateX(100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
 }

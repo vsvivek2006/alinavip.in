@@ -32,20 +32,20 @@ export default function NewsletterForm() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto text-center bg-[#faf6f2] p-8 md:p-12 rounded-3xl border border-gold-200/60 shadow-sm">
-      <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-        <Sparkles className="w-6 h-6 text-gold-600" />
+    <div className="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-sm">
+      <div className="w-12 h-12 bg-[#FFFDF6]0/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <Sparkles className="w-6 h-6 text-primary-wine" />
       </div>
-      <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-serif">
-        Subscribe to Our <span className="text-gold-600">Escort Service</span> Blog
+      <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-sans font-bold">
+        Subscribe to Our <span className="text-primary-wine">Escort Service</span> Blog
       </h3>
       <p className="text-gray-600 mb-6 leading-relaxed">
         Get the latest updates on{' '}
-        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+        <Link href="/services" className="text-primary-wine hover:underline font-medium">
           call girls service in Gurgaon
         </Link>
         , new{' '}
-        <Link href="/category/russian-call-girls" className="text-gold-600 hover:underline font-medium">
+        <Link href="/category/russian-call-girls" className="text-primary-wine hover:underline font-medium">
           Russian escorts
         </Link>
         , and exclusive VIP offers.
@@ -76,12 +76,12 @@ export default function NewsletterForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your private email"
           required
-          className="flex-1 px-6 py-3.5 rounded-full border-2 border-gray-300 focus:border-gold-500 focus:outline-none transition-colors text-sm text-gray-800"
+          className="flex-1 px-6 py-3.5 rounded-full border-2 border-gray-300 focus:border-primary-wine focus:outline-none transition-colors text-sm text-gray-800"
         />
         <button
           type="submit"
           disabled={submissionStatus === 'submitting'}
-          className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl whitespace-nowrap disabled:opacity-75"
+          className="bg-primary-wine hover:bg-[#50121d] text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl whitespace-nowrap disabled:opacity-75"
         >
           {submissionStatus === 'submitting' ? 'Subscribing...' : 'Subscribe'}
         </button>
@@ -94,7 +94,7 @@ export default function NewsletterForm() {
         Official Portal:{' '}
         <a
           href={siteConfig.url}
-          className="text-gold-600 hover:underline font-semibold"
+          className="text-primary-wine hover:underline font-semibold"
         >
           {siteConfig.domain}
         </a>

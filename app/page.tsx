@@ -1,32 +1,33 @@
 import type { Metadata } from 'next';
 import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import CTASection from '@/components/CTASection';
 
 import HeroSection from '@/components/home/HeroSection';
-import AboutSection from '@/components/home/AboutSection';
-import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
-import ServicesCategoriesSection from '@/components/home/ServicesCategoriesSection';
-import LocationsSection from '@/components/home/LocationsSection';
-import HowItWorksSection from '@/components/home/HowItWorksSection';
-import HomeBlogSection from '@/components/home/HomeBlogSection';
+import TrustBannerSection from '@/components/home/TrustBannerSection';
+import FeaturedProfilesSection from '@/components/home/FeaturedProfilesSection';
+import CategoriesGridSection from '@/components/home/CategoriesGridSection';
+import ServicesOfferedSection from '@/components/home/ServicesOfferedSection';
+import TrustStandardsSection from '@/components/home/TrustStandardsSection';
+import BookingProcessSection from '@/components/home/BookingProcessSection';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
+import LocationGridSection from '@/components/home/LocationGridSection';
+import EditorialGuideSection from '@/components/home/EditorialGuideSection';
 import HomeFaqSection from '@/components/home/HomeFaqSection';
-import ExecutiveGuideSection from '@/components/home/ExecutiveGuideSection';
-import HomeContactSection from '@/components/home/HomeContactSection';
+import HomeBlogSection from '@/components/home/HomeBlogSection';
+import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
+  title: 'Gurgaon Escorts – 24/7 In-Call & Out-Call Gurgaon Escort Service | ALINA VIP',
   description:
-    'ALINA VIP provides premier escort service in Gurgaon (Gurugram). Verified VIP call girls, top escorts service, and discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+    'ALINA VIP provides premier escort service in Gurgaon (Gurugram). 100% verified Russian, independent, and high-profile call girls with 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
   keywords: siteConfig.keywords,
   alternates: {
     canonical: siteConfig.url,
     languages: getAlternateLanguages(''),
   },
   openGraph: {
-    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
+    title: 'Gurgaon Escorts – 24/7 In-Call & Out-Call Gurgaon Escort Service | ALINA VIP',
     description:
-      'ALINA VIP provides premier escort service in Gurgaon (Gurugram). Verified VIP call girls, top escorts service, and discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+      'ALINA VIP provides premier escort service in Gurgaon (Gurugram). 100% verified Russian, independent, and high-profile call girls with 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
     url: siteConfig.url,
     type: 'website',
   },
@@ -156,17 +157,43 @@ export default function HomePage() {
         }}
       />
 
+      {/* 1. Hero Banner */}
       <HeroSection />
-      <AboutSection />
-      <WhyChooseUsSection />
-      <ServicesCategoriesSection />
-      <LocationsSection />
-      <HowItWorksSection />
-      <TestimonialsSection theme="light" />
-      <HomeBlogSection />
+
+      {/* 2. 4-Pillar Trust Banner */}
+      <TrustBannerSection />
+
+      {/* 3. Featured Profiles (3x3 Grid) */}
+      <FeaturedProfilesSection />
+
+      {/* 4. Browse Escorts by Category */}
+      <CategoriesGridSection />
+
+      {/* 5. Services Offered */}
+      <ServicesOfferedSection />
+
+      {/* 6. Trust & Professional Standards */}
+      <TrustStandardsSection />
+
+      {/* 7. Simple Booking Process */}
+      <BookingProcessSection />
+
+      {/* 8. Testimonials */}
+      <TestimonialsSection />
+
+      {/* 9. Top Locations Grid */}
+      <LocationGridSection />
+
+      {/* 10. Editorial Guides & Sensual Getaway */}
+      <EditorialGuideSection />
+
+      {/* 11. Frequently Asked Questions */}
       <HomeFaqSection />
-      <ExecutiveGuideSection />
-      <HomeContactSection />
+
+      {/* 12. Latest Blog Articles */}
+      <HomeBlogSection />
+
+      {/* 13. Bottom CTA Banner */}
       <CTASection />
     </>
   );

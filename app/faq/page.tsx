@@ -1,42 +1,27 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Phone,
-  ArrowRight,
-  Crown,
-  MapPin,
+  MessageCircle,
   ShieldCheck,
   CheckCircle2,
   Clock,
-  Star,
+  ChevronDown,
+  Sparkles,
+  HelpCircle,
 } from 'lucide-react';
-import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
-
-export const metadata: Metadata = {
-  title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
-  description:
-    'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
-  keywords: [
-    ...siteConfig.keywords.slice(0, 10),
-    'escort booking faq, rates, cod questions, hotel outcall faq',
-  ],
-  alternates: {
-    canonical: `${siteConfig.url}/faq`,
-    languages: getAlternateLanguages('/faq'),
-  },
-  openGraph: {
-    title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
-    description:
-      'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
-    url: `${siteConfig.url}/faq`,
-    type: 'website',
-  },
-};
+import { siteConfig, generalFaqs } from '@/data/siteConfig';
 
 export default function FAQPage() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  const toggle = (idx: number) => {
+    setOpenIdx(openIdx === idx ? null : idx);
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -51,7 +36,7 @@ export default function FAQPage() {
   };
 
   return (
-    <>
+    <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -59,340 +44,167 @@ export default function FAQPage() {
         }}
       />
 
-      <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'FAQ' }]} />
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
-        </div>
-        <div className="container-luxury relative z-10 text-center">
-          <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-            ★ Knowledge &amp; Inquiries
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Gurgaon Escort Service <span className="text-gradient-gold">Client FAQs</span>
+      {/* 1. Page Title Bar (Roshni Khanna exact page-title-bar-01) */}
+      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
+            Frequently Asked Questions
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Find transparent answers regarding{' '}
-            <strong className="text-gold-400 font-semibold">private escort bookings in Gurgaon</strong>,{' '}
-            <Link href="/services" className="text-gold-400 hover:underline font-medium">
-              VIP call girls
-            </Link>
-            ,{' '}
-            <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian call girls
-            </Link>
-            , and verified outcall protocols with ALINA VIP India.
+          <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
+            Everything You Need to Know About VIP Escort Bookings, Hotel Outcalls, and Rates in Gurgaon
           </p>
-          <div className="gold-divider mx-auto mt-8" />
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-luxury-gold font-semibold">FAQ</span>
+          </div>
         </div>
       </section>
 
-      {/* Main FAQ Section */}
-      <section className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="container-luxury">
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            {/* Left Column (2 Cols): FAQ Accordions */}
-            <div className="lg:col-span-2">
-              <div className="mb-10">
-                <p className="section-subtitle text-gold-600">FAQ</p>
-                <h2 className="section-title mb-4 text-[#0F172A]">
-                  Frequently Asked <span className="text-gradient-gold">Questions</span>
-                </h2>
-                <div className="gold-divider" />
-                <p className="text-gray-600 max-w-2xl mt-6 leading-relaxed">
-                  Everything you need to know about our{' '}
-                  <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                    escort service in Gurgaon
-                  </Link>{' '}
-                  and{' '}
-                  <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                    call girls
-                  </Link>
-                  .
-                </p>
-              </div>
+      {/* 2. Trust Bar */}
+      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
+          <span className="flex items-center gap-2">
+            <ShieldCheck size={18} className="text-luxury-gold" />
+            <strong>100% Genuine Verified Profiles</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 size={18} className="text-luxury-gold" />
+            <strong>No Advance Payment — Cash On Delivery</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <Clock size={18} className="text-luxury-gold" />
+            <strong>24/7 Instant Hotel Outcalls</strong>
+          </span>
+        </div>
+      </section>
 
-              <div className="space-y-4">
-                {generalFaqs.map((faq, i) => (
-                  <details
-                    key={i}
-                    className="group bg-white rounded-2xl border border-gray-200 hover:border-gold-300 transition-all shadow-sm hover:shadow-md overflow-hidden"
+      {/* 3. Main FAQ Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          
+          {/* Left Column: Interactive FAQ Accordions */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary-wine flex items-center gap-1.5">
+                <HelpCircle size={15} /> Transparent Answers
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+                Client Questions &amp; Verification Protocol
+              </h2>
+              <div className="w-16 h-1 bg-primary-wine mt-3 rounded-full" />
+            </div>
+
+            {generalFaqs.map((faq, idx) => {
+              const isOpen = openIdx === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-xl border transition-all duration-200 overflow-hidden ${
+                    isOpen
+                      ? 'border-[#671725] bg-white shadow-md'
+                      : 'border-gray-200 bg-white hover:border-[#671725]/50'
+                  }`}
+                >
+                  <button
+                    onClick={() => toggle(idx)}
+                    className="w-full text-left p-5 flex items-center justify-between gap-4 font-semibold text-base md:text-lg text-[#111827] focus:outline-none"
+                    aria-expanded={isOpen}
                   >
-                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-gold-50/30 transition-colors">
-                      <span className="font-semibold text-[#0F172A] text-lg pr-4 flex items-center gap-3">
-                        <span className="w-8 h-8 bg-gold-100 rounded-full flex items-center justify-center text-gold-700 text-sm font-bold flex-shrink-0">
-                          {i + 1}
-                        </span>
-                        {faq.question}
-                      </span>
-                      <span className="text-gold-600 text-3xl font-light group-open:rotate-45 transition-transform duration-300 flex-shrink-0">
-                        +
-                      </span>
-                    </summary>
+                    <span className={isOpen ? 'text-[#671725]' : 'text-[#0B2154]'}>
+                      {faq.question}
+                    </span>
+                    <span
+                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                        isOpen
+                          ? 'bg-[#671725] text-white rotate-180'
+                          : 'bg-gray-100 text-gray-600'
+                      }`}
+                    >
+                      <ChevronDown size={18} />
+                    </span>
+                  </button>
 
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-                      <p className="text-sm md:text-base leading-relaxed">{faq.answer}</p>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-4 bg-[#FFFDF6]">
+                      <p>{faq.answer}</p>
                     </div>
-                  </details>
-                ))}
-              </div>
-
-              {/* Client Guidelines & Booking Etiquette Guide */}
-              <div className="mt-12 p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm space-y-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#0F172A] font-serif mb-2">
-                    Client Guidelines &amp; Etiquette for Escort Service in Gurgaon
-                  </h3>
-                  <div className="gold-divider mb-4" />
-                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                    At <strong>ALINA VIP</strong>, our goal is to deliver an unforgettable escort service experience built upon mutual courtesy, elegance, and unyielding privacy. Whether you are reserving an outcall escort for a high-profile corporate function, a romantic dinner date on Golf Course Road, or private suite relaxation in Cyber City, adhering to standard etiquette ensures seamless satisfaction.
-                  </p>
+                  )}
                 </div>
-
-                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
-                  <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-gold-600" /> Transparent Communication
-                    </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Be clear about your schedule, chosen venue, and any special dress code preferences (e.g. evening gown, smart casual, or business chic) when speaking with our booking concierge.
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-gold-600" /> Punctuality &amp; Coordination
-                    </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Our escorts arrive punctually via private chauffeur. For hotel bookings, ensure your room key card or reception authorization is arranged to avoid unnecessary waiting in lobbies.
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
-                      <Star className="w-4 h-4 text-gold-600" /> Mutual Dignity &amp; Respect
-                    </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Our call girls and elite models are educated, refined individuals. Treating your escort with genuine gentlemanly respect creates a warm, authentic, and memorable atmosphere.
-                    </p>
-                  </div>
-
-                  <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-xs">
-                    <h4 className="font-bold text-[#0F172A] mb-1.5 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold-600" /> Zero Advance Payment Trap
-                    </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      We never ask for irreversible digital transfers before meeting. Settle your agreed booking fee directly in person, guaranteeing safety, confidence, and peace of mind.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Direct Call & Contact Card */}
-              <div className="text-center mt-12 p-8 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 shadow-sm">
-                <p className="text-gray-700 font-semibold mb-4 text-base">
-                  Still have questions? We&apos;re here to help 24/7.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <a
-                    href={`tel:${siteConfig.phone}`}
-                    className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-3.5 rounded-full font-bold text-base transition-all shadow-md hover:shadow-xl flex items-center gap-2"
-                  >
-                    <Phone className="w-5 h-5" /> Call Now
-                  </a>
-                  <Link href="/contact"
-                    className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-8 py-3.5 rounded-full font-bold text-base transition-all"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column (1 Col): Sticky Information Sidebar */}
-            <div className="space-y-6 lg:sticky lg:top-24">
-              {/* Category Quick Links */}
-              <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] p-6 rounded-2xl border border-gold-500/20 text-white shadow-md">
-                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2 font-serif">
-                  <Crown className="w-5 h-5 text-gold-500" /> Our Escort Services
-                </h3>
-                <div className="space-y-3">
-                  <Link href="/category/russian-call-girls"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 border-b border-white/5 text-sm"
-                  >
-                    <span>Russian Escorts</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                  <Link href="/category/model-escorts"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 border-b border-white/5 text-sm"
-                  >
-                    <span>Model Escorts</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                  <Link href="/category/housewife-escorts"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 border-b border-white/5 text-sm"
-                  >
-                    <span>Housewife Escorts</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                  <Link href="/category/college-girls"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 border-b border-white/5 text-sm"
-                  >
-                    <span>College Girls</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                  <Link href="/category/independent-girls"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 border-b border-white/5 text-sm"
-                  >
-                    <span>Independent Escorts</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                  <Link href="/category/vip-call-girls"
-                    className="flex items-center justify-between text-gray-300 hover:text-gold-400 transition-colors py-2 text-sm"
-                  >
-                    <span>VIP Escorts</span>
-                    <ArrowRight className="w-4 h-4 text-gold-500" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Areas We Serve */}
-              <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/60 shadow-sm">
-                <h3 className="font-bold text-[#0F172A] text-lg mb-4 flex items-center gap-2 font-serif">
-                  <MapPin className="w-5 h-5 text-gold-600" /> Areas We Serve
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  <Link href="/locations/cyber-city"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    Cyber City
-                  </Link>
-                  <Link href="/locations/mg-road"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    MG Road
-                  </Link>
-                  <Link href="/locations/golf-course-road"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    Golf Course Road
-                  </Link>
-                  <Link href="/locations/dlf-phase-1"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    DLF Phase 1–5
-                  </Link>
-                  <Link href="/locations/sohna-road"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    Sohna Road
-                  </Link>
-                  <Link href="/locations/sector-29"
-                    className="text-xs bg-white hover:bg-gold-100 text-gray-700 hover:text-gold-800 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gold-300 transition-colors font-medium"
-                  >
-                    Sector 29
-                  </Link>
-                </div>
-              </div>
-
-              {/* Trust Features Card */}
-              <div className="bg-gold-50/80 p-6 rounded-2xl border border-gold-200/80 shadow-sm">
-                <h3 className="font-bold text-[#0F172A] text-center mb-4 font-serif text-lg">
-                  Why Choose ALINA VIP
-                </h3>
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0" />
-                    <span>100% Discreet Escort Service</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-gold-600 flex-shrink-0" />
-                    <span>Verified Call Girls &amp; Escorts</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-gold-600 flex-shrink-0" />
-                    <span>24/7 Rapid Concierge</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Star className="w-5 h-5 text-gold-600 flex-shrink-0" />
-                    <span>500+ Verified Client Reviews</span>
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gold-200/60 text-center">
-                  <a
-                    href={siteConfig.url}
-                    className="text-gold-700 hover:underline text-xs font-semibold"
-                  >
-                    Official Portal: {siteConfig.domain}
-                  </a>
-                </div>
-              </div>
-
-              {/* Sidebar Image */}
-              <div className="relative h-48 rounded-2xl overflow-hidden shadow-xl border border-gold-200/60 bg-neutral-900">
-                <Image
-                  src="/images/faq-sidebar.webp"
-                  alt="Escort Service in Gurgaon - VIP Call Girls FAQ"
-                  title="Escort Service in Gurgaon - VIP Call Girls FAQ"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 384px"
-                  className="object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+              );
+            })}
           </div>
-        </div>
-      </section>
 
-      {/* Still Have Questions CTA */}
-      <section className="py-16 bg-gradient-to-br from-[#faf6f2] to-white">
-        <div className="container-luxury">
-          <div className="bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-3xl p-8 md:p-12 border-2 border-gold-200 text-center max-w-4xl mx-auto shadow-sm">
-            <h3 className="text-3xl font-bold text-[#0F172A] mb-4 font-serif">
-              Still Have Questions About <span className="text-gold-600">Escort Service?</span>
-            </h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">
-              Our team is available 24/7 to answer all your questions about{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-semibold">
-                call girls in Gurgaon
-              </Link>
-              ,{' '}
-              <Link href="/category/russian-call-girls" className="text-gold-600 hover:underline font-semibold">
-                Russian escorts
-              </Link>
-              , and{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-semibold">
-                VIP escort services
-              </Link>
-              .
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" /> Call {siteConfig.phoneDisplay}
-              </a>
-              <Link href="/contact"
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-lg transition-all"
-              >
-                Contact Us
-              </Link>
-              <a
-                href={siteConfig.url}
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-lg transition-all"
-              >
-                Visit {siteConfig.domain}
-              </a>
+          {/* Right Column: Sticky Booking Card */}
+          <aside className="space-y-6 lg:sticky lg:top-24">
+            <div className="bg-[#671725] text-white p-8 rounded-2xl shadow-xl text-center border-2 border-luxury-gold/50">
+              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
+                <Sparkles size={28} className="text-luxury-gold" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Have More Questions?</h3>
+              <p className="text-xs text-gray-200 leading-relaxed mb-6">
+                Our confidential reservation coordinators are available 24/7 on WhatsApp or direct phone call.
+              </p>
+
+              <div className="space-y-3">
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+                    'Hello ALINA VIP, I have an inquiry about escort bookings in Gurgaon.'
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+                >
+                  <MessageCircle size={18} />
+                  <span>Inquire on WhatsApp</span>
+                </a>
+
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="w-full py-3.5 bg-[#0B2154] hover:bg-[#08173d] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+                >
+                  <Phone size={17} className="text-luxury-gold" />
+                  <span>Call: {siteConfig.phoneDisplay}</span>
+                </a>
+              </div>
             </div>
-          </div>
+
+            {/* Quick Links */}
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+              <h4 className="font-bold text-[#0B2154] text-sm mb-3">Popular Directories</h4>
+              <ul className="space-y-2 text-xs text-gray-600">
+                <li>
+                  <Link href="/gallery" className="hover:text-primary-wine flex items-center justify-between">
+                    <span>Verified Photo Gallery</span>
+                    <span>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-primary-wine flex items-center justify-between">
+                    <span>All Luxury Services</span>
+                    <span>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/locations" className="hover:text-primary-wine flex items-center justify-between">
+                    <span>108 Gurgaon Sectors</span>
+                    <span>&rarr;</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-primary-wine flex items-center justify-between">
+                    <span>Contact Concierge Desk</span>
+                    <span>&rarr;</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
         </div>
-      </section>
+      </main>
 
       <CTASection />
-    </>
+    </div>
   );
 }

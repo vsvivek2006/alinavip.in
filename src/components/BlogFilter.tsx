@@ -81,7 +81,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
             Search blog articles
           </label>
           <div className="absolute left-4 pointer-events-none text-gray-400">
-            <Search className="w-5 h-5 text-gold-600" />
+            <Search className="w-5 h-5 text-primary-wine" />
           </div>
           <input
             id="blog-search"
@@ -90,7 +90,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
             value={searchQuery}
             onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Search articles by keyword, topic, or tag..."
-            className="w-full bg-[#faf6f2] border border-gold-200/80 rounded-full pl-12 pr-12 py-3.5 text-sm text-gray-800 placeholder-gray-400 focus:border-gold-500 focus:bg-white focus:outline-none transition-all shadow-sm"
+            className="w-full bg-white border border-gray-200 rounded-full pl-12 pr-12 py-3.5 text-sm text-gray-800 placeholder-gray-400 focus:border-primary-wine focus:bg-white focus:outline-none transition-all shadow-sm"
           />
           {searchQuery && (
             <button
@@ -117,14 +117,14 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
               {activeCategory && (
                 <>
                   {' '}
-                  in <strong className="text-gold-700">{activeCategory}</strong>
+                  in <strong className="text-primary-wine">{activeCategory}</strong>
                 </>
               )}
             </span>
             <button
               type="button"
               onClick={handleClearFilters}
-              className="text-gold-600 hover:underline font-medium ml-2"
+              className="text-primary-wine hover:underline font-medium ml-2"
             >
               Reset filters
             </button>
@@ -138,8 +138,8 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
           onClick={() => handleCategoryChange(null)}
           className={`px-6 py-3 text-sm tracking-wider uppercase transition-all rounded-full font-semibold ${
             activeCategory === null
-              ? 'bg-gold-600 text-white shadow-lg shadow-gold-600/30'
-              : 'border-2 border-gray-300 text-gray-600 hover:border-gold-500 hover:text-gold-600 hover:bg-gold-50'
+              ? 'bg-primary-wine text-white shadow-lg shadow-md'
+              : 'border-2 border-gray-300 text-gray-600 hover:border-primary-wine hover:text-primary-wine hover:bg-[#FFFDF6]'
           }`}
         >
           All Articles
@@ -150,8 +150,8 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
             onClick={() => handleCategoryChange(cat)}
             className={`px-6 py-3 text-sm tracking-wider uppercase transition-all rounded-full font-semibold ${
               activeCategory === cat
-                ? 'bg-gold-600 text-white shadow-lg shadow-gold-600/30'
-                : 'border-2 border-gray-300 text-gray-600 hover:border-gold-500 hover:text-gold-600 hover:bg-gold-50'
+                ? 'bg-primary-wine text-white shadow-lg shadow-md'
+                : 'border-2 border-gray-300 text-gray-600 hover:border-primary-wine hover:text-primary-wine hover:bg-[#FFFDF6]'
             }`}
           >
             {cat}
@@ -164,7 +164,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
         {filteredPosts.map((post) => (
           <article
             key={post.slug}
-            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gold-300 flex flex-col justify-between"
+            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-wine/40 flex flex-col justify-between"
           >
             <Link href={`/blog/${post.slug}`} className="block">
               <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
@@ -177,7 +177,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
-                <span className="absolute top-4 left-4 bg-gold-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                <span className="absolute top-4 left-4 bg-primary-wine text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                   {post.category}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -186,7 +186,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
               <div className="p-6">
                 <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
                   <span className="flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-gold-600" />
+                    <Calendar className="w-3.5 h-3.5 text-primary-wine" />
                     {new Date(post.date).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
@@ -194,16 +194,16 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
                     })}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-gold-600" />
+                    <Clock className="w-3.5 h-3.5 text-primary-wine" />
                     {post.readTime}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Eye className="w-3.5 h-3.5 text-gold-600" />
+                    <Eye className="w-3.5 h-3.5 text-primary-wine" />
                     {post.views || '1.2k'}
                   </span>
                 </div>
 
-                <h3 className="font-serif text-xl text-[#1a1a2e] mb-2 font-bold leading-tight group-hover:text-gold-600 transition-colors line-clamp-2">
+                <h3 className="font-sans font-bold text-xl text-[#0B2154] mb-2 font-bold leading-tight group-hover:text-primary-wine transition-colors line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -213,14 +213,14 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center">
-                      <User className="w-4 h-4 text-gold-600" />
+                    <div className="w-8 h-8 rounded-full bg-[#F9E1E5] flex items-center justify-center">
+                      <User className="w-4 h-4 text-primary-wine" />
                     </div>
                     <span className="text-sm text-gray-700 font-medium">
                       {post.author || 'ALINA VIP'}
                     </span>
                   </div>
-                  <span className="text-gold-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-primary-wine font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -231,7 +231,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
       </div>
 
       {filteredPosts.length === 0 && (
-        <div className="text-center py-16 bg-[#faf6f2] rounded-3xl border border-gold-200/60 p-8 max-w-2xl mx-auto">
+        <div className="text-center py-16 bg-white rounded-3xl border border-gray-200 p-8 max-w-2xl mx-auto">
           <p className="text-gray-700 text-lg font-semibold mb-2">No articles match your criteria</p>
           <p className="text-gray-500 text-sm mb-6">
             We couldn&apos;t find any articles matching
@@ -241,7 +241,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
           <button
             type="button"
             onClick={handleClearFilters}
-            className="px-6 py-2.5 bg-gold-600 hover:bg-gold-700 text-white rounded-full text-sm font-semibold transition-all shadow-md"
+            className="px-6 py-2.5 bg-primary-wine hover:bg-[#50121d] text-white rounded-full text-sm font-semibold transition-all shadow-md"
           >
             Clear Filters &amp; View All Articles
           </button>

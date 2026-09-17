@@ -35,7 +35,6 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
   const filteredLocations = useMemo(() => {
     let result = locations;
 
-    // Filter by tab
     if (activeTab === 'gurgaon-prime') {
       result = result.filter(
         (loc) =>
@@ -65,7 +64,6 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
       result = result.filter((loc) => loc.region !== 'Gurgaon' && loc.region !== 'Delhi' && loc.region !== 'Delhi NCR');
     }
 
-    // Filter by search term
     if (searchTerm.trim()) {
       const q = searchTerm.toLowerCase();
       result = result.filter(
@@ -81,21 +79,21 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
   }, [locations, searchTerm, activeTab]);
 
   return (
-    <>
-      {/* Interactive Search Bar & Filters */}
-      <div className="max-w-xl mx-auto mt-10 relative">
+    <div className="w-full text-[#2d2d2d]">
+      {/* Search Input */}
+      <div className="max-w-xl mx-auto mt-6 relative">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search by sector, corridor or landmark (e.g., Sector 65, DLF Phase 5, Aerocity)..."
-          className="w-full bg-charcoal-800/90 border border-charcoal-700 focus:border-gold-500 px-12 py-4 text-sm text-white placeholder-charcoal-400 focus:outline-none transition-all shadow-xl rounded-sm"
+          placeholder="Search by sector, DLF, or landmark (e.g., Sector 29, Cyber City, Aerocity)..."
+          className="w-full bg-white border-2 border-gray-200 focus:border-[#671725] px-12 py-3.5 text-sm text-[#111827] placeholder-gray-400 focus:outline-none transition-colors shadow-sm rounded-xl"
         />
-        <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-500" />
+        <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#671725]" />
         {searchTerm && (
           <button
             onClick={() => setSearchTerm('')}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-charcoal-400 hover:text-white bg-charcoal-700 px-2 py-1 rounded"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-500 hover:text-[#671725] bg-gray-100 px-2 py-1 rounded"
           >
             Clear
           </button>
@@ -103,7 +101,7 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
+      <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
         {filterTabs.map((tab) => (
           <button
             key={tab.id}
@@ -111,10 +109,10 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
               setActiveTab(tab.id);
               setSearchTerm('');
             }}
-            className={`px-4 py-2 text-xs uppercase tracking-wider font-semibold transition-all rounded-sm ${
+            className={`px-4 py-2 text-xs uppercase tracking-wider font-bold transition-all rounded-lg ${
               activeTab === tab.id
-                ? 'bg-gold-500 text-charcoal-950 shadow-md shadow-gold-500/20'
-                : 'bg-charcoal-800/70 text-charcoal-300 border border-charcoal-700 hover:border-gold-500/50 hover:text-gold-400'
+                ? 'bg-[#671725] text-white shadow-md'
+                : 'bg-white text-gray-700 border border-gray-200 hover:border-[#671725]/50'
             }`}
           >
             {tab.label}
@@ -123,78 +121,78 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
       </div>
 
       {/* Quick Counter */}
-      <p className="text-xs text-charcoal-400 mt-4 tracking-wider text-center">
-        Showing <span className="text-gold-400 font-semibold">{filteredLocations.length}</span> of{' '}
-        <span className="text-white font-semibold">{locations.length}</span> verified locations
+      <p className="text-xs text-gray-500 mt-4 tracking-wider text-center">
+        Showing <strong className="text-[#671725]">{filteredLocations.length}</strong> of{' '}
+        <strong>{locations.length}</strong> verified locations
       </p>
 
-      {/* Locations Directory Grid */}
-      <section className="py-16 md:py-24 bg-charcoal-900/50">
-        <div className="container-luxury">
-          {filteredLocations.length === 0 ? (
-            <div className="text-center py-16 luxury-card p-12 max-w-lg mx-auto">
-              <Compass size={40} className="text-gold-500 mx-auto mb-4 opacity-60" />
-              <h3 className="font-serif text-2xl text-white mb-2 font-light">No Locations Found</h3>
-              <p className="text-sm text-charcoal-400 mb-6">
-                We couldn&apos;t find any locations matching &ldquo;{searchTerm}&rdquo;.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setActiveTab('all');
-                }}
-                className="btn-gold text-xs"
+      {/* Locations Grid */}
+      <div className="mt-10">
+        {filteredLocations.length === 0 ? (
+          <div className="text-center py-16 bg-white rounded-2xl border border-gray-200 p-10 max-w-lg mx-auto shadow-sm">
+            <Compass size={40} className="text-[#671725] mx-auto mb-3 opacity-60" />
+            <h3 className="text-xl font-bold text-[#0B2154] mb-1">No Locations Found</h3>
+            <p className="text-xs text-gray-500 mb-5">
+              We couldn&apos;t find any locations matching &ldquo;{searchTerm}&rdquo;.
+            </p>
+            <button
+              onClick={() => {
+                setSearchTerm('');
+                setActiveTab('all');
+              }}
+              className="px-5 py-2.5 bg-[#671725] hover:bg-[#50121d] text-white text-xs font-bold rounded-lg transition-colors"
+            >
+              Reset Search Filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredLocations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/locations/${loc.slug}`}
+                prefetch={false}
+                className="group relative bg-white p-6 rounded-xl border border-gray-200/90 hover:border-[#671725] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
-                Reset Search Filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredLocations.map((loc) => (
-                <Link
-                  key={loc.slug}
-                  href={`/locations/${loc.slug}`}
-                  prefetch={false}
-                  className="luxury-card p-7 group hover:border-gold-500 hover:shadow-xl hover:shadow-gold-500/10 flex flex-col justify-between transition-all duration-300 rounded-sm bg-charcoal-850/80 border border-charcoal-700"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <MapPin size={16} className="text-gold-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="text-xs text-gold-400 font-mono uppercase tracking-wider font-semibold">
-                          {loc.city || loc.region}
-                        </span>
-                      </div>
-                      {loc.isHub && (
-                        <span className="text-[10px] uppercase font-bold tracking-wider text-charcoal-950 bg-gold-500 px-2 py-0.5 rounded-2xs shadow-sm">
-                          PRIMARY HUB
-                        </span>
-                      )}
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-[#671725]">
+                      <MapPin size={15} />
+                      <span>{loc.city || loc.region}</span>
                     </div>
-
-                    <h3 className="font-serif text-2xl text-white mb-2 font-light group-hover:text-gold-400 transition-colors">
-                      {loc.name}
-                    </h3>
-
-                    <p className="text-sm text-charcoal-400 leading-relaxed mb-6 line-clamp-2 font-light">
-                      {loc.area || `${loc.name} service corridor in ${loc.city || loc.region}`}
-                    </p>
+                    {loc.isHub && (
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-white bg-[#671725] px-2 py-0.5 rounded shadow-xs">
+                        PRIMARY HUB
+                      </span>
+                    )}
                   </div>
 
-                  <div className="pt-4 border-t border-charcoal-700/80 flex items-center justify-between">
-                    <span className="text-xs text-gold-400 tracking-wider uppercase font-semibold flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                      Explore Area Guide <ArrowRight size={14} />
+                  <h3 className="text-xl font-bold text-[#0B2154] group-hover:text-[#671725] transition-colors mb-2">
+                    {loc.name}
+                  </h3>
+
+                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 mb-4">
+                    {loc.shortDescription}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                  {loc.corridor ? (
+                    <span className="text-[11px] font-semibold text-gray-500 bg-[#F9E1E5] text-[#671725] px-2 py-0.5 rounded">
+                      {loc.corridor}
                     </span>
-                    <span className="text-[11px] text-charcoal-400 font-mono">
-                      20–30m Dispatch
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-    </>
+                  ) : (
+                    <span className="text-[11px] text-gray-400">Gurgaon Outcall</span>
+                  )}
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#671725] group-hover:translate-x-1 transition-transform">
+                    View Area <ArrowRight size={13} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

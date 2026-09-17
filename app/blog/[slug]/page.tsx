@@ -131,26 +131,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Main Article Body */}
       <article className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="container-luxury max-w-4xl">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Article Header */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs bg-gold-100 text-gold-800 px-4 py-1.5 rounded-full font-bold tracking-wider uppercase">
+              <span className="text-xs bg-[#F9E1E5] text-primary-wine px-4 py-1.5 rounded-full font-bold tracking-wider uppercase">
                 {post.category}
               </span>
               <span className="text-xs text-gray-400">•</span>
               <span className="text-xs text-gray-500 flex items-center gap-1">
-                <Eye className="w-3.5 h-3.5 text-gold-600" /> {post.views || '1.2k'} views
+                <Eye className="w-3.5 h-3.5 text-primary-wine" /> {post.views || '1.2k'} views
               </span>
             </div>
 
-            <h1 className="font-serif text-3xl md:text-5xl text-[#0F172A] font-bold mb-6 leading-tight">
+            <h1 className="font-sans font-bold text-3xl md:text-5xl text-[#0F172A] font-bold mb-6 leading-tight">
               {post.title}
             </h1>
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 pb-6 border-b border-gray-100">
               <span className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-gold-600" />
+                <Calendar className="w-4 h-4 text-primary-wine" />
                 {new Date(post.date).toLocaleDateString('en-US', {
                   month: 'long',
                   day: 'numeric',
@@ -158,11 +158,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 })}
               </span>
               <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-gold-600" />
+                <Clock className="w-4 h-4 text-primary-wine" />
                 {post.readTime}
               </span>
               <span className="flex items-center gap-2">
-                <User className="w-4 h-4 text-gold-600" />
+                <User className="w-4 h-4 text-primary-wine" />
                 {post.author}
               </span>
             </div>
@@ -185,7 +185,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Article Content / Paragraphs */}
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-            <p className="text-xl font-serif text-gray-900 leading-relaxed italic border-l-4 border-gold-500 pl-6 my-8">
+            <p className="text-xl font-sans font-bold text-gray-900 leading-relaxed italic border-l-4 border-primary-wine pl-6 my-8">
               {post.excerpt}
             </p>
 
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Article Footer & Tags */}
           <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <Tag className="w-4 h-4 text-gold-600" />
+              <Tag className="w-4 h-4 text-primary-wine" />
               <span className="text-sm font-semibold text-gray-700">Tags:</span>
               {['Escort Service', 'Gurgaon Call Girls', post.category, 'VIP Lifestyle'].map((tag) => (
                 <span
@@ -217,13 +217,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related Articles Strip */}
       {displayRelated.length > 0 && (
-        <section className="py-16 bg-[#faf6f2] border-t border-gold-200/60">
-          <div className="container-luxury max-w-6xl">
+        <section className="py-16 bg-white border-t border-gray-200/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
             <div className="text-center mb-12">
-              <span className="text-xs font-bold text-gold-600 uppercase tracking-wider block mb-2">
+              <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
                 Continue Reading
               </span>
-              <h2 className="text-3xl font-serif text-[#0F172A] font-bold">
+              <h2 className="text-3xl font-sans font-bold text-[#0F172A] font-bold">
                 Related Articles &amp; Guides
               </h2>
             </div>
@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Link
                   key={relatedPost.slug}
                   href={`/blog/${relatedPost.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gold-200/40 flex flex-col"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200/40 flex flex-col"
                 >
                   {relatedPost.image && (
                     <div className="relative aspect-[16/10] overflow-hidden">
@@ -249,17 +249,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   )}
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-xs font-bold text-gold-600 uppercase tracking-wider block mb-2">
+                      <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
                         {relatedPost.category}
                       </span>
-                      <h3 className="font-serif text-lg font-bold text-[#0F172A] group-hover:text-gold-600 transition-colors line-clamp-2 mb-2">
+                      <h3 className="font-sans font-bold text-lg font-bold text-[#0F172A] group-hover:text-primary-wine transition-colors line-clamp-2 mb-2">
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-600 line-clamp-2">
                         {relatedPost.excerpt}
                       </p>
                     </div>
-                    <span className="text-xs text-gold-600 font-bold flex items-center gap-1 mt-4">
+                    <span className="text-xs text-primary-wine font-bold flex items-center gap-1 mt-4">
                       Read Article <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>

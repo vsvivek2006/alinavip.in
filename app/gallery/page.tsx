@@ -2,380 +2,384 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  Crown,
-  Camera,
-  Heart,
-  GraduationCap,
-  User,
-  Star,
-  Plane,
+  Phone,
+  MessageCircle,
+  ShieldCheck,
   Sparkles,
   ArrowRight,
-  Phone,
-  ShieldCheck,
-  Award,
+  CheckCircle,
 } from 'lucide-react';
-import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
-import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
-  title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
+  title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
   description:
-    'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
+    'Browse 100% verified, authentic photographs of VIP call girls and elite escorts in Gurgaon. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.',
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
-    'verified escort gallery, real call girl photos, genuine escort profiles',
+    'verified escort gallery, real call girl photos gurgaon, genuine escort profiles',
   ],
   alternates: {
     canonical: `${siteConfig.url}/gallery`,
     languages: getAlternateLanguages('/gallery'),
   },
   openGraph: {
-    title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP India',
+    title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
     description:
-      'Browse authenticated, untouched photographs of VIP call girls and luxury escorts in Gurgaon. Genuine Russian escorts, model escort girls, and high-profile girls.',
+      'Browse 100% verified, authentic photographs of VIP call girls and elite escorts in Gurgaon. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.',
     url: `${siteConfig.url}/gallery`,
     type: 'website',
   },
 };
 
-const categoryImages: Record<string, string> = {
-  'russian-call-girls': '/images/categories/russian-escorts.webp',
-  'russian-escorts': '/images/categories/russian-escorts.webp',
-  'vip-call-girls': '/images/categories/vip-escorts.webp',
-  'vip-escorts': '/images/categories/vip-escorts.webp',
-  'high-profile-girls': '/images/categories/high-profile-girls.webp',
-  'model-escorts': '/images/categories/model-escorts.webp',
-  'housewife-escorts': '/images/categories/housewife-escorts.webp',
-  'college-girls': '/images/categories/college-girls.webp',
-  'independent-girls': '/images/categories/independent-escorts.webp',
-  'independent-escorts': '/images/categories/independent-escorts.webp',
-  'air-hostess': '/images/categories/air-hostess.webp',
-  'air-hostess-escorts': '/images/categories/air-hostess.webp',
-  'celebrity-escorts': '/images/categories/celebrity-escorts.webp',
-  'travel-escorts': '/images/categories/travel-escorts.webp',
-};
+interface GalleryModel {
+  name: string;
+  category: string;
+  categorySlug: string;
+  location: string;
+  image: string;
+  rates: string;
+  age: number;
+}
 
-const categoryIcons: Record<string, React.ElementType> = {
-  'russian-call-girls': Crown,
-  'russian-escorts': Crown,
-  'vip-call-girls': Crown,
-  'vip-escorts': Crown,
-  'high-profile-girls': Star,
-  'model-escorts': Camera,
-  'housewife-escorts': Heart,
-  'college-girls': GraduationCap,
-  'independent-girls': User,
-  'independent-escorts': User,
-  'air-hostess': Plane,
-  'air-hostess-escorts': Plane,
-  'celebrity-escorts': Award,
-  'travel-escorts': Sparkles,
-};
+const verifiedModels: GalleryModel[] = [
+  {
+    name: 'Karina',
+    category: 'Russian Escort',
+    categorySlug: 'russian-call-girls',
+    location: 'Huda City Centre, Gurgaon',
+    image: '/images/assets/Karina.jpg',
+    rates: '₹15,000 / Shot',
+    age: 22,
+  },
+  {
+    name: 'Tanya',
+    category: 'VIP Model Escort',
+    categorySlug: 'vip-call-girls',
+    location: 'Cyber City, Gurgaon',
+    image: '/images/assets/Tanya.jpg',
+    rates: '₹20,000 / Shot',
+    age: 23,
+  },
+  {
+    name: 'Neha',
+    category: 'Independent Escort',
+    categorySlug: 'independent-girls',
+    location: 'Golf Course Road, Gurgaon',
+    image: '/images/assets/Neha.jpg',
+    rates: '₹12,000 / Shot',
+    age: 21,
+  },
+  {
+    name: 'Siya',
+    category: 'Celebrity Escort',
+    categorySlug: 'celebrity-escorts',
+    location: 'DLF Phase 1, Gurgaon',
+    image: '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
+    rates: '₹25,000 / Shot',
+    age: 24,
+  },
+  {
+    name: 'Mia',
+    category: 'Russian High Profile',
+    categorySlug: 'russian-call-girls',
+    location: 'Sohna Road, Gurgaon',
+    image: '/images/assets/Mia.jpg',
+    rates: '₹18,000 / Shot',
+    age: 23,
+  },
+  {
+    name: 'Nithya Rai',
+    category: 'High Profile Escort',
+    categorySlug: 'high-profile-girls',
+    location: 'Mahipalpur & Aerocity',
+    image: '/images/assets/Nithya_High_Profile_Escort_In_Mahipalpur.jpg',
+    rates: '₹15,000 / Shot',
+    age: 22,
+  },
+  {
+    name: 'Sheena',
+    category: 'Indian Model Escort',
+    categorySlug: 'model-escorts',
+    location: 'MG Road, Gurgaon',
+    image: '/images/assets/Sheena_Indian_Escort_In_Gurgaon.jpg',
+    rates: '₹14,000 / Shot',
+    age: 24,
+  },
+  {
+    name: 'Geet',
+    category: 'Air Hostess Escort',
+    categorySlug: 'air-hostess',
+    location: 'DLF Cyber City, Gurgaon',
+    image: '/images/assets/Geet.jpg',
+    rates: '₹16,000 / Shot',
+    age: 25,
+  },
+  {
+    name: 'Pallavi',
+    category: 'College Girl Escort',
+    categorySlug: 'college-girls',
+    location: 'Sector 29, Gurgaon',
+    image: '/images/assets/Pallavi.jpg',
+    rates: '₹10,000 / Shot',
+    age: 20,
+  },
+];
+
+const categoryPortfolios = [
+  {
+    title: 'Russian Call Girls',
+    slug: 'russian-call-girls',
+    image: '/images/assets/image_270x450_13.jpg',
+    count: '24 Profiles',
+    desc: 'Fair-complexioned, aristocratic European & Russian companion models.',
+  },
+  {
+    title: 'VIP Call Girls',
+    slug: 'vip-call-girls',
+    image: '/images/assets/image_270x450_14.jpg',
+    count: '32 Profiles',
+    desc: 'Elite high-society models for corporate galas and 5-star hotel luxury.',
+  },
+  {
+    title: 'High Profile Girls',
+    slug: 'high-profile-girls',
+    image: '/images/assets/image_270x450_15.jpg',
+    count: '28 Profiles',
+    desc: 'Fashion influencers and luxury models offering five-star companionship.',
+  },
+  {
+    title: 'Model Escorts',
+    slug: 'model-escorts',
+    image: '/images/assets/image_270x450_16.jpg',
+    count: '30 Profiles',
+    desc: 'Runway fashionistas and beauty pageant models with photogenic grace.',
+  },
+  {
+    title: 'College Call Girls',
+    slug: 'college-girls',
+    image: '/images/assets/image_270x450_17.jpg',
+    count: '35 Profiles',
+    desc: 'Charming, vibrant college students with youthful freshness and warmth.',
+  },
+  {
+    title: 'Housewife Escorts',
+    slug: 'housewife-escorts',
+    image: '/images/assets/image_270x450_18.jpg',
+    count: '22 Profiles',
+    desc: 'Mature, understanding homemakers offering deep emotional intimacy.',
+  },
+  {
+    title: 'Independent Girls',
+    slug: 'independent-girls',
+    image: '/images/assets/image_270x450_19.jpg',
+    count: '40 Profiles',
+    desc: 'Direct independent companions with no intermediaries and fast booking.',
+  },
+  {
+    title: 'Air Hostess Escorts',
+    slug: 'air-hostess',
+    image: '/images/assets/image_270x450_20.jpg',
+    count: '18 Profiles',
+    desc: 'Cultured aviation crew members available during hotel transit layovers.',
+  },
+  {
+    title: 'Celebrity Escorts',
+    slug: 'celebrity-escorts',
+    image: '/images/assets/image_270x450_21.jpg',
+    count: '12 Profiles',
+    desc: 'Ultra-exclusive screen artists and ramp models for high-profile clients.',
+  },
+  {
+    title: 'Travel Escorts',
+    slug: 'travel-escorts',
+    image: '/images/assets/image_270x450_22.jpg',
+    count: '26 Profiles',
+    desc: 'Sophisticated globetrotters ready for international and domestic holidays.',
+  },
+  {
+    title: 'Busty Call Girls',
+    slug: 'busty-escorts-in-gurgaon',
+    image: '/images/assets/image_270x450_23.jpg',
+    count: '20 Profiles',
+    desc: 'Voluptuous, curvaceous models with breathtaking hourglass proportions.',
+  },
+  {
+    title: 'Elite Delhi NCR Escorts',
+    slug: 'high-profile-girls',
+    image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
+    count: '45 Profiles',
+    desc: 'Top-rated companion escorts serving Gurgaon, Delhi, and Aerocity suites.',
+  },
+];
 
 export default function GalleryPage() {
   return (
-    <>
-      <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Gallery' }]} />
-
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
-        </div>
-        <div className="container-luxury relative z-10 text-center">
-          <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-            ★ Verified Portfolio
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            VIP Call Girl <span className="text-gradient-gold">Photo Gallery</span>
+    <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
+      {/* 1. Page Title Bar (Roshni Khanna exact page-title-bar-01) */}
+      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
+            Verified Escort Photo Gallery
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Browse our certified portfolio of{' '}
-            <strong className="text-gold-400 font-semibold">verified call girls</strong>,{' '}
-            <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
-              Russian call girls
-            </Link>
-            ,{' '}
-            <Link href="/category/model-escorts" className="text-gold-400 hover:underline font-medium">
-              fashion models
-            </Link>
-            , and{' '}
-            <Link href="/services" className="text-gold-400 hover:underline font-medium">
-              elite escorts in Gurgaon
-            </Link>
-            . Every photograph is authenticated in person to guarantee 100% profile accuracy.
+          <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
+            100% Genuine, Authenticated Photographs of Luxury Escorts and VIP Call Girls in Gurgaon
           </p>
-          <div className="gold-divider mx-auto mt-8" />
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-luxury-gold font-semibold">Photo Gallery</span>
+          </div>
         </div>
       </section>
 
-      {/* Main Gallery Section */}
-      <section className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="container-luxury">
-          <div className="text-center mb-14">
-            <p className="section-subtitle text-gold-600">Our Gallery</p>
-            <h2 className="section-title mb-4 text-[#0F172A]">
-              Premium <span className="text-gradient-gold">Call Girls</span> Collection
+      {/* 2. Trust Bar */}
+      <section className="bg-[#0B2154] text-white py-4 px-4 shadow-sm border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs sm:text-sm">
+          <span className="flex items-center gap-2">
+            <ShieldCheck size={18} className="text-luxury-gold" />
+            <strong>100% Verified Recent Photos</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle size={18} className="text-luxury-gold" />
+            <strong>Zero Advance Payment Required</strong>
+          </span>
+          <span className="flex items-center gap-2">
+            <Sparkles size={18} className="text-luxury-gold" />
+            <strong>20-30 Min 5-Star Hotel Outcalls</strong>
+          </span>
+        </div>
+      </section>
+
+      {/* 3. Featured Models Showcase (3x3 Grid) */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
+            Authentic Photographs
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+            Featured Model Profiles
+          </h2>
+          <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            All models displayed below are active, verified in-person, and available for immediate outcall to luxury hotels across DLF Phase 1-5, Cyber City, and Golf Course Road.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {verifiedModels.map((model, idx) => (
+            <article
+              key={idx}
+              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col justify-between group"
+            >
+              <div className="relative h-[380px] w-full overflow-hidden bg-gray-100">
+                <Image
+                  src={model.image}
+                  alt={`${model.name} - ${model.category} in Gurgaon`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute top-3 left-3 bg-[#671725] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                  VERIFIED
+                </div>
+                <div className="absolute top-3 right-3 bg-[#0B2154]/90 text-luxury-gold text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                  {model.rates}
+                </div>
+              </div>
+
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-xl font-bold text-[#0B2154]">{model.name}</h3>
+                    <span className="text-xs font-bold text-gray-500">{model.age} Yrs</span>
+                  </div>
+                  <p className="text-xs font-semibold text-primary-wine mb-2">{model.category}</p>
+                  <p className="text-xs text-gray-600 mb-3">{model.location}</p>
+                  <div className="text-luxury-gold text-sm mb-4">★★★★★</div>
+                </div>
+
+                <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
+                  <a
+                    href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+                      `Hello ALINA VIP, I want to book ${model.name} (${model.category})`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded transition-colors"
+                  >
+                    <MessageCircle size={15} />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
+                    href={`tel:${siteConfig.phone}`}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#0B2154] hover:bg-[#08173d] text-white font-bold text-xs rounded transition-colors"
+                  >
+                    <Phone size={14} className="text-luxury-gold" />
+                    <span>Call Now</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* 4. Category Portfolios Grid */}
+        <div className="mt-24">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">
+              Roster Diversity
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#0B2154] mt-1">
+              Browse Categories &amp; Model Portfolios
             </h2>
-            <div className="gold-divider mx-auto" />
-            <p className="text-gray-600 max-w-2xl mx-auto mt-6 leading-relaxed text-base">
-              Explore our curated collection of verified{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                call girls in Gurgaon
-              </Link>
-              . Each category represents premium{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                escort service
-              </Link>{' '}
-              options.
+            <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              Explore specialized categories featuring verified national and international call girls in Gurgaon.
             </p>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categories.map((cat) => {
-              const IconComponent = categoryIcons[cat.slug] || Star;
-              const imageSrc = categoryImages[cat.slug] || '/images/categories/default.webp';
-
-              return (
-                <Link
-                  key={cat.slug}
-                  href={`/category/${cat.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-gold-300 flex flex-col"
-                >
-                  <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                    <Image
-                      src={imageSrc}
-                      alt={`${cat.name} - Escort Service in Gurgaon | VIP Call Girls`}
-                      title={`${cat.name} - Escort Service in Gurgaon | VIP Call Girls`}
-                      fill
-                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 50vw, 390px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {/* Category Floating Tag */}
-                    <div className="absolute top-4 left-4 bg-gold-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5 backdrop-blur-sm">
-                      <IconComponent className="w-3.5 h-3.5 text-gold-200" />
-                      <span>{cat.name}</span>
-                    </div>
-
-                    {/* Verified Badge */}
-                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-gold-400 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1 border border-gold-500/30">
-                      <ShieldCheck className="w-3.5 h-3.5 text-gold-400" />
-                      <span>Verified</span>
-                    </div>
-
-                    {/* Drawer Overlay on Hover */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="bg-black/60 backdrop-blur-md rounded-xl p-4 border border-white/10 shadow-xl">
-                        <p className="text-white text-xs leading-relaxed line-clamp-3">
-                          {cat.shortDescription}
-                        </p>
-                        <div className="flex items-center justify-between mt-3 pt-2 border-t border-white/10">
-                          <span className="text-gold-400 text-xs font-semibold tracking-wider uppercase flex items-center gap-1">
-                            View Call Girls <ArrowRight className="w-3.5 h-3.5" />
-                          </span>
-                          <div className="flex items-center gap-1">
-                            <Star className="w-3.5 h-3.5 fill-gold-500 text-gold-500" />
-                            <span className="text-white text-xs font-bold">4.9</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card Bottom Content */}
-                  <div className="p-6 flex flex-col justify-between flex-1">
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-serif text-xl text-[#0F172A] font-bold group-hover:text-gold-600 transition-colors">
-                          {cat.name}
-                        </h3>
-                        <span className="text-xs bg-gold-100 text-gold-700 px-2.5 py-0.5 rounded-full font-semibold">
-                          Premium
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm line-clamp-2 mb-4 leading-relaxed">
-                        {cat.shortDescription}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-gold-500 text-gold-500" />
-                        <span className="text-sm font-bold text-[#0F172A]">4.9</span>
-                        <span className="text-xs text-gray-400 ml-1">(128+ reviews)</span>
-                      </div>
-                      <span className="text-gold-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                        View Profiles <ArrowRight className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Metric Counters Banner */}
-      <section className="py-16 bg-[#1a1a2e] text-white">
-        <div className="container-luxury">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold-500 mb-2 font-serif">500+</div>
-              <p className="text-gray-300 text-sm uppercase tracking-wider">Verified Call Girls</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold-500 mb-2 font-serif">4.9/5</div>
-              <p className="text-gray-300 text-sm uppercase tracking-wider">Client Rating</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold-500 mb-2 font-serif">24/7</div>
-              <p className="text-gray-300 text-sm uppercase tracking-wider">Escort Service Available</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold-500 mb-2 font-serif">100%</div>
-              <p className="text-gray-300 text-sm uppercase tracking-wider">Discreet Service</p>
-            </div>
-          </div>
-          <div className="text-center mt-8 pt-6 border-t border-white/10">
-            <a
-              href={siteConfig.url}
-              className="text-gold-400 hover:text-gold-300 text-sm font-semibold hover:underline"
-            >
-              Official Portal: {siteConfig.domain}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Escort Services */}
-      <section className="py-16 bg-[#FDFBF7] text-gray-800">
-        <div className="container-luxury">
-          <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold text-[#0F172A] mb-3 font-serif">
-              Popular <span className="text-gold-600">Escort Services</span>
-            </h3>
-            <p className="text-gray-600">
-              Browse our most popular{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-medium">
-                escort service categories in Gurgaon
-              </Link>
-            </p>
-            <div className="gold-divider mx-auto mt-4" />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <Link href="/category/russian-call-girls"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <Crown className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                Russian Escorts
-              </span>
-            </Link>
-
-            <Link href="/category/model-escorts"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <Camera className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                Model Escorts
-              </span>
-            </Link>
-
-            <Link href="/category/housewife-escorts"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <Heart className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                Housewife Escorts
-              </span>
-            </Link>
-
-            <Link href="/category/college-girls"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <GraduationCap className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                College Girls
-              </span>
-            </Link>
-
-            <Link href="/category/independent-girls"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <User className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                Independent Escorts
-              </span>
-            </Link>
-
-            <Link href="/category/vip-call-girls"
-              className="bg-white p-6 rounded-2xl text-center shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-gold-300 group"
-            >
-              <Crown className="w-10 h-10 text-gold-500 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-semibold text-[#0F172A] group-hover:text-gold-600 block">
-                VIP Escorts
-              </span>
-            </Link>
-          </div>
-
-          <div className="text-center mt-8">
-            <a
-              href={siteConfig.url}
-              className="text-gold-600 hover:text-gold-700 font-semibold text-sm hover:underline"
-            >
-              Visit {siteConfig.domain}
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Ready to Book CTA */}
-      <section className="py-16 bg-white">
-        <div className="container-luxury">
-          <div className="bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-3xl p-8 md:p-12 border-2 border-gold-200 text-center max-w-4xl mx-auto shadow-sm">
-            <h3 className="text-3xl font-bold text-[#0F172A] mb-4 font-serif">
-              Ready to Book Your <span className="text-gold-600">Escort Service?</span>
-            </h3>
-            <p className="text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed">
-              Explore authentic photo-authenticated profiles. Call our concierge desk 24/7 or view full details in our{' '}
-              <Link href="/services" className="text-gold-600 hover:underline font-semibold">
-                services directory
-              </Link>
-              .
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categoryPortfolios.map((cat, idx) => (
+              <Link
+                key={idx}
+                href={`/category/${cat.slug}`}
+                className="category-inner-col group relative block rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px]"
               >
-                <Phone className="w-5 h-5" /> Call Now
-              </a>
-              <Link href="/contact"
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-lg transition-all"
-              >
-                Contact Us
+                <Image
+                  src={cat.image}
+                  alt={`${cat.title} Gurgaon Escorts`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                
+                <div className="absolute top-4 right-4 bg-primary-wine/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                  {cat.count}
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-luxury-gold transition-colors">
+                    {cat.title}
+                  </h3>
+                  <p className="text-xs text-gray-200 leading-relaxed opacity-90 mb-3">
+                    {cat.desc}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-luxury-gold group-hover:underline">
+                    View Portfolio <ArrowRight size={13} />
+                  </span>
+                </div>
               </Link>
-              <a
-                href={siteConfig.url}
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-lg transition-all"
-              >
-                Visit {siteConfig.domain}
-              </a>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </main>
 
       <CTASection />
-    </>
+    </div>
   );
 }

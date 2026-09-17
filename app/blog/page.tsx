@@ -48,33 +48,33 @@ export default function BlogPage() {
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog' }]} />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
+      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
-        <div className="container-luxury relative z-10 text-center">
-          <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-[#FFFDF6]0/10 backdrop-blur-sm">
             ★ Insights &amp; Resources
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans font-bold tracking-wide">
             Gurgaon Call Girls &amp; <span className="text-gradient-gold">Escort Girls Journal</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Authoritative insights on luxury escort services in Gurgaon, five-star hotel outcall etiquette, nightlife recommendations, and verified call girls booking advice from ALINA VIP India.
           </p>
-          <div className="gold-divider mx-auto mt-8" />
+          <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto mt-8" />
         </div>
       </section>
 
       {/* Main Blog Articles Section */}
       <section className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="container-luxury">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="section-subtitle text-gold-600">Our Blog</p>
-            <h2 className="section-title mb-4 text-[#0F172A]">
+            <p className="section-subtitle text-primary-wine">Our Blog</p>
+            <h2 className="section-title mb-4 text-[#0B2154]">
               Insights on <span className="text-gradient-gold">VIP Escorts &amp; Luxury Lifestyle</span>
             </h2>
-            <div className="gold-divider mx-auto" />
+            <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto" />
             <p className="text-gray-600 max-w-2xl mx-auto mt-6 leading-relaxed text-base">
               Discover curated guides on five-star hotel outcall, fine dining spots, profile selection, and executive etiquette in Gurgaon.
             </p>
@@ -95,14 +95,14 @@ export default function BlogPage() {
 
       {/* Featured Article Section */}
       <section className="py-16 bg-gradient-to-br from-[#faf6f2] to-white">
-        <div className="container-luxury">
-          <div className="bg-gradient-to-r from-gold-50 to-amber-50 rounded-3xl p-8 md:p-12 border-2 border-gold-200 shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-gold-50 to-amber-50 rounded-3xl p-8 md:p-12 border-2 border-gray-200 shadow-md">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <span className="inline-block bg-gold-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
+                <span className="inline-block bg-primary-wine text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
                   ★ Featured Article
                 </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3 font-serif">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0B2154] mb-3 font-sans font-bold">
                   Best Escort Service in Gurgaon: A Complete Guide
                 </h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
@@ -111,20 +111,20 @@ export default function BlogPage() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/blog/best-escort-service-gurgaon-guide"
-                    className="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-700 text-white px-6 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 bg-primary-wine hover:bg-[#50121d] text-white px-6 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Read Full Guide <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-6 py-3.5 rounded-full font-semibold transition-all"
+                    className="inline-flex items-center gap-2 border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-6 py-3.5 rounded-full font-semibold transition-all"
                   >
                     Browse Services
                   </Link>
                 </div>
               </div>
 
-              <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl border border-gold-200/60 bg-neutral-900 group">
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/60 bg-neutral-900 group">
                 <Image
                   src="/images/featured-blog.webp"
                   alt="Best Escort Service in Gurgaon - Featured Guide"
@@ -141,28 +141,28 @@ export default function BlogPage() {
       </section>
 
       {/* Explore Escort Service Categories */}
-      <section className="py-16 bg-[#1a1a2e] text-white">
-        <div className="container-luxury">
+      <section className="py-16 bg-[#0B2154] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4 font-serif">
-              Explore <span className="text-gold-400">Editorial</span> Topics
+            <h3 className="text-3xl font-bold text-white mb-4 font-sans font-bold">
+              Explore <span className="text-luxury-gold">Editorial</span> Topics
             </h3>
             <p className="text-gray-300">
               Browse articles organized by lifestyle, dining, travel, and escort service themes.
             </p>
-            <div className="gold-divider mx-auto mt-4" />
+            <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto mt-4" />
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
             {blogCategories.map((cat) => (
               <div
                 key={cat}
-                className="bg-white/5 hover:bg-gold-600/20 border border-white/10 hover:border-gold-500 rounded-xl p-5 text-center transition-all group"
+                className="bg-white/5 hover:bg-primary-wine/20 border border-white/10 hover:border-primary-wine rounded-xl p-5 text-center transition-all group"
               >
                 <span className="block text-2xl mb-2">
                   {categoryEmojis[cat] || '✨'}
                 </span>
-                <span className="text-sm text-gray-200 group-hover:text-gold-400 transition-colors font-medium">
+                <span className="text-sm text-gray-200 group-hover:text-luxury-gold transition-colors font-medium">
                   {cat}
                 </span>
               </div>
@@ -173,16 +173,16 @@ export default function BlogPage() {
 
       {/* Newsletter Subscription */}
       <section className="py-16 bg-white text-gray-800">
-        <div className="container-luxury">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <NewsletterForm />
         </div>
       </section>
 
       {/* Editorial Summary */}
-      <section className="py-16 bg-[#FDFBF7] text-gray-800">
-        <div className="container-luxury max-w-4xl">
-          <div className="prose-luxury bg-white p-8 md:p-12 rounded-2xl border border-gold-200/60 shadow-sm">
-            <h2 className="text-3xl font-bold text-[#0F172A] mb-6 font-serif">
+      <section className="py-16 bg-[#FFFDF6] text-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="space-y-6 bg-white p-8 md:p-12 rounded-2xl border border-gray-200/60 shadow-sm">
+            <h2 className="text-3xl font-bold text-[#0B2154] mb-6 font-sans font-bold">
               About the ALINA VIP Editorial Desk
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -194,11 +194,11 @@ export default function BlogPage() {
               </p>
               <p>
                 For reservations and direct profile coordination, view our complete{' '}
-                <Link href="/services" className="text-gold-600 hover:underline font-semibold">
+                <Link href="/services" className="text-primary-wine hover:underline font-semibold">
                   service directory
                 </Link>{' '}
                 or explore our{' '}
-                <Link href="/locations" className="text-gold-600 hover:underline font-semibold">
+                <Link href="/locations" className="text-primary-wine hover:underline font-semibold">
                   location coverage
                 </Link>
                 .

@@ -174,17 +174,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#050508] via-[#0C0B14] to-[#141022] overflow-hidden">
+      <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
-        <div className="container-luxury relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
+              <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-[#671725]/10 backdrop-blur-sm">
                 ★ Premium Escort Service
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sans font-bold leading-tight">
                 {category.h1Title ? (
                   category.h1Title
                 ) : (
@@ -200,26 +200,26 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+                  className="bg-primary-wine hover:bg-[#50121d] text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
                 >
                   <Phone className="w-5 h-5" /> Book Now
                 </a>
                 <Link
                   href="/contact"
-                  className="border-2 border-gold-500 hover:bg-gold-500/10 text-gold-400 px-8 py-4 rounded-full font-bold text-base transition-all"
+                  className="border-2 border-primary-wine hover:bg-[#671725]/10 text-luxury-gold px-8 py-4 rounded-full font-bold text-base transition-all"
                 >
                   Contact Us
                 </Link>
                 <a
                   href={siteConfig.url}
-                  className="border-2 border-gold-500/40 hover:bg-gold-500/10 text-gold-300 px-8 py-4 rounded-full font-bold text-base transition-all"
+                  className="border-2 border-luxury-gold/50 hover:bg-[#671725]/10 text-gold-300 px-8 py-4 rounded-full font-bold text-base transition-all"
                 >
                   Visit {siteConfig.domain}
                 </a>
               </div>
             </div>
 
-            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gold-200/50 bg-neutral-900 group">
+            <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50 bg-neutral-900 group">
               <Image
                 src={imageSrc}
                 alt={`${category.name} - Escort Service in Gurgaon | Call Girls`}
@@ -236,12 +236,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Main Content & Sidebar */}
       <section className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="container-luxury">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12 items-start">
             {/* Left Column (2 Cols): Editorial & Value Props */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold text-[#0F172A] mb-4 font-serif">
+                <h2 className="text-3xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
                   About Our {category.name}
                 </h2>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -254,22 +254,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <p>{category.description}</p>
                       <p>
                         At <strong>ALINA VIP</strong>, we take pride in offering the finest{' '}
-                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                        <Link href="/services" className="text-primary-wine hover:underline font-medium">
                           escort service in Gurgaon
                         </Link>
                         . Each {category.name.toLowerCase()} has been carefully selected through our rigorous verification process, which includes identity verification, photo authentication, and background screening. This ensures that every{' '}
-                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                        <Link href="/services" className="text-primary-wine hover:underline font-medium">
                           call girl
                         </Link>{' '}
                         profile is genuine and that our clients can book with complete confidence.
                       </p>
                       <p>
                         Our{' '}
-                        <Link href={`/category/${category.slug}`} className="text-gold-600 hover:underline font-medium">
+                        <Link href={`/category/${category.slug}`} className="text-primary-wine hover:underline font-medium">
                           {category.name.toLowerCase()}
                         </Link>{' '}
                         are available for a variety of engagements, including dinner dates, social events, corporate functions, travel, and private engagements. They are discreet, professional, and committed to providing an exceptional{' '}
-                        <Link href="/services" className="text-gold-600 hover:underline font-medium">
+                        <Link href="/services" className="text-primary-wine hover:underline font-medium">
                           escort service
                         </Link>{' '}
                         experience.
@@ -281,60 +281,60 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Feature Badges / Key Highlights */}
               <div>
-                <h3 className="text-2xl font-bold text-[#0F172A] mb-4 font-serif">
+                <h3 className="text-2xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
                   Why Choose Our {category.name}?
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {category.keyHighlights && category.keyHighlights.length > 0 ? (
                     category.keyHighlights.map((hl, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-4 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
-                        <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                      <div key={idx} className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
+                        <ShieldCheck className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0F172A] text-sm">{hl.title}</h4>
+                          <h4 className="font-bold text-[#0B2154] text-sm">{hl.title}</h4>
                           <p className="text-gray-600 text-xs mt-1">{hl.desc}</p>
                         </div>
                       </div>
                     ))
                   ) : (
                     <>
-                      <div className="flex items-start gap-3 p-4 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
-                        <ShieldCheck className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                      <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
+                        <ShieldCheck className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0F172A] text-sm">Verified Call Girls</h4>
+                          <h4 className="font-bold text-[#0B2154] text-sm">Verified Call Girls</h4>
                           <p className="text-gray-600 text-xs mt-1">
-                            100% genuine <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> with photo authentication
+                            100% genuine <Link href="/services" className="text-primary-wine hover:underline font-medium">call girls</Link> with photo authentication
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-4 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
-                        <Lock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                      <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
+                        <Lock className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0F172A] text-sm">100% Discreet</h4>
+                          <h4 className="font-bold text-[#0B2154] text-sm">100% Discreet</h4>
                           <p className="text-gray-600 text-xs mt-1">
-                            Complete privacy guaranteed for all <Link href="/services" className="text-gold-600 hover:underline font-medium">escorts</Link> bookings
+                            Complete privacy guaranteed for all <Link href="/services" className="text-primary-wine hover:underline font-medium">escorts</Link> bookings
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-4 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
-                        <Clock className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                      <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
+                        <Clock className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0F172A] text-sm">24/7 Availability</h4>
+                          <h4 className="font-bold text-[#0B2154] text-sm">24/7 Availability</h4>
                           <p className="text-gray-600 text-xs mt-1">
-                            Book <Link href="/services" className="text-gold-600 hover:underline font-medium">call girls</Link> anytime, day or night
+                            Book <Link href="/services" className="text-primary-wine hover:underline font-medium">call girls</Link> anytime, day or night
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3 p-4 bg-[#FDFBF7] rounded-2xl border border-gold-200/50">
-                        <MapPin className="w-5 h-5 text-gold-600 flex-shrink-0 mt-1" />
+                      <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
+                        <MapPin className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#0F172A] text-sm">All Gurgaon Areas</h4>
+                          <h4 className="font-bold text-[#0B2154] text-sm">All Gurgaon Areas</h4>
                           <p className="text-gray-600 text-xs mt-1">
-                            <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>,{' '}
-                            <Link href="/locations/mg-road" className="text-gold-600 hover:underline font-medium">MG Road</Link>,{' '}
-                            <Link href="/locations/golf-course-road" className="text-gold-600 hover:underline font-medium">Golf Course Road</Link> &amp; more
+                            <Link href="/locations/cyber-city" className="text-primary-wine hover:underline font-medium">Cyber City</Link>,{' '}
+                            <Link href="/locations/mg-road" className="text-primary-wine hover:underline font-medium">MG Road</Link>,{' '}
+                            <Link href="/locations/golf-course-road" className="text-primary-wine hover:underline font-medium">Golf Course Road</Link> &amp; more
                           </p>
                         </div>
                       </div>
@@ -345,24 +345,24 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Selection Standards & Verification */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0F172A] font-serif">
+                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
                   Selection Standards &amp; Quality Assurance for {category.name}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                   At <strong>ALINA VIP</strong>, our {category.name.toLowerCase()} represent the highest standard of elegance, poise, and VIP escort service. We understand that discerning gentlemen and corporate executives require absolute assurance when making a reservation. That is why every profile in this collection undergoes an in-person vetting process to authenticate credentials, appearance, and social etiquette.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 bg-[#FDFBF7] rounded-xl border border-gold-200/40">
-                    <h4 className="font-bold text-[#0F172A] text-sm mb-1 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold-600" /> Untouched Real Photography
+                  <div className="p-4 bg-[#FFFDF6] rounded-xl border border-gray-200/40">
+                    <h4 className="font-bold text-[#0B2154] text-sm mb-1 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary-wine" /> Untouched Real Photography
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
                       We never use misleading stock photos or artificial imagery. Every photo in our gallery accurately portrays the profile’s natural appearance.
                     </p>
                   </div>
-                  <div className="p-4 bg-[#FDFBF7] rounded-xl border border-gold-200/40">
-                    <h4 className="font-bold text-[#0F172A] text-sm mb-1 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold-600" /> Conversational Fluency
+                  <div className="p-4 bg-[#FFFDF6] rounded-xl border border-gray-200/40">
+                    <h4 className="font-bold text-[#0B2154] text-sm mb-1 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary-wine" /> Conversational Fluency
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
                       Our models possess exceptional communication skills, emotional intelligence, and cosmopolitan charm suited for high-society engagements.
@@ -373,7 +373,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Occasion & Etiquette Guide */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0F172A] font-serif">
+                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
                   Ideal Occasions &amp; Etiquette Guidelines
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
@@ -383,22 +383,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   {category.occasions && category.occasions.length > 0 ? (
                     category.occasions.map((occ, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-primary-wine rounded-full mt-2 flex-shrink-0" />
                         <span>{occ}</span>
                       </li>
                     ))
                   ) : (
                     <>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-primary-wine rounded-full mt-2 flex-shrink-0" />
                         <span><strong>Fine Dining &amp; Gala Evenings:</strong> Impeccable formal dressing, graceful social etiquette, and engaging conversation at Gurgaon&apos;s finest Michelin-star and luxury restaurants.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-primary-wine rounded-full mt-2 flex-shrink-0" />
                         <span><strong>Executive Travel &amp; Retreats:</strong> Dependable, well-travelled accompaniment for business conferences, luxury resorts, and weekend getaways across NCR and beyond.</span>
                       </li>
                       <li className="flex items-start gap-2.5">
-                        <span className="w-1.5 h-1.5 bg-gold-600 rounded-full mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-primary-wine rounded-full mt-2 flex-shrink-0" />
                         <span><strong>Private Hotel Outcalls:</strong> Effortless, confidential escort service tailored for relaxing stays at premier five-star hospitality suites.</span>
                       </li>
                     </>
@@ -407,12 +407,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               {/* Discreet Outcall & Safety Protocols */}
-              <div className="p-6 bg-[#FDFBF7] rounded-2xl border border-gold-200/60 space-y-4">
-                <h3 className="text-xl font-bold text-[#0F172A] font-serif">
+              <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 space-y-4">
+                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">
                   Discreet Outcall Coordination Across Gurgaon
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  We specialize in prompt, confidential outcall dispatch to all luxury destinations across Gurgaon, including DLF Phase 1–5, <Link href="/locations/cyber-city" className="text-gold-600 hover:underline font-medium">Cyber City</Link>, <Link href="/locations/golf-course-road" className="text-gold-600 hover:underline font-medium">Golf Course Road</Link>, Sohna Road, MG Road, and <Link href="/locations/aerocity" className="text-gold-600 hover:underline font-medium">Aerocity</Link>. Our verified escort girls arrive punctually via private executive transport, blending seamlessly into high-end hotel lobbies and private residential complexes.
+                  We specialize in prompt, confidential outcall dispatch to all luxury destinations across Gurgaon, including DLF Phase 1–5, <Link href="/locations/cyber-city" className="text-primary-wine hover:underline font-medium">Cyber City</Link>, <Link href="/locations/golf-course-road" className="text-primary-wine hover:underline font-medium">Golf Course Road</Link>, Sohna Road, MG Road, and <Link href="/locations/aerocity" className="text-primary-wine hover:underline font-medium">Aerocity</Link>. Our verified escort girls arrive punctually via private executive transport, blending seamlessly into high-end hotel lobbies and private residential complexes.
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   To ensure complete trust, ALINA VIP adheres to a strict zero-advance policy: you settle the agreed call girl or escort fee directly in person upon arrival. Your personal details, contact number, and booking records are never shared, logged, or retained, guaranteeing complete peace of mind.
@@ -421,15 +421,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Category FAQs */}
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-[#0F172A] font-serif">
+                <h3 className="text-2xl font-bold text-[#0B2154] font-sans font-bold">
                   Frequently Asked Questions – {category.name}
                 </h3>
                 <div className="space-y-3">
                   {faqs.map((faq, idx) => (
                     <details key={idx} className="bg-white rounded-xl border border-gray-200 p-4 group">
-                      <summary className="font-semibold text-[#0F172A] text-sm cursor-pointer list-none flex items-center justify-between">
+                      <summary className="font-semibold text-[#0B2154] text-sm cursor-pointer list-none flex items-center justify-between">
                         <span>{faq.question}</span>
-                        <span className="text-gold-600 text-lg group-open:rotate-45 transition-transform">+</span>
+                        <span className="text-primary-wine text-lg group-open:rotate-45 transition-transform">+</span>
                       </summary>
                       <p className="text-xs text-gray-600 mt-3 leading-relaxed border-t border-gray-100 pt-3">
                         {faq.answer}
@@ -441,43 +441,43 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Areas We Serve in Gurgaon */}
               <div>
-                <h3 className="text-2xl font-bold text-[#0F172A] mb-4 font-serif">
+                <h3 className="text-2xl font-bold text-[#0B2154] mb-4 font-sans font-bold">
                   Areas We Serve in Gurgaon
                 </h3>
                 <div className="flex flex-wrap gap-2.5">
                   <Link
                     href="/locations/cyber-city"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     Cyber City Call Girls
                   </Link>
                   <Link
                     href="/locations/mg-road"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     MG Road Escorts
                   </Link>
                   <Link
                     href="/locations/golf-course-road"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     Golf Course Road Escorts
                   </Link>
                   <Link
                     href="/locations/dlf-phase-1"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     DLF City Call Girls
                   </Link>
                   <Link
                     href="/locations/sohna-road"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     Sohna Road Escorts
                   </Link>
                   <Link
                     href="/locations/sector-29"
-                    className="px-4 py-2 bg-gray-100 hover:bg-gold-100 text-gray-700 hover:text-gold-800 rounded-full text-xs font-semibold transition-colors"
+                    className="px-4 py-2 bg-gray-100 hover:bg-[#F9E1E5] text-gray-700 hover:text-primary-wine rounded-full text-xs font-semibold transition-colors"
                   >
                     Sector 29 Call Girls
                   </Link>
@@ -485,19 +485,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               {/* Call Card */}
-              <div className="p-6 bg-gradient-to-r from-gold-50 via-amber-50 to-gold-50 rounded-2xl border-2 border-gold-200 text-center shadow-sm">
-                <p className="text-xl font-bold text-[#0F172A] font-serif">
+              <div className="p-6 bg-[#FFFDF6] rounded-2xl border-2 border-gray-200 text-center shadow-sm">
+                <p className="text-xl font-bold text-[#0B2154] font-sans font-bold">
                   📞 Book Your {category.name} Today
                 </p>
                 <p className="text-gray-600 mt-2 text-sm">
                   Call us 24/7 at{' '}
-                  <a href={`tel:${siteConfig.phone}`} className="text-gold-600 hover:underline font-bold">
+                  <a href={`tel:${siteConfig.phone}`} className="text-primary-wine hover:underline font-bold">
                     {siteConfig.phoneDisplay}
                   </a>
                 </p>
                 <p className="text-xs text-gray-500 mt-2">
                   Official Portal:{' '}
-                  <a href={siteConfig.url} className="text-gold-600 hover:underline font-semibold">
+                  <a href={siteConfig.url} className="text-primary-wine hover:underline font-semibold">
                     {siteConfig.domain}
                   </a>
                 </p>
@@ -507,22 +507,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {/* Right Column: Sticky Sidebar */}
             <div className="space-y-6 lg:sticky lg:top-24">
               {/* Category Highlight Card */}
-              <div className="bg-gradient-to-br from-gold-50 to-amber-50 p-8 rounded-2xl text-center border-2 border-gold-200 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-gold-500/10 flex items-center justify-center mx-auto mb-4 text-gold-600">
+              <div className="bg-[#FFFDF6] p-8 rounded-2xl text-center border-2 border-gray-200 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#671725]/10 flex items-center justify-center mx-auto mb-4 text-primary-wine">
                   <IconComponent className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0F172A] font-serif">{category.name}</h3>
+                <h3 className="text-xl font-bold text-[#0B2154] font-sans font-bold">{category.name}</h3>
                 <p className="text-gray-600 text-xs mt-2">
                   Verified premium escorts in Gurgaon
                 </p>
               </div>
 
               {/* Book Now Dark Card */}
-              <div className="bg-[#1a1a2e] p-6 rounded-2xl text-center text-white shadow-md">
-                <h4 className="text-white font-bold text-lg mb-3 font-serif">Reserve Now</h4>
+              <div className="bg-[#0B2154] p-6 rounded-2xl text-center text-white shadow-md">
+                <h4 className="text-white font-bold text-lg mb-3 font-sans font-bold">Reserve Now</h4>
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="block bg-gold-600 hover:bg-gold-700 text-white py-3.5 rounded-full font-bold transition-all text-sm shadow-md"
+                  className="block bg-primary-wine hover:bg-[#50121d] text-white py-3.5 rounded-full font-bold transition-all text-sm shadow-md"
                 >
                   Call Now: {siteConfig.phoneDisplay}
                 </a>
@@ -536,15 +536,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 </a>
                 <Link
                   href="/contact"
-                  className="block mt-3 text-gold-400 hover:underline text-xs"
+                  className="block mt-3 text-luxury-gold hover:underline text-xs"
                 >
                   Or Request Online &rarr;
                 </Link>
               </div>
 
               {/* Related Service Categories */}
-              <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/60 shadow-sm">
-                <h4 className="font-bold text-[#0F172A] mb-4 font-serif text-base">
+              <div className="bg-[#FFFDF6] p-6 rounded-2xl border border-gray-200/60 shadow-sm">
+                <h4 className="font-bold text-[#0B2154] mb-4 font-sans font-bold text-base">
                   Explore Related Categories
                 </h4>
                 <div className="space-y-2.5">
@@ -557,12 +557,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                         <Link
                           key={sibling.slug}
                           href={`/category/${sibling.slug}`}
-                          className="flex items-center justify-between text-gray-700 hover:text-gold-600 transition-colors text-sm p-1.5 rounded-lg hover:bg-white/60"
+                          className="flex items-center justify-between text-gray-700 hover:text-primary-wine transition-colors text-sm p-1.5 rounded-lg hover:bg-white/60"
                         >
                           <span className="flex items-center gap-2">
-                            <SiblingIcon className="w-4 h-4 text-gold-600" /> {sibling.name}
+                            <SiblingIcon className="w-4 h-4 text-primary-wine" /> {sibling.name}
                           </span>
-                          <ArrowRight className="w-3.5 h-3.5 text-gold-600" />
+                          <ArrowRight className="w-3.5 h-3.5 text-primary-wine" />
                         </Link>
                       );
                     })}
@@ -571,33 +571,33 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
               {/* Contextual Guide Link */}
               {category.slug === 'russian-call-girls' && (
-                <div className="bg-white p-5 rounded-2xl border border-gold-200 shadow-sm">
-                  <p className="text-xs uppercase font-bold tracking-wider text-gold-600 mb-1">Recommended Guide</p>
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
+                  <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/russian-escorts-gurgaon-guide"
-                    className="font-serif text-sm font-bold text-[#0F172A] hover:text-gold-600 transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
                   >
                     Russian Escorts Gurgaon Guide &amp; Booking Etiquette &rarr;
                   </Link>
                 </div>
               )}
               {category.slug === 'vip-call-girls' && (
-                <div className="bg-white p-5 rounded-2xl border border-gold-200 shadow-sm">
-                  <p className="text-xs uppercase font-bold tracking-wider text-gold-600 mb-1">Recommended Guide</p>
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
+                  <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/vip-call-girls-gurgaon"
-                    className="font-serif text-sm font-bold text-[#0F172A] hover:text-gold-600 transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
                   >
                     VIP Call Girls Gurgaon: Complete Discretion Guide &rarr;
                   </Link>
                 </div>
               )}
               {category.slug === 'model-escorts' && (
-                <div className="bg-white p-5 rounded-2xl border border-gold-200 shadow-sm">
-                  <p className="text-xs uppercase font-bold tracking-wider text-gold-600 mb-1">Recommended Guide</p>
+                <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
+                  <p className="text-xs uppercase font-bold tracking-wider text-primary-wine mb-1">Recommended Guide</p>
                   <Link
                     href="/blog/best-escort-service-gurgaon-guide"
-                    className="font-serif text-sm font-bold text-[#0F172A] hover:text-gold-600 transition-colors block"
+                    className="font-sans font-bold text-sm font-bold text-[#0B2154] hover:text-primary-wine transition-colors block"
                   >
                     How to Choose the Best Escort Service in Gurgaon &rarr;
                   </Link>
@@ -605,16 +605,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               )}
 
               {/* 4.9/5 Rating Card */}
-              <div className="bg-gold-50 p-6 rounded-2xl border border-gold-200 text-center shadow-sm">
+              <div className="bg-[#FFFDF6] p-6 rounded-2xl border border-gray-200 text-center shadow-sm">
                 <div className="flex justify-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold-500 text-gold-500" />
+                    <Star key={i} className="w-4 h-4 fill-luxury-gold text-luxury-gold" />
                   ))}
                 </div>
-                <p className="font-bold text-[#0F172A] text-base font-serif">4.9/5 Rating</p>
+                <p className="font-bold text-[#0B2154] text-base font-sans font-bold">4.9/5 Rating</p>
                 <p className="text-gray-600 text-xs mt-1">
                   500+ verified client reviews for our{' '}
-                  <Link href="/services" className="text-gold-600 hover:underline">
+                  <Link href="/services" className="text-primary-wine hover:underline">
                     escort service
                   </Link>
                 </p>
@@ -630,19 +630,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="bg-gold-600 hover:bg-gold-700 text-white px-10 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="bg-primary-wine hover:bg-[#50121d] text-white px-10 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" /> Book Now
               </a>
               <Link
                 href="/contact"
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
+                className="border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
               >
                 Contact Us
               </Link>
               <a
                 href={siteConfig.url}
-                className="border-2 border-gold-600 text-gold-700 hover:bg-gold-600 hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
+                className="border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
               >
                 Visit {siteConfig.domain}
               </a>

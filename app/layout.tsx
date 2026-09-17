@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Jost, Playfair_Display } from 'next/font/google';
+import { Poppins, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,9 +13,10 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const jost = Jost({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-jost',
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -83,10 +84,52 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0A0A0B',
+  themeColor: '#FFFFFF',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+};
+
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteConfig.url}/#business`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  description: siteConfig.description,
+  image: `${siteConfig.url}/og-image.jpg`,
+  priceRange: '₹₹₹₹',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'DLF Phase 3, Golf Course Road',
+    addressLocality: 'Gurgaon',
+    addressRegion: 'Haryana',
+    postalCode: '122002',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 28.4908,
+    longitude: 77.0947,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -95,9 +138,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jost.variable}`}>
-      <body className="bg-charcoal-900 text-charcoal-100 font-sans antialiased">
-        <div className="min-h-screen flex flex-col bg-luxury-gradient overflow-x-hidden">
+    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="bg-white text-[#2d2d2d] font-sans antialiased">
+        <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

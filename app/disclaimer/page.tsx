@@ -1,6 +1,7 @@
+import { siteConfig } from '@/data/siteConfig';
 import type { Metadata } from 'next';
 import { DisclaimerPage } from '@/components/LegalPages';
-import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+import { getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: 'Disclaimer | ALINA VIP Escort Service',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     'disclaimer, adult escort terms, legal compliance',
   ],
   alternates: {
-    canonical: `${siteConfig.url}/disclaimer`,
+    canonical: 'https://alinavip.in/disclaimer',
     languages: getAlternateLanguages('/disclaimer'),
   },
   robots: {
