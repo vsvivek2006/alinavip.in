@@ -1,4 +1,4 @@
-User-Agent: *
+﻿User-Agent: *
 Allow: /
 Disallow: /api/
 Crawl-delay: 1
@@ -9,3 +9,4 @@ Sitemap: https://alinavip.in/sitemap-locations.xml
 Sitemap: https://alinavip.in/sitemap-categories.xml
 Sitemap: https://alinavip.in/sitemap-blogs.xml
 Sitemap: https://alinavip.in/sitemap-pages.xml
+Sitemap: https://alinavip.in/sitemap-escorts.xml

@@ -83,7 +83,25 @@ const staticPages = [
   { path: '/in-out-call-girls-gurgaon', priority: '0.85', changefreq: 'weekly' },
 ];
 
-// 6. Read Roshni Scraped Pages, Posts, Products
+const nowIso = new Date().toISOString();
+
+// 6. Read Escort Models from models.ts
+let modelUrls = [];
+try {
+  const modelsContent = fs.readFileSync(path.join(rootDir, 'src/data/models.ts'), 'utf8');
+  const modelSlugs = [...modelsContent.matchAll(/^\s+slug:\s*'([^']+)'/gm)].map(m => m[1]);
+  modelUrls = modelSlugs.map(slug => ({
+    loc: `${baseUrl}/escorts/${slug}`,
+    lastmod: nowIso,
+    changefreq: 'weekly',
+    priority: '0.85'
+  }));
+  console.log(`[SITEMAP GENERATOR] Escort models: ${modelUrls.length}`);
+} catch (e) {
+  console.warn('Could not read models.ts:', e.message);
+}
+
+// 7. Read Roshni Scraped Pages, Posts, Products
 let roshniPages = [];
 try {
   roshniPages = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_pages.json'), 'utf8'));
@@ -99,7 +117,6 @@ try {
   roshniProducts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_products.json'), 'utf8'));
 } catch (e) {}
 
-const nowIso = new Date().toISOString();
 
 function buildUrlset(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -164,7 +181,7 @@ const blogUrls = blogSlugs.map(slug => ({
 
 // Build unique master list
 const urlMap = new Map();
-[...pageUrls, ...roshniPageUrls, ...roshniPostUrls, ...roshniProdUrls, ...locationUrls, ...catUrls, ...blogUrls].forEach(u => {
+[...pageUrls, ...roshniPageUrls, ...roshniPostUrls, ...roshniProdUrls, ...locationUrls, ...catUrls, ...blogUrls, ...modelUrls].forEach(u => {
   if (!urlMap.has(u.loc)) {
     urlMap.set(u.loc, u);
   }
@@ -176,7 +193,9 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), buildUrlset([...page
 fs.writeFileSync(path.join(publicDir, 'sitemap-locations.xml'), buildUrlset(locationUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), buildUrlset(catUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset([...blogUrls, ...roshniPostUrls]), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-escorts.xml'), buildUrlset(modelUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), buildUrlset(allUrls), 'utf8');
+console.log(`[SITEMAP GENERATOR] Total URLs: ${allUrls.length}`);
 
 // Build Sitemap Index XML
 const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -195,6 +214,10 @@ const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
   <sitemap>
     <loc>${baseUrl}/sitemap-blogs.xml</loc>
+    <lastmod>${nowIso}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-escorts.xml</loc>
     <lastmod>${nowIso}</lastmod>
   </sitemap>
 </sitemapindex>`;
