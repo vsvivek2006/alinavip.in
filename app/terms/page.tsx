@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'terms of service, booking policies, client agreement',
   ],
   alternates: {
-    canonical: 'https://alinavip.in/terms',
+    canonical: `${siteConfig.url}/terms`,
     languages: getAlternateLanguages('/terms'),
   },
   robots: {

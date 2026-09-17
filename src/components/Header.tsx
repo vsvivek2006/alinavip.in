@@ -142,7 +142,7 @@ export default function Header() {
                 <Link href="/services/girlfriend-experience" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Girlfriend Experience (GFE)
                 </Link>
-                <Link href="/services/in-out-call" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/services/in-out-call-girls" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   In-Call &amp; Out-Call Services
                 </Link>
                 <Link href="/services" className="block px-4 py-2 text-xs text-[#671725] font-semibold border-t border-gray-100 hover:bg-gray-50">
@@ -168,19 +168,19 @@ export default function Header() {
                 Hotels <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
               </Link>
               <div className="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-md py-2 hidden group-hover:block transition-all z-50">
-                <Link href="/hotels" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/hotels/escort-service-near-the-oberoi-hotel" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Near The Oberoi Hotel
                 </Link>
-                <Link href="/hotels" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/hotels/escort-service-near-leela-ambience-hotel" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Near The Leela Ambience
                 </Link>
-                <Link href="/hotels" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/hotels/escort-service-near-taj-city-centre-hotel" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Near Taj City Centre
                 </Link>
-                <Link href="/hotels" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/hotels/escort-service-near-itc-grand-bharat-hotel" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Near ITC Grand Bharat
                 </Link>
-                <Link href="/hotels" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
+                <Link href="/hotels/escort-service-near-westin-hotel" className="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#671725]">
                   Near The Westin Gurgaon
                 </Link>
                 <Link href="/hotels" className="block px-4 py-2 text-xs text-[#671725] font-semibold border-t border-gray-100 hover:bg-gray-50">

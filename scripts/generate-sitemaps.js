@@ -171,5 +171,40 @@ const urlMap = new Map();
 });
 const allUrls = Array.from(urlMap.values());
 
+// Write individual XML files to public/
+fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), buildUrlset([...pageUrls, ...roshniPageUrls]), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-locations.xml'), buildUrlset(locationUrls), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), buildUrlset(catUrls), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset([...blogUrls, ...roshniPostUrls]), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), buildUrlset(allUrls), 'utf8');
-console.log(`[SITEMAP GENERATOR] Successfully generated sitemap.xml with ${allUrls.length} total URLs.`);
+
+// Build Sitemap Index XML
+const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${baseUrl}/sitemap-pages.xml</loc>
+    <lastmod>${nowIso}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-locations.xml</loc>
+    <lastmod>${nowIso}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-categories.xml</loc>
+    <lastmod>${nowIso}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-blogs.xml</loc>
+    <lastmod>${nowIso}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+
+fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndexXml, 'utf8');
+
+console.log(`[SITEMAP GENERATOR] Successfully generated sitemaps:
+  - sitemap.xml (${allUrls.length} total URLs)
+  - sitemap-index.xml
+  - sitemap-pages.xml (${pageUrls.length + roshniPageUrls.length} URLs)
+  - sitemap-locations.xml (${locationUrls.length} URLs)
+  - sitemap-categories.xml (${catUrls.length} URLs)
+  - sitemap-blogs.xml (${blogUrls.length + roshniPostUrls.length} URLs)`);

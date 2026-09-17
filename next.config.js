@@ -75,7 +75,6 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/call-girls', destination: '/services', permanent: true },
-      { source: '/escorts', destination: '/services', permanent: true },
       { source: '/russian-escorts', destination: '/category/russian-call-girls', permanent: true },
       { source: '/vip-escorts', destination: '/category/vip-call-girls', permanent: true },
       { source: '/model-escorts', destination: '/category/model-escorts', permanent: true },

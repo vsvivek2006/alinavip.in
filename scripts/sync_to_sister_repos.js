@@ -12,23 +12,7 @@ const targets = [
 const filesToCopy = [
   'src/data/exact_manifest.json',
   'src/data/roshni_home_manifest.json',
-  'app/services/page.tsx',
-  'app/escort-service-in-gurgaon/page.tsx',
-  'app/services/[slug]/page.tsx',
-  'app/girlfriend-experience-in-gurgaon/page.tsx',
-  'app/erotic-massage-in-gurgaon/page.tsx',
-  'app/in-out-call-girls-gurgaon/page.tsx',
-  'app/escort-service-for-1-2-3-hours/page.tsx',
-  'app/escort-service-full-night/page.tsx',
-  'app/rates/page.tsx',
-  'app/gurgaon-escorts-rates/page.tsx',
-  'app/categories/page.tsx',
-  'app/escorts-categories/page.tsx',
-  'app/hotels/page.tsx',
-  'app/about-us/page.tsx',
-  'app/faqs/page.tsx',
-  'app/contact-us/page.tsx',
-  'app/[slug]/page.tsx',
+  'src/components/Header.tsx',
   'src/components/home/FeaturedProfilesSection.tsx',
   'src/components/home/CategoriesGridSection.tsx',
   'src/components/home/ServicesOfferedSection.tsx',
@@ -38,6 +22,45 @@ const filesToCopy = [
   'src/components/home/LocationGridSection.tsx',
   'src/components/home/EditorialGuideSection.tsx',
   'src/components/home/HomeFaqSection.tsx',
+  'app/services/page.tsx',
+  'app/escort-service-in-gurgaon/page.tsx',
+  'app/services/[slug]/page.tsx',
+  'app/girlfriend-experience-in-gurgaon/page.tsx',
+  'app/erotic-massage-in-gurgaon/page.tsx',
+  'app/in-out-call-girls-gurgaon/page.tsx',
+  'app/escort-service-for-1-2-3-hours/page.tsx',
+  'app/escort-service-full-night/page.tsx',
+  'app/full-body-sensual-massage/page.tsx',
+  'app/full-body-sensual-massage/layout.tsx',
+  'app/rates/page.tsx',
+  'app/gurgaon-escorts-rates/page.tsx',
+  'app/categories/page.tsx',
+  'app/escorts-categories/page.tsx',
+  'app/hotels/page.tsx',
+  'app/hotels/[slug]/page.tsx',
+  'app/gallery/page.tsx',
+  'app/escorts/page.tsx',
+  'app/escorts/layout.tsx',
+  'app/escorts/[slug]/page.tsx',
+  'app/faq/page.tsx',
+  'app/faq/layout.tsx',
+  'app/faqs/page.tsx',
+  'app/faqs/layout.tsx',
+  'app/phone-number/page.tsx',
+  'app/phone-number/layout.tsx',
+  'app/gurgaon-escorts-phone-number/page.tsx',
+  'app/gurgaon-escorts-phone-number/layout.tsx',
+  'app/about/page.tsx',
+  'app/about-us/page.tsx',
+  'app/contact/page.tsx',
+  'app/contact-us/page.tsx',
+  'app/disclaimer/page.tsx',
+  'app/privacy-policy/page.tsx',
+  'app/terms/page.tsx',
+  'app/[slug]/page.tsx',
+  'scripts/generate-sitemaps.js',
+  'public/_redirects',
+  'next.config.js',
 ];
 
 for (const target of targets) {
@@ -46,6 +69,7 @@ for (const target of targets) {
     continue;
   }
   console.log(`\n=== Syncing to: ${target} ===`);
+  let count = 0;
   for (const relPath of filesToCopy) {
     const srcFile = path.join(sourceRoot, relPath);
     const destFile = path.join(target, relPath);
@@ -55,6 +79,7 @@ for (const target of targets) {
     }
     fs.mkdirSync(path.dirname(destFile), { recursive: true });
     fs.copyFileSync(srcFile, destFile);
+    count++;
   }
-  console.log(`[SUCCESS] Copied ${filesToCopy.length} files to ${target}`);
+  console.log(`[SUCCESS] Copied ${count} files to ${target}`);
 }

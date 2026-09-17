@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Shield, Star, CheckCircle, MapPin, ArrowRight } from 'lucide-react';
@@ -11,6 +12,27 @@ export function generateStaticParams() {
   return escortModels.map((model) => ({
     slug: model.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const model = escortModels.find((m) => m.slug === slug);
+  if (!model) {
+    return {
+      title: 'Verified Escort Profile in Gurgaon | ALINA VIP',
+    };
+  }
+  return {
+    title: `${model.name} - ${model.category} in Gurgaon | ALINA VIP`,
+    description: `Book ${model.name}, verified ${model.category} in Gurgaon. Age ${model.age}, 5-star hotel doorstep arrival in 20-30 minutes with ALINA VIP.`,
+    alternates: {
+      canonical: `${siteConfig.url}/escorts/${slug}`,
+    },
+  };
 }
 
 export default async function EscortProfilePage({

@@ -200,7 +200,7 @@ const categoryPortfolios = [
   },
   {
     title: 'Busty Call Girls',
-    slug: 'busty-escorts-in-gurgaon',
+    slug: '/busty-escorts-in-gurgaon',
     image: '/images/assets/image_270x450_23.jpg',
     count: '20 Profiles',
     desc: 'Voluptuous, curvaceous models with breathtaking hourglass proportions.',
@@ -345,7 +345,7 @@ export default function GalleryPage() {
             {categoryPortfolios.map((cat, idx) => (
               <Link
                 key={idx}
-                href={`/category/${cat.slug}`}
+                href={cat.slug.startsWith('/') ? cat.slug : `/category/${cat.slug}`}
                 className="category-inner-col group relative block rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px]"
               >
                 <Image

@@ -37,7 +37,7 @@ const categoryVisualGrid = [
   },
   {
     name: 'Independent Escorts in Gurgaon',
-    slug: '/independent-escorts-in-gurgaon',
+    slug: '/category/independent-girls',
     image: '/images/assets/Independent_Escorts_Delhi.jpg',
     tag: 'Direct & Discreet',
     price: 'From ₹15,000',
@@ -51,7 +51,7 @@ const categoryVisualGrid = [
   },
   {
     name: 'VIP Call Girls in Gurgaon',
-    slug: '/vip-escorts-in-gurgaon',
+    slug: '/vip-call-girls-in-gurgaon',
     image: '/images/assets/VIP_Call_Girls_Delhi.jpg',
     tag: 'Elite Class',
     price: 'From ₹20,000',

@@ -1,6 +1,5 @@
 # Alias routes — 301 permanent redirects
 /call-girls         /services                       301
-/escorts            /services                       301
 /russian-escorts    /category/russian-call-girls    301
 /vip-escorts        /category/vip-call-girls        301
 /model-escorts      /category/model-escorts         301

@@ -33,7 +33,7 @@ const topHotels = [
     area: 'Udyog Vihar / DLF Phase 2',
     stars: '5 Star Luxury',
     desc: 'Our escort service offers attractive call girl escorts near The Oberoi Hotel and you can choose the girl of your dreams.',
-    slug: 'the-oberoi-hotel',
+    slug: 'escort-service-near-the-oberoi-hotel',
     image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
   },
   {
@@ -41,7 +41,7 @@ const topHotels = [
     area: 'Ambience Island, NH-8',
     stars: '5 Star Deluxe',
     desc: 'Sexy call girl escorts near Leela Ambience Hotel are available 24/7 to entertain their clients with utmost discretion.',
-    slug: 'leela-ambience-hotel',
+    slug: 'escort-service-near-leela-ambience-hotel',
     image: '/images/assets/Russian_Escorts_Girl_In_Delhi.jpg',
   },
   {
@@ -49,7 +49,7 @@ const topHotels = [
     area: 'Sector 29, City Centre',
     stars: '4 Star Boutique',
     desc: 'Here you will discover proficient escort benefits in Gurgaon close to The Pllazio Hotel for memorable evenings.',
-    slug: 'pllazio-hotel',
+    slug: 'escort-service-near-pllazio-hotel',
     image: '/images/assets/image_290x280_1.jpg',
   },
   {
@@ -57,7 +57,7 @@ const topHotels = [
     area: 'DLF Phase 1, MG Road',
     stars: '5 Star Luxury',
     desc: 'Spice up your night with these gorgeous escorts available near Bristol Hotel in Gurgaon.',
-    slug: 'bristol-hotel',
+    slug: 'escort-service-near-bristol-hotel',
     image: '/images/assets/image_290x280_2.jpg',
   },
   {
@@ -65,7 +65,7 @@ const topHotels = [
     area: 'Sector 44, HUDA City Centre',
     stars: '5 Star Luxury',
     desc: 'Sophisticated VIP escorts for clients staying near HUDA City Centre metro and Sector 44 institutional area.',
-    slug: 'taj-city-centre-hotel',
+    slug: 'escort-service-near-taj-city-centre-hotel',
     image: '/images/assets/Escort_Service_In_Mg_Road.jpg',
   },
   {
@@ -73,7 +73,7 @@ const topHotels = [
     area: 'Hasanpur, Tauru / Manesar',
     stars: '5 Star Luxury Resort',
     desc: 'Resort retreat companions for outstation relaxation, golf weekends, and secluded overnight companionship.',
-    slug: 'itc-grand-bharat-hotel',
+    slug: 'escort-service-near-itc-grand-bharat-hotel',
     image: '/images/assets/Diverse_Portfolio.jpg',
   },
   {
@@ -81,7 +81,7 @@ const topHotels = [
     area: 'DLF Phase 2, Udyog Vihar',
     stars: '5 Star Luxury',
     desc: 'World-class corporate escorts for business delegates staying at Trident. Perfect dinner dates and private intimate nights.',
-    slug: 'trident-hotel',
+    slug: 'escort-service-near-trident-hotel',
     image: '/images/assets/Independent_Escorts_Delhi.jpg',
   },
   {
@@ -89,7 +89,7 @@ const topHotels = [
     area: 'Sector 29 / MG Road',
     stars: '5 Star Luxury',
     desc: 'Located adjacent to Sector 29 nightlife corridor. High-energy party companions and sensual massage specialists.',
-    slug: 'westin-hotel',
+    slug: 'escort-service-near-westin-hotel',
     image: '/images/assets/VIP_Call_Girls_Delhi.jpg',
   },
   {
@@ -97,7 +97,7 @@ const topHotels = [
     area: 'Sector 83, New Gurgaon',
     stars: '5 Star Luxury',
     desc: 'Quick 20-minute suite dispatch along NH-48. English speaking, high profile companions for executives and tourists.',
-    slug: 'hyatt-regency-hotel',
+    slug: 'escort-service-near-hyatt-regency-hotel',
     image: '/images/assets/College_Girl_Escorts_Delhi.jpg',
   },
   {
@@ -105,7 +105,7 @@ const topHotels = [
     area: 'Block B, Sushant Lok Phase 1',
     stars: '4 Star Deluxe',
     desc: 'Comfortable business hotel outcalls with charming college escorts and educated independent girls.',
-    slug: 'courtyard-by-marriott-hotel',
+    slug: 'escort-service-near-courtyard-by-marriott-hotel',
     image: '/images/assets/Air_Hostess_Escorts_Delhi.jpg',
   },
   {
@@ -113,7 +113,7 @@ const topHotels = [
     area: 'Sector 29, City Centre',
     stars: '5 Star Luxury',
     desc: 'Adjacent to Kingdom of Dreams and IFFCO Chowk. Luxury call girls ready to join you in your room or dinner.',
-    slug: 'crowne-plaza-hotel',
+    slug: 'escort-service-near-crowne-plaza-hotel',
     image: '/images/assets/Housewife_Escorts_Delhi.jpg',
   },
   {
@@ -121,7 +121,7 @@ const topHotels = [
     area: 'Udyog Vihar Phase 3',
     stars: '5 Star Deluxe',
     desc: 'Express dispatch for travelers arriving late from IGI Airport. Fast, discreet, and reliable companions.',
-    slug: 'radisson-hotel',
+    slug: 'escort-service-near-radisson-hotel',
     image: '/images/assets/Celebrity_Escorts_Delhi.jpg',
   },
 ];
