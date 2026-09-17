@@ -34,7 +34,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Our escort service offers attractive call girl escorts near The Oberoi Hotel and you can choose the girl of your dreams.',
     slug: 'escort-service-near-the-oberoi-hotel',
-    image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
+    image: '/images/assets/image_290x280_3.jpg',
   },
   {
     name: 'The Leela Ambience Hotel',
@@ -42,7 +42,7 @@ const topHotels = [
     stars: '5 Star Deluxe',
     desc: 'Sexy call girl escorts near Leela Ambience Hotel are available 24/7 to entertain their clients with utmost discretion.',
     slug: 'escort-service-near-leela-ambience-hotel',
-    image: '/images/assets/Russian_Escorts_Girl_In_Delhi.jpg',
+    image: '/images/assets/image_290x280_4.jpg',
   },
   {
     name: 'The Pllazio Hotel',
@@ -66,7 +66,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Sophisticated VIP escorts for clients staying near HUDA City Centre metro and Sector 44 institutional area.',
     slug: 'escort-service-near-taj-city-centre-hotel',
-    image: '/images/assets/Escort_Service_In_Mg_Road.jpg',
+    image: '/images/assets/image_290x280_5.jpg',
   },
   {
     name: 'ITC Grand Bharat Luxury Resort',
@@ -74,7 +74,7 @@ const topHotels = [
     stars: '5 Star Luxury Resort',
     desc: 'Resort retreat companions for outstation relaxation, golf weekends, and secluded overnight companionship.',
     slug: 'escort-service-near-itc-grand-bharat-hotel',
-    image: '/images/assets/Diverse_Portfolio.jpg',
+    image: '/images/assets/image_290x280_6.jpg',
   },
   {
     name: 'Trident Hotel Gurgaon',
@@ -82,7 +82,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'World-class corporate escorts for business delegates staying at Trident. Perfect dinner dates and private intimate nights.',
     slug: 'escort-service-near-trident-hotel',
-    image: '/images/assets/Independent_Escorts_Delhi.jpg',
+    image: '/images/assets/image_290x280_7.jpg',
   },
   {
     name: 'The Westin Gurgaon',
@@ -90,7 +90,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Located adjacent to Sector 29 nightlife corridor. High-energy party companions and sensual massage specialists.',
     slug: 'escort-service-near-westin-hotel',
-    image: '/images/assets/VIP_Call_Girls_Delhi.jpg',
+    image: '/images/assets/image_290x280_8.jpg',
   },
   {
     name: 'Hyatt Regency Gurugram',
@@ -98,7 +98,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Quick 20-minute suite dispatch along NH-48. English speaking, high profile companions for executives and tourists.',
     slug: 'escort-service-near-hyatt-regency-hotel',
-    image: '/images/assets/College_Girl_Escorts_Delhi.jpg',
+    image: '/images/assets/image_290x280_9.jpg',
   },
   {
     name: 'Courtyard by Marriott',
@@ -106,7 +106,7 @@ const topHotels = [
     stars: '4 Star Deluxe',
     desc: 'Comfortable business hotel outcalls with charming college escorts and educated independent girls.',
     slug: 'escort-service-near-courtyard-by-marriott-hotel',
-    image: '/images/assets/Air_Hostess_Escorts_Delhi.jpg',
+    image: '/images/assets/image_290x280_10.jpg',
   },
   {
     name: 'Crowne Plaza Today Gurugram',
@@ -114,7 +114,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Adjacent to Kingdom of Dreams and IFFCO Chowk. Luxury call girls ready to join you in your room or dinner.',
     slug: 'escort-service-near-crowne-plaza-hotel',
-    image: '/images/assets/Housewife_Escorts_Delhi.jpg',
+    image: '/images/assets/image_290x280_11.jpg',
   },
   {
     name: 'Radisson Hotel Gurugram',
@@ -122,7 +122,7 @@ const topHotels = [
     stars: '5 Star Deluxe',
     desc: 'Express dispatch for travelers arriving late from IGI Airport. Fast, discreet, and reliable companions.',
     slug: 'escort-service-near-radisson-hotel',
-    image: '/images/assets/Celebrity_Escorts_Delhi.jpg',
+    image: '/images/assets/image_290x280_12.jpg',
   },
 ];
 

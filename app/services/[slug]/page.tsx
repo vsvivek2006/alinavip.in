@@ -36,9 +36,9 @@ const slugToManifestKey: Record<string, keyof typeof exactManifest> = {
 };
 
 const serviceImages: Record<string, string> = {
-  girlfriendExperience: '/images/assets/Girlfriend_Experience.jpg',
+  girlfriendExperience: '/images/assets/Girlfriend_Experience.png',
   eroticMassage: '/images/assets/Full_Body_Sensual_Massage.jpg',
-  inOutCall: '/images/assets/In-Call_and_out-call_escorts.jpg',
+  inOutCall: '/images/assets/In_Call_And_Out_Call_Services.jpg',
   hours123: '/images/assets/image_290x280_1.jpg',
   fullNight: '/images/assets/image_290x280_2.jpg',
 };

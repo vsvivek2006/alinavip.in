@@ -50,7 +50,7 @@ const serviceSubpages = [
   {
     title: 'Girlfriend Experience (GFE)',
     slug: '/girlfriend-experience-in-gurgaon',
-    image: '/images/assets/Girlfriend_Experience.jpg',
+    image: '/images/assets/Girlfriend_Experience.png',
     snippet:
       'Escorts can provide you with an experience similar to a girlfriend. But the only difference is that she will be much better with you than your girlfriend.',
     features: ['Intimate emotional bond', 'Passionate French kissing', 'Sweet romantic cuddling'],
@@ -66,7 +66,7 @@ const serviceSubpages = [
   {
     title: 'In-Call & Out-Call Services',
     slug: '/in-out-call-girls-gurgaon',
-    image: '/images/assets/In-Call_and_out-call_escorts.jpg',
+    image: '/images/assets/In_Call_And_Out_Call_Services.jpg',
     snippet:
       'Escort services are available anytime, anywhere in Gurgaon as per your need. Escorts operate either with agencies or independently for total comfort and discretion.',
     features: ['20-30 min hotel arrival', 'Private luxury suites', 'Strict anonymity guaranteed'],
