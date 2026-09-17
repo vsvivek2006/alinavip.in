@@ -32,7 +32,6 @@ const blogSlugs = [...blogContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1])
 const manifestPath = path.join(rootDir, 'src/data/final_location_manifest.json');
 let manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 
-// Ensure all non-redirect locations are marked indexable and sitemapIncluded
 manifest = manifest.map(entry => {
   if (entry.disposition === 'REDIRECT') {
     return {
@@ -52,8 +51,6 @@ manifest = manifest.map(entry => {
 });
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
-console.log(`[SITEMAP GENERATOR] Manifest updated: ${manifest.length} locations (Indexable: ${manifest.filter(m => m.indexable).length}, Redirects: ${manifest.filter(m => !m.indexable).length})`);
-
 const locationSlugs = manifest.filter(m => m.indexable).map(m => m.slug);
 
 // 5. Core Static Pages
@@ -65,6 +62,7 @@ const staticPages = [
   { path: '/hotels', priority: '0.9', changefreq: 'daily' },
   { path: '/categories', priority: '0.9', changefreq: 'daily' },
   { path: '/escorts', priority: '0.9', changefreq: 'daily' },
+  { path: '/shop', priority: '0.9', changefreq: 'daily' },
   { path: '/phone-number', priority: '0.9', changefreq: 'daily' },
   { path: '/about', priority: '0.8', changefreq: 'weekly' },
   { path: '/gallery', priority: '0.8', changefreq: 'weekly' },
@@ -74,11 +72,35 @@ const staticPages = [
   { path: '/privacy-policy', priority: '0.3', changefreq: 'monthly' },
   { path: '/terms', priority: '0.3', changefreq: 'monthly' },
   { path: '/disclaimer', priority: '0.3', changefreq: 'monthly' },
+  { path: '/gurgaon-escorts-rates', priority: '0.9', changefreq: 'daily' },
+  { path: '/escorts-categories', priority: '0.9', changefreq: 'daily' },
+  { path: '/gurgaon-escorts-phone-number', priority: '0.85', changefreq: 'weekly' },
+  { path: '/escort-service-for-1-2-3-hours', priority: '0.85', changefreq: 'weekly' },
+  { path: '/escort-service-full-night', priority: '0.85', changefreq: 'weekly' },
+  { path: '/full-body-sensual-massage', priority: '0.85', changefreq: 'weekly' },
+  { path: '/erotic-massage-in-gurgaon', priority: '0.85', changefreq: 'weekly' },
+  { path: '/girlfriend-experience-in-gurgaon', priority: '0.85', changefreq: 'weekly' },
+  { path: '/in-out-call-girls-gurgaon', priority: '0.85', changefreq: 'weekly' },
 ];
+
+// 6. Read Roshni Scraped Pages, Posts, Products
+let roshniPages = [];
+try {
+  roshniPages = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_pages.json'), 'utf8'));
+} catch (e) {}
+
+let roshniPosts = [];
+try {
+  roshniPosts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_posts.json'), 'utf8'));
+} catch (e) {}
+
+let roshniProducts = [];
+try {
+  roshniProducts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_products.json'), 'utf8'));
+} catch (e) {}
 
 const nowIso = new Date().toISOString();
 
-// XML helper
 function buildUrlset(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -91,12 +113,32 @@ ${urls.map(u => `  <url>
 </urlset>`;
 }
 
-// Build sub-sitemaps
 const pageUrls = staticPages.map(p => ({
   loc: `${baseUrl}${p.path}`,
   lastmod: nowIso,
   changefreq: p.changefreq,
   priority: p.priority
+}));
+
+const roshniPageUrls = roshniPages.map(p => ({
+  loc: `${baseUrl}/${p.slug}`,
+  lastmod: nowIso,
+  changefreq: 'weekly',
+  priority: '0.85'
+}));
+
+const roshniPostUrls = roshniPosts.map(p => ({
+  loc: `${baseUrl}/${p.slug}`,
+  lastmod: nowIso,
+  changefreq: 'monthly',
+  priority: '0.75'
+}));
+
+const roshniProdUrls = roshniProducts.map(p => ({
+  loc: `${baseUrl}/${p.slug}`,
+  lastmod: nowIso,
+  changefreq: 'weekly',
+  priority: '0.8'
 }));
 
 const locationUrls = locationSlugs.map(slug => ({
@@ -106,7 +148,7 @@ const locationUrls = locationSlugs.map(slug => ({
   priority: '0.85'
 }));
 
-const categoryUrls = catSlugs.map(slug => ({
+const catUrls = catSlugs.map(slug => ({
   loc: `${baseUrl}/category/${slug}`,
   lastmod: nowIso,
   changefreq: 'weekly',
@@ -120,64 +162,14 @@ const blogUrls = blogSlugs.map(slug => ({
   priority: '0.75'
 }));
 
-const allUrls = [
-  ...pageUrls,
-  ...locationUrls,
-  ...categoryUrls,
-  ...blogUrls
-];
+// Build unique master list
+const urlMap = new Map();
+[...pageUrls, ...roshniPageUrls, ...roshniPostUrls, ...roshniProdUrls, ...locationUrls, ...catUrls, ...blogUrls].forEach(u => {
+  if (!urlMap.has(u.loc)) {
+    urlMap.set(u.loc, u);
+  }
+});
+const allUrls = Array.from(urlMap.values());
 
-// Write individual XML files to public/
-fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), buildUrlset(pageUrls), 'utf8');
-fs.writeFileSync(path.join(publicDir, 'sitemap-locations.xml'), buildUrlset(locationUrls), 'utf8');
-fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), buildUrlset(categoryUrls), 'utf8');
-fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset(blogUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), buildUrlset(allUrls), 'utf8');
-
-// Build Sitemap Index XML
-const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>${baseUrl}/sitemap-pages.xml</loc>
-    <lastmod>${nowIso}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-locations.xml</loc>
-    <lastmod>${nowIso}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-categories.xml</loc>
-    <lastmod>${nowIso}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-blogs.xml</loc>
-    <lastmod>${nowIso}</lastmod>
-  </sitemap>
-</sitemapindex>`;
-
-fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndexXml, 'utf8');
-
-// Update robots.txt
-const robotsTxt = `User-Agent: *
-Allow: /
-Disallow: /api/
-Crawl-delay: 1
-
-Sitemap: ${baseUrl}/sitemap.xml
-Sitemap: ${baseUrl}/sitemap-index.xml
-Sitemap: ${baseUrl}/sitemap-locations.xml
-Sitemap: ${baseUrl}/sitemap-categories.xml
-Sitemap: ${baseUrl}/sitemap-blogs.xml
-Sitemap: ${baseUrl}/sitemap-pages.xml
-`;
-
-fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf8');
-
-console.log(`[SITEMAP GENERATOR] Successfully generated:
-  - sitemap.xml (${allUrls.length} total URLs)
-  - sitemap-index.xml (Sitemap Index)
-  - sitemap-pages.xml (${pageUrls.length} URLs)
-  - sitemap-locations.xml (${locationUrls.length} URLs)
-  - sitemap-categories.xml (${categoryUrls.length} URLs)
-  - sitemap-blogs.xml (${blogUrls.length} URLs)
-  - robots.txt updated with all sitemaps`);
+console.log(`[SITEMAP GENERATOR] Successfully generated sitemap.xml with ${allUrls.length} total URLs.`);
