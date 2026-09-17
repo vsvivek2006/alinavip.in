@@ -53,7 +53,7 @@ export default function BlogPage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-[#FFFDF6]0/10 backdrop-blur-sm">
+          <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-white/10 backdrop-blur-sm">
             ★ Insights &amp; Resources
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans font-bold tracking-wide">
@@ -111,13 +111,13 @@ export default function BlogPage() {
                 <div className="flex flex-wrap gap-3">
                   <Link
                     href="/blog/best-escort-service-gurgaon-guide"
-                    className="inline-flex items-center gap-2 bg-primary-wine hover:bg-[#50121d] text-white px-6 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-semibold"
                   >
                     Read Full Guide <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-6 py-3.5 rounded-full font-semibold transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold rounded-xl font-semibold"
                   >
                     Browse Services
                   </Link>

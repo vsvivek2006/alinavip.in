@@ -488,7 +488,7 @@ export default function EditorialGuideSection() {
             <div className="text-center pt-4">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#671725] hover:bg-[#52121d] text-white text-sm font-bold rounded-lg shadow-md transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm"
               >
                 <Phone size={16} />
                 <span>Call Concierge Now: {siteConfig.phoneDisplay}</span>

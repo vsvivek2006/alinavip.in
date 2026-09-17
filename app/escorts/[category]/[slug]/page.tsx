@@ -181,14 +181,14 @@ export default async function ProductModelPage({
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20${encodeURIComponent(modelName)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded-lg shadow text-center flex items-center justify-center gap-1.5 transition-all"
+                  className="py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs text-center flex items-center justify-center gap-1.5"
                 >
                   <MessageCircle size={15} />
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="py-3 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded-lg shadow text-center flex items-center justify-center gap-1.5 transition-all"
+                  className="py-3 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs text-center flex items-center justify-center gap-1.5"
                 >
                   <Phone size={15} />
                   <span>Call Now</span>

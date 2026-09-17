@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
         href={`https://wa.me/${siteConfig.whatsapp}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative w-12 h-12 md:w-14 md:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl shadow-green-900/40 hover:scale-110 transition-transform duration-300"
+        className="relative w-12 h-12 md:w-14 md:h-14 bg-gradient-to-r from-[#25D366] to-[#128C7E] rounded-full flex items-center justify-center shadow-xl shadow-emerald-950/40 hover:scale-110 transition-transform duration-300"
         aria-label="Chat on WhatsApp"
         title="WhatsApp"
       >

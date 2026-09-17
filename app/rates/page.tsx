@@ -130,13 +130,13 @@ export default function RatesPage() {
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20rates%20and%20packages`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
             >
               <MessageCircle size={16} /> WhatsApp Inquiry
             </a>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="px-5 py-2.5 bg-white text-[#671725] hover:bg-rose-50 text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl transition-all flex items-center gap-2"
             >
               <Phone size={16} /> Direct Call: {siteConfig.phoneDisplay}
             </a>
@@ -222,8 +222,7 @@ export default function RatesPage() {
                     rel="noopener noreferrer"
                     className={`w-full py-2.5 text-center text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-sm ${
                       pkg.popular
-                        ? 'bg-[#671725] hover:bg-[#52121d] text-white'
-                        : 'bg-rose-50 hover:bg-[#671725] text-[#671725] hover:text-white'
+                        ? 'bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 rounded-xl' : 'bg-white hover:bg-rose-50/80 text-[#671725] border border-rose-200/80 hover:border-[#671725] rounded-xl'
                     }`}
                   >
                     <MessageCircle size={14} /> Book via WhatsApp

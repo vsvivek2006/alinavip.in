@@ -153,7 +153,7 @@ export default function FAQPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3.5 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs flex items-center justify-center gap-2 shadow-lg"
                 >
                   <MessageCircle size={18} />
                   <span>Inquire on WhatsApp</span>
@@ -161,7 +161,7 @@ export default function FAQPage() {
 
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="w-full py-3.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-lg transition-colors"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs flex items-center justify-center gap-2 shadow-lg"
                 >
                   <Phone size={17} className="text-luxury-gold" />
                   <span>Call: {siteConfig.phoneDisplay}</span>

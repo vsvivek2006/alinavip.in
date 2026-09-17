@@ -37,7 +37,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
               <a
                 href={"tel:" + siteConfig.phone}
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-[#671725] hover:bg-[#52121d] text-white font-semibold text-sm rounded shadow-md hover:shadow-lg transition-all duration-300"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-semibold text-sm rounded-xl"
               >
                 <Phone size={16} />
                 <span>Call Now</span>
@@ -48,7 +48,7 @@ export default function HeroSection() {
                 href={"https://wa.me/" + siteConfig.whatsapp + "?text=Hello%20ALINA%20VIP,%20I%20would%20like%20to%20inquire%20about%20your%20escort%20services%20in%20Gurgaon."}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm rounded shadow-md transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold text-sm rounded-xl"
               >
                 <MessageCircle size={17} />
                 <span>WhatsApp</span>
@@ -56,7 +56,7 @@ export default function HeroSection() {
 
               <Link
                 href="/gallery"
-                className="inline-flex items-center gap-1.5 px-6 py-3.5 border border-[#671725] text-[#671725] hover:bg-[#671725] hover:text-white font-semibold text-sm rounded transition-all duration-300"
+                className="inline-flex items-center gap-1.5 px-7 py-3.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-semibold text-sm rounded-xl"
               >
                 <span>View Profiles</span>
               </Link>
@@ -75,7 +75,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#671725] to-[#420c16] text-[#FFD700] border border-[#FFD700]/30 text-[11px] font-semibold px-3.5 py-0.5 rounded-full shadow-md whitespace-nowrap">
                   Russian VIP
                 </span>
               </div>
@@ -89,7 +89,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#671725] to-[#420c16] text-[#FFD700] border border-[#FFD700]/30 text-[11px] font-semibold px-3.5 py-0.5 rounded-full shadow-md whitespace-nowrap">
                   VIP Models
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#671725] to-[#420c16] text-[#FFD700] border border-[#FFD700]/30 text-[11px] font-semibold px-3.5 py-0.5 rounded-full shadow-md whitespace-nowrap">
                   Independent
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default function HeroSection() {
                   className="rounded-full object-cover shadow-lg border-4 border-white"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#671725] text-white text-[11px] font-semibold px-3 py-0.5 rounded-full shadow whitespace-nowrap">
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#671725] to-[#420c16] text-[#FFD700] border border-[#FFD700]/30 text-[11px] font-semibold px-3.5 py-0.5 rounded-full shadow-md whitespace-nowrap">
                   Air Hostess
                 </span>
               </div>

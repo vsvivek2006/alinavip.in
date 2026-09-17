@@ -47,7 +47,7 @@ export default function ContactPage() {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-[#FFFDF6]0/10 backdrop-blur-sm">
+          <span className="inline-block px-6 py-2 border border-luxury-gold/50 rounded-full text-luxury-gold text-sm font-semibold tracking-wider uppercase mb-6 bg-white/10 backdrop-blur-sm">
             ★ 24/7 Concierge Support
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans font-bold tracking-wide">
@@ -86,7 +86,7 @@ export default function ContactPage() {
               {/* Phone Channel Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#FFFDF6]0/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Phone className="w-6 h-6 text-primary-wine" />
                   </div>
                   <div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               {/* Location Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#FFFDF6]0/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <MapPin className="w-6 h-6 text-primary-wine" />
                   </div>
                   <div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
               {/* Operating Hours Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#FFFDF6]0/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Clock className="w-6 h-6 text-primary-wine" />
                   </div>
                   <div>

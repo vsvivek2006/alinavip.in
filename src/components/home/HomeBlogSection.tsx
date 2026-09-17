@@ -81,7 +81,7 @@ export default function HomeBlogSection() {
         <div className="text-center mt-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-7 py-3 border border-[#671725] text-[#671725] hover:bg-[#671725] hover:text-white text-xs font-semibold rounded-full transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
           >
             <span>View All Articles</span>
             <ArrowRight size={14} />

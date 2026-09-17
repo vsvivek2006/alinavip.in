@@ -111,7 +111,7 @@ export default function LocationGridSection() {
         <div className="text-center mt-12">
           <Link
             href="/locations"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs sm:text-sm font-semibold rounded-lg shadow transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold"
           >
             <span>Explore All 108 Gurgaon &amp; NCR Locations</span>
             <ArrowRight size={15} />

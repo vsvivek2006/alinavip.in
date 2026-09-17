@@ -241,7 +241,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href={"tel:" + siteConfig.phone}
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-semibold rounded shadow-md glint-effect transition-all duration-300"
+              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-semibold rounded-xl glint-effect"
             >
               <Phone size={13} className="text-white" />
               <span>{siteConfig.phoneDisplay}</span>
@@ -287,7 +287,7 @@ export default function Header() {
           <div className="pt-4 border-t border-gray-100 flex gap-2">
             <a
               href={"tel:" + siteConfig.phone}
-              className="flex-1 text-center py-2.5 bg-[#671725] text-white text-xs font-bold rounded shadow"
+              className="flex-1 text-center py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
             >
               Call {siteConfig.phoneDisplay}
             </a>
@@ -295,7 +295,7 @@ export default function Header() {
               href={"https://wa.me/" + siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 text-center py-2.5 bg-[#13bc18] text-white text-xs font-bold rounded shadow"
+              className="flex-1 text-center py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
             >
               WhatsApp
             </a>

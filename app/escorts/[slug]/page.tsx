@@ -157,13 +157,13 @@ export default async function EscortProfilePage({
                     href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20${encodeURIComponent(model.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded shadow transition-all flex items-center gap-1.5"
+                    className="px-4 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs flex items-center gap-1.5"
                   >
                     <span>WhatsApp Concierge</span>
                   </a>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="px-4 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded shadow transition-all flex items-center gap-1.5"
+                    className="px-4 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs flex items-center gap-1.5"
                   >
                     <Phone size={13} />
                     <span>Call Now</span>
@@ -338,7 +338,7 @@ export default async function EscortProfilePage({
                   <p className="text-gray-500 text-xs mt-1">{rel.location}</p>
                   <Link
                     href={`/escorts/${rel.slug}`}
-                    className="mt-3 block w-full text-center py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded transition-colors"
+                    className="mt-3 block w-full text-center py-2 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
                   >
                     View Profile
                   </Link>

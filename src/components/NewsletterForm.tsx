@@ -33,7 +33,7 @@ export default function NewsletterForm() {
 
   return (
     <div className="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-sm">
-      <div className="w-12 h-12 bg-[#FFFDF6]0/10 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
         <Sparkles className="w-6 h-6 text-primary-wine" />
       </div>
       <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-4 font-sans font-bold">
@@ -81,7 +81,7 @@ export default function NewsletterForm() {
         <button
           type="submit"
           disabled={submissionStatus === 'submitting'}
-          className="bg-primary-wine hover:bg-[#50121d] text-white px-8 py-3.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl whitespace-nowrap disabled:opacity-75"
+          className="px-8 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 rounded-full whitespace-nowrap disabled:opacity-75 font-semibold"
         >
           {submissionStatus === 'submitting' ? 'Subscribing...' : 'Subscribe'}
         </button>

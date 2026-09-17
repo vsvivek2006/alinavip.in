@@ -124,7 +124,7 @@ export default function ServicesPage() {
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20Escort%20Services%20in%20Gurgaon`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white font-bold text-xs sm:text-sm rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
             >
               <MessageCircle size={16} /> WhatsApp Inquiry
             </a>
@@ -247,7 +247,7 @@ export default function ServicesPage() {
                       href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(service.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded flex items-center gap-1 shadow-sm"
+                      className="px-3.5 py-1.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-lg flex items-center gap-1.5"
                     >
                       <MessageCircle size={13} /> Book Now
                     </a>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20the%20${encodeURIComponent(rate.duration)}%20package`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded transition-colors"
+                  className="w-full py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs text-center"
                 >
                   Book This Package
                 </a>
@@ -367,7 +367,7 @@ export default function ServicesPage() {
           <div className="text-center pt-2">
             <Link
               href="/escorts"
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-colors"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm"
             >
               <span>View All 200+ Escort Profiles</span>
               <ArrowRight size={15} />

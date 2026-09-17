@@ -109,11 +109,7 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
               setActiveTab(tab.id);
               setSearchTerm('');
             }}
-            className={`px-4 py-2 text-xs uppercase tracking-wider font-bold transition-all rounded-lg ${
-              activeTab === tab.id
-                ? 'bg-[#671725] text-white shadow-md'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-[#671725]/50'
-            }`}
+            className={`px-4 py-2 text-xs uppercase tracking-wider font-bold transition-all rounded-xl ${activeTab === tab.id ? 'bg-gradient-to-r from-[#671725] to-[#420c16] text-white shadow-md shadow-rose-950/25' : 'bg-white text-gray-700 border border-gray-200/80 hover:border-rose-300 hover:text-[#671725]'}`}
           >
             {tab.label}
           </button>
@@ -140,7 +136,7 @@ export default function LocationsDirectory({ locations }: LocationsDirectoryProp
                 setSearchTerm('');
                 setActiveTab('all');
               }}
-              className="px-5 py-2.5 bg-[#671725] hover:bg-[#50121d] text-white text-xs font-bold rounded-lg transition-colors"
+              className="px-5 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
             >
               Reset Search Filters
             </button>

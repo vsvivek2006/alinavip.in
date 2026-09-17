@@ -198,13 +198,13 @@ export default function FeaturedProfilesSection() {
                     href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20${encodeURIComponent(profile.name)}%20(${encodeURIComponent(profile.category)})`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+                    className="flex-1 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5"
                   >
                     <MessageCircle size={14} /> WhatsApp
                   </a>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="flex-1 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm transition-colors"
+                    className="flex-1 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5"
                   >
                     <Phone size={14} /> Direct Call
                   </a>
@@ -218,7 +218,7 @@ export default function FeaturedProfilesSection() {
         <div className="text-center mt-12">
           <Link
             href="/escorts"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#671725] hover:bg-[#52121d] text-white text-sm font-bold rounded-lg shadow-md transition-all duration-300"
+            className="inline-flex items-center gap-2 px-9 py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm font-bold"
           >
             <span>View All 200+ Escort Profiles</span>
             <ArrowRight size={16} />

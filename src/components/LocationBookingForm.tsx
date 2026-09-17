@@ -150,7 +150,7 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
       <button
         type="submit"
         disabled={submissionStatus === 'submitting'}
-        className="w-full bg-primary-wine hover:bg-[#50121d] text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-gold-600/30 hover:shadow-gold-600/50 flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
+        className="w-full py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-base sm:text-lg flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed"
       >
         <Phone className="w-5 h-5" />
         {submissionStatus === 'submitting' ? 'Preparing WhatsApp Booking...' : `Book via WhatsApp in ${locationName}`}

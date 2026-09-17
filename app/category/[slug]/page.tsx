@@ -200,19 +200,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="bg-primary-wine hover:bg-[#50121d] text-white px-8 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-base flex items-center gap-2"
                 >
                   <Phone className="w-5 h-5" /> Book Now
                 </a>
                 <Link
                   href="/contact"
-                  className="border-2 border-primary-wine hover:bg-[#671725]/10 text-luxury-gold px-8 py-4 rounded-full font-bold text-base transition-all"
+                  className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-[#FFD700] hover:-translate-y-0.5 active:scale-[0.98] transition-all font-bold text-base rounded-xl"
                 >
                   Contact Us
                 </Link>
                 <a
                   href={siteConfig.url}
-                  className="border-2 border-luxury-gold/50 hover:bg-[#671725]/10 text-gold-300 px-8 py-4 rounded-full font-bold text-base transition-all"
+                  className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-[#FFD700]/40 text-[#FFD700] hover:-translate-y-0.5 active:scale-[0.98] transition-all font-bold text-base rounded-xl"
                 >
                   Visit {siteConfig.domain}
                 </a>
@@ -522,7 +522,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 <h4 className="text-white font-bold text-lg mb-3 font-sans font-bold">Reserve Now</h4>
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="block bg-primary-wine hover:bg-[#50121d] text-white py-3.5 rounded-full font-bold transition-all text-sm shadow-md"
+                  className="block py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm"
                 >
                   Call Now: {siteConfig.phoneDisplay}
                 </a>
@@ -530,7 +530,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20am%20interested%20in%20booking%20${encodeURIComponent(category.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block mt-2.5 bg-[#25D366] text-white py-3.5 rounded-full font-bold transition-all text-sm shadow-md"
+                  className="block mt-2.5 py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm"
                 >
                   WhatsApp Booking
                 </a>
@@ -630,19 +630,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="bg-primary-wine hover:bg-[#50121d] text-white px-10 py-4 rounded-full font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-base flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" /> Book Now
               </a>
               <Link
                 href="/contact"
-                className="border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
+                className="px-8 py-4 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold rounded-xl text-base"
               >
                 Contact Us
               </Link>
               <a
                 href={siteConfig.url}
-                className="border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-10 py-4 rounded-full font-bold text-base transition-all"
+                className="px-8 py-4 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold rounded-xl text-base"
               >
                 Visit {siteConfig.domain}
               </a>

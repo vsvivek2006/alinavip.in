@@ -241,7 +241,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
           <button
             type="button"
             onClick={handleClearFilters}
-            className="px-6 py-2.5 bg-primary-wine hover:bg-[#50121d] text-white rounded-full text-sm font-semibold transition-all shadow-md"
+            className="px-6 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 rounded-full text-sm font-semibold"
           >
             Clear Filters &amp; View All Articles
           </button>

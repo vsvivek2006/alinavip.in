@@ -221,13 +221,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="inline-flex items-center gap-2 bg-[#671725] hover:bg-[#52121d] text-white px-8 py-4 rounded-xl font-bold text-sm transition-all shadow-md"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold text-sm"
             >
               <Phone className="w-5 h-5" /> Call Concierge: {siteConfig.phoneDisplay}
             </a>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 bg-[#13bc18] hover:bg-[#0fa814] text-white px-8 py-4 rounded-xl font-bold text-sm transition-all shadow-md"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm font-bold rounded-xl"
             >
               Explore Profiles <ArrowRight className="w-5 h-5" />
             </Link>
@@ -485,7 +485,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 <div className="space-y-3">
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#671725] hover:bg-[#50121d] text-white font-bold rounded-xl text-xs shadow transition-colors"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
                   >
                     <Phone size={16} /> Call Now: {siteConfig.phoneDisplay}
                   </a>
@@ -493,7 +493,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                     href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20would%20like%20to%20book%20an%20escort%20in%20${encodeURIComponent(location.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] text-white font-bold rounded-xl text-sm shadow-lg hover:shadow-xl transition-all"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
                   >
                     <MessageCircle size={16} /> WhatsApp Booking
                   </a>

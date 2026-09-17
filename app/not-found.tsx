@@ -25,13 +25,13 @@ export default function NotFound() {
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-[#671725] hover:bg-[#50121d] text-white font-bold px-7 py-3.5 rounded-xl text-xs transition-colors shadow-md"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
           >
             <Home size={16} /> Return to Homepage
           </Link>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 border-2 border-primary-wine text-primary-wine hover:bg-primary-wine hover:text-white px-7 py-3.5 rounded-xl font-bold text-xs transition-colors"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 font-bold rounded-xl text-xs"
           >
             <Compass size={16} /> View Photo Gallery
           </Link>
@@ -49,7 +49,7 @@ export default function NotFound() {
             href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[#13bc18] hover:text-[#0fa814] font-bold"
+            className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-bold"
           >
             <MessageCircle size={14} /> WhatsApp Concierge
           </a>

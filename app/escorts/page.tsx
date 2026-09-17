@@ -90,7 +90,7 @@ export default function EscortsDirectoryPage() {
               <div className="p-5 pt-0">
                 <Link
                   href={`/escorts/${model.slug}`}
-                  className="block w-full text-center py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded-lg shadow transition-colors"
+                  className="block w-full text-center py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
                 >
                   View Profile &amp; Rates &rarr;
                 </Link>
