@@ -91,7 +91,7 @@ const topHotels = [
     stars: '5 Star Luxury',
     desc: 'Located adjacent to Sector 29 nightlife corridor. High-energy party companions and sensual massage specialists.',
     slug: 'escort-service-near-westin-hotel',
-    image: '/images/assets/24x7_Available_Escorts.jpg',
+    image: '/images/assets/Escorts_24x7_Availability.jpg',
   },
   {
     name: 'Hyatt Regency Gurugram',

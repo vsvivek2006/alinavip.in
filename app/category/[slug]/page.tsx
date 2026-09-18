@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const title = `${category.h1Title || `${category.name} in Gurgaon`} | VIP Escorts & Call Girls | ALINA VIP`;
   const description = `${category.shortDescription} ALINA VIP India offers verified ${category.name.toLowerCase()} in Gurgaon & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
   const canonicalUrl = `${siteConfig.url}/category/${category.slug}`;
-  const imageSrc = getAssetUrl(categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg');
+  const imageSrc = getAssetUrl(categoryImageMap[category.slug] || '/images/categories/default.webp');
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
 
   const categoryKeywords = [

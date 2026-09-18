@@ -86,13 +86,13 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-          <div className="md:col-span-5 relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-md">
+          <div className="md:col-span-5 relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md">
             <Image
-              src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
-              alt="Diverse Portfolio of Escorts in Gurgaon"
+              src={getAssetUrl('/images/about-hero.webp')}
+              alt="About ALINA VIP Escort Service in Gurgaon"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 400px"
+              sizes="(max-width: 768px) 100vw, 500px"
               priority
             />
           </div>

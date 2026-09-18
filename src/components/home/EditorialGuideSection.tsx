@@ -68,10 +68,10 @@ export default function EditorialGuideSection() {
             {/* Featured Image */}
             <div className="lg:col-span-5 relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
               <Image
-                src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
-                alt="Diverse Portfolio of Escorts in Gurgaon"
+                src={getAssetUrl('/images/blog/escort-service-guide.webp')}
+                alt="Editorial Guide to Escorts in Gurgaon"
                 fill
-                sizes="(max-width: 1024px) 100vw, 450px"
+                sizes="(max-width: 1024px) 100vw, 550px"
                 className="object-cover"
                 loading="lazy"
               />

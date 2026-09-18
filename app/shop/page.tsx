@@ -26,18 +26,6 @@ export default function ShopPage() {
     (p) => p.slug.startsWith('escorts/') && p.slug.split('/').length >= 3
   );
 
-  const fallbackImages = [
-    '/images/assets/Karina.jpg',
-    '/images/assets/Tanya.jpg',
-    '/images/assets/Neha.jpg',
-    '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
-    '/images/assets/Mia.jpg',
-    '/images/assets/Nithya_High_Profile_Escort_In_Mahipalpur.jpg',
-    '/images/assets/Sheena_Indian_Escort_In_Gurgaon.jpg',
-    '/images/assets/Geet.jpg',
-    '/images/assets/Pallavi.jpg',
-  ];
-
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
       {/* 1. Hero Banner */}
@@ -63,13 +51,11 @@ export default function ShopPage() {
       {/* 2. Products Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6">
-          {modelProds.map((prod, idx) => {
+          {modelProds.map((prod) => {
             const rawName = prod.h1.split('|')[0].replace(/Gurgaon Escorts/i, '').trim();
             const modelName = rawName || prod.slug.split('/').pop()?.replace(/-/g, ' ');
             const categoryPart = prod.slug.split('/')[1]?.replace(/-/g, ' ');
-            const fallbackImg = fallbackImages[idx % fallbackImages.length];
-            const isImageKit = prod.modelImage && prod.modelImage.includes('ik.imagekit.io');
-            const imgSrc = getAssetUrl(isImageKit ? prod.modelImage : fallbackImg);
+            const imgSrc = getAssetUrl(prod.modelImage);
             const price = '₹15,000';
 
             return (

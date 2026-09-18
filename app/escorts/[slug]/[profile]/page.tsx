@@ -86,24 +86,8 @@ export default async function ProductModelPage({
   const modelName = rawName || profile.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   const categoryLabel = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
-  // Model Image with reliable fallback
-  const fallbackImages = [
-    '/images/assets/Karina.jpg',
-    '/images/assets/Tanya.jpg',
-    '/images/assets/Neha.jpg',
-    '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
-    '/images/assets/Mia.jpg',
-    '/images/assets/Nithya_High_Profile_Escort_In_Mahipalpur.jpg',
-    '/images/assets/Sheena_Indian_Escort_In_Gurgaon.jpg',
-    '/images/assets/Geet.jpg',
-    '/images/assets/Pallavi.jpg',
-  ];
-  // Deterministic fallback based on profile slug hash
-  const hash = profile.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
-  const fallbackImg = fallbackImages[hash % fallbackImages.length];
-  // Ensure all profile images strictly route through our ImageKit CDN
-  const isImageKit = prod.modelImage && prod.modelImage.includes('ik.imagekit.io');
-  const displayImage = getAssetUrl(isImageKit ? prod.modelImage : fallbackImg);
+  // Route model image strictly through ImageKit CDN
+  const displayImage = getAssetUrl(prod.modelImage);
 
   const specs = prod.specs || {};
   const baseCity = specs.base_city || 'Gurgaon';

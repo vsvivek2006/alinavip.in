@@ -59,7 +59,7 @@ const serviceSubpages = [
   {
     title: 'Erotic Massage in Gurgaon',
     slug: '/erotic-massage-in-gurgaon',
-    image: '/images/assets/Full_Body_Sensual_Massage.jpg',
+    image: '/images/assets/Erotic_Massage.jpg',
     snippet:
       'A sensual full body massage provides relaxation and rejuvenation to the body. It is also a great sex booster as it opens all the blocked blood vessels and relieves all stress.',
     features: ['Body-to-body sensual rub', 'Warm aromatherapy oils', 'Erotic happy ending'],
@@ -67,7 +67,7 @@ const serviceSubpages = [
   {
     title: 'In-Call & Out-Call Services',
     slug: '/in-out-call-girls-gurgaon',
-    image: '/images/assets/In_Call_And_Out_Call_Services.jpg',
+    image: '/images/assets/In_Call_And_Out_Call_Services.png',
     snippet:
       'Escort services are available anytime, anywhere in Gurgaon as per your need. Escorts operate either with agencies or independently for total comfort and discretion.',
     features: ['20-30 min hotel arrival', 'Private luxury suites', 'Strict anonymity guaranteed'],

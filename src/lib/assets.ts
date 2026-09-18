@@ -10,33 +10,50 @@ const CDN_URL = (process.env.NEXT_PUBLIC_IMAGE_CDN_URL || 'https://ik.imagekit.i
 export function getAssetUrl(path: string | undefined | null): string {
   if (!path) return '';
 
-  // Return external or remote URLs unchanged
+  // Already an ImageKit CDN URL: sanitize out any old artificial sharpen/upscale filters
+  if (path.includes('ik.imagekit.io')) {
+    return path
+      .replace(/e-sharpen-\d+,?/, '')
+      .replace(/,\?/, '?')
+      .replace(/[?,]$/, '');
+  }
+
+  // Scraped roshnikhanna URL: extract filename and route through ImageKit CDN
+  if (path.includes('roshnikhanna.in')) {
+    const filename = path.split('/').pop()?.split('?')[0] || '';
+    return `${CDN_URL}/shared/${filename}?tr=f-auto,q-85`;
+  }
+
+  // Other remote external URLs: return as-is
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
   }
 
-  if (CDN_URL) {
-    if (path.startsWith('/images/assets/')) {
-      const filename = path.replace(/^\/?images\/assets\//, '');
-      return `${CDN_URL}/shared/${filename}?tr=f-auto,q-90,e-sharpen-10`;
-    }
-    if (path.startsWith('/images/categories/')) {
-      const filename = path.replace(/^\/?images\/categories\//, '');
-      return `${CDN_URL}/categories/${filename}?tr=f-auto,q-90,e-sharpen-10`;
-    }
-    if (path.startsWith('/images/blog/')) {
-      const filename = path.replace(/^\/?images\/blog\//, '');
-      return `${CDN_URL}/blog/${filename}?tr=f-auto,q-90,e-sharpen-10`;
-    }
-    if (path.startsWith('/images/')) {
-      const filename = path.replace(/^\/?images\//, '');
-      return `${CDN_URL}/${filename}?tr=f-auto,q-90,e-sharpen-10`;
-    }
-    // Any other relative filename defaults to /shared/
-    const clean = path.replace(/^\//, '');
-    return `${CDN_URL}/shared/${clean}?tr=f-auto,q-90,e-sharpen-10`;
+  // Category portraits
+  if (path.startsWith('/images/categories/')) {
+    const filename = path.replace(/^\/?images\/categories\//, '');
+    return `${CDN_URL}/categories/${filename}?tr=f-auto,q-85`;
   }
 
-  // Fallback to local public assets
-  return path.startsWith('/') ? path : `/${path}`;
+  // Blog images
+  if (path.startsWith('/images/blog/')) {
+    const filename = path.replace(/^\/?images\/blog\//, '');
+    return `${CDN_URL}/blog/${filename}?tr=f-auto,q-85`;
+  }
+
+  // Assets folder
+  if (path.startsWith('/images/assets/')) {
+    const filename = path.replace(/^\/?images\/assets\//, '');
+    return `${CDN_URL}/shared/${filename}?tr=f-auto,q-85`;
+  }
+
+  // General images folder
+  if (path.startsWith('/images/')) {
+    const filename = path.replace(/^\/?images\//, '');
+    return `${CDN_URL}/${filename}?tr=f-auto,q-85`;
+  }
+
+  // Any relative path strictly routes through ImageKit /shared/
+  const clean = path.replace(/^\//, '');
+  return `${CDN_URL}/shared/${clean}?tr=f-auto,q-85`;
 }

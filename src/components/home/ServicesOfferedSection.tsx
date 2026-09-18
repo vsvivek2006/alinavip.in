@@ -31,14 +31,14 @@ const servicesData = [
     icon: Hotel,
     title: 'Hotel Escort Service',
     desc: 'Seamless, discreet outcall service directly to luxury 4-star and 5-star hotels including Oberoi, Leela, Crowne Plaza, and JW Marriott.',
-    image: '/images/assets/Escorts_24x7_Availability.jpg',
+    image: '/images/blog/luxury-hotels.webp',
     href: '/hotels',
   },
   {
     icon: Clock,
     title: '24/ 7 Escort Service',
     desc: 'We understand that desires and cravings can arise at any time. That\'s why our Gurgaon escorts are available 24/7 across the city.',
-    image: '/images/assets/24x7_Available_Escorts.jpg',
+    image: '/images/assets/Escorts_24x7_Availability.jpg',
     href: '/services',
   },
   {
