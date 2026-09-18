@@ -101,20 +101,20 @@ try {
   console.warn('Could not read models.ts:', e.message);
 }
 
-// 7. Read Roshni Scraped Pages, Posts, Products
-let roshniPages = [];
+// 7. Read Catalog Pages, Posts, Products
+let catalogPages = [];
 try {
-  roshniPages = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_pages.json'), 'utf8'));
+  catalogPages = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/catalog_pages.json'), 'utf8'));
 } catch (e) {}
 
-let roshniPosts = [];
+let catalogPosts = [];
 try {
-  roshniPosts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_posts.json'), 'utf8'));
+  catalogPosts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/catalog_posts.json'), 'utf8'));
 } catch (e) {}
 
-let roshniProducts = [];
+let catalogProducts = [];
 try {
-  roshniProducts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/roshni_products.json'), 'utf8'));
+  catalogProducts = JSON.parse(fs.readFileSync(path.join(rootDir, 'src/data/catalog_products.json'), 'utf8'));
 } catch (e) {}
 
 
@@ -137,21 +137,21 @@ const pageUrls = staticPages.map(p => ({
   priority: p.priority
 }));
 
-const roshniPageUrls = roshniPages.map(p => ({
+const catalogPageUrls = catalogPages.map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,
   changefreq: 'weekly',
   priority: '0.85'
 }));
 
-const roshniPostUrls = roshniPosts.map(p => ({
+const catalogPostUrls = catalogPosts.map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,
   changefreq: 'monthly',
   priority: '0.75'
 }));
 
-const roshniProdUrls = roshniProducts.map(p => ({
+const catalogProdUrls = catalogProducts.map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,
   changefreq: 'weekly',
@@ -181,7 +181,7 @@ const blogUrls = blogSlugs.map(slug => ({
 
 // Build unique master list
 const urlMap = new Map();
-[...pageUrls, ...roshniPageUrls, ...roshniPostUrls, ...roshniProdUrls, ...locationUrls, ...catUrls, ...blogUrls, ...modelUrls].forEach(u => {
+[...pageUrls, ...catalogPageUrls, ...catalogPostUrls, ...catalogProdUrls, ...locationUrls, ...catUrls, ...blogUrls, ...modelUrls].forEach(u => {
   if (!urlMap.has(u.loc)) {
     urlMap.set(u.loc, u);
   }
@@ -189,10 +189,10 @@ const urlMap = new Map();
 const allUrls = Array.from(urlMap.values());
 
 // Write individual XML files to public/
-fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), buildUrlset([...pageUrls, ...roshniPageUrls]), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-pages.xml'), buildUrlset([...pageUrls, ...catalogPageUrls]), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-locations.xml'), buildUrlset(locationUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), buildUrlset(catUrls), 'utf8');
-fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset([...blogUrls, ...roshniPostUrls]), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset([...blogUrls, ...catalogPostUrls]), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-escorts.xml'), buildUrlset(modelUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), buildUrlset(allUrls), 'utf8');
 console.log(`[SITEMAP GENERATOR] Total URLs: ${allUrls.length}`);
@@ -227,7 +227,7 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndexXml, 'ut
 console.log(`[SITEMAP GENERATOR] Successfully generated sitemaps:
   - sitemap.xml (${allUrls.length} total URLs)
   - sitemap-index.xml
-  - sitemap-pages.xml (${pageUrls.length + roshniPageUrls.length} URLs)
+  - sitemap-pages.xml (${pageUrls.length + catalogPageUrls.length} URLs)
   - sitemap-locations.xml (${locationUrls.length} URLs)
   - sitemap-categories.xml (${catUrls.length} URLs)
-  - sitemap-blogs.xml (${blogUrls.length + roshniPostUrls.length} URLs)`);
+  - sitemap-blogs.xml (${blogUrls.length + catalogPostUrls.length} URLs)`);

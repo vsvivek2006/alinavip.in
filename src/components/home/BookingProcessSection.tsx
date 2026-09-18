@@ -28,7 +28,7 @@ export default function BookingProcessSection() {
     <section className="py-16 md:py-24 bg-white" id="booking-process">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading with 100% Exact Copy from Roshni Khanna */}
+        {/* Section Heading with 100% Exact Copy from editorial catalog */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Simple Booking Process

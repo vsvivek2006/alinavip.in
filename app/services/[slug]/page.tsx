@@ -77,7 +77,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${item.title.replace(/Roshni\s*Khanna/gi, siteConfig.name)} | ${siteConfig.name}`,
+    title: `${item.title} | ${siteConfig.name}`,
     description: `Discover premium ${item.h1} in Gurgaon. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ALINA VIP.`,
     alternates: {
       canonical: `${siteConfig.url}/services/${slug}`,
@@ -213,7 +213,7 @@ export default async function ServiceDetailPage({
           </div>
         </div>
 
-        {/* All Authentic Scraped Sections from Roshni Khanna */}
+        {/* All Authentic Scraped Sections from editorial catalog */}
         <div className="space-y-8">
           {validSections.map((sec, idx) => (
             <article

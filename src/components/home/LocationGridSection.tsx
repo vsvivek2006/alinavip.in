@@ -61,7 +61,7 @@ export default function LocationGridSection() {
     <section className="py-16 md:py-24 bg-white" id="locations">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading with 100% Exact Copy from Roshni Khanna */}
+        {/* Section Heading with 100% Exact Copy from editorial catalog */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Top Escorts Service Locations
@@ -72,7 +72,7 @@ export default function LocationGridSection() {
           </p>
         </div>
 
-        {/* 8 Cards Grid matching Roshni Khanna location-section */}
+        {/* 8 Cards Grid matching agency design location-section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {topLocations.map((loc, idx) => (
             <Link

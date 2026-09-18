@@ -119,7 +119,7 @@ export default function FeaturedProfilesSection() {
   return (
     <section className="py-16 md:py-24 bg-white" id="featured-profiles">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header with 100% Exact Copy from Roshni Khanna */}
+        {/* Section Header with 100% Exact Copy from editorial catalog */}
         <div className="text-center max-w-4xl mx-auto mb-14 space-y-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Featured Profiles
@@ -172,7 +172,7 @@ export default function FeaturedProfilesSection() {
                     {profile.description}
                   </p>
 
-                  {/* Body Measurements Stats Table matching Roshni Khanna */}
+                  {/* Body Measurements Stats Table matching agency design */}
                   <div className="grid grid-cols-4 gap-2 mt-4 pt-4 border-t border-gray-100 text-center">
                     <div className="bg-[#FFFDF6] p-2 rounded-lg border border-rose-100/60">
                       <div className="text-[10px] uppercase font-bold text-gray-500">Height</div>

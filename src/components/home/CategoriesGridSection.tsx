@@ -55,7 +55,7 @@ export default function CategoriesGridSection() {
     <section className="py-16 md:py-24 bg-[#FAFAF8]" id="categories-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading & Intro Paragraphs (100% Exact from Roshni Khanna) */}
+        {/* Section Heading & Intro Paragraphs (100% Exact from editorial catalog) */}
         <div className="text-center max-w-4xl mx-auto mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Browse Gurgaon Escorts by Category
@@ -106,7 +106,7 @@ export default function CategoriesGridSection() {
           ))}
         </div>
 
-        {/* 3 Authentic Concluding Editorial Paragraphs from Roshni Khanna */}
+        {/* 3 Authentic Concluding Editorial Paragraphs from editorial catalog */}
         <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-4">
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
             With the advancement of Gurgaon City or &ldquo;Gurugram&rdquo; in the last few years, meeting female escorts has changed significantly, with men now looking for more genuine choices, better service, and profiles that match their personal preferences. Diversity matters because every client is different. Some prefer Russian women, some look for Indian models, while others feel more comfortable choosing independent profiles with a more personal approach.

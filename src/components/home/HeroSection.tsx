@@ -64,7 +64,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Column (Circular Showcase matching Roshni Khanna banner-circle-img) */}
+          {/* Right Column (Circular Showcase matching agency design banner-circle-img) */}
           <div className="lg:col-span-5">
             <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto">
               <div className="banner-circle-img relative aspect-square">

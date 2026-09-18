@@ -51,7 +51,7 @@ const professionalStandards = [
 export default function TrustStandardsSection() {
   return (
     <>
-      {/* 1. Offering Services You Can Trust (Roshni Khanna why-main-box) */}
+      {/* 1. Offering Services You Can Trust (ALINA VIP why-main-box) */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="why-main-box">
@@ -85,7 +85,7 @@ export default function TrustStandardsSection() {
         </div>
       </section>
 
-      {/* 2. Our Professional Standards (Roshni Khanna profissional-main-box) */}
+      {/* 2. Our Professional Standards (ALINA VIP profissional-main-box) */}
       <section className="py-16 md:py-20 bg-[#FAFAF8] border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">

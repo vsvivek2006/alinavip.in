@@ -251,7 +251,7 @@ export default function CategoriesPage() {
           </div>
         </section>
 
-        {/* All Authentic Scraped Editorial Sections from Roshni Khanna */}
+        {/* All Authentic Scraped Editorial Sections from editorial catalog */}
         <div className="space-y-8">
           {validSections.map((sec, idx) => (
             <article

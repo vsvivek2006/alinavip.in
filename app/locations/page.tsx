@@ -128,7 +128,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* 3. Top Locations Highlight Grid (Roshni Khanna Blush Cards with Wine Borders) */}
+      {/* 3. Top Locations Highlight Grid (ALINA VIP Blush Cards with Wine Borders) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-primary-wine">

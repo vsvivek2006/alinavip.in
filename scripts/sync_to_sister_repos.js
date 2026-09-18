@@ -11,7 +11,6 @@ const targets = [
 
 const filesToCopy = [
   'src/data/exact_manifest.json',
-  'src/data/roshni_home_manifest.json',
   'src/components/Header.tsx',
   'src/components/home/FeaturedProfilesSection.tsx',
   'src/components/home/CategoriesGridSection.tsx',

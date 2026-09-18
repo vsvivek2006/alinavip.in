@@ -55,7 +55,7 @@ export default function ServicesOfferedSection() {
     <section className="py-16 md:py-24 bg-white" id="services-offered">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading & Subtitle (100% Exact from Roshni Khanna) */}
+        {/* Section Heading & Subtitle (100% Exact from editorial catalog) */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Services Offered

@@ -13,7 +13,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
-import pagesData from '@/data/roshni_pages.json';
+import pagesData from '@/data/catalog_pages.json';
 
 interface Section {
   heading: string;
@@ -105,8 +105,6 @@ export default function FAQsPage() {
           {faqItems.map((item, idx) => {
             const isOpen = openIdx === idx;
             const questionText = item.heading
-              .replace(/Roshni\s*Khanna/gi, siteConfig.name)
-              .replace(/Roshnikhanna/gi, siteConfig.name)
               .replace(/&rsquo;/g, "'")
               .replace(/&lsquo;/g, "'")
               .replace(/&amp;/g, '&');
@@ -140,9 +138,6 @@ export default function FAQsPage() {
                     {item.paragraphs.map((p, pIdx) => (
                       <p key={pIdx}>
                         {p
-                          .replace(/Roshni\s*Khanna/gi, siteConfig.name)
-                          .replace(/Roshnikhanna/gi, siteConfig.name)
-                          .replace(/roshnikhanna\.in/gi, siteConfig.url.replace('https://', ''))
                           .replace(/\+91-?9971819077/g, siteConfig.phoneDisplay)
                           .replace(/&times;/g, 'x')
                           .replace(/&rsquo;/g, "'")

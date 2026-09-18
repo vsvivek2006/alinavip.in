@@ -51,17 +51,17 @@
   }
 
   /* Section Title Standards */
-  .section-title, .roshni-title {
+  .section-title, .alina-title {
     @apply text-2xl md:text-3xl lg:text-4xl font-bold text-[#111827] text-center;
     font-family: var(--font-poppins), 'Poppins', sans-serif;
   }
 
-  .section-subtitle, .roshni-subtitle {
+  .section-subtitle, .alina-subtitle {
     @apply text-sm md:text-base text-gray-600 text-center max-w-2xl mx-auto mt-2 leading-relaxed;
   }
 }
 
-/* Roshni Khanna Signature Component Classes */
+/* ALINA VIP Signature Component Classes */
 
 /* 1. Hero Banner */
 .new-banner h1 {

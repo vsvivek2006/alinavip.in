@@ -11,7 +11,7 @@ export default async function HomeBlogSection() {
     <section className="py-16 md:py-24 bg-[#FAFAF8]" id="latest-blog">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading matching Roshni Khanna */}
+        {/* Section Heading matching agency design */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#111827] tracking-tight">
             Latest Blog

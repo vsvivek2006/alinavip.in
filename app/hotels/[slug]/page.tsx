@@ -7,7 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
-import pagesData from '@/data/roshni_pages.json';
+import pagesData from '@/data/catalog_pages.json';
 
 interface Section {
   heading: string;

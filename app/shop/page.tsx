@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
-import productsData from '@/data/roshni_products.json';
+import productsData from '@/data/catalog_products.json';
 
 interface ProductItem {
   slug: string;

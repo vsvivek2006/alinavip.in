@@ -8,7 +8,7 @@ import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import { getAssetUrl } from '@/lib/assets';
-import productsData from '@/data/roshni_products.json';
+import productsData from '@/data/catalog_products.json';
 
 interface Section {
   heading: string;

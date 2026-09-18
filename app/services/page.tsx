@@ -159,7 +159,7 @@ export default function ServicesPage() {
 
       {/* 3. Main Container */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-        {/* Intro Editorial Article (100% Exact from Roshni Khanna) */}
+        {/* Intro Editorial Article (100% Exact from editorial catalog) */}
         {introSection && (
           <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#671725]">
@@ -174,7 +174,7 @@ export default function ServicesPage() {
           </article>
         )}
 
-        {/* Services Offered Section (100% Exact Copy from Roshni Khanna Section 1 + Subpage Navigation Cards) */}
+        {/* Services Offered Section (100% Exact Copy from editorial catalog Section 1 + Subpage Navigation Cards) */}
         <section className="space-y-8">
           <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-5">
             <div className="border-b border-gray-100 pb-4">
@@ -187,7 +187,7 @@ export default function ServicesPage() {
               <div className="w-16 h-1 bg-[#671725] mt-2 rounded-full" />
             </div>
 
-            {/* All 6 Authentic Paragraphs from Roshni Khanna Services Offered Section */}
+            {/* All 6 Authentic Paragraphs from editorial catalog Services Offered Section */}
             {servicesOfferedSection && servicesOfferedSection.paragraphs && (
               <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed">
                 {servicesOfferedSection.paragraphs.map((p, pIdx) => (
@@ -301,7 +301,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* All Remaining Exact Long-Form Editorial Sections from Roshni Khanna */}
+        {/* All Remaining Exact Long-Form Editorial Sections from editorial catalog */}
         <div className="space-y-8">
           {remainingEditorialSections.map((sec, idx) => (
             <article

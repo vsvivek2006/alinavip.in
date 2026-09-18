@@ -166,7 +166,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Age Verification Required Banner matching Roshni Khanna */}
+        {/* Age Verification Required Banner matching agency design */}
         <div className="border-t border-gray-800 pt-6 pb-6 text-center text-xs text-gray-400 max-w-3xl mx-auto leading-relaxed">
           <p className="font-bold text-gray-300 mb-1">Age Verification Required (18+ Only)</p>
           <p>

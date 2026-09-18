@@ -279,7 +279,7 @@ export default function RatesPage() {
           </div>
         </section>
 
-        {/* All Authentic Scraped Sections from Roshni Khanna */}
+        {/* All Authentic Scraped Sections from editorial catalog */}
         <div className="space-y-8">
           {editorialSections.map((sec, idx) => (
             <article

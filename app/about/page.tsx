@@ -5,7 +5,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
-import pagesData from '@/data/roshni_pages.json';
+import pagesData from '@/data/catalog_pages.json';
 
 interface Section {
   heading: string;
@@ -25,7 +25,7 @@ interface PageItem {
 const aboutData = (pagesData as PageItem[]).find((p) => p.slug === 'about-us');
 
 export const metadata: Metadata = {
-  title: aboutData ? aboutData.title.replace('Roshni Khanna', siteConfig.name) : 'About Us | ALINA VIP',
+  title: aboutData ? aboutData.title.replace('ALINA VIP', siteConfig.name) : 'About Us | ALINA VIP',
   description: aboutData ? aboutData.metaDescription : 'Premier VIP escort agency in Gurgaon.',
   alternates: {
     canonical: `${siteConfig.url}/about`,
@@ -109,12 +109,12 @@ export default function AboutPage() {
             >
               {sec.heading && (
                 <h3 className="text-xl sm:text-2xl font-bold text-[#111827] border-b border-gray-100 pb-3">
-                  {sec.heading.replace(/Roshni Khanna/gi, siteConfig.name).replace(/RoshniKhanna/gi, siteConfig.name)}
+                  {sec.heading.replace(/ALINA VIP/gi, siteConfig.name).replace(/ALINA VIP/gi, siteConfig.name)}
                 </h3>
               )}
               {sec.paragraphs.map((p: string, pIdx: number) => (
                 <p key={pIdx} className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  {p.replace(/Roshni Khanna/gi, siteConfig.name).replace(/RoshniKhanna/gi, siteConfig.name)}
+                  {p.replace(/ALINA VIP/gi, siteConfig.name).replace(/ALINA VIP/gi, siteConfig.name)}
                 </p>
               ))}
               {sec.listItems && sec.listItems.length > 0 && (
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   {sec.listItems.map((li: string, lIdx: number) => (
                     <li key={lIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-gray-700">
                       <CheckCircle size={16} className="text-[#671725] shrink-0 mt-1" />
-                      <span>{li.replace(/Roshni Khanna/gi, siteConfig.name).replace(/RoshniKhanna/gi, siteConfig.name)}</span>
+                      <span>{li.replace(/ALINA VIP/gi, siteConfig.name).replace(/ALINA VIP/gi, siteConfig.name)}</span>
                     </li>
                   ))}
                 </ul>

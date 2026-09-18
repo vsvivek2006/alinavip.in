@@ -218,7 +218,7 @@ const categoryPortfolios = [
 export default function GalleryPage() {
   return (
     <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
-      {/* 1. Page Title Bar (Roshni Khanna exact page-title-bar-01) */}
+      {/* 1. Page Title Bar (ALINA VIP exact page-title-bar-01) */}
       <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">

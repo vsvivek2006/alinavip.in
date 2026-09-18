@@ -18,8 +18,8 @@ export function getAssetUrl(path: string | undefined | null): string {
       .replace(/[?,]$/, '');
   }
 
-  // Scraped roshnikhanna URL: extract filename and route through ImageKit CDN
-  if (path.includes('roshnikhanna.in')) {
+  // Upload URL: extract filename and route through ImageKit CDN
+  if (path.includes('/wp-content/uploads/')) {
     const filename = path.split('/').pop()?.split('?')[0] || '';
     return `${CDN_URL}/shared/${filename}?tr=f-auto,q-85`;
   }

@@ -35,7 +35,7 @@ export default function TestimonialsSection() {
     <section className="py-16 md:py-24 bg-[#FAFAF8]" id="testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Heading with 100% Exact Copy from Roshni Khanna */}
+        {/* Section Heading with 100% Exact Copy from editorial catalog */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight">
             Trusted by men from around the world
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials Grid matching Roshni Khanna testimonial-main-box */}
+        {/* Testimonials Grid matching agency design testimonial-main-box */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((rev, idx) => (
             <div
