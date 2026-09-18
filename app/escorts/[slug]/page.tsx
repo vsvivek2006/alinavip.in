@@ -8,6 +8,8 @@ import CTASection from '@/components/CTASection';
 import { escortModels } from '@/data/models';
 import { siteConfig } from '@/data/siteConfig';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return escortModels.map((model) => ({
     slug: model.slug,

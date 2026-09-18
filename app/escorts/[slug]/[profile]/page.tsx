@@ -34,6 +34,8 @@ const allProducts = (productsData as ProductItem[]).filter(
   (p) => p.slug.startsWith('escorts/') && p.slug.split('/').length >= 3
 );
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return allProducts.map((p) => {
     const parts = p.slug.replace(/^escorts\//, '').split('/');

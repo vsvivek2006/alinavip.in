@@ -30,6 +30,8 @@ const hotelPages = (pagesData as PageItem[]).filter((p) =>
   p.slug.startsWith('hotels/')
 );
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return hotelPages.map((p) => ({
     slug: p.slug.replace(/^hotels\//, ''),

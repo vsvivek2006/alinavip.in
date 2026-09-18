@@ -44,6 +44,8 @@ const serviceImages: Record<string, string> = {
   fullNight: '/images/assets/Escort_At_Night_24x7_Service.png',
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return [
     { slug: 'girlfriend-experience' },

@@ -49,6 +49,8 @@ const validPosts = (postsData as ContentItem[]).filter(
 const allItems = [...validPages, ...validPosts];
 const itemsBySlug = new Map(allItems.map((item) => [item.slug, item]));
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return allItems.map((item) => ({
     slug: item.slug,
