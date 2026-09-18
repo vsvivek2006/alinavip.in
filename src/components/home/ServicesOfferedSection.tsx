@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heart, Sparkles, Building2, Hotel, Clock, Moon, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '@/lib/assets';
 
 const servicesData = [
   {
@@ -76,7 +77,7 @@ export default function ServicesOfferedSection() {
               >
                 {/* Background Image */}
                 <Image
-                  src={serv.image}
+                  src={getAssetUrl(serv.image)}
                   alt={`${serv.title} in Gurgaon`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 380px"

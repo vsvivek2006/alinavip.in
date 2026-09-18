@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',

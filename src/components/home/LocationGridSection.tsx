@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '@/lib/assets';
 
 const topLocations = [
   {
@@ -82,7 +83,7 @@ export default function LocationGridSection() {
               {/* Location Image */}
               <div className="relative h-40 w-full -mt-2 -mx-2 mb-3 rounded-lg overflow-hidden">
                 <Image
-                  src={loc.image}
+                  src={getAssetUrl(loc.image)}
                   alt={loc.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 260px"

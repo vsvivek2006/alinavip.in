@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAssetUrl } from '@/lib/assets';
 import {
   Phone,
   MessageCircle,
@@ -67,7 +68,7 @@ export default function EditorialGuideSection() {
             {/* Featured Image */}
             <div className="lg:col-span-5 relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
               <Image
-                src="/images/assets/Diverse_Portfolio.jpg"
+                src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
                 alt="Diverse Portfolio of Escorts in Gurgaon"
                 fill
                 sizes="(max-width: 1024px) 100vw, 450px"

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 
 export default function HeroSection() {
   return (
@@ -68,7 +69,7 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto">
               <div className="banner-circle-img relative aspect-square">
                 <Image
-                  src="/images/assets/Gurgaon_Escort.png"
+                  src={getAssetUrl('/images/assets/Gurgaon_Escort.png')}
                   alt="Russian Escort in Gurgaon"
                   fill
                   priority
@@ -82,7 +83,7 @@ export default function HeroSection() {
 
               <div className="banner-circle-img relative aspect-square mt-6">
                 <Image
-                  src="/images/assets/Gurgaon_Escorts.png"
+                  src={getAssetUrl('/images/assets/Gurgaon_Escorts.png')}
                   alt="VIP Escorts Gurgaon"
                   fill
                   priority
@@ -96,7 +97,7 @@ export default function HeroSection() {
 
               <div className="banner-circle-img relative aspect-square -mt-6">
                 <Image
-                  src="/images/assets/Karina.jpg"
+                  src={getAssetUrl('/images/assets/Karina.jpg')}
                   alt="Independent Escorts Gurgaon"
                   fill
                   className="rounded-full object-cover shadow-lg border-4 border-white"
@@ -109,7 +110,7 @@ export default function HeroSection() {
 
               <div className="banner-circle-img relative aspect-square">
                 <Image
-                  src="/images/assets/Tanya.jpg"
+                  src={getAssetUrl('/images/assets/Tanya.jpg')}
                   alt="Air Hostess Escorts Gurgaon"
                   fill
                   className="rounded-full object-cover shadow-lg border-4 border-white"

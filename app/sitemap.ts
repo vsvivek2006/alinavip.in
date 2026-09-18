@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/data/locations';
 import { categories } from '@/data/categories';
-import { blogPosts } from '@/data/blogs';
+import { getPublishedBlogPosts } from '@/lib/supabaseBlog';
 import { isLocationRedirect } from '@/data/locationManifest';
 import { siteConfig } from '@/data/siteConfig';
 import pagesData from '@/data/roshni_pages.json';
@@ -10,7 +10,7 @@ import productsData from '@/data/roshni_products.json';
 
 const BASE_URL = siteConfig.url.replace(/\/+$/, '');
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
   const urlSet = new Set<string>();
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -97,7 +97,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 7. Blog directory items
-  blogPosts.forEach((post) => {
+  const liveBlogPosts = await getPublishedBlogPosts();
+  liveBlogPosts.forEach((post) => {
     addUrl(`/blog/${post.slug}`, 0.75, 'monthly');
   });
 

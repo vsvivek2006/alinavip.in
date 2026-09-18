@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
@@ -275,7 +276,7 @@ export default function GalleryPage() {
             >
               <div className="relative h-[380px] w-full overflow-hidden bg-gray-100">
                 <Image
-                  src={model.image}
+                  src={getAssetUrl(model.image)}
                   alt={`${model.name} - ${model.category} in Gurgaon`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -349,7 +350,7 @@ export default function GalleryPage() {
                 className="category-inner-col group relative block rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px]"
               >
                 <Image
-                  src={cat.image}
+                  src={getAssetUrl(cat.image)}
                   alt={`${cat.title} Gurgaon Escorts`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

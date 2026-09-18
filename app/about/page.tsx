@@ -4,6 +4,7 @@ import { CheckCircle, Phone, MessageCircle } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 import pagesData from '@/data/roshni_pages.json';
 
 interface Section {
@@ -87,7 +88,7 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-5 relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-md">
             <Image
-              src="/images/assets/Diverse_Portfolio.jpg"
+              src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
               alt="Diverse Portfolio of Escorts in Gurgaon"
               fill
               className="object-cover"

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 
 export interface ModelProfile {
   id: string;
@@ -98,7 +99,7 @@ export const featuredProfiles: ModelProfile[] = [
     category: 'Air Hostess Escort',
     categorySlug: 'air-hostess',
     location: 'Aerocity, Gurgaon',
-    image: '/images/assets/Geet_Air_Hostess_Escort_In_Aerocity.jpg',
+    image: '/images/assets/Geet.jpg',
     description: 'Hi, this is Geet air hostess escort living in Aerocity, Gurgaon! If you are here it means that you are looking for a unique girl. Geet is truly unique and is here for you.',
     stats: { height: "5'2\"", bust: '36"', waist: '25"', hips: '36"' },
   },
@@ -108,7 +109,7 @@ export const featuredProfiles: ModelProfile[] = [
     category: 'Model Escort',
     categorySlug: 'high-profile-girls',
     location: 'Mahipalpur & DLF, Gurgaon',
-    image: '/images/assets/Pallavi_Model_Escort_In_Mahipalpur.jpg',
+    image: '/images/assets/Pallavi.jpg',
     description: 'Pallavi is a model escort living in Mahipalpur. She is ideal for a new adventure because she is classy, charming, and will satisfy all your fantasies.',
     stats: { height: "5'3\"", bust: '33"', waist: '24"', hips: '33"' },
   },
@@ -142,7 +143,7 @@ export default function FeaturedProfilesSection() {
               {/* Image with Category Tag */}
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                 <Image
-                  src={profile.image}
+                  src={getAssetUrl(profile.image)}
                   alt={`${profile.name} - ${profile.category} in Gurgaon`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

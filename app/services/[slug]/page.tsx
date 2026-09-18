@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
+import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
 interface ManifestItem {
@@ -39,8 +40,8 @@ const serviceImages: Record<string, string> = {
   girlfriendExperience: '/images/assets/Girlfriend_Experience.png',
   eroticMassage: '/images/assets/Full_Body_Sensual_Massage.jpg',
   inOutCall: '/images/assets/In_Call_And_Out_Call_Services.jpg',
-  hours123: '/images/assets/image_290x280_1.jpg',
-  fullNight: '/images/assets/image_290x280_2.jpg',
+  hours123: '/images/assets/Independent_Escorts_To_Meet_On_Hourly_Basis.jpg',
+  fullNight: '/images/assets/Escort_At_Night_24x7_Service.png',
 };
 
 export function generateStaticParams() {
@@ -202,7 +203,7 @@ export default async function ServiceDetailPage({
           </div>
           <div className="md:col-span-5 relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md bg-gray-100">
             <Image
-              src={heroImage}
+              src={getAssetUrl(heroImage)}
               alt={`${item.h1} in Gurgaon`}
               fill
               sizes="(max-width: 768px) 100vw, 450px"

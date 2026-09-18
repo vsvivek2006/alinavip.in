@@ -14,6 +14,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
 const catManifest = exactManifest.categories;
@@ -94,21 +95,21 @@ const categoryVisualGrid = [
   {
     name: 'Busty Escorts in Gurgaon',
     slug: '/busty-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_3.jpg',
+    image: '/images/assets/image_270x450_21.jpg',
     tag: 'Curvaceous Assets',
     price: 'From ₹18,000',
   },
   {
     name: 'Affordable Escorts in Gurgaon',
     slug: '/affordable-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_4.jpg',
+    image: '/images/assets/image_270x450_22.jpg',
     tag: 'Budget Friendly',
     price: 'From ₹12,000',
   },
   {
     name: 'Asian Escorts in Gurgaon',
     slug: '/asian-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_5.jpg',
+    image: '/images/assets/image_270x450_23.jpg',
     tag: 'Exotic Allure',
     price: 'From ₹20,000',
   },
@@ -208,7 +209,7 @@ export default function CategoriesPage() {
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
-                    src={cat.image}
+                    src={getAssetUrl(cat.image)}
                     alt={cat.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

@@ -1,3 +1,5 @@
+import { getAssetUrl } from '@/lib/assets';
+
 export interface EscortModel {
   slug: string;
   name: string;
@@ -25,7 +27,7 @@ export interface EscortModel {
   reviewsCount: number;
 }
 
-export const escortModels: EscortModel[] = [
+const rawEscortModels: EscortModel[] = [
   {
     slug: 'karina',
     name: 'Karina',
@@ -317,6 +319,11 @@ export const escortModels: EscortModel[] = [
     reviewsCount: 26,
   },
 ];
+
+export const escortModels: EscortModel[] = rawEscortModels.map((m) => ({
+  ...m,
+  image: getAssetUrl(m.image),
+}));
 
 export function getEscortModel(slug: string): EscortModel | undefined {
   return escortModels.find((m) => m.slug === slug);

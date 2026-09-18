@@ -1,12 +1,11 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Calendar } from 'lucide-react';
-import { blogPosts } from '@/data/blogs';
+import { getPublishedBlogPosts } from '@/lib/supabaseBlog';
 
-export default function HomeBlogSection() {
-  const latestBlogs = blogPosts.slice(0, 3);
+export default async function HomeBlogSection() {
+  const posts = await getPublishedBlogPosts();
+  const latestBlogs = posts.slice(0, 3);
 
   return (
     <section className="py-16 md:py-24 bg-[#FAFAF8]" id="latest-blog">
@@ -25,7 +24,7 @@ export default function HomeBlogSection() {
 
         {/* 3 Blog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {latestBlogs.map((post, idx) => (
+          {latestBlogs.map((post) => (
             <article
               key={post.slug}
               className="bg-white rounded-xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
@@ -34,7 +33,7 @@ export default function HomeBlogSection() {
                 {/* Thumbnail Image */}
                 <div className="relative h-52 w-full overflow-hidden bg-gray-100">
                   <Image
-                    src={idx === 0 ? '/images/assets/Gurgaon_Escorts_are_Perfect_for_VIP_Cients_Heres_H.jpg' : idx === 1 ? '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg' : '/images/assets/Hiring_a_Gurgaon_escort_for_the_first_time_Best_ti.jpg'}
+                    src={post.image || 'https://ik.imagekit.io/uum5sguzw/shared/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'}
                     alt={post.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 380px"

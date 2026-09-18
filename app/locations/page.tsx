@@ -13,6 +13,7 @@ import LocationsDirectory, { CompactLocation } from '@/components/LocationsDirec
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { locations } from '@/data/locations';
 import { isLocationRedirect } from '@/data/locationManifest';
+import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Escort Service Locations in Gurgaon & Delhi NCR | 108 Verified Sectors | ALINA VIP',
@@ -151,7 +152,7 @@ export default function LocationsPage() {
             >
               <div className="relative h-48 w-full rounded-lg overflow-hidden mb-3 bg-gray-100">
                 <Image
-                  src={loc.image}
+                  src={getAssetUrl(loc.image)}
                   alt={`Escort service in ${loc.title}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

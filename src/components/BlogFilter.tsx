@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, Eye, User, ArrowRight, Search, X } from 'lucide-react';
 import { BlogPost } from '@/data/blogs';
+import { getAssetUrl } from '@/lib/assets';
 
 interface BlogFilterProps {
   posts: BlogPost[];
@@ -169,7 +170,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
             <Link href={`/blog/${post.slug}`} className="block">
               <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                 <Image
-                  src={post.image || `/images/blog/${post.slug}.webp`}
+                  src={getAssetUrl(post.image || `/images/blog/${post.slug}.webp`)}
                   alt={`${post.title} - Escort Service in Gurgaon | Call Girls`}
                   title={`${post.title} - Escort Service in Gurgaon | Call Girls`}
                   fill

@@ -24,6 +24,7 @@ import CTASection from '@/components/CTASection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getCategory, categories } from '@/data/categories';
+import { getAssetUrl } from '@/lib/assets';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -79,7 +80,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const title = `${category.h1Title || `${category.name} in Gurgaon`} | VIP Escorts & Call Girls | ALINA VIP`;
   const description = `${category.shortDescription} ALINA VIP India offers verified ${category.name.toLowerCase()} in Gurgaon & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
   const canonicalUrl = `${siteConfig.url}/category/${category.slug}`;
-  const imageSrc = categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg';
+  const imageSrc = getAssetUrl(categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg');
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
 
   const categoryKeywords = [
@@ -123,7 +124,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   const IconComponent = categoryIconMap[category.slug] || Crown;
-  const imageSrc = categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg';
+  const imageSrc = getAssetUrl(categoryImageMap[category.slug] || '/images/assets/Diverse_Portfolio.jpg');
 
   const faqs = category.faqs && category.faqs.length > 0 ? category.faqs : [
     {

@@ -14,23 +14,26 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import ShareButton from '@/components/ShareButton';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
-import { getBlogPost, blogPosts } from '@/data/blogs';
+import { getPostBySlug, getPublishedBlogPosts } from '@/lib/supabaseBlog';
+import { getAssetUrl } from '@/lib/assets';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 86400; // 24h ISR, purged on-demand by /api/revalidate webhook
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const posts = await getPublishedBlogPosts();
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -75,7 +78,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -105,13 +108,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
   };
 
-  const currentIndex = blogPosts.findIndex((p) => p.slug === post.slug);
-  const otherPosts = blogPosts.filter((p) => p.slug !== post.slug);
-  const displayRelated = [
-    otherPosts[currentIndex % otherPosts.length],
-    otherPosts[(currentIndex + 1) % otherPosts.length],
-    otherPosts[(currentIndex + 2) % otherPosts.length],
-  ].filter(Boolean);
+  const allPosts = await getPublishedBlogPosts();
+  const otherPosts = allPosts.filter((p) => p.slug !== post.slug);
+  const validIndex = Math.max(0, allPosts.findIndex((p) => p.slug === post.slug));
+  const displayRelated = otherPosts.length > 0 ? [
+    otherPosts[validIndex % otherPosts.length],
+    otherPosts[(validIndex + 1) % otherPosts.length],
+    otherPosts[(validIndex + 2) % otherPosts.length],
+  ].filter(Boolean) : [];
 
   return (
     <>
@@ -172,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {post.image && (
             <div className="relative aspect-[16/9] mb-12 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <Image
-                src={post.image}
+                src={getAssetUrl(post.image)}
                 alt={post.title}
                 title={post.title}
                 fill
@@ -189,10 +193,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.excerpt}
             </p>
 
-            <div
-              className="space-y-6 font-sans text-gray-700 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            {Array.isArray(post.content) ? (
+              <div className="space-y-6 font-sans text-gray-700 leading-relaxed text-lg">
+                {post.content.map((paragraph, idx) => (
+                  <p key={idx} className="leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <div
+                className="space-y-6 font-sans text-gray-700 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: String(post.content) }}
+              />
+            )}
           </div>
 
           {/* Article Footer & Tags */}
@@ -238,7 +252,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {relatedPost.image && (
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
-                        src={relatedPost.image}
+                        src={getAssetUrl(relatedPost.image)}
                         alt={relatedPost.title}
                         title={relatedPost.title}
                         fill

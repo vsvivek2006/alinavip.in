@@ -1,3 +1,5 @@
+import { getAssetUrl } from '@/lib/assets';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,7 +11,7 @@ export interface BlogPost {
   views?: string;
   author?: string;
   tags?: string[];
-  content: string[];
+  content: string[] | string;
 }
 
 export const blogCategories = [
@@ -23,7 +25,7 @@ export const blogCategories = [
   'Lifestyle',
 ];
 
-export const blogPosts: BlogPost[] = [
+const rawBlogPosts: BlogPost[] = [
   {
     slug: 'best-escort-service-gurgaon-guide',
     title: 'The Discerning Gentleman’s Guide to Elite Escort Services in Gurgaon (2026 Edition)',
@@ -194,6 +196,11 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+export const blogPosts: BlogPost[] = rawBlogPosts.map((post) => ({
+  ...post,
+  image: getAssetUrl(post.image),
+}));
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((b) => b.slug === slug);

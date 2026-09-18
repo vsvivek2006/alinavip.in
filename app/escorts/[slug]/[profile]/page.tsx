@@ -7,6 +7,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
+import { getAssetUrl } from '@/lib/assets';
 import productsData from '@/data/roshni_products.json';
 
 interface Section {
@@ -37,8 +38,8 @@ export function generateStaticParams() {
   return allProducts.map((p) => {
     const parts = p.slug.replace(/^escorts\//, '').split('/');
     return {
-      category: parts[0],
-      slug: parts.slice(1).join('/'),
+      slug: parts[0],
+      profile: parts.slice(1).join('/'),
     };
   });
 }
@@ -46,10 +47,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ slug: string; profile: string }>;
 }): Promise<Metadata> {
-  const { category, slug } = await params;
-  const targetSlug = `escorts/${category}/${slug}`;
+  const { slug, profile } = await params;
+  const targetSlug = `escorts/${slug}/${profile}`;
   const prod = allProducts.find((p) => p.slug === targetSlug);
 
   if (!prod) {
@@ -62,7 +63,7 @@ export async function generateMetadata({
     title: prod.title,
     description: prod.metaDescription || `Book verified escort ${prod.h1} in Gurgaon. 24/7 5-star hotel outcall and in-call available.`,
     alternates: {
-      canonical: `${siteConfig.url}/escorts/${category}/${slug}`,
+      canonical: `${siteConfig.url}/escorts/${slug}/${profile}`,
     },
   };
 }
@@ -70,10 +71,10 @@ export async function generateMetadata({
 export default async function ProductModelPage({
   params,
 }: {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ slug: string; profile: string }>;
 }) {
-  const { category, slug } = await params;
-  const targetSlug = `escorts/${category}/${slug}`;
+  const { slug, profile } = await params;
+  const targetSlug = `escorts/${slug}/${profile}`;
   const prod = allProducts.find((p) => p.slug === targetSlug);
 
   if (!prod) {
@@ -82,25 +83,27 @@ export default async function ProductModelPage({
 
   // Model Name
   const rawName = prod.h1.split('|')[0].replace(/Gurgaon Escorts/i, '').trim();
-  const modelName = rawName || slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-  const categoryLabel = category.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  const modelName = rawName || profile.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  const categoryLabel = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
   // Model Image with reliable fallback
   const fallbackImages = [
-    '/images/assets/Karina_450x587.jpg',
-    '/images/assets/Tanya_450x587.jpg',
-    '/images/assets/Neha_450x587.jpg',
-    '/images/assets/Siya_450x587.jpg',
-    '/images/assets/Mia_450x587.jpg',
-    '/images/assets/Nithya_Rai_450x587.jpg',
-    '/images/assets/Sheena_450x587.jpg',
-    '/images/assets/Geet_450x587.jpg',
-    '/images/assets/Pallavi_450x587.jpg',
+    '/images/assets/Karina.jpg',
+    '/images/assets/Tanya.jpg',
+    '/images/assets/Neha.jpg',
+    '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
+    '/images/assets/Mia.jpg',
+    '/images/assets/Nithya_High_Profile_Escort_In_Mahipalpur.jpg',
+    '/images/assets/Sheena_Indian_Escort_In_Gurgaon.jpg',
+    '/images/assets/Geet.jpg',
+    '/images/assets/Pallavi.jpg',
   ];
-  // Deterministic fallback based on slug hash
-  const hash = slug.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  // Deterministic fallback based on profile slug hash
+  const hash = profile.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
   const fallbackImg = fallbackImages[hash % fallbackImages.length];
-  const displayImage = prod.modelImage && prod.modelImage.startsWith('http') ? prod.modelImage : fallbackImg;
+  // Ensure all profile images strictly route through our ImageKit CDN
+  const isImageKit = prod.modelImage && prod.modelImage.includes('ik.imagekit.io');
+  const displayImage = getAssetUrl(isImageKit ? prod.modelImage : fallbackImg);
 
   const specs = prod.specs || {};
   const baseCity = specs.base_city || 'Gurgaon';
@@ -144,10 +147,13 @@ export default async function ProductModelPage({
           <div className="lg:col-span-5">
             <div className="sticky top-28 bg-white p-4 rounded-xl border border-gray-100 shadow-md">
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
-                <img
+                <Image
                   src={displayImage}
                   alt={`${modelName} - ${categoryLabel} in Gurgaon`}
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 450px"
+                  className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                  priority
                 />
                 <div className="absolute top-4 left-4 bg-[#671725] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
                   <CheckCircle size={14} className="text-[#FFD700]" />
@@ -248,17 +254,14 @@ export default async function ProductModelPage({
                     </h3>
                   )}
                   {sec.paragraphs.map((p, pIdx) => (
-                    <p key={pIdx} className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p key={pIdx} className="text-gray-700 leading-relaxed text-sm sm:text-base">
                       {p}
                     </p>
                   ))}
-                  {sec.listItems.length > 0 && (
-                    <ul className="space-y-1.5 pl-2">
+                  {sec.listItems && sec.listItems.length > 0 && (
+                    <ul className="space-y-1.5 pl-5 list-disc text-gray-700 text-sm sm:text-base">
                       {sec.listItems.map((li, lIdx) => (
-                        <li key={lIdx} className="text-sm text-gray-700 flex items-center gap-2">
-                          <CheckCircle size={14} className="text-[#671725]" />
-                          <span>{li}</span>
-                        </li>
+                        <li key={lIdx}>{li}</li>
                       ))}
                     </ul>
                   )}
@@ -266,75 +269,85 @@ export default async function ProductModelPage({
               ))}
             </div>
 
-            {/* Detailed Model Stats Table */}
+            {/* Specifications Details Table */}
             <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm space-y-4">
-              <h3 className="text-xl font-bold text-[#111827]">
-                Model Specifications &amp; Details
+              <h3 className="text-xl font-black text-[#111827] border-b border-gray-100 pb-3">
+                Complete Specifications &amp; Attributes
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 text-sm">
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="text-gray-500">Base City</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                <div className="flex justify-between py-2 border-b border-gray-50">
+                  <span className="text-gray-500">Base Location</span>
                   <span className="font-semibold text-gray-900">{baseCity}</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
+                <div className="flex justify-between py-2 border-b border-gray-50">
                   <span className="text-gray-500">Nationality</span>
                   <span className="font-semibold text-gray-900">{nationality}</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
+                <div className="flex justify-between py-2 border-b border-gray-50">
                   <span className="text-gray-500">Age</span>
                   <span className="font-semibold text-gray-900">{age} Years</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="text-gray-500">Body Measurements</span>
-                  <span className="font-semibold text-gray-900">{body}</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
+                <div className="flex justify-between py-2 border-b border-gray-50">
                   <span className="text-gray-500">Height</span>
                   <span className="font-semibold text-gray-900">{height}</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
+                <div className="flex justify-between py-2 border-b border-gray-50">
+                  <span className="text-gray-500">Measurements</span>
+                  <span className="font-semibold text-gray-900">{body}</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-gray-50">
                   <span className="text-gray-500">Languages</span>
                   <span className="font-semibold text-gray-900">{languages}</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
+                <div className="flex justify-between py-2 border-b border-gray-50">
                   <span className="text-gray-500">Smoker</span>
                   <span className="font-semibold text-gray-900">{smoker}</span>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="text-gray-500">Services</span>
-                  <span className="font-semibold text-gray-900">In-Call &amp; Out-Call</span>
+                <div className="flex justify-between py-2 border-b border-gray-50">
+                  <span className="text-gray-500">Service Area</span>
+                  <span className="font-semibold text-gray-900">Gurgaon &amp; Delhi NCR</span>
                 </div>
               </div>
             </div>
 
-            {/* 24/7 Availability Table */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm space-y-4">
-              <h3 className="text-xl font-bold text-[#111827] flex items-center gap-2">
-                <Clock size={18} className="text-[#671725]" /> Working Hours &amp; Availability
+            {/* In-Call / Out-Call Notice */}
+            <div className="bg-[#671725] text-white p-6 rounded-xl space-y-3">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Clock size={18} className="text-[#FFD700]" />
+                <span>Express Doorstep Delivery Across Gurgaon</span>
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-700">
-                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-                  <div key={day} className="flex justify-between p-2 rounded bg-gray-50 border border-gray-100">
-                    <span className="font-medium text-gray-900">{day}</span>
-                    <span className="text-emerald-600 font-semibold">00:00 – 24:00 (24/7)</span>
-                  </div>
-                ))}
+              <p className="text-sm text-rose-100/90 leading-relaxed">
+                {modelName} is available for rapid dispatch to luxury 5-star hotels across DLF Cyber City, Golf Course Road, Sector 29, Sohna Road, and Ambience Island. Typical arrival window is 20 to 30 minutes from reservation confirmation.
+              </p>
+              <div className="pt-2 flex flex-wrap gap-2 text-xs">
+                <span className="bg-white/10 px-3 py-1 rounded-full">✓ 100% Cash On Delivery</span>
+                <span className="bg-white/10 px-3 py-1 rounded-full">✓ No Advance Payment</span>
+                <span className="bg-white/10 px-3 py-1 rounded-full">✓ Direct Hotel Outcall</span>
               </div>
             </div>
 
-            {/* Related Profiles */}
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm space-y-4">
-              <h3 className="text-xl font-bold text-[#111827]">
-                Other Top Companions in Gurgaon
-              </h3>
+            {/* Related Profiles Carousel/Grid */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-bold text-[#111827]">
+                  Other Verified Escorts in Gurgaon
+                </h3>
+                <Link
+                  href="/escorts"
+                  className="text-xs font-bold text-[#671725] hover:underline"
+                >
+                  View All Escorts →
+                </Link>
+              </div>
+
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {relatedModels.map((m) => (
                   <Link
                     key={m.slug}
                     href={`/escorts/${m.slug}`}
-                    className="group flex flex-col rounded-lg overflow-hidden border border-gray-100 hover:shadow-md transition-all"
+                    className="group block rounded-xl overflow-hidden border border-gray-200/80 shadow-xs hover:shadow-md transition-all"
                   >
-                    <div className="relative aspect-[3/4] w-full bg-gray-100">
+                    <div className="relative aspect-[3/4] w-full bg-gray-100 overflow-hidden">
                       <Image
                         src={m.image}
                         alt={m.name}

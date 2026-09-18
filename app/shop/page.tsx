@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 import productsData from '@/data/roshni_products.json';
 
 interface ProductItem {
@@ -26,15 +27,15 @@ export default function ShopPage() {
   );
 
   const fallbackImages = [
-    '/images/assets/Karina_450x587.jpg',
-    '/images/assets/Tanya_450x587.jpg',
-    '/images/assets/Neha_450x587.jpg',
-    '/images/assets/Siya_450x587.jpg',
-    '/images/assets/Mia_450x587.jpg',
-    '/images/assets/Nithya_Rai_450x587.jpg',
-    '/images/assets/Sheena_450x587.jpg',
-    '/images/assets/Geet_450x587.jpg',
-    '/images/assets/Pallavi_450x587.jpg',
+    '/images/assets/Karina.jpg',
+    '/images/assets/Tanya.jpg',
+    '/images/assets/Neha.jpg',
+    '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
+    '/images/assets/Mia.jpg',
+    '/images/assets/Nithya_High_Profile_Escort_In_Mahipalpur.jpg',
+    '/images/assets/Sheena_Indian_Escort_In_Gurgaon.jpg',
+    '/images/assets/Geet.jpg',
+    '/images/assets/Pallavi.jpg',
   ];
 
   return (
@@ -67,7 +68,8 @@ export default function ShopPage() {
             const modelName = rawName || prod.slug.split('/').pop()?.replace(/-/g, ' ');
             const categoryPart = prod.slug.split('/')[1]?.replace(/-/g, ' ');
             const fallbackImg = fallbackImages[idx % fallbackImages.length];
-            const imgSrc = prod.modelImage && prod.modelImage.startsWith('http') ? prod.modelImage : fallbackImg;
+            const isImageKit = prod.modelImage && prod.modelImage.includes('ik.imagekit.io');
+            const imgSrc = getAssetUrl(isImageKit ? prod.modelImage : fallbackImg);
             const price = '₹15,000';
 
             return (

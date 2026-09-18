@@ -15,6 +15,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
+import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
 const hub = exactManifest.serviceHub;
@@ -74,7 +75,7 @@ const serviceSubpages = [
   {
     title: 'Escort Service for 1/2/3 Hours',
     slug: '/escort-service-for-1-2-3-hours',
-    image: '/images/assets/image_290x280_1.jpg',
+    image: '/images/assets/Independent_Escorts_To_Meet_On_Hourly_Basis.jpg',
     snippet:
       'Beauty of our escort agency is nothing but there is a chance for each and everyone to choose the escort girls on their own taste for short, intense, revitalizing encounters.',
     features: ['Rapid lunchtime dispatch', '1-2 rounds of passion', 'No advance cash on delivery'],
@@ -82,7 +83,7 @@ const serviceSubpages = [
   {
     title: 'Escort Service Full Night',
     slug: '/escort-service-full-night',
-    image: '/images/assets/image_290x280_2.jpg',
+    image: '/images/assets/Escort_At_Night_24x7_Service.png',
     snippet:
       'It is our pleasure to have you here, where you will find the most exotic and high-end Gurgaon escort service for full night unhurried romantic pleasures until dawn.',
     features: ['Full 10 PM - 8 AM intimacy', 'Morning breakfast companion', 'Unlimited intimate rounds'],
@@ -205,7 +206,7 @@ export default function ServicesPage() {
               >
                 <div className="relative h-56 w-full overflow-hidden bg-gray-100">
                   <Image
-                    src={service.image}
+                    src={getAssetUrl(service.image)}
                     alt={`${service.title} in Gurgaon`}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"

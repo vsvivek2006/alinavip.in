@@ -7,8 +7,11 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import BlogFilter from '@/components/BlogFilter';
 import NewsletterForm from '@/components/NewsletterForm';
-import { blogPosts, blogCategories } from '@/data/blogs';
+import { blogCategories } from '@/data/blogs';
+import { getPublishedBlogPosts } from '@/lib/supabaseBlog';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+
+export const revalidate = 86400; // 24h ISR, purged on-demand by /api/revalidate webhook
 
 export const metadata: Metadata = {
   title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
@@ -42,7 +45,9 @@ const categoryEmojis: Record<string, string> = {
   'VIP Escorts': '👑',
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPublishedBlogPosts();
+
   return (
     <>
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog' }]} />
@@ -88,7 +93,7 @@ export default function BlogPage() {
               </div>
             }
           >
-            <BlogFilter posts={blogPosts} categories={blogCategories} />
+            <BlogFilter posts={posts} categories={blogCategories} />
           </Suspense>
         </div>
       </section>
@@ -126,7 +131,7 @@ export default function BlogPage() {
 
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/60 bg-neutral-900 group">
                 <Image
-                  src="/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg"
+                  src="https://ik.imagekit.io/uum5sguzw/shared/Benefits_of_Booking_Through_a_Professional_Escort_.jpg?tr=f-auto,q-85"
                   alt="Best Escort Service in Gurgaon - Featured Guide"
                   title="Best Escort Service in Gurgaon - Featured Guide"
                   fill
