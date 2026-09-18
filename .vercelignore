@@ -1,0 +1,19 @@
+# Source control & CI
+.git
+.github
+.agents
+.codegraph
+
+# Local temporary & test directories
+scratch/
+scripts/
+supabase/
+
+# Large local audit reports and diagnostics
+duplicate_investigation_report.json
+loading_fix_regression_report.json
+final_senior_seo_signoff.json
+audit_report.md
+tsconfig.tsbuildinfo
+*.bak
+*.log

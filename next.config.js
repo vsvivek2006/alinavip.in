@@ -20,7 +20,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   images: {
-    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -28,16 +27,30 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'www.roshnikhanna.in',
+        hostname: 'ik.imagekit.io',
       },
       {
         protocol: 'https',
-        hostname: 'ik.imagekit.io',
+        hostname: 'www.roshnikhanna.in',
       },
       {
         protocol: 'https',
         hostname: '**.supabase.co',
       },
+    ],
+  },
+  webpack: (config, { dev }) => {
+    if (!dev) {
+      config.cache = false;
+    }
+    return config;
+  },
+  outputFileTracingExcludes: {
+    '*': [
+      './scripts/**/*',
+      './scratch/**/*',
+      './.codegraph/**/*',
+      './*.json',
     ],
   },
   async headers() {

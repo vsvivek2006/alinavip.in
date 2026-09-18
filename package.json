@@ -13,6 +13,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "prebuild": "node scripts/generate-sitemaps.js",
+    "postbuild": "node -e \"const fs=require('fs'); fs.rmSync('.next/cache', { recursive: true, force: true });\"",
     "sitemap": "node scripts/generate-sitemaps.js"
   },
   "dependencies": {
