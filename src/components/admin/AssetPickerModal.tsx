@@ -38,30 +38,30 @@ export default function AssetPickerModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="bg-[#181116] border border-amber-900/40 rounded-2xl w-full max-w-5xl max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-4 overflow-y-auto">
+      <div className="bg-white border border-[#EAE5DD] rounded-3xl w-full max-w-5xl max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="p-5 border-b border-amber-900/30 flex items-center justify-between bg-[#1f141a]">
+        <div className="p-4 sm:p-5 border-b border-[#EAE5DD] flex items-center justify-between bg-[#FAF8F5]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+            <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#671725]">
               <ImageIcon className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">ImageKit Asset Library</h2>
-              <p className="text-xs text-stone-400">70 verified CDN master images hosted on ik.imagekit.io</p>
+              <h2 className="text-base sm:text-lg font-bold text-stone-900">ImageKit Asset Library</h2>
+              <p className="text-xs text-stone-500">70 verified CDN master images hosted on ik.imagekit.io</p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800/60 transition-colors"
+            className="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-[#F2ECE4] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Search Toolbar */}
-        <div className="p-4 bg-[#140e13] border-b border-amber-900/20 flex items-center gap-3">
+        <div className="p-3.5 sm:p-4 bg-white border-b border-[#EAE5DD] flex items-center gap-3">
           <div className="relative flex-1">
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400" />
             <input
@@ -69,16 +69,16 @@ export default function AssetPickerModal({
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search assets by name (e.g. Russian, VIP, Hotel, High Profile)..."
-              className="w-full pl-10 pr-4 py-2.5 bg-[#241720] border border-amber-900/30 rounded-xl text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-500/60 transition-colors"
+              className="w-full pl-10 pr-4 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] transition-colors"
             />
           </div>
-          <span className="text-xs text-amber-400/80 font-mono px-3 py-2 bg-amber-950/40 border border-amber-900/30 rounded-lg whitespace-nowrap">
+          <span className="text-xs text-[#671725] font-bold px-3 py-2 bg-rose-50 border border-rose-200 rounded-xl whitespace-nowrap">
             {filteredAssets.length} of 70 Images
           </span>
         </div>
 
         {/* Assets Grid */}
-        <div className="flex-1 overflow-y-auto p-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 bg-[#FAF8F5]/50">
           {filteredAssets.map(asset => {
             const isSelected = currentSelectedUrl === asset.url;
             return (
@@ -88,13 +88,13 @@ export default function AssetPickerModal({
                   onSelectImage(asset.url);
                   onClose();
                 }}
-                className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all duration-200 bg-[#22161e] flex flex-col ${
+                className={`group relative rounded-2xl overflow-hidden border cursor-pointer transition-all duration-200 bg-white flex flex-col ${
                   isSelected
-                    ? 'border-amber-400 ring-2 ring-amber-400/50 scale-[1.02]'
-                    : 'border-amber-900/30 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-950/40'
+                    ? 'border-[#671725] ring-2 ring-[#671725]/40 scale-[1.02] shadow-md'
+                    : 'border-[#EAE5DD] hover:border-[#671725]/60 hover:shadow-md'
                 }`}
               >
-                <div className="aspect-[4/3] w-full relative bg-stone-900 overflow-hidden">
+                <div className="aspect-[4/3] w-full relative bg-stone-100 overflow-hidden">
                   <img
                     src={`${asset.url}?tr=w-320,h-240,fo-auto`}
                     alt={asset.title}
@@ -102,30 +102,30 @@ export default function AssetPickerModal({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {isSelected && (
-                    <div className="absolute top-2 right-2 bg-amber-500 text-stone-950 rounded-full p-1 shadow-md">
+                    <div className="absolute top-2 right-2 bg-[#671725] text-white rounded-full p-1 shadow-md">
                       <Check className="w-3.5 h-3.5 stroke-[3]" />
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 justify-between">
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2 justify-between">
                     <button
                       onClick={e => handleCopy(asset.url, e)}
                       title="Copy CDN URL"
-                      className="p-1.5 rounded-lg bg-stone-900/80 hover:bg-stone-800 text-stone-200 text-xs flex items-center gap-1 backdrop-blur-sm"
+                      className="p-1.5 rounded-lg bg-white/90 hover:bg-white text-stone-900 text-xs font-semibold flex items-center gap-1 shadow-xs backdrop-blur-xs"
                     >
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3 h-3" />
                       {copiedUrl === asset.url ? 'Copied' : 'Copy'}
                     </button>
-                    <span className="text-[10px] bg-amber-500/90 text-stone-950 font-bold px-2 py-0.5 rounded">
+                    <span className="text-[10px] bg-[#671725] text-white font-bold px-2 py-0.5 rounded shadow-xs">
                       Select
                     </span>
                   </div>
                 </div>
 
                 <div className="p-2.5 flex-1 flex flex-col justify-between">
-                  <p className="text-xs font-medium text-stone-200 line-clamp-2 leading-tight">
+                  <p className="text-xs font-bold text-stone-800 line-clamp-2 leading-tight">
                     {asset.title}
                   </p>
-                  <p className="text-[10px] text-stone-500 font-mono truncate mt-1">
+                  <p className="text-[10px] text-stone-600 font-mono truncate mt-1">
                     {asset.fileName}
                   </p>
                 </div>
@@ -135,11 +135,11 @@ export default function AssetPickerModal({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-amber-900/30 bg-[#1f141a] flex items-center justify-between text-xs text-stone-400">
-          <span>Click any image to select it as the blog post cover.</span>
+        <div className="p-3.5 sm:p-4 border-t border-[#EAE5DD] bg-white flex items-center justify-between text-xs text-stone-500">
+          <span>Click any image to attach it to the post.</span>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-stone-800 hover:bg-stone-700 text-stone-200 rounded-xl transition-colors font-medium"
+            className="px-4 py-2 bg-[#F4EFE7] hover:bg-[#EAE5DD] text-stone-800 rounded-xl transition-colors font-bold"
           >
             Close
           </button>

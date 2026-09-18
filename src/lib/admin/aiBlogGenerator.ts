@@ -1,7 +1,8 @@
 /**
  * AI Blog Post Generator Engine
- * Supports Google Gemini, Groq, or OpenAI API keys (from env or passed from UI),
- * with a high-fidelity algorithmic fallback tuned for luxury concierge & escort SEO.
+ * Generates 100% humanized, brand-grounded SEO editorial articles for the active sister site.
+ * Enforces strict anti-AI tone rules, natural internal linking (3+ links spaced across the body),
+ * varied formatting (H2/H3, bullet points, callout quotes, FAQs), and exclusive brand loyalty.
  */
 
 import imagekitAssets from '@/data/imagekit_assets.json';
@@ -35,7 +36,6 @@ export interface GeneratedBlog {
 export function selectBestImage(topic: string, focusKeyword: string): string {
   const query = `${topic} ${focusKeyword}`.toLowerCase();
   
-  // Keyword mapping to 70 assets
   if (query.includes('russian') || query.includes('slavic') || query.includes('european')) {
     const match = imagekitAssets.find(a => a.fileName.toLowerCase().includes('perfect_for_vip') || a.fileName.toLowerCase().includes('russian'));
     if (match) return match.url;
@@ -53,7 +53,6 @@ export function selectBestImage(topic: string, focusKeyword: string): string {
     if (match) return match.url;
   }
 
-  // Default fallback asset
   const defaultAsset = imagekitAssets.find(a => a.fileName.toLowerCase().includes('benefits_of_booking')) || imagekitAssets[0];
   return defaultAsset.url;
 }
@@ -77,7 +76,6 @@ export async function generateBlogPost(req: GenerationRequest): Promise<Generate
   const apiKey = req.apiKey || process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY;
   const provider = req.provider || (process.env.GROQ_API_KEY ? 'groq' : 'gemini');
 
-  // Try calling external LLM if key is available
   if (apiKey) {
     try {
       if (provider === 'groq') {
@@ -86,11 +84,10 @@ export async function generateBlogPost(req: GenerationRequest): Promise<Generate
         return await generateWithGemini(req, apiKey);
       }
     } catch (err) {
-      console.warn('[aiBlogGenerator] LLM API call failed, falling back to expert luxury template:', err);
+      console.warn('[aiBlogGenerator] LLM API call failed, falling back to expert humanized template:', err);
     }
   }
 
-  // Algorithmic Fallback (High-Converting Luxury Editorial Format)
   return generateEditorialFallback(req);
 }
 
@@ -109,7 +106,7 @@ async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise
         { role: 'user', content: prompt.user },
       ],
       response_format: { type: 'json_object' },
-      temperature: 0.7,
+      temperature: 0.72,
     }),
   });
 
@@ -118,17 +115,7 @@ async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise
   const rawContent = data.choices[0].message.content;
   const parsed = JSON.parse(rawContent);
 
-  return {
-    title: parsed.title || req.topic,
-    slug: slugify(parsed.slug || parsed.title || req.topic),
-    seoTitle: parsed.seoTitle || parsed.title,
-    seoDescription: parsed.seoDescription || parsed.excerpt,
-    excerpt: parsed.excerpt,
-    content: Array.isArray(parsed.content) ? parsed.content : [parsed.content],
-    tags: parsed.tags || [req.focusKeyword, 'Luxury Concierge', 'Gurgaon Escorts'],
-    coverImage: selectBestImage(req.topic, req.focusKeyword),
-    author: `${req.siteName} Editorial Desk`,
-  };
+  return sanitizeOutput(parsed, req);
 }
 
 async function generateWithGemini(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
@@ -147,7 +134,7 @@ async function generateWithGemini(req: GenerationRequest, apiKey: string): Promi
       ],
       generationConfig: {
         responseMimeType: 'application/json',
-        temperature: 0.7,
+        temperature: 0.72,
       },
     }),
   });
@@ -157,73 +144,163 @@ async function generateWithGemini(req: GenerationRequest, apiKey: string): Promi
   const text = data.candidates[0].content.parts[0].text;
   const parsed = JSON.parse(text);
 
+  return sanitizeOutput(parsed, req);
+}
+
+function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest): GeneratedBlog {
+  const title = (parsed.title as string) || req.topic;
+  let content = Array.isArray(parsed.content) ? (parsed.content as string[]) : [String(parsed.content)];
+
+  // Ensure at least 3 internal links exist across the body
+  content = ensureInternalLinks(content, req);
+
   return {
-    title: parsed.title || req.topic,
-    slug: slugify(parsed.slug || parsed.title || req.topic),
-    seoTitle: parsed.seoTitle || parsed.title,
-    seoDescription: parsed.seoDescription || parsed.excerpt,
-    excerpt: parsed.excerpt,
-    content: Array.isArray(parsed.content) ? parsed.content : [parsed.content],
-    tags: parsed.tags || [req.focusKeyword, 'Luxury Escorts', 'VIP Companions'],
+    title,
+    slug: slugify((parsed.slug as string) || (parsed.title as string) || req.topic),
+    seoTitle: (parsed.seoTitle as string) || title,
+    seoDescription: (parsed.seoDescription as string) || (parsed.excerpt as string),
+    excerpt: (parsed.excerpt as string) || '',
+    content,
+    tags: (parsed.tags as string[]) || [req.focusKeyword, 'Luxury Concierge', 'Gurgaon Escorts'],
     coverImage: selectBestImage(req.topic, req.focusKeyword),
     author: `${req.siteName} Editorial Desk`,
   };
 }
 
+/**
+ * Guarantees at least 3 contextual internal markdown links spaced across the body
+ */
+function ensureInternalLinks(paragraphs: string[], _req: GenerationRequest): string[] {
+  const fullText = paragraphs.join(' ');
+  const linkCount = (fullText.match(/\[([^\]]+)\]\(([^)]+)\)/g) || []).length;
+
+  if (linkCount >= 3) return paragraphs;
+
+  const result = [...paragraphs];
+
+  // 1. Early link in intro (paragraph 0 or 1)
+  if (result.length > 0 && !result[0].includes('](/')) {
+    result[0] = result[0] + ` Patrons seeking verified standards can browse our curated [companion gallery](/gallery) for authentic, authenticated portfolios.`;
+  }
+
+  // 2. Middle link in section 2 or 3
+  const midIndex = Math.floor(result.length / 2);
+  if (result[midIndex] && !result[midIndex].includes('](/')) {
+    result[midIndex] = result[midIndex] + ` Explore our premier [5-star hotel outcall services](/services) tailored for corporate executives and international visitors across Gurgaon.`;
+  }
+
+  // 3. Late link in location/rates/contact section
+  const lateIndex = Math.max(1, result.length - 2);
+  if (result[lateIndex] && !result[lateIndex].includes('](/')) {
+    result[lateIndex] = result[lateIndex] + ` For personalized requests in DLF Phase 1, Cyber City, and Aerocity, review our [service locations](/locations) or connect with our 24/7 desk via [private contact](/contact).`;
+  }
+
+  return result;
+}
+
 function createSystemPrompt(req: GenerationRequest) {
   return {
-    system: `You are an elite SEO copywriter for ${req.siteName} (${req.domain}), a premier luxury concierge and VIP companion booking agency in Gurgaon and Delhi NCR.
-Write sophisticated, high-converting, and discreet editorial content.
-Strict rules:
-1. Tone: Cosmopolitan, respectful, luxury hospitality, refined, 5-star hotel concierge.
-2. Safety & Transparency: Emphasize zero-advance payment (payment in person only after companion arrival at hotel/residence), verified profiles, and client confidentiality.
-3. Output MUST be valid JSON with this exact schema:
+    system: `You are a senior lifestyle journalist and private concierge director writing exclusively for ${req.siteName} (https://${req.domain}).
+Your writing must be 100% human, authoritative, polished, and natural.
+
+STRICT BRAND LOYALTY RULES:
+1. ONLY speak positively and authoritatively about ${req.siteName} (${req.domain}).
+2. NEVER mention other competitor websites, third-party phone numbers, or rival platforms.
+3. Position ${req.siteName} as the gold standard of verified, safe, zero-advance, and discreet companionship in Gurgaon and Delhi NCR.
+
+STRICT HUMAN WRITING RULES (ANTI-AI GUARDRAILS):
+- FORBIDDEN WORDS & PHRASES (DO NOT USE): "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on".
+- Write naturally with conversational authority: use first-person plural ("we", "our concierge desk", "clients frequently share with us").
+- Keep paragraphs compact (2-4 sentences max). Never produce giant walls of monotonous text.
+- Ground the writing in real locations: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
+
+MANDATORY FORMATTING DIVERSITY:
+- Mix of ## H2 and ### H3 headings.
+- Bulleted checklist: Include 3-5 crisp bullet points highlighting safety, vetting, or booking etiquette.
+- Blockquote tip: Include a "> Tip for 5-Star Hotel Guests:" blockquote.
+- FAQ Section: Include a "## Frequently Asked Questions" section with 2-3 practical, realistic Q&As.
+
+MANDATORY INTERNAL LINKING (SPACED THROUGHOUT):
+You MUST weave at least 3 internal markdown links naturally into the body text at different points (NOT bunched together):
+- Link 1 in the introduction or early section: e.g. [verified companion gallery](/gallery) or [curated escort categories](/categories)
+- Link 2 in the middle section: e.g. [5-star hotel outcall services](/services) or [Russian call girls in Gurgaon](/category/russian-call-girls)
+- Link 3 near the end: e.g. [Gurgaon service areas](/locations) or [private concierge contact](/contact) or [transparent rates](/rates)
+
+JSON OUTPUT SCHEMA:
 {
-  "title": "Compelling H1 Title (50-65 chars)",
+  "title": "Natural H1 Title (50-65 chars)",
   "slug": "url-friendly-slug",
   "seoTitle": "SEO meta title (under 60 chars)",
-  "seoDescription": "Meta description (140-155 chars)",
-  "excerpt": "Short summary preview paragraph (180-220 chars)",
+  "seoDescription": "Engaging meta description (140-155 chars)",
+  "excerpt": "Compelling 2-sentence preview for article cards (180-220 chars)",
   "content": [
-    "Introduction paragraph setting context for Gurgaon and ${req.focusKeyword}...",
-    "## H2 Section Title...",
-    "Detailed paragraph covering luxury hospitality and verified companions...",
-    "## H2 Section Title on Discretion and Safety...",
-    "Detailed paragraph emphasizing 5-star hotel outcalls and zero advance policy...",
-    "## H2 FAQ or Tips Section...",
-    "Conclusion and contact details via 24/7 private concierge hotline."
+    "Paragraph 1 with natural intro...",
+    "Paragraph 2 with early internal link e.g. [verified gallery](/gallery)...",
+    "## H2 Section Headline",
+    "Paragraph exploring local venue dynamics...",
+    "- Bullet feature 1\\n- Bullet feature 2\\n- Bullet feature 3",
+    "> Pro-Tip: In-person settlement only after arrival...",
+    "## H2 Section Headline with Mid Link e.g. [outcall services](/services)",
+    "Detailed practical advice...",
+    "## Frequently Asked Questions",
+    "**Q: How quickly can a companion arrive at major Gurgaon hotels?**\\n\\nA: Our dispatch arrives within 20 to 30 minutes across DLF, Cyber City, and Golf Course Road.",
+    "**Q: Are advance payments required?**\\n\\nA: Never. ${req.siteName} maintains a strict zero-advance policy.",
+    "## Reserving with ${req.siteName}",
+    "Final paragraph with closing link to [our 24/7 concierge](/contact)..."
   ],
-  "tags": ["Focus Keyword", "Related Tag 1", "Related Tag 2", "Related Tag 3"]
+  "tags": ["Focus Keyword", "Gurgaon Escorts", "VIP Companions", "Hotel Outcalls"]
 }`,
     user: `Topic: ${req.topic}
 Focus Keyword: ${req.focusKeyword}
-Secondary Keywords: ${req.secondaryKeywords || 'luxury escort service, 5 star hotel outcall, VIP companions'}
+Secondary Keywords: ${req.secondaryKeywords || 'luxury hotel outcalls, DLF Cyber City, verified profiles'}
 Target Word Count: ${req.wordCount || 1000} words.`
   };
 }
 
 function generateEditorialFallback(req: GenerationRequest): GeneratedBlog {
-  const title = req.topic.length > 10 ? req.topic : `The Ultimate Guide to ${req.focusKeyword} in Gurgaon`;
+  const title = req.topic.length > 10 ? req.topic : `The Discerning Gentleman’s Guide to ${req.focusKeyword} in Gurgaon`;
   const slug = slugify(title);
+
+  const content: string[] = [
+    `Gurgaon’s emergence as a premier international business hub has brought with it an executive lifestyle that values high privacy, sophistication, and refined social companionship. When gentlemen travel to Delhi NCR for business meetings or leisure, finding authentic ${req.focusKeyword} requires partnering with an established agency that respects confidentiality.`,
+    
+    `At ${req.siteName}, we take pride in curating authentic, handpicked companions. Rather than browsing generic unverified portals, patrons can review our authenticated [companion gallery](/gallery) to inspect authentic photographs and genuine profiles with total confidence.`,
+    
+    `## What Defines Verified Standards at ${req.siteName}`,
+    
+    `A distinguished agency operates with clear, transparent principles that safeguard the client at every stage of the reservation:`,
+    
+    `- **100% Photo Authenticity**: Every companion profile is photographed in person, eliminating misleading stock images.\n- **Strict Zero-Advance Policy**: Never transfer money via UPI or wire in advance. Payment is settled in person only after your companion arrives.\n- **Discreet Executive Transport**: Companions travel via private chauffeur, arriving punctually at upscale venues.\n- **Complete Digital Anonymity**: Inquiry chats and details are purged immediately following your engagement.`,
+    
+    `> **Concierge Tip for 5-Star Hotel Guests**: When scheduling an outcall to properties such as The Oberoi on Udyog Vihar or The Leela Ambience near CyberHub, simply provide your room details to our desk. Our companions arrive dressed in tasteful evening wear that blends effortlessly with upscale lobby ambiance.`,
+    
+    `## Tailored Outcalls Across Prime Gurgaon Locations`,
+    
+    `Whether you are hosting a client dinner along Golf Course Road or unwinding in a private penthouse suite, our [exclusive escort services](/services) cater to varied social and personal requirements. We regularly serve corporate executives across DLF Phase 1, Phase 2, Phase 5, Cyber City, and Aerocity.`,
+    
+    `Our portfolio includes sophisticated multilingual escorts, fashion models, and executive companions who bring intelligence, charm, and social grace to any evening.`,
+    
+    `## Frequently Asked Questions`,
+    
+    `**Q: How fast is dispatch to hotels in Gurgaon?**\n\nA: Dispatch typically takes between 20 to 35 minutes to major hotels across Cyber City, MG Road, and Sohna Road.`,
+    
+    `**Q: Does ${req.siteName} ask for advance booking fees?**\n\nA: Absolutely not. We strictly adhere to a zero-advance policy. You only settle directly once your companion arrives at your suite and you are completely pleased.`,
+    
+    `**Q: Which areas are covered in Delhi NCR?**\n\nA: We cover over 100+ sectors in Gurgaon as well as Aerocity, South Delhi, and Noida. Explore our complete list of [service locations](/locations) for local response times.`,
+    
+    `## Connecting with Our Private Concierge Desk`,
+    
+    `Ready to arrange your rendezvous? Connect directly with our team through our [24/7 private concierge](/contact) on WhatsApp or direct hotline. Share your preferred time, hospitality venue, and companion preferences, and our desk will confirm arrangements promptly with absolute discretion.`
+  ];
 
   return {
     title,
     slug,
     seoTitle: `${title} | ${req.siteName}`,
-    seoDescription: `Explore premier ${req.focusKeyword} in Gurgaon with ${req.siteName}. Discover verified companion profiles, 5-star hotel outcalls, and 100% discreet service.`,
-    excerpt: `A comprehensive insider guide to ${req.focusKeyword} in Gurgaon. Learn how to arrange authentic 5-star hotel outcalls with total confidentiality.`,
-    content: [
-      `Gurgaon stands as the crown jewel of northern India's corporate landscape, characterized by global business parks, luxury penthouses, and world-class hospitality venues. For discerning executives and international visitors seeking refined companionship, ${req.focusKeyword} represents an unmatched standard of social elegance and intimate leisure.`,
-      `## Understanding Premier Standards in Gurgaon`,
-      `When selecting elite companions in a fast-paced metropolis, distinguishing authentic boutique agencies from unverified directories is critical. Premier agencies operate with structured in-person vetting protocols, ensuring that every companion is photographed authenticated, medically tested, and socially versatile.`,
-      `At ${req.siteName}, we uphold uncompromising standards of transparency. Patrons are always advised to avoid services demanding advance UPI or wire transfers. Genuine luxury concierge agencies adhere to a transparent zero-advance principle: arrangements are finalized only after your verified companion arrives in person at your chosen hospitality suite.`,
-      `## Effortless 5-Star Hotel Outcalls & Discretion`,
-      `Whether you are staying at The Oberoi on Udyog Vihar, The Leela Ambience near CyberHub, or Trident Gurgaon, seamless discretion is paramount. Elite companions travel in private, unmarked executive transport and arrive in understated, elegant attire that blends effortlessly into upscale hotel lobbies.`,
-      `From accompanying you to celebratory dinners along Golf Course Road to sharing serene moments in a private suite, our portfolio offers the highest caliber of warmth, intellect, and grace.`,
-      `## How to Reserve Your Preferred Companion`,
-      `Distinguished patrons can connect directly with our 24/7 private concierge desk via encrypted WhatsApp or private phone hotline. Simply share your schedule, preferred hospitality venue, and aesthetic requirements. Our desk will promptly provide verified profile options and ensure a smooth, unforgettable rendezvous.`
-    ],
-    tags: [req.focusKeyword, 'Gurgaon Escorts', 'VIP Call Girls', '5-Star Hotel Outcalls'],
+    seoDescription: `Discover verified ${req.focusKeyword} in Gurgaon with ${req.siteName}. 5-star hotel outcalls, zero advance payment, and 100% discrete companionship.`,
+    excerpt: `An insider guide to ${req.focusKeyword} in Gurgaon. Learn how ${req.siteName} delivers 100% verified profiles, 5-star hotel outcalls, and total discretion.`,
+    content,
+    tags: [req.focusKeyword, 'Gurgaon Escorts', 'VIP Companions', '5-Star Hotel Outcalls'],
     coverImage: selectBestImage(req.topic, req.focusKeyword),
     author: `${req.siteName} Editorial Desk`,
   };

@@ -18,7 +18,7 @@ export default async function AdminLayout({
   const isAuthenticated = !!session && session.value === 'authenticated';
 
   return (
-    <div className="min-h-screen bg-[#0e070c] text-stone-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#FAF8F5] text-stone-900 flex flex-col font-sans">
       {isAuthenticated ? (
         <AdminTenantProvider>
           <AdminHeader />

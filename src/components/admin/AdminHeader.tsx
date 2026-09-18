@@ -18,30 +18,35 @@ export default function AdminHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#170e14]/95 backdrop-blur-md border-b border-amber-900/30">
+    <header className="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#EAE5DD] shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4">
+        <div className="flex items-center justify-between h-16 gap-3 sm:gap-4">
           {/* Brand & Badge */}
-          <div className="flex items-center gap-3">
-            <Link href="/admin" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center font-black text-stone-950 text-sm shadow-md shadow-amber-900/40">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            <Link href="/admin" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#671725] via-[#56131f] to-[#420c16] flex items-center justify-center font-black text-amber-300 text-sm shadow-sm shadow-rose-950/20 group-hover:scale-105 transition-transform">
                 A
               </div>
-              <span className="font-bold text-white tracking-wide text-base hidden sm:inline">
-                ALINA <span className="text-amber-400">VIP</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-stone-900 tracking-tight text-sm sm:text-base leading-none">
+                  ALINA <span className="text-[#671725]">VIP</span>
+                </span>
+                <span className="text-[10px] text-stone-600 font-semibold tracking-wider uppercase mt-0.5">
+                  Blog CMS
+                </span>
+              </div>
             </Link>
-            <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full">
-              <Layers className="w-3 h-3" /> Multi-Tenant CMS
+            <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold bg-rose-50 text-[#671725] border border-rose-200/80 px-2.5 py-0.5 rounded-full">
+              <Layers className="w-3 h-3 text-[#671725]" /> 5 Sites
             </span>
           </div>
 
           {/* Multi-Tenant Site Switcher */}
-          <div className="flex items-center gap-2 bg-[#22151e] border border-amber-900/40 rounded-xl px-3 py-1.5 shadow-inner">
-            <Globe className="w-4 h-4 text-amber-400 shrink-0" />
-            <span className="text-xs text-stone-400 hidden lg:inline">Target Site:</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 bg-white border border-[#E2DDD5] rounded-xl px-2.5 sm:px-3 py-1.5 shadow-xs max-w-[200px] sm:max-w-xs md:max-w-sm">
+            <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#671725] shrink-0" />
+            <span className="text-xs text-stone-600 hidden lg:inline font-medium">Site:</span>
             {loading ? (
-              <span className="text-xs text-stone-500">Loading sites...</span>
+              <span className="text-xs text-stone-600">Loading...</span>
             ) : (
               <select
                 value={activeSite?.id || ''}
@@ -49,10 +54,10 @@ export default function AdminHeader() {
                   const selected = sites.find(s => s.id === e.target.value);
                   if (selected) setActiveSite(selected);
                 }}
-                className="bg-transparent text-xs font-semibold text-amber-200 focus:outline-none cursor-pointer pr-2"
+                className="bg-transparent text-xs font-bold text-stone-800 focus:outline-none cursor-pointer truncate pr-1"
               >
                 {sites.map(site => (
-                  <option key={site.id} value={site.id} className="bg-[#1c1218] text-white">
+                  <option key={site.id} value={site.id} className="text-stone-900 bg-white">
                     {site.name} ({site.domain})
                   </option>
                 ))}
@@ -61,13 +66,13 @@ export default function AdminHeader() {
           </div>
 
           {/* Nav Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <Link
               href="/admin"
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 pathname === '/admin'
-                  ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
-                  : 'text-stone-300 hover:text-white hover:bg-stone-800/50'
+                  ? 'bg-[#671725]/10 text-[#671725] border border-[#671725]/20 shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-[#F2EDE5]'
               }`}
             >
               <LayoutList className="w-3.5 h-3.5" />
@@ -76,10 +81,11 @@ export default function AdminHeader() {
 
             <Link
               href="/admin/blog/new"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 shadow-md shadow-amber-950/40 hover:-translate-y-0.5 transition-all"
+              className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-sm shadow-rose-950/20 hover:-translate-y-0.5 active:scale-[0.98] transition-all"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Create Post</span>
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span className="hidden xs:inline">Create Post</span>
+              <span className="xs:hidden">New</span>
             </Link>
 
             {activeSite && (
@@ -88,7 +94,7 @@ export default function AdminHeader() {
                 target="_blank"
                 rel="noreferrer"
                 title={`Visit https://${activeSite.domain}/blog`}
-                className="p-2 rounded-xl text-stone-400 hover:text-amber-400 hover:bg-stone-800/50 transition-colors"
+                className="p-2 rounded-xl text-stone-500 hover:text-[#671725] hover:bg-[#F2EDE5] transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
               </a>
@@ -97,7 +103,7 @@ export default function AdminHeader() {
             <button
               onClick={handleLogout}
               title="Sign Out"
-              className="p-2 rounded-xl text-stone-400 hover:text-rose-400 hover:bg-rose-950/30 transition-colors"
+              className="p-2 rounded-xl text-stone-500 hover:text-rose-600 hover:bg-rose-50 transition-colors"
             >
               <LogOut className="w-4 h-4" />
             </button>
