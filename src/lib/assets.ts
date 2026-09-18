@@ -5,7 +5,7 @@
  * 1. If NEXT_PUBLIC_IMAGE_CDN_URL is configured: routes to ImageKit /shared/ folder with auto WebP/AVIF.
  * 2. If not configured: falls back cleanly to local public/images/assets/ files.
  */
-const CDN_URL = process.env.NEXT_PUBLIC_IMAGE_CDN_URL?.replace(/\/$/, '');
+const CDN_URL = (process.env.NEXT_PUBLIC_IMAGE_CDN_URL || 'https://ik.imagekit.io/uum5sguzw').replace(/\/$/, '');
 
 export function getAssetUrl(path: string | undefined | null): string {
   if (!path) return '';
