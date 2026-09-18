@@ -1,8 +1,13 @@
 /**
- * AI Blog Post Generator Engine
- * Generates 100% humanized, brand-grounded SEO editorial articles for the active sister site.
- * Enforces strict anti-AI tone rules, natural internal linking (3+ links spaced across the body),
- * varied formatting (H2/H3, bullet points, callout quotes, FAQs), and exclusive brand loyalty.
+ * Multi-Model AI Blog Post Generator Engine
+ * Supports Google Gemini (3.5 / 3.6 Flash) & Groq (Llama 3.3 70B Versatile).
+ * 
+ * Features:
+ * - 100% Brand-Grounded: Exclusively promotes the active sister domain.
+ * - Anti-AI Guardrails: Banned robotic phrases and cliches.
+ * - Spaced Internal Linking: Weaves at least 3 natural internal links throughout.
+ * - Unique Random Asset: Picks a random ImageKit master image (1 of 70) for every single post.
+ * - Zero Silent Fallback: Throws clear, actionable, user-friendly error messages if API fails.
  */
 
 import imagekitAssets from '@/data/imagekit_assets.json';
@@ -15,7 +20,7 @@ export interface GenerationRequest {
   secondaryKeywords?: string;
   wordCount?: number; // default 1000
   apiKey?: string;
-  provider?: 'gemini' | 'groq' | 'openai';
+  provider?: 'gemini' | 'groq';
 }
 
 export interface GeneratedBlog {
@@ -28,33 +33,18 @@ export interface GeneratedBlog {
   tags: string[];
   coverImage: string;
   author: string;
+  modelUsed: string;
 }
 
 /**
- * Intelligent ImageKit cover image selector
+ * Select a completely random unique image from the 70 verified ImageKit master assets
  */
-export function selectBestImage(topic: string, focusKeyword: string): string {
-  const query = `${topic} ${focusKeyword}`.toLowerCase();
-  
-  if (query.includes('russian') || query.includes('slavic') || query.includes('european')) {
-    const match = imagekitAssets.find(a => a.fileName.toLowerCase().includes('perfect_for_vip') || a.fileName.toLowerCase().includes('russian'));
-    if (match) return match.url;
+export function selectRandomImage(): string {
+  if (!imagekitAssets || imagekitAssets.length === 0) {
+    return 'https://ik.imagekit.io/uum5sguzw/shared/Benefits_of_Booking_Through_a_Professional_Escort_.jpg?tr=f-auto,q-85';
   }
-  if (query.includes('hotel') || query.includes('outcall') || query.includes('aerocity') || query.includes('leela') || query.includes('oberoi')) {
-    const match = imagekitAssets.find(a => a.fileName.toLowerCase().includes('hotel') || a.fileName.toLowerCase().includes('hospitality'));
-    if (match) return match.url;
-  }
-  if (query.includes('vip') || query.includes('elite') || query.includes('executive') || query.includes('high profile')) {
-    const match = imagekitAssets.find(a => a.fileName.toLowerCase().includes('high_profile') || a.fileName.toLowerCase().includes('vip'));
-    if (match) return match.url;
-  }
-  if (query.includes('celebrity') || query.includes('model')) {
-    const match = imagekitAssets.find(a => a.fileName.toLowerCase().includes('model') || a.fileName.toLowerCase().includes('celebrity'));
-    if (match) return match.url;
-  }
-
-  const defaultAsset = imagekitAssets.find(a => a.fileName.toLowerCase().includes('benefits_of_booking')) || imagekitAssets[0];
-  return defaultAsset.url;
+  const randomIndex = Math.floor(Math.random() * imagekitAssets.length);
+  return `${imagekitAssets[randomIndex].url}?tr=f-auto,q-85`;
 }
 
 /**
@@ -70,33 +60,38 @@ export function slugify(text: string): string {
 }
 
 /**
- * Generate blog post using external AI API or built-in luxury concierge template engine
+ * Generate blog post using external AI API (Gemini or Groq)
  */
 export async function generateBlogPost(req: GenerationRequest): Promise<GeneratedBlog> {
-  const apiKey = req.apiKey || process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY;
-  const provider = req.provider || (process.env.GROQ_API_KEY ? 'groq' : 'gemini');
+  const provider = req.provider || (req.apiKey?.startsWith('gsk_') ? 'groq' : 'gemini');
 
-  if (apiKey) {
-    try {
-      if (provider === 'groq') {
-        return await generateWithGroq(req, apiKey);
-      } else if (provider === 'gemini') {
-        return await generateWithGemini(req, apiKey);
-      }
-    } catch (err) {
-      console.warn('[aiBlogGenerator] LLM API call failed, falling back to expert humanized template:', err);
+  if (provider === 'groq') {
+    const groqKey = req.apiKey || process.env.GROQ_API_KEY;
+    if (!groqKey) {
+      throw new Error(
+        'Groq API Key is missing. Please paste your Groq key (gsk_...) into the generator modal or set GROQ_API_KEY in .env.local.'
+      );
     }
+    return await generateWithGroq(req, groqKey);
+  } else {
+    const geminiKey = req.apiKey || process.env.GEMINI_API_KEY;
+    if (!geminiKey) {
+      throw new Error(
+        'Gemini API Key is missing. Please paste your Gemini key into the generator modal or set GEMINI_API_KEY in .env.local.'
+      );
+    }
+    return await generateWithGemini(req, geminiKey);
   }
-
-  return generateEditorialFallback(req);
 }
 
 async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
+  const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = createSystemPrompt(req);
+  
   const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${apiKey}`,
+      'Authorization': `Bearer ${cleanKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -110,89 +105,139 @@ async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise
     }),
   });
 
-  if (!res.ok) throw new Error(`Groq API error: ${res.statusText}`);
-  const data = await res.json();
-  const rawContent = data.choices[0].message.content;
-  const parsed = JSON.parse(rawContent);
+  if (!res.ok) {
+    const errText = await res.text();
+    let detail = errText;
+    try {
+      const p = JSON.parse(errText);
+      if (p.error?.message) detail = p.error.message;
+    } catch (err) {
+      void err;
+    }
+    throw new Error(`Groq API Error (${res.status}): ${detail}`);
+  }
 
-  return sanitizeOutput(parsed, req);
+  const data = await res.json();
+  const rawContent = data.choices?.[0]?.message?.content;
+  if (!rawContent) throw new Error('Groq returned an empty response. Please retry.');
+
+  let parsed: Record<string, unknown>;
+  try {
+    const cleaned = rawContent.replace(/^```(json)?\s*/i, '').replace(/\s*```$/, '').trim();
+    parsed = JSON.parse(cleaned);
+  } catch (err) {
+    throw new Error(`Failed to parse Groq response as JSON: ${err instanceof Error ? err.message : String(err)}`);
+  }
+
+  return sanitizeOutput(parsed, req, 'Groq (Llama 3.3 70B)');
 }
 
 async function generateWithGemini(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
+  const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = createSystemPrompt(req);
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
   
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: `${prompt.system}\n\n${prompt.user}\n\nReturn strictly valid JSON only.` }],
+  // Try stable gemini-3.5-flash first, then gemini-3.6-flash, then gemini-3.1-flash-lite
+  const models = ['gemini-3.5-flash', 'gemini-3.6-flash', 'gemini-3.1-flash-lite'];
+  let lastError = '';
+
+  for (const model of models) {
+    try {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${cleanKey}`;
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [
+            {
+              role: 'user',
+              parts: [{ text: `${prompt.system}\n\n${prompt.user}\n\nCRITICAL: Return strictly valid JSON only.` }],
+            }
+          ],
+          generationConfig: {
+            responseMimeType: 'application/json',
+            temperature: 0.72,
+          },
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        let msg = errText;
+        try {
+          const p = JSON.parse(errText);
+          if (p.error?.message) msg = p.error.message;
+        } catch (err) {
+          void err;
         }
-      ],
-      generationConfig: {
-        responseMimeType: 'application/json',
-        temperature: 0.72,
-      },
-    }),
-  });
+        lastError = `${model}: ${msg}`;
+        continue; // Try next model in list
+      }
 
-  if (!res.ok) throw new Error(`Gemini API error: ${res.statusText}`);
-  const data = await res.json();
-  const text = data.candidates[0].content.parts[0].text;
-  const parsed = JSON.parse(text);
+      const data = await res.json();
+      const textPart = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!textPart) {
+        lastError = `${model}: Empty content returned`;
+        continue;
+      }
 
-  return sanitizeOutput(parsed, req);
+      const cleanedJson = textPart.replace(/^```(json)?\s*/i, '').replace(/\s*```$/, '').trim();
+      const parsed = JSON.parse(cleanedJson);
+      return sanitizeOutput(parsed, req, `Google Gemini (${model})`);
+    } catch (err) {
+      lastError = err instanceof Error ? err.message : String(err);
+    }
+  }
+
+  throw new Error(`Gemini API Error: ${lastError}`);
 }
 
-function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest): GeneratedBlog {
+function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest, modelUsed: string): GeneratedBlog {
   const title = (parsed.title as string) || req.topic;
   let content = Array.isArray(parsed.content) ? (parsed.content as string[]) : [String(parsed.content)];
 
   // Ensure at least 3 internal links exist across the body
-  content = ensureInternalLinks(content, req);
+  content = ensureInternalLinks(content);
 
   return {
     title,
     slug: slugify((parsed.slug as string) || (parsed.title as string) || req.topic),
     seoTitle: (parsed.seoTitle as string) || title,
-    seoDescription: (parsed.seoDescription as string) || (parsed.excerpt as string),
+    seoDescription: (parsed.seoDescription as string) || (parsed.excerpt as string) || '',
     excerpt: (parsed.excerpt as string) || '',
     content,
     tags: (parsed.tags as string[]) || [req.focusKeyword, 'Luxury Concierge', 'Gurgaon Escorts'],
-    coverImage: selectBestImage(req.topic, req.focusKeyword),
+    coverImage: selectRandomImage(), // Pick random unique image from ImageKit
     author: `${req.siteName} Editorial Desk`,
+    modelUsed,
   };
 }
 
 /**
  * Guarantees at least 3 contextual internal markdown links spaced across the body
  */
-function ensureInternalLinks(paragraphs: string[], _req: GenerationRequest): string[] {
+function ensureInternalLinks(paragraphs: string[]): string[] {
   const fullText = paragraphs.join(' ');
-  const linkCount = (fullText.match(/\[([^\]]+)\]\(([^)]+)\)/g) || []).length;
+  const linkMatches = (fullText.match(/\[([^\]]+)\]\(([^)]+)\)/g) || []);
 
-  if (linkCount >= 3) return paragraphs;
+  if (linkMatches.length >= 3) return paragraphs;
 
   const result = [...paragraphs];
 
-  // 1. Early link in intro (paragraph 0 or 1)
+  // 1. Early link in intro
   if (result.length > 0 && !result[0].includes('](/')) {
-    result[0] = result[0] + ` Patrons seeking verified standards can browse our curated [companion gallery](/gallery) for authentic, authenticated portfolios.`;
+    result[0] = result[0] + ` Patrons seeking verified standards can browse our authenticated [companion gallery](/gallery) for authentic, authenticated portfolios.`;
   }
 
   // 2. Middle link in section 2 or 3
   const midIndex = Math.floor(result.length / 2);
   if (result[midIndex] && !result[midIndex].includes('](/')) {
-    result[midIndex] = result[midIndex] + ` Explore our premier [5-star hotel outcall services](/services) tailored for corporate executives and international visitors across Gurgaon.`;
+    result[midIndex] = result[midIndex] + ` Explore our premier [5-star hotel outcall services](/services) tailored for corporate executives and international travelers across Gurgaon.`;
   }
 
   // 3. Late link in location/rates/contact section
   const lateIndex = Math.max(1, result.length - 2);
   if (result[lateIndex] && !result[lateIndex].includes('](/')) {
-    result[lateIndex] = result[lateIndex] + ` For personalized requests in DLF Phase 1, Cyber City, and Aerocity, review our [service locations](/locations) or connect with our 24/7 desk via [private contact](/contact).`;
+    result[lateIndex] = result[lateIndex] + ` For prompt outcalls to DLF Phase 1, Cyber City, and Aerocity, inspect our [service locations](/locations) or connect with our 24/7 desk via [private contact](/contact).`;
   }
 
   return result;
@@ -200,31 +245,32 @@ function ensureInternalLinks(paragraphs: string[], _req: GenerationRequest): str
 
 function createSystemPrompt(req: GenerationRequest) {
   return {
-    system: `You are a senior lifestyle journalist and private concierge director writing exclusively for ${req.siteName} (https://${req.domain}).
-Your writing must be 100% human, authoritative, polished, and natural.
+    system: `You are an elite lifestyle editor and private hospitality concierge writing exclusively for ${req.siteName} (https://${req.domain}).
+Your writing must be 100% human, authoritative, polished, discreet, and natural.
 
-STRICT BRAND LOYALTY RULES:
-1. ONLY speak positively and authoritatively about ${req.siteName} (${req.domain}).
-2. NEVER mention other competitor websites, third-party phone numbers, or rival platforms.
+STRICT BRAND CONTEXT RULES:
+1. Speak ONLY about ${req.siteName} (${req.domain}).
+2. NEVER mention other rival agencies, competitor sites, or external brand names.
 3. Position ${req.siteName} as the gold standard of verified, safe, zero-advance, and discreet companionship in Gurgaon and Delhi NCR.
 
-STRICT HUMAN WRITING RULES (ANTI-AI GUARDRAILS):
-- FORBIDDEN WORDS & PHRASES (DO NOT USE): "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on".
-- Write naturally with conversational authority: use first-person plural ("we", "our concierge desk", "clients frequently share with us").
-- Keep paragraphs compact (2-4 sentences max). Never produce giant walls of monotonous text.
-- Ground the writing in real locations: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
+STRICT ANTI-AI HUMAN WRITING RULES:
+- FORBIDDEN WORDS & PHRASES (STRICTLY PROHIBITED):
+  "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on".
+- Write with confident, conversational first-person plural authority ("we", "our private desk", "guests frequently share with us").
+- Keep paragraphs compact (2 to 4 sentences maximum). No monotonic walls of text.
+- Ground the writing in specific regional landmarks: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
 
 MANDATORY FORMATTING DIVERSITY:
-- Mix of ## H2 and ### H3 headings.
-- Bulleted checklist: Include 3-5 crisp bullet points highlighting safety, vetting, or booking etiquette.
-- Blockquote tip: Include a "> Tip for 5-Star Hotel Guests:" blockquote.
-- FAQ Section: Include a "## Frequently Asked Questions" section with 2-3 practical, realistic Q&As.
+- Use clean ## H2 and ### H3 headings.
+- Include a bulleted checklist with 3-5 crisp points highlighting safety, vetting, or etiquette.
+- Include a styled blockquote tip: "> Concierge Tip for 5-Star Hotel Guests: ..."
+- Include an FAQ section with 2-3 genuine, practical Q&As.
 
-MANDATORY INTERNAL LINKING (SPACED THROUGHOUT):
-You MUST weave at least 3 internal markdown links naturally into the body text at different points (NOT bunched together):
-- Link 1 in the introduction or early section: e.g. [verified companion gallery](/gallery) or [curated escort categories](/categories)
-- Link 2 in the middle section: e.g. [5-star hotel outcall services](/services) or [Russian call girls in Gurgaon](/category/russian-call-girls)
-- Link 3 near the end: e.g. [Gurgaon service areas](/locations) or [private concierge contact](/contact) or [transparent rates](/rates)
+MANDATORY SPACED INTERNAL LINKING:
+You MUST naturally weave at least 3 internal markdown links at spaced intervals throughout the content:
+- Link 1 early (Intro): e.g. [verified companion gallery](/gallery) or [curated escort categories](/categories)
+- Link 2 in middle: e.g. [5-star hotel outcall services](/services) or [Russian call girls in Gurgaon](/category/russian-call-girls)
+- Link 3 near end: e.g. [service locations across Gurgaon](/locations) or [private concierge desk](/contact) or [transparent rates](/rates)
 
 JSON OUTPUT SCHEMA:
 {
@@ -234,19 +280,19 @@ JSON OUTPUT SCHEMA:
   "seoDescription": "Engaging meta description (140-155 chars)",
   "excerpt": "Compelling 2-sentence preview for article cards (180-220 chars)",
   "content": [
-    "Paragraph 1 with natural intro...",
-    "Paragraph 2 with early internal link e.g. [verified gallery](/gallery)...",
+    "Introduction paragraph setting context for Gurgaon and ${req.focusKeyword}...",
+    "Paragraph with early internal link e.g. [verified companion gallery](/gallery)...",
     "## H2 Section Headline",
-    "Paragraph exploring local venue dynamics...",
-    "- Bullet feature 1\\n- Bullet feature 2\\n- Bullet feature 3",
-    "> Pro-Tip: In-person settlement only after arrival...",
+    "Paragraph exploring luxury hospitality venue dynamics...",
+    "- **Feature 1**: Description\\n- **Feature 2**: Description\\n- **Feature 3**: Description",
+    "> Concierge Tip for 5-Star Hotel Guests: Room billing and in-person payment only...",
     "## H2 Section Headline with Mid Link e.g. [outcall services](/services)",
     "Detailed practical advice...",
     "## Frequently Asked Questions",
     "**Q: How quickly can a companion arrive at major Gurgaon hotels?**\\n\\nA: Our dispatch arrives within 20 to 30 minutes across DLF, Cyber City, and Golf Course Road.",
-    "**Q: Are advance payments required?**\\n\\nA: Never. ${req.siteName} maintains a strict zero-advance policy.",
+    "**Q: Are advance payments required?**\\n\\nA: Never. ${req.siteName} maintains a strict zero-advance policy. You only settle in person upon satisfaction.",
     "## Reserving with ${req.siteName}",
-    "Final paragraph with closing link to [our 24/7 concierge](/contact)..."
+    "Closing paragraph with closing link to [our 24/7 concierge desk](/contact)..."
   ],
   "tags": ["Focus Keyword", "Gurgaon Escorts", "VIP Companions", "Hotel Outcalls"]
 }`,
@@ -254,54 +300,5 @@ JSON OUTPUT SCHEMA:
 Focus Keyword: ${req.focusKeyword}
 Secondary Keywords: ${req.secondaryKeywords || 'luxury hotel outcalls, DLF Cyber City, verified profiles'}
 Target Word Count: ${req.wordCount || 1000} words.`
-  };
-}
-
-function generateEditorialFallback(req: GenerationRequest): GeneratedBlog {
-  const title = req.topic.length > 10 ? req.topic : `The Discerning Gentleman’s Guide to ${req.focusKeyword} in Gurgaon`;
-  const slug = slugify(title);
-
-  const content: string[] = [
-    `Gurgaon’s emergence as a premier international business hub has brought with it an executive lifestyle that values high privacy, sophistication, and refined social companionship. When gentlemen travel to Delhi NCR for business meetings or leisure, finding authentic ${req.focusKeyword} requires partnering with an established agency that respects confidentiality.`,
-    
-    `At ${req.siteName}, we take pride in curating authentic, handpicked companions. Rather than browsing generic unverified portals, patrons can review our authenticated [companion gallery](/gallery) to inspect authentic photographs and genuine profiles with total confidence.`,
-    
-    `## What Defines Verified Standards at ${req.siteName}`,
-    
-    `A distinguished agency operates with clear, transparent principles that safeguard the client at every stage of the reservation:`,
-    
-    `- **100% Photo Authenticity**: Every companion profile is photographed in person, eliminating misleading stock images.\n- **Strict Zero-Advance Policy**: Never transfer money via UPI or wire in advance. Payment is settled in person only after your companion arrives.\n- **Discreet Executive Transport**: Companions travel via private chauffeur, arriving punctually at upscale venues.\n- **Complete Digital Anonymity**: Inquiry chats and details are purged immediately following your engagement.`,
-    
-    `> **Concierge Tip for 5-Star Hotel Guests**: When scheduling an outcall to properties such as The Oberoi on Udyog Vihar or The Leela Ambience near CyberHub, simply provide your room details to our desk. Our companions arrive dressed in tasteful evening wear that blends effortlessly with upscale lobby ambiance.`,
-    
-    `## Tailored Outcalls Across Prime Gurgaon Locations`,
-    
-    `Whether you are hosting a client dinner along Golf Course Road or unwinding in a private penthouse suite, our [exclusive escort services](/services) cater to varied social and personal requirements. We regularly serve corporate executives across DLF Phase 1, Phase 2, Phase 5, Cyber City, and Aerocity.`,
-    
-    `Our portfolio includes sophisticated multilingual escorts, fashion models, and executive companions who bring intelligence, charm, and social grace to any evening.`,
-    
-    `## Frequently Asked Questions`,
-    
-    `**Q: How fast is dispatch to hotels in Gurgaon?**\n\nA: Dispatch typically takes between 20 to 35 minutes to major hotels across Cyber City, MG Road, and Sohna Road.`,
-    
-    `**Q: Does ${req.siteName} ask for advance booking fees?**\n\nA: Absolutely not. We strictly adhere to a zero-advance policy. You only settle directly once your companion arrives at your suite and you are completely pleased.`,
-    
-    `**Q: Which areas are covered in Delhi NCR?**\n\nA: We cover over 100+ sectors in Gurgaon as well as Aerocity, South Delhi, and Noida. Explore our complete list of [service locations](/locations) for local response times.`,
-    
-    `## Connecting with Our Private Concierge Desk`,
-    
-    `Ready to arrange your rendezvous? Connect directly with our team through our [24/7 private concierge](/contact) on WhatsApp or direct hotline. Share your preferred time, hospitality venue, and companion preferences, and our desk will confirm arrangements promptly with absolute discretion.`
-  ];
-
-  return {
-    title,
-    slug,
-    seoTitle: `${title} | ${req.siteName}`,
-    seoDescription: `Discover verified ${req.focusKeyword} in Gurgaon with ${req.siteName}. 5-star hotel outcalls, zero advance payment, and 100% discrete companionship.`,
-    excerpt: `An insider guide to ${req.focusKeyword} in Gurgaon. Learn how ${req.siteName} delivers 100% verified profiles, 5-star hotel outcalls, and total discretion.`,
-    content,
-    tags: [req.focusKeyword, 'Gurgaon Escorts', 'VIP Companions', '5-Star Hotel Outcalls'],
-    coverImage: selectBestImage(req.topic, req.focusKeyword),
-    author: `${req.siteName} Editorial Desk`,
   };
 }

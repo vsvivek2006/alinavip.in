@@ -21,6 +21,10 @@ import {
   ExternalLink,
   List,
   Quote,
+  Zap,
+  Cpu,
+  Key,
+  ShieldCheck,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -73,9 +77,46 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   const [aiTopic, setAiTopic] = useState('');
   const [aiFocusKeyword, setAiFocusKeyword] = useState('');
   const [aiSecondaryKeywords, setAiSecondaryKeywords] = useState('');
-  const [aiWordCount, setAiWordCount] = useState(1000);
-  const [aiApiKey, setAiApiKey] = useState('');
+  const [aiWordCount, setAiWordCount] = useState(1200);
+  const [aiProvider, setAiProvider] = useState<'groq' | 'gemini'>('groq');
+  const [aiGroqKey, setAiGroqKey] = useState('');
+  const [aiGeminiKey, setAiGeminiKey] = useState('');
+  const [showKey, setShowKey] = useState(false);
+  const [rememberKeys, setRememberKeys] = useState(true);
   const [aiGenerating, setAiGenerating] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
+  const [serverKeyStatus, setServerKeyStatus] = useState<{ hasGeminiKey: boolean; hasGroqKey: boolean }>({
+    hasGeminiKey: true,
+    hasGroqKey: false,
+  });
+
+  // Load saved keys & server key status
+  useEffect(() => {
+    try {
+      const savedGroq = localStorage.getItem('alina_admin_groq_key');
+      if (savedGroq) setAiGroqKey(savedGroq);
+      const savedGemini = localStorage.getItem('alina_admin_gemini_key');
+      if (savedGemini) setAiGeminiKey(savedGemini);
+      const savedProvider = localStorage.getItem('alina_admin_ai_provider');
+      if (savedProvider === 'groq' || savedProvider === 'gemini') {
+        setAiProvider(savedProvider);
+      }
+    } catch (err) {
+      void err;
+    }
+
+    fetch('/api/admin/generate-blog')
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data.hasGeminiKey === 'boolean') {
+          setServerKeyStatus({
+            hasGeminiKey: data.hasGeminiKey,
+            hasGroqKey: Boolean(data.hasGroqKey),
+          });
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   // Sync selected site if activeSite loads later
   useEffect(() => {
@@ -125,9 +166,32 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
 
   // Handle AI generation
   const handleGenerateAI = async () => {
-    if (!aiTopic.trim() || !aiFocusKeyword.trim()) {
-      alert('Please provide at least a Topic and Focus Keyword');
+    setAiError(null);
+
+    if (!aiTopic.trim()) {
+      setAiError('Please enter an Article Topic / Concept.');
       return;
+    }
+    if (!aiFocusKeyword.trim()) {
+      setAiError('Please enter a Primary Focus Keyword.');
+      return;
+    }
+
+    const activeKey = aiProvider === 'groq' ? aiGroqKey.trim() : aiGeminiKey.trim();
+
+    if (aiProvider === 'groq' && !activeKey && !serverKeyStatus.hasGroqKey) {
+      setAiError('Groq API Key is required. Please paste your Groq key (starts with gsk_...) below or set GROQ_API_KEY in .env.local.');
+      return;
+    }
+
+    if (rememberKeys) {
+      try {
+        if (aiGroqKey.trim()) localStorage.setItem('alina_admin_groq_key', aiGroqKey.trim());
+        if (aiGeminiKey.trim()) localStorage.setItem('alina_admin_gemini_key', aiGeminiKey.trim());
+        localStorage.setItem('alina_admin_ai_provider', aiProvider);
+      } catch (err) {
+        void err;
+      }
     }
 
     setAiGenerating(true);
@@ -138,16 +202,19 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         body: JSON.stringify({
           siteName: targetSite?.name || 'ALINA VIP',
           domain: targetSite?.domain || 'alinavip.in',
-          topic: aiTopic,
-          focusKeyword: aiFocusKeyword,
-          secondaryKeywords: aiSecondaryKeywords,
+          topic: aiTopic.trim(),
+          focusKeyword: aiFocusKeyword.trim(),
+          secondaryKeywords: aiSecondaryKeywords.trim(),
           wordCount: aiWordCount,
-          apiKey: aiApiKey || undefined,
+          provider: aiProvider,
+          apiKey: activeKey || undefined,
         }),
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to generate');
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to generate article');
+      }
 
       const b = data.blog;
       setTitle(b.title);
@@ -158,11 +225,15 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       setContent(Array.isArray(b.content) ? b.content.join('\n\n') : b.content);
       setCoverImage(b.coverImage);
       setTagsInput(b.tags.join(', '));
+      if (b.author) setAuthor(b.author);
       setIsAiModalOpen(false);
-      setFeedback({ type: 'success', message: '100% Humanized SEO Article with internal links generated & loaded!' });
+      setFeedback({
+        type: 'success',
+        message: `Article successfully generated via ${b.modelUsed || aiProvider.toUpperCase()} with 3+ spaced internal links!`,
+      });
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'AI generation error';
-      alert(`AI Generation error: ${msg}`);
+      setAiError(msg);
     } finally {
       setAiGenerating(false);
     }
@@ -738,30 +809,219 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
 
       {/* AI Generator Modal Drawer */}
       {isAiModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
-          <div className="bg-white border border-[#EAE5DD] rounded-3xl w-full max-w-xl p-6 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
-            <div className="flex items-center justify-between pb-3 border-b border-[#EAE5DD]">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-purple-50 text-purple-700 border border-purple-200 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-5 overflow-y-auto">
+          <div className="bg-white border border-[#EAE5DD] rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden my-auto animate-in zoom-in-95 duration-200 flex flex-col max-h-[92vh]">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-[#EAE5DD] bg-[#FAF8F5]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#671725] to-purple-800 text-white flex items-center justify-center shadow-xs">
+                  <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-extrabold text-stone-900">Humanized AI SEO Article Writer</h3>
-                  <p className="text-xs text-stone-500">100% brand-grounded for {targetSite?.name} with 3+ natural internal links</p>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base font-black text-stone-900">AI SEO Article Studio</h3>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-800">
+                      Multi-Model
+                    </span>
+                  </div>
+                  <p className="text-xs text-stone-500">
+                    Targeting <strong className="text-stone-800">{targetSite?.name}</strong> ({targetSite?.domain}) • 100% Brand-Grounded
+                  </p>
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setIsAiModalOpen(false)}
-                className="text-stone-400 hover:text-stone-700 text-sm font-bold"
+                className="w-8 h-8 rounded-xl flex items-center justify-center text-stone-400 hover:text-stone-700 hover:bg-stone-100 text-sm font-bold transition-all"
               >
                 ✕
               </button>
             </div>
 
-            <div className="space-y-4 text-xs">
+            {/* Modal Body */}
+            <div className="overflow-y-auto p-4 sm:p-6 space-y-5 text-xs">
+              {/* Model Selection Tabs */}
+              <div>
+                <label className="block font-bold text-stone-700 mb-2">
+                  Select AI Generation Engine
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {/* Groq Card */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAiProvider('groq');
+                      setAiError(null);
+                    }}
+                    className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
+                      aiProvider === 'groq'
+                        ? 'border-purple-600 bg-purple-50/50 shadow-xs'
+                        : 'border-stone-200 hover:border-stone-300 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-1.5">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center ${
+                            aiProvider === 'groq' ? 'bg-purple-600 text-white' : 'bg-stone-100 text-stone-600'
+                          }`}
+                        >
+                          <Zap className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="font-extrabold text-stone-900 text-xs">Groq LPU</div>
+                          <div className="text-[10px] text-stone-500 font-medium">Llama 3.3 70B</div>
+                        </div>
+                      </div>
+                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                        ★ Best for SEO
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-600 leading-snug">
+                      Uncensored escort/concierge keywords, humanized conversational tone, zero robotic cliches.
+                    </p>
+                    <div className="mt-2.5 pt-2 border-t border-stone-200/60 flex items-center justify-between text-[10px]">
+                      <span className="text-stone-500">Speed: ~250 tok/s</span>
+                      {aiGroqKey || serverKeyStatus.hasGroqKey ? (
+                        <span className="text-emerald-600 font-bold flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" /> Key Ready
+                        </span>
+                      ) : (
+                        <span className="text-amber-600 font-bold flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" /> Enter Key Below
+                        </span>
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Gemini Card */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAiProvider('gemini');
+                      setAiError(null);
+                    }}
+                    className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
+                      aiProvider === 'gemini'
+                        ? 'border-purple-600 bg-purple-50/50 shadow-xs'
+                        : 'border-stone-200 hover:border-stone-300 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-1.5">
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center ${
+                            aiProvider === 'gemini' ? 'bg-purple-600 text-white' : 'bg-stone-100 text-stone-600'
+                          }`}
+                        >
+                          <Cpu className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="font-extrabold text-stone-900 text-xs">Google Gemini</div>
+                          <div className="text-[10px] text-stone-500 font-medium">3.5 Flash Model</div>
+                        </div>
+                      </div>
+                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-800">
+                        Server Ready
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-stone-600 leading-snug">
+                      Deep Google knowledge graph & Indian NCR local landmark intelligence.
+                    </p>
+                    <div className="mt-2.5 pt-2 border-t border-stone-200/60 flex items-center justify-between text-[10px]">
+                      <span className="text-stone-500">Auto Fallback</span>
+                      <span className="text-emerald-600 font-bold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" /> Built-in Active
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              {/* Contextual API Key Box */}
+              {aiProvider === 'groq' ? (
+                <div className="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-bold text-amber-900 text-xs">
+                      <Key className="w-3.5 h-3.5 text-amber-700" />
+                      <span>Groq API Key (gsk_...)</span>
+                    </div>
+                    {serverKeyStatus.hasGroqKey && (
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                        Server Key Configured
+                      </span>
+                    )}
+                  </div>
+                  <div className="relative">
+                    <input
+                      type={showKey ? 'text' : 'password'}
+                      value={aiGroqKey}
+                      onChange={e => setAiGroqKey(e.target.value)}
+                      placeholder={
+                        serverKeyStatus.hasGroqKey
+                          ? 'Leave blank to use server GROQ_API_KEY or paste custom key'
+                          : 'Paste your Groq key (gsk_...)'
+                      }
+                      className="w-full pl-3 pr-16 py-2 bg-white border border-amber-300 rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowKey(!showKey)}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-1 text-[10px] font-bold text-stone-500 hover:text-stone-800"
+                    >
+                      {showKey ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between text-[11px] text-amber-800 pt-0.5">
+                    <label className="flex items-center gap-1.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={rememberKeys}
+                        onChange={e => setRememberKeys(e.target.checked)}
+                        className="rounded text-purple-600 focus:ring-purple-500"
+                      />
+                      <span>Remember key on this browser</span>
+                    </label>
+                    <span className="text-stone-500 text-[10px]">Saved in localStorage</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-3.5 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 font-bold text-blue-900 text-xs">
+                      <ShieldCheck className="w-3.5 h-3.5 text-blue-700" />
+                      <span>Google Gemini Authentication</span>
+                    </div>
+                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                      Ready in .env.local
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-blue-800">
+                    Pre-configured with verified Google Gemini key. Leave blank to use server default or paste custom key to override.
+                  </p>
+                  <div className="relative">
+                    <input
+                      type={showKey ? 'text' : 'password'}
+                      value={aiGeminiKey}
+                      onChange={e => setAiGeminiKey(e.target.value)}
+                      placeholder="Leave blank to use pre-configured server key"
+                      className="w-full pl-3 pr-16 py-2 bg-white border border-blue-200 rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowKey(!showKey)}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-1 text-[10px] font-bold text-stone-500 hover:text-stone-800"
+                    >
+                      {showKey ? 'Hide' : 'Show'}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Topic Input */}
               <div>
                 <label className="block font-bold text-stone-700 mb-1">
-                  Article Topic / Concept
+                  Article Topic / Concept <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -772,10 +1032,11 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              {/* Keyword & Word Count */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block font-bold text-stone-700 mb-1">
-                    Focus SEO Keyword
+                    Primary SEO Focus Keyword <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -795,13 +1056,14 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                     onChange={e => setAiWordCount(Number(e.target.value))}
                     className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-purple-600 font-medium"
                   >
-                    <option value={800}>800 words (Standard)</option>
-                    <option value={1200}>1,200 words (Deep Guide)</option>
-                    <option value={1600}>1,600 words (Ultimate Pillar)</option>
+                    <option value={800}>800 words (Standard Article)</option>
+                    <option value={1200}>1,200 words (SEO Deep Guide - Recommended)</option>
+                    <option value={1600}>1,600 words (Ultimate Pillar Authority)</option>
                   </select>
                 </div>
               </div>
 
+              {/* Secondary Keywords */}
               <div>
                 <label className="block font-bold text-stone-700 mb-1">
                   Secondary LSI Keywords (optional)
@@ -810,30 +1072,54 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                   type="text"
                   value={aiSecondaryKeywords}
                   onChange={e => setAiSecondaryKeywords(e.target.value)}
-                  placeholder="e.g. 5 star hotel outcalls, DLF Cyber City, verified profiles"
+                  placeholder="e.g. 5 star hotel outcalls, DLF Cyber City, verified profiles, zero advance"
                   className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
                 />
               </div>
 
-              <div>
-                <label className="block font-bold text-stone-700 mb-1">
-                  Custom AI Key (Gemini or Groq - Optional)
-                </label>
-                <input
-                  type="password"
-                  value={aiApiKey}
-                  onChange={e => setAiApiKey(e.target.value)}
-                  placeholder="Leave blank to use built-in luxury editorial template engine"
-                  className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                />
+              {/* Guarantees Box */}
+              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/80 text-[11px] text-stone-600 space-y-1">
+                <div className="font-bold text-stone-800 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-purple-600" />
+                  <span>Guaranteed Editorial Standards:</span>
+                </div>
+                <ul className="list-disc list-inside space-y-0.5 text-stone-600 pl-1">
+                  <li>
+                    <strong>100% Brand-Loyal:</strong> Exclusively promotes {targetSite?.name} ({targetSite?.domain}), zero competitor mentions.
+                  </li>
+                  <li>
+                    <strong>Spaced Internal Links:</strong> Automatically weaves 3+ natural links across intro, middle, and end.
+                  </li>
+                  <li>
+                    <strong>Random Unique Image:</strong> Automatically picks 1 of 70 verified ImageKit master CDN assets.
+                  </li>
+                  <li>
+                    <strong>Rich Formatting:</strong> Uses H2/H3 headings, safety checklist, styled Concierge Tip, and FAQs.
+                  </li>
+                </ul>
               </div>
+
+              {/* Visible Actionable Error Banner (No Silent Fallback) */}
+              {aiError && (
+                <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-300 text-rose-800 space-y-1 animate-in fade-in">
+                  <div className="flex items-center gap-2 font-bold text-xs text-rose-900">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                    <span>Generation Error Encountered</span>
+                  </div>
+                  <p className="text-xs leading-relaxed text-rose-800">{aiError}</p>
+                  <div className="text-[11px] text-rose-700 pt-1 border-t border-rose-200/70">
+                    Tip: If using Groq, confirm your API key starts with <code className="bg-rose-100 px-1 py-0.5 rounded font-mono">gsk_...</code>. You can also switch to Gemini to generate immediately.
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#EAE5DD]">
+            {/* Modal Footer */}
+            <div className="flex items-center justify-between p-4 sm:p-5 border-t border-[#EAE5DD] bg-[#FAF8F5]">
               <button
                 type="button"
                 onClick={() => setIsAiModalOpen(false)}
-                className="px-4 py-2 rounded-xl text-xs font-bold text-stone-500 hover:text-stone-800"
+                className="px-4 py-2 rounded-xl text-xs font-bold text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-all"
               >
                 Cancel
               </button>
@@ -841,17 +1127,17 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                 type="button"
                 onClick={handleGenerateAI}
                 disabled={aiGenerating}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-xs disabled:opacity-50 transition-all"
+                className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-md disabled:opacity-50 transition-all cursor-pointer"
               >
                 {aiGenerating ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Writing Humanized Article...</span>
+                    <span>Writing Article via {aiProvider === 'groq' ? 'Groq LPU' : 'Gemini'}...</span>
                   </>
                 ) : (
                   <>
                     <Sparkles className="w-4 h-4" />
-                    <span>Generate & Populate Editor</span>
+                    <span>Generate with {aiProvider === 'groq' ? 'Groq Llama 3.3' : 'Gemini 3.5'}</span>
                   </>
                 )}
               </button>
