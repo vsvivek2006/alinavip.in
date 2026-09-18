@@ -6,7 +6,6 @@
 
 # Local temporary & test directories
 scratch/
-scripts/
 supabase/
 
 # Large local audit reports and diagnostics
