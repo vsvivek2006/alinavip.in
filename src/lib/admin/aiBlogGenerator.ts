@@ -88,48 +88,59 @@ async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise
   const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = createSystemPrompt(req);
   
-  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${cleanKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: 'llama-3.3-70b-versatile',
-      messages: [
-        { role: 'system', content: prompt.system },
-        { role: 'user', content: prompt.user },
-      ],
-      response_format: { type: 'json_object' },
-      temperature: 0.72,
-    }),
-  });
+  // Available Groq models with automatic fallback
+  const models = ['openai/gpt-oss-120b', 'qwen/qwen3.8-27b', 'llama-3.3-70b-versatile'];
+  let lastError = '';
 
-  if (!res.ok) {
-    const errText = await res.text();
-    let detail = errText;
+  for (const model of models) {
     try {
-      const p = JSON.parse(errText);
-      if (p.error?.message) detail = p.error.message;
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${cleanKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: prompt.system },
+            { role: 'user', content: prompt.user },
+          ],
+          response_format: { type: 'json_object' },
+          temperature: 0.72,
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        let detail = errText;
+        try {
+          const p = JSON.parse(errText);
+          if (p.error?.message) detail = p.error.message;
+        } catch (err) {
+          void err;
+        }
+        lastError = `${model}: ${detail}`;
+        continue; // Try next model
+      }
+
+      const data = await res.json();
+      const rawContent = data.choices?.[0]?.message?.content;
+      if (!rawContent) {
+        lastError = `${model}: Empty content returned`;
+        continue;
+      }
+
+      const cleaned = rawContent.replace(/^```(json)?\s*/i, '').replace(/\s*```$/, '').trim();
+      const parsed = JSON.parse(cleaned);
+
+      return sanitizeOutput(parsed, req, `Groq (${model})`);
     } catch (err) {
-      void err;
+      lastError = err instanceof Error ? err.message : String(err);
     }
-    throw new Error(`Groq API Error (${res.status}): ${detail}`);
   }
 
-  const data = await res.json();
-  const rawContent = data.choices?.[0]?.message?.content;
-  if (!rawContent) throw new Error('Groq returned an empty response. Please retry.');
-
-  let parsed: Record<string, unknown>;
-  try {
-    const cleaned = rawContent.replace(/^```(json)?\s*/i, '').replace(/\s*```$/, '').trim();
-    parsed = JSON.parse(cleaned);
-  } catch (err) {
-    throw new Error(`Failed to parse Groq response as JSON: ${err instanceof Error ? err.message : String(err)}`);
-  }
-
-  return sanitizeOutput(parsed, req, 'Groq (Llama 3.3 70B)');
+  throw new Error(`Groq API Error: ${lastError}`);
 }
 
 async function generateWithGemini(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
