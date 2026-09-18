@@ -2,10 +2,10 @@
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   img-src 'self' blob: data: https:;
-  font-src 'self';
-  connect-src 'self' https://wa.me https://api.whatsapp.com;
+  font-src 'self' https://fonts.gstatic.com data:;
+  connect-src 'self' https://wa.me https://api.whatsapp.com https://*.supabase.co https://*.imagekit.io https://api.groq.com https://generativelanguage.googleapis.com ws: wss:;
   frame-ancestors 'self';
   form-action 'self' https://wa.me https://api.whatsapp.com;
   base-uri 'self';
