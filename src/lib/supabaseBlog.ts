@@ -107,9 +107,9 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
     return postsListCache.data;
   }
 
-  // Filter local posts to this site only
+  // Filter local posts strictly to this site only
   const localList = getLocalPosts()
-    .filter(p => !p.site_id || p.site_id === SITE_ID)
+    .filter(p => p.site_id === SITE_ID)
     .map(mapRowToBlogPost);
 
   if (!SUPABASE_URL || !ANON_KEY) {
@@ -189,9 +189,9 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
     return cached.data;
   }
 
-  // 2. Check local persistent store first — must belong to this site
+  // 2. Check local persistent store first — must belong strictly to this site
   const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost && (!localPost.site_id || localPost.site_id === SITE_ID)) {
+  if (localPost && localPost.site_id === SITE_ID) {
     const post = mapRowToBlogPost(localPost);
     postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
     return post;

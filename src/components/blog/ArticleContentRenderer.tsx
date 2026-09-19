@@ -83,7 +83,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
     const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
     if (boldMatch) {
       return (
-        <strong key={index} className="font-bold text-stone-950">
+        <strong key={index} className="font-semibold text-stone-900">
           {boldMatch[1]}
         </strong>
       );
@@ -302,7 +302,7 @@ export default function ArticleContentRenderer({
               <h2
                 key={idx}
                 id={block.id}
-                className="text-2xl sm:text-3xl font-bold text-stone-900 mt-10 sm:mt-12 mb-4 pb-3 border-b border-stone-200 tracking-tight scroll-mt-24 font-sans"
+                className="text-2xl sm:text-3xl font-semibold text-stone-900 mt-10 sm:mt-12 mb-4 pb-3 border-b border-stone-200 tracking-tight scroll-mt-24 font-sans"
               >
                 {renderInlineMarkdown(block.text)}
               </h2>
@@ -312,7 +312,7 @@ export default function ArticleContentRenderer({
             return (
               <h3
                 key={idx}
-                className="text-xl sm:text-2xl font-bold text-[#671725] mt-8 mb-3 tracking-tight font-sans"
+                className="text-xl sm:text-2xl font-semibold text-[#671725] mt-8 mb-3 tracking-tight font-sans"
               >
                 {renderInlineMarkdown(block.text)}
               </h3>
@@ -322,7 +322,7 @@ export default function ArticleContentRenderer({
             return (
               <h4
                 key={idx}
-                className="text-lg sm:text-xl font-bold text-stone-900 mt-6 mb-2 font-sans"
+                className="text-lg sm:text-xl font-semibold text-stone-900 mt-6 mb-2 font-sans"
               >
                 {renderInlineMarkdown(block.text)}
               </h4>
@@ -387,7 +387,7 @@ export default function ArticleContentRenderer({
                 key={idx}
                 className="my-5 p-5 sm:p-6 bg-[#FAF8F5] border border-[#EAE5DD] rounded-2xl shadow-xs space-y-3 hover:border-[#671725]/40 transition-colors"
               >
-                <div className="flex items-start gap-3 font-bold text-base sm:text-lg text-stone-900">
+                <div className="flex items-start gap-3 font-semibold text-base sm:text-lg text-stone-900">
                   <HelpCircle className="w-5 h-5 text-[#671725] shrink-0 mt-0.5" />
                   <span>{renderInlineMarkdown(block.question)}</span>
                 </div>

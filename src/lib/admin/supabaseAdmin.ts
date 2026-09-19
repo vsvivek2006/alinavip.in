@@ -122,11 +122,13 @@ export async function getAllSites(): Promise<SiteTenant[]> {
  * Fetch all posts for a specific tenant site
  */
 export async function getPostsForSite(siteId: string): Promise<BlogPostRecord[]> {
-  const localPosts = getLocalPosts().filter(p => !siteId || p.site_id === siteId);
+  const tenant = DEFAULT_SITES.find(s => s.id === siteId || s.slug === siteId);
+  const resolvedId = tenant ? tenant.id : siteId;
+  const localPosts = getLocalPosts().filter(p => !resolvedId || p.site_id === resolvedId);
 
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?site_id=eq.${encodeURIComponent(siteId)}&order=created_at.desc`,
+      `${SUPABASE_URL}/rest/v1/posts?site_id=eq.${encodeURIComponent(resolvedId)}&order=created_at.desc`,
       {
         headers: getHeaders(),
         cache: 'no-store',
@@ -185,11 +187,14 @@ export async function getPostById(postId: string): Promise<BlogPostRecord | null
 export async function createPost(postData: Omit<BlogPostRecord, 'id' | 'created_at' | 'updated_at'>): Promise<BlogPostRecord> {
   const newId = crypto.randomUUID();
   const now = new Date().toISOString();
+  const tenant = DEFAULT_SITES.find(s => s.id === postData.site_id || s.slug === postData.site_id);
+  const resolvedSiteId = tenant ? tenant.id : postData.site_id;
   const localRecord: BlogPostRecord = {
     id: newId,
     created_at: now,
     updated_at: now,
     ...postData,
+    site_id: resolvedSiteId,
   };
 
   // Always save locally first so post is immediately live with 0ms latency
