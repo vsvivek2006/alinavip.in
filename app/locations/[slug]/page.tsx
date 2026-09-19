@@ -48,7 +48,9 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
     return {
       title: `Location Not Found | ${siteConfig.name}`,
       robots: { index: false, follow: false },
-    };
+        twitter: { card: 'summary_large_image' },
+    openGraph: { type: 'website' },
+  };
   }
 
   if (isLocationRedirect(slug)) {

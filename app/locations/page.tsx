@@ -38,6 +38,22 @@ export const metadata: Metadata = {
   },
 };
 
+// Extended area pages — directly served at /{slug} (from catalog_pages)
+const moreAreaPages = [
+  { title: 'Cyber City Escorts', slug: 'escorts-in-cyber-city', area: 'DLF Cyber City' },
+  { title: 'Nirvana Country Escorts', slug: 'escorts-in-nirvana-country', area: 'Sohna Road' },
+  { title: 'Sector 54 Call Girls', slug: 'call-girls-in-sector-54-gurgaon', area: 'Golf Course Road' },
+  { title: 'South City Escorts', slug: 'call-girls-in-south-city', area: 'South Gurgaon' },
+  { title: 'Sushant Lok Call Girls', slug: 'call-girls-in-sushant-lok', area: 'MG Road' },
+  { title: 'Sector 82 Call Girls', slug: 'call-girls-in-sector-82-gurgaon', area: 'New Gurgaon' },
+  { title: 'Sector 70 Call Girls', slug: 'call-girls-in-sector-70-gurgaon', area: 'New Gurgaon' },
+  { title: 'Aunty Escorts Gurgaon', slug: 'aunty-escorts-in-gurgaon', area: 'All Areas' },
+  { title: 'Sector 53 Call Girls', slug: 'call-girls-in-sector-53-gurgaon', area: 'Golf Course Road' },
+  { title: 'Sector 60 Call Girls', slug: 'call-girls-in-sector-60-gurgaon', area: 'Golf Course Ext.' },
+  { title: 'Foreigner Call Girls', slug: 'foreigner-call-girls-gurgaon', area: 'Pan-Gurgaon' },
+];
+
+
 const topLocationCards = [
   {
     title: 'MG Road, Gurgaon',
@@ -246,6 +262,25 @@ export default function LocationsPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      
+      {/* Extended Area Pages — internal link coverage for SEO */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-bold text-[#671725] mb-2">More Areas We Serve</h2>
+        <p className="text-sm text-gray-600 mb-6">Verified escort service available across all major Gurgaon sectors, colonies, and localities.</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          {moreAreaPages.map((area) => (
+            <Link
+              key={area.slug}
+              href={`/${area.slug}`}
+              className="block p-3 border border-gray-200 rounded-lg hover:border-[#671725] hover:bg-rose-50 transition-colors group"
+            >
+              <span className="block text-sm font-semibold text-[#2d2d2d] group-hover:text-[#671725] leading-tight">{area.title}</span>
+              <span className="block text-xs text-gray-500 mt-0.5">{area.area}</span>
+            </Link>
+          ))}
         </div>
       </section>
 

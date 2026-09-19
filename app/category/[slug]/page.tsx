@@ -77,7 +77,9 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return {
       title: `Category Not Found | ${siteConfig.name}`,
       robots: { index: false, follow: false },
-    };
+        twitter: { card: 'summary_large_image' },
+    openGraph: { type: 'website' },
+  };
   }
 
   const title = `${category.h1Title || `${category.name} in ${siteConfig.city}`} | VIP Escorts & Call Girls | ${siteConfig.name}`;

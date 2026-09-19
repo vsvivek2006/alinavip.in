@@ -95,9 +95,6 @@ const staticPages = [
   { path: '/privacy-policy', priority: '0.3', changefreq: 'monthly' },
   { path: '/terms', priority: '0.3', changefreq: 'monthly' },
   { path: '/disclaimer', priority: '0.3', changefreq: 'monthly' },
-  { path: '/gurgaon-escorts-rates', priority: '0.9', changefreq: 'daily' },
-  { path: '/escorts-categories', priority: '0.9', changefreq: 'daily' },
-  { path: '/gurgaon-escorts-phone-number', priority: '0.85', changefreq: 'weekly' },
   { path: '/escort-service-for-1-2-3-hours', priority: '0.85', changefreq: 'weekly' },
   { path: '/escort-service-full-night', priority: '0.85', changefreq: 'weekly' },
   { path: '/full-body-sensual-massage', priority: '0.85', changefreq: 'weekly' },
@@ -160,14 +157,15 @@ const pageUrls = staticPages.map(p => ({
   priority: p.priority
 }));
 
-const catalogPageUrls = catalogPages.map(p => ({
+const sitemapExcludedSlugs = new Set(['about-us', 'contact-us', 'faqs', 'escorts-categories', 'gurgaon-escorts-rates', 'gurgaon-escorts-phone-number', 'sitemap']);
+const catalogPageUrls = catalogPages.filter(p => p.slug && !sitemapExcludedSlugs.has(p.slug)).map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,
   changefreq: 'weekly',
   priority: '0.85'
 }));
 
-const catalogPostUrls = catalogPosts.map(p => ({
+const catalogPostUrls = catalogPosts.filter(p => p.slug && !sitemapExcludedSlugs.has(p.slug)).map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,
   changefreq: 'monthly',

@@ -9,6 +9,7 @@ import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import pagesData from '@/data/catalog_pages.json';
 import postsData from '@/data/catalog_posts.json';
+import { isLocationIndexable } from '@/data/locationManifest';
 
 interface Section {
   heading: string;
@@ -71,11 +72,28 @@ export async function generateMetadata({
     };
   }
 
+
+  // Guard: noindex for REDIRECT/NOINDEX locations
+  const robots = isLocationIndexable(slug) !== false ? undefined : { index: false, follow: false };
   return {
+    ...(robots ? { robots } : {}),
     title: item.title,
     description: item.metaDescription || `${item.h1} – 24/7 Verified In-Call & Out-Call Escort Service in ${siteConfig.city} with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/${slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: item.title,
+      description: item.metaDescription || `${item.h1} – Verified Escort Service in ${siteConfig.city}`,
+      images: ['/og-image.jpg'],
+    },
+    openGraph: {
+      title: item.title,
+      description: item.metaDescription || `${item.h1} – Verified Escort Service in ${siteConfig.city}`,
+      url: `${siteConfig.url}/${slug}`,
+      images: [{ url: '/og-image.jpg' }],
+      type: 'website',
     },
   };
 }

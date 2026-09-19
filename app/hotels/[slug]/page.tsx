@@ -50,7 +50,9 @@ export async function generateMetadata({
   if (!page) {
     return {
       title: `Luxury Hotel Escort Service in ${siteConfig.city} | ${siteConfig.name}`,
-    };
+        twitter: { card: 'summary_large_image' },
+    openGraph: { type: 'website' },
+  };
   }
 
   return {
