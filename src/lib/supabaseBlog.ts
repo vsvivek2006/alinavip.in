@@ -93,7 +93,7 @@ function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
     category: primaryCategory,
     excerpt: purgeCompanionWords(row.excerpt || ''),
     date: row.published_at ? row.published_at.split('T')[0] : '2026-01-01',
-    readTime: `${Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))} min read`,
+    readTime: String(Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))) + ' min read',
     image: getAssetUrl(row.cover_image || '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'),
     author: row.author || 'VIP Editorial Desk',
     tags: tagList,
@@ -112,7 +112,9 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
     .filter(p => !p.site_id || p.site_id === SITE_ID)
     .map(mapRowToBlogPost);
 
-  if (!SUPABASE_URL || !ANON_KEY) {
+  // During build phase, use instant local data to prevent socket hang up / ECONNRESET
+  const isBuildPhase = process.env.NEXT_PHASE === 'phase-production-build' || process.env.CI === '1';
+  if ((isBuildPhase && localList.length > 0) || !SUPABASE_URL || !ANON_KEY) {
     const combined = [...localList, ...fallbackPosts];
     const seen = new Set<string>();
     const result = combined.filter(p => {
@@ -126,11 +128,11 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
 
   try {
     const postsRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?site_id=eq.${encodeURIComponent(SITE_ID)}&status=eq.published&order=published_at.desc&select=*`,
+      SUPABASE_URL + '/rest/v1/posts?site_id=eq.' + encodeURIComponent(SITE_ID) + '&status=eq.published&order=published_at.desc&select=*',
       {
         headers: {
           apikey: ANON_KEY,
-          Authorization: `Bearer ${ANON_KEY}`,
+          Authorization: 'Bearer ' + ANON_KEY,
         },
         signal: AbortSignal.timeout(8000),
       }
@@ -194,11 +196,11 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const postRes = await fetch(
-          `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&site_id=eq.${encodeURIComponent(SITE_ID)}&select=*`,
+          SUPABASE_URL + '/rest/v1/posts?slug=eq.' + encodeURIComponent(cleanSlug) + '&site_id=eq.' + encodeURIComponent(SITE_ID) + '&select=*',
           {
             headers: {
               apikey: ANON_KEY,
-              Authorization: `Bearer ${ANON_KEY}`,
+              Authorization: 'Bearer ' + ANON_KEY,
             },
             signal: AbortSignal.timeout(8000),
           }
@@ -211,12 +213,11 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
             postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
             return post;
           } else {
-            // Definitively not in Supabase for this tenant
             break;
           }
         }
       } catch (err) {
-        console.warn(`[supabaseBlog] Attempt ${attempt} fetch error for slug "${cleanSlug}":`, err);
+        console.warn('[supabaseBlog] Attempt ' + attempt + ' fetch error for slug "' + cleanSlug + '":', err);
         if (attempt < 2) await new Promise(r => setTimeout(r, 250));
       }
     }
