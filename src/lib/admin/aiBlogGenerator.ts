@@ -204,10 +204,34 @@ async function generateWithGemini(req: GenerationRequest, apiKey: string): Promi
 
 function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest, modelUsed: string): GeneratedBlog {
   const title = (parsed.title as string) || req.topic;
-  let content = Array.isArray(parsed.content) ? (parsed.content as string[]) : [String(parsed.content)];
+  
+  let rawBlocks: string[] = [];
+  if (Array.isArray(parsed.content)) {
+    rawBlocks = (parsed.content as unknown[]).map(c => String(c).trim()).filter(Boolean);
+  } else if (typeof parsed.content === 'string') {
+    // If returned as a single string, split cleanly by double newlines or markdown headings
+    rawBlocks = parsed.content
+      .split(/\n{2,}/)
+      .map(s => s.trim())
+      .filter(Boolean);
+  } else {
+    rawBlocks = [String(parsed.content || '')];
+  }
+
+  // Format and normalize markdown blocks
+  const normalizedBlocks: string[] = [];
+  for (const block of rawBlocks) {
+    // If a block contains multiple markdown headings merged together, separate them
+    if (block.includes('\n## ') || block.includes('\n### ')) {
+      const subBlocks = block.split(/\n(?=#{2,3}\s)/).map(s => s.trim()).filter(Boolean);
+      normalizedBlocks.push(...subBlocks);
+    } else {
+      normalizedBlocks.push(block);
+    }
+  }
 
   // Ensure at least 3 internal links exist across the body
-  content = ensureInternalLinks(content);
+  const contentWithLinks = ensureInternalLinks(normalizedBlocks);
 
   return {
     title,
@@ -215,7 +239,7 @@ function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest,
     seoTitle: (parsed.seoTitle as string) || title,
     seoDescription: (parsed.seoDescription as string) || (parsed.excerpt as string) || '',
     excerpt: (parsed.excerpt as string) || '',
-    content,
+    content: contentWithLinks,
     tags: (parsed.tags as string[]) || [req.focusKeyword, 'Luxury Concierge', 'Gurgaon Escorts'],
     coverImage: selectRandomImage(), // Pick random unique image from ImageKit
     author: `${req.siteName} Editorial Desk`,
@@ -236,7 +260,7 @@ function ensureInternalLinks(paragraphs: string[]): string[] {
 
   // 1. Early link in intro
   if (result.length > 0 && !result[0].includes('](/')) {
-    result[0] = result[0] + ` Patrons seeking verified standards can browse our authenticated [companion gallery](/gallery) for authentic, authenticated portfolios.`;
+    result[0] = result[0] + ` Patrons seeking verified standards can browse our authenticated [companion gallery](/gallery) for genuine, high-definition portfolios.`;
   }
 
   // 2. Middle link in section 2 or 3
@@ -266,44 +290,46 @@ STRICT BRAND CONTEXT RULES:
 
 STRICT ANTI-AI HUMAN WRITING RULES:
 - FORBIDDEN WORDS & PHRASES (STRICTLY PROHIBITED):
-  "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on".
+  "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on", "realm", "ever-evolving", "shed light".
 - Write with confident, conversational first-person plural authority ("we", "our private desk", "guests frequently share with us").
-- Keep paragraphs compact (2 to 4 sentences maximum). No monotonic walls of text.
+- Keep paragraphs compact (2 to 4 sentences maximum). Never write walls of text.
 - Ground the writing in specific regional landmarks: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
 
-MANDATORY FORMATTING DIVERSITY:
-- Use clean ## H2 and ### H3 headings.
-- Include a bulleted checklist with 3-5 crisp points highlighting safety, vetting, or etiquette.
-- Include a styled blockquote tip: "> Concierge Tip for 5-Star Hotel Guests: ..."
-- Include an FAQ section with 2-3 genuine, practical Q&As.
-
-MANDATORY SPACED INTERNAL LINKING:
-You MUST naturally weave at least 3 internal markdown links at spaced intervals throughout the content:
-- Link 1 early (Intro): e.g. [verified companion gallery](/gallery) or [curated escort categories](/categories)
-- Link 2 in middle: e.g. [5-star hotel outcall services](/services) or [Russian call girls in Gurgaon](/category/russian-call-girls)
-- Link 3 near end: e.g. [service locations across Gurgaon](/locations) or [private concierge desk](/contact) or [transparent rates](/rates)
+MANDATORY FORMATTING & STRUCTURE (EVERY ARTICLE MUST FOLLOW THIS EXACT FLOW):
+Break the article into 8 to 12 distinct clean sections inside the 'content' array:
+1. Introduction: Engaging hook about ${req.focusKeyword} in Gurgaon with natural regional context.
+2. Verified Standards: Paragraph introducing our verified portfolio with early link [verified companion gallery](/gallery).
+3. ## H2 Heading: Specific insight into local hospitality and executive lifestyle.
+4. Feature Checklist: 3 to 5 bullet points with bold highlights (- **Zero Advance Payment**: Details...\\n- **Verified High-Definition Profiles**: Details...\\n- **Discreet 5-Star Hotel Outcalls**: Details...).
+5. Luxury Quote Box: A prominent blockquote: "> **Concierge Recommendation:** Discreet room booking tips and private meeting etiquette for luxury hotels..."
+6. ## H2 Heading: Exploring premier Gurgaon & Aerocity venues and 5-star hotel dispatch. Include mid link [5-star hotel outcall services](/services).
+7. Practical Guidance: Recommendations for dining pairings at The Oberoi, Trident, or CyberHub lounges.
+8. ## Frequently Asked Questions
+9. FAQ Item 1: "**Q: How quickly can a companion arrive at major Gurgaon hotels?**\\n\\nA: Our private chauffeur dispatch arrives within 20 to 30 minutes across DLF Cyber City, Golf Course Road, and Aerocity."
+10. FAQ Item 2: "**Q: What payment methods are accepted?**\\n\\nA: In line with our strict zero-advance policy, payment is handled strictly in person after meeting your companion."
+11. ## Reserving Your Experience with ${req.siteName}
+12. Concluding Paragraph: Warm call-to-action with closing link to [our 24/7 concierge desk](/contact).
 
 JSON OUTPUT SCHEMA:
 {
-  "title": "Natural H1 Title (50-65 chars)",
+  "title": "Compelling H1 Headline (50-65 chars, no quotes)",
   "slug": "url-friendly-slug",
   "seoTitle": "SEO meta title (under 60 chars)",
   "seoDescription": "Engaging meta description (140-155 chars)",
   "excerpt": "Compelling 2-sentence preview for article cards (180-220 chars)",
   "content": [
-    "Introduction paragraph setting context for Gurgaon and ${req.focusKeyword}...",
-    "Paragraph with early internal link e.g. [verified companion gallery](/gallery)...",
-    "## H2 Section Headline",
-    "Paragraph exploring luxury hospitality venue dynamics...",
-    "- **Feature 1**: Description\\n- **Feature 2**: Description\\n- **Feature 3**: Description",
-    "> Concierge Tip for 5-Star Hotel Guests: Room billing and in-person payment only...",
-    "## H2 Section Headline with Mid Link e.g. [outcall services](/services)",
-    "Detailed practical advice...",
+    "Paragraph 1...",
+    "Paragraph 2...",
+    "## H2 Section Title",
+    "- **Feature 1**: Description...\\n- **Feature 2**: Description...",
+    "> **Concierge Recommendation:** Practical advice for five-star hotel guests...",
+    "## H2 Section Title",
+    "Detailed hospitality guidance...",
     "## Frequently Asked Questions",
-    "**Q: How quickly can a companion arrive at major Gurgaon hotels?**\\n\\nA: Our dispatch arrives within 20 to 30 minutes across DLF, Cyber City, and Golf Course Road.",
-    "**Q: Are advance payments required?**\\n\\nA: Never. ${req.siteName} maintains a strict zero-advance policy. You only settle in person upon satisfaction.",
+    "**Q: ...?**\\n\\nA: ...",
+    "**Q: ...?**\\n\\nA: ...",
     "## Reserving with ${req.siteName}",
-    "Closing paragraph with closing link to [our 24/7 concierge desk](/contact)..."
+    "Final paragraph with contact link..."
   ],
   "tags": ["Focus Keyword", "Gurgaon Escorts", "VIP Companions", "Hotel Outcalls"]
 }`,

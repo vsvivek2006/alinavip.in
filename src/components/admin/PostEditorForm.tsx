@@ -22,9 +22,12 @@ import {
   List,
   Quote,
   Zap,
-  Cpu,
   Key,
-  ShieldCheck,
+  ChevronDown,
+  ChevronUp,
+  Wand2,
+  Settings2,
+  BookOpen,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -52,7 +55,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   const [seoTitle, setSeoTitle] = useState(initialPost?.seo_title || '');
   const [seoDescription, setSeoDescription] = useState(initialPost?.seo_description || '');
 
-  // Content state (stored as string in editor, serialized as paragraphs or text)
+  // Content state
   const initialContentString = useMemo(() => {
     if (!initialPost?.content) return '';
     if (Array.isArray(initialPost.content)) return initialPost.content.join('\n\n');
@@ -63,17 +66,20 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   }, [initialPost]);
 
   const [content, setContent] = useState(initialContentString);
-  const [status, setStatus] = useState<'draft' | 'published'>(initialPost?.status === 'published' ? 'published' : 'draft');
+  const [status, setStatus] = useState<'draft' | 'published'>(
+    initialPost?.status === 'published' ? 'published' : 'draft'
+  );
 
   // UI state
   const [activeTab, setActiveTab] = useState<'edit' | 'preview'>('edit');
   const [isAssetModalOpen, setIsAssetModalOpen] = useState(false);
-  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
+  const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(isNew);
+  const [showAdvancedKeys, setShowAdvancedKeys] = useState(false);
   const [saving, setSaving] = useState(false);
   const [publishing, setPublishing] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string; url?: string } | null>(null);
 
-  // AI Generator state
+  // AI Assistant state
   const [aiTopic, setAiTopic] = useState('');
   const [aiFocusKeyword, setAiFocusKeyword] = useState('');
   const [aiSecondaryKeywords, setAiSecondaryKeywords] = useState('');
@@ -81,8 +87,6 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   const [aiProvider, setAiProvider] = useState<'groq' | 'gemini'>('groq');
   const [aiGroqKey, setAiGroqKey] = useState('');
   const [aiGeminiKey, setAiGeminiKey] = useState('');
-  const [showKey, setShowKey] = useState(false);
-  const [rememberKeys, setRememberKeys] = useState(true);
   const [aiGenerating, setAiGenerating] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
   const [serverKeyStatus, setServerKeyStatus] = useState<{ hasGeminiKey: boolean; hasGroqKey: boolean }>({
@@ -164,34 +168,32 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
     }, 50);
   };
 
-  // Handle AI generation
+  // Handle AI generation inline
   const handleGenerateAI = async () => {
     setAiError(null);
 
     if (!aiTopic.trim()) {
-      setAiError('Please enter an Article Topic / Concept.');
+      setAiError('Please enter what you would like to write about (Topic or Title).');
       return;
     }
     if (!aiFocusKeyword.trim()) {
-      setAiError('Please enter a Primary Focus Keyword.');
+      setAiError('Please enter a Primary Search Keyword.');
       return;
     }
 
     const activeKey = aiProvider === 'groq' ? aiGroqKey.trim() : aiGeminiKey.trim();
 
     if (aiProvider === 'groq' && !activeKey && !serverKeyStatus.hasGroqKey) {
-      setAiError('Groq API Key is required. Please paste your Groq key (starts with gsk_...) below or set GROQ_API_KEY in .env.local.');
+      setAiError('Groq key is missing on the server. Please paste your custom key in the settings below.');
       return;
     }
 
-    if (rememberKeys) {
-      try {
-        if (aiGroqKey.trim()) localStorage.setItem('alina_admin_groq_key', aiGroqKey.trim());
-        if (aiGeminiKey.trim()) localStorage.setItem('alina_admin_gemini_key', aiGeminiKey.trim());
-        localStorage.setItem('alina_admin_ai_provider', aiProvider);
-      } catch (err) {
-        void err;
-      }
+    try {
+      if (aiGroqKey.trim()) localStorage.setItem('alina_admin_groq_key', aiGroqKey.trim());
+      if (aiGeminiKey.trim()) localStorage.setItem('alina_admin_gemini_key', aiGeminiKey.trim());
+      localStorage.setItem('alina_admin_ai_provider', aiProvider);
+    } catch (err) {
+      void err;
     }
 
     setAiGenerating(true);
@@ -226,13 +228,21 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       setCoverImage(b.coverImage);
       setTagsInput(b.tags.join(', '));
       if (b.author) setAuthor(b.author);
-      setIsAiModalOpen(false);
+
+      // Auto-collapse assistant to let the user review the written article
+      setIsAiAssistantOpen(false);
       setFeedback({
         type: 'success',
-        message: `Article successfully generated via ${b.modelUsed || aiProvider.toUpperCase()} with 3+ spaced internal links!`,
+        message: `Article successfully written! Review the formatted sections, headings, and internal links below.`,
       });
+
+      // Smooth scroll to the editor
+      const editorElement = document.getElementById('blog-content-area');
+      if (editorElement) {
+        editorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : 'AI generation error';
+      const msg = err instanceof Error ? err.message : 'AI writing error';
       setAiError(msg);
     } finally {
       setAiGenerating(false);
@@ -242,7 +252,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   // Save post
   const handleSave = async (publishImmediate = false) => {
     if (!title.trim() || !slug.trim()) {
-      setFeedback({ type: 'error', message: 'Title and Slug are required.' });
+      setFeedback({ type: 'error', message: 'Article Title and Web Address (Slug) are required.' });
       return;
     }
 
@@ -298,7 +308,6 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         if (!res.ok) throw new Error(data.error || 'Failed to update post');
       }
 
-      // If publish immediate requested, call publish and revalidate webhook
       if (publishImmediate && savedId) {
         const pubRes = await fetch('/api/admin/publish', {
           method: 'POST',
@@ -312,13 +321,13 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         setStatus('published');
         setFeedback({
           type: 'success',
-          message: `Published successfully! Live on https://${targetSite?.domain}/blog/${payload.slug}`,
+          message: `Published successfully! View live on https://${targetSite?.domain}/blog/${payload.slug}`,
           url: liveUrl || undefined,
         });
       } else {
         setFeedback({
           type: 'success',
-          message: 'Post draft saved successfully to Supabase.',
+          message: 'Article draft saved successfully.',
         });
         if (isNew && savedId) {
           router.push(`/admin/blog/${savedId}`);
@@ -334,44 +343,49 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   };
 
   return (
-    <div className="space-y-6 pb-20">
+    <div className="space-y-6 pb-24 font-sans max-w-7xl mx-auto">
       {/* Top Header & Navigation */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 sm:p-5 rounded-3xl border border-[#EAE5DD] shadow-xs">
         <div className="flex items-center gap-3">
           <Link
             href="/admin"
-            className="p-2 rounded-xl bg-white hover:bg-[#F2ECE4] text-stone-600 hover:text-stone-900 border border-[#E2DDD5] shadow-2xs transition-colors"
+            className="p-2.5 rounded-2xl bg-[#FAF9F6] hover:bg-[#F2ECE4] text-stone-600 hover:text-stone-900 border border-[#E2DDD5] shadow-2xs transition-colors"
+            title="Back to Posts"
           >
             <ArrowLeft className="w-4 h-4" />
           </Link>
           <div>
-            <h1 className="text-xl sm:text-2xl font-extrabold text-stone-900">
-              {isNew ? 'Create New Blog Post' : 'Edit Blog Post'}
+            <h1 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+              {isNew ? 'Write New Article' : 'Edit Article'}
             </h1>
-            <p className="text-xs text-stone-600 mt-0.5">
-              Target domain: <span className="text-[#671725] font-bold">{targetSite?.name}</span> ({targetSite?.domain})
+            <p className="text-xs text-stone-500 mt-0.5">
+              Publishing to: <span className="text-[#671725] font-bold">{targetSite?.name}</span> ({targetSite?.domain})
             </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <button
             type="button"
-            onClick={() => setIsAiModalOpen(true)}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-xs hover:-translate-y-0.5 transition-all"
+            onClick={() => setIsAiAssistantOpen(!isAiAssistantOpen)}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all ${
+              isAiAssistantOpen
+                ? 'bg-purple-100 text-purple-900 border border-purple-300'
+                : 'bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-xs hover:-translate-y-0.5'
+            }`}
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>AI Generator</span>
+            <Sparkles className="w-4 h-4" />
+            <span>{isAiAssistantOpen ? 'Hide AI Assistant' : '✨ Open AI Writer'}</span>
           </button>
 
           <button
             type="button"
             onClick={() => handleSave(false)}
             disabled={saving || publishing}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white hover:bg-[#F4EFE7] text-stone-800 border border-[#DCD6CC] shadow-2xs transition-colors disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-[#FAF9F6] hover:bg-[#F4EFE7] text-stone-800 border border-[#DCD6CC] shadow-2xs transition-colors disabled:opacity-50"
           >
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5 text-stone-600" />}
+            {saving ? <Loader2 className="w-4 h-4 animate-spin text-stone-500" /> : <Save className="w-4 h-4 text-stone-600" />}
             <span>Save Draft</span>
           </button>
 
@@ -379,14 +393,14 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
             type="button"
             onClick={() => handleSave(true)}
             disabled={saving || publishing}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white shadow-xs hover:-translate-y-0.5 active:scale-[0.98] transition-all disabled:opacity-50"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-2xl text-xs font-bold bg-gradient-to-r from-[#671725] to-[#881337] hover:from-[#7a1b2d] hover:to-[#9f1239] text-white shadow-xs hover:-translate-y-0.5 active:scale-[0.98] transition-all disabled:opacity-50"
           >
             {publishing ? (
-              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              <Loader2 className="w-4 h-4 animate-spin text-white" />
             ) : (
-              <Send className="w-3.5 h-3.5" />
+              <Send className="w-4 h-4" />
             )}
-            <span>Publish to Live Site</span>
+            <span>Publish Article</span>
           </button>
         </div>
       </div>
@@ -394,17 +408,17 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       {/* Feedback Alert */}
       {feedback && (
         <div
-          className={`p-4 rounded-2xl text-xs font-semibold flex items-center justify-between gap-3 animate-in fade-in duration-200 ${
+          className={`p-4 rounded-2xl text-xs sm:text-sm font-medium flex items-center justify-between gap-3 animate-in fade-in duration-200 ${
             feedback.type === 'success'
-              ? 'bg-emerald-50 border border-emerald-200 text-emerald-800'
-              : 'bg-rose-50 border border-rose-200 text-rose-800'
+              ? 'bg-emerald-50 border border-emerald-200 text-emerald-900'
+              : 'bg-rose-50 border border-rose-200 text-rose-900'
           }`}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             {feedback.type === 'success' ? (
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
             ) : (
-              <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+              <AlertCircle className="w-5 h-5 text-rose-600 shrink-0" />
             )}
             <span>{feedback.message}</span>
           </div>
@@ -413,243 +427,517 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
               href={feedback.url}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1 underline font-bold text-[#671725] hover:text-[#881337] shrink-0"
+              className="flex items-center gap-1.5 underline font-bold text-[#671725] hover:text-[#881337] shrink-0"
             >
-              <span>View Post Live</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span>View Live Post</span>
+              <ExternalLink className="w-4 h-4" />
             </a>
           )}
         </div>
       )}
 
-      {/* Two Column Layout: Main Editor + Sidebar Settings */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left 2 Columns: Title, Excerpt, Content */}
+      {/* Main Workspace: 2-Column Responsive Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+        {/* Left 2 Columns: Inline AI Writing Studio + Article Canvas */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Post Title & Slug */}
+          {/* INLINE AI WRITING ASSISTANT (Embedded directly into page, NO POPUP) */}
+          {isAiAssistantOpen && (
+            <div className="rounded-3xl bg-gradient-to-b from-[#FDFBF9] to-white border-2 border-purple-200/80 shadow-md p-5 sm:p-6 space-y-5 animate-in fade-in duration-200">
+              {/* Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-purple-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#671725] to-purple-800 text-white flex items-center justify-center shadow-xs">
+                    <Wand2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-base font-black text-stone-900 flex items-center gap-2">
+                      <span>AI Article Writing Assistant</span>
+                      <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 tracking-wider">
+                        1-Click Writer
+                      </span>
+                    </h2>
+                    <p className="text-xs text-stone-500">
+                      Creates a complete, humanized article with headings, concierge tips, FAQs, and internal links.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsAiAssistantOpen(false)}
+                  className="text-stone-400 hover:text-stone-700 p-1.5 rounded-xl hover:bg-stone-100 transition-colors text-xs font-bold"
+                  title="Close Assistant"
+                >
+                  <ChevronUp className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Form Controls */}
+              <div className="space-y-4">
+                {/* Topic / Title */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                    What would you like to write about? <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={aiTopic}
+                    onChange={e => setAiTopic(e.target.value)}
+                    placeholder="e.g. 5-Star Luxury Dining & VIP Companionship in DLF Cyber City"
+                    className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-sm font-medium text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
+                  />
+                </div>
+
+                {/* Focus Keyword & Target Length */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                      Main Search Keyword <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={aiFocusKeyword}
+                      onChange={e => setAiFocusKeyword(e.target.value)}
+                      placeholder="e.g. Russian Escorts Gurgaon"
+                      className="w-full px-4 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-xs sm:text-sm font-medium text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                      Article Length
+                    </label>
+                    <div className="grid grid-cols-3 gap-1.5 p-1 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl">
+                      {[
+                        { count: 800, label: 'Quick Read' },
+                        { count: 1200, label: 'Standard' },
+                        { count: 1600, label: 'Deep Dive' },
+                      ].map(pill => (
+                        <button
+                          key={pill.count}
+                          type="button"
+                          onClick={() => setAiWordCount(pill.count)}
+                          className={`py-1.5 text-xs font-bold rounded-xl transition-all ${
+                            aiWordCount === pill.count
+                              ? 'bg-[#671725] text-white shadow-xs'
+                              : 'text-stone-600 hover:text-stone-900'
+                          }`}
+                        >
+                          {pill.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Writing Style / Assistant Selector */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                    Writing Tone & Style
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setAiProvider('groq');
+                        setAiError(null);
+                      }}
+                      className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
+                        aiProvider === 'groq'
+                          ? 'border-[#671725] bg-rose-50/40 shadow-xs'
+                          : 'border-stone-200 hover:border-stone-300 bg-[#FAF8F5]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <div className="flex items-center gap-2">
+                          <Zap className="w-4 h-4 text-amber-600" />
+                          <span className="font-extrabold text-stone-900 text-xs">⚡ Fast Conversational Writer</span>
+                        </div>
+                        <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                          Recommended
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-stone-600 leading-snug">
+                        Natural cadence, uncensored hospitality & companion topics, fast ~5s generation.
+                      </p>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setAiProvider('gemini');
+                        setAiError(null);
+                      }}
+                      className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
+                        aiProvider === 'gemini'
+                          ? 'border-[#671725] bg-rose-50/40 shadow-xs'
+                          : 'border-stone-200 hover:border-stone-300 bg-[#FAF8F5]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <div className="flex items-center gap-2">
+                          <BookOpen className="w-4 h-4 text-blue-600" />
+                          <span className="font-extrabold text-stone-900 text-xs">✨ Deep NCR Storyteller</span>
+                        </div>
+                        <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
+                          Regional
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-stone-600 leading-snug">
+                        Rich descriptive prose, luxury hotel atmosphere, and local landmark knowledge.
+                      </p>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Optional Secondary Keywords */}
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+                    Optional Keywords / Venues to Mention
+                  </label>
+                  <input
+                    type="text"
+                    value={aiSecondaryKeywords}
+                    onChange={e => setAiSecondaryKeywords(e.target.value)}
+                    placeholder="e.g. The Oberoi, DLF Horizon Plaza, zero advance policy, verified photos"
+                    className="w-full px-3.5 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white"
+                  />
+                </div>
+
+                {/* Optional Custom API Key (Subtle accordion, hidden by default) */}
+                <div className="pt-1">
+                  <button
+                    type="button"
+                    onClick={() => setShowAdvancedKeys(!showAdvancedKeys)}
+                    className="flex items-center gap-1.5 text-[11px] font-bold text-stone-500 hover:text-stone-800 transition-colors"
+                  >
+                    <Key className="w-3 h-3" />
+                    <span>Custom API Keys (Optional)</span>
+                    <ChevronDown className={`w-3 h-3 transition-transform ${showAdvancedKeys ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {showAdvancedKeys && (
+                    <div className="mt-2 p-3 bg-stone-100 rounded-2xl space-y-2 text-xs">
+                      <p className="text-[11px] text-stone-600">
+                        Secure keys are already pre-configured on the server. You only need to enter a key here if you want to override with your personal account.
+                      </p>
+                      <input
+                        type="password"
+                        value={aiProvider === 'groq' ? aiGroqKey : aiGeminiKey}
+                        onChange={e => {
+                          if (aiProvider === 'groq') setAiGroqKey(e.target.value);
+                          else setAiGeminiKey(e.target.value);
+                        }}
+                        placeholder={`Paste custom ${aiProvider === 'groq' ? 'Groq (gsk_...)' : 'Gemini'} key`}
+                        className="w-full px-3 py-1.5 bg-white border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#671725]"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                {/* Actionable Error Banner */}
+                {aiError && (
+                  <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-300 text-rose-900 text-xs flex items-start gap-2.5">
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                    <div className="space-y-1">
+                      <div className="font-bold">Unable to complete generation</div>
+                      <div>{aiError}</div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Generate Button */}
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-purple-100">
+                  <div className="text-[11px] text-stone-500 space-y-0.5">
+                    <div>✓ Formatted with H2/H3 headings, checklist, concierge tip, & FAQs</div>
+                    <div>✓ Automatically weaves 3+ internal links & attaches random ImageKit photo</div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleGenerateAI}
+                    disabled={aiGenerating}
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-2xl text-xs font-black bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all disabled:opacity-50 cursor-pointer shrink-0"
+                  >
+                    {aiGenerating ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Writing Complete Article...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Wand2 className="w-4 h-4" />
+                        <span>Write Complete Article Draft</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Article Title & Overview Card */}
           <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-4">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-2">
-                Article Title (H1)
+              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                Article Title (H1 Headline)
               </label>
               <input
                 type="text"
                 value={title}
                 onChange={e => handleTitleChange(e.target.value)}
-                placeholder="e.g. The Discerning Gentleman’s Guide to Elite Escort Services in Gurgaon"
+                placeholder="e.g. 5-Star Luxury Dining & Escort Companionship in DLF Cyber City"
                 className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-base font-bold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1.5">
-                  URL Slug
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                  Web Address (URL)
                 </label>
                 <div className="flex items-center bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl px-3 py-2 text-xs">
-                  <span className="text-stone-500 font-mono">/blog/</span>
+                  <span className="text-stone-500">/blog/</span>
                   <input
                     type="text"
                     value={slug}
                     onChange={e => setSlug(slugify(e.target.value))}
-                    placeholder="my-new-post"
-                    className="flex-1 bg-transparent text-[#671725] font-bold font-mono focus:outline-none"
+                    placeholder="article-url-slug"
+                    className="flex-1 bg-transparent text-[#671725] font-bold focus:outline-none ml-1"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1.5">
-                  Author
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                  Author Signature
                 </label>
                 <input
                   type="text"
                   value={author}
                   onChange={e => setAuthor(e.target.value)}
                   placeholder="e.g. ALINA VIP Editorial Desk"
-                  className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white"
+                  className="w-full px-3.5 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1.5">
-                Article Excerpt (Summary for Cards & RSS)
+              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                Article Excerpt (Quick Summary for Cards & Social Previews)
               </label>
               <textarea
                 value={excerpt}
                 onChange={e => setExcerpt(e.target.value)}
                 rows={2}
-                placeholder="A compelling 1-2 sentence preview to engage incoming readers..."
-                className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white leading-relaxed"
+                placeholder="A compelling 1-2 sentence preview to engage readers..."
+                className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white leading-relaxed font-sans"
               />
             </div>
           </div>
 
-          {/* Content Editor with Toolbar & Preview Tab */}
+          {/* Editorial Content Canvas with Toolbar & Live Preview Tab */}
           <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-[#EAE5DD]">
-              <div className="flex items-center gap-1.5 bg-[#F4EFE7] p-1 rounded-xl border border-[#E8E2D8]">
+            {/* View Switcher & Word Count */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#EAE5DD]">
+              <div className="flex items-center gap-1.5 bg-[#F4EFE7] p-1 rounded-2xl border border-[#E8E2D8]">
                 <button
                   type="button"
                   onClick={() => setActiveTab('edit')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     activeTab === 'edit'
                       ? 'bg-white text-stone-900 shadow-xs'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
                   <Edit3 className="w-3.5 h-3.5" />
-                  <span>Write / Edit</span>
+                  <span>Visual Writer</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveTab('preview')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     activeTab === 'preview'
                       ? 'bg-white text-stone-900 shadow-xs'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
                   <Eye className="w-3.5 h-3.5" />
-                  <span>Live Preview</span>
+                  <span>Formatted Preview</span>
                 </button>
               </div>
 
-              <div className="text-[11px] text-stone-600 font-medium">
-                {wordCount} words • {readTime}
+              <div className="text-xs text-stone-500 font-semibold flex items-center gap-2">
+                <span>{wordCount} words</span>
+                <span>•</span>
+                <span>{readTime}</span>
               </div>
             </div>
 
-            {/* Quick Formatting Bar */}
+            {/* Editorial Quick Formatting Bar */}
             {activeTab === 'edit' && (
-              <div className="flex flex-wrap items-center gap-1 p-2 bg-[#FAF8F5] rounded-xl border border-[#E2DDD5]">
+              <div className="flex flex-wrap items-center gap-1.5 p-2 bg-[#FAF8F5] rounded-2xl border border-[#E2DDD5]">
                 <button
                   type="button"
                   onClick={() => insertFormatting('## ')}
-                  className="px-2.5 py-1 text-xs font-bold text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
-                  title="Heading 2"
+                  className="px-2.5 py-1.5 text-xs font-extrabold text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
+                  title="Insert Section Heading (H2)"
                 >
-                  H2
+                  H2 Section
                 </button>
                 <button
                   type="button"
                   onClick={() => insertFormatting('### ')}
-                  className="px-2.5 py-1 text-xs font-bold text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
-                  title="Heading 3"
+                  className="px-2.5 py-1.5 text-xs font-bold text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
+                  title="Insert Subheading (H3)"
                 >
-                  H3
+                  H3 Subhead
                 </button>
                 <span className="text-stone-300">|</span>
                 <button
                   type="button"
                   onClick={() => insertFormatting('**', '**')}
-                  className="px-2.5 py-1 text-xs font-bold text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
-                  title="Bold"
+                  className="px-2.5 py-1.5 text-xs font-bold text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
+                  title="Bold Text"
                 >
                   B
                 </button>
                 <button
                   type="button"
                   onClick={() => insertFormatting('*', '*')}
-                  className="px-2.5 py-1 text-xs italic font-serif text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
-                  title="Italic"
+                  className="px-2.5 py-1.5 text-xs italic font-serif text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
+                  title="Italic Text"
                 >
                   I
                 </button>
                 <button
                   type="button"
                   onClick={() => insertFormatting('- ')}
-                  className="p-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
+                  className="flex items-center gap-1 px-2.5 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
                   title="Bullet List"
                 >
                   <List className="w-3.5 h-3.5" />
+                  <span>List</span>
                 </button>
                 <button
                   type="button"
-                  onClick={() => insertFormatting('> ')}
-                  className="p-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-white rounded transition-colors"
-                  title="Blockquote"
+                  onClick={() => insertFormatting('> **Concierge Tip:** ')}
+                  className="flex items-center gap-1 px-2.5 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-white rounded-xl transition-colors"
+                  title="Insert Concierge Highlight Box"
                 >
                   <Quote className="w-3.5 h-3.5" />
+                  <span>Highlight Box</span>
                 </button>
                 <span className="text-stone-300">|</span>
                 <button
                   type="button"
-                  onClick={() => insertFormatting('[Link Text](', ')')}
-                  className="px-2.5 py-1 text-xs font-medium text-emerald-700 hover:bg-emerald-50 rounded transition-colors"
+                  onClick={() => insertFormatting('[Link Title](', ')')}
+                  className="px-2.5 py-1.5 text-xs font-bold text-emerald-700 hover:bg-emerald-50 rounded-xl transition-colors"
                   title="Insert Internal Link"
                 >
-                  + Link
+                  + Add Link
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsAssetModalOpen(true)}
-                  className="flex items-center gap-1 px-2.5 py-1 text-xs font-medium text-[#671725] hover:bg-rose-50 rounded transition-colors"
-                  title="Insert CDN Image"
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-[#671725] bg-rose-50/70 hover:bg-rose-100/70 rounded-xl transition-colors"
+                  title="Choose from Photo Library"
                 >
                   <ImageIcon className="w-3.5 h-3.5" />
-                  <span>Insert Asset</span>
+                  <span>Insert Photo</span>
                 </button>
               </div>
             )}
 
-            {/* Textarea or Markdown Preview */}
+            {/* Editor Canvas (Poppins font, NO font-mono) */}
             {activeTab === 'edit' ? (
               <textarea
                 id="blog-content-area"
                 value={content}
                 onChange={e => setContent(e.target.value)}
-                rows={18}
-                placeholder="Write paragraphs or paste article content here. Separate paragraphs with double enter (blank line)..."
-                className="w-full p-4 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-xs sm:text-sm text-stone-900 font-sans leading-relaxed focus:outline-none focus:border-[#671725] focus:bg-white font-mono"
+                rows={20}
+                placeholder="Write your article here. Separate paragraphs with double enter (blank line). You can also click 'Write Complete Article Draft' above to automatically craft the full post..."
+                className="w-full p-5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-sm sm:text-base text-stone-800 font-sans leading-relaxed focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
               />
             ) : (
-              <div className="p-6 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl min-h-[400px] prose max-w-none text-stone-800">
+              /* Beautiful Formatted Preview */
+              <div className="p-6 sm:p-8 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl min-h-[450px] font-sans text-stone-800 space-y-4">
                 {content.split('\n\n').map((paragraph, idx) => {
                   const trimmed = paragraph.trim();
+                  if (!trimmed) return null;
+
+                  // H2 Heading
                   if (trimmed.startsWith('## ')) {
                     return (
-                      <h2 key={idx} className="text-xl font-extrabold text-stone-900 mt-6 mb-3 border-b border-stone-200 pb-1">
+                      <h2
+                        key={idx}
+                        className="text-xl sm:text-2xl font-black text-stone-900 mt-8 mb-3 pb-2 border-b border-stone-200 tracking-tight"
+                      >
                         {trimmed.replace('## ', '')}
                       </h2>
                     );
                   }
+
+                  // H3 Subhead
                   if (trimmed.startsWith('### ')) {
                     return (
-                      <h3 key={idx} className="text-lg font-bold text-[#671725] mt-4 mb-2">
+                      <h3
+                        key={idx}
+                        className="text-lg sm:text-xl font-bold text-[#671725] mt-6 mb-2"
+                      >
                         {trimmed.replace('### ', '')}
                       </h3>
                     );
                   }
+
+                  // Styled Luxury Callout Quote
                   if (trimmed.startsWith('> ')) {
                     return (
-                      <blockquote key={idx} className="border-l-4 border-[#671725] pl-4 italic text-stone-700 my-4 bg-white p-3 rounded-r-xl shadow-2xs">
+                      <blockquote
+                        key={idx}
+                        className="border-l-4 border-[#671725] bg-[#FDFBF7] p-4 sm:p-5 my-5 rounded-r-2xl shadow-2xs italic text-stone-800 text-sm sm:text-base leading-relaxed"
+                      >
                         {trimmed.replace('> ', '')}
                       </blockquote>
                     );
                   }
+
+                  // Bulleted List
                   if (trimmed.startsWith('- ')) {
                     const items = trimmed.split('\n').filter(Boolean);
                     return (
-                      <ul key={idx} className="list-disc pl-5 space-y-1.5 my-3 text-sm text-stone-700">
-                        {items.map((it, i) => (
-                          <li key={i}>{it.replace(/^-\s*/, '')}</li>
-                        ))}
+                      <ul key={idx} className="list-disc pl-6 space-y-2 my-4 text-sm sm:text-base text-stone-700 leading-relaxed">
+                        {items.map((it, i) => {
+                          const itemText = it.replace(/^-\s*/, '');
+                          // Format bold inside list
+                          const formattedItem = itemText.replace(
+                            /\*\*([^*]+)\*\*/g,
+                            '<strong class="font-bold text-stone-900">$1</strong>'
+                          );
+                          return (
+                            <li
+                              key={i}
+                              dangerouslySetInnerHTML={{ __html: formattedItem }}
+                            />
+                          );
+                        })}
                       </ul>
                     );
                   }
 
-                  // Render markdown links [text](url) inside preview paragraph
-                  const renderedText = trimmed.replace(
+                  // Markdown links & bold text inside paragraphs
+                  let renderedText = trimmed.replace(
                     /\[([^\]]+)\]\(([^)]+)\)/g,
-                    '<a href="$2" class="text-[#671725] font-bold underline underline-offset-2 hover:text-[#881337]">$1</a>'
+                    '<a href="$2" target="_blank" class="text-[#671725] font-bold underline underline-offset-4 hover:text-[#881337]">$1</a>'
+                  );
+                  renderedText = renderedText.replace(
+                    /\*\*([^*]+)\*\*/g,
+                    '<strong class="font-bold text-stone-900">$1</strong>'
                   );
 
                   return (
                     <p
                       key={idx}
-                      className="text-sm leading-relaxed text-stone-700 mb-4"
+                      className="text-sm sm:text-base leading-relaxed text-stone-700 mb-4"
                       dangerouslySetInnerHTML={{ __html: renderedText }}
                     />
                   );
@@ -659,17 +947,17 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
           </div>
         </div>
 
-        {/* Right 1 Column: Tenant Selector, Cover Image, SEO SERP Preview */}
+        {/* Right 1 Column: Publishing Target, Cover Photo, Google Search Preview */}
         <div className="space-y-6">
-          {/* Target Tenant Site */}
-          <div className="p-5 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
-            <label className="block text-xs font-bold uppercase tracking-wider text-stone-600">
-              Target Sister Site
+          {/* Target Website Selector */}
+          <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
+            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+              Publish to Website
             </label>
             <select
               value={selectedSiteId}
               onChange={e => setSelectedSiteId(e.target.value)}
-              className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs font-bold text-stone-900 focus:outline-none focus:border-[#671725]"
+              className="w-full px-3.5 py-3 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-xs sm:text-sm font-bold text-stone-900 focus:outline-none focus:border-[#671725]"
             >
               {sites.map(site => (
                 <option key={site.id} value={site.id}>
@@ -677,122 +965,146 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                 </option>
               ))}
             </select>
-            <div className="text-[11px] text-stone-500 flex items-center gap-1 font-medium">
-              <Globe className="w-3.5 h-3.5 text-[#671725]" />
-              <span>Publishes to: https://{targetSite?.domain}</span>
+            <div className="text-[11px] text-stone-500 flex items-center gap-1.5 font-medium">
+              <Globe className="w-3.5 h-3.5 text-stone-400" />
+              <span>Posts go live immediately on this site upon publishing.</span>
             </div>
           </div>
 
-          {/* Cover Image */}
-          <div className="p-5 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
+          {/* Featured Cover Photo */}
+          <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold uppercase tracking-wider text-stone-600">
-                Cover Image
+              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                Featured Cover Photo
               </label>
               <button
                 type="button"
                 onClick={() => setIsAssetModalOpen(true)}
-                className="text-xs font-bold text-[#671725] hover:text-[#881337] flex items-center gap-1"
+                className="text-xs font-bold text-[#671725] hover:underline"
               >
-                <ImageIcon className="w-3.5 h-3.5" />
-                <span>Select Asset</span>
+                Photo Library
               </button>
             </div>
 
             {coverImage ? (
-              <div className="relative rounded-2xl overflow-hidden border border-[#E2DDD5] bg-stone-100 group shadow-2xs">
+              <div className="relative rounded-2xl overflow-hidden border border-[#E2DDD5] group aspect-video bg-stone-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={coverImage}
-                  alt="Post Cover"
-                  className="w-full aspect-video object-cover"
+                  alt={title || 'Cover image'}
+                  className="w-full h-full object-cover"
                 />
-                <button
-                  type="button"
-                  onClick={() => setIsAssetModalOpen(true)}
-                  className="absolute inset-0 bg-stone-900/60 opacity-0 group-hover:opacity-100 flex items-center justify-center text-xs font-bold text-white transition-opacity"
-                >
-                  Change Cover Image
-                </button>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsAssetModalOpen(true)}
+                    className="px-3 py-1.5 rounded-xl bg-white text-stone-900 text-xs font-bold shadow-md hover:bg-stone-100 transition-colors"
+                  >
+                    Change
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCoverImage(null)}
+                    className="px-3 py-1.5 rounded-xl bg-rose-600 text-white text-xs font-bold shadow-md hover:bg-rose-700 transition-colors"
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             ) : (
-              <div
+              <button
+                type="button"
                 onClick={() => setIsAssetModalOpen(true)}
-                className="aspect-video w-full rounded-2xl border-2 border-dashed border-[#DCD6CD] hover:border-[#671725] bg-[#FAF8F5] flex flex-col items-center justify-center cursor-pointer p-4 text-center transition-colors"
+                className="w-full p-8 border-2 border-dashed border-[#DCD6CC] hover:border-[#671725] rounded-2xl text-center space-y-2 group transition-colors bg-[#FAF8F5]"
               >
-                <ImageIcon className="w-8 h-8 text-stone-400 mb-2" />
-                <span className="text-xs font-bold text-stone-700">Choose from 70 ImageKit Assets</span>
-                <span className="text-[10px] text-stone-500 mt-1">High-res WebP / AVIF CDN images</span>
-              </div>
+                <div className="w-10 h-10 rounded-2xl bg-white text-[#671725] flex items-center justify-center mx-auto shadow-2xs group-hover:scale-105 transition-transform">
+                  <ImageIcon className="w-5 h-5" />
+                </div>
+                <div className="text-xs font-bold text-stone-800">
+                  Select Featured Photo
+                </div>
+                <div className="text-[11px] text-stone-500">
+                  Pick 1 of 70 high-resolution verified assets
+                </div>
+              </button>
             )}
+
+            <input
+              type="text"
+              value={coverImage || ''}
+              onChange={e => setCoverImage(e.target.value)}
+              placeholder="Or paste direct image URL..."
+              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-700 placeholder-stone-400 focus:outline-none focus:border-[#671725]"
+            />
           </div>
 
-          {/* Tags & Categories */}
-          <div className="p-5 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
-            <label className="block text-xs font-bold uppercase tracking-wider text-stone-600">
-              Tags (Comma separated)
+          {/* Tags / Categories */}
+          <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
+            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+              Article Tags (Comma-Separated)
             </label>
             <input
               type="text"
               value={tagsInput}
               onChange={e => setTagsInput(e.target.value)}
-              placeholder="Russian Escorts, Gurgaon Escorts, 5 Star Hotels"
-              className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725]"
+              placeholder="e.g. Russian Escorts, DLF Cyber City, Hotel Outcalls"
+              className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725]"
             />
+            <div className="text-[11px] text-stone-500">
+              Used for related posts and search matching.
+            </div>
           </div>
 
-          {/* SEO & SERP Preview */}
-          <div className="p-5 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-4">
+          {/* Google Search Preview */}
+          <div className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE5DD] shadow-xs space-y-3">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-bold uppercase tracking-wider text-stone-600">
-                SEO Search Appearance
+              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                Google Search Preview
               </label>
-              <span className="text-[10px] bg-rose-50 text-[#671725] px-2 py-0.5 rounded font-mono font-bold border border-rose-200">
-                Google SERP
+              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                SEO Optimized
               </span>
             </div>
 
-            <div>
-              <div className="flex items-center justify-between text-[11px] text-stone-500 mb-1">
-                <span>SEO Meta Title</span>
-                <span className={seoTitle.length > 60 ? 'text-rose-600 font-bold' : 'text-stone-400'}>
-                  {seoTitle.length}/60 chars
-                </span>
+            {/* Google SERP Snippet Box */}
+            <div className="p-4 bg-[#FAF9F6] rounded-2xl border border-stone-200 space-y-1">
+              <div className="text-[11px] text-stone-600 truncate">
+                https://{targetSite?.domain || 'alinavip.in'}/blog/{slug || 'article-slug'}
               </div>
-              <input
-                type="text"
-                value={seoTitle}
-                onChange={e => setSeoTitle(e.target.value)}
-                placeholder={title || 'SEO Title...'}
-                className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725]"
-              />
-            </div>
-
-            <div>
-              <div className="flex items-center justify-between text-[11px] text-stone-500 mb-1">
-                <span>Meta Description</span>
-                <span className={seoDescription.length > 155 ? 'text-rose-600 font-bold' : 'text-stone-400'}>
-                  {seoDescription.length}/155 chars
-                </span>
-              </div>
-              <textarea
-                value={seoDescription}
-                onChange={e => setSeoDescription(e.target.value)}
-                rows={2}
-                placeholder={excerpt || 'Meta Description...'}
-                className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725]"
-              />
-            </div>
-
-            {/* Google SERP Live Simulation */}
-            <div className="p-3.5 rounded-xl bg-white border border-stone-200 space-y-1 shadow-2xs">
-              <div className="text-[11px] text-stone-500 truncate">
-                https://{targetSite?.domain} &rsaquo; blog &rsaquo; {slug || 'article-slug'}
-              </div>
-              <div className="text-sm font-medium text-[#1a0dab] hover:underline cursor-pointer line-clamp-1">
-                {seoTitle || title || 'Article Title Preview | Brand'}
+              <div className="text-sm font-bold text-[#1a0dab] hover:underline cursor-pointer truncate">
+                {seoTitle || title || 'Your Article Title Displays Here'}
               </div>
               <div className="text-xs text-stone-600 line-clamp-2 leading-relaxed">
-                {seoDescription || excerpt || 'Detailed description of this luxury guide will display in Google search results here...'}
+                {seoDescription || excerpt || 'Your meta description will appear here on Google search results...'}
+              </div>
+            </div>
+
+            {/* Editable SEO Overrides */}
+            <div className="space-y-2 pt-2">
+              <div>
+                <label className="block text-[11px] font-bold text-stone-600 mb-1">
+                  Custom Search Title ({seoTitle.length}/60 chars)
+                </label>
+                <input
+                  type="text"
+                  value={seoTitle}
+                  onChange={e => setSeoTitle(e.target.value)}
+                  placeholder="Defaults to Article Title"
+                  className="w-full px-3 py-1.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#671725]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-bold text-stone-600 mb-1">
+                  Custom Meta Description ({seoDescription.length}/155 chars)
+                </label>
+                <textarea
+                  value={seoDescription}
+                  onChange={e => setSeoDescription(e.target.value)}
+                  rows={2}
+                  placeholder="Defaults to Article Excerpt"
+                  className="w-full px-3 py-1.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#671725] leading-relaxed"
+                />
               </div>
             </div>
           </div>
@@ -806,345 +1118,6 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         onSelectImage={url => setCoverImage(url)}
         currentSelectedUrl={coverImage}
       />
-
-      {/* AI Generator Modal Drawer */}
-      {isAiModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-5 overflow-y-auto">
-          <div className="bg-white border border-[#EAE5DD] rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden my-auto animate-in zoom-in-95 duration-200 flex flex-col max-h-[92vh]">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-[#EAE5DD] bg-[#FAF8F5]">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#671725] to-purple-800 text-white flex items-center justify-center shadow-xs">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-base font-black text-stone-900">AI SEO Article Studio</h3>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-800">
-                      Multi-Model
-                    </span>
-                  </div>
-                  <p className="text-xs text-stone-500">
-                    Targeting <strong className="text-stone-800">{targetSite?.name}</strong> ({targetSite?.domain}) • 100% Brand-Grounded
-                  </p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsAiModalOpen(false)}
-                className="w-8 h-8 rounded-xl flex items-center justify-center text-stone-400 hover:text-stone-700 hover:bg-stone-100 text-sm font-bold transition-all"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Modal Body */}
-            <div className="overflow-y-auto p-4 sm:p-6 space-y-5 text-xs">
-              {/* Model Selection Tabs */}
-              <div>
-                <label className="block font-bold text-stone-700 mb-2">
-                  Select AI Generation Engine
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {/* Groq Card */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setAiProvider('groq');
-                      setAiError(null);
-                    }}
-                    className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
-                      aiProvider === 'groq'
-                        ? 'border-purple-600 bg-purple-50/50 shadow-xs'
-                        : 'border-stone-200 hover:border-stone-300 bg-white'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                            aiProvider === 'groq' ? 'bg-purple-600 text-white' : 'bg-stone-100 text-stone-600'
-                          }`}
-                        >
-                          <Zap className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="font-extrabold text-stone-900 text-xs">Groq LPU</div>
-                          <div className="text-[10px] text-stone-500 font-medium">Llama 3.3 70B</div>
-                        </div>
-                      </div>
-                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                        ★ Best for SEO
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-stone-600 leading-snug">
-                      Uncensored escort/concierge keywords, humanized conversational tone, zero robotic cliches.
-                    </p>
-                    <div className="mt-2.5 pt-2 border-t border-stone-200/60 flex items-center justify-between text-[10px]">
-                      <span className="text-stone-500">Speed: ~250 tok/s</span>
-                      {aiGroqKey || serverKeyStatus.hasGroqKey ? (
-                        <span className="text-emerald-600 font-bold flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" /> Key Ready
-                        </span>
-                      ) : (
-                        <span className="text-amber-600 font-bold flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 inline-block" /> Enter Key Below
-                        </span>
-                      )}
-                    </div>
-                  </button>
-
-                  {/* Gemini Card */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setAiProvider('gemini');
-                      setAiError(null);
-                    }}
-                    className={`text-left p-3.5 rounded-2xl border-2 transition-all flex flex-col justify-between ${
-                      aiProvider === 'gemini'
-                        ? 'border-purple-600 bg-purple-50/50 shadow-xs'
-                        : 'border-stone-200 hover:border-stone-300 bg-white'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`w-7 h-7 rounded-lg flex items-center justify-center ${
-                            aiProvider === 'gemini' ? 'bg-purple-600 text-white' : 'bg-stone-100 text-stone-600'
-                          }`}
-                        >
-                          <Cpu className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="font-extrabold text-stone-900 text-xs">Google Gemini</div>
-                          <div className="text-[10px] text-stone-500 font-medium">3.5 Flash Model</div>
-                        </div>
-                      </div>
-                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-800">
-                        Server Ready
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-stone-600 leading-snug">
-                      Deep Google knowledge graph & Indian NCR local landmark intelligence.
-                    </p>
-                    <div className="mt-2.5 pt-2 border-t border-stone-200/60 flex items-center justify-between text-[10px]">
-                      <span className="text-stone-500">Auto Fallback</span>
-                      <span className="text-emerald-600 font-bold flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" /> Built-in Active
-                      </span>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              {/* Contextual API Key Box */}
-              {aiProvider === 'groq' ? (
-                <div className="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-200 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 font-bold text-amber-900 text-xs">
-                      <Key className="w-3.5 h-3.5 text-amber-700" />
-                      <span>Groq API Key (gsk_...)</span>
-                    </div>
-                    {serverKeyStatus.hasGroqKey && (
-                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                        Server Key Configured
-                      </span>
-                    )}
-                  </div>
-                  <div className="relative">
-                    <input
-                      type={showKey ? 'text' : 'password'}
-                      value={aiGroqKey}
-                      onChange={e => setAiGroqKey(e.target.value)}
-                      placeholder={
-                        serverKeyStatus.hasGroqKey
-                          ? 'Leave blank to use server GROQ_API_KEY or paste custom key'
-                          : 'Paste your Groq key (gsk_...)'
-                      }
-                      className="w-full pl-3 pr-16 py-2 bg-white border border-amber-300 rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowKey(!showKey)}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-1 text-[10px] font-bold text-stone-500 hover:text-stone-800"
-                    >
-                      {showKey ? 'Hide' : 'Show'}
-                    </button>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px] text-amber-800 pt-0.5">
-                    <label className="flex items-center gap-1.5 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={rememberKeys}
-                        onChange={e => setRememberKeys(e.target.checked)}
-                        className="rounded text-purple-600 focus:ring-purple-500"
-                      />
-                      <span>Remember key on this browser</span>
-                    </label>
-                    <span className="text-stone-500 text-[10px]">Saved in localStorage</span>
-                  </div>
-                </div>
-              ) : (
-                <div className="p-3.5 rounded-2xl bg-blue-50/60 border border-blue-200 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 font-bold text-blue-900 text-xs">
-                      <ShieldCheck className="w-3.5 h-3.5 text-blue-700" />
-                      <span>Google Gemini Authentication</span>
-                    </div>
-                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
-                      Ready in .env.local
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-blue-800">
-                    Pre-configured with verified Google Gemini key. Leave blank to use server default or paste custom key to override.
-                  </p>
-                  <div className="relative">
-                    <input
-                      type={showKey ? 'text' : 'password'}
-                      value={aiGeminiKey}
-                      onChange={e => setAiGeminiKey(e.target.value)}
-                      placeholder="Leave blank to use pre-configured server key"
-                      className="w-full pl-3 pr-16 py-2 bg-white border border-blue-200 rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowKey(!showKey)}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-1 text-[10px] font-bold text-stone-500 hover:text-stone-800"
-                    >
-                      {showKey ? 'Hide' : 'Show'}
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Topic Input */}
-              <div>
-                <label className="block font-bold text-stone-700 mb-1">
-                  Article Topic / Concept <span className="text-rose-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  value={aiTopic}
-                  onChange={e => setAiTopic(e.target.value)}
-                  placeholder="e.g. Slavic Elegance: Why Russian Escorts in Gurgaon Remain the Gold Standard"
-                  className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                />
-              </div>
-
-              {/* Keyword & Word Count */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block font-bold text-stone-700 mb-1">
-                    Primary SEO Focus Keyword <span className="text-rose-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={aiFocusKeyword}
-                    onChange={e => setAiFocusKeyword(e.target.value)}
-                    placeholder="e.g. Russian Escorts Gurgaon"
-                    className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-bold text-stone-700 mb-1">
-                    Target Word Count
-                  </label>
-                  <select
-                    value={aiWordCount}
-                    onChange={e => setAiWordCount(Number(e.target.value))}
-                    className="w-full px-3 py-2.5 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-purple-600 font-medium"
-                  >
-                    <option value={800}>800 words (Standard Article)</option>
-                    <option value={1200}>1,200 words (SEO Deep Guide - Recommended)</option>
-                    <option value={1600}>1,600 words (Ultimate Pillar Authority)</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Secondary Keywords */}
-              <div>
-                <label className="block font-bold text-stone-700 mb-1">
-                  Secondary LSI Keywords (optional)
-                </label>
-                <input
-                  type="text"
-                  value={aiSecondaryKeywords}
-                  onChange={e => setAiSecondaryKeywords(e.target.value)}
-                  placeholder="e.g. 5 star hotel outcalls, DLF Cyber City, verified profiles, zero advance"
-                  className="w-full px-3 py-2 bg-[#FAF8F5] border border-[#E2DDD5] rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-purple-600"
-                />
-              </div>
-
-              {/* Guarantees Box */}
-              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/80 text-[11px] text-stone-600 space-y-1">
-                <div className="font-bold text-stone-800 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                  <span>Guaranteed Editorial Standards:</span>
-                </div>
-                <ul className="list-disc list-inside space-y-0.5 text-stone-600 pl-1">
-                  <li>
-                    <strong>100% Brand-Loyal:</strong> Exclusively promotes {targetSite?.name} ({targetSite?.domain}), zero competitor mentions.
-                  </li>
-                  <li>
-                    <strong>Spaced Internal Links:</strong> Automatically weaves 3+ natural links across intro, middle, and end.
-                  </li>
-                  <li>
-                    <strong>Random Unique Image:</strong> Automatically picks 1 of 70 verified ImageKit master CDN assets.
-                  </li>
-                  <li>
-                    <strong>Rich Formatting:</strong> Uses H2/H3 headings, safety checklist, styled Concierge Tip, and FAQs.
-                  </li>
-                </ul>
-              </div>
-
-              {/* Visible Actionable Error Banner (No Silent Fallback) */}
-              {aiError && (
-                <div className="p-3.5 rounded-2xl bg-rose-50 border border-rose-300 text-rose-800 space-y-1 animate-in fade-in">
-                  <div className="flex items-center gap-2 font-bold text-xs text-rose-900">
-                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
-                    <span>Generation Error Encountered</span>
-                  </div>
-                  <p className="text-xs leading-relaxed text-rose-800">{aiError}</p>
-                  <div className="text-[11px] text-rose-700 pt-1 border-t border-rose-200/70">
-                    Tip: If using Groq, confirm your API key starts with <code className="bg-rose-100 px-1 py-0.5 rounded font-mono">gsk_...</code>. You can also switch to Gemini to generate immediately.
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Modal Footer */}
-            <div className="flex items-center justify-between p-4 sm:p-5 border-t border-[#EAE5DD] bg-[#FAF8F5]">
-              <button
-                type="button"
-                onClick={() => setIsAiModalOpen(false)}
-                className="px-4 py-2 rounded-xl text-xs font-bold text-stone-600 hover:text-stone-900 hover:bg-stone-100 transition-all"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={handleGenerateAI}
-                disabled={aiGenerating}
-                className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white shadow-md disabled:opacity-50 transition-all cursor-pointer"
-              >
-                {aiGenerating ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Writing Article via {aiProvider === 'groq' ? 'Groq LPU' : 'Gemini'}...</span>
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-4 h-4" />
-                    <span>Generate with {aiProvider === 'groq' ? 'Groq Llama 3.3' : 'Gemini 3.5'}</span>
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
