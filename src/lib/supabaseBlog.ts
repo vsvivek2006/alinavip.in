@@ -9,12 +9,24 @@ import { cache } from 'react';
 import { blogPosts as fallbackPosts, BlogPost } from '@/data/blogs';
 import { getAssetUrl } from '@/lib/assets';
 import { getLocalPostBySlug, getLocalPosts } from '@/lib/admin/localPostsStore';
-import type { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
-const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-// alinavip.in's own site_id — filters posts to this tenant only
-const SITE_ID = '4635a82b-3613-42dc-9bd0-f0ba0745d934';
+export interface BlogPostRecord {
+  id: string;
+  site_id: string;
+  slug: string;
+  title: string;
+  excerpt: string | null;
+  content: unknown;
+  cover_image: string | null;
+  author: string | null;
+  tags: string[] | null;
+  published_at?: string | null;
+  status?: string;
+}
+
+const SUPABASE_URL = (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pmhzuqaczgctmzjpslpg.supabase.co').replace(/\/+$/, '');
+const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtaHp1cWFjemdjdG16anBzbHBnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk2NDIwMjMsImV4cCI6MjEwNTIxODAyM30.OAKCM-PVu5McvV2jyus6RdwgErZpWkbTSwx2bSncP1M';
+const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || '4635a82b-3613-42dc-9bd0-f0ba0745d934';
 
 // High-speed In-Memory TTL Cache
 interface CacheEntry<T> {
@@ -26,10 +38,6 @@ let postsListCache: CacheEntry<BlogPost[]> | null = null;
 const postBySlugCache = new Map<string, CacheEntry<BlogPost | null>>();
 const CACHE_TTL_MS = 60 * 1000; // 60 seconds memory TTL
 
-/**
- * On-demand cache invalidator
- * Called on post create, update, delete, or revalidate webhook
- */
 export function invalidateBlogCache(slug?: string): void {
   postsListCache = null;
   if (slug) {
@@ -76,40 +84,32 @@ function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
   }
 
   const cleanContent = contentParagraphs.map(p => purgeCompanionWords(p));
-  const tagList = (row.tags || []).map(t => purgeCompanionWords(t));
+  const tagList = (row.tags || []).map((t: string) => purgeCompanionWords(t));
   const primaryCategory = tagList.length > 0 ? tagList[0] : 'VIP Escorts';
 
   return {
     slug: row.slug,
-    title: purgeCompanionWords(row.title),
+    title: purgeCompanionWords(row.title || 'Elite Escort Service Guide'),
     category: primaryCategory,
     excerpt: purgeCompanionWords(row.excerpt || ''),
     date: row.published_at ? row.published_at.split('T')[0] : '2026-01-01',
     readTime: `${Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))} min read`,
     image: getAssetUrl(row.cover_image || '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'),
-    author: row.author || 'ALINA VIP India',
+    author: row.author || 'VIP Editorial Desk',
     tags: tagList,
     content: cleanContent,
     views: '3.5k',
   };
 }
 
-/**
- * Fetch all published posts with:
- * 1. React cache() memoization per render pass
- * 2. 60-second in-memory TTL caching
- * 3. Local persistent store fallback
- * 4. Supabase REST query
- */
 export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
   const now = Date.now();
   if (postsListCache && now - postsListCache.timestamp < CACHE_TTL_MS) {
     return postsListCache.data;
   }
 
-  // Filter local posts strictly to this site only
   const localList = getLocalPosts()
-    .filter(p => p.site_id === SITE_ID)
+    .filter(p => !p.site_id || p.site_id === SITE_ID)
     .map(mapRowToBlogPost);
 
   if (!SUPABASE_URL || !ANON_KEY) {
@@ -132,7 +132,7 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
           apikey: ANON_KEY,
           Authorization: `Bearer ${ANON_KEY}`,
         },
-        signal: AbortSignal.timeout(3000),
+        signal: AbortSignal.timeout(8000),
       }
     );
 
@@ -146,7 +146,6 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
         localList.forEach(p => map.set(p.slug, p));
         const result = Array.from(map.values());
 
-        // Warm up both list and individual slug caches
         postsListCache = { data: result, timestamp: now };
         result.forEach(post => {
           postBySlugCache.set(post.slug.toLowerCase(), { data: post, timestamp: now });
@@ -171,16 +170,9 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
   return fallbackResult;
 });
 
-/**
- * Fetch a single post by slug with:
- * 1. React cache() memoization
- * 2. 60-second in-memory TTL caching
- * 3. Local persistent store (instant 0ms)
- * 4. Supabase REST query
- * 5. Fallback catalog
- */
 export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null> => {
-  const cleanSlug = slug.toLowerCase().trim();
+  if (!slug) return null;
+  const cleanSlug = decodeURIComponent(slug).toLowerCase().trim().replace(/^\/+|\/+$/g, '');
   const now = Date.now();
 
   // 1. Check in-memory TTL cache
@@ -189,43 +181,51 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
     return cached.data;
   }
 
-  // 2. Check local persistent store first — must belong strictly to this site
+  // 2. Check local persistent store first (instant, works offline, zero network delay)
   const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost && localPost.site_id === SITE_ID) {
+  if (localPost && (localPost.site_id === SITE_ID || !localPost.site_id)) {
     const post = mapRowToBlogPost(localPost);
     postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
     return post;
   }
 
-  // 3. Query Supabase
+  // 3. Query Supabase with retry and resilient 8s timeout
   if (SUPABASE_URL && ANON_KEY) {
-    try {
-      const postRes = await fetch(
-        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&site_id=eq.${encodeURIComponent(SITE_ID)}&select=*`,
-        {
-          headers: {
-            apikey: ANON_KEY,
-            Authorization: `Bearer ${ANON_KEY}`,
-          },
-          signal: AbortSignal.timeout(3000),
-        }
-      );
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const postRes = await fetch(
+          `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&site_id=eq.${encodeURIComponent(SITE_ID)}&select=*`,
+          {
+            headers: {
+              apikey: ANON_KEY,
+              Authorization: `Bearer ${ANON_KEY}`,
+            },
+            signal: AbortSignal.timeout(8000),
+          }
+        );
 
-      if (postRes.ok) {
-        const rows: SupabasePostRow[] = await postRes.json();
-        if (rows && rows.length > 0) {
-          const post = mapRowToBlogPost(rows[0]);
-          postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
-          return post;
+        if (postRes.ok) {
+          const rows: SupabasePostRow[] = await postRes.json();
+          if (rows && rows.length > 0) {
+            const post = mapRowToBlogPost(rows[0]);
+            postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
+            return post;
+          } else {
+            // Definitively not in Supabase for this tenant
+            break;
+          }
         }
+      } catch (err) {
+        console.warn(`[supabaseBlog] Attempt ${attempt} fetch error for slug "${cleanSlug}":`, err);
+        if (attempt < 2) await new Promise(r => setTimeout(r, 250));
       }
-    } catch {
-      // Ignore network timeout and fall back to local data
     }
   }
 
   // 4. Check hardcoded fallback catalog
   const fallback = fallbackPosts.find(p => p.slug.toLowerCase() === cleanSlug) || null;
-  postBySlugCache.set(cleanSlug, { data: fallback, timestamp: now });
+  if (fallback) {
+    postBySlugCache.set(cleanSlug, { data: fallback, timestamp: now });
+  }
   return fallback;
 });

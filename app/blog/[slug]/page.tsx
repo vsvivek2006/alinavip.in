@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   const title = `${post.title} | ${siteConfig.name}`;
-  const description = post.excerpt;
+  const description = post.excerpt || `${post.title} - ${siteConfig.name}`;
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const ogImageUrl = post.image
     ? post.image.startsWith('http')
@@ -52,12 +52,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       : `${siteConfig.url}${post.image}`
     : `${siteConfig.url}/og-image.jpg`;
 
+  const category = post.category || 'VIP Escorts';
+
   return {
     title,
     keywords: [
       post.title.toLowerCase(),
-      post.category.toLowerCase(),
-      `${post.category.toLowerCase()} guide`,
+      category.toLowerCase(),
+      `${category.toLowerCase()} guide`,
       ...(siteConfig.keywords || []).slice(0, 10),
     ],
     description,
@@ -114,12 +116,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const allPosts = await getPublishedBlogPosts();
   const otherPosts = allPosts.filter((p) => p.slug !== post.slug);
-  const validIndex = Math.max(0, allPosts.findIndex((p) => p.slug === post.slug));
-  const displayRelated = otherPosts.length > 0 ? [
-    otherPosts[validIndex % otherPosts.length],
-    otherPosts[(validIndex + 1) % otherPosts.length],
-    otherPosts[(validIndex + 2) % otherPosts.length],
-  ].filter(Boolean) : [];
+
+  // Safe deduplication of related posts
+  const seenSlugs = new Set<string>();
+  const displayRelated: typeof allPosts = [];
+  for (const p of otherPosts) {
+    if (!seenSlugs.has(p.slug)) {
+      seenSlugs.add(p.slug);
+      displayRelated.push(p);
+      if (displayRelated.length >= 3) break;
+    }
+  }
+
+  // Safe date parsing to avoid hydration mismatch
+  let formattedDate = 'Recent Guide';
+  try {
+    const d = new Date(post.date);
+    if (!isNaN(d.getTime())) {
+      formattedDate = d.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+      });
+    }
+  } catch {
+    formattedDate = 'Recent Guide';
+  }
 
   return (
     <>
@@ -159,11 +181,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 pb-6 border-b border-gray-100">
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-primary-wine" />
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
+                {formattedDate}
               </span>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary-wine" />
@@ -171,7 +189,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
               <span className="flex items-center gap-2">
                 <User className="w-4 h-4 text-primary-wine" />
-                {post.author}
+                {post.author || `${siteConfig.name} Editorial Team`}
               </span>
             </div>
           </div>
@@ -193,9 +211,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Article Content / Paragraphs */}
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-            <p className="text-xl font-sans font-bold text-gray-900 leading-relaxed italic border-l-4 border-primary-wine pl-6 my-8">
-              {post.excerpt}
-            </p>
+            {post.excerpt && (
+              <p className="text-xl font-sans font-bold text-gray-900 leading-relaxed italic border-l-4 border-primary-wine pl-6 my-8">
+                {post.excerpt}
+              </p>
+            )}
 
             <ArticleContentRenderer content={post.content} />
           </div>
@@ -205,7 +225,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center gap-2 flex-wrap">
               <Tag className="w-4 h-4 text-primary-wine" />
               <span className="text-sm font-semibold text-gray-700">Tags:</span>
-              {['Escort Service', `${siteConfig.city} Call Girls`, post.category, 'VIP Lifestyle'].map((tag) => (
+              {(post.tags && post.tags.length > 0 ? post.tags : ['Escort Service', `${siteConfig.city} Call Girls`, post.category, 'VIP Lifestyle']).map((tag) => (
                 <span
                   key={tag}
                   className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-medium"

@@ -80,7 +80,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/blog/gurgaone-escort-service', destination: '/blog/best-escort-service-gurgaon-guide', permanent: true },
       { source: '/blog/gurgaon-escort-service', destination: '/blog/best-escort-service-gurgaon-guide', permanent: true },
       { source: '/call-girls', destination: '/services', permanent: true },
       { source: '/russian-escorts', destination: '/category/russian-call-girls', permanent: true },
