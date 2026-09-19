@@ -1,5 +1,17 @@
 export const siteConfig = {
   name: 'ALINA VIP',
+  city: 'Gurgaon',
+  structuredAddress: {
+      "streetAddress": "DLF Phase 3, Golf Course Road",
+      "addressLocality": "Gurgaon",
+      "addressRegion": "Haryana",
+      "postalCode": "122002",
+      "addressCountry": "IN"
+  },
+  geo: {
+      "latitude": 28.4908,
+      "longitude": 77.0947
+  },
   phone: '+91-9996265679',
   phoneDisplay: '+91 99962 65679',
   whatsapp: '919996265679',

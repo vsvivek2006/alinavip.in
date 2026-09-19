@@ -13,9 +13,8 @@ import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 export const revalidate = 86400; // 24h ISR, purged on-demand by /api/revalidate webhook
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
-  description:
-    'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+  title: `${siteConfig.city} Escorts & Call Girls Blog | ${siteConfig.name}`,
+  description: `Read the official ${siteConfig.name} blog for insights on VIP call girls, Russian escorts in ${siteConfig.city}, five-star hotel guides, and escort etiquette.`,
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'blog guides, nightlife tips, 5 star hotel dining',
@@ -76,10 +75,10 @@ export default async function BlogPage() {
             ★ Insights &amp; Resources
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans font-bold tracking-wide">
-            Gurgaon Call Girls &amp; <span className="text-gradient-gold">Escort Girls Journal</span>
+            {siteConfig.city} Call Girls &amp; <span className="text-gradient-gold">Escort Girls Journal</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Authoritative insights on luxury escort services in Gurgaon, five-star hotel outcall etiquette, nightlife recommendations, and verified call girls booking advice from ALINA VIP India.
+            Authoritative insights on luxury escort services in {siteConfig.city}, five-star hotel outcall etiquette, and verified call girls booking advice from {siteConfig.name}.
           </p>
           <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto mt-8" />
         </div>
@@ -194,11 +193,11 @@ export default async function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="space-y-6 bg-white p-8 md:p-12 rounded-2xl border border-gray-200/60 shadow-sm">
             <h2 className="text-3xl font-bold text-[#111827] mb-6 font-sans font-bold">
-              About the ALINA VIP Editorial Desk
+              About the {siteConfig.name} Editorial Desk
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                The <strong>ALINA VIP</strong> editorial team publishes practical guides on navigating luxury escort services, premium hospitality, and executive nightlife across Gurgaon and the greater NCR region.
+                The <strong>{siteConfig.name}</strong> editorial team publishes practical guides on navigating luxury escort services, premium hospitality, and executive nightlife across Gurgaon and the greater NCR region.
               </p>
               <p>
                 From tips on choosing the right escort for high-profile business dinners to comprehensive overviews of five-star suites along Golf Course Road and Cyber City, our articles help clients make informed, discreet decisions.

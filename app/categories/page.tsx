@@ -20,7 +20,7 @@ import exactManifest from '@/data/exact_manifest.json';
 const catManifest = exactManifest.categories;
 
 export const metadata: Metadata = {
-  title: 'Now You Can Meet Different Categories of Escorts | ALINA VIP',
+  title: `Now You Can Meet Different Categories of Escorts | ${siteConfig.name}`,
   description:
     'Explore diverse categories of escorts in Gurgaon: Russian, College, Model, High Profile, Housewife, Air Hostess, and Independent call girls. 100% verified with cash on delivery.',
   alternates: {

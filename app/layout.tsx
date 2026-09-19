@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} Escort Service in Gurgaon Gurugram`,
+        alt: `${siteConfig.name} Escort Service in ${siteConfig.city}`,
       },
     ],
   },
@@ -96,16 +96,11 @@ const jsonLd = {
   priceRange: '₹₹₹₹',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'DLF Phase 3, Golf Course Road',
-    addressLocality: 'Gurgaon',
-    addressRegion: 'Haryana',
-    postalCode: '122002',
-    addressCountry: 'IN',
+    ...siteConfig.structuredAddress,
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 28.4908,
-    longitude: 77.0947,
+    ...siteConfig.geo,
   },
   openingHoursSpecification: [
     {

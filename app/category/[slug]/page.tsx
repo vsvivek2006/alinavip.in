@@ -77,8 +77,8 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     notFound();
   }
 
-  const title = `${category.h1Title || `${category.name} in Gurgaon`} | VIP Escorts & Call Girls | ALINA VIP`;
-  const description = `${category.shortDescription} ALINA VIP India offers verified ${category.name.toLowerCase()} in Gurgaon & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
+  const title = `${category.h1Title || `${category.name} in ${siteConfig.city}`} | VIP Escorts & Call Girls | ${siteConfig.name}`;
+  const description = `${category.shortDescription} ${siteConfig.name} offers verified ${category.name.toLowerCase()} in ${siteConfig.city} & Delhi NCR. 100% confidential 5-star hotel outcalls within 20-30 mins.`;
   const canonicalUrl = `${siteConfig.url}/category/${category.slug}`;
   const imageSrc = getAssetUrl(categoryImageMap[category.slug] || '/images/categories/default.webp');
   const ogImageUrl = imageSrc.startsWith('http') ? imageSrc : `${siteConfig.url}${imageSrc}`;
@@ -128,7 +128,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const faqs = category.faqs && category.faqs.length > 0 ? category.faqs : [
     {
-      question: `How do I book a ${category.name.toLowerCase()} in Gurgaon?`,
+      question: `How do I book a ${category.name.toLowerCase()} in ${siteConfig.city}?`,
       answer: `Booking is simple and 100% confidential. Call our private booking concierge at ${siteConfig.phone} or message us via WhatsApp with your preferred timing, location, and call girl choice. We confirm availability and dispatch within minutes.`,
     },
     {
@@ -136,7 +136,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       answer: 'Yes. Every call girl is photographed and verified in person by our management team. We guarantee that the call girl who arrives at your suite matches the profile you selected.',
     },
     {
-      question: 'What is the typical outcall arrival time in Gurgaon?',
+      question: 'What is the typical outcall arrival time in ${siteConfig.city}?',
       answer: 'Call Girls typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
     },
     {
@@ -191,7 +191,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 ) : (
                   <>
                     {category.name} <br />
-                    <span className="text-gradient-gold">in Gurgaon</span>
+                    <span className="text-gradient-gold">in {siteConfig.city}</span>
                   </>
                 )}
               </h1>
@@ -223,8 +223,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50 bg-neutral-900 group">
               <Image
                 src={imageSrc}
-                alt={`${category.name} - Escort Service in Gurgaon | Call Girls`}
-                title={`${category.name} - Escort Service in Gurgaon | Call Girls`}
+                alt={`${category.name} - Escort Service in ${siteConfig.city} | Call Girls`}
+                title={`${category.name} - Escort Service in ${siteConfig.city} | Call Girls`}
                 fill
                 priority
                 sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 584px"
@@ -254,9 +254,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <>
                       <p>{category.description}</p>
                       <p>
-                        At <strong>ALINA VIP</strong>, we take pride in offering the finest{' '}
+                        At <strong>{siteConfig.name}</strong>, we take pride in offering the finest{' '}
                         <Link href="/services" className="text-primary-wine hover:underline font-medium">
-                          escort service in Gurgaon
+                          escort service in {siteConfig.city}
                         </Link>
                         . Each {category.name.toLowerCase()} has been carefully selected through our rigorous verification process, which includes identity verification, photo authentication, and background screening. This ensures that every{' '}
                         <Link href="/services" className="text-primary-wine hover:underline font-medium">
@@ -331,7 +331,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       <div className="flex items-start gap-3 p-4 bg-[#FFFDF6] rounded-2xl border border-gray-200/50">
                         <MapPin className="w-5 h-5 text-primary-wine flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-bold text-[#111827] text-sm">All Gurgaon Areas</h4>
+                          <h4 className="font-bold text-[#111827] text-sm">All {siteConfig.city} Areas</h4>
                           <p className="text-gray-600 text-xs mt-1">
                             <Link href="/locations/cyber-city" className="text-primary-wine hover:underline font-medium">Cyber City</Link>,{' '}
                             <Link href="/locations/mg-road" className="text-primary-wine hover:underline font-medium">MG Road</Link>,{' '}
@@ -350,7 +350,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   Selection Standards &amp; Quality Assurance for {category.name}
                 </h3>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                  At <strong>ALINA VIP</strong>, our {category.name.toLowerCase()} represent the highest standard of elegance, poise, and VIP escort service. We understand that discerning gentlemen and corporate executives require absolute assurance when making a reservation. That is why every profile in this collection undergoes an in-person vetting process to authenticate credentials, appearance, and social etiquette.
+                  At <strong>{siteConfig.name}</strong>, our {category.name.toLowerCase()} represent the highest standard of elegance, poise, and VIP escort service. We understand that discerning gentlemen and corporate executives require absolute assurance when making a reservation. That is why every profile in this collection undergoes an in-person vetting process to authenticate credentials, appearance, and social etiquette.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                   <div className="p-4 bg-[#FFFDF6] rounded-xl border border-gray-200/40">
@@ -410,13 +410,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {/* Discreet Outcall & Safety Protocols */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border border-gray-200/60 space-y-4">
                 <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">
-                  Discreet Outcall Coordination Across Gurgaon
+                  Discreet Outcall Coordination Across {siteConfig.city}
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   We specialize in prompt, confidential outcall dispatch to all luxury destinations across Gurgaon, including DLF Phase 1–5, <Link href="/locations/cyber-city" className="text-primary-wine hover:underline font-medium">Cyber City</Link>, <Link href="/locations/golf-course-road" className="text-primary-wine hover:underline font-medium">Golf Course Road</Link>, Sohna Road, MG Road, and <Link href="/locations/aerocity" className="text-primary-wine hover:underline font-medium">Aerocity</Link>. Our verified escort girls arrive punctually via private executive transport, blending seamlessly into high-end hotel lobbies and private residential complexes.
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  To ensure complete trust, ALINA VIP adheres to a strict zero-advance policy: you settle the agreed call girl or escort fee directly in person upon arrival. Your personal details, contact number, and booking records are never shared, logged, or retained, guaranteeing complete peace of mind.
+                  To ensure complete trust, {siteConfig.name} adheres to a strict zero-advance policy: you settle the agreed call girl or escort fee directly in person upon arrival. Your personal details, contact number, and booking records are never shared, logged, or retained, guaranteeing complete peace of mind.
                 </p>
               </div>
 
@@ -440,10 +440,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 </div>
               </div>
 
-              {/* Areas We Serve in Gurgaon */}
+              {/* Areas We Serve in {siteConfig.city} */}
               <div>
                 <h3 className="text-2xl font-bold text-[#111827] mb-4 font-sans font-bold">
-                  Areas We Serve in Gurgaon
+                  Areas We Serve in {siteConfig.city}
                 </h3>
                 <div className="flex flex-wrap gap-2.5">
                   <Link
@@ -514,7 +514,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 </div>
                 <h3 className="text-xl font-bold text-[#111827] font-sans font-bold">{category.name}</h3>
                 <p className="text-gray-600 text-xs mt-2">
-                  Verified premium escorts in Gurgaon
+                  Verified premium escorts in {siteConfig.city}
                 </p>
               </div>
 

@@ -58,7 +58,7 @@ export default async function HomePage() {
     url: siteConfig.url,
     phone: siteConfig.phone,
     email: siteConfig.email,
-    areaServed: ['Gurgaon', 'Gurugram', 'Delhi NCR', 'Aerocity', 'DLF Phase 1-5', 'Cyber City', 'Golf Course Road'],
+    areaServed: [siteConfig.city, 'Delhi NCR'],
     knowsAbout: [
       siteConfig.tagline,
       'VIP Call Girls',
@@ -66,11 +66,7 @@ export default async function HomePage() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'DLF Phase 3, Golf Course Road',
-      addressLocality: 'Gurgaon',
-      addressRegion: 'Haryana',
-      postalCode: '122002',
-      addressCountry: 'IN',
+      ...siteConfig.structuredAddress,
     },
   };
 
@@ -90,36 +86,27 @@ export default async function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: siteConfig.name,
-    alternateName: 'ALINA VIP Escort Service in Gurgaon Gurugram',
-    description: 'Premier VIP escort service in Gurgaon (Gurugram) providing discreet 5-star hotel outcalls with verified call girls.',
+    alternateName: `${siteConfig.name} Escort Service in ${siteConfig.city}`,
+    description: siteConfig.description,
     image: `${siteConfig.url}/og-image.jpg`,
     url: siteConfig.url,
     telephone: siteConfig.phone,
-    priceRange: '$$$',
+    priceRange: '₹₹₹₹',
     currenciesAccepted: 'INR',
     paymentAccepted: 'Cash, Cash on Delivery',
     areaServed: [
       {
         '@type': 'City',
-        name: 'Gurgaon',
-      },
-      {
-        '@type': 'City',
-        name: 'Gurugram',
+        name: siteConfig.city,
       },
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'DLF Phase 3, Golf Course Road',
-      addressLocality: 'Gurgaon (Gurugram)',
-      addressRegion: 'Haryana',
-      postalCode: '122002',
-      addressCountry: 'IN',
+      ...siteConfig.structuredAddress,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 28.4595,
-      longitude: 77.0266,
+      ...siteConfig.geo,
     },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',

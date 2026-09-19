@@ -24,9 +24,32 @@ console.log(`[SITEMAP GENERATOR] Base URL: ${baseUrl}`);
 const catContent = fs.readFileSync(path.join(rootDir, 'src/data/categories.ts'), 'utf8');
 const catSlugs = [...catContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
 
-// 3. Read Blogs
-const blogContent = fs.readFileSync(path.join(rootDir, 'src/data/blogs.ts'), 'utf8');
-const blogSlugs = [...blogContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
+// 3. Read Blogs from local_posts.json (tenant-isolated) or fallback blogs.ts
+let blogSlugs = [];
+try {
+  const localPostsPath = path.join(rootDir, 'src/data/local_posts.json');
+  if (fs.existsSync(localPostsPath)) {
+    const localPosts = JSON.parse(fs.readFileSync(localPostsPath, 'utf8'));
+    let siteId = null;
+    const sbPath = path.join(rootDir, 'src/lib/supabaseBlog.ts');
+    if (fs.existsSync(sbPath)) {
+      const sbContent = fs.readFileSync(sbPath, 'utf8');
+      const m = sbContent.match(/SITE_ID\s*=\s*(?:process\.env\.NEXT_PUBLIC_SITE_ID\s*\|\|\s*)?'([^']+)'/);
+      if (m) siteId = m[1];
+    }
+    const filtered = siteId ? localPosts.filter(p => p.site_id === siteId && p.status !== 'draft') : localPosts;
+    blogSlugs = filtered.map(p => p.slug);
+  }
+} catch (e) {
+  console.warn('Could not read local_posts.json, falling back to blogs.ts:', e.message);
+}
+
+if (blogSlugs.length === 0) {
+  try {
+    const blogContent = fs.readFileSync(path.join(rootDir, 'src/data/blogs.ts'), 'utf8');
+    blogSlugs = [...blogContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
+  } catch (e) {}
+}
 
 // 4. Update and Read Location Manifest
 const manifestPath = path.join(rootDir, 'src/data/final_location_manifest.json');

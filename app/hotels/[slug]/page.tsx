@@ -49,7 +49,7 @@ export async function generateMetadata({
 
   if (!page) {
     return {
-      title: 'Luxury Hotel Escort Service in Gurgaon | ALINA VIP',
+      title: `Luxury Hotel Escort Service in ${siteConfig.city} | ${siteConfig.name}`,
     };
   }
 
@@ -105,7 +105,7 @@ export default async function HotelSlugPage({
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-3xl leading-relaxed">
-            20-30 minute discreet hotel room doorstep delivery for guests staying at {cleanHotelName} and surrounding luxury properties in Gurgaon.
+            20-30 minute discreet hotel room doorstep delivery for guests staying at {cleanHotelName} and surrounding luxury properties in {siteConfig.city}.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">

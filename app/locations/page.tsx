@@ -16,7 +16,7 @@ import { isLocationRedirect } from '@/data/locationManifest';
 import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
-  title: 'Escort Service Locations in Gurgaon & Delhi NCR | 108 Verified Sectors | ALINA VIP',
+  title: `Escort Service Locations in ${siteConfig.city} & Delhi NCR | Verified Sectors | ${siteConfig.name}`,
   description:
     'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
   keywords: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/locations'),
   },
   openGraph: {
-    title: 'Escort Service Locations in Gurgaon & Delhi NCR | ALINA VIP',
+    title: `Escort Service Locations in ${siteConfig.city} & Delhi NCR | ${siteConfig.name}`,
     description:
       'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
     url: 'https://alinavip.in/locations',
@@ -203,7 +203,7 @@ export default function LocationsPage() {
                 Five-Star Hotel Outcalls in Gurgaon &amp; Aerocity
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                ALINA VIP specializes in seamless outcall appointments to elite hospitality properties across Gurgaon and Delhi NCR. Our escorts arrive dressed in immaculate contemporary attire suitable for high-end hotel lobbies and private executive floors.
+                {siteConfig.name} specializes in seamless outcall appointments to elite hospitality properties across {siteConfig.city} and Delhi NCR. Our escorts arrive dressed in immaculate contemporary attire suitable for high-end hotel lobbies and private executive floors.
               </p>
               <div className="space-y-2 text-xs sm:text-sm text-gray-700">
                 <div className="flex items-center gap-2">
@@ -236,7 +236,7 @@ export default function LocationsPage() {
                   Call: {siteConfig.phoneDisplay}
                 </a>
                 <a
-                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20need%20hotel%20outcall%20in%20Gurgaon.`}
+                  href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20${encodeURIComponent(siteConfig.name)},%20I%20need%20hotel%20outcall%20in%20${encodeURIComponent(siteConfig.city)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"

@@ -13,9 +13,9 @@ interface ProductItem {
 }
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escorts Catalog – Book High-Class Call Girls | ALINA VIP',
+  title: `${siteConfig.city} Escorts Catalog – Book High-Class Call Girls | ${siteConfig.name}`,
   description:
-    'Browse our complete catalog of verified VIP, Russian, independent, and high-profile call girls in Gurgaon. 24/7 doorstep 5-star hotel delivery.',
+    'Browse our complete catalog of verified VIP, Russian, independent, and high-profile call girls in ${siteConfig.city}. 24/7 doorstep 5-star hotel delivery.',
   alternates: {
     canonical: `${siteConfig.url}/shop`,
   },
@@ -40,10 +40,10 @@ export default function ShopPage() {
             />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-            Gurgaon Escorts – Complete Catalog &amp; Profiles
+            {siteConfig.city} Escorts – Complete Catalog &amp; Profiles
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-3xl leading-relaxed">
-            Choose from over 200+ verified independent, Russian, college, and celebrity escorts in Gurgaon available for 24/7 hotel outcall service.
+            Choose from over 200+ verified independent, Russian, college, and celebrity escorts in {siteConfig.city} available for 24/7 hotel outcall service.
           </p>
         </div>
       </div>

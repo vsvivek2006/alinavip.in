@@ -21,9 +21,9 @@ import exactManifest from '@/data/exact_manifest.json';
 const hub = exactManifest.serviceHub;
 
 export const metadata: Metadata = {
-  title: 'Escort Service in Gurgaon 24*7 | VIP Gurgaon Escorts Services | ALINA VIP',
+  title: `Escort Service in ${siteConfig.city} 24*7 | VIP ${siteConfig.city} Escorts Services | ${siteConfig.name}`,
   description:
-    'Are you searching for escort service in Gurgaon? Get instant booking 24/7 for VIP escorts in Gurgaon with COD available. 100% verified call girls at 5-star hotels & residences.',
+    'Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available. 100% verified call girls at 5-star hotels & residences.',
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'escort service in gurgaon',
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/services'),
   },
   openGraph: {
-    title: 'Escort Service in Gurgaon 24*7 | VIP Gurgaon Escorts Services | ALINA VIP',
+    title: `Escort Service in ${siteConfig.city} 24*7 | VIP ${siteConfig.city} Escorts Services | ${siteConfig.name}`,
     description:
-      'Are you searching for escort service in Gurgaon? Get instant booking 24/7 for VIP escorts in Gurgaon with COD available.',
+      'Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available.',
     url: `${siteConfig.url}/services`,
     type: 'website',
   },
@@ -122,7 +122,7 @@ export default function ServicesPage() {
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
-              href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20Escort%20Services%20in%20Gurgaon`}
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20${encodeURIComponent(siteConfig.name)},%20I%20want%20to%20inquire%20about%20Escort%20Services%20in%20${encodeURIComponent(siteConfig.city)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
@@ -207,7 +207,7 @@ export default function ServicesPage() {
                 <div className="relative h-56 w-full overflow-hidden bg-gray-100">
                   <Image
                     src={getAssetUrl(service.image)}
-                    alt={`${service.title} in Gurgaon`}
+                    alt={`${service.title} in ${siteConfig.city}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -266,7 +266,7 @@ export default function ServicesPage() {
               Transparent Pricing
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
-              Escort Service Rates &amp; Packages in Gurgaon
+              Escort Service Rates &amp; Packages in {siteConfig.city}
             </h2>
             <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
             <p className="text-xs sm:text-sm text-gray-600 mt-2">
@@ -345,7 +345,7 @@ export default function ServicesPage() {
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
                     src={model.image}
-                    alt={`${model.name} - ${model.category} in Gurgaon`}
+                    alt={`${model.name} - ${model.category} in ${siteConfig.city}`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

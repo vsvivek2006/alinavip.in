@@ -74,13 +74,13 @@ export async function generateMetadata({
 
   if (!item) {
     return {
-      title: 'Luxury Escort Services in Gurgaon | ALINA VIP',
+      title: `Luxury Escort Services in ${siteConfig.city} | ${siteConfig.name}`,
     };
   }
 
   return {
     title: `${item.title} | ${siteConfig.name}`,
-    description: `Discover premium ${item.h1} in Gurgaon. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ALINA VIP.`,
+    description: `Discover premium ${item.h1} in ${siteConfig.city}. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/services/${slug}`,
     },
@@ -129,7 +129,7 @@ export default async function ServiceDetailPage({
           </div>
 
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
-            ★ VIP Escort Services in Gurgaon
+            ★ VIP Escort Services in {siteConfig.city}
           </span>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -137,7 +137,7 @@ export default async function ServiceDetailPage({
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-3xl leading-relaxed">
-            Experience the finest luxury escort escort service in Gurgaon. 100% verified profiles, 24/7 outcalls, zero advance payment.
+            Experience the finest luxury escort escort service in {siteConfig.city}. 100% verified profiles, 24/7 outcalls, zero advance payment.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -186,7 +186,7 @@ export default async function ServiceDetailPage({
               Exclusive Adult Entertainment
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-              Premium {item.h1} with ALINA VIP
+              Premium {item.h1} with {siteConfig.name}
             </h2>
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
               Indulge in an unmatched encounter of passion, intimacy, and complete relaxation. Our female call girls are hand-selected for high etiquette, exceptional beauty, and genuine passion.
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({
           <div className="md:col-span-5 relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md bg-gray-100">
             <Image
               src={getAssetUrl(heroImage)}
-              alt={`${item.h1} in Gurgaon`}
+              alt={`${item.h1} in ${siteConfig.city}`}
               fill
               sizes="(max-width: 768px) 100vw, 450px"
               className="object-cover"
@@ -270,7 +270,7 @@ export default async function ServiceDetailPage({
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
                     src={m.image}
-                    alt={`${m.name} - ${m.category} in Gurgaon`}
+                    alt={`${m.name} - ${m.category} in ${siteConfig.city}`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

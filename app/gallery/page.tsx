@@ -14,9 +14,8 @@ import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
-  title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
-  description:
-    'Browse 100% verified, authentic photographs of VIP call girls and elite escorts in Gurgaon. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.',
+  title: `Verified Photo Gallery | VIP Call Girls & ${siteConfig.city} Escorts | ${siteConfig.name}`,
+  description: `Browse 100% verified, authentic photographs of VIP call girls and elite escorts in ${siteConfig.city}. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.`,
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'verified escort gallery, real call girl photos gurgaon, genuine escort profiles',
@@ -26,9 +25,8 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/gallery'),
   },
   openGraph: {
-    title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
-    description:
-      'Browse 100% verified, authentic photographs of VIP call girls and elite escorts in Gurgaon. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.',
+    title: `Verified Photo Gallery | VIP Call Girls & ${siteConfig.city} Escorts | ${siteConfig.name}`,
+    description: `Browse 100% verified, authentic photographs of VIP call girls and elite escorts in ${siteConfig.city}. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.`,
     url: `${siteConfig.url}/gallery`,
     type: 'website',
   },
@@ -225,7 +223,7 @@ export default function GalleryPage() {
             Verified Escort Photo Gallery
           </h1>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
-            100% Genuine, Authenticated Photographs of Luxury Escorts and VIP Call Girls in Gurgaon
+            100% Genuine, Authenticated Photographs of Luxury Escorts and VIP Call Girls in {siteConfig.city}
           </p>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -305,7 +303,7 @@ export default function GalleryPage() {
                 <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
                   <a
                     href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-                      `Hello ALINA VIP, I want to book ${model.name} (${model.category})`
+                      `Hello ${siteConfig.name}, I want to book ${model.name} (${model.category})`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -338,7 +336,7 @@ export default function GalleryPage() {
             </h2>
             <div className="w-16 h-1 bg-primary-wine mx-auto mt-3 mb-4 rounded-full" />
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Explore specialized categories featuring verified national and international call girls in Gurgaon.
+              Explore specialized categories featuring verified national and international call girls in {siteConfig.city}.
             </p>
           </div>
 
@@ -351,7 +349,7 @@ export default function GalleryPage() {
               >
                 <Image
                   src={getAssetUrl(cat.image)}
-                  alt={`${cat.title} Gurgaon Escorts`}
+                  alt={`${cat.title} ${siteConfig.city} Escorts`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"

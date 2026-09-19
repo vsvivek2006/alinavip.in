@@ -25,8 +25,8 @@ interface PageItem {
 const aboutData = (pagesData as PageItem[]).find((p) => p.slug === 'about-us');
 
 export const metadata: Metadata = {
-  title: aboutData?.title ? aboutData.title.replace('ALINA VIP', siteConfig.name) : 'About Us | ALINA VIP',
-  description: (aboutData && aboutData.metaDescription) ? aboutData.metaDescription : 'ALINA VIP is the premier luxury escort service in Gurgaon and Aerocity, providing 100% verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge booking.',
+  title: aboutData?.title ? aboutData.title.replace('ALINA VIP', siteConfig.name) : `About Us | ${siteConfig.name}`,
+  description: (aboutData && aboutData.metaDescription) ? aboutData.metaDescription : `${siteConfig.name} is the premier luxury escort service in ${siteConfig.city}, providing 100% verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge booking.`,
   alternates: {
     canonical: `${siteConfig.url}/about`,
   },
@@ -44,7 +44,7 @@ export default function AboutPage() {
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About Us' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
-            ★ Premier Escort Agency in Gurgaon
+            ★ Premier Escort Agency in {siteConfig.city}
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
             About {siteConfig.name}
@@ -61,10 +61,10 @@ export default function AboutPage() {
         <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#111827]">
-              {siteConfig.name} Gurgaon Escort Agency – Your Place To Seek 100% Satisfaction
+              {siteConfig.name} {siteConfig.city} Escort Agency – Your Place To Seek 100% Satisfaction
             </h2>
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              Our Gurgaon escort agency is the leading destination for exotic fun and pleasure. It is the one stop destination for gentlemen seeking refined women for love making and adult entertainment. Our escort agency has years of experience in the luxury hospitality and adult entertainment industry.
+              Our {siteConfig.city} escort agency is the leading destination for exotic fun and pleasure. It is the one stop destination for gentlemen seeking refined women for love making and adult entertainment. Our escort agency has years of experience in the luxury hospitality and adult entertainment industry.
             </p>
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
               We have been dealing with clients for many years and have always satisfied their needs and desires. What makes our agency so special is the availability of high-end escort services and top-tier girls. We always bring exciting and top ranking escorts to accompany you 24/7.
@@ -89,7 +89,7 @@ export default function AboutPage() {
           <div className="md:col-span-5 relative aspect-[4/3] w-full rounded-xl overflow-hidden shadow-md">
             <Image
               src={getAssetUrl('/images/about-hero.webp')}
-              alt="About ALINA VIP Escort Service in Gurgaon"
+              alt={`About ${siteConfig.name} in ${siteConfig.city}`}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 500px"

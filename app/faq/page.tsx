@@ -51,7 +51,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
-            Everything You Need to Know About VIP Escort Bookings, Hotel Outcalls, and Rates in Gurgaon
+            Everything You Need to Know About VIP Escort Bookings, Hotel Outcalls, and Rates in {siteConfig.city}
           </p>
           <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -149,7 +149,7 @@ export default function FAQPage() {
               <div className="space-y-3">
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-                    'Hello ALINA VIP, I have an inquiry about escort bookings in Gurgaon.'
+                    'Hello ${siteConfig.name}, I have an inquiry about escort bookings in ${siteConfig.city}.'
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -187,7 +187,7 @@ export default function FAQPage() {
                 </li>
                 <li>
                   <Link href="/locations" className="hover:text-primary-wine flex items-center justify-between">
-                    <span>108 Gurgaon Sectors</span>
+                    <span>{siteConfig.city} Sectors</span>
                     <span>&rarr;</span>
                   </Link>
                 </li>

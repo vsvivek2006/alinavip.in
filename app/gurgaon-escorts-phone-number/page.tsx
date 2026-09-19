@@ -50,7 +50,7 @@ export default function PhoneNumberPage() {
             </a>
 
             <a
-              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20escort%20booking%20in%20Gurgaon`}
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20${encodeURIComponent(siteConfig.name)},%20I%20want%20to%20inquire%20about%20escort%20booking%20in%20${encodeURIComponent(siteConfig.city)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-base font-bold rounded-xl flex items-center justify-center gap-3"
@@ -82,7 +82,7 @@ export default function PhoneNumberPage() {
                 Security Advisory: Never Pay Advance Fees to Any Agency
               </h3>
               <p className="text-xs text-amber-800 mt-1 leading-relaxed">
-                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a call girl. <strong>ALINA VIP NEVER asks for advance payments.</strong> You inspect and meet your call girl in person first, and hand over cash directly to her.
+                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a call girl. <strong>{siteConfig.name} NEVER asks for advance payments.</strong> You inspect and meet your call girl in person first, and hand over cash directly to her.
               </p>
             </div>
           </div>

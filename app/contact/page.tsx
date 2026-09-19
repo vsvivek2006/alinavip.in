@@ -16,9 +16,8 @@ import ContactForm from '@/components/ContactForm';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
-  description:
-    'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+  title: `Book ${siteConfig.city} Escorts | 24/7 Private Concierge | ${siteConfig.name}`,
+  description: `Connect with ${siteConfig.name} for verified call girl reservations in ${siteConfig.city}. Call ${siteConfig.phone} or WhatsApp for confidential 20-30 min hotel outcalls.`,
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'contact concierge, 24/7 escort booking, whatsapp call girls',
@@ -28,9 +27,8 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/contact'),
   },
   openGraph: {
-    title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
-    description:
-      'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+    title: `Book ${siteConfig.city} Escorts | 24/7 Private Concierge | ${siteConfig.name}`,
+    description: `Connect with ${siteConfig.name} for verified call girl reservations in ${siteConfig.city}. Call ${siteConfig.phone} or WhatsApp for confidential 20-30 min hotel outcalls.`,
     url: `${siteConfig.url}/contact`,
     type: 'website',
   },
@@ -51,7 +49,7 @@ export default function ContactPage() {
             ★ 24/7 Concierge Support
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans font-bold tracking-wide">
-            Contact <span className="text-gradient-gold">ALINA VIP India</span>
+            Contact <span className="text-gradient-gold">{siteConfig.name}</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Reserve verified escorts,{' '}
@@ -62,7 +60,7 @@ export default function ContactPage() {
             <Link href="/category/celebrity-escorts" className="text-luxury-gold hover:underline font-medium">
               elite social escorts
             </Link>{' '}
-            with 100% confidentiality and prompt outcall delivery across all Gurgaon luxury hotel suites.
+            with 100% confidentiality and prompt outcall delivery across all {siteConfig.city} luxury hotel suites.
           </p>
           <div className="w-16 h-1 bg-[#671725] rounded-full my-4 mx-auto mt-8" />
         </div>
@@ -100,7 +98,7 @@ export default function ContactPage() {
                       {siteConfig.phoneDisplay}
                     </a>
                     <p className="text-gray-500 text-xs mt-1">
-                      Instant response • Available 24/7 across all Gurgaon areas
+                      Instant response • Available 24/7 across all {siteConfig.city} areas
                     </p>
                   </div>
                 </div>
@@ -174,7 +172,7 @@ export default function ContactPage() {
               {/* Privacy & Discretion Card */}
               <div className="p-6 bg-[#FFFDF6] rounded-2xl border-2 border-gray-200">
                 <h4 className="font-bold text-[#111827] text-base mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-primary-wine" /> ALINA VIP Discretion Guarantee
+                  <ShieldCheck className="w-5 h-5 text-primary-wine" /> {siteConfig.name} Discretion Guarantee
                 </h4>
                 <ul className="space-y-2 text-xs text-gray-700">
                   <li className="flex items-center gap-2">
@@ -273,11 +271,11 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="space-y-6 bg-[#FFFDF6] p-8 md:p-12 rounded-2xl border border-gray-200/60 shadow-sm">
             <h2 className="text-3xl font-bold text-[#111827] mb-6 font-sans font-bold">
-              How to Book Escort Service in Gurgaon with ALINA VIP
+              How to Book Escort Service in {siteConfig.city} with {siteConfig.name}
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                Booking escort service with <strong>ALINA VIP</strong> is designed to be effortless, sophisticated, and completely discreet. We respect your schedule and privacy at every stage of the engagement.
+                Booking escort service with <strong>{siteConfig.name}</strong> is designed to be effortless, sophisticated, and completely discreet. We respect your schedule and privacy at every stage of the engagement.
               </p>
               <div className="space-y-4 my-6">
                 <div className="flex items-start gap-4">
@@ -357,7 +355,7 @@ export default function ContactPage() {
                   Zero-Trace Privacy &amp; Data Safeguards
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  Discretion is the core tenet of ALINA VIP. We understand that our clientele includes high-ranking corporate leaders, diplomats, entrepreneurs, and discerning individuals who require total confidentiality. We implement an ephemeral data workflow: your contact information, messages, and meeting specifics are never stored in permanent databases, marketing mailing lists, or shared with third parties. Once your engagement concludes, all communication history is promptly purged.
+                  Discretion is the core tenet of {siteConfig.name}. We understand that our clientele includes high-ranking corporate leaders, diplomats, entrepreneurs, and discerning individuals who require total confidentiality. We implement an ephemeral data workflow: your contact information, messages, and meeting specifics are never stored in permanent databases, marketing mailing lists, or shared with third parties. Once your engagement concludes, all communication history is promptly purged.
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Furthermore, our escorts arrive in unmarked, private executive vehicles. They dress in sophisticated contemporary attire appropriate for luxury hotel lobbies or fine residential buildings, ensuring your privacy is safeguarded from doorstep to suite.
@@ -380,7 +378,7 @@ export default function ContactPage() {
                   Transparent Pricing &amp; Cash on Delivery Protection
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At ALINA VIP, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your call girl upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
+                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At {siteConfig.name}, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your call girl upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
                 </p>
               </div>
 

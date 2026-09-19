@@ -17,9 +17,8 @@ import exactManifest from '@/data/exact_manifest.json';
 const ratesManifest = exactManifest.rates;
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escorts Rates & Pricing Packages | ALINA VIP',
-  description:
-    'Book and meet the hottest female escorts in Gurgaon at transparent hourly rates. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7.',
+  title: `${siteConfig.city} Escorts Rates & Pricing Packages | ${siteConfig.name}`,
+  description: `Book and meet the hottest female escorts in ${siteConfig.city} at transparent hourly rates. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7.`,
   alternates: {
     canonical: `${siteConfig.url}/rates`,
   },
@@ -120,10 +119,10 @@ export default function RatesPage() {
             ★ All-Inclusive Packages &bull; Zero Advance
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Gurgaon Escorts Rates &amp; Pricing Packages
+            {siteConfig.city} Escorts Rates &amp; Pricing Packages
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-3xl leading-relaxed">
-            Book and meet some of the hottest and sexiest female escorts in Gurgaon at the best hourly rates. Choose your favorite hourly or full-time package and confirm your booking on the phone or WhatsApp.
+            Book and meet some of the hottest and sexiest female escorts in {siteConfig.city} at the best hourly rates. Choose your favorite hourly or full-time package and confirm your booking on the phone or WhatsApp.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
@@ -240,7 +239,7 @@ export default function RatesPage() {
               Pricing by Escort Category
             </h2>
             <p className="text-xs sm:text-sm text-gray-600 mt-1">
-              Estimated rates for in-call and out-call sessions in Gurgaon. Custom requests or multi-day tours can be arranged via concierge.
+              Estimated rates for in-call and out-call sessions in {siteConfig.city}. Custom requests or multi-day tours can be arranged via concierge.
             </p>
           </div>
 

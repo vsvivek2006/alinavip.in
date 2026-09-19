@@ -25,12 +25,12 @@ export async function generateMetadata({
   const model = escortModels.find((m) => m.slug === slug);
   if (!model) {
     return {
-      title: 'Verified Escort Profile in Gurgaon | ALINA VIP',
+      title: `Verified Escort Profile in ${siteConfig.city} | ${siteConfig.name}`,
     };
   }
   return {
-    title: `${model.name} - ${model.category} in Gurgaon | ALINA VIP`,
-    description: `Book ${model.name}, verified ${model.category} in Gurgaon. Age ${model.age}, 5-star hotel doorstep arrival in 20-30 minutes with ALINA VIP.`,
+    title: `${model.name} - ${model.category} in ${siteConfig.city} | ${siteConfig.name}`,
+    description: `Book ${model.name}, verified ${model.category} in ${siteConfig.city}. Age ${model.age}, 5-star hotel doorstep arrival in 20-30 minutes with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/escorts/${slug}`,
     },
@@ -69,7 +69,7 @@ export default async function EscortProfilePage({
             />
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            {model.name} | Gurgaon Escorts
+            {model.name} | {siteConfig.city} Escorts
           </h1>
           <p className="mt-2 text-sm sm:text-base text-rose-100 font-light max-w-2xl">
             Verified {model.category} available for high-class hotel outcalls and VIP escort service in Gurgaon &amp; Delhi NCR.
@@ -142,7 +142,7 @@ export default async function EscortProfilePage({
                   </div>
                   <span className="text-xs text-emerald-600 font-medium flex items-center gap-1 justify-end mt-1">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Available Right Now in Gurgaon
+                    Available Right Now in {siteConfig.city}
                   </span>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default async function EscortProfilePage({
               <div className="mt-8 bg-gray-50 p-5 rounded-lg border border-gray-200 text-xs text-gray-600 space-y-2">
                 <h4 className="font-bold text-gray-800 text-sm flex items-center gap-2">
                   <Shield size={15} className="text-[#671725]" />
-                  ALINA VIP Discretion &amp; Booking Guarantee
+                  {siteConfig.name} Discretion &amp; Booking Guarantee
                 </h4>
                 <p>• Zero advance payment required for verified 5-star hotel bookings.</p>
                 <p>• 100% genuine model guaranteed. If she does not match this profile, you can cancel at the doorstep with no fees.</p>
@@ -305,7 +305,7 @@ export default async function EscortProfilePage({
             <div>
               <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">More Escort Call Girls</span>
               <h2 className="text-2xl font-black text-[#111827] mt-1">
-                Explore Other Verified Profiles in Gurgaon
+                Explore Other Verified Profiles in {siteConfig.city}
               </h2>
             </div>
             <Link

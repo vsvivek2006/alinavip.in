@@ -82,7 +82,7 @@ export default function PhoneNumberPage() {
                 Security Advisory: Never Pay Advance Fees to Any Agency
               </h3>
               <p className="text-xs text-amber-800 mt-1 leading-relaxed">
-                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a call girl. <strong>ALINA VIP NEVER asks for advance payments.</strong> You inspect and meet your call girl in person first, and hand over cash directly to her.
+                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a call girl. <strong>{siteConfig.name} NEVER asks for advance payments.</strong> You inspect and meet your call girl in person first, and hand over cash directly to her.
               </p>
             </div>
           </div>

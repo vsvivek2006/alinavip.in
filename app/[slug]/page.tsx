@@ -67,13 +67,13 @@ export async function generateMetadata({
 
   if (!item) {
     return {
-      title: 'Gurgaon Escorts – ALINA VIP',
+      title: `${siteConfig.city} Escorts – ${siteConfig.name}`,
     };
   }
 
   return {
     title: item.title,
-    description: item.metaDescription || `${item.h1} – 24/7 Verified In-Call & Out-Call Escort Service in Gurgaon with ALINA VIP.`,
+    description: item.metaDescription || `${item.h1} – 24/7 Verified In-Call & Out-Call Escort Service in ${siteConfig.city} with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/${slug}`,
     },
@@ -201,7 +201,7 @@ export default async function DynamicSlugPage({
             {!isPost && (
               <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm space-y-4">
                 <h3 className="text-xl font-bold text-[#111827]">
-                  Gurgaon Escort Service Rates &amp; Packages
+                  {siteConfig.city} Escort Service Rates &amp; Packages
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                   <div className="bg-[#FFFDF6] p-4 rounded-lg border border-gray-200 text-center">
@@ -230,7 +230,7 @@ export default async function DynamicSlugPage({
             {/* VIP Guarantee Box */}
             <div className="bg-[#671725] text-white p-6 rounded-xl shadow-md space-y-4">
               <h3 className="text-lg font-bold text-[#FFD700] flex items-center gap-2">
-                <Shield size={18} /> Why Choose ALINA VIP?
+                <Shield size={18} /> Why Choose {siteConfig.name}?
               </h3>
               <ul className="space-y-3 text-xs sm:text-sm text-gray-100">
                 <li className="flex items-start gap-2">
@@ -264,7 +264,7 @@ export default async function DynamicSlugPage({
             {/* Featured Call Girls */}
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-4">
               <h4 className="text-base font-bold text-[#111827]">
-                Featured Escorts in Gurgaon
+                Featured Escorts in {siteConfig.city}
               </h4>
               <div className="space-y-3">
                 {availableModels.map((m) => (

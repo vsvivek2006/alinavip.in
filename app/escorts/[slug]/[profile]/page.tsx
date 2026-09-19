@@ -57,13 +57,13 @@ export async function generateMetadata({
 
   if (!prod) {
     return {
-      title: 'Gurgaon Escorts Profile | ALINA VIP',
+      title: `${siteConfig.city} Escorts Profile | ${siteConfig.name}`,
     };
   }
 
   return {
     title: prod.title,
-    description: prod.metaDescription || `Book verified escort ${prod.h1} in Gurgaon. 24/7 5-star hotel outcall and in-call available.`,
+    description: prod.metaDescription || `Book verified escort ${prod.h1} in ${siteConfig.city}. 24/7 5-star hotel outcall and in-call available with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/escorts/${slug}/${profile}`,
     },
@@ -300,7 +300,7 @@ export default async function ProductModelPage({
             <div className="bg-[#671725] text-white p-6 rounded-xl space-y-3">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
                 <Clock size={18} className="text-[#FFD700]" />
-                <span>Express Doorstep Delivery Across Gurgaon</span>
+                <span>Express Doorstep Delivery Across {siteConfig.city}</span>
               </h3>
               <p className="text-sm text-rose-100/90 leading-relaxed">
                 {modelName} is available for rapid dispatch to luxury 5-star hotels across DLF Cyber City, Golf Course Road, Sector 29, Sohna Road, and Ambience Island. Typical arrival window is 20 to 30 minutes from reservation confirmation.
@@ -316,7 +316,7 @@ export default async function ProductModelPage({
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold text-[#111827]">
-                  Other Verified Escorts in Gurgaon
+                  Other Verified Escorts in {siteConfig.city}
                 </h3>
                 <Link
                   href="/escorts"

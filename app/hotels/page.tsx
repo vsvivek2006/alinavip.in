@@ -20,9 +20,8 @@ import exactManifest from '@/data/exact_manifest.json';
 const hotelsManifest = exactManifest.hotels;
 
 export const metadata: Metadata = {
-  title: 'Top 5-Star Hotels Escorts Service in Gurgaon | ALINA VIP',
-  description:
-    'Luxury hotel outcall escort services across Gurgaon. Prompt 20-30 min arrival to The Oberoi, The Leela, Taj City Centre, Trident, and ITC Grand Bharat.',
+  title: `Top 5-Star Hotels Escorts Service in ${siteConfig.city} | ${siteConfig.name}`,
+  description: `Luxury hotel outcall escort services across ${siteConfig.city}. Prompt 20-30 min arrival to premier luxury hotel properties.`,
   alternates: {
     canonical: `${siteConfig.url}/hotels`,
   },
@@ -142,14 +141,14 @@ export default function HotelsPage() {
             ★ 5-Star Hotel Outcalls &bull; 20-30 Min Arrival
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Gurgaon Luxury Hotel Escort Services
+            {siteConfig.city} Luxury Hotel Escort Services
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-3xl leading-relaxed">
-            Relax with your partner in world-class hotels across Gurgaon. Discreet in-room call girl delivery with zero advance payment and verified profiles.
+            Relax with your partner in world-class hotels across {siteConfig.city}. Discreet in-room call girl delivery with zero advance payment and verified profiles.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
-              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20staying%20at%20a%20hotel%20in%20Gurgaon%20and%20need%20an%20escort`}
+              href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20${encodeURIComponent(siteConfig.name)},%20I%20am%20staying%20at%20a%20hotel%20in%20${encodeURIComponent(siteConfig.city)}%20and%20need%20an%20escort`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
@@ -201,14 +200,14 @@ export default function HotelsPage() {
           </article>
         )}
 
-        {/* View Gurgaon Top Hotels Grid */}
+        {/* View {siteConfig.city} Top Hotels Grid */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
               Featured Venues
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
-              View Gurgaon Top Hotels
+              View {siteConfig.city} Top Hotels
             </h2>
             <div className="w-16 h-1 bg-[#671725] mx-auto mt-2 rounded-full" />
           </div>
