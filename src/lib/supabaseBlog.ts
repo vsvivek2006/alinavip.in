@@ -13,6 +13,8 @@ import type { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// alinavip.in's own site_id — filters posts to this tenant only
+const SITE_ID = '4635a82b-3613-42dc-9bd0-f0ba0745d934';
 
 // High-speed In-Memory TTL Cache
 interface CacheEntry<T> {
@@ -105,7 +107,10 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
     return postsListCache.data;
   }
 
-  const localList = getLocalPosts().map(mapRowToBlogPost);
+  // Filter local posts to this site only
+  const localList = getLocalPosts()
+    .filter(p => !p.site_id || p.site_id === SITE_ID)
+    .map(mapRowToBlogPost);
 
   if (!SUPABASE_URL || !ANON_KEY) {
     const combined = [...localList, ...fallbackPosts];
@@ -121,7 +126,7 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
 
   try {
     const postsRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?status=eq.published&order=published_at.desc&select=*`,
+      `${SUPABASE_URL}/rest/v1/posts?site_id=eq.${encodeURIComponent(SITE_ID)}&status=eq.published&order=published_at.desc&select=*`,
       {
         headers: {
           apikey: ANON_KEY,
@@ -184,9 +189,9 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
     return cached.data;
   }
 
-  // 2. Check local persistent store first (instant, works offline, zero network delay)
+  // 2. Check local persistent store first — must belong to this site
   const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost) {
+  if (localPost && (!localPost.site_id || localPost.site_id === SITE_ID)) {
     const post = mapRowToBlogPost(localPost);
     postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
     return post;
@@ -196,7 +201,7 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
   if (SUPABASE_URL && ANON_KEY) {
     try {
       const postRes = await fetch(
-        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&select=*`,
+        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&site_id=eq.${encodeURIComponent(SITE_ID)}&select=*`,
         {
           headers: {
             apikey: ANON_KEY,

@@ -60,7 +60,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
           <Link
             key={index}
             href={href}
-            className="text-[#671725] font-bold underline underline-offset-4 decoration-[#671725]/40 hover:decoration-[#671725] hover:text-[#881337] transition-all"
+            className="text-[#671725] underline underline-offset-4 decoration-[#671725]/40 hover:decoration-[#671725] hover:text-[#881337] transition-all"
           >
             {label}
           </Link>
@@ -72,7 +72,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#671725] font-bold underline underline-offset-4 decoration-[#671725]/40 hover:decoration-[#671725] hover:text-[#881337] transition-all"
+          className="text-[#671725] underline underline-offset-4 decoration-[#671725]/40 hover:decoration-[#671725] hover:text-[#881337] transition-all"
         >
           {label}
         </a>
@@ -302,7 +302,7 @@ export default function ArticleContentRenderer({
               <h2
                 key={idx}
                 id={block.id}
-                className="text-2xl sm:text-3xl font-black text-stone-900 mt-10 sm:mt-12 mb-4 pb-3 border-b border-stone-200 tracking-tight scroll-mt-24 font-sans"
+                className="text-2xl sm:text-3xl font-bold text-stone-900 mt-10 sm:mt-12 mb-4 pb-3 border-b border-stone-200 tracking-tight scroll-mt-24 font-sans"
               >
                 {renderInlineMarkdown(block.text)}
               </h2>
@@ -342,7 +342,7 @@ export default function ArticleContentRenderer({
                       <Quote className="w-4 h-4 text-[#671725]" />
                     )}
                   </div>
-                  <div className="flex-1 text-sm sm:text-base text-stone-800 leading-relaxed font-medium">
+                  <div className="flex-1 text-sm sm:text-base text-stone-700 leading-relaxed">
                     {renderInlineMarkdown(block.text)}
                   </div>
                 </div>
