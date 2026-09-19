@@ -482,7 +482,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                     type="text"
                     value={aiTopic}
                     onChange={e => setAiTopic(e.target.value)}
-                    placeholder="e.g. 5-Star Luxury Dining & VIP Companionship in DLF Cyber City"
+                    placeholder="e.g. 5-Star Luxury Dining & VIP Escort Service in DLF Cyber City"
                     className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-sm font-medium text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
                   />
                 </div>
@@ -557,7 +557,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-600 leading-snug">
-                        Natural cadence, uncensored hospitality & companion topics, fast ~5s generation.
+                        Natural cadence, high-converting call girls & escort service topics, fast ~5s generation.
                       </p>
                     </button>
 
@@ -685,7 +685,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                 type="text"
                 value={title}
                 onChange={e => handleTitleChange(e.target.value)}
-                placeholder="e.g. 5-Star Luxury Dining & Escort Companionship in DLF Cyber City"
+                placeholder="e.g. 5-Star Luxury Dining & VIP Escort Service in DLF Cyber City"
                 className="w-full px-4 py-3 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl text-base font-bold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#671725] focus:bg-white transition-all"
               />
             </div>

@@ -203,13 +203,15 @@ async function generateWithGemini(req: GenerationRequest, apiKey: string): Promi
 }
 
 function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest, modelUsed: string): GeneratedBlog {
-  const title = (parsed.title as string) || req.topic;
+  let title = (parsed.title as string) || req.topic;
+  let seoTitle = (parsed.seoTitle as string) || title;
+  let seoDescription = (parsed.seoDescription as string) || (parsed.excerpt as string) || '';
+  let excerpt = (parsed.excerpt as string) || '';
   
   let rawBlocks: string[] = [];
   if (Array.isArray(parsed.content)) {
     rawBlocks = (parsed.content as unknown[]).map(c => String(c).trim()).filter(Boolean);
   } else if (typeof parsed.content === 'string') {
-    // If returned as a single string, split cleanly by double newlines or markdown headings
     rawBlocks = parsed.content
       .split(/\n{2,}/)
       .map(s => s.trim())
@@ -221,7 +223,6 @@ function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest,
   // Format and normalize markdown blocks
   const normalizedBlocks: string[] = [];
   for (const block of rawBlocks) {
-    // If a block contains multiple markdown headings merged together, separate them
     if (block.includes('\n## ') || block.includes('\n### ')) {
       const subBlocks = block.split(/\n(?=#{2,3}\s)/).map(s => s.trim()).filter(Boolean);
       normalizedBlocks.push(...subBlocks);
@@ -231,20 +232,41 @@ function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest,
   }
 
   // Ensure at least 3 internal links exist across the body
-  const contentWithLinks = ensureInternalLinks(normalizedBlocks);
+  let contentWithLinks = ensureInternalLinks(normalizedBlocks);
+
+  // Enforce zero companion words across all fields via post-processor
+  title = purgeCompanionWords(title);
+  seoTitle = purgeCompanionWords(seoTitle);
+  seoDescription = purgeCompanionWords(seoDescription);
+  excerpt = purgeCompanionWords(excerpt);
+  contentWithLinks = contentWithLinks.map(block => purgeCompanionWords(block));
+
+  const rawTags = (parsed.tags as string[]) || [req.focusKeyword, 'Call Girls In Gurgaon', 'Gurgaon Escort Service'];
+  const tags = rawTags.map(t => purgeCompanionWords(t));
 
   return {
     title,
     slug: slugify((parsed.slug as string) || (parsed.title as string) || req.topic),
-    seoTitle: (parsed.seoTitle as string) || title,
-    seoDescription: (parsed.seoDescription as string) || (parsed.excerpt as string) || '',
-    excerpt: (parsed.excerpt as string) || '',
+    seoTitle,
+    seoDescription,
+    excerpt,
     content: contentWithLinks,
-    tags: (parsed.tags as string[]) || [req.focusKeyword, 'Luxury Concierge', 'Gurgaon Escorts'],
+    tags,
     coverImage: selectRandomImage(), // Pick random unique image from ImageKit
     author: `${req.siteName} Editorial Desk`,
     modelUsed,
   };
+}
+
+/**
+ * Replaces any forbidden companion words with high-converting call girls / escort service terms
+ */
+function purgeCompanionWords(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/\bcompanionship\b/gi, 'escort service')
+    .replace(/\bcompanions\b/gi, 'call girls')
+    .replace(/\bcompanion\b/gi, 'call girl');
 }
 
 /**
@@ -258,22 +280,39 @@ function ensureInternalLinks(paragraphs: string[]): string[] {
 
   const result = [...paragraphs];
 
-  // 1. Early link in intro
-  if (result.length > 0 && !result[0].includes('](/')) {
-    result[0] = result[0] + ` Patrons seeking verified standards can browse our authenticated [companion gallery](/gallery) for genuine, high-definition portfolios.`;
+  function appendToSafeBlock(preferredIndex: number, sentence: string) {
+    if (result.length === 0) {
+      result.push(sentence);
+      return;
+    }
+
+    let targetIdx = Math.min(preferredIndex, result.length - 1);
+    // Find closest standard paragraph that isn't a heading, list, or blockquote
+    for (let offset = 0; offset < result.length; offset++) {
+      const checkIdx = (targetIdx + offset) < result.length ? (targetIdx + offset) : (targetIdx - offset);
+      if (checkIdx >= 0 && checkIdx < result.length) {
+        const item = result[checkIdx];
+        if (!item.startsWith('#') && !item.startsWith('>') && !item.startsWith('-') && !item.includes('](/')) {
+          result[checkIdx] = `${item} ${sentence}`;
+          return;
+        }
+      }
+    }
+
+    // If all are special blocks, append as a new paragraph
+    result.push(sentence);
   }
+
+  // 1. Early link in intro
+  appendToSafeBlock(0, `Patrons seeking verified standards can browse our authenticated [call girls gallery](/gallery) for genuine, high-definition portfolios.`);
 
   // 2. Middle link in section 2 or 3
   const midIndex = Math.floor(result.length / 2);
-  if (result[midIndex] && !result[midIndex].includes('](/')) {
-    result[midIndex] = result[midIndex] + ` Explore our premier [5-star hotel outcall services](/services) tailored for corporate executives and international travelers across Gurgaon.`;
-  }
+  appendToSafeBlock(midIndex, `Explore our premier [5-star hotel escort services](/services) tailored for corporate executives and international travelers across Gurgaon.`);
 
   // 3. Late link in location/rates/contact section
   const lateIndex = Math.max(1, result.length - 2);
-  if (result[lateIndex] && !result[lateIndex].includes('](/')) {
-    result[lateIndex] = result[lateIndex] + ` For prompt outcalls to DLF Phase 1, Cyber City, and Aerocity, inspect our [service locations](/locations) or connect with our 24/7 desk via [private contact](/contact).`;
-  }
+  appendToSafeBlock(lateIndex, `For prompt outcalls to DLF Phase 1, Cyber City, and Aerocity, inspect our [service locations](/locations) or connect with our 24/7 desk via [private contact](/contact).`);
 
   return result;
 }
@@ -286,33 +325,38 @@ Your writing must be 100% human, authoritative, polished, discreet, and natural.
 STRICT BRAND CONTEXT RULES:
 1. Speak ONLY about ${req.siteName} (${req.domain}).
 2. NEVER mention other rival agencies, competitor sites, or external brand names.
-3. Position ${req.siteName} as the gold standard of verified, safe, zero-advance, and discreet companionship in Gurgaon and Delhi NCR.
+3. Position ${req.siteName} as the gold standard of verified, safe, zero-advance, and discreet escort service and VIP call girls in Gurgaon and Delhi NCR.
+
+CRITICAL VOCABULARY RULES (ABSOLUTE REQUIREMENT):
+- NEVER USE THE WORDS: "companion", "companions", "companionship". THEY ARE STRICTLY FORBIDDEN.
+- ALWAYS USE EXACT TERMS: "call girls", "call girl", "escort service", "escorts", "VIP call girls", "independent escorts", "5-star hotel call girls".
+- Every reference to our models or services must use "call girls" or "escort service", never "companion".
 
 STRICT ANTI-AI HUMAN WRITING RULES:
 - FORBIDDEN WORDS & PHRASES (STRICTLY PROHIBITED):
-  "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on", "realm", "ever-evolving", "shed light".
+  "companion", "companions", "companionship", "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on", "realm", "ever-evolving", "shed light".
 - Write with confident, conversational first-person plural authority ("we", "our private desk", "guests frequently share with us").
 - Keep paragraphs compact (2 to 4 sentences maximum). Never write walls of text.
 - Ground the writing in specific regional landmarks: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
 
 MANDATORY FORMATTING & STRUCTURE (EVERY ARTICLE MUST FOLLOW THIS EXACT FLOW):
 Break the article into 8 to 12 distinct clean sections inside the 'content' array:
-1. Introduction: Engaging hook about ${req.focusKeyword} in Gurgaon with natural regional context.
-2. Verified Standards: Paragraph introducing our verified portfolio with early link [verified companion gallery](/gallery).
-3. ## H2 Heading: Specific insight into local hospitality and executive lifestyle.
+1. Introduction: Engaging hook about ${req.focusKeyword} and call girls in Gurgaon with natural regional context.
+2. Verified Standards: Paragraph introducing our verified profiles with early link [verified call girls gallery](/gallery).
+3. ## H2 Heading: Specific insight into local hospitality, 5-star hotels, and elite escort service.
 4. Feature Checklist: 3 to 5 bullet points with bold highlights (- **Zero Advance Payment**: Details...\\n- **Verified High-Definition Profiles**: Details...\\n- **Discreet 5-Star Hotel Outcalls**: Details...).
 5. Luxury Quote Box: A prominent blockquote: "> **Concierge Recommendation:** Discreet room booking tips and private meeting etiquette for luxury hotels..."
-6. ## H2 Heading: Exploring premier Gurgaon & Aerocity venues and 5-star hotel dispatch. Include mid link [5-star hotel outcall services](/services).
+6. ## H2 Heading: Exploring premier Gurgaon & Aerocity venues and 5-star hotel dispatch. Include mid link [5-star hotel escort services](/services).
 7. Practical Guidance: Recommendations for dining pairings at The Oberoi, Trident, or CyberHub lounges.
 8. ## Frequently Asked Questions
-9. FAQ Item 1: "**Q: How quickly can a companion arrive at major Gurgaon hotels?**\\n\\nA: Our private chauffeur dispatch arrives within 20 to 30 minutes across DLF Cyber City, Golf Course Road, and Aerocity."
-10. FAQ Item 2: "**Q: What payment methods are accepted?**\\n\\nA: In line with our strict zero-advance policy, payment is handled strictly in person after meeting your companion."
+9. FAQ Item 1: "**Q: How quickly can call girls arrive at major Gurgaon hotels?**\\n\\nA: Our private chauffeur dispatch delivers verified VIP call girls within 20 to 30 minutes across DLF Cyber City, Golf Course Road, and Aerocity."
+10. FAQ Item 2: "**Q: What payment methods are accepted?**\\n\\nA: In line with our strict zero-advance policy, payment is handled strictly in person after meeting your call girl."
 11. ## Reserving Your Experience with ${req.siteName}
 12. Concluding Paragraph: Warm call-to-action with closing link to [our 24/7 concierge desk](/contact).
 
 JSON OUTPUT SCHEMA:
 {
-  "title": "Compelling H1 Headline (50-65 chars, no quotes)",
+  "title": "Compelling H1 Headline (50-65 chars, no quotes, using call girls or escort service)",
   "slug": "url-friendly-slug",
   "seoTitle": "SEO meta title (under 60 chars)",
   "seoDescription": "Engaging meta description (140-155 chars)",
@@ -331,11 +375,12 @@ JSON OUTPUT SCHEMA:
     "## Reserving with ${req.siteName}",
     "Final paragraph with contact link..."
   ],
-  "tags": ["Focus Keyword", "Gurgaon Escorts", "VIP Companions", "Hotel Outcalls"]
+  "tags": ["Focus Keyword", "Call Girls In Gurgaon", "Gurgaon Escort Service", "VIP Call Girls"]
 }`,
     user: `Topic: ${req.topic}
 Focus Keyword: ${req.focusKeyword}
 Secondary Keywords: ${req.secondaryKeywords || 'luxury hotel outcalls, DLF Cyber City, verified profiles'}
-Target Word Count: ${req.wordCount || 1000} words.`
+Target Word Count: ${req.wordCount || 1000} words.
+CRITICAL REMINDER: Do NOT use the word companion, companions, or companionship anywhere. Use call girls or escort service instead.`
   };
 }
