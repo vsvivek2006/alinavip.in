@@ -45,7 +45,10 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
   const { slug } = await params;
   const location = getLocation(slug);
   if (!location) {
-    notFound();
+    return {
+      title: `Location Not Found | ${siteConfig.name}`,
+      robots: { index: false, follow: false },
+    };
   }
 
   if (isLocationRedirect(slug)) {

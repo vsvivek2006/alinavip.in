@@ -74,7 +74,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const { slug } = await params;
   const category = getCategory(slug);
   if (!category) {
-    notFound();
+    return {
+      title: `Category Not Found | ${siteConfig.name}`,
+      robots: { index: false, follow: false },
+    };
   }
 
   const title = `${category.h1Title || `${category.name} in ${siteConfig.city}`} | VIP Escorts & Call Girls | ${siteConfig.name}`;
