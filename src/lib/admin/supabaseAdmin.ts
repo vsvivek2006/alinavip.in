@@ -45,6 +45,49 @@ function getHeaders(prefer?: string) {
   return headers;
 }
 
+export const DEFAULT_SITES: SiteTenant[] = [
+  {
+    id: '78659428-7273-41e8-9758-fd0ac895a2db',
+    slug: 'alinavip-in',
+    name: 'ALINA VIP India',
+    domain: 'alinavip.in',
+    revalidate_url: 'https://alinavip.in/api/revalidate',
+    revalidate_secret: 'alina_isr_secret_2026',
+  },
+  {
+    id: '4635a82b-3613-42dc-9bd0-f0ba0745d934',
+    slug: 'alinavip-com',
+    name: 'ALINA VIP International',
+    domain: 'alinavip.com',
+    revalidate_url: 'https://alinavip.com/api/revalidate',
+    revalidate_secret: 'alina_isr_secret_2026',
+  },
+  {
+    id: '53d69ffc-8079-473a-93f4-2aecaf061844',
+    slug: 'escort-alinavip-com',
+    name: 'ALINA VIP Escorts',
+    domain: 'escort.alinavip.com',
+    revalidate_url: 'https://escort.alinavip.com/api/revalidate',
+    revalidate_secret: 'alina_isr_secret_2026',
+  },
+  {
+    id: 'c838e55e-cb70-4f51-b855-84959db62c97',
+    slug: 'aerocityescortservice-site',
+    name: 'Aerocity Escort Service',
+    domain: 'aerocityescortservice.site',
+    revalidate_url: 'https://aerocityescortservice.site/api/revalidate',
+    revalidate_secret: 'alina_isr_secret_2026',
+  },
+  {
+    id: 'f9460592-3bc3-4886-90c0-671e355cfa79',
+    slug: 'gurgaonescortservice-site',
+    name: 'Gurgaon Escort Service',
+    domain: 'gurgaonescortservice.site',
+    revalidate_url: 'https://gurgaonescortservice.site/api/revalidate',
+    revalidate_secret: 'alina_isr_secret_2026',
+  },
+];
+
 /**
  * Fetch all registered tenant sites
  */
@@ -53,12 +96,14 @@ export async function getAllSites(): Promise<SiteTenant[]> {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/sites?order=name.asc`, {
       headers: getHeaders(),
       cache: 'no-store',
+      signal: AbortSignal.timeout(3000),
     });
     if (!res.ok) throw new Error(`Failed to fetch sites: ${res.statusText}`);
-    return await res.json();
+    const data = await res.json();
+    return Array.isArray(data) && data.length > 0 ? data : DEFAULT_SITES;
   } catch (err) {
-    console.error('[supabaseAdmin] getAllSites error:', err);
-    return [];
+    console.warn('[supabaseAdmin] getAllSites using DEFAULT_SITES fallback:', err);
+    return DEFAULT_SITES;
   }
 }
 

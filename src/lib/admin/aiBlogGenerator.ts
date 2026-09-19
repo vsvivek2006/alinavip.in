@@ -63,25 +63,35 @@ export function slugify(text: string): string {
  * Generate blog post using external AI API (Gemini or Groq)
  */
 export async function generateBlogPost(req: GenerationRequest): Promise<GeneratedBlog> {
-  const provider = req.provider || (req.apiKey?.startsWith('gsk_') ? 'groq' : 'gemini');
+  const groqKey = req.apiKey?.startsWith('gsk_') ? req.apiKey : process.env.GROQ_API_KEY;
+  const geminiKey = (req.apiKey && !req.apiKey?.startsWith('gsk_')) ? req.apiKey : process.env.GEMINI_API_KEY;
 
-  if (provider === 'groq') {
-    const groqKey = req.apiKey || process.env.GROQ_API_KEY;
-    if (!groqKey) {
-      throw new Error(
-        'Groq API Key is missing. Please paste your Groq key (gsk_...) into the generator modal or set GROQ_API_KEY in .env.local.'
-      );
-    }
-    return await generateWithGroq(req, groqKey);
-  } else {
-    const geminiKey = req.apiKey || process.env.GEMINI_API_KEY;
-    if (!geminiKey) {
-      throw new Error(
-        'Gemini API Key is missing. Please paste your Gemini key into the generator modal or set GEMINI_API_KEY in .env.local.'
-      );
-    }
+  // If user explicitly requested Gemini, use Gemini directly
+  if (req.provider === 'gemini' && geminiKey) {
     return await generateWithGemini(req, geminiKey);
   }
+
+  // Primary: Groq (ultra-fast, unrefused on escort and nightlife topics)
+  if (groqKey) {
+    try {
+      return await generateWithGroq(req, groqKey);
+    } catch (groqErr) {
+      console.warn('Groq provider error, falling back to Gemini:', groqErr);
+      if (geminiKey) {
+        return await generateWithGemini(req, geminiKey);
+      }
+      throw groqErr;
+    }
+  }
+
+  // Secondary: Gemini
+  if (geminiKey) {
+    return await generateWithGemini(req, geminiKey);
+  }
+
+  throw new Error(
+    'AI API Key missing. Please configure GROQ_API_KEY or GEMINI_API_KEY in your .env.local file.'
+  );
 }
 
 async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
