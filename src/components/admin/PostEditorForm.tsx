@@ -24,6 +24,7 @@ import {
   Wand2,
 } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 const AI_MODEL_OPTIONS = [
   {
@@ -161,17 +162,22 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
     setAiError(null);
 
     if (!aiTopic.trim()) {
-      setAiError('Please enter what you would like to write about.');
+      const err = 'Please enter what you would like to write about.';
+      setAiError(err);
+      toast.error(err);
       return;
     }
     if (!aiFocusKeyword.trim()) {
-      setAiError('Please enter a Primary Search Keyword.');
+      const err = 'Please enter a Primary Search Keyword.';
+      setAiError(err);
+      toast.error(err);
       return;
     }
 
     const chosenModelConfig = AI_MODEL_OPTIONS.find(m => m.id === aiSelectedModel) || AI_MODEL_OPTIONS[0];
 
     setAiGenerating(true);
+    toast.info(`Generating article with ${chosenModelConfig.name}...`, { duration: 4000 });
     try {
       const res = await fetch('/api/admin/generate-blog', {
         method: 'POST',
@@ -208,6 +214,9 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         type: 'success',
         message: 'Article draft successfully written! Review the formatted sections, headings, and links below.',
       });
+      toast.success('Article draft generated!', {
+        description: 'Formatted sections, headings, and SEO keywords ready to review.',
+      });
 
       // Smooth scroll to the article canvas
       const editorElement = document.getElementById('blog-content-area');
@@ -217,6 +226,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'AI generation failed';
       setAiError(msg);
+      toast.error(`AI generation failed: ${msg}`);
     } finally {
       setAiGenerating(false);
     }
@@ -225,7 +235,9 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   // Save post
   const handleSave = async (publishImmediate = false) => {
     if (!title.trim() || !slug.trim()) {
-      setFeedback({ type: 'error', message: 'Article Title and Web Address (URL) are required.' });
+      const msg = 'Article Title and Web Address (URL) are required.';
+      setFeedback({ type: 'error', message: msg });
+      toast.error(msg);
       return;
     }
 
@@ -290,18 +302,32 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
         const pubData = await pubRes.json();
         if (!pubRes.ok) throw new Error(pubData.error || 'Failed to publish');
 
-        const liveUrl = targetSite ? `https://${targetSite.domain}/blog/${payload.slug}` : null;
+        const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+        const liveUrl = isLocal
+          ? `/blog/${payload.slug}`
+          : (targetSite ? `https://${targetSite.domain}/blog/${payload.slug}` : `/blog/${payload.slug}`);
+
         setStatus('published');
         setFeedback({
           type: 'success',
-          message: `Published successfully! View live on https://${targetSite?.domain}/blog/${payload.slug}`,
-          url: liveUrl || undefined,
+          message: `Published successfully! View live on ${isLocal ? 'Local Server' : targetSite?.domain}`,
+          url: liveUrl,
+        });
+
+        toast.success('Article published & live!', {
+          description: `Post is live at /blog/${payload.slug}`,
+          action: {
+            label: 'View Live Post',
+            onClick: () => window.open(liveUrl, '_blank'),
+          },
+          duration: 10000,
         });
       } else {
         setFeedback({
           type: 'success',
           message: 'Article draft saved successfully.',
         });
+        toast.success('Article draft saved successfully.');
         if (isNew && savedId) {
           router.push(`/admin/blog/${savedId}`);
         }
@@ -309,6 +335,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Save error';
       setFeedback({ type: 'error', message: msg });
+      toast.error(`Save error: ${msg}`);
     } finally {
       setSaving(false);
       setPublishing(false);

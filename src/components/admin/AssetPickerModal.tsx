@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import imagekitAssets from '@/data/imagekit_assets.json';
 import { Search, X, Check, Image as ImageIcon, Copy } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface AssetPickerModalProps {
   isOpen: boolean;
@@ -34,6 +35,7 @@ export default function AssetPickerModal({
     e.stopPropagation();
     navigator.clipboard.writeText(url);
     setCopiedUrl(url);
+    toast.success('Image CDN URL copied to clipboard!');
     setTimeout(() => setCopiedUrl(null), 2000);
   };
 
@@ -86,6 +88,7 @@ export default function AssetPickerModal({
                 key={asset.fileName}
                 onClick={() => {
                   onSelectImage(asset.url);
+                  toast.success(`Attached image: ${asset.title}`);
                   onClose();
                 }}
                 className={`group relative rounded-2xl overflow-hidden border cursor-pointer transition-all duration-200 bg-white flex flex-col ${

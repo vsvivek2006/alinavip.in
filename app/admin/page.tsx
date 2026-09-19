@@ -19,6 +19,7 @@ import {
   Loader2,
   Send,
 } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function AdminDashboardPage() {
   const { activeSite, loading: sitesLoading } = useAdminTenant();
@@ -40,6 +41,7 @@ export default function AdminDashboardPage() {
       }
     } catch (err) {
       console.error('Error fetching posts:', err);
+      toast.error('Failed to fetch posts for active site.');
     } finally {
       setLoadingPosts(false);
     }
@@ -60,33 +62,56 @@ export default function AdminDashboardPage() {
       });
       const data = await res.json();
       if (res.ok && data.success) {
-        setActionMessage(`Published & live on ${activeSite?.domain}!`);
+        const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+        const viewUrl = isLocal
+          ? `/blog/${post.slug}`
+          : `https://${activeSite?.domain || 'alinavip.in'}/blog/${post.slug}`;
+
+        toast.success(`Published live on ${activeSite?.name || 'site'}!`, {
+          description: `Post is live at /blog/${post.slug}`,
+          action: {
+            label: 'View Live Post',
+            onClick: () => window.open(viewUrl, '_blank'),
+          },
+          duration: 9000,
+        });
         await fetchPosts();
       } else {
         throw new Error(data.error || 'Failed to publish');
       }
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Publish error';
-      alert(`Publishing failed: ${msg}`);
+      toast.error(`Publishing failed: ${msg}`);
     } finally {
       setPublishingId(null);
-      setTimeout(() => setActionMessage(null), 4000);
     }
   };
 
   const handleDelete = async (post: BlogPostRecord) => {
-    if (!confirm(`Are you sure you want to delete "${post.title}"?`)) return;
-    try {
-      const res = await fetch(`/api/admin/posts/${post.id}`, { method: 'DELETE' });
-      if (res.ok) {
-        setPosts(prev => prev.filter(p => p.id !== post.id));
-        setActionMessage('Post deleted successfully.');
-      }
-    } catch (err) {
-      console.error('Delete failed:', err);
-    } finally {
-      setTimeout(() => setActionMessage(null), 3000);
-    }
+    toast(`Delete "${post.title}"?`, {
+      description: 'This will permanently remove the article from local and cloud storage.',
+      action: {
+        label: 'Confirm Delete',
+        onClick: async () => {
+          try {
+            const res = await fetch(`/api/admin/posts/${post.id}`, { method: 'DELETE' });
+            if (res.ok) {
+              setPosts(prev => prev.filter(p => p.id !== post.id));
+              toast.success('Post deleted successfully');
+            } else {
+              toast.error('Failed to delete post');
+            }
+          } catch (err) {
+            console.error('Delete failed:', err);
+            toast.error('Delete failed. Please try again.');
+          }
+        },
+      },
+      cancel: {
+        label: 'Cancel',
+        onClick: () => {},
+      },
+    });
   };
 
   const filteredPosts = useMemo(() => {

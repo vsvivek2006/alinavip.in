@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, CheckCircle2, MessageCircle, AlertCircle } from 'lucide-react';
+import { toast } from 'sonner';
 import { siteConfig } from '@/data/siteConfig';
 import {
   submitBookingRequest,
@@ -37,13 +38,22 @@ export default function LocationBookingForm({ locationName, locationCity }: Loca
       }, siteConfig.whatsapp);
       setSubmissionStatus(result.status);
       setStatusMessage(result.message);
+      if (result.status === 'success') {
+        toast.success(`Booking request sent for ${locationName}!`, {
+          description: 'Opening WhatsApp concierge...',
+        });
+      } else {
+        toast.error(result.message || 'Booking submission error');
+      }
       if (result.whatsappUrl) {
         setWhatsappUrl(result.whatsappUrl);
         window.open(result.whatsappUrl, '_blank', 'noopener,noreferrer');
       }
     } catch {
       setSubmissionStatus('error');
-      setStatusMessage('Unable to prepare WhatsApp booking. Please call directly.');
+      const err = 'Unable to prepare WhatsApp booking. Please call directly.';
+      setStatusMessage(err);
+      toast.error(err);
     }
   };
 

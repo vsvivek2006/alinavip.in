@@ -21,8 +21,9 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
-export const revalidate = 86400; // 24h ISR, purged on-demand by /api/revalidate webhook
+export const revalidate = 0;
 
 export async function generateStaticParams() {
   const posts = await getPublishedBlogPosts();

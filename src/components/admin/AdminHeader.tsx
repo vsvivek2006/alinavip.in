@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAdminTenant } from '@/context/AdminTenantContext';
 import { Globe, LogOut, ExternalLink, Sparkles, LayoutList, Layers } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function AdminHeader() {
   const { sites, activeSite, setActiveSite, loading } = useAdminTenant();
@@ -13,8 +14,19 @@ export default function AdminHeader() {
 
   const handleLogout = async () => {
     await fetch('/api/admin/auth', { method: 'DELETE' });
+    toast.success('Logged out safely.');
     router.push('/admin/login');
     router.refresh();
+  };
+
+  const handleSiteChange = (siteId: string) => {
+    const selected = sites.find(s => s.id === siteId);
+    if (selected) {
+      setActiveSite(selected);
+      toast.info(`Switched active site to ${selected.name}`, {
+        description: `Now managing content for ${selected.domain}`,
+      });
+    }
   };
 
   return (
@@ -50,10 +62,7 @@ export default function AdminHeader() {
             ) : (
               <select
                 value={activeSite?.id || ''}
-                onChange={e => {
-                  const selected = sites.find(s => s.id === e.target.value);
-                  if (selected) setActiveSite(selected);
-                }}
+                onChange={e => handleSiteChange(e.target.value)}
                 className="bg-transparent text-xs font-bold text-stone-800 focus:outline-none cursor-pointer truncate pr-1"
               >
                 {sites.map(site => (

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+import { toast } from 'sonner';
 import { siteConfig } from '@/data/siteConfig';
 import {
   submitNewsletterSubscription,
@@ -22,12 +23,19 @@ export default function NewsletterForm() {
       const result = await submitNewsletterSubscription({ email }, siteConfig.whatsapp);
       setSubmissionStatus(result.status);
       setStatusMessage(result.message);
+      if (result.status === 'success') {
+        toast.success('Subscription registered via WhatsApp concierge!');
+      } else {
+        toast.error(result.message || 'Subscription error');
+      }
       if (result.whatsappUrl) {
         window.open(result.whatsappUrl, '_blank', 'noopener,noreferrer');
       }
     } catch {
       setSubmissionStatus('error');
-      setStatusMessage('Unable to complete subscription.');
+      const err = 'Unable to complete subscription.';
+      setStatusMessage(err);
+      toast.error(err);
     }
   };
 

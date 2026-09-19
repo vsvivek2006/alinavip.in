@@ -1,5 +1,12 @@
+import dns from 'dns';
+try {
+  dns.setDefaultResultOrder('ipv4first');
+} catch {}
+
 import { blogPosts as fallbackPosts, BlogPost } from '@/data/blogs';
 import { getAssetUrl } from '@/lib/assets';
+import { getLocalPostBySlug, getLocalPosts } from '@/lib/admin/localPostsStore';
+import { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -15,9 +22,10 @@ interface SupabasePostRow {
   author: string | null;
   tags: string[] | null;
   published_at: string | null;
+  status?: string;
 }
 
-function mapRowToBlogPost(row: SupabasePostRow): BlogPost {
+function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
   let contentParagraphs: string[] = [];
   if (Array.isArray(row.content)) {
     contentParagraphs = row.content as string[];
@@ -52,70 +60,97 @@ function mapRowToBlogPost(row: SupabasePostRow): BlogPost {
 
 /**
  * Fetch all published posts for the current site
- * Automatically cached with ISR (revalidates on webhook or every 24h)
+ * Checks local cache + Supabase with IPv4 priority
  */
 export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
+  const localList = getLocalPosts().map(mapRowToBlogPost);
+  
   if (!SUPABASE_URL || !ANON_KEY) {
-    return fallbackPosts;
+    const combined = [...localList, ...fallbackPosts];
+    const seen = new Set<string>();
+    return combined.filter(p => {
+      if (seen.has(p.slug)) return false;
+      seen.add(p.slug);
+      return true;
+    });
   }
 
   try {
     const postsRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?sites.slug=eq.${encodeURIComponent(SITE_SLUG)}&status=eq.published&order=published_at.desc&select=*,sites!inner(slug)`,
+      `${SUPABASE_URL}/rest/v1/posts?status=eq.published&order=published_at.desc&select=*`,
       {
         headers: {
           apikey: ANON_KEY,
           Authorization: `Bearer ${ANON_KEY}`,
         },
-        next: { revalidate: 86400, tags: ['blog-posts'] },
+        cache: 'no-store',
+        signal: AbortSignal.timeout(3000),
       }
     );
 
-    if (!postsRes.ok) {
-      return fallbackPosts;
+    if (postsRes.ok) {
+      const rows: SupabasePostRow[] = await postsRes.json();
+      if (rows && rows.length > 0) {
+        const remoteList = rows.map(mapRowToBlogPost);
+        const map = new Map<string, BlogPost>();
+        fallbackPosts.forEach(p => map.set(p.slug, p));
+        remoteList.forEach(p => map.set(p.slug, p));
+        localList.forEach(p => map.set(p.slug, p));
+        return Array.from(map.values());
+      }
     }
-
-    const rows: SupabasePostRow[] = await postsRes.json();
-    if (!rows || rows.length === 0) {
-      return fallbackPosts;
-    }
-
-    return rows.map(mapRowToBlogPost);
-  } catch {
-    // Graceful fallback to static files on any network error
-    return fallbackPosts;
+  } catch (err) {
+    console.warn('[supabaseBlog] Remote fetch fallback to local:', err);
   }
+
+  const combined = [...localList, ...fallbackPosts];
+  const seen = new Set<string>();
+  return combined.filter(p => {
+    if (seen.has(p.slug)) return false;
+    seen.add(p.slug);
+    return true;
+  });
 }
 
 /**
- * Fetch a single published post by slug with site isolation
+ * Fetch a single post by slug
+ * Checks local persistent store first (0ms), then Supabase, then fallback. Never 404s on saved posts.
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!SUPABASE_URL || !ANON_KEY) {
-    return fallbackPosts.find(p => p.slug === slug) || null;
+  const cleanSlug = slug.toLowerCase().trim();
+
+  // 1. Check local persistent store first (instant, works offline, zero IPv6 timeouts)
+  const localPost = getLocalPostBySlug(cleanSlug);
+  if (localPost) {
+    return mapRowToBlogPost(localPost);
   }
 
-  try {
-    const postRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&sites.slug=eq.${encodeURIComponent(SITE_SLUG)}&status=eq.published&select=*,sites!inner(slug)`,
-      {
-        headers: {
-          apikey: ANON_KEY,
-          Authorization: `Bearer ${ANON_KEY}`,
-        },
-        next: { revalidate: 86400, tags: [`blog-${slug}`] },
-      }
-    );
+  // 2. Query Supabase
+  if (SUPABASE_URL && ANON_KEY) {
+    try {
+      const postRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&select=*`,
+        {
+          headers: {
+            apikey: ANON_KEY,
+            Authorization: `Bearer ${ANON_KEY}`,
+          },
+          cache: 'no-store',
+          signal: AbortSignal.timeout(3000),
+        }
+      );
 
-    if (postRes.ok) {
-      const rows: SupabasePostRow[] = await postRes.json();
-      if (rows && rows.length > 0) {
-        return mapRowToBlogPost(rows[0]);
+      if (postRes.ok) {
+        const rows: SupabasePostRow[] = await postRes.json();
+        if (rows && rows.length > 0) {
+          return mapRowToBlogPost(rows[0]);
+        }
       }
+    } catch {
+      // Ignore network timeout and fall back to local data
     }
-  } catch {
-    // Fall back to local
   }
 
-  return fallbackPosts.find(p => p.slug === slug) || null;
+  // 3. Check hardcoded fallback catalog
+  return fallbackPosts.find(p => p.slug.toLowerCase() === cleanSlug) || null;
 }

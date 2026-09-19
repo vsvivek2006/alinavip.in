@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Lock, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function AdminLoginPage() {
   const [passkey, setPasskey] = useState('');
@@ -29,11 +30,13 @@ export default function AdminLoginPage() {
         throw new Error(data.error || 'Authentication failed');
       }
 
+      toast.success('Passkey authenticated! Welcome back.');
       router.push('/admin');
       router.refresh();
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : 'Invalid credentials';
       setError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false);
     }

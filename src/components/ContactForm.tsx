@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { AlertCircle, CheckCircle2, MessageCircle } from 'lucide-react';
+import { toast } from 'sonner';
 import { siteConfig } from '@/data/siteConfig';
 import { locationSummary } from '@/data/locationSummary';
 import {
@@ -31,13 +32,22 @@ export default function ContactForm() {
       const result = await submitContactInquiry(formData, siteConfig.whatsapp);
       setSubmissionStatus(result.status);
       setStatusMessage(result.message);
+      if (result.status === 'success') {
+        toast.success('Inquiry submitted! Launching WhatsApp Concierge...', {
+          description: 'Our private VIP desk will coordinate directly.',
+        });
+      } else {
+        toast.error(result.message || 'Submission failed.');
+      }
       if (result.whatsappUrl) {
         setWhatsappUrl(result.whatsappUrl);
         window.open(result.whatsappUrl, '_blank', 'noopener,noreferrer');
       }
     } catch {
       setSubmissionStatus('error');
-      setStatusMessage('Unable to prepare WhatsApp booking. Please call directly.');
+      const err = 'Unable to prepare WhatsApp booking. Please call directly.';
+      setStatusMessage(err);
+      toast.error(err);
     }
   };
 

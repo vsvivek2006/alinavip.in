@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Share2, Check } from 'lucide-react';
+import { toast } from 'sonner';
 
 export default function ShareButton() {
   const [copied, setCopied] = useState(false);
@@ -10,6 +11,7 @@ export default function ShareButton() {
     if (typeof window !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href);
       setCopied(true);
+      toast.success('Article link copied to clipboard!');
       setTimeout(() => setCopied(false), 2500);
     }
   };

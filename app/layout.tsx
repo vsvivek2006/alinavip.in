@@ -131,6 +131,8 @@ const jsonLd = {
   ],
 };
 
+import { Toaster } from 'sonner';
+
 export default function RootLayout({
   children,
 }: {
@@ -146,6 +148,7 @@ export default function RootLayout({
       </head>
       <body className="bg-[#FAF9F6] text-[#1E1E1E] font-sans antialiased">
         <PublicShell>{children}</PublicShell>
+        <Toaster richColors position="top-right" closeButton expand />
       </body>
     </html>
   );
