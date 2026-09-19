@@ -37,7 +37,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    notFound();
+    return {
+      title: 'Article Not Found | ALINA VIP India',
+      robots: { index: false, follow: false },
+    };
   }
 
   const title = `${post.title} | ALINA VIP India`;

@@ -31,12 +31,17 @@ const nextConfig = {
     }
     return config;
   },
+  outputFileTracingIncludes: {
+    '/**': [
+      './node_modules/next/dist/compiled/source-map/**/*',
+      './src/data/local_posts.json',
+    ],
+  },
   outputFileTracingExcludes: {
     '*': [
       './scripts/**/*',
       './scratch/**/*',
       './.codegraph/**/*',
-      './*.json',
     ],
   },
   async headers() {
