@@ -21,14 +21,13 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
-    template: '%s | ALINA VIP',
+    default: `${siteConfig.tagline} | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
+  description: siteConfig.description,
   keywords: siteConfig.keywords,
-  applicationName: 'ALINA VIP',
-  authors: [{ name: 'ALINA VIP' }],
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
   robots: {
     index: true,
     follow: true,
@@ -53,24 +52,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: siteConfig.url,
-    siteName: 'ALINA VIP',
-    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
-    description:
-      'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
+    siteName: siteConfig.name,
+    title: `${siteConfig.tagline} | ${siteConfig.name}`,
+    description: siteConfig.description,
     images: [
       {
         url: `${siteConfig.url}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'ALINA VIP Escort Service in Gurgaon Gurugram',
+        alt: `${siteConfig.name} Escort Service in Gurgaon Gurugram`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
-    description:
-      'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
+    title: `${siteConfig.tagline} | ${siteConfig.name}`,
+    description: siteConfig.description,
     images: [`${siteConfig.url}/og-image.jpg`],
   },
   verification: {

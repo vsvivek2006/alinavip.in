@@ -252,6 +252,7 @@ export default async function HotelSlugPage({
                         src={m.image}
                         alt={m.name}
                         fill
+                        sizes="56px"
                         className="object-cover group-hover:scale-105 transition-transform"
                       />
                     </div>

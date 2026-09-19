@@ -16,20 +16,33 @@ import HomeBlogSection from '@/components/home/HomeBlogSection';
 import CTASection from '@/components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escorts – 24/7 In-Call & Out-Call Gurgaon Escort Service | ALINA VIP',
-  description:
-    'ALINA VIP provides premier escort service in Gurgaon (Gurugram). 100% verified Russian, independent, and high-profile call girls with 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+  title: `${siteConfig.tagline} | ${siteConfig.name}`,
+  description: siteConfig.description,
   keywords: siteConfig.keywords,
   alternates: {
     canonical: siteConfig.url,
     languages: getAlternateLanguages(''),
   },
   openGraph: {
-    title: 'Gurgaon Escorts – 24/7 In-Call & Out-Call Gurgaon Escort Service | ALINA VIP',
-    description:
-      'ALINA VIP provides premier escort service in Gurgaon (Gurugram). 100% verified Russian, independent, and high-profile call girls with 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+    title: `${siteConfig.tagline} | ${siteConfig.name}`,
+    description: siteConfig.description,
     url: siteConfig.url,
+    siteName: siteConfig.name,
     type: 'website',
+    images: [
+      {
+        url: `${siteConfig.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - ${siteConfig.tagline}`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.tagline} | ${siteConfig.name}`,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og-image.jpg`],
   },
 };
 
@@ -39,18 +52,17 @@ export default async function HomePage() {
     '@type': 'Organization',
     name: siteConfig.name,
     alternateName: [
-      'ALINA VIP Escorts Service Gurgaon',
-      'ALINA VIP Escort Service Gurugram',
+      `${siteConfig.name} Escorts Service`,
+      `${siteConfig.name} Agency`,
     ],
     url: siteConfig.url,
     phone: siteConfig.phone,
     email: siteConfig.email,
-    areaServed: ['Gurgaon', 'Gurugram', 'Delhi NCR', 'DLF Phase 1-5', 'Cyber City', 'Golf Course Road'],
+    areaServed: ['Gurgaon', 'Gurugram', 'Delhi NCR', 'Aerocity', 'DLF Phase 1-5', 'Cyber City', 'Golf Course Road'],
     knowsAbout: [
-      'Escort Service in Gurgaon',
-      'Escorts Service in Gurgaon',
-      'Escort Service in Gurugram',
-      'VIP Call Girls in Gurgaon',
+      siteConfig.tagline,
+      'VIP Call Girls',
+      'Escort Service',
     ],
     address: {
       '@type': 'PostalAddress',
