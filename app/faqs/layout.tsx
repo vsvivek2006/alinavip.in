@@ -1,20 +1,15 @@
 import type { Metadata } from 'next';
-import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+import { siteConfig } from '@/data/siteConfig';
 
+// /faqs permanently redirects to /faq — point canonical there so any
+// cached copies Google has also resolve to the canonical URL
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions About Escorts Services | ALINA VIP',
-  description:
-    'Comprehensive answers to 21+ essential questions about Gurgaon call girls, booking protocols, safety standards, rates, and hotel appointments.',
   alternates: {
-    canonical: `${siteConfig.url}/faqs`,
-    languages: getAlternateLanguages('/faqs'),
+    canonical: `${siteConfig.url}/faq`,
   },
+  robots: { index: false, follow: false },
 };
 
-export default function FaqsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function FaqsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

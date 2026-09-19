@@ -10,7 +10,11 @@ import { saveLocalPost, getLocalPosts, deleteLocalPost } from './localPostsStore
 import { invalidateBlogCache } from '@/lib/supabaseBlog';
 
 const SUPABASE_URL = (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pmhzuqaczgctmzjpslpg.supabase.co').replace(/\/+$/, '');
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtaHp1cWFjemdjdG16anBzbHBnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4OTY0MjAyMywiZXhwIjoyMTA1MjE4MDIzfQ.g4KCNHLY0jZUEhGEdsheF5OXzWvR4txkdc493tWa-8g';
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!SERVICE_KEY) {
+  // Admin operations will fail gracefully — local store is the fallback
+  console.warn('[supabaseAdmin] SUPABASE_SERVICE_ROLE_KEY not set — admin writes will use local store only');
+}
 
 export interface SiteTenant {
   id: string;
@@ -42,6 +46,7 @@ export interface BlogPostRecord {
 }
 
 function getHeaders(prefer?: string) {
+  if (!SERVICE_KEY) throw new Error('[supabaseAdmin] SUPABASE_SERVICE_ROLE_KEY missing — cannot make admin requests');
   const headers: Record<string, string> = {
     'apikey': SERVICE_KEY,
     'Authorization': `Bearer ${SERVICE_KEY}`,

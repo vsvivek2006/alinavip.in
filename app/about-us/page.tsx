@@ -1,5 +1,5 @@
-import AboutPage, { metadata as aboutMetadata } from '../about/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = aboutMetadata;
-
-export default AboutPage;
+export default function AboutUsPage() {
+  permanentRedirect('/about');
+}

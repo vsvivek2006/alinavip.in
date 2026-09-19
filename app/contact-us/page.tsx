@@ -1,5 +1,5 @@
-import ContactPage, { metadata as contactMetadata } from '../contact/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = contactMetadata;
-
-export default ContactPage;
+export default function ContactUsPage() {
+  permanentRedirect('/contact');
+}

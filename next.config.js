@@ -111,6 +111,7 @@ const nextConfig = {
       // Duplicate alias pages → canonical
       { source: '/about-us', destination: '/about', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
+      { source: '/faqs', destination: '/faq', permanent: true },
       { source: '/escorts-categories', destination: '/categories', permanent: true },
       { source: '/gurgaon-escorts-rates', destination: '/rates', permanent: true },
       { source: '/gurgaon-escorts-phone-number', destination: '/phone-number', permanent: true },
