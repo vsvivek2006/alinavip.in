@@ -24,3 +24,5 @@ scratch/
 *.sln
 *.sw?
 .env
+
+/scratch/

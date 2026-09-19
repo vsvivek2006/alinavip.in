@@ -36,7 +36,7 @@ interface CacheEntry<T> {
 
 let postsListCache: CacheEntry<BlogPost[]> | null = null;
 const postBySlugCache = new Map<string, CacheEntry<BlogPost | null>>();
-const CACHE_TTL_MS = 60 * 1000; // 60 seconds memory TTL
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5-minute memory TTL
 
 export function invalidateBlogCache(slug?: string): void {
   postsListCache = null;
@@ -128,13 +128,14 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
 
   try {
     const postsRes = await fetch(
-      SUPABASE_URL + '/rest/v1/posts?site_id=eq.' + encodeURIComponent(SITE_ID) + '&status=eq.published&order=published_at.desc&select=*',
+      SUPABASE_URL + '/rest/v1/posts?site_id=eq.' + encodeURIComponent(SITE_ID) + '&status=eq.published&order=published_at.desc&select=id,slug,title,excerpt,cover_image,author,tags,published_at',
       {
         headers: {
           apikey: ANON_KEY,
           Authorization: 'Bearer ' + ANON_KEY,
         },
         signal: AbortSignal.timeout(8000),
+        next: { revalidate: 3600 },
       }
     );
 
