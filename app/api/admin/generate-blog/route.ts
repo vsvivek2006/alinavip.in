@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
       wordCount: body.wordCount || 1200,
       apiKey: body.apiKey,
       provider: body.provider,
+      model: body.model,
     });
 
     return NextResponse.json({ blog: generated });

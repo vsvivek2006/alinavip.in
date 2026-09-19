@@ -25,6 +25,37 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+const AI_MODEL_OPTIONS = [
+  {
+    id: 'openai/gpt-oss-120b',
+    name: 'Groq GPT-OSS 120B',
+    provider: 'groq' as const,
+    badge: 'Top Pick',
+    desc: 'LPU Ultra-fast • Unfiltered 120B',
+  },
+  {
+    id: 'qwen/qwen3.8-27b',
+    name: 'Groq Qwen 27B',
+    provider: 'groq' as const,
+    badge: 'Lightning',
+    desc: 'Instant generation • High precision',
+  },
+  {
+    id: 'gemini-3.6-flash',
+    name: 'Gemini 3.6 Flash',
+    provider: 'gemini' as const,
+    badge: 'Google AI',
+    desc: 'Next-gen reasoning • Top SERP intent',
+  },
+  {
+    id: 'gemini-3.5-flash',
+    name: 'Gemini 3.5 Flash',
+    provider: 'gemini' as const,
+    badge: 'Google AI',
+    desc: 'Deep editorial & long-form nuance',
+  },
+];
+
 interface PostEditorFormProps {
   initialPost?: BlogPostRecord | null;
   isNew?: boolean;
@@ -71,9 +102,11 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
   const [publishing, setPublishing] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string; url?: string } | null>(null);
 
-  // Inline AI Generator states (No popups, No model selector)
+  // Inline AI Generator states (Inline Choice - Zero Popups)
   const [aiTopic, setAiTopic] = useState('');
   const [aiFocusKeyword, setAiFocusKeyword] = useState('');
+  const [aiSecondaryKeywords, setAiSecondaryKeywords] = useState('');
+  const [aiSelectedModel, setAiSelectedModel] = useState('openai/gpt-oss-120b');
   const [aiGenerating, setAiGenerating] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
 
@@ -123,7 +156,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
     }, 50);
   };
 
-  // Handle AI generation inline - Zero model picking, automatic optimal engine
+  // Handle AI generation inline with user-selected model
   const handleGenerateAI = async () => {
     setAiError(null);
 
@@ -136,6 +169,8 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       return;
     }
 
+    const chosenModelConfig = AI_MODEL_OPTIONS.find(m => m.id === aiSelectedModel) || AI_MODEL_OPTIONS[0];
+
     setAiGenerating(true);
     try {
       const res = await fetch('/api/admin/generate-blog', {
@@ -146,7 +181,10 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
           domain: targetSite?.domain || 'alinavip.in',
           topic: aiTopic.trim(),
           focusKeyword: aiFocusKeyword.trim(),
+          secondaryKeywords: aiSecondaryKeywords.trim() || undefined,
           wordCount: 1200,
+          provider: chosenModelConfig.provider,
+          model: chosenModelConfig.id,
         }),
       });
 
@@ -362,7 +400,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
         {/* Left 2 Columns: Inline AI Writing Bar + Article Canvas */}
         <div className="lg:col-span-2 space-y-6">
-          {/* INLINE AI GENERATOR (Inside page, ZERO POPUP, ZERO MODEL CHOOSING) */}
+          {/* INLINE AI GENERATOR (Inside page, ZERO POPUP, Model Selection Inline) */}
           <div className="rounded-3xl bg-gradient-to-r from-[#FAF8F5] to-[#F7F2ED] border border-[#E2DDD5] shadow-xs p-5 sm:p-6 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-2xl bg-[#671725] text-white flex items-center justify-center shadow-xs shrink-0">
@@ -381,8 +419,51 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
               </div>
             </div>
 
+            {/* Choose Model Option (Inline - No Popups) */}
+            <div className="pt-1">
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-[11px] font-bold uppercase tracking-wider text-stone-700">
+                  Choose AI Model
+                </label>
+                <span className="text-[10px] font-medium text-stone-500">
+                  Active: <strong className="text-[#671725]">{AI_MODEL_OPTIONS.find(m => m.id === aiSelectedModel)?.name}</strong>
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {AI_MODEL_OPTIONS.map(m => {
+                  const isSelected = aiSelectedModel === m.id;
+                  return (
+                    <button
+                      key={m.id}
+                      type="button"
+                      onClick={() => setAiSelectedModel(m.id)}
+                      className={`p-2.5 rounded-xl text-left border transition-all cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#671725] text-white border-[#671725] shadow-xs ring-1 ring-[#671725]'
+                          : 'bg-white text-stone-800 border-[#E2DDD5] hover:border-stone-400 hover:bg-stone-50'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-xs font-bold truncate">{m.name}</span>
+                        <span className={`text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider ${
+                          isSelected ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
+                        }`}>
+                          {m.badge}
+                        </span>
+                      </div>
+                      <p className={`text-[10px] leading-tight line-clamp-1 ${
+                        isSelected ? 'text-rose-100' : 'text-stone-500'
+                      }`}>
+                        {m.desc}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-1">
-              <div className="sm:col-span-6">
+              <div className="sm:col-span-5">
                 <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-700 mb-1">
                   Article Topic / Headline <span className="text-rose-500">*</span>
                 </label>
@@ -395,7 +476,7 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                 />
               </div>
 
-              <div className="sm:col-span-3">
+              <div className="sm:col-span-4">
                 <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-700 mb-1">
                   Search Keyword <span className="text-rose-500">*</span>
                 </label>
@@ -428,6 +509,17 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
                   )}
                 </button>
               </div>
+            </div>
+
+            {/* Optional Secondary Keywords */}
+            <div className="pt-0.5">
+              <input
+                type="text"
+                value={aiSecondaryKeywords}
+                onChange={e => setAiSecondaryKeywords(e.target.value)}
+                placeholder="Optional secondary keywords for ranking (e.g. DLF Cyber City, 5-star hotel outcalls, zero advance)"
+                className="w-full px-3.5 py-1.5 bg-white/80 border border-[#E2DDD5] rounded-lg text-xs font-medium text-stone-700 placeholder-stone-400 focus:outline-none focus:border-[#671725] transition-all"
+              />
             </div>
 
             {aiError && (

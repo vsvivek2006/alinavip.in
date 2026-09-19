@@ -21,6 +21,7 @@ export interface GenerationRequest {
   wordCount?: number; // default 1000
   apiKey?: string;
   provider?: 'gemini' | 'groq';
+  model?: string;
 }
 
 export interface GeneratedBlog {
@@ -60,21 +61,44 @@ export function slugify(text: string): string {
 }
 
 /**
+ * Optimize SEO slug to ensure short, high-volume keyword URL
+ */
+export function optimizeSeoSlug(rawSlug: string, focusKeyword: string): string {
+  const clean = slugify(rawSlug);
+  // If slug is clean and <= 50 chars, use it
+  if (clean.length > 0 && clean.length <= 50) return clean;
+  // Fallback to keyword-based slug
+  const kwSlug = slugify(focusKeyword);
+  return kwSlug || clean.substring(0, 50).replace(/-+$/, '');
+}
+
+/**
  * Generate blog post using external AI API (Gemini or Groq)
  */
 export async function generateBlogPost(req: GenerationRequest): Promise<GeneratedBlog> {
   const groqKey = req.apiKey?.startsWith('gsk_') ? req.apiKey : process.env.GROQ_API_KEY;
   const geminiKey = (req.apiKey && !req.apiKey?.startsWith('gsk_')) ? req.apiKey : process.env.GEMINI_API_KEY;
 
-  // If user explicitly requested Gemini, use Gemini directly
-  if (req.provider === 'gemini' && geminiKey) {
-    return await generateWithGemini(req, geminiKey);
+  // Determine provider by explicit request or model prefix
+  const isGeminiRequested = req.provider === 'gemini' || req.model?.startsWith('gemini');
+
+  // If user explicitly requested Gemini
+  if (isGeminiRequested && geminiKey) {
+    try {
+      return await generateWithGemini(req, geminiKey, req.model);
+    } catch (geminiErr) {
+      console.warn('Gemini provider error, falling back to Groq:', geminiErr);
+      if (groqKey) {
+        return await generateWithGroq(req, groqKey);
+      }
+      throw geminiErr;
+    }
   }
 
   // Primary: Groq (ultra-fast, unrefused on escort and nightlife topics)
   if (groqKey) {
     try {
-      return await generateWithGroq(req, groqKey);
+      return await generateWithGroq(req, groqKey, req.model);
     } catch (groqErr) {
       console.warn('Groq provider error, falling back to Gemini:', groqErr);
       if (geminiKey) {
@@ -86,7 +110,7 @@ export async function generateBlogPost(req: GenerationRequest): Promise<Generate
 
   // Secondary: Gemini
   if (geminiKey) {
-    return await generateWithGemini(req, geminiKey);
+    return await generateWithGemini(req, geminiKey, req.model);
   }
 
   throw new Error(
@@ -94,12 +118,15 @@ export async function generateBlogPost(req: GenerationRequest): Promise<Generate
   );
 }
 
-async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
+async function generateWithGroq(req: GenerationRequest, apiKey: string, preferredModel?: string): Promise<GeneratedBlog> {
   const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = createSystemPrompt(req);
   
   // Available Groq models with automatic fallback
-  const models = ['openai/gpt-oss-120b', 'qwen/qwen3.8-27b', 'llama-3.3-70b-versatile'];
+  const fallbackList = ['openai/gpt-oss-120b', 'qwen/qwen3.8-27b', 'openai/gpt-oss-20b'];
+  const models = preferredModel && fallbackList.includes(preferredModel)
+    ? [preferredModel, ...fallbackList.filter(m => m !== preferredModel)]
+    : fallbackList;
   let lastError = '';
 
   for (const model of models) {
@@ -153,12 +180,15 @@ async function generateWithGroq(req: GenerationRequest, apiKey: string): Promise
   throw new Error(`Groq API Error: ${lastError}`);
 }
 
-async function generateWithGemini(req: GenerationRequest, apiKey: string): Promise<GeneratedBlog> {
+async function generateWithGemini(req: GenerationRequest, apiKey: string, preferredModel?: string): Promise<GeneratedBlog> {
   const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = createSystemPrompt(req);
   
-  // Try stable gemini-3.5-flash first, then gemini-3.6-flash, then gemini-3.1-flash-lite
-  const models = ['gemini-3.5-flash', 'gemini-3.6-flash', 'gemini-3.1-flash-lite'];
+  // Try stable active models
+  const fallbackList = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3.1-flash-lite'];
+  const models = preferredModel && fallbackList.includes(preferredModel)
+    ? [preferredModel, ...fallbackList.filter(m => m !== preferredModel)]
+    : fallbackList;
   let lastError = '';
 
   for (const model of models) {
@@ -256,7 +286,7 @@ function sanitizeOutput(parsed: Record<string, unknown>, req: GenerationRequest,
 
   return {
     title,
-    slug: slugify((parsed.slug as string) || (parsed.title as string) || req.topic),
+    slug: optimizeSeoSlug((parsed.slug as string) || (parsed.title as string) || req.focusKeyword || req.topic, req.focusKeyword),
     seoTitle,
     seoDescription,
     excerpt,
@@ -329,48 +359,56 @@ function ensureInternalLinks(paragraphs: string[]): string[] {
 
 function createSystemPrompt(req: GenerationRequest) {
   return {
-    system: `You are an elite lifestyle editor and private hospitality concierge writing exclusively for ${req.siteName} (https://${req.domain}).
-Your writing must be 100% human, authoritative, polished, discreet, and natural.
+    system: `You are an elite, insider lifestyle editor and chief concierge writing exclusively for ${req.siteName} (https://${req.domain}).
+Your writing must be 100% human, authoritative, direct, and non-repetitive.
 
 STRICT BRAND CONTEXT RULES:
 1. Speak ONLY about ${req.siteName} (${req.domain}).
 2. NEVER mention other rival agencies, competitor sites, or external brand names.
-3. Position ${req.siteName} as the gold standard of verified, safe, zero-advance, and discreet escort service and VIP call girls in Gurgaon and Delhi NCR.
+3. Position ${req.siteName} as the #1 gold standard of verified, safe, zero-advance, and discreet escort service and VIP call girls in Gurgaon and Delhi NCR.
 
 CRITICAL VOCABULARY RULES (ABSOLUTE REQUIREMENT):
 - NEVER USE THE WORDS: "companion", "companions", "companionship". THEY ARE STRICTLY FORBIDDEN.
 - ALWAYS USE EXACT TERMS: "call girls", "call girl", "escort service", "escorts", "VIP call girls", "independent escorts", "5-star hotel call girls".
-- Every reference to our models or services must use "call girls" or "escort service", never "companion".
+- Every reference to models or services must use "call girls" or "escort service", never "companion".
 
-STRICT ANTI-AI HUMAN WRITING RULES:
+STRICT ANTI-AI & 100% HUMAN NATURE RULES:
+- NO SUGARCOATING. NO FLUFF. NO MONOTONIC AI FILLER.
+- NEVER REPEAT YOURSELF. Every single section must present distinct, concrete, actionable information. If you mentioned 20-minute dispatch in the intro, DO NOT repeat it in every section. Focus on new venue details, discretion etiquette, room reservation tips, and payment safety.
 - FORBIDDEN WORDS & PHRASES (STRICTLY PROHIBITED):
-  "companion", "companions", "companionship", "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on", "realm", "ever-evolving", "shed light".
-- Write with confident, conversational first-person plural authority ("we", "our private desk", "guests frequently share with us").
-- Keep paragraphs compact (2 to 4 sentences maximum). Never write walls of text.
-- Ground the writing in specific regional landmarks: DLF CyberHub, Horizon Plaza, Golf Course Road, Aerocity, The Oberoi, The Leela Ambience, Trident Gurgaon.
+  "companion", "companions", "companionship", "In this fast-paced world", "delve into", "tapestry", "beacon", "testament", "look no further", "in conclusion", "furthermore", "moreover", "plethora", "crucial role", "navigating the world of", "dive into", "embark on", "realm", "ever-evolving", "shed light", "at the end of the day", "needless to say", "it is worth noting".
+- Write with confident, conversational insider authority ("we", "our private desk", "guests frequently ask us").
+- Keep paragraphs compact (2 to 3 sentences maximum). Make the rhythm fast, punchy, and captivating.
+- Ground the writing in real Gurgaon & Aerocity geography: DLF CyberHub, Horizon Plaza, Golf Course Road, Sohna Road, The Oberoi Gurgaon, Trident, The Leela Ambience, Pullman Aerocity, JW Marriott.
 
-MANDATORY FORMATTING & STRUCTURE (EVERY ARTICLE MUST FOLLOW THIS EXACT FLOW):
-Break the article into 8 to 12 distinct clean sections inside the 'content' array:
-1. Introduction: Engaging hook about ${req.focusKeyword} and call girls in Gurgaon with natural regional context.
-2. Verified Standards: Paragraph introducing our verified profiles with early link [verified call girls gallery](/gallery).
-3. ## H2 Heading: Specific insight into local hospitality, 5-star hotels, and elite escort service.
-4. Feature Checklist: 3 to 5 bullet points with bold highlights (- **Zero Advance Payment**: Details...\\n- **Verified High-Definition Profiles**: Details...\\n- **Discreet 5-Star Hotel Outcalls**: Details...).
+SEO RANKING & KEYWORD ARCHITECTURE:
+- Slug: Make the slug concise, keyword-dense, and matching high-volume search intent (e.g. "russian-call-girls-gurgaon" or "5-star-hotel-escort-service-gurgaon"). Strip filler words.
+- H1 Title: Front-load the exact search keyword in the first 35 characters for maximum CTR.
+- Meta Description: 145-155 characters containing the exact focus keyword + secondary keyword + compelling call to action.
+- Headings: Embed commercial search queries into H2 and H3 headings.
+- Tags: 4-6 high-volume search tags matching user intent.
+
+MANDATORY FORMATTING & FLOW (8 to 11 DISTINCT SECTIONS):
+1. Introduction: Direct hook about ${req.focusKeyword} and call girls in Gurgaon with realistic local hospitality context.
+2. Verified Standards: Explain photo verification and zero-advance policy with early link [verified call girls gallery](/gallery).
+3. ## H2 Heading with Search Term: Venue and hotel dynamics in Gurgaon executive areas.
+4. Feature Checklist: 3 to 5 bullet points with bold highlights (- **Zero Advance Payment**: Pay only in person upon meeting...\\n- **Verified 100% Real Profiles**: High-definition genuine photos...\\n- **Discreet 5-Star Hotel Outcalls**: Doorstep dispatch to major luxury suites...).
 5. Luxury Quote Box: A prominent blockquote: "> **Concierge Recommendation:** Discreet room booking tips and private meeting etiquette for luxury hotels..."
-6. ## H2 Heading: Exploring premier Gurgaon & Aerocity venues and 5-star hotel dispatch. Include mid link [5-star hotel escort services](/services).
-7. Practical Guidance: Recommendations for dining pairings at The Oberoi, Trident, or CyberHub lounges.
+6. ## H2 Heading: Premier Gurgaon & Aerocity venues and 5-star hotel dispatch. Include mid link [5-star hotel escort services](/services).
+7. Hotel & Dining Pairings: Specific dining spots (CyberHub lounges, The Oberoi, Trident) and atmosphere etiquette.
 8. ## Frequently Asked Questions
-9. FAQ Item 1: "**Q: How quickly can call girls arrive at major Gurgaon hotels?**\\n\\nA: Our private chauffeur dispatch delivers verified VIP call girls within 20 to 30 minutes across DLF Cyber City, Golf Course Road, and Aerocity."
-10. FAQ Item 2: "**Q: What payment methods are accepted?**\\n\\nA: In line with our strict zero-advance policy, payment is handled strictly in person after meeting your call girl."
-11. ## Reserving Your Experience with ${req.siteName}
-12. Concluding Paragraph: Warm call-to-action with closing link to [our 24/7 concierge desk](/contact).
+9. FAQ 1: "**Q: How fast is outcall dispatch to Gurgaon 5-star hotels?**\\n\\nA: Our private chauffeur dispatch delivers verified VIP call girls within 20 to 30 minutes across DLF Cyber City, Golf Course Road, and Aerocity."
+10. FAQ 2: "**Q: Are advance payments or security deposits required?**\\n\\nA: No. ${req.siteName} maintains a strict zero-advance policy. Payment is handled strictly in person after meeting your call girl."
+11. ## Booking Your Reservation with ${req.siteName}
+12. Concluding Paragraph: Direct call-to-action with closing link to [our 24/7 concierge desk](/contact).
 
 JSON OUTPUT SCHEMA:
 {
-  "title": "Compelling H1 Headline (50-65 chars, no quotes, using call girls or escort service)",
-  "slug": "url-friendly-slug",
+  "title": "Front-Loaded Keyword H1 Title (50-65 chars)",
+  "slug": "short-keyword-url-slug",
   "seoTitle": "SEO meta title (under 60 chars)",
-  "seoDescription": "Engaging meta description (140-155 chars)",
-  "excerpt": "Compelling 2-sentence preview for article cards (180-220 chars)",
+  "seoDescription": "Engaging meta description with keyword (140-155 chars)",
+  "excerpt": "Compelling 2-sentence preview for cards (180-220 chars)",
   "content": [
     "Paragraph 1...",
     "Paragraph 2...",
@@ -382,7 +420,7 @@ JSON OUTPUT SCHEMA:
     "## Frequently Asked Questions",
     "**Q: ...?**\\n\\nA: ...",
     "**Q: ...?**\\n\\nA: ...",
-    "## Reserving with ${req.siteName}",
+    "## Booking with ${req.siteName}",
     "Final paragraph with contact link..."
   ],
   "tags": ["Focus Keyword", "Call Girls In Gurgaon", "Gurgaon Escort Service", "VIP Call Girls"]
@@ -391,6 +429,9 @@ JSON OUTPUT SCHEMA:
 Focus Keyword: ${req.focusKeyword}
 Secondary Keywords: ${req.secondaryKeywords || 'luxury hotel outcalls, DLF Cyber City, verified profiles'}
 Target Word Count: ${req.wordCount || 1000} words.
-CRITICAL REMINDER: Do NOT use the word companion, companions, or companionship anywhere. Use call girls or escort service instead.`
+CRITICAL INSTRUCTIONS:
+- Strictly NO companion words. Use call girls or escort service.
+- Strictly NO repetition. Every section must have completely new details.
+- Human, bold, direct tone. Front-load focus keywords in title and slug for top SEO ranking.`
   };
 }
