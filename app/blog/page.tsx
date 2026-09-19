@@ -25,11 +25,26 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/blog'),
   },
   openGraph: {
-    title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
+    title: `${siteConfig.name} Escorts & Call Girls Blog`,
     description:
-      'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+      `Read the official ${siteConfig.name} blog for insights on VIP call girls, Russian escorts, five-star hotel guides, escort etiquette, and luxury nightlife.`,
     url: `${siteConfig.url}/blog`,
     type: 'website',
+    images: [
+      {
+        url: `${siteConfig.url}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} Blog`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.name} Escorts & Call Girls Blog`,
+    description:
+      `Read the official ${siteConfig.name} blog for insights on VIP call girls, Russian escorts, five-star hotel guides, escort etiquette, and luxury nightlife.`,
+    images: [`${siteConfig.url}/og-image.jpg`],
   },
 };
 

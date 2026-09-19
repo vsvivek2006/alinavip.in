@@ -16,7 +16,7 @@ export default function HeroSection() {
           <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
             <div className="new-banner">
               <h1>
-                <span>{siteConfig.name}</span>
+                <span>{siteConfig.name}</span>{' '}
                 <br />
                 {siteConfig.name.includes('Aerocity') ? 'Aerocity Escorts' : 'Gurgaon Escorts'}
               </h1>
