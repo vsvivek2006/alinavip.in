@@ -31,7 +31,7 @@ export default {
       },
       fontFamily: {
         serif: ['var(--font-playfair)', '"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['var(--font-jost)', '"Jost"', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-poppins)', '"Poppins"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       letterSpacing: {
         widest: '0.2em',

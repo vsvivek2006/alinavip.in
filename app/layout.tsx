@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins, Playfair_Display } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import PublicShell from '@/components/PublicShell';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 const playfair = Playfair_Display({
@@ -19,6 +17,7 @@ const poppins = Poppins({
   variable: '--font-poppins',
   display: 'swap',
 });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -145,13 +144,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-white text-[#2d2d2d] font-sans antialiased">
-        <div className="min-h-screen flex flex-col bg-white overflow-x-hidden">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppButton />
-        </div>
+      <body className="bg-[#FAF9F6] text-[#1E1E1E] font-sans antialiased">
+        <PublicShell>{children}</PublicShell>
       </body>
     </html>
   );
