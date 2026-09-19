@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
+import { invalidateBlogCache } from '@/lib/supabaseBlog';
 
 /**
  * On-Demand ISR Revalidation Endpoint
@@ -22,6 +23,8 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    // Invalidate high-speed in-memory cache
+    invalidateBlogCache(slug || undefined);
     // Revalidate main blog directory
     if (path) {
       revalidatePath(path);

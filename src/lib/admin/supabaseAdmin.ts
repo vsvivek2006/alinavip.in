@@ -5,7 +5,9 @@ try {
   void err;
 }
 import crypto from 'crypto';
+import { revalidatePath } from 'next/cache';
 import { saveLocalPost, getLocalPosts, deleteLocalPost } from './localPostsStore';
+import { invalidateBlogCache } from '@/lib/supabaseBlog';
 
 const SUPABASE_URL = (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pmhzuqaczgctmzjpslpg.supabase.co').replace(/\/+$/, '');
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtaHp1cWFjemdjdG16anBzbHBnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4OTY0MjAyMywiZXhwIjoyMTA1MjE4MDIzfQ.g4KCNHLY0jZUEhGEdsheF5OXzWvR4txkdc493tWa-8g';
@@ -187,6 +189,7 @@ export async function createPost(postData: Omit<BlogPostRecord, 'id' | 'created_
 
   // Always save locally first so post is immediately live with 0ms latency
   saveLocalPost(localRecord);
+  invalidateBlogCache(localRecord.slug);
 
   // Sync to remote Supabase
   try {
@@ -226,6 +229,7 @@ export async function updatePost(postId: string, updates: Partial<BlogPostRecord
   };
 
   saveLocalPost(updated);
+  invalidateBlogCache(updated.slug);
 
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/posts?id=eq.${encodeURIComponent(postId)}`, {
@@ -239,6 +243,7 @@ export async function updatePost(postId: string, updates: Partial<BlogPostRecord
       const rows = await res.json();
       if (rows && rows[0]) {
         saveLocalPost(rows[0]);
+        invalidateBlogCache(rows[0].slug);
         return rows[0];
       }
     }
@@ -254,6 +259,7 @@ export async function updatePost(postId: string, updates: Partial<BlogPostRecord
  */
 export async function deletePost(postId: string): Promise<boolean> {
   deleteLocalPost(postId);
+  invalidateBlogCache();
 
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/posts?id=eq.${encodeURIComponent(postId)}`, {
@@ -286,6 +292,15 @@ export async function publishAndRevalidatePost(postId: string): Promise<{ succes
       status: 'published',
       published_at: new Date().toISOString(),
     });
+
+    // Invalidate local in-memory cache and trigger ISR revalidation
+    invalidateBlogCache(post.slug);
+    try {
+      revalidatePath('/blog');
+      revalidatePath(`/blog/${post.slug}`);
+    } catch {
+      // Ignore if outside request context
+    }
 
     // 3. Fire on-demand ISR revalidation webhook on target site
     let revalidated = false;

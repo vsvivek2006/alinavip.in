@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { toast } from 'sonner';
+import ArticleContentRenderer from '@/components/blog/ArticleContentRenderer';
 
 const AI_MODEL_OPTIONS = [
   {
@@ -742,87 +743,8 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
               />
             ) : (
               /* Beautiful Formatted Preview */
-              <div className="p-6 sm:p-8 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl min-h-[450px] font-sans text-stone-800 space-y-4">
-                {content.split('\n\n').map((paragraph, idx) => {
-                  const trimmed = paragraph.trim();
-                  if (!trimmed) return null;
-
-                  // H2 Heading
-                  if (trimmed.startsWith('## ')) {
-                    return (
-                      <h2
-                        key={idx}
-                        className="text-xl sm:text-2xl font-black text-stone-900 mt-8 mb-3 pb-2 border-b border-stone-200 tracking-tight"
-                      >
-                        {trimmed.replace('## ', '')}
-                      </h2>
-                    );
-                  }
-
-                  // H3 Subhead
-                  if (trimmed.startsWith('### ')) {
-                    return (
-                      <h3
-                        key={idx}
-                        className="text-lg sm:text-xl font-bold text-[#671725] mt-6 mb-2"
-                      >
-                        {trimmed.replace('### ', '')}
-                      </h3>
-                    );
-                  }
-
-                  // Styled Luxury Callout Quote
-                  if (trimmed.startsWith('> ')) {
-                    return (
-                      <blockquote
-                        key={idx}
-                        className="border-l-4 border-[#671725] bg-[#FDFBF7] p-4 sm:p-5 my-5 rounded-r-2xl shadow-2xs italic text-stone-800 text-sm sm:text-base leading-relaxed"
-                      >
-                        {trimmed.replace('> ', '')}
-                      </blockquote>
-                    );
-                  }
-
-                  // Bulleted List
-                  if (trimmed.startsWith('- ')) {
-                    const items = trimmed.split('\n').filter(Boolean);
-                    return (
-                      <ul key={idx} className="list-disc pl-6 space-y-2 my-4 text-sm sm:text-base text-stone-700 leading-relaxed">
-                        {items.map((it, i) => {
-                          const itemText = it.replace(/^-\s*/, '');
-                          const formattedItem = itemText.replace(
-                            /\*\*([^*]+)\*\*/g,
-                            '<strong class="font-bold text-stone-900">$1</strong>'
-                          );
-                          return (
-                            <li
-                              key={i}
-                              dangerouslySetInnerHTML={{ __html: formattedItem }}
-                            />
-                          );
-                        })}
-                      </ul>
-                    );
-                  }
-
-                  // Markdown links & bold text inside paragraphs
-                  let renderedText = trimmed.replace(
-                    /\[([^\]]+)\]\(([^)]+)\)/g,
-                    '<a href="$2" target="_blank" class="text-[#671725] font-bold underline underline-offset-4 hover:text-[#881337]">$1</a>'
-                  );
-                  renderedText = renderedText.replace(
-                    /\*\*([^*]+)\*\*/g,
-                    '<strong class="font-bold text-stone-900">$1</strong>'
-                  );
-
-                  return (
-                    <p
-                      key={idx}
-                      className="text-sm sm:text-base leading-relaxed text-stone-700 mb-4"
-                      dangerouslySetInnerHTML={{ __html: renderedText }}
-                    />
-                  );
-                })}
+              <div className="p-6 sm:p-8 bg-[#FAF8F5] border border-[#E2DDD5] rounded-2xl min-h-[450px] font-sans text-stone-800">
+                <ArticleContentRenderer content={content} />
               </div>
             )}
           </div>

@@ -107,7 +107,7 @@ const topHotels = [
     stars: '4 Star Deluxe',
     desc: 'Comfortable business hotel outcalls with charming college escorts and educated independent girls.',
     slug: 'escort-service-near-courtyard-by-marriott-hotel',
-    image: '/images/assets/Travel_Companions.jpg',
+    image: '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg',
   },
   {
     name: 'Crowne Plaza Today Gurugram',

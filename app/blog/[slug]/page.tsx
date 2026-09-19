@@ -13,6 +13,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import ShareButton from '@/components/ShareButton';
+import ArticleContentRenderer from '@/components/blog/ArticleContentRenderer';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getPostBySlug, getPublishedBlogPosts } from '@/lib/supabaseBlog';
 import { getAssetUrl } from '@/lib/assets';
@@ -21,9 +22,8 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
-export const revalidate = 0;
+export const revalidate = 3600; // 1-hour ISR cache, revalidated instantly on-demand via webhook
 
 export async function generateStaticParams() {
   const posts = await getPublishedBlogPosts();
@@ -194,20 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.excerpt}
             </p>
 
-            {Array.isArray(post.content) ? (
-              <div className="space-y-6 font-sans text-gray-700 leading-relaxed text-lg">
-                {post.content.map((paragraph, idx) => (
-                  <p key={idx} className="leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            ) : (
-              <div
-                className="space-y-6 font-sans text-gray-700 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: String(post.content) }}
-              />
-            )}
+            <ArticleContentRenderer content={post.content} />
           </div>
 
           {/* Article Footer & Tags */}

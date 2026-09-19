@@ -5,13 +5,37 @@ try {
   void err;
 }
 
+import { cache } from 'react';
 import { blogPosts as fallbackPosts, BlogPost } from '@/data/blogs';
 import { getAssetUrl } from '@/lib/assets';
 import { getLocalPostBySlug, getLocalPosts } from '@/lib/admin/localPostsStore';
-import { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
+import type { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+// High-speed In-Memory TTL Cache
+interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+}
+
+let postsListCache: CacheEntry<BlogPost[]> | null = null;
+const postBySlugCache = new Map<string, CacheEntry<BlogPost | null>>();
+const CACHE_TTL_MS = 60 * 1000; // 60 seconds memory TTL
+
+/**
+ * On-demand cache invalidator
+ * Called on post create, update, delete, or revalidate webhook
+ */
+export function invalidateBlogCache(slug?: string): void {
+  postsListCache = null;
+  if (slug) {
+    postBySlugCache.delete(slug.toLowerCase().trim());
+  } else {
+    postBySlugCache.clear();
+  }
+}
 
 interface SupabasePostRow {
   id: string;
@@ -69,20 +93,30 @@ function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
 }
 
 /**
- * Fetch all published posts for the current site
- * Checks local cache + Supabase with IPv4 priority
+ * Fetch all published posts with:
+ * 1. React cache() memoization per render pass
+ * 2. 60-second in-memory TTL caching
+ * 3. Local persistent store fallback
+ * 4. Supabase REST query
  */
-export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
+export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
+  const now = Date.now();
+  if (postsListCache && now - postsListCache.timestamp < CACHE_TTL_MS) {
+    return postsListCache.data;
+  }
+
   const localList = getLocalPosts().map(mapRowToBlogPost);
-  
+
   if (!SUPABASE_URL || !ANON_KEY) {
     const combined = [...localList, ...fallbackPosts];
     const seen = new Set<string>();
-    return combined.filter(p => {
+    const result = combined.filter(p => {
       if (seen.has(p.slug)) return false;
       seen.add(p.slug);
       return true;
     });
+    postsListCache = { data: result, timestamp: now };
+    return result;
   }
 
   try {
@@ -93,7 +127,6 @@ export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
           apikey: ANON_KEY,
           Authorization: `Bearer ${ANON_KEY}`,
         },
-        cache: 'no-store',
         signal: AbortSignal.timeout(3000),
       }
     );
@@ -106,7 +139,15 @@ export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
         fallbackPosts.forEach(p => map.set(p.slug, p));
         remoteList.forEach(p => map.set(p.slug, p));
         localList.forEach(p => map.set(p.slug, p));
-        return Array.from(map.values());
+        const result = Array.from(map.values());
+
+        // Warm up both list and individual slug caches
+        postsListCache = { data: result, timestamp: now };
+        result.forEach(post => {
+          postBySlugCache.set(post.slug.toLowerCase(), { data: post, timestamp: now });
+        });
+
+        return result;
       }
     }
   } catch (err) {
@@ -115,27 +156,43 @@ export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
 
   const combined = [...localList, ...fallbackPosts];
   const seen = new Set<string>();
-  return combined.filter(p => {
+  const fallbackResult = combined.filter(p => {
     if (seen.has(p.slug)) return false;
     seen.add(p.slug);
     return true;
   });
-}
+
+  postsListCache = { data: fallbackResult, timestamp: now };
+  return fallbackResult;
+});
 
 /**
- * Fetch a single post by slug
- * Checks local persistent store first (0ms), then Supabase, then fallback. Never 404s on saved posts.
+ * Fetch a single post by slug with:
+ * 1. React cache() memoization
+ * 2. 60-second in-memory TTL caching
+ * 3. Local persistent store (instant 0ms)
+ * 4. Supabase REST query
+ * 5. Fallback catalog
  */
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null> => {
   const cleanSlug = slug.toLowerCase().trim();
+  const now = Date.now();
 
-  // 1. Check local persistent store first (instant, works offline, zero IPv6 timeouts)
-  const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost) {
-    return mapRowToBlogPost(localPost);
+  // 1. Check in-memory TTL cache
+  const cached = postBySlugCache.get(cleanSlug);
+  if (cached && now - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data;
   }
 
-  // 2. Query Supabase
+  // 2. Check local persistent store first (instant, works offline, zero network delay)
+  const localPost = getLocalPostBySlug(cleanSlug);
+  if (localPost) {
+    const post = mapRowToBlogPost(localPost);
+    postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
+    return post;
+  }
+
+  // 3. Query Supabase
   if (SUPABASE_URL && ANON_KEY) {
     try {
       const postRes = await fetch(
@@ -145,7 +202,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
             apikey: ANON_KEY,
             Authorization: `Bearer ${ANON_KEY}`,
           },
-          cache: 'no-store',
           signal: AbortSignal.timeout(3000),
         }
       );
@@ -153,7 +209,9 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       if (postRes.ok) {
         const rows: SupabasePostRow[] = await postRes.json();
         if (rows && rows.length > 0) {
-          return mapRowToBlogPost(rows[0]);
+          const post = mapRowToBlogPost(rows[0]);
+          postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
+          return post;
         }
       }
     } catch {
@@ -161,6 +219,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     }
   }
 
-  // 3. Check hardcoded fallback catalog
-  return fallbackPosts.find(p => p.slug.toLowerCase() === cleanSlug) || null;
-}
+  // 4. Check hardcoded fallback catalog
+  const fallback = fallbackPosts.find(p => p.slug.toLowerCase() === cleanSlug) || null;
+  postBySlugCache.set(cleanSlug, { data: fallback, timestamp: now });
+  return fallback;
+});
