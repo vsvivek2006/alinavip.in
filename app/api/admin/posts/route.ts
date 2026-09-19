@@ -4,10 +4,7 @@ import { getPostsForSite, createPost } from '@/lib/admin/supabaseAdmin';
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const siteId = searchParams.get('siteId');
-    if (!siteId) {
-      return NextResponse.json({ error: 'siteId query parameter is required' }, { status: 400 });
-    }
+    const siteId = searchParams.get('siteId') || process.env.NEXT_PUBLIC_SITE_SLUG || 'alinavip-in';
 
     const posts = await getPostsForSite(siteId);
     return NextResponse.json({ posts });
