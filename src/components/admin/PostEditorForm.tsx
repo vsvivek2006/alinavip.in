@@ -869,7 +869,6 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
 
             {coverImage ? (
               <div className="relative rounded-2xl overflow-hidden border border-[#E2DDD5] group aspect-video bg-stone-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={coverImage}
                   alt={title || 'Cover image'}

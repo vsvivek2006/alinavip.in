@@ -1,9 +1,11 @@
 import dns from 'dns';
 try {
   dns.setDefaultResultOrder('ipv4first');
-} catch {}
+} catch (err) {
+  void err;
+}
 import crypto from 'crypto';
-import { saveLocalPost, getLocalPosts, deleteLocalPost, getLocalPostBySlug } from './localPostsStore';
+import { saveLocalPost, getLocalPosts, deleteLocalPost } from './localPostsStore';
 
 const SUPABASE_URL = (process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://pmhzuqaczgctmzjpslpg.supabase.co').replace(/\/+$/, '');
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtaHp1cWFjemdjdG16anBzbHBnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4OTY0MjAyMywiZXhwIjoyMTA1MjE4MDIzfQ.g4KCNHLY0jZUEhGEdsheF5OXzWvR4txkdc493tWa-8g';

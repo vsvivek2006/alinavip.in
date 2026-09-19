@@ -326,7 +326,7 @@ function ensureInternalLinks(paragraphs: string[]): string[] {
       return;
     }
 
-    let targetIdx = Math.min(preferredIndex, result.length - 1);
+    const targetIdx = Math.min(preferredIndex, result.length - 1);
     // Find closest standard paragraph that isn't a heading, list, or blockquote
     for (let offset = 0; offset < result.length; offset++) {
       const checkIdx = (targetIdx + offset) < result.length ? (targetIdx + offset) : (targetIdx - offset);

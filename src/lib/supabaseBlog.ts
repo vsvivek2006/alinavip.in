@@ -1,7 +1,9 @@
 import dns from 'dns';
 try {
   dns.setDefaultResultOrder('ipv4first');
-} catch {}
+} catch (err) {
+  void err;
+}
 
 import { blogPosts as fallbackPosts, BlogPost } from '@/data/blogs';
 import { getAssetUrl } from '@/lib/assets';
@@ -10,7 +12,6 @@ import { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG || 'alinavip-in';
 
 interface SupabasePostRow {
   id: string;
@@ -23,6 +24,14 @@ interface SupabasePostRow {
   tags: string[] | null;
   published_at: string | null;
   status?: string;
+}
+
+function purgeCompanionWords(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/\bcompanionship\b/gi, 'escort service')
+    .replace(/\bcompanions\b/gi, 'call girls')
+    .replace(/\bcompanion\b/gi, 'call girl');
 }
 
 function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
@@ -40,20 +49,21 @@ function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
     contentParagraphs = row.content.split('\n\n').filter(Boolean);
   }
 
-  const tagList = row.tags || [];
+  const cleanContent = contentParagraphs.map(p => purgeCompanionWords(p));
+  const tagList = (row.tags || []).map(t => purgeCompanionWords(t));
   const primaryCategory = tagList.length > 0 ? tagList[0] : 'VIP Escorts';
 
   return {
     slug: row.slug,
-    title: row.title,
+    title: purgeCompanionWords(row.title),
     category: primaryCategory,
-    excerpt: row.excerpt || '',
+    excerpt: purgeCompanionWords(row.excerpt || ''),
     date: row.published_at ? row.published_at.split('T')[0] : '2026-01-01',
-    readTime: `${Math.max(3, Math.ceil(contentParagraphs.join(' ').length / 800))} min read`,
+    readTime: `${Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))} min read`,
     image: getAssetUrl(row.cover_image || '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'),
     author: row.author || 'ALINA VIP India',
     tags: tagList,
-    content: contentParagraphs,
+    content: cleanContent,
     views: '3.5k',
   };
 }

@@ -194,7 +194,13 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-locations.xml'), buildUrlset(loca
 fs.writeFileSync(path.join(publicDir, 'sitemap-categories.xml'), buildUrlset(catUrls), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-blogs.xml'), buildUrlset([...blogUrls, ...catalogPostUrls]), 'utf8');
 fs.writeFileSync(path.join(publicDir, 'sitemap-escorts.xml'), buildUrlset(modelUrls), 'utf8');
-fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), buildUrlset(allUrls), 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-all.xml'), buildUrlset(allUrls), 'utf8');
+
+// Ensure public/sitemap.xml does NOT exist so app/sitemap.ts dynamically serves /sitemap.xml without 500 conflict
+const conflictingSitemapPath = path.join(publicDir, 'sitemap.xml');
+if (fs.existsSync(conflictingSitemapPath)) {
+  fs.unlinkSync(conflictingSitemapPath);
+}
 console.log(`[SITEMAP GENERATOR] Total URLs: ${allUrls.length}`);
 
 // Build Sitemap Index XML
