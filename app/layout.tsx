@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.tagline} | ${siteConfig.name}`,
-    template: `%s | ${siteConfig.name}`,
+    template: '%s',
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
