@@ -73,7 +73,7 @@ const topHotels = [
     name: 'ITC Grand Bharat Luxury Resort',
     area: 'Hasanpur, Tauru / Manesar',
     stars: '5 Star Luxury Resort',
-    desc: 'Resort retreat companions for outstation relaxation, golf weekends, and secluded overnight companionship.',
+    desc: 'Resort retreat call girls for outstation relaxation, golf weekends, and secluded overnight escort service.',
     slug: 'escort-service-near-itc-grand-bharat-hotel',
     image: '/images/assets/Overnight_Stays_And_Weekend_Getaways.jpg',
   },
@@ -89,7 +89,7 @@ const topHotels = [
     name: 'The Westin Gurgaon',
     area: 'Sector 29 / MG Road',
     stars: '5 Star Luxury',
-    desc: 'Located adjacent to Sector 29 nightlife corridor. High-energy party companions and sensual massage specialists.',
+    desc: 'Located adjacent to Sector 29 nightlife corridor. High-energy party call girls and sensual massage specialists.',
     slug: 'escort-service-near-westin-hotel',
     image: '/images/assets/Escorts_24x7_Availability.jpg',
   },
@@ -97,7 +97,7 @@ const topHotels = [
     name: 'Hyatt Regency Gurugram',
     area: 'Sector 83, New Gurgaon',
     stars: '5 Star Luxury',
-    desc: 'Quick 20-minute suite dispatch along NH-48. English speaking, high profile companions for executives and tourists.',
+    desc: 'Quick 20-minute suite dispatch along NH-48. English speaking, high profile call girls for executives and tourists.',
     slug: 'escort-service-near-hyatt-regency-hotel',
     image: '/images/assets/Diverse_Portfolio.jpg',
   },
@@ -121,7 +121,7 @@ const topHotels = [
     name: 'Radisson Hotel Gurugram',
     area: 'Udyog Vihar Phase 3',
     stars: '5 Star Deluxe',
-    desc: 'Express dispatch for travelers arriving late from IGI Airport. Fast, discreet, and reliable companions.',
+    desc: 'Express dispatch for travelers arriving late from IGI Airport. Fast, discreet, and reliable call girls.',
     slug: 'escort-service-near-radisson-hotel',
     image: '/images/assets/Escort_Service_In_Mahipalpur_Img.jpg',
   },
@@ -145,7 +145,7 @@ export default function HotelsPage() {
             Gurgaon Luxury Hotel Escort Services
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100 font-light max-w-3xl leading-relaxed">
-            Relax with your partner in world-class hotels across Gurgaon. Discreet in-room companion delivery with zero advance payment and verified profiles.
+            Relax with your partner in world-class hotels across Gurgaon. Discreet in-room call girl delivery with zero advance payment and verified profiles.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a

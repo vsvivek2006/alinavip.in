@@ -7,7 +7,7 @@ const steps = [
     num: '1',
     icon: MessageSquare,
     title: 'Send Inquiry',
-    desc: 'Contact our 24/7 concierge via WhatsApp or phone call. Share your location, timing, and preferred companion profile.',
+    desc: 'Contact our 24/7 concierge via WhatsApp or phone call. Share your location, timing, and preferred call girl profile.',
   },
   {
     num: '2',
@@ -19,7 +19,7 @@ const steps = [
     num: '3',
     icon: CheckCircle2,
     title: 'Confirm Booking',
-    desc: 'Confirm your booking with zero advance payment. Welcome your verified companion to your room and pay cash on delivery.',
+    desc: 'Confirm your booking with zero advance payment. Welcome your verified call girl to your room and pay cash on delivery.',
   },
 ];
 

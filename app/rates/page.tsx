@@ -53,7 +53,7 @@ const pricingPackages = [
       'Confirm profile before booking',
       'Private and discreet service',
       'Erotic Girlfriend Experience',
-      'Sensual body rub & shower companionship',
+      'Sensual body rub & shower escort service',
     ],
   },
   {
@@ -78,7 +78,7 @@ const pricingPackages = [
     tag: 'VIP Luxury Overnight',
     popular: false,
     features: [
-      'Full overnight 10 PM to 8 AM companionship',
+      'Full overnight 10 PM to 8 AM escort service',
       'In-Call & Outcall Service',
       'Choose from full portfolio - including Celebrity Escorts and High-Profile Models',
       'Confirm profile before booking',
@@ -248,7 +248,7 @@ export default function RatesPage() {
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="bg-[#671725] text-white">
-                  <th className="py-3 px-4 rounded-tl-lg font-bold">Companion Category</th>
+                  <th className="py-3 px-4 rounded-tl-lg font-bold">Call Girl Category</th>
                   <th className="py-3 px-4 font-bold">1-2 Hours</th>
                   <th className="py-3 px-4 font-bold">3-4 Hours</th>
                   <th className="py-3 px-4 font-bold">Full Night (Overnight)</th>

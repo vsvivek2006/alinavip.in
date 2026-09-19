@@ -25,8 +25,8 @@ interface PageItem {
 const aboutData = (pagesData as PageItem[]).find((p) => p.slug === 'about-us');
 
 export const metadata: Metadata = {
-  title: aboutData ? aboutData.title.replace('ALINA VIP', siteConfig.name) : 'About Us | ALINA VIP',
-  description: aboutData ? aboutData.metaDescription : 'Premier VIP escort agency in Gurgaon.',
+  title: aboutData?.title ? aboutData.title.replace('ALINA VIP', siteConfig.name) : 'About Us | ALINA VIP',
+  description: (aboutData && aboutData.metaDescription) ? aboutData.metaDescription : 'ALINA VIP is the premier luxury escort service in Gurgaon and Aerocity, providing 100% verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge booking.',
   alternates: {
     canonical: `${siteConfig.url}/about`,
   },
@@ -50,7 +50,7 @@ export default function AboutPage() {
             About {siteConfig.name}
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-2xl mx-auto leading-relaxed">
-            Your trusted destination for genuine companionship, 100% verified independent profiles, and 5-star hotel outcall delivery across Gurgaon &amp; Delhi NCR.
+            Your trusted destination for genuine escort service, 100% verified independent profiles, and 5-star hotel outcall delivery across Gurgaon &amp; Delhi NCR.
           </p>
         </div>
       </div>

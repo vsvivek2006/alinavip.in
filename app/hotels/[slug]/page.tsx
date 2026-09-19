@@ -217,7 +217,7 @@ export default async function HotelSlugPage({
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={15} className="text-[#FFD700] shrink-0 mt-0.5" />
-                  <span>100% genuine photo matched companion</span>
+                  <span>100% genuine photo matched call girl</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle size={15} className="text-[#FFD700] shrink-0 mt-0.5" />
@@ -235,7 +235,7 @@ export default async function HotelSlugPage({
               </div>
             </div>
 
-            {/* Available Companions Near This Hotel */}
+            {/* Available Call Girls Near This Hotel */}
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-4">
               <h4 className="text-base font-bold text-[#111827]">
                 Featured Escorts Near {cleanHotelName}

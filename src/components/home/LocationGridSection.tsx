@@ -15,13 +15,13 @@ const topLocations = [
   {
     name: 'Escorts Service in Mahipalpur',
     slug: 'mahipalpur',
-    desc: 'Our escort service agency is one of the most renowned escort services in Mahipalpur, New Delhi offering quality companionship for years. We know what men want, and that is why we have hand-picked the best girls.',
+    desc: 'Our escort service agency is one of the most renowned escort services in Mahipalpur, New Delhi offering quality escort service for years. We know what men want, and that is why we have hand-picked the best girls.',
     image: '/images/assets/Escort_Service_In_Mahipalpur_Img.jpg',
   },
   {
     name: 'Escorts Service in Aerocity',
     slug: 'aerocity',
-    desc: 'Aerocity escorts are your true companions for all kinds of experiences. Whether you hire them for sex fun or taking them to parties, they will never disappoint you.',
+    desc: 'Aerocity escorts are your true call girls for all kinds of experiences. Whether you hire them for sex fun or taking them to parties, they will never disappoint you.',
     image: '/images/assets/Escort_Service_In_Aerocity_Img.jpg',
   },
   {
@@ -33,7 +33,7 @@ const topLocations = [
   {
     name: 'Escorts Service in Cyber City',
     slug: 'cyber-city',
-    desc: 'Corporate VIP models and dinner date companions for multinational business leaders and executives across DLF Cyber City.',
+    desc: 'Corporate VIP models and dinner date call girls for multinational business leaders and executives across DLF Cyber City.',
     image: '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
   },
   {

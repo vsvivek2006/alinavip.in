@@ -82,7 +82,7 @@ export default function PhoneNumberPage() {
                 Security Advisory: Never Pay Advance Fees to Any Agency
               </h3>
               <p className="text-xs text-amber-800 mt-1 leading-relaxed">
-                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a companion. <strong>ALINA VIP NEVER asks for advance payments.</strong> You inspect and meet your companion in person first, and hand over cash directly to her.
+                Many fraudulent classified websites ask for registration fees, medical clearance charges, or hotel deposits via UPI/Paytm before sending a call girl. <strong>ALINA VIP NEVER asks for advance payments.</strong> You inspect and meet your call girl in person first, and hand over cash directly to her.
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function PhoneNumberPage() {
           <div className="text-center mb-10">
             <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">Effortless Etiquette</span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
-              How to Book Your Companion in 4 Easy Steps
+              How to Book Your Call Girl in 4 Easy Steps
             </h3>
           </div>
 
@@ -106,20 +106,20 @@ export default function PhoneNumberPage() {
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">2</span>
-              <h4 className="font-bold text-[#111827] text-base">Step 2: Choose Your Companion</h4>
-              <p className="text-gray-600 leading-relaxed">We provide fresh, real-time unedited photos and verified portfolio details of companions available immediately in your area.</p>
+              <h4 className="font-bold text-[#111827] text-base">Step 2: Choose Your Call Girl</h4>
+              <p className="text-gray-600 leading-relaxed">We provide fresh, real-time unedited photos and verified portfolio details of call girls available immediately in your area.</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">3</span>
               <h4 className="font-bold text-[#111827] text-base">Step 3: Rapid 20-30 Min Outcall Arrival</h4>
-              <p className="text-gray-600 leading-relaxed">Your companion arrives in an executive private cab directly at your hotel lobby or condominium gate in complete anonymity.</p>
+              <p className="text-gray-600 leading-relaxed">Your call girl arrives in an executive private cab directly at your hotel lobby or condominium gate in complete anonymity.</p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-2">
               <span className="w-8 h-8 rounded-full bg-[#671725] text-white font-bold flex items-center justify-center text-sm">4</span>
               <h4 className="font-bold text-[#111827] text-base">Step 4: Verify &amp; Pay Cash</h4>
-              <p className="text-gray-600 leading-relaxed">Greet your companion in private, verify her identity with the photo provided, and hand over cash. Enjoy an unforgettable experience!</p>
+              <p className="text-gray-600 leading-relaxed">Greet your call girl in private, verify her identity with the photo provided, and hand over cash. Enjoy an unforgettable experience!</p>
             </div>
           </div>
         </div>

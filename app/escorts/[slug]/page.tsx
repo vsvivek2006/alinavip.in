@@ -72,7 +72,7 @@ export default async function EscortProfilePage({
             {model.name} | Gurgaon Escorts
           </h1>
           <p className="mt-2 text-sm sm:text-base text-rose-100 font-light max-w-2xl">
-            Verified {model.category} available for high-class hotel outcalls and VIP companionship in Gurgaon &amp; Delhi NCR.
+            Verified {model.category} available for high-class hotel outcalls and VIP escort service in Gurgaon &amp; Delhi NCR.
           </p>
         </div>
       </div>
@@ -257,12 +257,12 @@ export default async function EscortProfilePage({
                   <div className="border border-rose-300 p-4 rounded-lg bg-rose-50/50 text-center shadow-xs">
                     <span className="block text-xs text-[#671725] font-bold uppercase">2 Shots (2-4 Hrs)</span>
                     <span className="block text-xl font-extrabold text-[#671725] mt-1">{model.rates.twoShots}</span>
-                    <span className="block text-[11px] text-gray-500 mt-1">Extended Companionship</span>
+                    <span className="block text-[11px] text-gray-500 mt-1">Extended Escort Service</span>
                   </div>
                   <div className="border border-[#671725]/20 p-4 rounded-lg bg-[#671725]/5 text-center">
                     <span className="block text-xs text-[#111827] font-bold uppercase">Full Night (Overnight)</span>
                     <span className="block text-xl font-extrabold text-[#111827] mt-1">{model.rates.fullNight}</span>
-                    <span className="block text-[11px] text-gray-500 mt-1">10 PM to 8 AM Companion</span>
+                    <span className="block text-[11px] text-gray-500 mt-1">10 PM to 8 AM Call Girl</span>
                   </div>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default async function EscortProfilePage({
         <div className="mt-16 pt-12 border-t border-gray-200">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">More Escort Companions</span>
+              <span className="text-xs font-bold text-[#671725] uppercase tracking-widest">More Escort Call Girls</span>
               <h2 className="text-2xl font-black text-[#111827] mt-1">
                 Explore Other Verified Profiles in Gurgaon
               </h2>

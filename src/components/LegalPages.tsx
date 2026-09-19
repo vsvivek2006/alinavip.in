@@ -66,21 +66,21 @@ export function TermsPage() {
         {
           heading: "1. Legal Age and Mutual Consent",
           paragraphs: [
-            "All clients booking companions through ALINA VIP must be of legal adult age (18 years or older). By using this service, you explicitly affirm that you are a consenting adult.",
-            "All featured companions are independent consenting adults aged 21 years or older who voluntarily provide VIP companionship services."
+            "All clients booking call girls through ALINA VIP must be of legal adult age (18 years or older). By using this service, you explicitly affirm that you are a consenting adult.",
+            "All featured call girls are independent consenting adults aged 21 years or older who voluntarily provide VIP escort service services."
           ]
         },
         {
           heading: "2. Zero Advance Payment Protocol",
           paragraphs: [
-            "ALINA VIP does not demand advance registration fees, security deposits, or digital prepayment via UPI/Paytm prior to the arrival of your companion.",
-            "Full service fees are settled directly with the companion upon in-person arrival at your private hotel room or residence."
+            "ALINA VIP does not demand advance registration fees, security deposits, or digital prepayment via UPI/Paytm prior to the arrival of your call girl.",
+            "Full service fees are settled directly with the call girl upon in-person arrival at your private hotel room or residence."
           ]
         },
         {
           heading: "3. Mutual Respect & Safety Guidelines",
           paragraphs: [
-            "Clients are expected to maintain the utmost courtesy, hygiene, and respect towards companions. Intoxication, aggressive behavior, or non-consensual demands will result in immediate termination of the booking without refunds."
+            "Clients are expected to maintain the utmost courtesy, hygiene, and respect towards call girls. Intoxication, aggressive behavior, or non-consensual demands will result in immediate termination of the booking without refunds."
           ]
         }
       ]}
@@ -105,7 +105,7 @@ export function PrivacyPolicyPage() {
         {
           heading: "2. Discreet Doorstep Outcall Arrival",
           paragraphs: [
-            "Companions arrive in unmarked luxury transport, casually and elegantly dressed to blend naturally into 5-star hotel lobbies and luxury residential societies without drawing unwanted attention."
+            "Call Girls arrive in unmarked luxury transport, casually and elegantly dressed to blend naturally into 5-star hotel lobbies and luxury residential societies without drawing unwanted attention."
           ]
         }
       ]}
@@ -123,7 +123,7 @@ export function DisclaimerPage() {
         {
           heading: "1. Information Accuracy",
           paragraphs: [
-            "The profiles, photos, and descriptions published on ALINA VIP represent verified independent companions. Rates and availability are subject to scheduling confirmations.",
+            "The profiles, photos, and descriptions published on ALINA VIP represent verified independent call girls. Rates and availability are subject to scheduling confirmations.",
             "This platform operates solely as a premium concierge referral service facilitating private social engagements between consenting adults."
           ]
         }

@@ -142,7 +142,7 @@ export default function CategoriesPage() {
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Categories' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-2">
-            ★ All Companion Categories &bull; 100% Verified
+            ★ All Call Girl Categories &bull; 100% Verified
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Meet Different Categories of Escorts in Gurgaon

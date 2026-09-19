@@ -49,7 +49,7 @@ const topLocationCards = [
     title: 'Mahipalpur, Delhi NCR',
     slug: 'mahipalpur',
     image: '/images/assets/Escort_Service_In_Mahipalpur_Img.jpg',
-    desc: 'Airport transit hotels and luxury suites companion service.',
+    desc: 'Airport transit hotels and luxury suites call girl service.',
   },
   {
     title: 'Aerocity Hospitality District',
@@ -61,13 +61,13 @@ const topLocationCards = [
     title: 'Dwarka, Delhi NCR',
     slug: 'dwarka',
     image: '/images/assets/Escorts_Service_In_Dwarka_IMG.jpg',
-    desc: 'Sophisticated companion models serving Dwarka expressway hotels.',
+    desc: 'Sophisticated call girl models serving Dwarka expressway hotels.',
   },
   {
     title: 'DLF Cyber City, Gurgaon',
     slug: 'cyber-city',
     image: '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
-    desc: 'Corporate VIP dinner companions and executive suite visits.',
+    desc: 'Corporate VIP dinner call girls and executive suite visits.',
   },
   {
     title: 'Golf Course Road, Gurgaon',

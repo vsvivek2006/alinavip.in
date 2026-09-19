@@ -261,7 +261,7 @@ export default async function DynamicSlugPage({
               </div>
             </div>
 
-            {/* Featured Companions */}
+            {/* Featured Call Girls */}
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-4">
               <h4 className="text-base font-bold text-[#111827]">
                 Featured Escorts in Gurgaon

@@ -16,8 +16,8 @@ const categoriesData = [
   {
     name: 'Independent Escorts',
     slug: 'independent-girls',
-    subtitle: 'Independent models offering direct, discreet companionship.',
-    desc: 'Personal, flexible, and private companionship experience for men who prefer direct-style meetings.',
+    subtitle: 'Independent models offering direct, discreet escort service.',
+    desc: 'Personal, flexible, and private escort service experience for men who prefer direct-style meetings.',
     image: '/images/categories/independent-escorts.webp',
   },
   {
@@ -38,7 +38,7 @@ const categoriesData = [
     name: 'Asian Escorts',
     slug: 'vip-call-girls',
     subtitle: 'Cute and Sophisticated Asian girls',
-    desc: 'Soft skin, graceful style, and a calm personality. Suitable for men looking for elegant companionship.',
+    desc: 'Soft skin, graceful style, and a calm personality. Suitable for men looking for elegant escort service.',
     image: '/images/categories/vip-escorts.webp',
   },
   {
@@ -62,7 +62,7 @@ export default function CategoriesGridSection() {
           </h2>
           <div className="w-20 h-1 bg-[#671725] mx-auto rounded-full" />
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Explore Russian, Indian, and independent female escorts for the ultimate experience ALINA VIP offers a wide portfolio of diverse female escorts in Gurgaon. Our roster includes Russian, Indian, and independent models, giving men a strong selection of profiles for different booking needs. Whether you are choosing full night or hourly escort service for private companionship, our diverse selection helps you choose the right profile as per your requirement and taste. From Russian and Indian females to independent profiles and professional models, you can explore different options and find someone who matches your preference, occasion, and comfort.
+            Explore Russian, Indian, and independent female escorts for the ultimate experience ALINA VIP offers a wide portfolio of diverse female escorts in Gurgaon. Our roster includes Russian, Indian, and independent models, giving men a strong selection of profiles for different booking needs. Whether you are choosing full night or hourly escort service for private escort service, our diverse selection helps you choose the right profile as per your requirement and taste. From Russian and Indian females to independent profiles and professional models, you can explore different options and find someone who matches your preference, occasion, and comfort.
           </p>
           <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
             Our service helps you save time, avoid fake listings, and book with more confidence. We focus on genuine availability, privacy, and smooth communication so every client can make the right choice without confusion or unnecessary hassle.
@@ -112,7 +112,7 @@ export default function CategoriesGridSection() {
             With the advancement of Gurgaon City or &ldquo;Gurugram&rdquo; in the last few years, meeting female escorts has changed significantly, with men now looking for more genuine choices, better service, and profiles that match their personal preferences. Diversity matters because every client is different. Some prefer Russian women, some look for Indian models, while others feel more comfortable choosing independent profiles with a more personal approach.
           </p>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            ALINA VIP escort services offer a wide selection of Russian, Indian, and independent female escorts in Gurgaon, giving clients the flexibility to choose from different looks, personalities, and backgrounds. Whether the requirement is private companionship, discreet meetings, or an intimate evening, a diverse selection helps clients find a profile that feels right for them.
+            ALINA VIP escort services offer a wide selection of Russian, Indian, and independent female escorts in Gurgaon, giving clients the flexibility to choose from different looks, personalities, and backgrounds. Whether the requirement is private escort service, discreet meetings, or an intimate evening, a diverse selection helps clients find a profile that feels right for them.
           </p>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
             Our focus is to make the booking experience more reliable, private, and comfortable. By offering different categories of female escorts, we help clients avoid limited choices and make a more confident decision based on their individual requirement.

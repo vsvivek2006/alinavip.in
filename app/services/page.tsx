@@ -86,7 +86,7 @@ const serviceSubpages = [
     image: '/images/assets/Escort_At_Night_24x7_Service.png',
     snippet:
       'It is our pleasure to have you here, where you will find the most exotic and high-end Gurgaon escort service for full night unhurried romantic pleasures until dawn.',
-    features: ['Full 10 PM - 8 AM intimacy', 'Morning breakfast companion', 'Unlimited intimate rounds'],
+    features: ['Full 10 PM - 8 AM intimacy', 'Morning breakfast call girl', 'Unlimited intimate rounds'],
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ServicesPage() {
             <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
-            ★ 24/7 VIP Companionship &amp; Outcalls
+            ★ 24/7 VIP Escort Service &amp; Outcalls
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
             {hub.h1 || 'Get Premium Escort Service in Gurgaon 24*7'}
@@ -164,7 +164,7 @@ export default function ServicesPage() {
           <article className="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-sm space-y-4">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#671725]">
               <Sparkles size={14} className="text-[#FFD700]" />
-              <span>Elite Companionship in Gurugram</span>
+              <span>Elite Escort Service in Gurugram</span>
             </div>
             <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed">
               {introSection.paragraphs.map((p, idx) => (
@@ -321,7 +321,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* Available Companion Escorts Gallery */}
+        {/* Available Call Girl Escorts Gallery */}
         <section className="space-y-6">
           <div className="text-center max-w-2xl mx-auto">
             <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">

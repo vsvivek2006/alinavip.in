@@ -134,7 +134,7 @@ const categoryPortfolios = [
     slug: 'russian-call-girls',
     image: '/images/categories/russian-escorts.webp',
     count: '24 Profiles',
-    desc: 'Fair-complexioned, aristocratic European & Russian companion models.',
+    desc: 'Fair-complexioned, aristocratic European & Russian call girl models.',
   },
   {
     title: 'VIP Call Girls',
@@ -148,7 +148,7 @@ const categoryPortfolios = [
     slug: 'high-profile-girls',
     image: '/images/categories/high-profile-girls.webp',
     count: '28 Profiles',
-    desc: 'Fashion influencers and luxury models offering five-star companionship.',
+    desc: 'Fashion influencers and luxury models offering five-star escort service.',
   },
   {
     title: 'Model Escorts',
@@ -176,7 +176,7 @@ const categoryPortfolios = [
     slug: 'independent-girls',
     image: '/images/categories/independent-escorts.webp',
     count: '40 Profiles',
-    desc: 'Direct independent companions with no intermediaries and fast booking.',
+    desc: 'Direct independent call girls with no intermediaries and fast booking.',
   },
   {
     title: 'Air Hostess Escorts',
@@ -211,7 +211,7 @@ const categoryPortfolios = [
     slug: 'high-profile-girls',
     image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
     count: '45 Profiles',
-    desc: 'Top-rated companion escorts serving Gurgaon, Delhi, and Aerocity suites.',
+    desc: 'Top-rated call girl escorts serving Gurgaon, Delhi, and Aerocity suites.',
   },
 ];
 

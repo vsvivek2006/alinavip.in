@@ -40,7 +40,7 @@ export const featuredProfiles: ModelProfile[] = [
     categorySlug: 'independent-girls',
     location: 'Cyber City, Gurgaon',
     image: '/images/assets/Tanya.jpg',
-    description: 'Independent escort in Gurgaon is available for a secret meeting in a hotel room. My name is Tanya, and I am a professional companion who likes to make every moment memorable.',
+    description: 'Independent escort in Gurgaon is available for a secret meeting in a hotel room. My name is Tanya, and I am a professional call girl who likes to make every moment memorable.',
     stats: { height: "5'3\"", bust: '33"', waist: '23"', hips: '33"' },
   },
   {
@@ -60,7 +60,7 @@ export const featuredProfiles: ModelProfile[] = [
     categorySlug: 'high-profile-girls',
     location: 'Sector 29, Gurgaon',
     image: '/images/assets/Escort_Service_DLF_Gurgaon.jpg',
-    description: 'If you are looking to meet a hot and beautiful model for sexual pleasure, then you are at the right place. I work as a professional model for exclusive elite companionship.',
+    description: 'If you are looking to meet a hot and beautiful model for sexual pleasure, then you are at the right place. I work as a professional model for exclusive elite escort service.',
     stats: { height: "5'3\"", bust: '32"', waist: '23"', hips: '34"' },
   },
   {
@@ -126,7 +126,7 @@ export default function FeaturedProfilesSection() {
           </h2>
           <div className="w-20 h-1 bg-[#671725] mx-auto rounded-full" />
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Whether you are looking for private companionship, discreet meetings, social company, or a trusted female for intimate time, our featured profiles selection helps you find the right women as per your requirement.
+            Whether you are looking for private escort service, discreet meetings, social company, or a trusted female for intimate time, our featured profiles selection helps you find the right women as per your requirement.
           </p>
           <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
             Each featured profile is presented to make the selection process easier, giving clients a clearer idea of available options, model categories, and booking preferences. From Russian and Indian models to independent and professional model profiles, ALINA VIP helps clients choose with more confidence while keeping the process private, simple, and professional.

@@ -18,7 +18,7 @@ const reviews = [
     rating: 5,
     title: 'Utmost Discretion and Respect for Privacy',
     comment:
-      '"As a frequent business traveler from Mumbai, I often have layovers in Gurgaon. On my last trip, I booked an escort through a reputed agency for a relaxing evening at my Radisson Hotel. The entire experience was fantastic. The customer support was very clear about the rates and services, and the companion they sent was beautiful, polite, and very professional. Everything was handled with utmost discretion and respect for privacy. The service was exactly as promised—genuine and reliable."',
+      '"As a frequent business traveler from Mumbai, I often have layovers in Gurgaon. On my last trip, I booked an escort through a reputed agency for a relaxing evening at my Radisson Hotel. The entire experience was fantastic. The customer support was very clear about the rates and services, and the call girl they sent was beautiful, polite, and very professional. Everything was handled with utmost discretion and respect for privacy. The service was exactly as promised—genuine and reliable."',
   },
   {
     name: 'Amit Jha',
@@ -26,7 +26,7 @@ const reviews = [
     rating: 5,
     title: 'Incredibly Charming Girlfriend Experience',
     comment:
-      '"Honestly, I was a bit hesitant about booking a companion for a corporate after-party in Gurgaon, but I am so glad I did. I wanted someone who could hold their own in a room full of executives, and the girl they sent was an absolute breath of fresh air. She was witty, elegantly dressed, and knew exactly how to keep the conversation engaging without overstepping. What started as a professional arrangement quickly felt like I was out with an incredibly charming girlfriend."',
+      '"Honestly, I was a bit hesitant about booking a call girl for a corporate after-party in Gurgaon, but I am so glad I did. I wanted someone who could hold their own in a room full of executives, and the girl they sent was an absolute breath of fresh air. She was witty, elegantly dressed, and knew exactly how to keep the conversation engaging without overstepping. What started as a professional arrangement quickly felt like I was out with an incredibly charming girlfriend."',
   },
 ];
 

@@ -9,7 +9,7 @@ const servicesData = [
   {
     icon: Heart,
     title: 'Girlfriend Experience (GFE)',
-    desc: 'Dive into an intimate companionship with our high profile model escorts offering exclusive Girlfriend Experience (GFE) in Gurgaon.',
+    desc: 'Dive into an intimate escort service with our high profile model escorts offering exclusive Girlfriend Experience (GFE) in Gurgaon.',
     image: '/images/assets/Girlfriend_Experience.png',
     href: '/girlfriend-experience-in-gurgaon',
   },

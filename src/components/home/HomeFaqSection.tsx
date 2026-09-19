@@ -7,7 +7,7 @@ import { Plus, Minus, ArrowRight, HelpCircle } from 'lucide-react';
 const exactFaqs = [
   {
     q: 'What is the process to book an escort in Gurgaon?',
-    a: 'You can book an escort in Gurgaon by browsing available profiles on our website and contacting us directly through call or WhatsApp. Our team will guide you through the process and help you choose the right companion based on your preferences.',
+    a: 'You can book an escort in Gurgaon by browsing available profiles on our website and contacting us directly through call or WhatsApp. Our team will guide you through the process and help you choose the right call girl based on your preferences.',
   },
   {
     q: 'Are your Gurgaon escorts verified and genuine?',
@@ -19,7 +19,7 @@ const exactFaqs = [
   },
   {
     q: 'What types of escorts are available in Gurgaon?',
-    a: 'We offer a wide range of escorts in Gurgaon, including independent escorts, VIP escorts, high-profile companions, and college escorts. You can choose according to your preferences and requirements.',
+    a: 'We offer a wide range of escorts in Gurgaon, including independent escorts, VIP escorts, high-profile call girls, and college escorts. You can choose according to your preferences and requirements.',
   },
   {
     q: 'Do you provide outcall and incall services in Gurgaon?',

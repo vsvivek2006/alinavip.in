@@ -121,7 +121,7 @@ export default async function ProductModelPage({
             {prod.h1}
           </h1>
           <p className="mt-2 text-sm sm:text-base text-rose-100/90 font-light max-w-2xl">
-            Verified {categoryLabel} companion available for 5-star hotel outcalls and discrete in-call rendezvous in Gurgaon.
+            Verified {categoryLabel} call girl available for 5-star hotel outcalls and discrete in-call rendezvous in Gurgaon.
           </p>
         </div>
       </div>

@@ -137,7 +137,7 @@ export default async function ServiceDetailPage({
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-3xl leading-relaxed">
-            Experience the finest luxury escort companionship in Gurgaon. 100% verified profiles, 24/7 outcalls, zero advance payment.
+            Experience the finest luxury escort escort service in Gurgaon. 100% verified profiles, 24/7 outcalls, zero advance payment.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -189,7 +189,7 @@ export default async function ServiceDetailPage({
               Premium {item.h1} with ALINA VIP
             </h2>
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              Indulge in an unmatched encounter of passion, intimacy, and complete relaxation. Our female companions are hand-selected for high etiquette, exceptional beauty, and genuine passion.
+              Indulge in an unmatched encounter of passion, intimacy, and complete relaxation. Our female call girls are hand-selected for high etiquette, exceptional beauty, and genuine passion.
             </p>
             <div className="flex flex-wrap gap-2 pt-2">
               <span className="px-3 py-1 bg-rose-50 text-[#671725] text-xs font-semibold rounded-full border border-rose-200">
