@@ -119,7 +119,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
+    <html lang="en-IN" className={`${playfair.variable} ${poppins.variable}`}>
       <head>
         <script
           type="application/ld+json"

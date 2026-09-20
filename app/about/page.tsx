@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { CheckCircle, Phone, MessageCircle } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import pagesData from '@/data/catalog_pages.json';
 
@@ -29,6 +29,20 @@ export const metadata: Metadata = {
   description: (aboutData && aboutData.metaDescription) ? aboutData.metaDescription : `${siteConfig.name} is the premier luxury escort service in ${siteConfig.city}, providing 100% verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge booking.`,
   alternates: {
     canonical: `${siteConfig.url}/about`,
+    languages: getAlternateLanguages('/about'),
+  },
+  openGraph: {
+    title: `About ${siteConfig.name} | Premier Escort Service in ${siteConfig.city}`,
+    description: `Learn about ${siteConfig.name}, the leading luxury escort agency in ${siteConfig.city}. Providing verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge.`,
+    url: `${siteConfig.url}/about`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About ${siteConfig.name} | Premier Escort Service in ${siteConfig.city}`,
+    description: `Verified VIP escorts and hotel outcall services in ${siteConfig.city} with ${siteConfig.name}.`,
+    images: ['/og-image.jpg'],
   },
 };
 

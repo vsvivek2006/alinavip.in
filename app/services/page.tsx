@@ -23,7 +23,7 @@ const hub = exactManifest.serviceHub;
 export const metadata: Metadata = {
   title: `Escort Service in ${siteConfig.city} 24*7 | VIP ${siteConfig.city} Escorts Services | ${siteConfig.name}`,
   description:
-    'Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available. 100% verified call girls at 5-star hotels & residences.',
+    `Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available. 100% verified call girls at 5-star hotels & residences.`,
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'escort service in gurgaon',
@@ -38,10 +38,16 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/services`,
     languages: getAlternateLanguages('/services'),
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Elite Escort Services in ${siteConfig.city} | In-Call & Outcall | ${siteConfig.name}`,
+    description: `Full range of premium escort services in ${siteConfig.city}: 5-star hotel outcalls, sensual erotic massage, B2B, and VIP companion services.`,
+    images: ['/og-image.jpg'],
+  },
   openGraph: {
     title: `Escort Service in ${siteConfig.city} 24*7 | VIP ${siteConfig.city} Escorts Services | ${siteConfig.name}`,
     description:
-      'Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available.',
+      `Are you searching for escort service in ${siteConfig.city}? Get instant booking 24/7 for VIP escorts in ${siteConfig.city} with COD available.`,
     url: `${siteConfig.url}/services`,
     type: 'website',
   },

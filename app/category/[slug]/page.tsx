@@ -141,7 +141,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       answer: 'Yes. Every call girl is photographed and verified in person by our management team. We guarantee that the call girl who arrives at your suite matches the profile you selected.',
     },
     {
-      question: 'What is the typical outcall arrival time in ${siteConfig.city}?',
+      question: `What is the typical outcall arrival time in ${siteConfig.city}?`,
       answer: 'Call Girls typically arrive within 20 to 30 minutes for central Gurgaon locations like Cyber City, DLF Phases 1–5, and Golf Course Road. For extended corridors like Sohna Road or Manesar, arrival is usually within 35 to 45 minutes.',
     },
     {

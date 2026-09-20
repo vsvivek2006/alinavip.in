@@ -149,7 +149,7 @@ export default function FAQPage() {
               <div className="space-y-3">
                 <a
                   href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-                    'Hello ${siteConfig.name}, I have an inquiry about escort bookings in ${siteConfig.city}.'
+                    `Hello ${siteConfig.name}, I have an inquiry about escort bookings in ${siteConfig.city}.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

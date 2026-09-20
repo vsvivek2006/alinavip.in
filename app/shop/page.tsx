@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import productsData from '@/data/catalog_products.json';
 
@@ -15,9 +15,23 @@ interface ProductItem {
 export const metadata: Metadata = {
   title: `${siteConfig.city} Escorts Catalog – Book High-Class Call Girls | ${siteConfig.name}`,
   description:
-    'Browse our complete catalog of verified VIP, Russian, independent, and high-profile call girls in ${siteConfig.city}. 24/7 doorstep 5-star hotel delivery.',
+    `Browse our complete catalog of verified VIP, Russian, independent, and high-profile call girls in ${siteConfig.city}. 24/7 doorstep 5-star hotel delivery.`,
   alternates: {
     canonical: `${siteConfig.url}/shop`,
+    languages: getAlternateLanguages('/shop'),
+  },
+  openGraph: {
+    title: `${siteConfig.city} Escorts Catalog – Book High-Class Call Girls | ${siteConfig.name}`,
+    description: `Browse our complete catalog of verified VIP, Russian, independent, and high-profile call girls in ${siteConfig.city}. 24/7 doorstep 5-star hotel delivery.`,
+    url: `${siteConfig.url}/shop`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.city} Escorts Catalog – Book High-Class Call Girls | ${siteConfig.name}`,
+    description: `Complete catalog of verified VIP and Russian call girls in ${siteConfig.city}.`,
+    images: ['/og-image.jpg'],
   },
 };
 

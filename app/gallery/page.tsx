@@ -24,6 +24,12 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/gallery`,
     languages: getAlternateLanguages('/gallery'),
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.city} Escorts Photo Gallery | 100% Verified Real Photos | ${siteConfig.name}`,
+    description: `Browse genuine, unedited photos of VIP escorts, Russian models, and independent call girls in ${siteConfig.city}.`,
+    images: ['/og-image.jpg'],
+  },
   openGraph: {
     title: `Verified Photo Gallery | VIP Call Girls & ${siteConfig.city} Escorts | ${siteConfig.name}`,
     description: `Browse 100% verified, authentic photographs of VIP call girls and elite escorts in ${siteConfig.city}. Genuine Russian escorts, independent models, college call girls, and 5-star hotel outcalls.`,

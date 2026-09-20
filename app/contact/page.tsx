@@ -31,6 +31,13 @@ export const metadata: Metadata = {
     description: `Connect with ${siteConfig.name} for verified call girl reservations in ${siteConfig.city}. Call ${siteConfig.phone} or WhatsApp for confidential 20-30 min hotel outcalls.`,
     url: `${siteConfig.url}/contact`,
     type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Book ${siteConfig.city} Escorts | 24/7 Private Concierge | ${siteConfig.name}`,
+    description: `Connect with ${siteConfig.name} for verified call girl reservations in ${siteConfig.city}. 20-30 min hotel outcall arrival.`,
+    images: ['/og-image.jpg'],
   },
 };
 

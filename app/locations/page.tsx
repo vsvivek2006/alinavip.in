@@ -29,6 +29,12 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/locations`,
     languages: getAlternateLanguages('/locations'),
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.city} Escorts by Location & Sector Directory | ${siteConfig.name}`,
+    description: `Find verified call girls and escorts across DLF Phase 1-5, Cyber City, Golf Course Road, Sohna Road, and all ${siteConfig.city} sectors.`,
+    images: ['/og-image.jpg'],
+  },
   openGraph: {
     title: `Escort Service Locations in ${siteConfig.city} & Delhi NCR | ${siteConfig.name}`,
     description:

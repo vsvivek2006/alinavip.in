@@ -5,7 +5,7 @@ import { getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
   title: `Disclaimer | ${siteConfig.name}`,
-  description: 'Legal disclaimer and terms of engagement for ${siteConfig.name} luxury escort services.',
+  description: `Legal disclaimer and terms of engagement for ${siteConfig.name} luxury escort services.`,
   keywords: [
     ...siteConfig.keywords.slice(0, 10),
     'disclaimer, adult escort terms, legal compliance',
@@ -14,8 +14,21 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/disclaimer`,
     languages: getAlternateLanguages('/disclaimer'),
   },
+  openGraph: {
+    title: `Disclaimer | ${siteConfig.name}`,
+    description: `Legal disclaimer and terms of engagement for ${siteConfig.name}.`,
+    url: `${siteConfig.url}/disclaimer`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Disclaimer | ${siteConfig.name}`,
+    description: `Legal disclaimer and terms of engagement for ${siteConfig.name}.`,
+    images: ['/og-image.jpg'],
+  },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
 };

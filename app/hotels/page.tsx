@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
@@ -24,6 +24,20 @@ export const metadata: Metadata = {
   description: `Luxury hotel outcall escort services across ${siteConfig.city}. Prompt 20-30 min arrival to premier luxury hotel properties.`,
   alternates: {
     canonical: `${siteConfig.url}/hotels`,
+    languages: getAlternateLanguages('/hotels'),
+  },
+  openGraph: {
+    title: `Top 5-Star Hotels Escorts Service in ${siteConfig.city} | ${siteConfig.name}`,
+    description: `Luxury hotel outcall escort services across ${siteConfig.city}. Prompt 20-30 min arrival to premier luxury hotel properties.`,
+    url: `${siteConfig.url}/hotels`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Top 5-Star Hotels Escorts Service in ${siteConfig.city} | ${siteConfig.name}`,
+    description: `Luxury hotel outcall escort services across ${siteConfig.city}. Prompt 20-30 min arrival.`,
+    images: ['/og-image.jpg'],
   },
 };
 

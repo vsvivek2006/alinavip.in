@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Phone, MessageCircle, Shield, CheckCircle, Heart, Sparkles, Clock, ArrowRight } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
@@ -83,6 +83,20 @@ export async function generateMetadata({
     description: `Discover premium ${item.h1} in ${siteConfig.city}. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/services/${slug}`,
+      languages: getAlternateLanguages(`/services/${slug}`),
+    },
+    openGraph: {
+      title: `${item.title} | ${siteConfig.name}`,
+      description: `Discover premium ${item.h1} in ${siteConfig.city}. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ${siteConfig.name}.`,
+      url: `${siteConfig.url}/services/${slug}`,
+      type: 'website',
+      images: [{ url: '/og-image.jpg' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${item.title} | ${siteConfig.name}`,
+      description: `Discover premium ${item.h1} in ${siteConfig.city}. 100% real verified call girls.`,
+      images: ['/og-image.jpg'],
     },
   };
 }

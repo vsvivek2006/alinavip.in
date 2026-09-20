@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
@@ -25,6 +25,20 @@ export const metadata: Metadata = {
     'Explore diverse categories of escorts in Gurgaon: Russian, College, Model, High Profile, Housewife, Air Hostess, and Independent call girls. 100% verified with cash on delivery.',
   alternates: {
     canonical: `${siteConfig.url}/categories`,
+    languages: getAlternateLanguages('/categories'),
+  },
+  openGraph: {
+    title: `Meet Diverse Categories of Escorts in ${siteConfig.city} | ${siteConfig.name}`,
+    description: `Browse Russian, College, Model, High Profile, and Independent call girls in ${siteConfig.city}. 100% verified with cash on delivery.`,
+    url: `${siteConfig.url}/categories`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Meet Diverse Categories of Escorts in ${siteConfig.city} | ${siteConfig.name}`,
+    description: `Browse verified escort categories in ${siteConfig.city}. Instant hotel outcall booking.`,
+    images: ['/og-image.jpg'],
   },
 };
 

@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import exactManifest from '@/data/exact_manifest.json';
 
 const ratesManifest = exactManifest.rates;
@@ -21,6 +21,20 @@ export const metadata: Metadata = {
   description: `Book and meet the hottest female escorts in ${siteConfig.city} at transparent hourly rates. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7.`,
   alternates: {
     canonical: `${siteConfig.url}/rates`,
+    languages: getAlternateLanguages('/rates'),
+  },
+  openGraph: {
+    title: `${siteConfig.city} Escorts Rates & Pricing Packages | ${siteConfig.name}`,
+    description: `Transparent escort rates in ${siteConfig.city}. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7 with ${siteConfig.name}.`,
+    url: `${siteConfig.url}/rates`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.city} Escorts Rates & Pricing Packages | ${siteConfig.name}`,
+    description: `Hourly and full-night escort service rates in ${siteConfig.city}. Zero advance payment.`,
+    images: ['/og-image.jpg'],
   },
 };
 
