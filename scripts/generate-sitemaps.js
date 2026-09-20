@@ -157,7 +157,7 @@ const pageUrls = staticPages.map(p => ({
   priority: p.priority
 }));
 
-const sitemapExcludedSlugs = new Set(['about-us', 'contact-us', 'faqs', 'escorts-categories', 'gurgaon-escorts-rates', 'gurgaon-escorts-phone-number', 'sitemap']);
+const sitemapExcludedSlugs = new Set(['about-us', 'contact-us', 'faqs', 'escorts-categories', 'gurgaon-escorts-rates', 'gurgaon-escorts-phone-number', 'sitemap', 'location', 'terms-and-conditions']);
 const catalogPageUrls = catalogPages.filter(p => p.slug && !sitemapExcludedSlugs.has(p.slug)).map(p => ({
   loc: `${baseUrl}/${p.slug}`,
   lastmod: nowIso,

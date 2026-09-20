@@ -9,7 +9,7 @@ import { siteConfig } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import pagesData from '@/data/catalog_pages.json';
 import postsData from '@/data/catalog_posts.json';
-import { isLocationIndexable } from '@/data/locationManifest';
+import { getLocationManifestEntry } from '@/data/locationManifest';
 
 interface Section {
   heading: string;
@@ -74,7 +74,8 @@ export async function generateMetadata({
 
 
   // Guard: noindex for REDIRECT/NOINDEX locations
-  const robots = isLocationIndexable(slug) !== false ? undefined : { index: false, follow: false };
+  const entry = getLocationManifestEntry(slug);
+  const robots = (entry && entry.indexable === false) ? { index: false, follow: false } : undefined;
   return {
     ...(robots ? { robots } : {}),
     title: item.title,

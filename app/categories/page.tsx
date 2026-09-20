@@ -16,6 +16,7 @@ import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
+import pagesData from '@/data/catalog_pages.json';
 
 const catManifest = exactManifest.categories;
 
@@ -128,6 +129,19 @@ const categoryVisualGrid = [
     price: 'From ₹20,000',
   },
 ];
+
+
+const allSpecialtyCategories = (pagesData as { slug: string; title: string; h1: string }[]).filter(
+  (p) =>
+    p.slug &&
+    (p.slug.includes('-escorts-in-') ||
+      p.slug.includes('-call-girls-in-') ||
+      p.slug.includes('-escorts-') ||
+      p.slug.includes('-call-girls') ||
+      p.slug === 'female-escorts-gurgaon' || p.slug === 'escorts-jobs' || p.slug === 'aerocity-escort-services') &&
+    !p.slug.startsWith('hotels/') &&
+    !p.slug.includes('sector-')
+);
 
 export default function CategoriesPage() {
   // Filter out any menu/footer sections
@@ -298,6 +312,30 @@ export default function CategoriesPage() {
             </article>
           ))}
         </div>
+        {/* Specialty Escort Profiles & Categories Directory */}
+        <section className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">Specialty Profiles</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              Explore All Escort Categories &amp; Call Girl Profiles in {siteConfig.city}
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600 mt-2">
+              Browse our complete range of verified independent models, college students, air hostesses, and international escorts.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pt-2">
+            {allSpecialtyCategories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/${cat.slug}`}
+                className="text-xs text-gray-700 hover:text-[#671725] hover:underline p-2.5 rounded-lg bg-gray-50 hover:bg-rose-50/50 border border-gray-100 transition-colors block truncate"
+                title={cat.h1 || cat.title}
+              >
+                {cat.h1 || cat.title}
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
 
       <CTASection />

@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Redirect slugs — excluded from sitemap to avoid 'canonicalized URL in XML sitemap' audit issue
-  const sitemapExcludedSlugs = new Set(['about-us', 'contact-us', 'faqs', 'escorts-categories', 'gurgaon-escorts-rates', 'gurgaon-escorts-phone-number', 'sitemap']);
+  const sitemapExcludedSlugs = new Set(['about-us', 'contact-us', 'faqs', 'escorts-categories', 'gurgaon-escorts-rates', 'gurgaon-escorts-phone-number', 'sitemap', 'location', 'terms-and-conditions']);
 
   // 2. All 207 Pages from page-sitemap.xml
   (pagesData as SimpleSlug[]).forEach((p) => {

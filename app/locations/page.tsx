@@ -12,6 +12,7 @@ import CTASection from '@/components/CTASection';
 import LocationsDirectory, { CompactLocation } from '@/components/LocationsDirectory';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { locations } from '@/data/locations';
+import pagesData from '@/data/catalog_pages.json';
 import { isLocationRedirect } from '@/data/locationManifest';
 import { getAssetUrl } from '@/lib/assets';
 
@@ -98,6 +99,16 @@ const topLocationCards = [
     desc: 'Ultra-luxury condominiums including The Camellias & Magnolias.',
   },
 ];
+
+
+const allSectorAreaPages = (pagesData as { slug: string; title: string; h1: string }[]).filter(
+  (p) =>
+    p.slug &&
+    (p.slug.includes('call-girls-in-sector-') ||
+      p.slug.includes('call-girls-in-') ||
+      p.slug.includes('escorts-in-')) &&
+    !p.slug.startsWith('hotels/') || p.slug === 'gurgaon-sectors'
+);
 
 export default function LocationsPage() {
   const compactLocations: CompactLocation[] = locations
@@ -277,14 +288,14 @@ export default function LocationsPage() {
         <h2 className="text-2xl font-bold text-[#671725] mb-2">More Areas We Serve</h2>
         <p className="text-sm text-gray-600 mb-6">Verified escort service available across all major Gurgaon sectors, colonies, and localities.</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {moreAreaPages.map((area) => (
+          {allSectorAreaPages.map((area) => (
             <Link
               key={area.slug}
               href={`/${area.slug}`}
               className="block p-3 border border-gray-200 rounded-lg hover:border-[#671725] hover:bg-rose-50 transition-colors group"
             >
-              <span className="block text-sm font-semibold text-[#2d2d2d] group-hover:text-[#671725] leading-tight">{area.title}</span>
-              <span className="block text-xs text-gray-500 mt-0.5">{area.area}</span>
+              <span className="block text-sm font-semibold text-[#2d2d2d] group-hover:text-[#671725] leading-tight truncate">{area.h1 || area.title}</span>
+              <span className="block text-xs text-gray-500 mt-0.5">{siteConfig.city} Outcall</span>
             </Link>
           ))}
         </div>

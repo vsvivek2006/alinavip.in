@@ -16,6 +16,7 @@ import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
+import pagesData from '@/data/catalog_pages.json';
 
 const hotelsManifest = exactManifest.hotels;
 
@@ -292,6 +293,16 @@ const topHotels = [
   },
 ];
 
+
+const allHotelAccommodations = (pagesData as { slug: string; title: string; h1: string }[]).filter(
+  (p) =>
+    p.slug &&
+    (p.slug.startsWith('hotels/') ||
+      p.slug.includes('escort-service-near-') ||
+      p.slug.includes('escort-services-near-') ||
+      p.slug.includes('escorts-service-near-'))
+);
+
 export default function HotelsPage() {
   const introSection = hotelsManifest.sections[0];
 
@@ -431,6 +442,32 @@ export default function HotelsPage() {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+        {/* Complete Hotels & Luxury Accommodations Directory */}
+        <section className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#671725]">
+              Complete Hotel &amp; Residency Directory
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mt-1">
+              All 5-Star Hotels, Luxury Suites &amp; Residences in {siteConfig.city}
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600 mt-2">
+              Discreet 24/7 outcall delivery with verified models to all top hotels, serviced suites, and private residences across {siteConfig.city}.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pt-2">
+            {allHotelAccommodations.map((h) => (
+              <Link
+                key={h.slug}
+                href={`/${h.slug}`}
+                className="text-xs text-gray-700 hover:text-[#671725] hover:underline p-2.5 rounded-lg bg-gray-50 hover:bg-rose-50/50 border border-gray-100 transition-colors block truncate"
+                title={h.h1 || h.title}
+              >
+                {h.h1 || h.title}
+              </Link>
             ))}
           </div>
         </section>

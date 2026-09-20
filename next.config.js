@@ -111,7 +111,10 @@ const nextConfig = {
       { source: '/gurgaon-escorts-rates', destination: '/rates', permanent: true },
       { source: '/gurgaon-escorts-phone-number', destination: '/phone-number', permanent: true },
       { source: '/location', destination: '/locations', permanent: true },
-      { source: '/terms-and-conditions', destination: '/terms', permanent: true },
+            { source: '/terms-and-conditions', destination: '/terms', permanent: true },
+      { source: '/why-escorts-can-be-your-best-call%20girl', destination: '/why-escorts-can-be-your-best-call-girl', permanent: true },
+      { source: '/the-ultimate-guide-to-booking-beautiful-call%20girls', destination: '/the-ultimate-guide-to-booking-beautiful-call-girls', permanent: true },
+      { source: '/top-locations-to-seek-quality-escort%20service-in-gurgaon-find-escorts-near-you', destination: '/top-locations-to-seek-quality-escort-service-in-gurgaon-find-escorts-near-you', permanent: true },
     ];
   },
 };
