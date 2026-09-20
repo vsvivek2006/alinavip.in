@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: `Escort Service Locations in ${siteConfig.city} & Delhi NCR | ${siteConfig.name}`,
     description:
       'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
-    url: 'https://alinavip.in/locations',
+    url: `${siteConfig.url}/locations`,
     type: 'website',
   },
 };
