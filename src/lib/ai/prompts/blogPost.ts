@@ -71,7 +71,7 @@ Before writing, silently decide the search intent behind this topic (information
 
 **On-page SEO & Google 2026 Helpful Content Rules:**
 - Use the primary keyword within the first 100 words, in at least one <h2>, and naturally once in the meta description.
-- **Featured Snippet Trigger**: In the middle of the article, pick one <h2> or <h3> and open it with a direct, self-contained 40-to-60-word answer to its implied question — the exact format Google extracts into featured snippets. Follow with detailed analysis.
+- **Featured Snippet Direct Answer Target**: In the middle of the article, format one <h2> or <h3> as a natural search query (e.g. "How Fast is 5-Star Hotel Outcall Dispatch in Gurgaon?" or "What is the Verification Protocol for Hotel Suites?"). NEVER use meta-labels like "Featured Snippet:", "Direct Answer:", or "Summary:" in any heading or text. Open the section immediately with a punchy, self-contained 40-to-60-word direct answer to that query, then follow with deep practical analysis.
 - Weave in authentic Delhi NCR hospitality geography and hotel landmarks naturally.
 
 ---

@@ -116,6 +116,64 @@ function safeParseJson(raw: string): ParsedBlogResponse {
   }
 }
 
+function buildFinalArticleOutput(
+  parsed: ParsedBlogResponse,
+  input: GenerateBlogPostInput,
+  modelUsed: string
+): GenerateBlogPostOutput {
+  const rawTitle = (parsed.title || input.topic)
+    .replace(/\u2011/g, '-')
+    .trim();
+  const title = purgeCompanionWords(rawTitle);
+
+  const rawMeta = (parsed.metaDescription || '')
+    .replace(/\u2011/g, '-')
+    .trim();
+  const metaDescription = purgeCompanionWords(rawMeta);
+
+  // Normalize HTML, strip accidental meta-labels from headings, and purge forbidden words
+  let rawContent = (parsed.content || '')
+    .replace(/\u2011/g, '-')
+    .replace(/<h([23])[^>]*>\s*(?:Featured Snippet|Direct Answer|Google Snippet)\s*[-:]*\s*/gi, '<h$1>');
+  rawContent = purgeCompanionWords(rawContent);
+  const formattedHtml = normalizeContentToHtml(rawContent);
+
+  // Suggested Tags
+  const rawTags = Array.isArray(parsed.suggestedTags) && parsed.suggestedTags.length > 0
+    ? parsed.suggestedTags.map((t: unknown) => String(t).replace(/\u2011/g, '-').trim()).filter(Boolean)
+    : [input.focusKeyword, 'Call Girls In Gurgaon', 'Gurgaon Escort Service', 'VIP Escorts'];
+  const tags = rawTags.map((t: string) => purgeCompanionWords(t));
+
+  // High-CTR excerpt (prioritize complete metaDescription over half-cut paragraph)
+  let excerpt = metaDescription;
+  if (!excerpt && formattedHtml) {
+    const pMatch = formattedHtml.match(/<p>([\s\S]*?)<\/p>/i);
+    if (pMatch) {
+      const cleanP = pMatch[1].replace(/<[^>]+>/g, '').trim();
+      if (cleanP.length <= 180) {
+        excerpt = cleanP;
+      } else {
+        const cut = cleanP.substring(0, 175);
+        const lastSpace = cut.lastIndexOf(' ');
+        excerpt = (lastSpace > 50 ? cut.substring(0, lastSpace) : cut) + '...';
+      }
+    }
+  }
+
+  return {
+    title,
+    slug: optimizeSeoSlug(title, input.focusKeyword),
+    seoTitle: title,
+    seoDescription: metaDescription,
+    excerpt,
+    content: formattedHtml,
+    suggestedTags: tags,
+    coverImage: selectRandomImage(),
+    author: `${input.siteName || 'ALINA VIP'} Editorial Desk`,
+    modelUsed,
+  };
+}
+
 /**
  * Generate blog post using Groq with structured outputs
  */
@@ -192,33 +250,7 @@ async function generateWithGroq(
       }
 
       const parsed = safeParseJson(raw);
-      const title = purgeCompanionWords(parsed.title || input.topic);
-      const metaDescription = purgeCompanionWords(parsed.metaDescription || '');
-      const rawContent = purgeCompanionWords(parsed.content || '');
-      const formattedHtml = normalizeContentToHtml(rawContent);
-
-      const rawTags = Array.isArray(parsed.suggestedTags)
-        ? parsed.suggestedTags.map((t: unknown) => String(t).trim()).filter(Boolean)
-        : [input.focusKeyword, 'Call Girls In Gurgaon', 'Gurgaon Escort Service', 'VIP Escorts'];
-      const tags = rawTags.map((t: string) => purgeCompanionWords(t));
-
-      const excerptMatch = formattedHtml.match(/<p>([\s\S]*?)<\/p>/i);
-      const excerpt = excerptMatch
-        ? excerptMatch[1].replace(/<[^>]+>/g, '').trim().substring(0, 200)
-        : metaDescription;
-
-      return {
-        title,
-        slug: optimizeSeoSlug(title, input.focusKeyword),
-        seoTitle: title,
-        seoDescription: metaDescription,
-        excerpt,
-        content: formattedHtml,
-        suggestedTags: tags,
-        coverImage: selectRandomImage(),
-        author: `${input.siteName || 'ALINA VIP'} Editorial Desk`,
-        modelUsed: `Groq (${currentModel})`,
-      };
+      return buildFinalArticleOutput(parsed, input, `Groq (${currentModel})`);
     } catch (err) {
       lastError = err instanceof Error ? err.message : String(err);
     }
@@ -274,33 +306,7 @@ async function generateWithGemini(
       }
 
       const parsed = safeParseJson(textPart);
-      const title = purgeCompanionWords(parsed.title || input.topic);
-      const metaDescription = purgeCompanionWords(parsed.metaDescription || '');
-      const rawContent = purgeCompanionWords(parsed.content || '');
-      const formattedHtml = normalizeContentToHtml(rawContent);
-
-      const rawTags = Array.isArray(parsed.suggestedTags)
-        ? parsed.suggestedTags.map((t: unknown) => String(t).trim()).filter(Boolean)
-        : [input.focusKeyword, 'Call Girls In Gurgaon', 'Gurgaon Escort Service'];
-      const tags = rawTags.map((t: string) => purgeCompanionWords(t));
-
-      const excerptMatch = formattedHtml.match(/<p>([\s\S]*?)<\/p>/i);
-      const excerpt = excerptMatch
-        ? excerptMatch[1].replace(/<[^>]+>/g, '').trim().substring(0, 200)
-        : metaDescription;
-
-      return {
-        title,
-        slug: optimizeSeoSlug(title, input.focusKeyword),
-        seoTitle: title,
-        seoDescription: metaDescription,
-        excerpt,
-        content: formattedHtml,
-        suggestedTags: tags,
-        coverImage: selectRandomImage(),
-        author: `${input.siteName || 'ALINA VIP'} Editorial Desk`,
-        modelUsed: `Google Gemini (${model})`,
-      };
+      return buildFinalArticleOutput(parsed, input, `Google Gemini (${model})`);
     } catch (err) {
       lastError = err instanceof Error ? err.message : String(err);
     }

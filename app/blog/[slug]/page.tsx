@@ -99,8 +99,8 @@ function extractFaqItems(rawContent: string | string[]): Array<{ question: strin
   const text = Array.isArray(rawContent) ? rawContent.join('\n\n') : String(rawContent);
   const faqs: Array<{ question: string; answer: string }> = [];
 
-  // Match <h3>Question?</h3> followed by <p>Answer...</p>
-  const h3Regex = /<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gi;
+  // Match <h3>Question?</h3> followed immediately by <p>Answer...</p> without crossing tags
+  const h3Regex = /<h3[^>]*>((?:(?!<\/h3>)[\s\S])+?)<\/h3>\s*<p[^>]*>((?:(?!<\/p>)[\s\S])+?)<\/p>/gi;
   let match;
   while ((match = h3Regex.exec(text)) !== null) {
     const q = match[1].replace(/<[^>]+>/g, '').trim();
