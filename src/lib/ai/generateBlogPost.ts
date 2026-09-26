@@ -1,5 +1,3 @@
-import 'server-only';
-
 import { buildBlogPostPrompt, blogPostResponseSchema } from './prompts/blogPost';
 import { normalizeContentToHtml } from './contentFormatter';
 import { getValidModel } from './models';
@@ -134,7 +132,6 @@ async function generateWithGroq(
     'openai/gpt-oss-120b',
     'openai/gpt-oss-20b',
     'qwen/qwen3.8-27b',
-    'llama-3.3-70b-versatile',
   ];
   const uniqueModels = Array.from(new Set(fallbackModels));
 
@@ -239,7 +236,8 @@ async function generateWithGemini(
 ): Promise<GenerateBlogPostOutput> {
   const cleanKey = apiKey.trim().replace(/^["']|["']$/g, '');
   const prompt = buildBlogPostPrompt(input);
-  const models = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3.1-flash-lite'];
+  const preferredModel = input.model?.startsWith('gemini-') ? input.model : 'gemini-3.6-flash';
+  const models = Array.from(new Set([preferredModel, 'gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3.1-flash-lite']));
   let lastError = '';
 
   for (const model of models) {
@@ -318,6 +316,21 @@ export async function generateBlogPost(input: GenerateBlogPostInput): Promise<Ge
   const groqKey = input.apiKey?.startsWith('gsk_') ? input.apiKey : process.env.GROQ_API_KEY;
   const geminiKey = input.apiKey && !input.apiKey.startsWith('gsk_') ? input.apiKey : process.env.GEMINI_API_KEY;
 
+  // 1. If Gemini provider or model explicitly requested
+  const isGeminiRequested = input.provider === 'gemini' || input.model?.startsWith('gemini-');
+  if (isGeminiRequested && geminiKey) {
+    try {
+      return await generateWithGemini(input, geminiKey);
+    } catch (geminiErr) {
+      console.warn('Gemini provider error, trying Groq fallback:', geminiErr);
+      if (groqKey) {
+        return await generateWithGroq(input, groqKey);
+      }
+      throw geminiErr;
+    }
+  }
+
+  // 2. Default to Groq (ultra-fast structured output)
   if (groqKey) {
     try {
       return await generateWithGroq(input, groqKey);
@@ -330,6 +343,7 @@ export async function generateBlogPost(input: GenerateBlogPostInput): Promise<Ge
     }
   }
 
+  // 3. Fallback to Gemini if only Gemini key is available
   if (geminiKey) {
     return await generateWithGemini(input, geminiKey);
   }

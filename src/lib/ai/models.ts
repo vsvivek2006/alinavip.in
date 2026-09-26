@@ -1,7 +1,7 @@
 export interface AIModelOption {
   id: string;
   name: string;
-  provider: string;
+  provider: 'Groq' | 'Google Gemini';
   badge: string;
   description: string;
   contextWindow: string;
@@ -12,40 +12,49 @@ export interface AIModelOption {
 export const AVAILABLE_MODELS: AIModelOption[] = [
   {
     id: 'openai/gpt-oss-120b',
-    name: 'OpenAI GPT-OSS 120B',
-    provider: 'OpenAI',
+    name: 'OpenAI GPT-OSS 120B (Groq)',
+    provider: 'Groq',
     badge: 'Recommended • Flagship',
     description: 'Deep analytical substance, varied human editorial cadence, elite SEO strategy',
     contextWindow: '131k',
-    speed: '~6s',
+    speed: '~5s',
     isDefault: true,
   },
   {
+    id: 'qwen/qwen3.8-27b',
+    name: 'Qwen 3.8 27B (Groq)',
+    provider: 'Groq',
+    badge: 'High Reasoning',
+    description: 'Strict structural and link compliance, balanced long-form editorial framework',
+    contextWindow: '131k',
+    speed: '~4s',
+  },
+  {
     id: 'openai/gpt-oss-20b',
-    name: 'OpenAI GPT-OSS 20B',
-    provider: 'OpenAI',
+    name: 'OpenAI GPT-OSS 20B (Groq)',
+    provider: 'Groq',
     badge: 'Ultra-Fast',
     description: 'Sub-3s generation speed, punchy conversion structure, agile hospitality guides',
     contextWindow: '131k',
     speed: '~2.5s',
   },
   {
-    id: 'qwen/qwen3.8-27b',
-    name: 'Qwen 3.8 27B',
-    provider: 'Qwen',
-    badge: 'High Reasoning',
-    description: 'Strict structural and link compliance, balanced long-form editorial framework',
-    contextWindow: '131k',
-    speed: '~5s',
+    id: 'gemini-3.6-flash',
+    name: 'Google Gemini 3.6 Flash',
+    provider: 'Google Gemini',
+    badge: 'Google AI Flagship',
+    description: 'Next-generation reasoning, multimodal depth, and high SERP search-intent fidelity',
+    contextWindow: '1M',
+    speed: '~3s',
   },
   {
-    id: 'llama-3.3-70b-versatile',
-    name: 'Llama 3.3 70B',
-    provider: 'Meta',
-    badge: 'Versatile',
-    description: 'Fast, natural conversational flow, comprehensive local hospitality knowledge',
-    contextWindow: '128k',
-    speed: '~4s',
+    id: 'gemini-3.5-flash',
+    name: 'Google Gemini 3.5 Flash',
+    provider: 'Google Gemini',
+    badge: 'Deep Editorial',
+    description: 'Nuanced long-form composition, exhaustive VIP hospitality guidelines',
+    contextWindow: '1M',
+    speed: '~3.5s',
   },
 ];
 
@@ -56,3 +65,4 @@ export function getValidModel(modelId?: string): string {
   const match = AVAILABLE_MODELS.find((m) => m.id === modelId);
   return match ? match.id : DEFAULT_MODEL_ID;
 }
+
