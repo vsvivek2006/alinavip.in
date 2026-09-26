@@ -6,9 +6,12 @@ import {
   Calendar,
   Clock,
   User,
-  Eye,
-  Tag,
+  ArrowLeft,
   ArrowRight,
+  Sparkles,
+  Phone,
+  MessageSquare,
+  Tag,
 } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
@@ -79,7 +82,47 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       ],
       type: 'article',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImageUrl],
+    },
   };
+}
+
+/**
+ * Extracts question/answer pairs from content for Schema.org FAQPage rich results
+ */
+function extractFaqItems(rawContent: string | string[]): Array<{ question: string; answer: string }> {
+  if (!rawContent) return [];
+  const text = Array.isArray(rawContent) ? rawContent.join('\n\n') : String(rawContent);
+  const faqs: Array<{ question: string; answer: string }> = [];
+
+  // Match <h3>Question?</h3> followed by <p>Answer...</p>
+  const h3Regex = /<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gi;
+  let match;
+  while ((match = h3Regex.exec(text)) !== null) {
+    const q = match[1].replace(/<[^>]+>/g, '').trim();
+    const a = match[2].replace(/<[^>]+>/g, '').trim();
+    if (q && a && (q.endsWith('?') || /^(what|how|why|where|can|is|are|do|does|who)\b/i.test(q))) {
+      faqs.push({ question: q, answer: a });
+    }
+  }
+
+  // Also check markdown ### Question?\n\nAnswer
+  if (faqs.length === 0) {
+    const mdRegex = /###\s+([^\n?]+\?)\s*\n+([^\n#]+)/gi;
+    while ((match = mdRegex.exec(text)) !== null) {
+      const q = match[1].trim();
+      const a = match[2].trim();
+      if (q && a) {
+        faqs.push({ question: q, answer: a });
+      }
+    }
+  }
+
+  return faqs.slice(0, 6);
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -97,7 +140,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       : `${siteConfig.url}${post.image}`
     : `${siteConfig.url}/og-image.jpg`;
 
-  const articleSchema = {
+  const authorName = post.author && post.author !== 'ALINA VIP India' ? post.author : 'Alina Sen, Chief Concierge Director';
+
+  const articleSchema: Record<string, unknown> = {
     '@type': 'BlogPosting',
     headline: post.title,
     image: ogImageUrl,
@@ -110,9 +155,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     inLanguage: 'en-IN',
     description: post.excerpt,
     author: {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: siteConfig.url,
+      '@type': 'Person',
+      name: authorName,
+      jobTitle: 'Chief Concierge Director',
+      worksFor: {
+        '@type': 'Organization',
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
     },
     publisher: {
       '@type': 'Organization',
@@ -149,9 +199,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     ],
   };
 
+  const graphList: Array<Record<string, unknown>> = [articleSchema, breadcrumbSchema];
+
+  // Automated 2026 SEO E-E-A-T FAQ Rich Snippet injection
+  const faqItems = extractFaqItems(post.content);
+  if (faqItems.length >= 2) {
+    graphList.push({
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
   const pageSchema = {
     '@context': 'https://schema.org',
-    '@graph': [articleSchema, breadcrumbSchema],
+    '@graph': graphList,
   };
 
   const allPosts = await getPublishedBlogPosts();
@@ -171,7 +239,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Safe date parsing to avoid hydration mismatch and timezone day-shift
   let formattedDate = 'Recent Guide';
   try {
-    // Append T00:00:00 to YYYY-MM-DD so local timezone doesn't shift the date by a day
     const d = new Date((post.date || '') + 'T00:00:00');
     if (!isNaN(d.getTime())) {
       formattedDate = d.toLocaleDateString('en-US', {
@@ -186,7 +253,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      {/* Server-Rendered Article & Breadcrumb JSON-LD */}
+      {/* Server-Rendered Article, Breadcrumb & FAQ JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
@@ -200,76 +267,123 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         ]}
       />
 
-      {/* Main Article Body */}
-      <article className="py-16 md:py-24 bg-white text-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Article Header */}
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs bg-[#F9E1E5] text-primary-wine px-4 py-1.5 rounded-full font-bold tracking-wider uppercase">
-                {post.category}
+      <article className="min-h-screen bg-stone-50/60 text-gray-900">
+        {/* Article Hero Header (Growth Service locked luxury gradient & ambient glow) */}
+        <header className="bg-gradient-to-br from-[#120508] via-[#2D0A14] to-[#0A0407] py-16 sm:py-24 px-6 relative overflow-hidden text-white border-b border-[#671725]/40">
+          {/* Ambient glow */}
+          <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#671725]/30 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-4xl mx-auto relative z-10 space-y-6">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#FFD700] hover:text-[#FFE55C] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to all articles
+            </Link>
+
+            {/* Tags / Category */}
+            <div className="flex flex-wrap gap-2 items-center">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#671725] text-white border border-[#FFD700]/40 uppercase tracking-wider">
+                {post.category || 'VIP Escorts'}
               </span>
-              <span className="text-xs text-gray-400">•</span>
-              <span className="text-xs text-gray-500 flex items-center gap-1">
-                <Eye className="w-3.5 h-3.5 text-primary-wine" /> {post.views || '1.2k'} views
-              </span>
+              {post.tags &&
+                post.tags.slice(0, 3).map((tag: string) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#1F080F] text-stone-300 border border-[#671725]/60"
+                  >
+                    #{tag}
+                  </span>
+                ))}
             </div>
 
-            <h1 className="font-sans font-bold text-3xl md:text-5xl text-[#111827] font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight font-sans">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 pb-6 border-b border-gray-100">
-              <span className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-primary-wine" />
-                {formattedDate}
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary-wine" />
-                {post.readTime}
-              </span>
-              <span className="flex items-center gap-2">
-                <User className="w-4 h-4 text-primary-wine" />
-                {post.author || `${siteConfig.name} Editorial Team`}
-              </span>
+            {/* Byline & Metadata (Strictly human byline) */}
+            <div className="flex flex-wrap items-center gap-6 pt-4 text-sm text-stone-300 border-t border-[#671725]/50">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#671725] border border-[#FFD700]/50 flex items-center justify-center text-[#FFD700] shadow-sm">
+                  <User className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-xs text-stone-400 block font-medium">Editorial Author</span>
+                  <span className="font-semibold text-white tracking-wide">{authorName}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#1F080F] border border-[#671725]/60 flex items-center justify-center text-[#FFD700]">
+                  <Calendar className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-xs text-stone-400 block font-medium">Published</span>
+                  <span className="font-medium text-white">{formattedDate}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#1F080F] border border-[#671725]/60 flex items-center justify-center text-[#FFD700]">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-xs text-stone-400 block font-medium">Reading Time</span>
+                  <span className="font-medium text-white">{post.readTime || '6 min read'}</span>
+                </div>
+              </div>
             </div>
           </div>
+        </header>
 
-          {/* Featured Image */}
+        {/* Main Post Container */}
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 py-12">
+          {/* Featured Cover Image */}
           {post.image && (
-            <div className="relative aspect-[16/9] mb-12 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#671725]/25 mb-12 shadow-2xl shadow-black/20 bg-stone-900">
               <Image
                 src={getAssetUrl(post.image)}
                 alt={post.title}
                 title={post.title}
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 896px"
+                sizes="(max-width: 896px) 100vw, 896px"
                 className="object-cover"
               />
             </div>
           )}
 
-          {/* Article Content / Paragraphs */}
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-            {post.excerpt && (
-              <p className="text-xl font-sans font-bold text-gray-900 leading-relaxed italic border-l-4 border-primary-wine pl-6 my-8">
+          {/* Executive Summary / Key Takeaways Callout Box (Google 2026 E-E-A-T & Helpful Content) */}
+          {post.excerpt && (
+            <div className="mb-10 p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] border-l-4 border-[#671725] shadow-xs relative">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#671725] uppercase tracking-wider mb-2">
+                <Sparkles className="w-4 h-4 text-[#FFD700]" />
+                <span>Executive Summary &amp; Key Takeaways</span>
+              </div>
+              <p className="text-base sm:text-lg text-stone-800 leading-relaxed font-medium">
                 {post.excerpt}
               </p>
-            )}
+            </div>
+          )}
 
-            <ArticleContentRenderer content={post.content} />
-          </div>
+          {/* Post Content (Normalized, Sanitized & Styled via .article-content) */}
+          <ArticleContentRenderer content={post.content} />
 
-          {/* Article Footer & Tags */}
-          <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 flex-wrap">
-              <Tag className="w-4 h-4 text-primary-wine" />
-              <span className="text-sm font-semibold text-gray-700">Tags:</span>
-              {(post.tags && post.tags.length > 0 ? post.tags : ['Escort Service', `${siteConfig.city} Call Girls`, post.category, 'VIP Lifestyle']).map((tag) => (
+          {/* Share & Tags Bottom Row */}
+          <div className="mt-16 pt-8 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider flex items-center gap-1.5">
+                <Tag className="w-3.5 h-3.5 text-[#671725]" /> Topics:
+              </span>
+              {(post.tags && post.tags.length > 0
+                ? post.tags
+                : ['Escort Service', `${siteConfig.city} Call Girls`, post.category, 'VIP Lifestyle']
+              ).map((tag: string) => (
                 <span
                   key={tag}
-                  className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-medium"
+                  className="px-3 py-1 rounded-full text-xs font-semibold bg-white border border-stone-300/80 text-stone-700 hover:border-[#671725]/40 transition-colors shadow-xs"
                 >
                   #{tag}
                 </span>
@@ -278,18 +392,52 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <ShareButton />
           </div>
+
+          {/* Bottom Conversion CTA Banner (Growth Service Layout) */}
+          <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#120508] via-[#2D0A14] to-[#0A0407] border border-[#671725]/60 text-center space-y-6 shadow-2xl shadow-black/30 text-white relative overflow-hidden">
+            {/* Ambient glow inside CTA */}
+            <div className="absolute top-0 right-1/4 w-64 h-64 bg-[#FFD700]/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 space-y-6">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Experience Gold-Standard Hospitality in{' '}
+                <span className="text-[#FFD700]">Gurgaon</span>
+              </h2>
+              <p className="text-sm sm:text-base text-stone-300 max-w-xl mx-auto leading-relaxed">
+                Verified independent call girls delivered to your 5-star hotel suite within 20–30 minutes. Strict zero advance payment, in-person verification, and 100% Cash on Delivery.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a
+                  href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, '')}`}
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold bg-[#FFD700] hover:bg-[#FFE55C] text-[#120508] shadow-lg shadow-black/30 transition-all text-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  Direct Concierge Call
+                </a>
+                <a
+                  href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi ${siteConfig.name}, I am interested in booking VIP escort services in Gurgaon after reading your article: ${post.title}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold bg-[#25D366] hover:bg-[#20ba59] text-white shadow-lg shadow-black/30 transition-all text-sm"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Instant WhatsApp Booking
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </article>
 
       {/* Related Articles Strip */}
       {displayRelated.length > 0 && (
-        <section className="py-16 bg-white border-t border-gray-200/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <section className="py-16 bg-white border-t border-stone-200">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
+              <span className="text-xs font-bold text-[#671725] uppercase tracking-wider block mb-2">
                 Continue Reading
               </span>
-              <h2 className="text-3xl font-sans font-bold text-[#111827] font-bold">
+              <h2 className="text-3xl font-sans font-bold text-stone-900">
                 Related Articles &amp; Guides
               </h2>
             </div>
@@ -299,10 +447,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Link
                   key={relatedPost.slug}
                   href={`/blog/${relatedPost.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200/40 flex flex-col"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 border border-stone-200 flex flex-col"
                 >
                   {relatedPost.image && (
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
                       <Image
                         src={getAssetUrl(relatedPost.image)}
                         alt={relatedPost.title}
@@ -315,17 +463,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   )}
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-xs font-bold text-primary-wine uppercase tracking-wider block mb-2">
+                      <span className="text-xs font-bold text-[#671725] uppercase tracking-wider block mb-2">
                         {relatedPost.category}
                       </span>
-                      <h3 className="font-sans font-bold text-lg font-bold text-[#111827] group-hover:text-primary-wine transition-colors line-clamp-2 mb-2">
+                      <h3 className="font-sans font-bold text-lg text-stone-900 group-hover:text-[#671725] transition-colors line-clamp-2 mb-2">
                         {relatedPost.title}
                       </h3>
-                      <p className="text-sm text-gray-600 line-clamp-2">
+                      <p className="text-sm text-stone-600 line-clamp-2">
                         {relatedPost.excerpt}
                       </p>
                     </div>
-                    <span className="text-xs text-primary-wine font-bold flex items-center gap-1 mt-4">
+                    <span className="text-xs text-[#671725] font-bold flex items-center gap-1 mt-4">
                       Read Article <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -340,3 +488,4 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     </>
   );
 }
+

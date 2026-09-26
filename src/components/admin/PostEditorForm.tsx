@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAdminTenant } from '@/context/AdminTenantContext';
 import type { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 import AssetPickerModal from '@/components/admin/AssetPickerModal';
-import { slugify } from '@/lib/admin/aiBlogGenerator';
+import { slugify } from '@/lib/slugify';
 import {
   Sparkles,
   Save,
