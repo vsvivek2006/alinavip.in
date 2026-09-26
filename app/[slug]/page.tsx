@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Phone, MessageCircle, Shield, CheckCircle, BookOpen } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import pagesData from '@/data/catalog_pages.json';
 import postsData from '@/data/catalog_posts.json';
@@ -72,7 +72,6 @@ export async function generateMetadata({
     };
   }
 
-
   // Guard: noindex for REDIRECT/NOINDEX locations
   const entry = getLocationManifestEntry(slug);
   const robots = (entry && entry.indexable === false) ? { index: false, follow: false } : undefined;
@@ -82,6 +81,7 @@ export async function generateMetadata({
     description: item.metaDescription || `${item.h1} – 24/7 Verified In-Call & Out-Call Escort Service in ${siteConfig.city} with ${siteConfig.name}.`,
     alternates: {
       canonical: `${siteConfig.url}/${slug}`,
+      languages: getAlternateLanguages(`/${slug}`),
     },
     twitter: {
       card: 'summary_large_image',
@@ -94,7 +94,7 @@ export async function generateMetadata({
       description: item.metaDescription || `${item.h1} – Verified Escort Service in ${siteConfig.city}`,
       url: `${siteConfig.url}/${slug}`,
       images: [{ url: '/og-image.jpg' }],
-      type: 'website',
+      type: item.type === 'post' ? 'article' : 'website',
     },
   };
 }
@@ -114,8 +114,70 @@ export default async function DynamicSlugPage({
   const isPost = item.type === 'post';
   const availableModels = escortModels.slice(0, 4);
 
+  const dynamicSchema = isPost
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        '@id': `${siteConfig.url}/${slug}#article`,
+        headline: item.h1 || item.title,
+        description: item.metaDescription,
+        url: `${siteConfig.url}/${slug}`,
+        mainEntityOfPage: `${siteConfig.url}/${slug}`,
+        inLanguage: 'en-IN',
+        publisher: {
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${siteConfig.url}/favicon.svg`,
+          },
+        },
+        author: {
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${siteConfig.url}/${slug}#service`,
+        name: item.h1 || item.title,
+        description: item.metaDescription,
+        url: `${siteConfig.url}/${slug}`,
+        serviceType: 'VIP Escort Service',
+        provider: {
+          '@type': 'LocalBusiness',
+          name: siteConfig.name,
+          url: siteConfig.url,
+          telephone: siteConfig.phone,
+          priceRange: '₹₹₹₹',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: siteConfig.city,
+            addressRegion: 'Haryana',
+            addressCountry: 'IN',
+          },
+        },
+        areaServed: [
+          {
+            '@type': 'City',
+            name: siteConfig.city,
+          },
+          {
+            '@type': 'AdministrativeArea',
+            name: 'Delhi NCR',
+          },
+        ],
+      };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dynamicSchema) }}
+      />
       {/* 1. Header Hero Banner */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-rose-900/40">
         <div className="max-w-6xl mx-auto">
@@ -124,7 +186,7 @@ export default async function DynamicSlugPage({
               items={[
                 { label: 'Home', href: '/' },
                 isPost ? { label: 'Blog', href: '/blog' } : { label: 'Escorts', href: '/escorts' },
-                { label: item.h1 },
+                { label: item.h1, href: `/${slug}` },
               ]}
             />
           </div>

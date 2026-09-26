@@ -1,4 +1,6 @@
-import RatesPage, { metadata as ratesMeta } from '../rates/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = ratesMeta;
-export default RatesPage;
+export default function GurgaonEscortsRatesAliasPage() {
+  permanentRedirect('/rates');
+}
+

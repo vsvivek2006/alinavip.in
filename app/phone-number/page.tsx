@@ -1,14 +1,59 @@
-'use client';
-
-
+import type { Metadata } from 'next';
 import { Phone, MessageSquare, AlertTriangle, CheckCircle } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+
+export const metadata: Metadata = {
+  title: `${siteConfig.city} Escorts Phone Number 24/7 | Official VIP Booking Hotline | ${siteConfig.name}`,
+  description: `Official contact phone number & WhatsApp booking for ${siteConfig.name} in ${siteConfig.city}. 24/7 discreet concierge, zero advance payment, 20-30 min hotel outcalls. Call ${siteConfig.phoneDisplay}.`,
+  alternates: {
+    canonical: `${siteConfig.url}/phone-number`,
+    languages: getAlternateLanguages('/phone-number'),
+  },
+  openGraph: {
+    title: `${siteConfig.city} Escorts Phone Number 24/7 | ${siteConfig.name}`,
+    description: `Direct booking hotline and encrypted WhatsApp concierge for verified hotel outcalls across ${siteConfig.city}. Call ${siteConfig.phoneDisplay}.`,
+    url: `${siteConfig.url}/phone-number`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.city} Escorts Phone Number 24/7 | ${siteConfig.name}`,
+    description: `Direct booking hotline and WhatsApp concierge for verified hotel outcalls in ${siteConfig.city}.`,
+    images: ['/og-image.jpg'],
+  },
+};
 
 export default function PhoneNumberPage() {
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: `${siteConfig.city} Escorts Official Phone Number & Booking Hotline`,
+    url: `${siteConfig.url}/phone-number`,
+    description: `Official 24/7 VIP escort booking hotline for ${siteConfig.name} in ${siteConfig.city}.`,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: siteConfig.name,
+      telephone: siteConfig.phone,
+      url: siteConfig.url,
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: siteConfig.city,
+        addressRegion: 'Haryana',
+        addressCountry: 'IN',
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
       {/* Page Title Bar */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
         <div className="max-w-7xl mx-auto">
@@ -16,7 +61,7 @@ export default function PhoneNumberPage() {
             <Breadcrumb
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Escorts Phone Number' },
+                { label: 'Escorts Phone Number', href: '/phone-number' },
               ]}
             />
           </div>

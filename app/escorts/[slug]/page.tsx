@@ -6,7 +6,7 @@ import { Phone, Shield, Star, CheckCircle, MapPin, ArrowRight } from 'lucide-rea
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { escortModels } from '@/data/models';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const dynamicParams = false;
 
@@ -28,11 +28,35 @@ export async function generateMetadata({
       title: `Verified Escort Profile in ${siteConfig.city} | ${siteConfig.name}`,
     };
   }
+  const title = `${model.name} - ${model.category} in ${siteConfig.city} | ${siteConfig.name}`;
+  const description = `Book ${model.name}, verified ${model.category} in ${siteConfig.city}. Age ${model.age}, 5-star hotel doorstep arrival in 20-30 minutes with ${siteConfig.name}.`;
+  const canonicalUrl = `${siteConfig.url}/escorts/${slug}`;
+  const imageUrl = model.image.startsWith('http') ? model.image : `${siteConfig.url}${model.image}`;
+
   return {
-    title: `${model.name} - ${model.category} in ${siteConfig.city} | ${siteConfig.name}`,
-    description: `Book ${model.name}, verified ${model.category} in ${siteConfig.city}. Age ${model.age}, 5-star hotel doorstep arrival in 20-30 minutes with ${siteConfig.name}.`,
+    title,
+    description,
     alternates: {
-      canonical: `${siteConfig.url}/escorts/${slug}`,
+      canonical: canonicalUrl,
+      languages: getAlternateLanguages(`/escorts/${slug}`),
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: 'profile',
+      images: [
+        {
+          url: imageUrl,
+          alt: `${model.name} - ${model.category}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 }
@@ -53,8 +77,33 @@ export default async function EscortProfilePage({
     .filter((m) => m.slug !== model.slug)
     .slice(0, 4);
 
+  const profileSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${siteConfig.url}/escorts/${slug}#profile`,
+    name: `${model.name} - ${model.category}`,
+    url: `${siteConfig.url}/escorts/${slug}`,
+    mainEntity: {
+      '@type': 'Person',
+      name: model.name,
+      description: model.bio,
+      image: model.image.startsWith('http') ? model.image : `${siteConfig.url}${model.image}`,
+      nationality: model.nationality,
+      jobTitle: `${model.category} Model`,
+      worksFor: {
+        '@type': 'LocalBusiness',
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
+      />
       {/* Page Title Bar */}
       <div className="bg-[#671725] text-white py-10 px-4 sm:px-6 lg:px-8 shadow-inner">
         <div className="max-w-7xl mx-auto">
@@ -62,9 +111,9 @@ export default async function EscortProfilePage({
             <Breadcrumb
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Escorts', href: '/gallery' },
+                { label: 'Escorts', href: '/escorts' },
                 { label: model.category, href: `/category/${model.categorySlug}` },
-                { label: model.name },
+                { label: model.name, href: `/escorts/${slug}` },
               ]}
             />
           </div>

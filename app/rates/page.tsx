@@ -116,8 +116,34 @@ const categoryPricing = [
 export default function RatesPage() {
   const editorialSections = ratesManifest.sections.slice(1);
 
+  const ratesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    name: `${siteConfig.city} Escorts Rates & Pricing Packages`,
+    description: `Transparent escort rates in ${siteConfig.city}. Zero advance payment, 100% cash on delivery, 5-star hotel outcalls 24/7.`,
+    url: `${siteConfig.url}/rates`,
+    itemListElement: pricingPackages.map((pkg, idx) => ({
+      '@type': 'Offer',
+      position: idx + 1,
+      name: pkg.hours,
+      description: `${pkg.shots} - ${pkg.tag}`,
+      price: pkg.price.replace(/[^\d]/g, ''),
+      priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'LocalBusiness',
+        name: siteConfig.name,
+        url: siteConfig.url,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratesSchema) }}
+      />
       {/* 1. Page Title Bar */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
         <div className="max-w-6xl mx-auto">
@@ -125,7 +151,7 @@ export default function RatesPage() {
             <Breadcrumb
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Rates & Pricing' },
+                { label: 'Rates & Pricing', href: '/rates' },
               ]}
             />
           </div>

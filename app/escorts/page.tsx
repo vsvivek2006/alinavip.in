@@ -1,16 +1,58 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Star, MapPin } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { escortModels } from '@/data/models';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
+export const metadata: Metadata = {
+  title: `VIP Escorts in ${siteConfig.city} | 100% Real Verified Profiles | ${siteConfig.name}`,
+  description: `Browse verified Russian, college, model, and celebrity escorts in ${siteConfig.city}. 20-30 min 5-star hotel arrival with cash on delivery. 100% genuine photos guaranteed.`,
+  alternates: {
+    canonical: `${siteConfig.url}/escorts`,
+    languages: getAlternateLanguages('/escorts'),
+  },
+  openGraph: {
+    title: `VIP Escorts in ${siteConfig.city} | 100% Real Verified Profiles | ${siteConfig.name}`,
+    description: `Browse verified Russian, college, model, and celebrity escorts in ${siteConfig.city}. 20-30 min hotel arrival with cash on delivery.`,
+    url: `${siteConfig.url}/escorts`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `VIP Escorts in ${siteConfig.city} | 100% Real Verified Profiles | ${siteConfig.name}`,
+    description: `Browse verified Russian, college, model, and celebrity escorts in ${siteConfig.city}.`,
+    images: ['/og-image.jpg'],
+  },
+};
 
 export default function EscortsDirectoryPage() {
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Verified Escort Profiles in ${siteConfig.city}`,
+    description: `Browse our hand-picked portfolio of 100% genuine Russian, VIP, model, and celebrity escorts available for 24/7 outcalls in ${siteConfig.city}.`,
+    url: `${siteConfig.url}/escorts`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: escortModels.map((model, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `${siteConfig.url}/escorts/${model.slug}`,
+        name: `${model.name} - ${model.category}`,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       {/* Page Title Bar */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
         <div className="max-w-7xl mx-auto">
@@ -18,7 +60,7 @@ export default function EscortsDirectoryPage() {
             <Breadcrumb
               items={[
                 { label: 'Home', href: '/' },
-                { label: 'Escorts' },
+                { label: 'Escorts', href: '/escorts' },
               ]}
             />
           </div>
@@ -30,6 +72,7 @@ export default function EscortsDirectoryPage() {
           </p>
         </div>
       </div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

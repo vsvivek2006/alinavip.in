@@ -1,4 +1,6 @@
-import CategoriesPage, { metadata as catMeta } from '../categories/page';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = catMeta;
-export default CategoriesPage;
+export default function EscortsCategoriesAliasPage() {
+  permanentRedirect('/categories');
+}
+

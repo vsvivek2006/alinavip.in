@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Phone, MessageCircle, Shield, CheckCircle, Hotel } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig } from '@/data/siteConfig';
+import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
 import pagesData from '@/data/catalog_pages.json';
 
@@ -50,16 +50,30 @@ export async function generateMetadata({
   if (!page) {
     return {
       title: `Luxury Hotel Escort Service in ${siteConfig.city} | ${siteConfig.name}`,
-        twitter: { card: 'summary_large_image' },
-    openGraph: { type: 'website' },
-  };
+      twitter: { card: 'summary_large_image' },
+      openGraph: { type: 'website' },
+    };
   }
 
   return {
-    title: page.title,
+    title: `${page.title} | ${siteConfig.name}`,
     description: page.metaDescription,
     alternates: {
       canonical: `${siteConfig.url}/hotels/${slug}`,
+      languages: getAlternateLanguages(`/hotels/${slug}`),
+    },
+    openGraph: {
+      title: `${page.title} | ${siteConfig.name}`,
+      description: page.metaDescription,
+      url: `${siteConfig.url}/hotels/${slug}`,
+      type: 'website',
+      images: [{ url: '/og-image.jpg' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${page.title} | ${siteConfig.name}`,
+      description: page.metaDescription,
+      images: ['/og-image.jpg'],
     },
   };
 }
@@ -83,8 +97,39 @@ export default async function HotelSlugPage({
 
   const availableModels = escortModels.slice(0, 4);
 
+  const hotelServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${siteConfig.url}/hotels/${slug}#service`,
+    name: page.h1,
+    description: page.metaDescription,
+    url: `${siteConfig.url}/hotels/${slug}`,
+    serviceType: '5-Star Hotel Escort Outcall',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.phone,
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: siteConfig.city,
+        addressRegion: 'Haryana',
+        addressCountry: 'IN',
+      },
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: cleanHotelName,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hotelServiceSchema) }}
+      />
       {/* 1. Header Banner */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 shadow-inner border-b border-rose-900/40">
         <div className="max-w-6xl mx-auto">
@@ -93,7 +138,7 @@ export default async function HotelSlugPage({
               items={[
                 { label: 'Home', href: '/' },
                 { label: 'Hotels', href: '/hotels' },
-                { label: cleanHotelName },
+                { label: cleanHotelName, href: `/hotels/${slug}` },
               ]}
             />
           </div>

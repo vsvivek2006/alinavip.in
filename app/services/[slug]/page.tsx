@@ -127,8 +127,52 @@ export default async function ServiceDetailPage({
     return true;
   });
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${siteConfig.url}/services/${slug}#service`,
+    name: item.h1,
+    description: `Discover premium ${item.h1} in ${siteConfig.city}. 100% real verified call girls, 20-30 min hotel arrival, cash on delivery with ${siteConfig.name}.`,
+    url: `${siteConfig.url}/services/${slug}`,
+    serviceType: 'VIP Escort Service',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.phone,
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: siteConfig.city,
+        addressRegion: 'Haryana',
+        addressCountry: 'IN',
+      },
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: siteConfig.city,
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Delhi NCR',
+      },
+    ],
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'INR',
+      lowPrice: '15000',
+      highPrice: '50000',
+      offerCount: '5',
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* 1. Hero Header Banner */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
         <div className="max-w-6xl mx-auto">
@@ -137,7 +181,7 @@ export default async function ServiceDetailPage({
               items={[
                 { label: 'Home', href: '/' },
                 { label: 'Services', href: '/services' },
-                { label: item.h1 },
+                { label: item.h1, href: `/services/${slug}` },
               ]}
             />
           </div>

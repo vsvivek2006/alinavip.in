@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   Phone,
@@ -8,20 +6,37 @@ import {
   ShieldCheck,
   CheckCircle2,
   Clock,
-  ChevronDown,
   Sparkles,
   HelpCircle,
 } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
-import { siteConfig, generalFaqs } from '@/data/siteConfig';
+import FAQAccordion from '@/components/FAQAccordion';
+import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
+
+export const metadata: Metadata = {
+  title: `Frequently Asked Questions (FAQ) | VIP Escort Service in ${siteConfig.city} | ${siteConfig.name}`,
+  description: `Find answers to common questions about booking VIP escorts in ${siteConfig.city}: outcall arrival times, verified photos, zero-advance cash payment, and client privacy.`,
+  alternates: {
+    canonical: `${siteConfig.url}/faq`,
+    languages: getAlternateLanguages('/faq'),
+  },
+  openGraph: {
+    title: `Frequently Asked Questions | ${siteConfig.name} ${siteConfig.city}`,
+    description: `Everything you need to know about booking verified call girls, outcall timing, hotel visits, and privacy policies.`,
+    url: `${siteConfig.url}/faq`,
+    type: 'website',
+    images: [{ url: '/og-image.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Frequently Asked Questions | ${siteConfig.name}`,
+    description: `Answers about VIP escort booking, cash on delivery, and hotel outcalls in ${siteConfig.city}.`,
+    images: ['/og-image.jpg'],
+  },
+};
 
 export default function FAQPage() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
-
-  const toggle = (idx: number) => {
-    setOpenIdx(openIdx === idx ? null : idx);
-  };
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -44,20 +59,23 @@ export default function FAQPage() {
         }}
       />
 
-      {/* 1. Page Title Bar (ALINA VIP exact page-title-bar-01) */}
+      {/* 1. Page Title Bar */}
       <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center mb-3">
+            <Breadcrumb
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'FAQ', href: '/faq' },
+              ]}
+            />
+          </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
             Frequently Asked Questions
           </h1>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
             Everything You Need to Know About VIP Escort Bookings, Hotel Outcalls, and Rates in {siteConfig.city}
           </p>
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-luxury-gold font-semibold">FAQ</span>
-          </div>
         </div>
       </section>
 
@@ -95,44 +113,7 @@ export default function FAQPage() {
               <div className="w-16 h-1 bg-primary-wine mt-3 rounded-full" />
             </div>
 
-            {generalFaqs.map((faq, idx) => {
-              const isOpen = openIdx === idx;
-              return (
-                <div
-                  key={idx}
-                  className={`rounded-xl border transition-all duration-200 overflow-hidden ${
-                    isOpen
-                      ? 'border-[#671725] bg-white shadow-md'
-                      : 'border-gray-200 bg-white hover:border-[#671725]/50'
-                  }`}
-                >
-                  <button
-                    onClick={() => toggle(idx)}
-                    className="w-full text-left p-5 flex items-center justify-between gap-4 font-semibold text-base md:text-lg text-[#111827] focus:outline-none"
-                    aria-expanded={isOpen}
-                  >
-                    <span className={isOpen ? 'text-[#671725]' : 'text-[#111827]'}>
-                      {faq.question}
-                    </span>
-                    <span
-                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                        isOpen
-                          ? 'bg-[#671725] text-white rotate-180'
-                          : 'bg-gray-100 text-gray-600'
-                      }`}
-                    >
-                      <ChevronDown size={18} />
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-4 bg-[#FFFDF6]">
-                      <p>{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            <FAQAccordion items={generalFaqs} />
           </div>
 
           {/* Right Column: Sticky Booking Card */}

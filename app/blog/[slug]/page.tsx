@@ -98,20 +98,60 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : `${siteConfig.url}/og-image.jpg`;
 
   const articleSchema = {
-    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     image: ogImageUrl,
     dateModified: post.date,
-    mainEntityOfPage: canonicalUrl,
-    description: post.excerpt,
     datePublished: post.date,
-    author: { '@type': 'Organization', name: siteConfig.name },
-    publisher: {
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+    },
+    inLanguage: 'en-IN',
+    description: post.excerpt,
+    author: {
       '@type': 'Organization',
       name: siteConfig.name,
       url: siteConfig.url,
     },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/og-image.jpg`,
+      },
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteConfig.url,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${siteConfig.url}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const pageSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [articleSchema, breadcrumbSchema],
   };
 
   const allPosts = await getPublishedBlogPosts();
@@ -146,10 +186,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      {/* Server-Rendered Article JSON-LD */}
+      {/* Server-Rendered Article & Breadcrumb JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
       <Breadcrumb

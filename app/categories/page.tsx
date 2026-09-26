@@ -161,13 +161,34 @@ export default function CategoriesPage() {
     return true;
   });
 
+  const categoriesCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Meet Different Categories of Escorts in ${siteConfig.city}`,
+    description: `Explore diverse categories of escorts in ${siteConfig.city}: Russian, College, Model, High Profile, Housewife, Air Hostess, and Independent call girls.`,
+    url: `${siteConfig.url}/categories`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: categoryVisualGrid.map((cat, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `${siteConfig.url}${cat.slug}`,
+        name: cat.name,
+      })),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(categoriesCollectionSchema) }}
+      />
       {/* 1. Header Banner */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
         <div className="max-w-6xl mx-auto">
           <div className="mb-3">
-            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Categories' }]} />
+            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Categories', href: '/categories' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-2">
             ★ All Call Girl Categories &bull; 100% Verified

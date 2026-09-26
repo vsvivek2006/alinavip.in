@@ -49,13 +49,38 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   const sections = aboutData?.sections || [];
 
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `About ${siteConfig.name}`,
+    description: `${siteConfig.name} is the premier luxury escort service in ${siteConfig.city}, providing 100% verified VIP call girls, discreet hotel outcalls, and 24/7 private concierge booking.`,
+    url: `${siteConfig.url}/about`,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      telephone: siteConfig.phone,
+      priceRange: '₹₹₹₹',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: siteConfig.city,
+        addressRegion: 'Haryana',
+        addressCountry: 'IN',
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF6] text-[#333333]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* 1. Hero Title Banner */}
       <div className="bg-[#671725] text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-rose-900/40">
         <div className="max-w-5xl mx-auto text-center">
           <div className="mb-4 flex justify-center">
-            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About Us' }]} />
+            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
             ★ Premier Escort Agency in {siteConfig.city}

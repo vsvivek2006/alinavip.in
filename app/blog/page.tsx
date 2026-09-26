@@ -61,9 +61,41 @@ const categoryEmojis: Record<string, string> = {
 export default async function BlogPage() {
   const posts = await getPublishedBlogPosts();
 
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    '@id': `${siteConfig.url}/blog#blog`,
+    name: `${siteConfig.city} Escorts & Call Girls Blog`,
+    description: `Read the official ${siteConfig.name} blog for insights on VIP call girls, Russian escorts in ${siteConfig.city}, five-star hotel guides, and escort etiquette.`,
+    url: `${siteConfig.url}/blog`,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteConfig.url}/favicon.svg`,
+      },
+    },
+    blogPost: posts.slice(0, 10).map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: `${siteConfig.url}/blog/${post.slug}`,
+      datePublished: post.date || new Date().toISOString(),
+      author: {
+        '@type': 'Person',
+        name: post.author || siteConfig.name,
+      },
+    })),
+  };
+
   return (
     <>
-      <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog', path: '/blog' }]} />
 
       {/* Hero Section */}
       <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">

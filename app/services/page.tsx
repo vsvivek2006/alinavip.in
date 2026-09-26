@@ -109,13 +109,35 @@ export default function ServicesPage() {
   const remainingEditorialSections = hub.sections.slice(2);
   const featuredModels = escortModels.slice(0, 6);
 
+  const servicesCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Premium Escort Services in ${siteConfig.city}`,
+    description: `Full range of VIP escort services in ${siteConfig.city}: 5-star hotel outcalls, sensual erotic massage, GFE, and companion services.`,
+    url: `${siteConfig.url}/services`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: serviceSubpages.map((service, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `${siteConfig.url}${service.slug}`,
+        name: service.title,
+        description: service.snippet,
+      })),
+    },
+  };
+
   return (
     <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesCollectionSchema) }}
+      />
       {/* 1. Hero Header Banner */}
       <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-[#FFD700] shadow-md">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center mb-4">
-            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
+            <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }]} />
           </div>
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-[#FFD700] text-xs font-semibold uppercase tracking-wider mb-3">
             ★ 24/7 VIP Escort Service &amp; Outcalls

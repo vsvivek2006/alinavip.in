@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Hotel,
 } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import LocationsDirectory, { CompactLocation } from '@/components/LocationsDirectory';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 // Extended area pages — directly served at /{slug} (from catalog_pages)
-const moreAreaPages = [
+const _moreAreaPages = [
   { title: 'Cyber City Escorts', slug: 'escorts-in-cyber-city', area: 'DLF Cyber City' },
   { title: 'Nirvana Country Escorts', slug: 'escorts-in-nirvana-country', area: 'Sohna Road' },
   { title: 'Sector 54 Call Girls', slug: 'call-girls-in-sector-54-gurgaon', area: 'Golf Course Road' },
@@ -124,22 +125,47 @@ export default function LocationsPage() {
       shortDescription: loc.shortDescription,
     }));
 
+  const locationsCollectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Escort Service Locations in ${siteConfig.city} & Delhi NCR`,
+    description: `Find premium escort service across prime locations in Gurgaon and Delhi NCR: Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more.`,
+    url: `${siteConfig.url}/locations`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: topLocationCards.map((loc, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: `${siteConfig.url}/locations/${loc.slug}`,
+        name: loc.title,
+        description: loc.desc,
+      })),
+    },
+  };
+
   return (
     <div className="bg-[#FFFDF6] min-h-screen text-[#2d2d2d]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsCollectionSchema) }}
+      />
       {/* 1. Page Title Bar */}
       <section className="relative bg-[#671725] text-white py-14 px-4 sm:px-6 lg:px-8 border-b-4 border-luxury-gold shadow-md">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center mb-3">
+            <Breadcrumb
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Locations', href: '/locations' },
+              ]}
+            />
+          </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
             Escort Service Locations in Gurgaon &amp; Delhi NCR
           </h1>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto">
             108+ Verified Sectors with Rapid 20-30 Minute 5-Star Hotel Outcalls Available 24/7
           </p>
-          <div className="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-gray-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-luxury-gold font-semibold">Locations</span>
-          </div>
         </div>
       </section>
 

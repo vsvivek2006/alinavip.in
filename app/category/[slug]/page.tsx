@@ -150,17 +150,34 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     },
   ];
 
-  const faqSchema = {
+  const pageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.answer,
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${siteConfig.url}/category/${category.slug}#collection`,
+        name: `${category.h1Title || `${category.name} in ${siteConfig.city}`}`,
+        description: `${category.shortDescription} ${siteConfig.name} offers verified ${category.name.toLowerCase()} in ${siteConfig.city}.`,
+        url: `${siteConfig.url}/category/${category.slug}`,
+        isPartOf: {
+          '@type': 'WebSite',
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
       },
-    })),
+      {
+        '@type': 'FAQPage',
+        '@id': `${siteConfig.url}/category/${category.slug}#faq`,
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (
@@ -168,14 +185,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       {/* Server-Rendered JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
       <Breadcrumb
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Services', path: '/services' },
-          { name: category.name },
+          { name: 'Categories', path: '/categories' },
+          { name: category.name, path: `/category/${category.slug}` },
         ]}
       />
 
