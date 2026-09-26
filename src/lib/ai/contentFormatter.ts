@@ -269,3 +269,59 @@ export function normalizeContentToHtml(raw: string | string[]): string {
 
   return cleanHtml(finalHtml);
 }
+
+/**
+ * Converts rich semantic HTML into clean, human-readable Markdown.
+ * Perfect for the admin Visual Writer textarea so editors don't see raw HTML tags.
+ */
+export function htmlToMarkdown(html: string): string {
+  if (!html || typeof html !== 'string') return '';
+  let md = html;
+
+  // Headings
+  md = md.replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, '# $1\n\n');
+  md = md.replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, '## $1\n\n');
+  md = md.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, '### $1\n\n');
+  md = md.replace(/<h[4-6][^>]*>([\s\S]*?)<\/h[4-6]>/gi, '#### $1\n\n');
+
+  // Blockquotes
+  md = md.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, (_match, inner) => {
+    const cleanInner = inner.replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, '$1').trim();
+    return '> ' + cleanInner.split('\n').join('\n> ') + '\n\n';
+  });
+
+  // Unordered Lists
+  md = md.replace(/<ul[^>]*>([\s\S]*?)<\/ul>/gi, (_match, inner) => {
+    return inner.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, '- $1\n').trim() + '\n\n';
+  });
+
+  // Ordered Lists
+  md = md.replace(/<ol[^>]*>([\s\S]*?)<\/ol>/gi, (_match: string, inner: string) => {
+    let idx = 1;
+    return inner.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi, (_m: string, item: string) => `${idx++}. ${item}\n`).trim() + '\n\n';
+  });
+
+  // Bold, italic, code
+  md = md.replace(/<(?:strong|b)[^>]*>([\s\S]*?)<\/(?:strong|b)>/gi, '**$1**');
+  md = md.replace(/<(?:em|i)[^>]*>([\s\S]*?)<\/(?:em|i)>/gi, '*$1*');
+  md = md.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi, '`$1`');
+
+  // Images: <img src="url" alt="alt" ... /> -> ![alt](url)
+  md = md.replace(/<img\b[^>]*src=["']([^"']+)["'][^>]*alt=["']([^"']*)["'][^>]*\/?>/gi, '![$2]($1)\n\n');
+  md = md.replace(/<img\b[^>]*alt=["']([^"']*)["'][^>]*src=["']([^"']+)["'][^>]*\/?>/gi, '![$1]($2)\n\n');
+  md = md.replace(/<img\b[^>]*src=["']([^"']+)["'][^>]*\/?>/gi, '![]($1)\n\n');
+
+  // Links: <a href="url">text</a> -> [text](url)
+  md = md.replace(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, '[$2]($1)');
+
+  // Paragraphs
+  md = md.replace(/<p[^>]*>([\s\S]*?)<\/p>/gi, '$1\n\n');
+
+  // Clean remaining HTML tags and line breaks
+  md = md.replace(/<br\s*\/?>/gi, '\n');
+  md = md.replace(/<hr\s*\/?>/gi, '\n---\n\n');
+  md = md.replace(/<[^>]+>/g, '');
+  md = md.replace(/\n{3,}/g, '\n\n').trim();
+
+  return md;
+}

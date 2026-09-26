@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       : `${siteConfig.url}${post.image}`
     : `${siteConfig.url}/og-image.jpg`;
 
-  const authorName = post.author && post.author !== 'ALINA VIP India' ? post.author : 'Alina Sen, Chief Concierge Director';
+  const authorName = post.author && post.author !== 'ALINA VIP India' ? post.author : `${siteConfig.name} Editorial Desk`;
 
   const articleSchema: Record<string, unknown> = {
     '@type': 'BlogPosting',
@@ -401,7 +401,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="relative z-10 space-y-6">
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
                 Experience Gold-Standard Hospitality in{' '}
-                <span className="text-[#FFD700]">Gurgaon</span>
+                <span className="text-[#FFD700]">{siteConfig.city || 'Gurgaon'}</span>
               </h2>
               <p className="text-sm sm:text-base text-stone-300 max-w-xl mx-auto leading-relaxed">
                 Verified independent call girls delivered to your 5-star hotel suite within 20–30 minutes. Strict zero advance payment, in-person verification, and 100% Cash on Delivery.
@@ -415,7 +415,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Direct Concierge Call
                 </a>
                 <a
-                  href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi ${siteConfig.name}, I am interested in booking VIP escort services in Gurgaon after reading your article: ${post.title}`)}`}
+                  href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi ${siteConfig.name}, I am interested in booking VIP escort services in ${siteConfig.city || 'Gurgaon'} after reading your article: ${post.title}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold bg-[#25D366] hover:bg-[#20ba59] text-white shadow-lg shadow-black/30 transition-all text-sm"

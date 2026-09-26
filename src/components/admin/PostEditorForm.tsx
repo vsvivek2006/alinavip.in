@@ -26,6 +26,7 @@ import {
 import Link from 'next/link';
 import { toast } from 'sonner';
 import ArticleContentRenderer from '@/components/blog/ArticleContentRenderer';
+import { htmlToMarkdown } from '@/lib/ai/contentFormatter';
 
 const AI_MODEL_OPTIONS = [
   {
@@ -201,14 +202,24 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       }
 
       const b = data.blog;
-      setTitle(b.title);
-      setSlug(b.slug);
-      setExcerpt(b.excerpt);
-      setSeoTitle(b.seoTitle);
-      setSeoDescription(b.seoDescription);
-      setContent(Array.isArray(b.content) ? b.content.join('\n\n') : b.content);
-      setCoverImage(b.coverImage);
-      setTagsInput(b.tags.join(', '));
+      if (b.title) setTitle(b.title);
+      if (b.slug) setSlug(b.slug);
+      if (b.excerpt) setExcerpt(b.excerpt);
+      if (b.seoTitle) setSeoTitle(b.seoTitle);
+      if (b.seoDescription) setSeoDescription(b.seoDescription);
+
+      const rawContent = Array.isArray(b.content) ? b.content.join('\n\n') : (b.content || '');
+      setContent(htmlToMarkdown(rawContent));
+
+      if (b.coverImage) setCoverImage(b.coverImage);
+
+      const tagsList = Array.isArray(b.tags)
+        ? b.tags
+        : Array.isArray(b.suggestedTags)
+        ? b.suggestedTags
+        : [];
+      setTagsInput(tagsList.join(', '));
+
       if (b.author) setAuthor(b.author);
 
       setFeedback({

@@ -27,6 +27,7 @@ export interface GenerateBlogPostOutput {
   seoDescription: string;
   excerpt: string;
   content: string; // Clean, rich semantic HTML
+  tags: string[];
   suggestedTags: string[];
   coverImage: string;
   author: string;
@@ -167,6 +168,7 @@ function buildFinalArticleOutput(
     seoDescription: metaDescription,
     excerpt,
     content: formattedHtml,
+    tags,
     suggestedTags: tags,
     coverImage: selectRandomImage(),
     author: `${input.siteName || 'ALINA VIP'} Editorial Desk`,
