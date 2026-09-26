@@ -87,12 +87,15 @@ function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
   const tagList = (row.tags || []).map((t: string) => purgeCompanionWords(t));
   const primaryCategory = tagList.length > 0 ? tagList[0] : 'VIP Escorts';
 
+  // Use today's date as fallback so newly published posts show correct date
+  const todayDate = new Date().toISOString().split('T')[0];
+
   return {
     slug: row.slug,
     title: purgeCompanionWords(row.title || 'Elite Escort Service Guide'),
     category: primaryCategory,
     excerpt: purgeCompanionWords(row.excerpt || ''),
-    date: row.published_at ? row.published_at.split('T')[0] : '2026-01-01',
+    date: row.published_at ? row.published_at.split('T')[0] : todayDate,
     readTime: String(Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))) + ' min read',
     image: getAssetUrl(row.cover_image || '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'),
     author: row.author || 'VIP Editorial Desk',
@@ -109,7 +112,7 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
   }
 
   const localList = getLocalPosts()
-    .filter(p => !p.site_id || p.site_id === SITE_ID)
+    .filter(p => p.site_id === SITE_ID && p.status === 'published')
     .map(mapRowToBlogPost);
 
   // During build phase, use instant local data to prevent socket hang up / ECONNRESET
@@ -185,19 +188,21 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
   }
 
   // 2. Check local persistent store first (instant, works offline, zero network delay)
+  // SECURITY: Only serve published posts strictly belonging to this site
   const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost && (localPost.site_id === SITE_ID || !localPost.site_id)) {
+  if (localPost && localPost.site_id === SITE_ID && localPost.status === 'published') {
     const post = mapRowToBlogPost(localPost);
     postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
     return post;
   }
 
   // 3. Query Supabase with retry and resilient 8s timeout
+  // SECURITY: Only return published posts to prevent draft URL leakage
   if (SUPABASE_URL && ANON_KEY) {
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
         const postRes = await fetch(
-          SUPABASE_URL + '/rest/v1/posts?slug=eq.' + encodeURIComponent(cleanSlug) + '&site_id=eq.' + encodeURIComponent(SITE_ID) + '&select=*',
+          SUPABASE_URL + '/rest/v1/posts?slug=eq.' + encodeURIComponent(cleanSlug) + '&site_id=eq.' + encodeURIComponent(SITE_ID) + '&status=eq.published&select=*',
           {
             headers: {
               apikey: ANON_KEY,

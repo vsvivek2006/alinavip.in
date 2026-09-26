@@ -37,7 +37,8 @@ try {
       const m = sbContent.match(/SITE_ID\s*=\s*(?:process\.env\.NEXT_PUBLIC_SITE_ID\s*\|\|\s*)?'([^']+)'/);
       if (m) siteId = m[1];
     }
-    const filtered = siteId ? localPosts.filter(p => p.site_id === siteId && p.status !== 'draft') : localPosts;
+    const targetSiteId = siteId || '4635a82b-3613-42dc-9bd0-f0ba0745d934';
+    const filtered = localPosts.filter(p => p.site_id === targetSiteId && p.status === 'published');
     blogSlugs = filtered.map(p => p.slug);
   }
 } catch (e) {

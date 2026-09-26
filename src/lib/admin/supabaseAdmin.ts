@@ -232,9 +232,18 @@ export async function createPost(postData: Omit<BlogPostRecord, 'id' | 'created_
 export async function updatePost(postId: string, updates: Partial<BlogPostRecord>): Promise<BlogPostRecord> {
   const existing = await getPostById(postId);
   const now = new Date().toISOString();
+
+  // Normalize site_id if passed as slug
+  let resolvedSiteId = updates.site_id ?? existing?.site_id ?? '';
+  if (resolvedSiteId) {
+    const tenant = DEFAULT_SITES.find(s => s.id === resolvedSiteId || s.slug === resolvedSiteId);
+    if (tenant) resolvedSiteId = tenant.id;
+  }
+
   const updated: BlogPostRecord = {
     ...(existing || { id: postId, site_id: '', slug: '', title: '', excerpt: null, content: [], cover_image: null, author: '', status: 'draft', ai_generated: false, tags: [] }),
     ...updates,
+    site_id: resolvedSiteId,
     updated_at: now,
   };
 
@@ -245,7 +254,7 @@ export async function updatePost(postId: string, updates: Partial<BlogPostRecord
     const res = await fetch(`${SUPABASE_URL}/rest/v1/posts?id=eq.${encodeURIComponent(postId)}`, {
       method: 'PATCH',
       headers: getHeaders('return=representation'),
-      body: JSON.stringify(updates),
+      body: JSON.stringify({ ...updates, site_id: resolvedSiteId }),
       signal: AbortSignal.timeout(4000),
     });
 
@@ -298,21 +307,26 @@ export async function publishAndRevalidatePost(postId: string): Promise<{ succes
     if (!site) throw new Error('Associated tenant site not found');
 
     // 2. Update post status to published
+    // Preserve original published_at if already set, otherwise record real-time current UTC timestamp
+    const publishTimestamp = post.published_at || new Date().toISOString();
     await updatePost(postId, {
       status: 'published',
-      published_at: new Date().toISOString(),
+      published_at: publishTimestamp,
     });
 
-    // Invalidate local in-memory cache and trigger ISR revalidation
-    invalidateBlogCache(post.slug);
-    try {
-      revalidatePath('/blog');
-      revalidatePath(`/blog/${post.slug}`);
-    } catch {
-      // Ignore if outside request context
+    // 3. If post belongs to this local site instance, revalidate local Next.js cache
+    const currentSiteId = process.env.NEXT_PUBLIC_SITE_ID || '4635a82b-3613-42dc-9bd0-f0ba0745d934';
+    if (post.site_id === currentSiteId) {
+      invalidateBlogCache(post.slug);
+      try {
+        revalidatePath('/blog');
+        revalidatePath(`/blog/${post.slug}`);
+      } catch {
+        // Ignore if outside request context
+      }
     }
 
-    // 3. Fire on-demand ISR revalidation webhook on target site
+    // 4. Fire on-demand ISR revalidation webhook on target site
     let revalidated = false;
     if (site.revalidate_url && site.revalidate_secret) {
       try {

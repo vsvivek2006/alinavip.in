@@ -128,10 +128,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
   }
 
-  // Safe date parsing to avoid hydration mismatch
+  // Safe date parsing to avoid hydration mismatch and timezone day-shift
   let formattedDate = 'Recent Guide';
   try {
-    const d = new Date(post.date);
+    // Append T00:00:00 to YYYY-MM-DD so local timezone doesn't shift the date by a day
+    const d = new Date((post.date || '') + 'T00:00:00');
     if (!isNaN(d.getTime())) {
       formattedDate = d.toLocaleDateString('en-US', {
         month: 'long',

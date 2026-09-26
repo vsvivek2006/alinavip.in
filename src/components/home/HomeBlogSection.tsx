@@ -48,7 +48,17 @@ export default async function HomeBlogSection() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
                     <Calendar size={13} />
-                    <span>{post.date || 'Recent Article'}</span>
+                    <span>
+                      {(() => {
+                        try {
+                          const d = new Date((post.date || '') + 'T00:00:00');
+                          if (!isNaN(d.getTime())) {
+                            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                          }
+                        } catch { /* ignore */ }
+                        return post.date || 'Recent Article';
+                      })()}
+                    </span>
                   </div>
 
                   <h3 className="font-bold text-base md:text-lg text-[#111827] group-hover:text-[#671725] transition-colors line-clamp-2 mb-2 leading-snug">

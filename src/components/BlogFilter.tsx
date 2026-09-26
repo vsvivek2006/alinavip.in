@@ -186,11 +186,16 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
                 <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
                   <span className="flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-primary-wine" />
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
+                    {(() => {
+                      try {
+                        // post.date is always YYYY-MM-DD from server — append T00:00:00 to avoid TZ offset shifting the day
+                        const d = new Date(post.date + 'T00:00:00');
+                        if (!isNaN(d.getTime())) {
+                          return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                        }
+                      } catch { /* ignore */ }
+                      return post.date;
+                    })()}
                   </span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-primary-wine" />

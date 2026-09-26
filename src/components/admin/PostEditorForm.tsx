@@ -242,6 +242,13 @@ export default function PostEditorForm({ initialPost, isNew = false }: PostEdito
       return;
     }
 
+    if (!selectedSiteId) {
+      const msg = 'Please choose a target website from the sidebar before saving or publishing.';
+      setFeedback({ type: 'error', message: msg });
+      toast.error(msg);
+      return;
+    }
+
     const nextStatus = publishImmediate ? 'published' : status;
     if (publishImmediate) setPublishing(true);
     else setSaving(true);
