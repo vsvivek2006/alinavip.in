@@ -71,7 +71,7 @@ export const DEFAULT_SITES: SiteTenant[] = [
     name: 'ALINA VIP International',
     domain: 'alinavip.com',
     revalidate_url: 'https://alinavip.com/api/revalidate',
-    revalidate_secret: '1639de5678757c374e5df99346ca31481bd927644efc277f2f14c5ac008f8426',
+    revalidate_secret: 'b443836201f3b6c2f897ce8829b364cda57c94399d691b33ebac6f1157997f04',
   },
   {
     id: '460db762-c7e2-4cfd-bc3d-5e08aa2d25c0',
@@ -79,7 +79,7 @@ export const DEFAULT_SITES: SiteTenant[] = [
     name: 'ALINA VIP Escorts',
     domain: 'escort.alinavip.com',
     revalidate_url: 'https://escort.alinavip.com/api/revalidate',
-    revalidate_secret: '1c655e0a732ea186b4fbf228328560a7acf3c8eb3cfba01ec2e559b8ececa94b',
+    revalidate_secret: 'b443836201f3b6c2f897ce8829b364cda57c94399d691b33ebac6f1157997f04',
   },
   {
     id: '53d69ffc-8079-473a-93f4-2aecaf061844',
@@ -87,7 +87,7 @@ export const DEFAULT_SITES: SiteTenant[] = [
     name: 'Aerocity Escort Service',
     domain: 'aerocityescortservice.site',
     revalidate_url: 'https://aerocityescortservice.site/api/revalidate',
-    revalidate_secret: 'a571afcb66d5527b47df94bcb8ba81d4e6268dc7d8f77dd049c85ade56399e75',
+    revalidate_secret: 'b443836201f3b6c2f897ce8829b364cda57c94399d691b33ebac6f1157997f04',
   },
   {
     id: '78659428-7273-41e8-9758-fd0ac895a2db',
@@ -95,7 +95,7 @@ export const DEFAULT_SITES: SiteTenant[] = [
     name: 'Gurgaon Escort Service',
     domain: 'gurgaonescortservice.site',
     revalidate_url: 'https://gurgaonescortservice.site/api/revalidate',
-    revalidate_secret: '280b632fa9bd5fcec6e831f31044f9c2773a8370984e01ab84ef11f518b865d7',
+    revalidate_secret: 'b443836201f3b6c2f897ce8829b364cda57c94399d691b33ebac6f1157997f04',
   },
 ];
 
