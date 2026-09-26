@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { SiteTenant } from '@/lib/admin/supabaseAdmin';
+import type { SiteTenant } from '@/lib/admin/supabaseAdmin';
 
 interface AdminTenantContextType {
   sites: SiteTenant[];

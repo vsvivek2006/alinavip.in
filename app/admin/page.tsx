@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import { useAdminTenant } from '@/context/AdminTenantContext';
-import { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
+import type { BlogPostRecord } from '@/lib/admin/supabaseAdmin';
 import {
   FileText,
   Sparkles,

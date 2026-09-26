@@ -2,20 +2,30 @@ import { NextResponse, NextRequest } from 'next/server';
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const session = req.cookies.get('alina_admin_session');
+  const isAuthenticated = session?.value === 'authenticated';
 
-  // Protect all /admin routes except /admin/login and auth API
+  // 1. Protect all /api/admin/* endpoints except /api/admin/auth
+  if (pathname.startsWith('/api/admin') && !pathname.startsWith('/api/admin/auth')) {
+    if (!isAuthenticated) {
+      return NextResponse.json(
+        { error: 'Unauthorized: Admin authentication required' },
+        { status: 401 }
+      );
+    }
+  }
+
+  // 2. Protect all /admin UI routes except /admin/login
   if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-    const session = req.cookies.get('alina_admin_session');
-    if (!session || session.value !== 'authenticated') {
+    if (!isAuthenticated) {
       const loginUrl = new URL('/admin/login', req.url);
       return NextResponse.redirect(loginUrl);
     }
   }
 
-  // Redirect authenticated users away from /admin/login to /admin dashboard
+  // 3. Redirect authenticated users away from /admin/login to /admin dashboard
   if (pathname === '/admin/login') {
-    const session = req.cookies.get('alina_admin_session');
-    if (session && session.value === 'authenticated') {
+    if (isAuthenticated) {
       const adminUrl = new URL('/admin', req.url);
       return NextResponse.redirect(adminUrl);
     }
@@ -25,5 +35,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin/:path*', '/api/admin/:path*'],
 };
